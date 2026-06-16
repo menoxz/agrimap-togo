@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AgriMap Togo — Rapport (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-primary: #1B5E20; --color-primary-hover: #2E7D32; --color-primary-light: #E8F5E9;
+    --color-secondary: #1565C0; --color-secondary-light: #E3F2FD;
+    --color-accent: #E65100; --color-accent-light: #FFF3E0;
+    --color-bg: #FAFAF5; --color-surface: #FFFFFF; --color-surface-alt: #F5F5F0;
+    --color-text: #1E293B; --color-text-secondary: #475569; --color-muted: #94A3B8;
+    --color-border: #E2E8F0; --color-success: #166534; --color-warning: #9A3412; --color-error: #991B1B;
+    --text-caption: 0.75rem; --text-body-sm: 0.875rem; --text-body: 1rem; --text-body-lg: 1.125rem;
+    --text-label: 0.875rem; --text-h4: 1.125rem; --text-h3: 1.25rem; --text-h2: 1.5rem; --text-h1: 2rem;
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+    --space-6: 32px; --space-7: 48px; --space-8: 64px;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+    --shadow-sm: 0 1px 2px rgba(30,41,59,0.08);
+    --shadow-md: 0 4px 6px rgba(30,41,59,0.07);
+    --shadow-lg: 0 10px 15px rgba(30,41,59,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: var(--text-body); line-height: 1.6;
+    color: var(--color-text); background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 var(--space-6); }
+  .navbar-inner { max-width: 1280px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .navbar-logo { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; font-size: var(--text-h4); color: var(--color-primary); text-decoration: none; }
+  .navbar-logo svg { width: 24px; height: 24px; }
+  .navbar nav ul { display: flex; gap: var(--space-4); list-style: none; }
+  .navbar nav a { text-decoration: none; font-size: var(--text-body-sm); color: var(--color-text-secondary); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); }
+  .navbar nav a:hover { color: var(--color-primary); background: var(--color-primary-light); }
+  .navbar nav a.active { color: var(--color-primary); font-weight: 600; }
+  .lang-switcher { display: flex; border: 1px solid var(--color-border); border-radius: var(--radius-full); overflow: hidden; }
+  .lang-switcher button { padding: 6px 14px; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-body-sm); background: transparent; color: var(--color-text-secondary); }
+  .lang-switcher button.active { background: var(--color-primary); color: white; }
+
+  /* ===== Report Layout ===== */
+  .report-layout {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 64px;
+    min-height: calc(100vh - 64px);
+  }
+
+  /* TOC */
+  .report-toc {
+    width: 260px;
+    flex-shrink: 0;
+    padding: var(--space-7) var(--space-5);
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+
+  .report-toc h3 {
+    font-size: var(--text-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    margin-bottom: var(--space-5);
+  }
+
+  .toc-list { list-style: none; }
+
+  .toc-item {
+    display: block;
+    padding: 6px 0;
+    font-size: var(--text-body-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+    transition: color 0.1s;
+  }
+
+  .toc-item:hover { color: var(--color-primary); }
+  .toc-item.active { color: var(--color-primary); font-weight: 600; }
+
+  .toc-item.sub { padding-left: var(--space-4); font-size: var(--text-caption); }
+
+  .toc-actions { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--color-border); display: flex; flex-direction: column; gap: var(--space-3); }
+
+  .toc-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--text-body-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+  }
+
+  .toc-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  .toc-btn.download { background: var(--color-primary); color: white; border: none; }
+  .toc-btn.download:hover { background: var(--color-primary-hover); }
+
+  .toc-btn.copy { background: transparent; border: 2px solid var(--color-border); color: var(--color-text-secondary); }
+  .toc-btn.copy:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+  /* Content */
+  .report-content {
+    flex: 1;
+    padding: var(--space-7) var(--space-6) var(--space-8);
+    max-width: 780px;
+  }
+
+  .report-content h1 {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .report-content h2 {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-primary-light);
+  }
+
+  .report-content h3 {
+    font-size: var(--text-h3);
+    font-weight: 600;
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .report-content p {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+  }
+
+  .report-content .lead {
+    font-size: var(--text-body-lg);
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  /* Table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-5) 0;
+    font-size: var(--text-body-sm);
+  }
+
+  .data-table thead th {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  .data-table tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .data-table tbody tr:hover { background: var(--color-surface-alt); }
+  .data-table tbody tr:last-child td { border-bottom: none; }
+
+  /* Quality indicators */
+  .quality-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .quality-bar-track {
+    width: 80px;
+    height: 6px;
+    background: var(--color-border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .quality-bar-fill { height: 100%; border-radius: 3px; }
+
+  .quality-bar-fill.high { background: var(--color-success); width: 92%; }
+  .quality-bar-fill.medium { background: var(--color-warning); width: 75%; }
+  .quality-bar-fill.good { background: #65A30D; width: 85%; }
+
+  .quality-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-caption);
+    font-weight: 500;
+  }
+
+  .quality-pill.high { background: #DCFCE7; color: var(--color-success); }
+  .quality-pill.medium { background: var(--color-accent-light); color: var(--color-warning); }
+
+  /* Limitations card */
+  .limitation-card {
+    background: var(--color-accent-light);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    padding: var(--space-4);
+    margin: var(--space-5) 0;
+  }
+
+  .limitation-card h4 { font-size: var(--text-h4); font-weight: 600; margin-bottom: var(--space-2); }
+  .limitation-card p { font-size: var(--text-body-sm); margin-bottom: 0; }
+
+  .limitation-card.success {
+    background: var(--color-primary-light);
+    border-left-color: var(--color-primary);
+  }
+
+  /* Footer */
+  .report-footer { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); font-size: var(--text-caption); color: var(--color-muted); text-align: center; }
+
+  /* ===== Mobile ===== */
+  @media (max-width: 1023px) {
+    .report-toc { display: none; }
+    .report-content { padding: var(--space-5) var(--space-4) var(--space-7); max-width: 100%; }
+    .report-content h1 { font-size: var(--text-h2); }
+  }
+
+  @media (max-width: 639px) {
+    .navbar { height: 56px; padding: 0 var(--space-4); }
+    .navbar nav { display: none; }
+    .report-layout { padding-top: 56px; }
+    .data-table { font-size: var(--text-caption); }
+    .data-table thead th, .data-table tbody td { padding: 6px 8px; }
+  }
+
+  @media print {
+    .navbar, .report-toc, .toc-actions { display: none; }
+    .report-layout { display: block; padding-top: 0; }
+    .report-content { max-width: 100%; padding: 0; }
+    body { font-size: 11pt; }
+    .report-content h2 { break-after: avoid; }
+    .data-table { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; } }
+  :focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg>
+        AgriMap Togo
+      </a>
+      <nav aria-label="Navigation">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Explorer</a></li>
+          <li><a href="#">Lire l'histoire</a></li>
+          <li><a href="#" class="active">Rapport</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switcher">
+        <button class="active">FR</button>
+        <button>EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== REPORT LAYOUT ===== -->
+  <div class="report-layout">
+
+    <!-- TOC -->
+    <aside class="report-toc" aria-label="Table des matières">
+      <h3>Sommaire</h3>
+      <nav aria-label="Sections du rapport">
+        <button class="toc-item active" onclick="document.getElementById('sec-1').scrollIntoView({behavior:'smooth'})">1. Démarche</button>
+        <button class="toc-item" onclick="document.getElementById('sec-2').scrollIntoView({behavior:'smooth'})">2. Sources de données</button>
+        <button class="toc-item sub" onclick="document.getElementById('sec-2-1').scrollIntoView({behavior:'smooth'})">  — 2.1 Données utilisées</button>
+        <button class="toc-item" onclick="document.getElementById('sec-3').scrollIntoView({behavior:'smooth'})">3. Qualité des données</button>
+        <button class="toc-item sub" onclick="document.getElementById('sec-3-1').scrollIntoView({behavior:'smooth'})">  — 3.1 Complétude</button>
+        <button class="toc-item sub" onclick="document.getElementById('sec-3-2').scrollIntoView({behavior:'smooth'})">  — 3.2 Précision spatiale</button>
+        <button class="toc-item" onclick="document.getElementById('sec-4').scrollIntoView({behavior:'smooth'})">4. Analyses</button>
+        <button class="toc-item sub" onclick="document.getElementById('sec-4-1').scrollIntoView({behavior:'smooth'})">  — 4.1 Densité exploitations</button>
+        <button class="toc-item sub" onclick="document.getElementById('sec-4-2').scrollIntoView({behavior:'smooth'})">  — 4.2 Couverture ZAAP</button>
+        <button class="toc-item" onclick="document.getElementById('sec-5').scrollIntoView({behavior:'smooth'})">5. Limites</button>
+        <button class="toc-item" onclick="document.getElementById('sec-6').scrollIntoView({behavior:'smooth'})">6. Conclusion</button>
+      </nav>
+
+      <div class="toc-actions">
+        <button class="toc-btn download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger le PDF
+        </button>
+        <button class="toc-btn copy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copier le lien
+        </button>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="report-content">
+      <!-- 🇹🇬 ICI : En-tête avec drapeau Togo et badge "Made in Togo" -->
+      <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+        <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--color-primary-light);border-radius:var(--radius-md);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </span>
+        <div>
+          <h1 style="margin-bottom:2px;">Rapport méthodologique</h1>
+          <span style="display:inline-flex;align-items:center;gap:4px;padding:2px 10px;background:#E8F5E9;border:1px solid #006A4E33;border-radius:var(--radius-full);font-size:0.65rem;font-weight:600;color:#006A4E;">🇹🇬 Made in Togo — Données togolaises</span>
+        </div>
+      </div>
+      <!-- 🇹🇬 FIN en-tête Togo Heritage -->
+      <p class="lead">AgriMap Togo — Data Challenge Agriculture, Togo AI Lab. Document détaillant la démarche, les sources, la qualité des données, les analyses et les limites.</p>
+
+      <!-- Section 1 -->
+      <h2 id="sec-1">1. Démarche</h2>
+      <p>Ce tableau de bord a été conçu dans le cadre du <strong>Data Challenge Agriculture (Défi 1)</strong> du Togo AI Lab, qui vise à valoriser les données ouvertes du Togo pour éclairer la décision publique agricole.</p>
+      <p>Notre approche repose sur un <strong>fil rouge unique</strong> : les <em>zones blanches de services agricoles</em> — les territoires où l'agriculture produit mais reste éloignée des marchés, coopératives, ZAAP et pépinières. Plutôt que de simplement cartographier ce qui <em>existe</em>, nous avons choisi de révéler ce qui <em>manque</em> et où.</p>
+      <p>La construction s'est faite en 3 étapes : (1) collecte et nettoyage des 9 familles de données ouvertes, (2) 4 analyses spatiales croisées, (3) synthèse et priorisation des zones d'investissement.</p>
+
+      <!-- Section 2 -->
+      <h2 id="sec-2">2. Sources de données</h2>
+      <p>Les données utilisées proviennent exclusivement des portails open data togolais <a href="https://geodata.gouv.tg" target="_blank">geodata.gouv.tg</a> et <a href="https://opendata.gouv.tg" target="_blank">opendata.gouv.tg</a>, sous licence CC BY 4.0.</p>
+
+      <h3 id="sec-2-1">2.1 Données utilisées</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Famille</th>
+            <th>Source</th>
+            <th>Enregistrements</th>
+            <th>Dernière mise à jour</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Grandes exploitations</td>
+            <td>geodata.gouv.tg</td>
+            <td>1 234</td>
+            <td>2025-12</td>
+          </tr>
+          <tr>
+            <td>Petites exploitations</td>
+            <td>geodata.gouv.tg</td>
+            <td>8 562</td>
+            <td>2025-12</td>
+          </tr>
+          <tr>
+            <td>Plantations</td>
+            <td>geodata.gouv.tg</td>
+            <td>456</td>
+            <td>2025-12</td>
+          </tr>
+          <tr>
+            <td>ZAAP (périmètres)</td>
+            <td>geodata.gouv.tg</td>
+            <td>231</td>
+            <td>2025-11</td>
+          </tr>
+          <tr>
+            <td>ZAAP (champs individuels)</td>
+            <td>geodata.gouv.tg</td>
+            <td>3 124</td>
+            <td>2025-11</td>
+          </tr>
+          <tr>
+            <td>Coopératives</td>
+            <td>opendata.gouv.tg</td>
+            <td>89</td>
+            <td>2025-10</td>
+          </tr>
+          <tr>
+            <td>Marchés</td>
+            <td>geodata.gouv.tg</td>
+            <td>67</td>
+            <td>2025-09</td>
+          </tr>
+          <tr>
+            <td>Pépinières</td>
+            <td>geodata.gouv.tg</td>
+            <td>34</td>
+            <td>2025-09</td>
+          </tr>
+          <tr>
+            <td>Cadrage (régions)</td>
+            <td>geodata.gouv.tg</td>
+            <td>6 régions</td>
+            <td>2024</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Section 3 -->
+      <h2 id="sec-3">3. Qualité des données</h2>
+      <p>La transparence sur la qualité des données est un engagement de ce projet. Tous les taux de complétude et les incertitudes sont documentés ci-dessous.</p>
+
+      <h3 id="sec-3-1">3.1 Complétude</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Jeu de données</th>
+            <th>Complétude</th>
+            <th>Doublons</th>
+            <th>Valeurs manquantes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Grandes exploitations</td>
+            <td><div class="quality-bar"><div class="quality-bar-track"><div class="quality-bar-fill high"></div></div>92%</div></td>
+            <td>12</td>
+            <td>Nom (8%)</td>
+          </tr>
+          <tr>
+            <td>Petites exploitations</td>
+            <td><div class="quality-bar"><div class="quality-bar-track"><div class="quality-bar-fill medium"></div></div>75%</div></td>
+            <td>45</td>
+            <td>Coordonnées (15%)</td>
+          </tr>
+          <tr>
+            <td>ZAAP (périmètres)</td>
+            <td><div class="quality-bar"><div class="quality-bar-track"><div class="quality-bar-fill high"></div></div>98%</div></td>
+            <td>0</td>
+            <td>Surface (2%)</td>
+          </tr>
+          <tr>
+            <td>Coopératives</td>
+            <td><div class="quality-bar"><div class="quality-bar-track"><div class="quality-bar-fill good"></div></div>85%</div></td>
+            <td>3</td>
+            <td>Membre (12%)</td>
+          </tr>
+          <tr>
+            <td>Marchés</td>
+            <td><div class="quality-bar"><div class="quality-bar-track"><div class="quality-bar-fill good"></div></div>88%</div></td>
+            <td>1</td>
+            <td>Type (8%)</td>
+          </tr>
+          <tr>
+            <td>Pépinières</td>
+            <td><div class="quality-bar"><div class="quality-bar-track"><div class="quality-bar-fill medium"></div></div>78%</div></td>
+            <td>2</td>
+            <td>Capacité (22%)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="sec-3-2">3.2 Précision spatiale</h3>
+      <p>La précision des coordonnées géographiques varie selon les jeux de données :</p>
+      <ul style="margin-left:var(--space-5);margin-bottom:var(--space-4);color:var(--color-text-secondary);">
+        <li><strong>Haute précision</strong> (±10m) : grandes exploitations, ZAAP périmètres — issues de relevés officiels</li>
+        <li><strong>Précision moyenne</strong> (±100m) : marchés, coopératives — géocodage semi-automatique</li>
+        <li><strong>Précision faible</strong> (±1km) : petites exploitations — localisation approximative par village</li>
+      </ul>
+      <p>Les analyses d'accessibilité utilisent des buffers de distance qui tiennent compte de cette incertitude (seuils de 5 km, 15 km, 30 km plutôt que des valeurs absolues).</p>
+
+      <!-- Section 4 -->
+      <h2 id="sec-4">4. Analyses</h2>
+
+      <h3 id="sec-4-1">4.1 Densité des exploitations</h3>
+      <p><strong>Méthode :</strong> calcul de la densité (exploitations / km²) par région et par préfecture, à partir du croisement des 3 jeux d'exploitations (grandes, petites, plantations). Normalisation par la surface agricole utile de chaque unité administrative.</p>
+      <p><strong>Résultat :</strong> La densité moyenne nationale est de 4.2 exploitations / km². Les régions des Savanes (5.1/km²) et Centrale (3.8/km²) concentrent les plus fortes densités.</p>
+      <p><strong>Palette :</strong> YlOrBr (ColorBrewer, 5 classes) — du jaune clair (faible) au brun-rouge (fort).</p>
+
+      <h3 id="sec-4-2">4.2 Couverture ZAAP</h3>
+      <p><strong>Méthode :</strong> superposition des bassins de production avec les périmètres ZAAP/ZAPB. Calcul du taux de couverture par région : proportion de la surface productive située dans un rayon de 5 km d'une ZAAP.</p>
+      <p><strong>Résultat :</strong> Seulement 34% des bassins de production sont couverts par une ZAAP. La Région des Savanes est la moins couverte (12%), tandis que la Région Maritime atteint 58%.</p>
+      <p><strong>Palette :</strong> Greens (ColorBrewer, 4 classes) — du jaune-vert clair (non couvert) au vert foncé (couvert).</p>
+
+      <p>[Les sections 4.3 et 4.4 suivent la même structure — volontairement tronquées pour le mockup.]</p>
+
+      <!-- Section 5 -->
+      <h2 id="sec-5">5. Limites</h2>
+      <p>Ce projet assume et documente ses limites — gage de crédibilité et de rigueur scientifique.</p>
+
+      <div class="limitation-card">
+        <h4>⚠ Complétude des données</h4>
+        <p>Les jeux de données, bien qu'officiels, peuvent ne pas être exhaustifs. Certaines petites exploitations ne sont pas recensées, particulièrement dans les zones les plus reculées. Les taux de complétude sont documentés section 3.</p>
+      </div>
+
+      <div class="limitation-card">
+        <h4>⚠ Précision des localisations</h4>
+        <p>Les coordonnées des petites exploitations et coopératives sont parfois approximatives (précision ±1 km). Les analyses d'accessibilité utilisent des seuils larges pour compenser.</p>
+      </div>
+
+      <div class="limitation-card">
+        <h4>⚠ Fraîcheur des données</h4>
+        <p>Les données datent de 2024-2025. La situation sur le terrain peut avoir évolué, notamment pour les ZAAP en cours d'aménagement. Les analyses reflètent un instantané.</p>
+      </div>
+
+      <div class="limitation-card success">
+        <h4>✓ Ce qui a été traité</h4>
+        <p>Doublons détectés et supprimés (63 au total sur l'ensemble des jeux). Champs normalisés (snake_case, types unifiés). CRS unifié en EPSG:4326 pour toutes les données spatiales.</p>
+      </div>
+
+      <!-- Section 6 -->
+      <h2 id="sec-6">6. Conclusion</h2>
+      <p>AgriMap Togo révèle que <strong>66% des bassins de production ne sont pas couverts par une ZAAP</strong>, que <strong>15 préfectures sont à plus d'une heure du marché le plus proche</strong> et que <strong>4 régions ont un maillage coopératif insuffisant</strong>.</p>
+      <p>Trois recommandations géographiques émergent :</p>
+      <ol style="margin-left:var(--space-5);margin-bottom:var(--space-4);color:var(--color-text-secondary);">
+        <li><strong>Région des Savanes :</strong> implanter une ZAAP (forte densité, 12% de couverture seulement)</li>
+        <li><strong>Région Centrale :</strong> développer l'accès aux marchés (62 min en moyenne)</li>
+        <li><strong>Région des Plateaux :</strong> créer un réseau coopératif (0.2 coopérative / 100 km²)</li>
+      </ol>
+      <p>Ces zones blanches ne sont pas un constat d'échec — ce sont des <strong>opportunités d'investissement</strong> où chaque franc dépensé aura l'impact le plus fort.</p>
+
+      <!-- Footer -->
+      <div class="report-footer">
+        <!-- 🇹🇬 ICI : Footer avec badge Togo Heritage -->
+      <p><strong>AgriMap Togo</strong> — Data Challenge Agriculture, Togo AI Lab 2026</p>
+        <p>Données : geodata.gouv.tg / opendata.gouv.tg — CC BY 4.0</p>
+        <p>Rapport généré le 16 juin 2026</p>
+        <p style="margin-top:var(--space-2);"><span style="display:inline-flex;align-items:center;gap:4px;padding:2px 10px;background:#E8F5E9;border:1px solid #006A4E33;border-radius:var(--radius-full);font-weight:600;color:#006A4E;font-size:0.65rem;">🇹🇬 Made in Togo</span></p>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

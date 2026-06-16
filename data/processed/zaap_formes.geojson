@@ -1,0 +1,1811 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.006692,
+              10.683846
+            ],
+            [
+              0.980351,
+              10.70188
+            ],
+            [
+              0.93801,
+              10.716154
+            ],
+            [
+              0.891912,
+              10.690896
+            ],
+            [
+              0.896798,
+              10.644451
+            ],
+            [
+              0.950615,
+              10.639462
+            ],
+            [
+              0.992601,
+              10.61869
+            ],
+            [
+              1.005426,
+              10.656285
+            ],
+            [
+              1.006692,
+              10.683846
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 1,
+        "nom_zaap": "ZAAP Tchaoudjo #1",
+        "type_zaap": "ZAPB",
+        "statut": "Planifié",
+        "superficie_ha": 310.39,
+        "nombre_exploitants": 40,
+        "annee_creation": 2023,
+        "region": "Savanes",
+        "prefecture": "Tône",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.254316,
+              6.741041
+            ],
+            [
+              1.209686,
+              6.706078
+            ],
+            [
+              1.155827,
+              6.675433
+            ],
+            [
+              1.217288,
+              6.648615
+            ],
+            [
+              1.242665,
+              6.597258
+            ],
+            [
+              1.310146,
+              6.614567
+            ],
+            [
+              1.295752,
+              6.668176
+            ],
+            [
+              1.320212,
+              6.720928
+            ],
+            [
+              1.254316,
+              6.741041
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 2,
+        "nom_zaap": "ZAAP Sotouboua #2",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 310.11,
+        "nombre_exploitants": 124,
+        "annee_creation": 2016,
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.556741,
+              8.840719
+            ],
+            [
+              0.509542,
+              8.852817
+            ],
+            [
+              0.4709,
+              8.823966
+            ],
+            [
+              0.488959,
+              8.787904
+            ],
+            [
+              0.492167,
+              8.731597
+            ],
+            [
+              0.555507,
+              8.749929
+            ],
+            [
+              0.611982,
+              8.770534
+            ],
+            [
+              0.619157,
+              8.82513
+            ],
+            [
+              0.556741,
+              8.840719
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 3,
+        "nom_zaap": "ZAAP Kozah #3",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 41.94,
+        "nombre_exploitants": 462,
+        "annee_creation": 2013,
+        "region": "Centrale",
+        "prefecture": "Anié",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.677473,
+              6.719
+            ],
+            [
+              1.650834,
+              6.720689
+            ],
+            [
+              1.631912,
+              6.702941
+            ],
+            [
+              1.622382,
+              6.673057
+            ],
+            [
+              1.658503,
+              6.661707
+            ],
+            [
+              1.693818,
+              6.661521
+            ],
+            [
+              1.717273,
+              6.684852
+            ],
+            [
+              1.699504,
+              6.708914
+            ],
+            [
+              1.677473,
+              6.719
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 4,
+        "nom_zaap": "ZAAP Sotouboua #4",
+        "type_zaap": "ZAPB",
+        "statut": null,
+        "superficie_ha": 100.75,
+        "nombre_exploitants": 427,
+        "annee_creation": 2015,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.089835,
+              7.069141
+            ],
+            [
+              0.125546,
+              7.035206
+            ],
+            [
+              0.165881,
+              7.008962
+            ],
+            [
+              0.194004,
+              7.045211
+            ],
+            [
+              0.239974,
+              7.065488
+            ],
+            [
+              0.194766,
+              7.087314
+            ],
+            [
+              0.16915,
+              7.094976
+            ],
+            [
+              0.140203,
+              7.090951
+            ],
+            [
+              0.089835,
+              7.069141
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 5,
+        "nom_zaap": "ZAAP Wawa #5",
+        "type_zaap": "ZAAP",
+        "statut": "Opérationnel",
+        "superficie_ha": 359.44,
+        "nombre_exploitants": 24,
+        "annee_creation": 2013,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.069988,
+              8.157908
+            ],
+            [
+              1.042157,
+              8.131655
+            ],
+            [
+              1.003489,
+              8.11241
+            ],
+            [
+              1.039218,
+              8.089878
+            ],
+            [
+              1.063521,
+              8.059945
+            ],
+            [
+              1.100195,
+              8.080047
+            ],
+            [
+              1.150842,
+              8.106184
+            ],
+            [
+              1.09459,
+              8.12973
+            ],
+            [
+              1.069988,
+              8.157908
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 6,
+        "nom_zaap": "ZAAP Kloto #6",
+        "type_zaap": "ZAPB",
+        "statut": "Opérationnel",
+        "superficie_ha": 71.37,
+        "nombre_exploitants": 69,
+        "annee_creation": 2018,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.272495,
+              6.444763
+            ],
+            [
+              0.222267,
+              6.415941
+            ],
+            [
+              0.269409,
+              6.387597
+            ],
+            [
+              0.311654,
+              6.386947
+            ],
+            [
+              0.361295,
+              6.391402
+            ],
+            [
+              0.355556,
+              6.431096
+            ],
+            [
+              0.351078,
+              6.474579
+            ],
+            [
+              0.299134,
+              6.457428
+            ],
+            [
+              0.272495,
+              6.444763
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 7,
+        "nom_zaap": "ZAAP Wawa #7",
+        "type_zaap": "ZAAP",
+        "statut": "Opérationnel",
+        "superficie_ha": 214.53,
+        "nombre_exploitants": 213,
+        "annee_creation": 2018,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.150478,
+              6.629111
+            ],
+            [
+              0.125247,
+              6.621327
+            ],
+            [
+              0.10441,
+              6.606294
+            ],
+            [
+              0.125504,
+              6.590826
+            ],
+            [
+              0.136344,
+              6.575438
+            ],
+            [
+              0.153319,
+              6.586882
+            ],
+            [
+              0.165701,
+              6.595965
+            ],
+            [
+              0.175811,
+              6.617065
+            ],
+            [
+              0.150478,
+              6.629111
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 8,
+        "nom_zaap": "ZAAP Amou #8",
+        "type_zaap": "ZAPB",
+        "statut": "En construction",
+        "superficie_ha": 42.35,
+        "nombre_exploitants": 58,
+        "annee_creation": 2020,
+        "region": "Maritime",
+        "prefecture": "Yoto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.083321,
+              10.260599
+            ],
+            [
+              0.026962,
+              10.256159
+            ],
+            [
+              -0.018892,
+              10.23818
+            ],
+            [
+              -0.027201,
+              10.196439
+            ],
+            [
+              0.010069,
+              10.1717
+            ],
+            [
+              0.047225,
+              10.177237
+            ],
+            [
+              0.074937,
+              10.188698
+            ],
+            [
+              0.084636,
+              10.214816
+            ],
+            [
+              0.083321,
+              10.260599
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 9,
+        "nom_zaap": "ZAAP Tône #9",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 382.69,
+        "nombre_exploitants": 91,
+        "annee_creation": 2022,
+        "region": "Kara",
+        "prefecture": "Bassar",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.377789,
+              8.135417
+            ],
+            [
+              1.337426,
+              8.112515
+            ],
+            [
+              1.298471,
+              8.091052
+            ],
+            [
+              1.301582,
+              8.047245
+            ],
+            [
+              1.354139,
+              8.040938
+            ],
+            [
+              1.401251,
+              8.035883
+            ],
+            [
+              1.397713,
+              8.075152
+            ],
+            [
+              1.40155,
+              8.100533
+            ],
+            [
+              1.377789,
+              8.135417
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 10,
+        "nom_zaap": "ZAAP Sotouboua #10",
+        "type_zaap": "ZAPB",
+        "statut": "Opérationnel",
+        "superficie_ha": 190.79,
+        "nombre_exploitants": 212,
+        "annee_creation": 2016,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.060549,
+              8.962909
+            ],
+            [
+              0.078492,
+              8.922876
+            ],
+            [
+              0.092946,
+              8.898545
+            ],
+            [
+              0.131057,
+              8.869628
+            ],
+            [
+              0.176178,
+              8.894833
+            ],
+            [
+              0.194236,
+              8.936962
+            ],
+            [
+              0.151854,
+              8.962582
+            ],
+            [
+              0.113476,
+              8.962086
+            ],
+            [
+              0.060549,
+              8.962909
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 11,
+        "nom_zaap": "ZAAP Zio #11",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 192.76,
+        "nombre_exploitants": 158,
+        "annee_creation": 2011,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.946788,
+              6.623761
+            ],
+            [
+              0.937891,
+              6.653467
+            ],
+            [
+              0.89626,
+              6.657047
+            ],
+            [
+              0.857294,
+              6.637444
+            ],
+            [
+              0.850895,
+              6.597954
+            ],
+            [
+              0.899988,
+              6.592403
+            ],
+            [
+              0.929273,
+              6.578537
+            ],
+            [
+              0.970452,
+              6.592492
+            ],
+            [
+              0.946788,
+              6.623761
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 12,
+        "nom_zaap": "ZAAP Kloto #12",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 270.13,
+        "nombre_exploitants": 370,
+        "annee_creation": 2016,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.79485,
+              6.108983
+            ],
+            [
+              0.761861,
+              6.105688
+            ],
+            [
+              0.757067,
+              6.08078
+            ],
+            [
+              0.75605,
+              6.060087
+            ],
+            [
+              0.778928,
+              6.047786
+            ],
+            [
+              0.813417,
+              6.042758
+            ],
+            [
+              0.833669,
+              6.068024
+            ],
+            [
+              0.814753,
+              6.090867
+            ],
+            [
+              0.79485,
+              6.108983
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 13,
+        "nom_zaap": "ZAAP Haho #13",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 23.25,
+        "nombre_exploitants": 222,
+        "annee_creation": 2015,
+        "region": "Maritime",
+        "prefecture": "Vo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.343717,
+              10.082027
+            ],
+            [
+              0.370666,
+              10.051228
+            ],
+            [
+              0.384678,
+              10.031323
+            ],
+            [
+              0.422968,
+              10.01259
+            ],
+            [
+              0.433649,
+              10.048036
+            ],
+            [
+              0.438933,
+              10.070795
+            ],
+            [
+              0.428916,
+              10.106231
+            ],
+            [
+              0.380129,
+              10.108246
+            ],
+            [
+              0.343717,
+              10.082027
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 14,
+        "nom_zaap": "ZAAP Tchaoudjo #14",
+        "type_zaap": "ZAPB",
+        "statut": "Planifié",
+        "superficie_ha": 395.35,
+        "nombre_exploitants": 186,
+        "annee_creation": 2016,
+        "region": "Kara",
+        "prefecture": "Doufelgou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.121963,
+              9.772457
+            ],
+            [
+              0.086644,
+              9.754642
+            ],
+            [
+              0.087181,
+              9.721204
+            ],
+            [
+              0.104495,
+              9.685407
+            ],
+            [
+              0.150414,
+              9.696113
+            ],
+            [
+              0.187617,
+              9.710967
+            ],
+            [
+              0.1819,
+              9.743795
+            ],
+            [
+              0.156336,
+              9.762111
+            ],
+            [
+              0.121963,
+              9.772457
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 15,
+        "nom_zaap": "ZAAP Kloto #15",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 343.03,
+        "nombre_exploitants": 91,
+        "annee_creation": 2020,
+        "region": "Kara",
+        "prefecture": "Doufelgou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.315756,
+              6.963037
+            ],
+            [
+              1.262981,
+              6.989022
+            ],
+            [
+              1.217131,
+              6.991997
+            ],
+            [
+              1.176638,
+              6.973477
+            ],
+            [
+              1.148635,
+              6.931399
+            ],
+            [
+              1.192346,
+              6.89748
+            ],
+            [
+              1.245471,
+              6.896188
+            ],
+            [
+              1.29648,
+              6.914296
+            ],
+            [
+              1.315756,
+              6.963037
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 16,
+        "nom_zaap": "ZAAP Kozah #16",
+        "type_zaap": "ZAAP",
+        "statut": "Opérationnel",
+        "superficie_ha": 389.1,
+        "nombre_exploitants": 356,
+        "annee_creation": 2020,
+        "region": "Maritime",
+        "prefecture": "Zio",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.889395,
+              6.833704
+            ],
+            [
+              0.876712,
+              6.787415
+            ],
+            [
+              0.859268,
+              6.747345
+            ],
+            [
+              0.913208,
+              6.742554
+            ],
+            [
+              0.944753,
+              6.744544
+            ],
+            [
+              0.971131,
+              6.762015
+            ],
+            [
+              0.991469,
+              6.799877
+            ],
+            [
+              0.946663,
+              6.822147
+            ],
+            [
+              0.889395,
+              6.833704
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 17,
+        "nom_zaap": "ZAAP Kloto #17",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 199.58,
+        "nombre_exploitants": 257,
+        "annee_creation": 2022,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.145799,
+              7.750832
+            ],
+            [
+              0.134046,
+              7.727901
+            ],
+            [
+              0.164607,
+              7.731064
+            ],
+            [
+              0.183652,
+              7.732057
+            ],
+            [
+              0.197174,
+              7.745867
+            ],
+            [
+              0.186088,
+              7.760559
+            ],
+            [
+              0.170974,
+              7.773219
+            ],
+            [
+              0.148373,
+              7.768038
+            ],
+            [
+              0.145799,
+              7.750832
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": null,
+        "nom_zaap": "ZAAP Sotouboua #18",
+        "type_zaap": "ZAPB",
+        "statut": "En construction",
+        "superficie_ha": 52.24,
+        "nombre_exploitants": 42,
+        "annee_creation": 2022,
+        "region": "Plateaux",
+        "prefecture": "Akébou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.183346,
+              6.852264
+            ],
+            [
+              1.111256,
+              6.857
+            ],
+            [
+              1.069484,
+              6.849849
+            ],
+            [
+              1.04508,
+              6.823787
+            ],
+            [
+              1.02991,
+              6.782579
+            ],
+            [
+              1.069614,
+              6.73619
+            ],
+            [
+              1.124039,
+              6.77297
+            ],
+            [
+              1.160486,
+              6.798328
+            ],
+            [
+              1.183346,
+              6.852264
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 19,
+        "nom_zaap": "ZAAP Mono #19",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 335.51,
+        "nombre_exploitants": 222,
+        "annee_creation": 2010,
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.045521,
+              7.423378
+            ],
+            [
+              0.001458,
+              7.437365
+            ],
+            [
+              -0.034817,
+              7.414683
+            ],
+            [
+              -0.056439,
+              7.382093
+            ],
+            [
+              -0.026873,
+              7.354106
+            ],
+            [
+              0.011206,
+              7.350018
+            ],
+            [
+              0.037042,
+              7.366619
+            ],
+            [
+              0.042559,
+              7.389164
+            ],
+            [
+              0.045521,
+              7.423378
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 20,
+        "nom_zaap": "ZAAP Wawa #20",
+        "type_zaap": "ZAPB",
+        "statut": "Planifié",
+        "superficie_ha": 483.64,
+        "nombre_exploitants": 180,
+        "annee_creation": 2019,
+        "region": "Plateaux",
+        "prefecture": "Moyen-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.460335,
+              9.323682
+            ],
+            [
+              0.423879,
+              9.290661
+            ],
+            [
+              0.440703,
+              9.253938
+            ],
+            [
+              0.460873,
+              9.220883
+            ],
+            [
+              0.501378,
+              9.238701
+            ],
+            [
+              0.525473,
+              9.254688
+            ],
+            [
+              0.525531,
+              9.280158
+            ],
+            [
+              0.507375,
+              9.304935
+            ],
+            [
+              0.460335,
+              9.323682
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 21,
+        "nom_zaap": "ZAAP Mono #21",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 87.85,
+        "nombre_exploitants": 218,
+        "annee_creation": 2016,
+        "region": "Centrale",
+        "prefecture": "Mô",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.14016,
+              6.79866
+            ],
+            [
+              0.103736,
+              6.77234
+            ],
+            [
+              0.129353,
+              6.739148
+            ],
+            [
+              0.162884,
+              6.724194
+            ],
+            [
+              0.191509,
+              6.739594
+            ],
+            [
+              0.212737,
+              6.756678
+            ],
+            [
+              0.210304,
+              6.784188
+            ],
+            [
+              0.177097,
+              6.7875
+            ],
+            [
+              0.14016,
+              6.79866
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 22,
+        "nom_zaap": "ZAAP Kozah #22",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 85.54,
+        "nombre_exploitants": 437,
+        "annee_creation": 2016,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.185921,
+              7.821983
+            ],
+            [
+              1.15358,
+              7.851124
+            ],
+            [
+              1.114969,
+              7.828265
+            ],
+            [
+              1.103197,
+              7.805961
+            ],
+            [
+              1.0994,
+              7.78185
+            ],
+            [
+              1.124569,
+              7.763866
+            ],
+            [
+              1.169758,
+              7.75267
+            ],
+            [
+              1.191751,
+              7.787119
+            ],
+            [
+              1.185921,
+              7.821983
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": null,
+        "nom_zaap": "ZAAP Sotouboua #23",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 74.82,
+        "nombre_exploitants": 416,
+        "annee_creation": 2018,
+        "region": "Plateaux",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.265334,
+              7.826802
+            ],
+            [
+              1.223964,
+              7.858663
+            ],
+            [
+              1.167718,
+              7.841595
+            ],
+            [
+              1.162134,
+              7.798733
+            ],
+            [
+              1.147806,
+              7.749743
+            ],
+            [
+              1.211818,
+              7.760663
+            ],
+            [
+              1.25085,
+              7.76045
+            ],
+            [
+              1.303076,
+              7.787554
+            ],
+            [
+              1.265334,
+              7.826802
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 24,
+        "nom_zaap": "ZAAP Haho #24",
+        "type_zaap": "ZAPB",
+        "statut": "Opérationnel",
+        "superficie_ha": 392.3,
+        "nombre_exploitants": 141,
+        "annee_creation": 2013,
+        "region": "Plateaux",
+        "prefecture": "Akébou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.024376,
+              8.962631
+            ],
+            [
+              1.004546,
+              8.977249
+            ],
+            [
+              0.97693,
+              8.974398
+            ],
+            [
+              0.965346,
+              8.95558
+            ],
+            [
+              0.95876,
+              8.932475
+            ],
+            [
+              0.984827,
+              8.918877
+            ],
+            [
+              1.019467,
+              8.915162
+            ],
+            [
+              1.034468,
+              8.940635
+            ],
+            [
+              1.024376,
+              8.962631
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 25,
+        "nom_zaap": "ZAAP Kloto #25",
+        "type_zaap": "ZAAP",
+        "statut": "En construction",
+        "superficie_ha": 294.91,
+        "nombre_exploitants": 459,
+        "annee_creation": 2018,
+        "region": "Centrale",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.929818,
+              9.539553
+            ],
+            [
+              0.923441,
+              9.562404
+            ],
+            [
+              0.892205,
+              9.568649
+            ],
+            [
+              0.878665,
+              9.546792
+            ],
+            [
+              0.874198,
+              9.531168
+            ],
+            [
+              0.882324,
+              9.514235
+            ],
+            [
+              0.905548,
+              9.512
+            ],
+            [
+              0.938834,
+              9.513921
+            ],
+            [
+              0.929818,
+              9.539553
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 26,
+        "nom_zaap": "ZAAP Tône #26",
+        "type_zaap": "ZAPB",
+        "statut": "Opérationnel",
+        "superficie_ha": 297.16,
+        "nombre_exploitants": 157,
+        "annee_creation": 2020,
+        "region": "Kara",
+        "prefecture": "Kéran",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.283535,
+              8.414914
+            ],
+            [
+              1.253325,
+              8.41169
+            ],
+            [
+              1.229419,
+              8.394562
+            ],
+            [
+              1.242488,
+              8.371962
+            ],
+            [
+              1.261306,
+              8.358467
+            ],
+            [
+              1.287984,
+              8.358456
+            ],
+            [
+              1.31308,
+              8.373476
+            ],
+            [
+              1.309634,
+              8.399941
+            ],
+            [
+              1.283535,
+              8.414914
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 27,
+        "nom_zaap": "ZAAP Haho #27",
+        "type_zaap": "ZAPB",
+        "statut": "Planifié",
+        "superficie_ha": 338.79,
+        "nombre_exploitants": 203,
+        "annee_creation": 2023,
+        "region": "Plateaux",
+        "prefecture": "Haho",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.162465,
+              10.106551
+            ],
+            [
+              1.133075,
+              10.09602
+            ],
+            [
+              1.109987,
+              10.07299
+            ],
+            [
+              1.136495,
+              10.052755
+            ],
+            [
+              1.160692,
+              10.021149
+            ],
+            [
+              1.204438,
+              10.037002
+            ],
+            [
+              1.227361,
+              10.07143
+            ],
+            [
+              1.205132,
+              10.105871
+            ],
+            [
+              1.162465,
+              10.106551
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 28,
+        "nom_zaap": "ZAAP Zio #28",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 396.27,
+        "nombre_exploitants": 255,
+        "annee_creation": 2010,
+        "region": "Kara",
+        "prefecture": "Kozah",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.414073,
+              11.231464
+            ],
+            [
+              0.375506,
+              11.224338
+            ],
+            [
+              0.353952,
+              11.199109
+            ],
+            [
+              0.375125,
+              11.176684
+            ],
+            [
+              0.391094,
+              11.151814
+            ],
+            [
+              0.428307,
+              11.156749
+            ],
+            [
+              0.427085,
+              11.185606
+            ],
+            [
+              0.430721,
+              11.20448
+            ],
+            [
+              0.414073,
+              11.231464
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 29,
+        "nom_zaap": "ZAAP Haho #29",
+        "type_zaap": "ZAAP",
+        "statut": "Planifié",
+        "superficie_ha": 453.82,
+        "nombre_exploitants": 104,
+        "annee_creation": 2010,
+        "region": "Savanes",
+        "prefecture": "Tandjouaré",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.100326,
+              8.653981
+            ],
+            [
+              1.081773,
+              8.679743
+            ],
+            [
+              1.044915,
+              8.677545
+            ],
+            [
+              0.994743,
+              8.671125
+            ],
+            [
+              0.992739,
+              8.628623
+            ],
+            [
+              1.026998,
+              8.599318
+            ],
+            [
+              1.068688,
+              8.612991
+            ],
+            [
+              1.108258,
+              8.621645
+            ],
+            [
+              1.100326,
+              8.653981
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_zaap": 30,
+        "nom_zaap": "ZAAP Haho #30",
+        "type_zaap": "ZAPB",
+        "statut": "Planifié",
+        "superficie_ha": 83.44,
+        "nombre_exploitants": 56,
+        "annee_creation": 2013,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-06-16T11:34:36.509048+00:00",
+    "generator": "AgriMap Togo ETL Pipeline (M1)",
+    "crs": "EPSG:4326",
+    "count": 30
+  }
+}

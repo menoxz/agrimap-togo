@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AgriMap Togo — Accueil (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* ===== DESIGN TOKENS (DESIGN.md) ===== */
+  :root {
+    --color-primary: #1B5E20;
+    --color-primary-hover: #2E7D32;
+    --color-primary-light: #E8F5E9;
+    --color-secondary: #1565C0;
+    --color-secondary-light: #E3F2FD;
+    --color-accent: #E65100;
+    --color-accent-light: #FFF3E0;
+    --color-bg: #FAFAF5;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #F5F5F0;
+    --color-text: #1E293B;
+    --color-text-secondary: #475569;
+    --color-muted: #94A3B8;
+    --color-border: #E2E8F0;
+    --color-success: #166534;
+    --color-warning: #9A3412;
+    --color-error: #991B1B;
+    --color-info: #1E40AF;
+
+    /* 🇹🇬 Togo Heritage — Branding national */
+    --togo-green: #006A4E;
+    --togo-yellow: #FFD100;
+    --togo-red: #D21034;
+    --togo-white: #FFFFFF;
+    --togo-green-light: #E8F5E9;
+    --togo-green-dark: #004D3A;
+    --togo-yellow-light: #FFF8E1;
+    --togo-yellow-dark: #C7A700;
+    --togo-red-light: #FFEBEE;
+    --togo-red-dark: #A00D29;
+
+    --text-caption: 0.75rem;
+    --text-body-sm: 0.875rem;
+    --text-body: 1rem;
+    --text-body-lg: 1.125rem;
+    --text-label: 0.875rem;
+    --text-h4: 1.125rem;
+    --text-h3: 1.25rem;
+    --text-h2: 1.5rem;
+    --text-h1: 2rem;
+    --text-hero: 2.5rem;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 1px 2px rgba(30,41,59,0.08);
+    --shadow-md: 0 4px 6px rgba(30,41,59,0.07);
+    --shadow-lg: 0 10px 15px rgba(30,41,59,0.1);
+  }
+
+  /* ===== RESET ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 64px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-6);
+  }
+
+  .navbar-inner {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    font-size: var(--text-h3);
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .navbar-logo svg { width: 28px; height: 28px; }
+
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    list-style: none;
+  }
+
+  .navbar-links a {
+    text-decoration: none;
+    font-size: var(--text-body-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: color 0.15s;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+  }
+
+  .navbar-links a:hover { color: var(--color-primary); background: var(--color-primary-light); }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .lang-switcher {
+    display: flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    font-size: var(--text-body-sm);
+    font-weight: 600;
+  }
+
+  .lang-switcher button {
+    padding: 6px 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-weight: 600;
+    font-size: var(--text-body-sm);
+    background: transparent;
+    color: var(--color-text-secondary);
+  }
+
+  .lang-switcher button.active {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .lang-switcher button:not(.active):hover {
+    background: var(--color-primary-light);
+  }
+
+  .btn-ghost-icon {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-body-sm);
+    color: var(--color-text-secondary);
+    transition: all 0.15s;
+  }
+
+  .btn-ghost-icon:hover { background: var(--color-surface-alt); }
+
+  .mobile-menu-btn { display: none; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px var(--space-4) var(--space-7);
+  }
+
+  .hero-content { max-width: 720px; }
+
+  .hero-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-5);
+  }
+
+  .hero-icon svg { width: 40px; height: 40px; color: var(--color-primary); }
+
+  .hero h1 {
+    font-size: var(--text-hero);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero h1 em { color: var(--color-primary); font-style: normal; }
+
+  .hero-subtitle {
+    font-size: var(--text-body-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-filled {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--text-body);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    min-height: 44px;
+  }
+
+  .btn-filled.primary { background: var(--color-primary); color: white; }
+  .btn-filled.primary:hover { background: var(--color-primary-hover); }
+  .btn-filled.primary:active { filter: brightness(0.95); transform: scale(0.98); }
+
+  .btn-filled.accent { background: var(--color-accent); color: white; }
+  .btn-filled.accent:hover { background: #BF360C; }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--text-body);
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    min-height: 44px;
+  }
+
+  .btn-outline:hover { background: var(--color-primary-light); }
+  .btn-outline:active { transform: scale(0.98); }
+
+  .hero-link {
+    display: inline-block;
+    margin-top: var(--space-4);
+    color: var(--color-text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: var(--text-body-sm);
+  }
+
+  .hero-link:hover { color: var(--color-primary); }
+
+  /* ===== STATS BANNER ===== */
+  .stats-banner {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-7) var(--space-4);
+  }
+
+  .stats-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    text-align: center;
+  }
+
+  .stat-item {}
+
+  .stat-number {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  .stat-label {
+    font-size: var(--text-body-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  /* ===== WHY SECTION ===== */
+  .why-section {
+    padding: var(--space-8) var(--space-4);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .why-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+  }
+
+  .why-card:hover { box-shadow: var(--shadow-md); }
+
+  .why-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .why-card-icon svg { width: 24px; height: 24px; }
+
+  .why-card-icon.problem { background: #FEE2E2; }
+  .why-card-icon.problem svg { color: var(--color-error); }
+  .why-card-icon.solution { background: var(--color-primary-light); }
+  .why-card-icon.solution svg { color: var(--color-primary); }
+  .why-card-icon.impact { background: var(--color-accent-light); }
+  .why-card-icon.impact svg { color: var(--color-accent); }
+
+  .why-card h3 {
+    font-size: var(--text-h4);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .why-card p {
+    font-size: var(--text-body-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer p, .footer a {
+    font-size: var(--text-caption);
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .footer a:hover { color: var(--color-primary); text-decoration: underline; }
+
+  .footer-divider {
+    margin: var(--space-4) auto;
+    width: 60px;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 639px) {
+    .navbar { padding: 0 var(--space-4); height: 56px; }
+    .navbar-links { display: none; }
+    .mobile-menu-btn { display: flex; }
+
+    .hero { padding-top: 72px; }
+    .hero h1 { font-size: var(--text-h1); }
+    .hero-subtitle { font-size: var(--text-body); }
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn-filled, .hero-actions .btn-outline { width: 100%; justify-content: center; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+
+    .why-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (min-width: 640px) and (max-width: 1024px) {
+    .hero h1 { font-size: 2rem; }
+    .stats-grid { gap: var(--space-4); }
+  }
+
+  /* ===== FOCUS VISIBLE ===== */
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  /* ===== REDUCED MOTION ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo" aria-label="AgriMap Togo — Accueil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg>
+        AgriMap Togo
+      </a>
+
+      <ul class="navbar-links">
+        <li><a href="#" aria-current="page">Accueil</a></li>
+        <li><a href="#">Explorer</a></li>
+        <li><a href="#">Lire l'histoire</a></li>
+        <li><a href="#">Rapport</a></li>
+      </ul>
+
+      <div class="navbar-right">
+        <div class="lang-switcher" role="radiogroup" aria-label="Sélection de langue">
+          <button role="radio" aria-checked="true" class="active" aria-label="Français">FR</button>
+          <button role="radio" aria-checked="false" aria-label="English">EN</button>
+        </div>
+
+        <button class="btn-ghost-icon" aria-label="Voir sur GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </button>
+
+        <button class="mobile-menu-btn btn-ghost-icon" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- 🇹🇬 ICI : Silhouette Togo en filigrane (vert Togo #006A4E, opacité 5-10%) en arrière-plan du Hero -->
+      <div class="hero-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg>
+      </div>
+
+      <h1>
+        <em>Produire</em> ne suffit pas :<br />
+        il faut <em>être relié</em>.
+      </h1>
+
+      <p class="hero-subtitle">
+        La carte qui révèle les zones blanches de services agricoles du Togo&nbsp;—&nbsp;là où l'agriculture produit mais reste éloignée des marchés, coopératives et zones aménagées.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn-filled accent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Explorer les zones blanches
+        </a>
+        <a href="#" class="btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Suivre l'histoire (4 actes)
+        </a>
+      </div>
+
+      <!-- 🇹🇬 ICI : Badge "Made in Togo" avec icône Flag + vert Togo, positionné sous le CTA -->
+      <div style="margin-top:var(--space-5);display:flex;align-items:center;justify-content:center;gap:var(--space-2);font-size:var(--text-caption);color:var(--color-text-secondary);">
+        <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 12px;background:#E8F5E9;border:1px solid #006A4E33;border-radius:var(--radius-full);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#006A4E" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          <span style="color:#006A4E;font-weight:600;">Made in Togo</span>
+          <span style="color:var(--color-muted);">— Données togolaises</span>
+        </span>
+      </div>
+      <!-- 🇹🇬 FIN badge Made in Togo -->
+
+      <a href="#" class="hero-link">+ Lire le rapport méthodologique</a>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-banner" aria-label="Chiffres clés">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Analyses clés<br />(densité, ZAAP, accessibilité, coopératives)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Régions agricoles<br />cartographiées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">22</div>
+        <div class="stat-label">Zones prioritaires<br />identifiées</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ===== -->
+  <section class="why-section" aria-label="Pourquoi ce tableau de bord">
+    <div class="why-grid">
+      <article class="why-card">
+        <div class="why-card-icon problem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>Le problème</h3>
+        <p>9 familles de données agricoles éparpillées, sans vue d'ensemble. Personne ne voit les vides — les zones où la production existe sans l'écosystème de services.</p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-card-icon solution">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>La solution</h3>
+        <p>Une carte interactive qui croise production et services, révèle les zones blanches et répond à une question : <em>où concentrer le prochain investissement ?</em></p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-card-icon impact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>L'impact</h3>
+        <p>Un outil pour les décideurs publics, les partenaires financiers et les acteurs du terrain — afin de cibler les aménagements là où ils créeront le plus de valeur.</p>
+        <!-- 🇹🇬 ICI : Photo paysage agricole togolais libre de droit en fond de section (optionnel) -->
+        <p style="font-size:var(--text-caption);color:var(--color-muted);margin-top:var(--space-3);">🇹🇬 Données togolaises, pour le Togo</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <!-- 🇹🇬 ICI : Footer avec badge "Made in Togo" et silhouette Togo en fond -->
+      <p><strong>AgriMap Togo</strong> — Data Challenge Agriculture, Togo AI Lab 2026</p>
+      <div class="footer-divider"></div>
+      <p style="display:flex;align-items:center;justify-content:center;gap:var(--space-2);">
+        <span style="padding:2px 10px;background:#E8F5E9;border:1px solid #006A4E33;border-radius:var(--radius-full);font-weight:600;color:#006A4E;font-size:0.65rem;">🇹🇬 Made in Togo</span>
+        <span>Sources : <a href="https://geodata.gouv.tg" target="_blank" rel="noopener">geodata.gouv.tg</a>,
+        <a href="https://opendata.gouv.tg" target="_blank" rel="noopener">opendata.gouv.tg</a> — CC BY 4.0</span>
+      </p>
+      <p style="margin-top: 4px;">
+        <a href="#">Mentions légales</a> · <a href="#">Accessibilité</a> · <a href="#">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

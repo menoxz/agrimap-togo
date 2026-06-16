@@ -1,0 +1,56 @@
+{
+  "story": {
+    "hero": {
+      "title": "Producing is not enough: you need to be connected.",
+      "subtitle": "In Togo, thousands of farms remain disconnected from markets, services, and cooperative networks. Explore investment opportunities in agricultural service white zones.",
+      "cta": "Start the story",
+      "explore": "Explore freely"
+    },
+    "act1": {
+      "title": "Where is production happening?",
+      "subtitle": "Agricultural production basins",
+      "body": "Togo has thousands of farms spread across the country. The Centrale and Kara regions concentrate a significant share of production, while Plateaux and Maritime show strong potential. This density map reveals the production basins where agricultural activity is most intense.",
+      "key_finding": "Centrale and Kara regions concentrate 45% of Togo's farms",
+      "question": "Do these production areas have access to essential services?"
+    },
+    "act2": {
+      "title": "Is it developed?",
+      "subtitle": "Coverage of Planned Agricultural Development Zones (ZAAP)",
+      "body": "ZAAPs are designed to structure and support agricultural production with adapted infrastructure. Yet many production basins are not covered by a ZAAP within a 5 km radius. These uncovered areas represent major investment opportunities for network expansion.",
+      "key_finding": "Major production basins are not covered by any ZAAP",
+      "question": "How can we connect these isolated areas to markets?"
+    },
+    "act3": {
+      "title": "Is it accessible?",
+      "subtitle": "Access to markets and nurseries",
+      "body": "Proximity to markets and nurseries is crucial for farm commercialization and supply. Production areas more than 10 km from a market or 15 km from a nursery are considered underserved, limiting their economic development.",
+      "key_finding": "Several production areas are more than 10 km from a market",
+      "question": "Are producers organized to access services together?"
+    },
+    "act4": {
+      "title": "Is it organized?",
+      "subtitle": "The cooperative network",
+      "body": "Agricultural cooperatives allow small producers to pool resources, access inputs, and negotiate collectively. Production areas without a cooperative within 10 km are 'organizational white zones' where cooperative potential remains to be developed.",
+      "key_finding": "Organizational white zones persist in high-potential regions",
+      "question": "Where to invest first for maximum impact?"
+    },
+    "synthesis": {
+      "title": "Where to invest?",
+      "subtitle": "Synthesis and priority recommendations",
+      "body": "The weighted overlay of 4 analyses — density, ZAAP coverage, accessibility, and cooperative network — reveals where investment will have the greatest impact. Composite scores identify priority regions for each type of intervention.",
+      "rec_1_title": "Expand the ZAAP network in Centrale region",
+      "rec_1_description": "Major production basin with insufficient ZAAP coverage. Priority: extend ZAAPs to cover undeveloped high-density areas.",
+      "rec_1_priority": "High",
+      "rec_1_region": "Centrale",
+      "rec_2_title": "Create market access hubs in Kara region",
+      "rec_2_description": "High-density agricultural areas far from markets. Solution: mobile rural markets or collection hubs to be created.",
+      "rec_2_priority": "High",
+      "rec_2_region": "Kara",
+      "rec_3_title": "Support cooperative networks in Plateaux region",
+      "rec_3_description": "High agricultural potential region with few cooperatives. Invest in cooperative organization and shared infrastructure.",
+      "rec_3_priority": "Medium",
+      "rec_3_region": "Plateaux"
+    },
+    "share_message": "Discover agricultural service white zones in Togo — Where to invest first?"
+  }
+}

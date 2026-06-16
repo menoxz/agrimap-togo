@@ -1,0 +1,114 @@
+{
+  "analysis": "Accessibilité aux marchés et pépinières",
+  "analysis_en": "Accessibility to markets and nurseries",
+  "method": "Création de buffers autour des marchés (10 km) et pépinières (15 km). Identification des exploitations situées hors de ces buffers = 'mal desservies'. Calcul d'un score d'accessibilité par région (0-100) basé sur le pourcentage d'exploitations mal desservies. Classification en 5 classes avec palette ColorBrewer BuPu.",
+  "method_en": "Creation of buffers around markets (10 km) and nurseries (15 km). Identification of farms located outside these buffers = 'underserved'. Calculation of an accessibility score per region (0-100) based on the percentage of underserved farms. Classification into 5 classes with ColorBrewer BuPu palette.",
+  "parameters": {
+    "market_buffer_km": 10,
+    "nursery_buffer_km": 15,
+    "crs_analysis": "EPSG:32631",
+    "n_markets": 50,
+    "n_nurseries": 40,
+    "n_farms": 185
+  },
+  "inputs": [
+    "marches",
+    "pepinieres",
+    "grandes_exploitations",
+    "petites_exploitations",
+    "plantations",
+    "regions"
+  ],
+  "output_fields": {
+    "accessibility_score": "Score d'accessibilité (0-100, 100 = parfait)",
+    "accessibility_class": "Classe d'accessibilité (1-5)",
+    "unserved_pct": "Pourcentage d'exploitations mal desservies",
+    "color": "Couleur hexadécimale (palette BuPu)"
+  },
+  "palette": {
+    "name": "BuPu",
+    "type": "Séquentielle",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "class": 1,
+        "color": "#E0ECF4",
+        "label": "Très bien desservi",
+        "label_en": "Very well served"
+      },
+      {
+        "class": 2,
+        "color": "#BFD3E6",
+        "label": "Bien desservi",
+        "label_en": "Well served"
+      },
+      {
+        "class": 3,
+        "color": "#9EBCDA",
+        "label": "Desserte moyenne",
+        "label_en": "Moderate service"
+      },
+      {
+        "class": 4,
+        "color": "#8C6BB1",
+        "label": "Mal desservi - Opportunité",
+        "label_en": "Underserved - Opportunity"
+      },
+      {
+        "class": 5,
+        "color": "#88419D",
+        "label": "Très mal desservi - Prioritaire",
+        "label_en": "Severely underserved - Priority"
+      }
+    ]
+  },
+  "statistics": {
+    "n_markets": 50,
+    "n_nurseries": 40,
+    "n_farms": 185,
+    "region_stats": [
+      {
+        "nom_region": "Maritime",
+        "total_exploitations": 10,
+        "served": 3,
+        "unserved": 7,
+        "unserved_pct": 70.0,
+        "avg_distance_km": 0
+      },
+      {
+        "nom_region": "Plateaux",
+        "total_exploitations": 44,
+        "served": 14,
+        "unserved": 30,
+        "unserved_pct": 68.2,
+        "avg_distance_km": 0
+      },
+      {
+        "nom_region": "Centrale",
+        "total_exploitations": 28,
+        "served": 18,
+        "unserved": 10,
+        "unserved_pct": 35.7,
+        "avg_distance_km": 0
+      },
+      {
+        "nom_region": "Kara",
+        "total_exploitations": 25,
+        "served": 11,
+        "unserved": 14,
+        "unserved_pct": 56.0,
+        "avg_distance_km": 0
+      },
+      {
+        "nom_region": "Savanes",
+        "total_exploitations": 9,
+        "served": 3,
+        "unserved": 6,
+        "unserved_pct": 66.7,
+        "avg_distance_km": 0
+      }
+    ]
+  },
+  "interpretation_note": "Les régions avec un score d'accessibilité faible (< 40) représentent des opportunités prioritaires pour l'implantation de nouveaux marchés et pépinières agricoles, afin de réduire les distances d'accès aux intrants et aux débouchés commerciaux.",
+  "interpretation_note_en": "Regions with low accessibility scores (< 40) represent priority opportunities for establishing new markets and agricultural nurseries, reducing travel distances to inputs and market outlets."
+}

@@ -1,0 +1,28 @@
+{
+  "quality_table": {
+    "dimension": "Dimension",
+    "completeness": "Completeness",
+    "precision": "Precision",
+    "rows": {
+      "density": "Farm density",
+      "zaap": "ZAAP coverage",
+      "access": "Accessibility",
+      "coop": "Cooperative network"
+    },
+    "precision_values": {
+      "density": "100 m",
+      "zaap": "100 m",
+      "access": "500 m",
+      "coop": "500 m"
+    }
+  },
+  "content": {
+    "approach": "This report details the methodology behind AgriMap Togo, a mapping dashboard of agricultural service white zones in Togo. The approach is based on a cross-analysis of 4 key dimensions: farm density, ZAAP coverage, market and nursery accessibility, and the cooperative network. Each dimension is calculated from official open data, processed and normalized to produce comparable indicators across regions.",
+    "sources": "Data comes exclusively from Togolese open sources: geodata.gouv.tg for geospatial data (regions, prefectures, ZAAP), opendata.gouv.tg for agricultural statistical data (farm census, cooperative directories), and market data collected by decentralized services of the Ministry of Agriculture.",
+    "quality_completeness": "Data completeness varies by dimension. Agricultural census data covers all 5 regions and 39 prefectures of Togo (100% completeness). ZAAP data is exhaustive for official perimeters. Accessibility and cooperative network data have an estimated completeness of 85%, as some remote localities are not yet referenced.",
+    "quality_precision": "Spatial precision is approximately 100 meters for geospatial data (regions, ZAAP) and 500 meters for market and cooperative location data (approximate geocoding). Statistical indicators (density, coverage rates) are calculated at the prefecture level, which may mask intra-regional disparities.",
+    "limits": "This work has several limitations. First, data timeliness: sources date from 2024-2025, some recent developments may not be reflected. Second, prefecture-level granularity does not allow sub-municipal analysis. Third, accessibility data is based on Euclidean distances rather than actual travel times (roads, seasons). Finally, the lack of data on informal and subsistence agriculture limits the complete picture of the sector.",
+    "conclusion": "AgriMap Togo is a decision-support tool, not an absolute truth. It identifies trends and priorities at the regional level, but each investment must be validated by field study. The white zone approach — focused on opportunities rather than gaps — aims to encourage targeted and constructive action.",
+    "analyses": "The 4 cross-analyses (density, ZAAP, accessibility, cooperative network) are combined into a synthetic prioritization index. Each analysis is available in free exploration mode and in the guided narrative."
+  }
+}

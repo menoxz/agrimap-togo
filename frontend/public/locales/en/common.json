@@ -1,0 +1,183 @@
+{
+  "site": {
+    "title": "AgriMap Togo",
+    "tagline": "Agricultural Service White Zones",
+    "description": "The map that connects Togolese agricultural production to its services."
+  },
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "story": "Story",
+    "report": "Report",
+    "github": "GitHub",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "headline": "Producing is not enough:\nyou need to be connected",
+      "subtitle": "The map that connects Togolese agricultural production to its services.",
+      "cta_explore": "Explore white zones",
+      "cta_story": "Follow the story",
+      "cta_report": "Read the report",
+      "stat_zones_label": "22 priority zones identified",
+      "scroll": "Discover"
+    },
+    "stats": {
+      "title": "White zones by the numbers",
+      "subtitle": "A mapped diagnostic across Togo's 5 regions",
+      "kpi1_label": "Zones without services",
+      "kpi1_desc": "across 5 analyzed regions",
+      "kpi2_label": "Service types",
+      "kpi2_desc": "water, health, inputs, markets, credit",
+      "kpi3_label": "Not covered",
+      "kpi3_desc": "of priority agricultural zones",
+      "region_title": "Criticality by region",
+      "region_subtitle": "Composite score based on access to essential services",
+      "regions": {
+        "maritime": "Maritime",
+        "savanes": "Savanes",
+        "kara": "Kara",
+        "centrale": "Centrale",
+        "plateaux": "Plateaux"
+      }
+    },
+    "why": {
+      "title": "Why this dashboard?",
+      "eyebrow": "Context",
+      "problem": {
+        "step": "01 · Problem",
+        "title": "The problem",
+        "text": "Thousands of Togolese farms operate in isolation, without access to markets, cooperatives, or development services."
+      },
+      "solution": {
+        "step": "02 · Solution",
+        "title": "The solution",
+        "text": "An unprecedented mapping of agricultural service white zones — based on Togo's open data — to guide investment decisions."
+      },
+      "impact": {
+        "step": "03 · Impact",
+        "title": "The impact",
+        "text": "Targeted resources to the territories that need them most, for a more connected and resilient Togolese agriculture."
+      }
+    },
+    "made_in_togo": "🇹🇬 Made in Togo — Togolese data, for Togo",
+    "photo_banner": {
+      "alt": "Agricultural fields of Togo",
+      "quote": "22 priority zones identified to connect farmers to essential services"
+    },
+    "minimap": {
+      "badge": "Interactive exploration",
+      "title": "Navigate the data",
+      "desc": "Select a region to view critical zones.",
+      "legend_critical": "High criticality",
+      "legend_moderate": "Moderate criticality",
+      "legend_low": "Low criticality",
+      "cta": "Explore the full map",
+      "interactive": "Interactive map"
+    }
+  },
+  "story": {
+    "title": "Guided story",
+    "subtitle": "Follow the 4 acts to understand where to invest first.",
+    "previous": "Previous act",
+    "next": "Next act",
+    "synthesis_title": "Synthesis — Where to invest?",
+    "synthesis_subtitle": "Geographic prioritization map of investment areas",
+    "recommandations": "Recommendations",
+    "share_message": "Agricultural service white zones in Togo — where to invest first?",
+    "act1": { "nav_title": "Where?", "title": "Where is production happening?" },
+    "act2": { "nav_title": "Who serves?", "title": "Who serves the farmers?" },
+    "act3": { "nav_title": "White zones", "title": "Identifying white zones" },
+    "act4": { "nav_title": "Prioritize", "title": "Prioritizing interventions" }
+  },
+  "explore": {
+    "title": "Free exploration",
+    "subtitle": "Filter data to explore white zones by region and analysis type.",
+    "filters": "Filters",
+    "reset": "Reset",
+    "filtered_by": "Filtered by",
+    "map_placeholder": "Interactive map",
+    "no_results": "No zones match the selected filters.",
+    "popup_view_details": "View detailed sheet",
+    "hero": {
+      "title": "Priority Zone Mapping",
+      "subtitle": "Identify territories where access to agricultural services is most critical.",
+      "stat_zones": "zones identified",
+      "stat_regions": "regions",
+      "stat_services": "services analyzed"
+    }
+  },
+  "report": {
+    "title": "Report",
+    "subtitle": "Methodology, sources and data quality",
+    "toc": "Table of contents",
+    "download_pdf": "Download PDF",
+    "copy_link": "Copy link",
+    "sections": {
+      "approach": "1. Methodology",
+      "sources": "2. Data sources",
+      "quality": "3. Data quality",
+      "completeness": "3.1 Completeness",
+      "precision": "3.2 Precision",
+      "analyses": "4. Analyses",
+      "density": "4.1 Farm density",
+      "zaap": "4.2 ZAAP coverage",
+      "access": "4.3 Accessibility",
+      "coop": "4.4 Cooperative network",
+      "limits": "5. Limitations",
+      "conclusion": "6. Conclusion"
+    }
+  },
+  "footer": {
+    "company": "NATAAN GROUP",
+    "tagline": "Mapping service gaps to connect Togolese farmers.",
+    "nav": {
+      "title": "Navigation"
+    },
+    "data": {
+      "title": "Data",
+      "source1": "geoBoundaries (ODbL)",
+      "source2": "FAOSTAT 2023",
+      "source3": "OpenStreetMap",
+      "methodology": "Methodology"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "open_data": "Open data · ODbL License",
+    "rights": "All rights reserved",
+    "sources": "Sources: geodata.gouv.tg, opendata.gouv.tg",
+    "licenses": "Open licenses",
+    "challenge": "Data Challenge Togo AI Lab 2026",
+    "made_in": "Made in Togo — Togolese data, for Togo"
+  },
+  "language": {
+    "switch_to_en": "Switch to English",
+    "switch_to_fr": "Basculer en français",
+    "label": "FR / EN"
+  },
+  "badge": {
+    "priority_1": "Priority",
+    "priority_2": "Monitor",
+    "priority_3": "Covered",
+    "data_freshness": "Data: June 2026"
+  },
+  "aria": {
+    "home": "Home",
+    "skip_to_content": "Skip to content",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu"
+  },
+  "stats": {
+    "bento": {
+      "zones_label": "Priority zones",
+      "zones_title": "zones without services",
+      "zones_sub": "across 5 regions of Togo",
+      "services_label": "Services",
+      "services_title": "types analyzed",
+      "coverage_label": "Uncovered",
+      "coverage_title": "of zones",
+      "regions_label": "Criticality by region"
+    }
+  }
+}

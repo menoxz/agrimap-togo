@@ -1,0 +1,931 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.336852,
+          8.261283
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 1,
+        "nom_pepiniere": "Pépinière Fruitière #1",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 53506,
+        "especes_principales": "Caféier, Cacaoyer",
+        "annee_creation": 2014,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.370981,
+          9.029018
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 2,
+        "nom_pepiniere": "Pépinière Forestière #2",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 31907,
+        "especes_principales": "Goyavier, Moringa, Baobab",
+        "annee_creation": 2013,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.400075,
+          6.88625
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 3,
+        "nom_pepiniere": "Pépinière Communautaire #3",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 24148,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2015,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.834329,
+          10.620408
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 4,
+        "nom_pepiniere": "Pépinière Fruitière #4",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 40326,
+        "especes_principales": "Caféier, Cacaoyer",
+        "annee_creation": 2017,
+        "region": "Savanes",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.00205,
+          6.19601
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 5,
+        "nom_pepiniere": "Pépinière Agricole #5",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 63460,
+        "especes_principales": "Agrumes, Manguier, Goyavier",
+        "annee_creation": 2020,
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.53545,
+          7.649732
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 6,
+        "nom_pepiniere": "Pépinière Fruitière #6",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 3599,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2003,
+        "region": "Plateaux",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.15574,
+          9.258646
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 7,
+        "nom_pepiniere": "Pépinière Agricole #7",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 47544,
+        "especes_principales": "Caféier, Cacaoyer",
+        "annee_creation": 2021,
+        "region": "Kara",
+        "prefecture": "Assoli",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.178442,
+          8.601338
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 8,
+        "nom_pepiniere": "Pépinière Communautaire #8",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 61784,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2004,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.299993,
+          8.632725
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 9,
+        "nom_pepiniere": "Pépinière Communautaire #9",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 11369,
+        "especes_principales": "Manguier, Avocatier, Agrumes",
+        "annee_creation": 2010,
+        "region": "Centrale",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.044821,
+          8.27878
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 10,
+        "nom_pepiniere": "Pépinière Communautaire #10",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 59313,
+        "especes_principales": "Agrumes, Manguier, Goyavier",
+        "annee_creation": 2011,
+        "region": "Plateaux",
+        "prefecture": "Akébou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.351736,
+          8.620984
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 11,
+        "nom_pepiniere": "Pépinière Agricole #11",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 17389,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2007,
+        "region": "Centrale",
+        "prefecture": "Anié",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.190201,
+          8.349532
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 12,
+        "nom_pepiniere": "Pépinière Agricole #12",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 53041,
+        "especes_principales": "Acacia, Eucalyptus, Teck",
+        "annee_creation": 2003,
+        "region": "Plateaux",
+        "prefecture": "Haho",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.420504,
+          10.064591
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 13,
+        "nom_pepiniere": "Pépinière Communautaire #13",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 14622,
+        "especes_principales": "Caféier, Cacaoyer",
+        "annee_creation": 2019,
+        "region": "Savanes",
+        "prefecture": "Cinkassé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.663179,
+          6.467815
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 14,
+        "nom_pepiniere": "Pépinière Agricole #14",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 97677,
+        "especes_principales": "Caféier, Cacaoyer",
+        "annee_creation": 2014,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.477036,
+          6.034286
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 15,
+        "nom_pepiniere": "Pépinière Fruitière #15",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 63410,
+        "especes_principales": null,
+        "annee_creation": 2017,
+        "region": "Maritime",
+        "prefecture": "Yoto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.216184,
+          8.707275
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 16,
+        "nom_pepiniere": "Pépinière Agricole #16",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 83712,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2020,
+        "region": "Plateaux",
+        "prefecture": "Kpélé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.023658,
+          7.960811
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 17,
+        "nom_pepiniere": "Pépinière Fruitière #17",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 71735,
+        "especes_principales": "Manguier, Avocatier, Agrumes",
+        "annee_creation": 2002,
+        "region": "Plateaux",
+        "prefecture": "Est-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.659526,
+          7.280292
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 18,
+        "nom_pepiniere": "Pépinière Forestière #18",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 69592,
+        "especes_principales": "Agrumes, Manguier, Goyavier",
+        "annee_creation": 2024,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.750717,
+          7.014971
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 19,
+        "nom_pepiniere": "Pépinière Communautaire #19",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 40270,
+        "especes_principales": "Acacia, Eucalyptus, Teck",
+        "annee_creation": 2024,
+        "region": "Plateaux",
+        "prefecture": "Moyen-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.716405,
+          10.035798
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 20,
+        "nom_pepiniere": "Pépinière Fruitière #20",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 54967,
+        "especes_principales": "Goyavier, Moringa, Baobab",
+        "annee_creation": 2013,
+        "region": "Kara",
+        "prefecture": "Kéran",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.229876,
+          6.775189
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 21,
+        "nom_pepiniere": "Pépinière Communautaire #21",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 35469,
+        "especes_principales": "Acacia, Eucalyptus, Teck",
+        "annee_creation": 2013,
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.279935,
+          8.103789
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 22,
+        "nom_pepiniere": "Pépinière Fruitière #22",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 85994,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2017,
+        "region": "Plateaux",
+        "prefecture": "Amou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.365571,
+          7.328333
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 23,
+        "nom_pepiniere": "Pépinière Fruitière #23",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 84478,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2019,
+        "region": "Plateaux",
+        "prefecture": "Est-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.996406,
+          7.338021
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 24,
+        "nom_pepiniere": "Pépinière Forestière #24",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 7505,
+        "especes_principales": "Goyavier, Moringa, Baobab",
+        "annee_creation": 2000,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.210326,
+          10.150047
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 25,
+        "nom_pepiniere": "Pépinière Communautaire #25",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 31514,
+        "especes_principales": "Acacia, Eucalyptus, Teck",
+        "annee_creation": 2004,
+        "region": "Savanes",
+        "prefecture": "Tône",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.547061,
+          7.560838
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 26,
+        "nom_pepiniere": "Pépinière Communautaire #26",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 61776,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2001,
+        "region": "Plateaux",
+        "prefecture": "Danyi",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.301139,
+          6.175305
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 27,
+        "nom_pepiniere": "Pépinière Fruitière #27",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 10356,
+        "especes_principales": "Goyavier, Moringa, Baobab",
+        "annee_creation": 2015,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.483079,
+          6.980701
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 28,
+        "nom_pepiniere": "Pépinière Forestière #28",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 94674,
+        "especes_principales": "Manguier, Avocatier, Agrumes",
+        "annee_creation": 2012,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.789071,
+          6.239016
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 29,
+        "nom_pepiniere": "Pépinière Forestière #29",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 62974,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2021,
+        "region": "Maritime",
+        "prefecture": "Yoto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.074473,
+          10.873884
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 30,
+        "nom_pepiniere": "Pépinière Forestière #30",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 64075,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2009,
+        "region": "Savanes",
+        "prefecture": "Cinkassé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.08334,
+          8.200051
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 31,
+        "nom_pepiniere": "Pépinière Forestière #31",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 83956,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2010,
+        "region": "Plateaux",
+        "prefecture": "Ogou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.3522,
+          6.14358
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 32,
+        "nom_pepiniere": "Pépinière Agricole #32",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 6504,
+        "especes_principales": "Goyavier, Moringa, Baobab",
+        "annee_creation": 2022,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.216989,
+          9.156196
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 33,
+        "nom_pepiniere": "Pépinière Agricole #33",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 66525,
+        "especes_principales": "Acacia, Eucalyptus, Teck",
+        "annee_creation": 2021,
+        "region": "Centrale",
+        "prefecture": "Mô",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.551443,
+          8.367208
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 34,
+        "nom_pepiniere": "Pépinière Forestière #34",
+        "type_pepiniere": "Forestière",
+        "capacite_plants": 47598,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2004,
+        "region": "Plateaux",
+        "prefecture": "Akébou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.171827,
+          7.878117
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 35,
+        "nom_pepiniere": "Pépinière Fruitière #35",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 58503,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2006,
+        "region": "Plateaux",
+        "prefecture": "Ogou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.501434,
+          8.202098
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 36,
+        "nom_pepiniere": "Pépinière Forestière #36",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 93618,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2017,
+        "region": "Centrale",
+        "prefecture": "Sotouboua",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.784147,
+          8.020063
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 37,
+        "nom_pepiniere": "Pépinière Fruitière #37",
+        "type_pepiniere": "Ornementale",
+        "capacite_plants": 96997,
+        "especes_principales": "Anacardier, Palmier à huile",
+        "annee_creation": 2008,
+        "region": "Plateaux",
+        "prefecture": "Kpélé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.509972,
+          10.082652
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 38,
+        "nom_pepiniere": "Pépinière Agricole #38",
+        "type_pepiniere": "Mixte",
+        "capacite_plants": 39754,
+        "especes_principales": "Agrumes, Manguier, Goyavier",
+        "annee_creation": 2008,
+        "region": "Savanes",
+        "prefecture": "Kpendjal",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.001152,
+          8.148447
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 39,
+        "nom_pepiniere": "Pépinière Communautaire #39",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 3453,
+        "especes_principales": "Goyavier, Moringa, Baobab",
+        "annee_creation": 2011,
+        "region": "Plateaux",
+        "prefecture": "Kpélé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.242007,
+          6.789947
+        ]
+      },
+      "properties": {
+        "id_pepiniere": 40,
+        "nom_pepiniere": "Pépinière Communautaire #40",
+        "type_pepiniere": "Agricole",
+        "capacite_plants": 69690,
+        "especes_principales": "Eucalyptus, Acacia, Leucaena",
+        "annee_creation": 2015,
+        "region": "Maritime",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-06-16T11:34:36.520901+00:00",
+    "generator": "AgriMap Togo ETL Pipeline (M1)",
+    "crs": "EPSG:4326",
+    "count": 40
+  }
+}

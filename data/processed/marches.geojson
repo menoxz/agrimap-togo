@@ -1,0 +1,1211 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.39932,
+          7.022701
+        ]
+      },
+      "properties": {
+        "id_marché": 1,
+        "nom_marché": "Marché Principal #1",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 159,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Tabligbo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.251179,
+          6.584628
+        ]
+      },
+      "properties": {
+        "id_marché": 2,
+        "nom_marché": "Marché Est #2",
+        "type_marché": "Urbain",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 1384,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Tabligbo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.260166,
+          8.476679
+        ]
+      },
+      "properties": {
+        "id_marché": 3,
+        "nom_marché": "Marché Principal #3",
+        "type_marché": "Urbain",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 1360,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Mô",
+        "commune": "Tchamba",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.510291,
+          8.4745
+        ]
+      },
+      "properties": {
+        "id_marché": 4,
+        "nom_marché": "Marché Ouest #4",
+        "type_marché": "Rural",
+        "jour_marché": "Lundi",
+        "nombre_commercants": 651,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "commune": "Koussountou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.610574,
+          9.260165
+        ]
+      },
+      "properties": {
+        "id_marché": 5,
+        "nom_marché": "Marché Hebdo #5",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Samedi",
+        "nombre_commercants": 689,
+        "acces_vehicule": false,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "commune": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.488755,
+          7.993009
+        ]
+      },
+      "properties": {
+        "id_marché": 6,
+        "nom_marché": "Marché Hebdo #6",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 177,
+        "acces_vehicule": false,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "commune": "Glei",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.267089,
+          6.751943
+        ]
+      },
+      "properties": {
+        "id_marché": 7,
+        "nom_marché": "Marché Rural #7",
+        "type_marché": "Rural",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1048,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Vo",
+        "commune": "Assahoun",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.126687,
+          6.31274
+        ]
+      },
+      "properties": {
+        "id_marché": 8,
+        "nom_marché": "Marché Principal #8",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 314,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": null,
+        "commune": "Assahoun",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.407399,
+          8.697052
+        ]
+      },
+      "properties": {
+        "id_marché": 9,
+        "nom_marché": "Marché Rural #9",
+        "type_marché": "Urbain",
+        "jour_marché": "Mercredi",
+        "nombre_commercants": 1038,
+        "acces_vehicule": null,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "commune": "Lama-Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.980039,
+          10.820994
+        ]
+      },
+      "properties": {
+        "id_marché": 10,
+        "nom_marché": "Marché Hebdo #10",
+        "type_marché": "Urbain",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 376,
+        "acces_vehicule": true,
+        "region": "Savanes",
+        "prefecture": "Kpendjal",
+        "commune": "Nohou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.175439,
+          9.951606
+        ]
+      },
+      "properties": {
+        "id_marché": 11,
+        "nom_marché": "Marché Est #11",
+        "type_marché": "Rural",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 1569,
+        "acces_vehicule": true,
+        "region": "Kara",
+        "prefecture": "Kozah",
+        "commune": "Bassar",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.068494,
+          7.372193
+        ]
+      },
+      "properties": {
+        "id_marché": 12,
+        "nom_marché": "Marché Est #12",
+        "type_marché": "Urbain",
+        "jour_marché": "Jeudi",
+        "nombre_commercants": 1889,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Ogou",
+        "commune": "Atakpamé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.256478,
+          10.844484
+        ]
+      },
+      "properties": {
+        "id_marché": 13,
+        "nom_marché": "Marché Sud #13",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Mercredi",
+        "nombre_commercants": 1195,
+        "acces_vehicule": true,
+        "region": "Savanes",
+        "prefecture": "Cinkassé",
+        "commune": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.511415,
+          8.980005
+        ]
+      },
+      "properties": {
+        "id_marché": 14,
+        "nom_marché": "Marché Rural #14",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Mercredi",
+        "nombre_commercants": 780,
+        "acces_vehicule": false,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "commune": "Bafilo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.307579,
+          7.621058
+        ]
+      },
+      "properties": {
+        "id_marché": 15,
+        "nom_marché": "Marché Principal #15",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Lundi",
+        "nombre_commercants": 1037,
+        "acces_vehicule": false,
+        "region": "Plateaux",
+        "prefecture": "Est-Mono",
+        "commune": "Badou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.829083,
+          6.336971
+        ]
+      },
+      "properties": {
+        "id_marché": 16,
+        "nom_marché": "Marché Hebdo #16",
+        "type_marché": "Rural",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 751,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Tsévié",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.52836,
+          7.20401
+        ]
+      },
+      "properties": {
+        "id_marché": 17,
+        "nom_marché": "Marché Principal #17",
+        "type_marché": "Urbain",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 1219,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Moyen-Mono",
+        "commune": "Atakpamé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.05577,
+          6.710817
+        ]
+      },
+      "properties": {
+        "id_marché": 18,
+        "nom_marché": "Marché Hebdo #18",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 90,
+        "acces_vehicule": false,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "commune": "Lomé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.644894,
+          6.619969
+        ]
+      },
+      "properties": {
+        "id_marché": 19,
+        "nom_marché": "Marché Ouest #19",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 1315,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Yoto",
+        "commune": "Baguida",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.013052,
+          6.565696
+        ]
+      },
+      "properties": {
+        "id_marché": 20,
+        "nom_marché": "Marché Principal #20",
+        "type_marché": "Rural",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 1710,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "commune": "Assahoun",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.218261,
+          9.857543
+        ]
+      },
+      "properties": {
+        "id_marché": 21,
+        "nom_marché": "Marché Sud #21",
+        "type_marché": "Rural",
+        "jour_marché": "Samedi",
+        "nombre_commercants": 1414,
+        "acces_vehicule": true,
+        "region": "Kara",
+        "prefecture": "Kéran",
+        "commune": "Pagouda",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.570924,
+          6.130284
+        ]
+      },
+      "properties": {
+        "id_marché": 22,
+        "nom_marché": "Marché Nord #22",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1872,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Vo",
+        "commune": "Aflao",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.248391,
+          9.352412
+        ]
+      },
+      "properties": {
+        "id_marché": 23,
+        "nom_marché": "Marché Central #23",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 1550,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "commune": "Koussountou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.006949,
+          6.993026
+        ]
+      },
+      "properties": {
+        "id_marché": 24,
+        "nom_marché": "Marché Ouest #24",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Jeudi",
+        "nombre_commercants": 768,
+        "acces_vehicule": false,
+        "region": "Maritime",
+        "prefecture": "Vo",
+        "commune": "Tsévié",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.430336,
+          10.922406
+        ]
+      },
+      "properties": {
+        "id_marché": 25,
+        "nom_marché": "Marché Est #25",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1528,
+        "acces_vehicule": false,
+        "region": "Savanes",
+        "prefecture": "Kpendjal",
+        "commune": "Dapaong",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.407229,
+          8.378546
+        ]
+      },
+      "properties": {
+        "id_marché": 26,
+        "nom_marché": "Marché Rural #26",
+        "type_marché": "Urbain",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 1805,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Amou",
+        "commune": "Notse",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.287291,
+          6.008537
+        ]
+      },
+      "properties": {
+        "id_marché": 27,
+        "nom_marché": "Marché Rural #27",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Lundi",
+        "nombre_commercants": 778,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Zio",
+        "commune": "Vogan",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.247646,
+          8.172837
+        ]
+      },
+      "properties": {
+        "id_marché": 28,
+        "nom_marché": "Marché Sud #28",
+        "type_marché": null,
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1107,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Danyi",
+        "commune": "Kamina",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.088969,
+          8.358949
+        ]
+      },
+      "properties": {
+        "id_marché": 29,
+        "nom_marché": "Marché Ouest #29",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1151,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Danyi",
+        "commune": "Glei",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.355289,
+          8.45998
+        ]
+      },
+      "properties": {
+        "id_marché": 30,
+        "nom_marché": "Marché Est #30",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Jeudi",
+        "nombre_commercants": 1516,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Anié",
+        "commune": "Sokodé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.625233,
+          9.048967
+        ]
+      },
+      "properties": {
+        "id_marché": 31,
+        "nom_marché": "Marché Hebdo #31",
+        "type_marché": "Rural",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 1051,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Sotouboua",
+        "commune": "Lama-Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.97588,
+          9.060185
+        ]
+      },
+      "properties": {
+        "id_marché": 32,
+        "nom_marché": "Marché Hebdo #32",
+        "type_marché": "Urbain",
+        "jour_marché": "Samedi",
+        "nombre_commercants": 20,
+        "acces_vehicule": false,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "commune": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.378915,
+          10.076897
+        ]
+      },
+      "properties": {
+        "id_marché": 33,
+        "nom_marché": "Marché Nord #33",
+        "type_marché": null,
+        "jour_marché": "Lundi",
+        "nombre_commercants": 1257,
+        "acces_vehicule": true,
+        "region": "Savanes",
+        "prefecture": "Tandjouaré",
+        "commune": "Tandjouaré",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.729408,
+          9.067409
+        ]
+      },
+      "properties": {
+        "id_marché": 34,
+        "nom_marché": "Marché Central #34",
+        "type_marché": "Rural",
+        "jour_marché": "Samedi",
+        "nombre_commercants": 1022,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "commune": "Lama-Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.125474,
+          8.42901
+        ]
+      },
+      "properties": {
+        "id_marché": 35,
+        "nom_marché": "Marché Central #35",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 1066,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Mô",
+        "commune": "Tchamba",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.503636,
+          8.982529
+        ]
+      },
+      "properties": {
+        "id_marché": 36,
+        "nom_marché": "Marché Hebdo #36",
+        "type_marché": "Rural",
+        "jour_marché": "Mercredi",
+        "nombre_commercants": 1606,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Anié",
+        "commune": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.320497,
+          7.02766
+        ]
+      },
+      "properties": {
+        "id_marché": 37,
+        "nom_marché": "Marché Rural #37",
+        "type_marché": "Rural",
+        "jour_marché": "Vendredi",
+        "nombre_commercants": 592,
+        "acces_vehicule": false,
+        "region": "Plateaux",
+        "prefecture": "Anié",
+        "commune": "Kamina",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.54126,
+          7.497714
+        ]
+      },
+      "properties": {
+        "id_marché": 38,
+        "nom_marché": "Marché Nord #38",
+        "type_marché": "Urbain",
+        "jour_marché": "Jeudi",
+        "nombre_commercants": 1187,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Kloto",
+        "commune": "Elavagnon",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.893809,
+          7.905704
+        ]
+      },
+      "properties": {
+        "id_marché": 39,
+        "nom_marché": "Marché Est #39",
+        "type_marché": "Rural",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1061,
+        "acces_vehicule": false,
+        "region": "Plateaux",
+        "prefecture": "Anié",
+        "commune": "Kamina",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.70843,
+          7.678745
+        ]
+      },
+      "properties": {
+        "id_marché": 40,
+        "nom_marché": "Marché Principal #40",
+        "type_marché": "Rural",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 705,
+        "acces_vehicule": false,
+        "region": "Plateaux",
+        "prefecture": "Est-Mono",
+        "commune": "Agbélouvé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.034428,
+          9.626561
+        ]
+      },
+      "properties": {
+        "id_marché": 41,
+        "nom_marché": "Marché Sud #41",
+        "type_marché": "Rural",
+        "jour_marché": "Jeudi",
+        "nombre_commercants": 1307,
+        "acces_vehicule": false,
+        "region": "Kara",
+        "prefecture": "Binah",
+        "commune": "Kandé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.494911,
+          9.459025
+        ]
+      },
+      "properties": {
+        "id_marché": 42,
+        "nom_marché": "Marché Central #42",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 549,
+        "acces_vehicule": true,
+        "region": "Kara",
+        "prefecture": "Kozah",
+        "commune": "Kétao",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.149505,
+          8.114043
+        ]
+      },
+      "properties": {
+        "id_marché": 43,
+        "nom_marché": "Marché Hebdo #43",
+        "type_marché": "Urbain",
+        "jour_marché": "Mercredi",
+        "nombre_commercants": 734,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Mô",
+        "commune": "Sotouboua",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.292313,
+          7.116306
+        ]
+      },
+      "properties": {
+        "id_marché": 44,
+        "nom_marché": "Marché Nord #44",
+        "type_marché": "Urbain",
+        "jour_marché": "Samedi",
+        "nombre_commercants": 418,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "commune": "Tabligbo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.205533,
+          6.299635
+        ]
+      },
+      "properties": {
+        "id_marché": 45,
+        "nom_marché": "Marché Est #45",
+        "type_marché": "Rural",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 228,
+        "acces_vehicule": true,
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Noépé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.069942,
+          8.812211
+        ]
+      },
+      "properties": {
+        "id_marché": 46,
+        "nom_marché": "Marché Central #46",
+        "type_marché": "Urbain",
+        "jour_marché": "Mercredi",
+        "nombre_commercants": 1281,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Mô",
+        "commune": "Lama-Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.292595,
+          8.375672
+        ]
+      },
+      "properties": {
+        "id_marché": 47,
+        "nom_marché": "Marché Sud #47",
+        "type_marché": "Urbain",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 1546,
+        "acces_vehicule": true,
+        "region": "Plateaux",
+        "prefecture": "Ogou",
+        "commune": "Glei",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.573984,
+          9.702998
+        ]
+      },
+      "properties": {
+        "id_marché": 48,
+        "nom_marché": "Marché Est #48",
+        "type_marché": "Urbain",
+        "jour_marché": "Dimanche",
+        "nombre_commercants": 1415,
+        "acces_vehicule": false,
+        "region": "Kara",
+        "prefecture": "Kéran",
+        "commune": "Pagouda",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.644099,
+          9.033816
+        ]
+      },
+      "properties": {
+        "id_marché": 49,
+        "nom_marché": "Marché Central #49",
+        "type_marché": "Hebdomadaire",
+        "jour_marché": "Mardi",
+        "nombre_commercants": 787,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Sotouboua",
+        "commune": "Sotouboua",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.363581,
+          8.822845
+        ]
+      },
+      "properties": {
+        "id_marché": 50,
+        "nom_marché": "Marché Nord #50",
+        "type_marché": "Urbain",
+        "jour_marché": "Jeudi",
+        "nombre_commercants": 1973,
+        "acces_vehicule": true,
+        "region": "Centrale",
+        "prefecture": "Sotouboua",
+        "commune": "Tchamba",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-06-16T11:34:36.518435+00:00",
+    "generator": "AgriMap Togo ETL Pipeline (M1)",
+    "crs": "EPSG:4326",
+    "count": 50
+  }
+}

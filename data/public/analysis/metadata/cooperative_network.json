@@ -1,0 +1,105 @@
+{
+  "analysis": "Réseau coopératif agricole",
+  "analysis_en": "Agricultural cooperative network analysis",
+  "method": "Comptage des coopératives par région et calcul de la densité (coopératives / 1000 km²). Création de buffers de 10 km autour des coopératives pour identifier les zones de production sans accès coopératif ('zones blanches organisationnelles'). Classification en 4 classes avec palette ColorBrewer OrRd.",
+  "method_en": "Counting cooperatives per region and calculating density (cooperatives / 1000 km²). Creation of 10 km buffers around cooperatives to identify production zones without cooperative access ('organizational white zones'). Classification into 4 classes with ColorBrewer OrRd palette.",
+  "parameters": {
+    "cooperative_buffer_km": 10,
+    "crs_analysis": "EPSG:32631",
+    "n_cooperatives": 35,
+    "n_farms": 185
+  },
+  "inputs": [
+    "cooperatives",
+    "grandes_exploitations",
+    "petites_exploitations",
+    "plantations",
+    "regions"
+  ],
+  "output_fields": {
+    "n_cooperatives": "Nombre de coopératives dans la région",
+    "coop_density_per_1000km2": "Densité de coopératives (pour 1000 km²)",
+    "white_zone_pct": "Pourcentage d'exploitations en zone blanche coopérative",
+    "coop_class": "Classe de maillage (1-4)",
+    "color": "Couleur hexadécimale (palette OrRd)"
+  },
+  "palette": {
+    "name": "OrRd",
+    "type": "Séquentielle",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "class": 1,
+        "color": "#FDD49E",
+        "label": "Bon maillage coopératif",
+        "label_en": "Good cooperative network"
+      },
+      {
+        "class": 2,
+        "color": "#FDAE61",
+        "label": "Maillage partiel",
+        "label_en": "Partial network"
+      },
+      {
+        "class": 3,
+        "color": "#E34A33",
+        "label": "Faible maillage",
+        "label_en": "Weak network"
+      },
+      {
+        "class": 4,
+        "color": "#B10026",
+        "label": "Zone blanche - Prioritaire",
+        "label_en": "Cooperative white zone - Priority"
+      }
+    ]
+  },
+  "statistics": {
+    "total_cooperatives": 35,
+    "total_farms": 185,
+    "region_stats": [
+      {
+        "nom_region": "Maritime",
+        "n_cooperatives": 6,
+        "coop_density_per_1000km2": 0.9836,
+        "total_exploitations": 10,
+        "white_zone_exploitations": 6,
+        "white_zone_pct": 60.0
+      },
+      {
+        "nom_region": "Plateaux",
+        "n_cooperatives": 8,
+        "coop_density_per_1000km2": 0.4713,
+        "total_exploitations": 44,
+        "white_zone_exploitations": 34,
+        "white_zone_pct": 77.3
+      },
+      {
+        "nom_region": "Centrale",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 0.148,
+        "total_exploitations": 28,
+        "white_zone_exploitations": 28,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_region": "Kara",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 0.172,
+        "total_exploitations": 25,
+        "white_zone_exploitations": 24,
+        "white_zone_pct": 96.0
+      },
+      {
+        "nom_region": "Savanes",
+        "n_cooperatives": 4,
+        "coop_density_per_1000km2": 0.4723,
+        "total_exploitations": 9,
+        "white_zone_exploitations": 8,
+        "white_zone_pct": 88.9
+      }
+    ]
+  },
+  "interpretation_note": "Les zones blanches coopératives (exploitations sans accès à une coopérative dans un rayon de 10 km) représentent des opportunités d'investissement pour la création ou le renforcement d'organisations paysannes et de coopératives agricoles.",
+  "interpretation_note_en": "Cooperative white zones (farms without access to a cooperative within 10 km) represent investment opportunities for creating or strengthening farmer organizations and agricultural cooperatives."
+}

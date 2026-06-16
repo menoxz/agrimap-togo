@@ -1,0 +1,76 @@
+{
+  "analysis": "Densité des exploitations agricoles",
+  "analysis_en": "Farm density analysis",
+  "method": "Comptage des exploitations (grandes + petites + plantations) par région, normalisé par la surface régionale (km²). Classification par quantiles en 5 classes avec palette ColorBrewer YlOrBr.",
+  "method_en": "Counting farms (large + small + plantations) by region, normalized by regional area (km²). Quantile-based classification into 5 classes with ColorBrewer YlOrBr palette.",
+  "inputs": [
+    "grandes_exploitations",
+    "petites_exploitations",
+    "plantations",
+    "regions"
+  ],
+  "output_fields": {
+    "nb_exploitations": "Nombre total d'exploitations dans la région",
+    "area_km2": "Superficie de la région en km²",
+    "density": "Densité d'exploitations par km²",
+    "density_class": "Classe de densité (1-5)",
+    "color": "Couleur hexadécimale (palette YlOrBr)",
+    "name_en": "Region name in English"
+  },
+  "palette": {
+    "name": "YlOrBr",
+    "type": "Séquentielle",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "class": 1,
+        "color": "#FFFFB2",
+        "label": "Très faible",
+        "label_en": "Very low",
+        "min": 0.0009,
+        "max": 0.0009
+      },
+      {
+        "class": 2,
+        "color": "#FECC5C",
+        "label": "Faible",
+        "label_en": "Low",
+        "min": 0.0015,
+        "max": 0.0015
+      },
+      {
+        "class": 3,
+        "color": "#FD8D3C",
+        "label": "Moyenne",
+        "label_en": "Moderate",
+        "min": 0.002,
+        "max": 0.002
+      },
+      {
+        "class": 4,
+        "color": "#F03B20",
+        "label": "Élevée",
+        "label_en": "High",
+        "min": 0,
+        "max": 0
+      },
+      {
+        "class": 5,
+        "color": "#BD0026",
+        "label": "Très élevée",
+        "label_en": "Very high",
+        "min": 0.0025,
+        "max": 0.0025
+      }
+    ]
+  },
+  "statistics": {
+    "total_exploitations": 109,
+    "n_regions": 5,
+    "density_min": 0.0009,
+    "density_max": 0.0025,
+    "density_mean": 0.0018
+  },
+  "interpretation_note": "Les régions à faible densité d'exploitations représentent des opportunités d'investissement pour le développement des services agricoles et l'installation de nouvelles exploitations.",
+  "interpretation_note_en": "Regions with low farm density represent investment opportunities for developing agricultural services and establishing new farms."
+}

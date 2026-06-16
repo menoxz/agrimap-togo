@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AgriMap Togo — Lecture guidée (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-primary: #1B5E20; --color-primary-hover: #2E7D32; --color-primary-light: #E8F5E9;
+    --color-secondary: #1565C0; --color-secondary-light: #E3F2FD;
+    --color-accent: #E65100; --color-accent-light: #FFF3E0;
+    --color-bg: #FAFAF5; --color-surface: #FFFFFF; --color-surface-alt: #F5F5F0;
+    --color-text: #1E293B; --color-text-secondary: #475569; --color-muted: #94A3B8;
+    --color-border: #E2E8F0; --color-success: #166534; --color-warning: #9A3412; --color-error: #991B1B;
+    --text-caption: 0.75rem; --text-body-sm: 0.875rem; --text-body: 1rem; --text-body-lg: 1.125rem;
+    --text-label: 0.875rem; --text-h4: 1.125rem; --text-h3: 1.25rem; --text-h2: 1.5rem; --text-h1: 2rem;
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+    --space-6: 32px; --space-7: 48px; --space-8: 64px;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 9999px;
+    --shadow-sm: 0 1px 2px rgba(30,41,59,0.08);
+    --shadow-md: 0 4px 6px rgba(30,41,59,0.07);
+    --shadow-lg: 0 10px 15px rgba(30,41,59,0.1);
+  }
+
+  /* ColorBrewer palettes (display only) */
+  .cb-ylorbr-1 { background: #FFFFCC; } .cb-ylorbr-2 { background: #FFEDA0; } .cb-ylorbr-3 { background: #FEB24C; } .cb-ylorbr-4 { background: #FD8D3C; } .cb-ylorbr-5 { background: #E31A1C; }
+  .cb-greens-1 { background: #E5F5E0; } .cb-greens-2 { background: #A1D99B; } .cb-greens-3 { background: #41AB5D; } .cb-greens-4 { background: #005A32; }
+  .cb-bupu-1 { background: #EDF8FB; } .cb-bupu-2 { background: #B3CDE3; } .cb-bupu-3 { background: #8C96C6; } .cb-bupu-4 { background: #88419D; } .cb-bupu-5 { background: #4D004B; }
+  .cb-ord-1 { background: #FEF0D9; } .cb-ord-2 { background: #FDCC8A; } .cb-ord-3 { background: #FC8D59; } .cb-ord-4 { background: #D7301F; }
+  .cb-rdylgn-1 { background: #D73027; } .cb-rdylgn-2 { background: #F46D43; } .cb-rdylgn-3 { background: #FDAE61; } .cb-rdylgn-4 { background: #A6D96A; } .cb-rdylgn-5 { background: #1A9641; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: var(--text-body); line-height: 1.6;
+    color: var(--color-text); background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Navbar */
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 var(--space-6); }
+  .navbar-inner { max-width: 1280px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .navbar-logo { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; font-size: var(--text-h4); color: var(--color-primary); text-decoration: none; }
+  .navbar-logo svg { width: 24px; height: 24px; }
+  .navbar nav ul { display: flex; gap: var(--space-4); list-style: none; }
+  .navbar nav a { text-decoration: none; font-size: var(--text-body-sm); color: var(--color-text-secondary); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); }
+  .navbar nav a:hover { color: var(--color-primary); background: var(--color-primary-light); }
+  .navbar nav a.active { color: var(--color-primary); font-weight: 600; }
+
+  .lang-switcher { display: flex; border: 1px solid var(--color-border); border-radius: var(--radius-full); overflow: hidden; }
+  .lang-switcher button { padding: 6px 14px; border: none; cursor: pointer; font-weight: 600; font-size: var(--text-body-sm); background: transparent; color: var(--color-text-secondary); }
+  .lang-switcher button.active { background: var(--color-primary); color: white; }
+
+  /* Story layout */
+  .story-layout {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 64px;
+  }
+
+  /* Text column */
+  .story-text {
+    width: 40%;
+    padding: var(--space-8) var(--space-6);
+    overflow-y: auto;
+  }
+
+  /* Navigator */
+  .story-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-7);
+    flex-wrap: wrap;
+  }
+
+  .story-nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-caption);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: none;
+    background: none;
+  }
+
+  .story-nav-item .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .story-nav-item.active { background: var(--color-primary-light); }
+  .story-nav-item.active .dot { background: var(--color-primary); border-color: var(--color-primary); }
+  .story-nav-item.done .dot { background: var(--color-success); border-color: var(--color-success); }
+  .story-nav-item:not(.active):not(.done):hover .dot { border-color: var(--color-primary); background: var(--color-primary-light); }
+
+  .story-nav-sep {
+    width: 12px; height: 1px;
+    background: var(--color-border);
+  }
+
+  /* Act container */
+  .act { margin-bottom: var(--space-8); }
+
+  .act-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .act-icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .act-icon svg { width: 20px; height: 20px; }
+
+  .act-icon.density { background: #FFF3E0; } .act-icon.density svg { color: var(--color-accent); }
+  .act-icon.zaap { background: var(--color-primary-light); } .act-icon.zaap svg { color: var(--color-primary); }
+  .act-icon.access { background: var(--color-secondary-light); } .act-icon.access svg { color: var(--color-secondary); }
+  .act-icon.coop { background: #F3E8FF; } .act-icon.coop svg { color: #7C3AED; }
+
+  .act-number {
+    font-size: var(--text-caption);
+    color: var(--color-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .act-title {
+    font-size: var(--text-h3);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .act-text {
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-5);
+  }
+
+  .act-indicators {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+
+  .indicator-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+  }
+
+  .indicator-value {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+    margin-bottom: var(--space-1);
+  }
+
+  .indicator-label {
+    font-size: var(--text-caption);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .indicator-trend { font-size: 0.7rem; margin-left: 4px; }
+
+  .act-callout {
+    background: var(--color-accent-light);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    padding: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  .act-callout svg { width: 16px; height: 16px; color: var(--color-accent); vertical-align: middle; margin-right: 6px; }
+  .act-callout strong { font-weight: 600; }
+  .act-callout p { font-size: var(--text-body-sm); color: var(--color-warning); }
+
+  .act-nav-row {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+
+  .act-nav-row button {
+    flex: 1;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--text-body-sm);
+    border: 2px solid var(--color-border);
+    background: var(--color-surface);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .act-nav-row button:hover { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-primary-light); }
+
+  /* Map column */
+  .story-map {
+    width: 60%;
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    background: #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .map-placeholder {
+    text-align: center;
+    color: var(--color-muted);
+  }
+
+  .map-placeholder svg { width: 120px; height: 120px; opacity: 0.4; margin-bottom: var(--space-4); }
+  .map-placeholder p { font-size: var(--text-body-sm); }
+
+  .legend-badge {
+    position: absolute;
+    bottom: var(--space-5);
+    right: var(--space-5);
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-md);
+    font-size: var(--text-caption);
+  }
+
+  .legend-item { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 2px; }
+  .legend-swatch { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+
+  /* Synthesis section */
+  .synthesis { padding: var(--space-8) 0; }
+
+  .synthesis-header { text-align: center; margin-bottom: var(--space-7); }
+  .synthesis-header h2 { font-size: var(--text-h1); font-weight: 700; margin-bottom: var(--space-3); }
+  .synthesis-header p { max-width: 600px; margin: 0 auto; color: var(--color-text-secondary); }
+
+  .synthesis-map {
+    width: 100%;
+    height: 400px;
+    background: #EDEDED;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-7);
+  }
+
+  .recommendations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  .rec-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .rec-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 700;
+    font-size: var(--text-body-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .rec-card h4 { font-size: var(--text-h4); font-weight: 600; margin-bottom: var(--space-2); }
+  .rec-card p { font-size: var(--text-body-sm); color: var(--color-text-secondary); }
+
+  /* ZoneCards */
+  .zone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-7);
+  }
+
+  .zone-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .zone-card:hover { box-shadow: var(--shadow-md); }
+
+  .zone-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-caption);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+
+  .zone-badge.p1 { background: #FEE2E2; color: var(--color-error); }
+  .zone-badge.p2 { background: var(--color-accent-light); color: var(--color-warning); }
+  .zone-badge.p3 { background: var(--color-primary-light); color: var(--color-primary); }
+
+  .zone-name { font-size: var(--text-h4); font-weight: 600; margin-bottom: var(--space-3); }
+
+  .zone-indicators { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+  .zone-ind { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-caption); color: var(--color-text-secondary); }
+  .zone-ind svg { width: 14px; height: 14px; opacity: 0.6; }
+
+  /* Share widget */
+  .share-widget {
+    text-align: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .share-widget h3 { font-size: var(--text-h4); margin-bottom: var(--space-3); }
+  .share-message { font-size: var(--text-body-sm); color: var(--color-text-secondary); background: var(--color-surface-alt); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-4); font-style: italic; }
+  .share-actions { display: flex; gap: var(--space-3); justify-content: center; }
+  .share-btn { display: inline-flex; align-items: center; gap: var(--space-2); padding: 10px 18px; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: white; cursor: pointer; font-size: var(--text-body-sm); font-weight: 500; transition: all 0.15s; }
+  .share-btn:hover { background: var(--color-surface-alt); border-color: var(--color-primary); }
+
+  /* Footer */
+  .footer { background: var(--color-surface); border-top: 1px solid var(--color-border); padding: var(--space-6); text-align: center; font-size: var(--text-caption); color: var(--color-muted); }
+  .footer a { color: var(--color-muted); text-decoration: underline; }
+
+  /* Mobile */
+  @media (max-width: 1023px) {
+    .story-layout { flex-direction: column; }
+    .story-text { width: 100%; padding: var(--space-4); }
+    .story-map { width: 100%; position: relative; top: 0; height: 50vh; }
+    .story-nav { overflow-x: auto; flex-wrap: nowrap; padding-bottom: var(--space-2); }
+    .story-nav-sep { display: none; }
+    .recommendations { grid-template-columns: 1fr; }
+    .zone-grid { grid-template-columns: 1fr; }
+    .act-indicators { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 639px) {
+    .navbar { height: 56px; padding: 0 var(--space-4); }
+    .navbar nav { display: none; }
+    .story-layout { padding-top: 56px; }
+    .act-indicators { grid-template-columns: 1fr; }
+    .share-actions { flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  :focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg>
+        AgriMap Togo
+      </a>
+      <nav aria-label="Navigation">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Explorer</a></li>
+          <li><a href="#" class="active">Lire l'histoire</a></li>
+          <li><a href="#">Rapport</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switcher">
+        <button class="active">FR</button>
+        <button>EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== STORY LAYOUT ===== -->
+  <div class="story-layout">
+    <!-- Text column -->
+    <div class="story-text">
+
+      <!-- Navigator -->
+      <div class="story-nav" role="tablist" aria-label="Actes de l'histoire">
+        <button class="story-nav-item active" role="tab" aria-selected="true">
+          <span class="dot"></span> Acte 1
+        </button>
+        <span class="story-nav-sep"></span>
+        <button class="story-nav-item" role="tab">
+          <span class="dot"></span> Acte 2
+        </button>
+        <span class="story-nav-sep"></span>
+        <button class="story-nav-item" role="tab">
+          <span class="dot"></span> Acte 3
+        </button>
+        <span class="story-nav-sep"></span>
+        <button class="story-nav-item" role="tab">
+          <span class="dot"></span> Acte 4
+        </button>
+        <span class="story-nav-sep"></span>
+        <button class="story-nav-item" role="tab">
+          <span class="dot"></span> Synthèse
+        </button>
+      </div>
+
+      <!-- Act 1 -->
+      <section class="act" id="act-1">
+        <div class="act-header">
+          <div class="act-icon density">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div>
+            <div class="act-number">Acte 1</div>
+            <h2 class="act-title">Où produit-on ?</h2>
+          </div>
+        </div>
+
+        <p class="act-text">La carte YlOrBr ci-contre révèle la densité des exploitations (grandes, petites, plantations) par région. Les teintes les plus chaudes concentrent la production.</p>
+
+        <div class="act-indicators">
+          <div class="indicator-card">
+            <div class="indicator-value">4.2 <span class="indicator-trend" style="color:var(--color-success)">▲</span></div>
+            <div class="indicator-label">Exploitations / km² (moy. nationale)</div>
+          </div>
+          <div class="indicator-card">
+            <div class="indicator-value">1 234</div>
+            <div class="indicator-label">Grandes exploitations recensées</div>
+          </div>
+        </div>
+
+        <div class="act-callout">
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg> <strong>Et donc :</strong> les régions des Savanes et Centrale sont les bassins prioritaires — forte production, mais sont-elles bien reliées aux services ?</p>
+        </div>
+
+        <div class="act-nav-row">
+          <button disabled style="opacity:0.4;cursor:default;">← Acte précédent</button>
+          <button onclick="document.getElementById('act-2').scrollIntoView({behavior:'smooth'})">Acte suivant →</button>
+        </div>
+      </section>
+
+      <div style="height:1px;background:var(--color-border);margin:var(--space-7) 0;"></div>
+
+      <!-- Act 2 -->
+      <section class="act" id="act-2">
+        <div class="act-header">
+          <div class="act-icon zaap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 12v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3"/><path d="M12 2v8"/><path d="M5 12h14"/><path d="M7 16v3"/><path d="M17 16v3"/></svg>
+          </div>
+          <div>
+            <div class="act-number">Acte 2</div>
+            <h2 class="act-title">Est-ce aménagé ?</h2>
+          </div>
+        </div>
+
+        <p class="act-text">Les ZAAP (Zones d'Aménagement Agricole Planifiées) sont le fer de lance de la réforme. La carte Greens montre les zones couvertes (vert foncé) et les bassins hors ZAAP (vert clair).</p>
+
+        <div class="act-indicators">
+          <div class="indicator-card">
+            <div class="indicator-value">34%</div>
+            <div class="indicator-label">Bassins de production couverts par une ZAAP</div>
+          </div>
+          <div class="indicator-card">
+            <div class="indicator-value" style="color:var(--color-warning)">66%</div>
+            <div class="indicator-label">Zones de production non aménagées</div>
+          </div>
+        </div>
+
+        <div class="act-callout">
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg> <strong>Et donc :</strong> les deux tiers des bassins productifs restent hors ZAAP — un potentiel d'aménagement considérable pour la réforme.</p>
+        </div>
+
+        <div class="act-nav-row">
+          <button onclick="document.getElementById('act-1').scrollIntoView({behavior:'smooth'})">← Acte précédent</button>
+          <button onclick="document.getElementById('act-3').scrollIntoView({behavior:'smooth'})">Acte suivant →</button>
+        </div>
+      </section>
+
+      <div style="height:1px;background:var(--color-border);margin:var(--space-7) 0;"></div>
+
+      <!-- Act 3 -->
+      <section class="act" id="act-3">
+        <div class="act-header">
+          <div class="act-icon access">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="act-number">Acte 3</div>
+            <h2 class="act-title">Est-ce accessible ?</h2>
+          </div>
+        </div>
+
+        <p class="act-text">La carte BuPu évalue la distance des exploitations aux marchés et pépinières. Les zones vio foncé sont les plus isolées.</p>
+
+        <div class="act-indicators">
+          <div class="indicator-card">
+            <div class="indicator-value">38 <span style="font-size:0.9rem;font-weight:400;">min</span></div>
+            <div class="indicator-label">Temps d'accès moyen au marché le plus proche</div>
+          </div>
+          <div class="indicator-card">
+            <div class="indicator-value" style="color:var(--color-error)">15</div>
+            <div class="indicator-label">Préfectures à plus de 60 min d'un marché</div>
+          </div>
+        </div>
+
+        <div class="act-callout">
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg> <strong>Et donc :</strong> l'accès aux marchés est un frein majeur dans les zones de forte production — développer des débouchés locaux multiplierait l'impact.</p>
+        </div>
+
+        <div class="act-nav-row">
+          <button onclick="document.getElementById('act-2').scrollIntoView({behavior:'smooth'})">← Acte précédent</button>
+          <button onclick="document.getElementById('act-4').scrollIntoView({behavior:'smooth'})">Acte suivant →</button>
+        </div>
+      </section>
+
+      <div style="height:1px;background:var(--color-border);margin:var(--space-7) 0;"></div>
+
+      <!-- Act 4 -->
+      <section class="act" id="act-4">
+        <div class="act-header">
+          <div class="act-icon coop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="act-number">Acte 4</div>
+            <h2 class="act-title">Est-ce organisé ?</h2>
+          </div>
+        </div>
+
+        <p class="act-text">Le maillage coopératif (OrRd) révèle les zones où les producteurs sont organisés et celles où ils restent isolés — des zones blanches d'organisation collective.</p>
+
+        <div class="act-indicators">
+          <div class="indicator-card">
+            <div class="indicator-value">0.8</div>
+            <div class="indicator-label">Coopératives pour 100 km² (moy. nationale)</div>
+          </div>
+          <div class="indicator-card">
+            <div class="indicator-value" style="color:var(--color-error)">4</div>
+            <div class="indicator-label">Régions avec un maillage coopératif insuffisant</div>
+          </div>
+        </div>
+
+        <div class="act-callout">
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/></svg> <strong>Et donc :</strong> renforcer le maillage coopératif dans les zones de production isolées créerait un effet de levier pour l'accès aux intrants et aux marchés.</p>
+        </div>
+
+        <div class="act-nav-row">
+          <button onclick="document.getElementById('act-3').scrollIntoView({behavior:'smooth'})">← Acte précédent</button>
+          <button onclick="document.querySelector('.synthesis').scrollIntoView({behavior:'smooth'})">Voir la synthèse →</button>
+        </div>
+      </section>
+
+      <!-- ===== SYNTHESIS ===== -->
+      <div style="height:1px;background:var(--color-border);margin:var(--space-7) 0;"></div>
+
+      <section class="synthesis" id="synthesis">
+        <div class="synthesis-header">
+          <h2>Où investir ?</h2>
+          <p>La synthèse RdYlGn superpose les 4 analyses pour révéler les zones où concentrer les prochains investissements.</p>
+        </div>
+
+        <div class="synthesis-map">
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <p>Carte synthèse (RdYlGn) — les zones rouges sont prioritaires</p>
+          </div>
+          <div class="legend-badge">
+            <div class="legend-item"><span class="legend-swatch" style="background:#D73027;"></span> Prioritaire</div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#FDAE61;"></span> À surveiller</div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#1A9641;"></span> Bien desservi</div>
+          </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="recommendations">
+          <div class="rec-card">
+            <div class="rec-number">1</div>
+            <h4>Région des Savanes</h4>
+            <p><strong>Priorité :</strong> implanter une ZAAP. Forte densité agricole, mais seulement 12% de couverture ZAAP et 45 min du marché.</p>
+          </div>
+          <div class="rec-card">
+            <div class="rec-number" style="background:var(--color-primary);">2</div>
+            <h4>Région Centrale</h4>
+            <p><strong>Priorité :</strong> développer l'accès aux marchés. 2ème plus forte densité, mais plus de 60 min du marché pour 60% des exploitations.</p>
+          </div>
+          <div class="rec-card">
+            <div class="rec-number" style="background:var(--color-secondary);">3</div>
+            <h4>Région des Plateaux</h4>
+            <p><strong>Priorité :</strong> créer un réseau coopératif. Densité moyenne, mais 0.2 coopérative / 100 km² — un quasi-désert organisationnel.</p>
+          </div>
+        </div>
+
+        <!-- ZoneCards -->
+        <div class="zone-grid">
+          <article class="zone-card">
+            <span class="zone-badge p1">Priorité 1</span>
+            <h3 class="zone-name">Savanes</h3>
+            <div class="zone-indicators">
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> 5.1 / km²</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 12v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3"/><path d="M12 2v8"/></svg> 12% couv.</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 45' marché</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 0.8 / 100km²</span>
+            </div>
+          </article>
+
+          <article class="zone-card" style="border-left-color:var(--color-primary);">
+            <span class="zone-badge p2">Priorité 2</span>
+            <h3 class="zone-name">Centrale</h3>
+            <div class="zone-indicators">
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> 3.8 / km²</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 12v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3"/><path d="M12 2v8"/></svg> 28% couv.</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 62' marché</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 1.2 / 100km²</span>
+            </div>
+          </article>
+
+          <article class="zone-card" style="border-left-color:var(--color-secondary);">
+            <span class="zone-badge p3">Priorité 3</span>
+            <h3 class="zone-name">Plateaux</h3>
+            <div class="zone-indicators">
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> 2.1 / km²</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 12v3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-3"/><path d="M12 2v8"/></svg> 45% couv.</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 35' marché</span>
+              <span class="zone-ind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 0.2 / 100km²</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Share -->
+        <div class="share-widget">
+          <h3>📢 Vous voulez partager ?</h3>
+          <div class="share-message">
+            "Les zones blanches de services agricoles au Togo — où investir en priorité ? AgriMap Togo révèle la carte des opportunités."
+          </div>
+          <div class="share-actions">
+            <button class="share-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copier le message
+            </button>
+            <button class="share-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              Tweeter
+            </button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- Map column (placeholder) -->
+    <div class="story-map" aria-label="Carte interactive">
+      <!-- 🇹🇬 ICI : Filigrane silhouette Togo (vert Togo #006A4E, opacité 8%) en fond de la carte -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0.06;z-index:0;">
+        <svg width="200" height="300" viewBox="0 0 100 150" fill="#006A4E" xmlns="http://www.w3.org/2000/svg">
+          <!-- Silhouette Togo simplifiée (contour générique pour le mockup) -->
+          <path d="M50 5 C60 5 75 15 80 30 C85 45 90 60 85 75 C80 90 70 100 60 110 C55 115 50 120 45 130 C40 125 35 120 30 110 C25 100 20 85 18 70 C16 55 20 35 30 20 C35 12 42 5 50 5 Z" />
+        </svg>
+      </div>
+      <!-- 🇹🇬 FIN filigrane Togo -->
+
+      <div class="map-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <p>Carte Leaflet — couche active</p>
+        <p style="font-size:0.75rem;">(remplacée par Leaflet dans l'implémentation)</p>
+      </div>
+      <div class="legend-badge">
+        <div style="font-weight:600;font-size:0.7rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.05em;">Légende</div>
+        <div class="legend-item"><span class="legend-swatch cb-ylorbr-5"></span> Très élevé</div>
+        <div class="legend-item"><span class="legend-swatch cb-ylorbr-4"></span> Élevé</div>
+        <div class="legend-item"><span class="legend-swatch cb-ylorbr-3"></span> Moyen</div>
+        <div class="legend-item"><span class="legend-swatch cb-ylorbr-2"></span> Faible</div>
+        <div class="legend-item"><span class="legend-swatch cb-ylorbr-1"></span> Très faible</div>
+        <div style="margin-top:6px;font-size:0.6rem;color:var(--color-muted);">ColorBrewer YlOrBr • colorblind safe</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <!-- 🇹🇬 ICI : Footer avec badge Made in Togo -->
+    <p style="display:flex;align-items:center;justify-content:center;gap:var(--space-2);flex-wrap:wrap;">
+      <span style="padding:2px 10px;background:#E8F5E9;border:1px solid #006A4E33;border-radius:var(--radius-full);font-weight:600;color:#006A4E;font-size:0.65rem;">🇹🇬 Made in Togo</span>
+      <span><strong>AgriMap Togo</strong> — Data Challenge Agriculture, Togo AI Lab 2026 — Sources : <a href="#">geodata.gouv.tg</a>, <a href="#">opendata.gouv.tg</a></span>
+    </p>
+  </footer>
+
+</body>
+</html>

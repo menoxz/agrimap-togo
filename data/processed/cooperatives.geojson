@@ -1,0 +1,851 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.086797,
+          6.188313
+        ]
+      },
+      "properties": {
+        "id_cooperative": 1,
+        "nom_cooperative": "Coopérative Anacarde #1",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 455,
+        "annee_fondation": 2000,
+        "filiere_principale": "Racines/Tubercules",
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "commune": "Aného",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.74029,
+          6.060421
+        ]
+      },
+      "properties": {
+        "id_cooperative": 2,
+        "nom_cooperative": "Coopérative Coton #2",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 339,
+        "annee_fondation": 2014,
+        "filiere_principale": "Palmeraie",
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "commune": "Baguida",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.282018,
+          7.806577
+        ]
+      },
+      "properties": {
+        "id_cooperative": 3,
+        "nom_cooperative": "Coopérative Anacarde #3",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 171,
+        "annee_fondation": 1997,
+        "filiere_principale": "Anacarde",
+        "region": "Plateaux",
+        "prefecture": "Akébou",
+        "commune": "Atakpamé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.624677,
+          6.668557
+        ]
+      },
+      "properties": {
+        "id_cooperative": 4,
+        "nom_cooperative": "Coopérative Céréales #4",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 415,
+        "annee_fondation": 2009,
+        "filiere_principale": "Coton",
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "commune": "Aného",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.08684,
+          7.401253
+        ]
+      },
+      "properties": {
+        "id_cooperative": 5,
+        "nom_cooperative": "Coopérative Anacarde #5",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 296,
+        "annee_fondation": 2020,
+        "filiere_principale": null,
+        "region": "Plateaux",
+        "prefecture": "Akébou",
+        "commune": "Agbélouvé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.31864,
+          6.266097
+        ]
+      },
+      "properties": {
+        "id_cooperative": 6,
+        "nom_cooperative": "Coopérative Élevage #6",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 434,
+        "annee_fondation": 2008,
+        "filiere_principale": "Élevage",
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Lomé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.590907,
+          10.06839
+        ]
+      },
+      "properties": {
+        "id_cooperative": 7,
+        "nom_cooperative": "Coopérative Palmeraie #7",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 140,
+        "annee_fondation": 2002,
+        "filiere_principale": "Coton",
+        "region": "Kara",
+        "prefecture": "Kozah",
+        "commune": "Kétao",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.449108,
+          6.228695
+        ]
+      },
+      "properties": {
+        "id_cooperative": 8,
+        "nom_cooperative": "Coopérative Élevage #8",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 397,
+        "annee_fondation": 2016,
+        "filiere_principale": "Céréales",
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Noépé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.942906,
+          7.907556
+        ]
+      },
+      "properties": {
+        "id_cooperative": 9,
+        "nom_cooperative": "Coopérative Anacarde #9",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 281,
+        "annee_fondation": 1993,
+        "filiere_principale": "Palmeraie",
+        "region": "Plateaux",
+        "prefecture": "Kpélé",
+        "commune": "Agbélouvé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.75919,
+          11.092218
+        ]
+      },
+      "properties": {
+        "id_cooperative": 10,
+        "nom_cooperative": "Coopérative Café/Cacao #10",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 427,
+        "annee_fondation": 1998,
+        "filiere_principale": "Racines/Tubercules",
+        "region": "Savanes",
+        "prefecture": "Tandjouaré",
+        "commune": "Nohou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.235774,
+          8.756165
+        ]
+      },
+      "properties": {
+        "id_cooperative": 11,
+        "nom_cooperative": "Coopérative Palmeraie #11",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 321,
+        "annee_fondation": 2005,
+        "filiere_principale": "Fruits/Légumes",
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "commune": "Sotouboua",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.39813,
+          10.160046
+        ]
+      },
+      "properties": {
+        "id_cooperative": 12,
+        "nom_cooperative": "Coopérative Palmeraie #12",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 368,
+        "annee_fondation": 2022,
+        "filiere_principale": "Fruits/Légumes",
+        "region": "Savanes",
+        "prefecture": "Kpendjal",
+        "commune": "Biankouri",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.17891,
+          7.996447
+        ]
+      },
+      "properties": {
+        "id_cooperative": 13,
+        "nom_cooperative": "Coopérative Coton #13",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 117,
+        "annee_fondation": 2008,
+        "filiere_principale": "Élevage",
+        "region": "Plateaux",
+        "prefecture": null,
+        "commune": "Badou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.615095,
+          11.149992
+        ]
+      },
+      "properties": {
+        "id_cooperative": 14,
+        "nom_cooperative": "Coopérative Élevage #14",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 69,
+        "annee_fondation": 2012,
+        "filiere_principale": "Anacarde",
+        "region": "Savanes",
+        "prefecture": "Kpendjal",
+        "commune": "Naki-Est",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.681136,
+          10.809092
+        ]
+      },
+      "properties": {
+        "id_cooperative": 15,
+        "nom_cooperative": "Coopérative Fruits/Légumes #15",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 423,
+        "annee_fondation": 1990,
+        "filiere_principale": "Racines/Tubercules",
+        "region": "Savanes",
+        "prefecture": "Tône",
+        "commune": "Tandjouaré",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.140508,
+          6.239883
+        ]
+      },
+      "properties": {
+        "id_cooperative": 16,
+        "nom_cooperative": "Coopérative Café/Cacao #16",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 359,
+        "annee_fondation": 2006,
+        "filiere_principale": "Café/Cacao",
+        "region": "Maritime",
+        "prefecture": "Lomé",
+        "commune": "Tabligbo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.882344,
+          6.430419
+        ]
+      },
+      "properties": {
+        "id_cooperative": 17,
+        "nom_cooperative": "Coopérative Anacarde #17",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 325,
+        "annee_fondation": 2004,
+        "filiere_principale": "Palmeraie",
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "commune": "Davidi",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.958586,
+          9.37393
+        ]
+      },
+      "properties": {
+        "id_cooperative": 18,
+        "nom_cooperative": "Coopérative Céréales #18",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 208,
+        "annee_fondation": 2016,
+        "filiere_principale": "Élevage",
+        "region": "Kara",
+        "prefecture": "Assoli",
+        "commune": "Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.302682,
+          6.744674
+        ]
+      },
+      "properties": {
+        "id_cooperative": 19,
+        "nom_cooperative": "Coopérative Anacarde #19",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 476,
+        "annee_fondation": 2013,
+        "filiere_principale": "Coton",
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "commune": "Tabligbo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.573525,
+          7.134044
+        ]
+      },
+      "properties": {
+        "id_cooperative": 20,
+        "nom_cooperative": "Coopérative Café/Cacao #20",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 273,
+        "annee_fondation": 1997,
+        "filiere_principale": "Palmeraie",
+        "region": "Plateaux",
+        "prefecture": "Ogou",
+        "commune": "Elavagnon",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.422783,
+          7.289672
+        ]
+      },
+      "properties": {
+        "id_cooperative": 21,
+        "nom_cooperative": "Coopérative Fruits/Légumes #21",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 179,
+        "annee_fondation": 2019,
+        "filiere_principale": "Café/Cacao",
+        "region": "Plateaux",
+        "prefecture": "Ogou",
+        "commune": "Badou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.556568,
+          10.928393
+        ]
+      },
+      "properties": {
+        "id_cooperative": 22,
+        "nom_cooperative": "Coopérative Fruits/Légumes #22",
+        "type_cooperative": null,
+        "nombre_membres": 414,
+        "annee_fondation": 2012,
+        "filiere_principale": "Racines/Tubercules",
+        "region": "Savanes",
+        "prefecture": "Oti",
+        "commune": "Naki-Est",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.167738,
+          6.081812
+        ]
+      },
+      "properties": {
+        "id_cooperative": 23,
+        "nom_cooperative": "Coopérative Café/Cacao #23",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 288,
+        "annee_fondation": 2024,
+        "filiere_principale": "Palmeraie",
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Aného",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.226708,
+          6.39826
+        ]
+      },
+      "properties": {
+        "id_cooperative": 24,
+        "nom_cooperative": "Coopérative Élevage #24",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 121,
+        "annee_fondation": 2023,
+        "filiere_principale": "Anacarde",
+        "region": "Maritime",
+        "prefecture": "Lomé",
+        "commune": "Baguida",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.623934,
+          9.356745
+        ]
+      },
+      "properties": {
+        "id_cooperative": 25,
+        "nom_cooperative": "Coopérative Coton #25",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 359,
+        "annee_fondation": 2010,
+        "filiere_principale": "Palmeraie",
+        "region": "Centrale",
+        "prefecture": "Tchaoudjo",
+        "commune": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.158361,
+          7.04447
+        ]
+      },
+      "properties": {
+        "id_cooperative": 26,
+        "nom_cooperative": "Coopérative Élevage #26",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 421,
+        "annee_fondation": 2022,
+        "filiere_principale": "Anacarde",
+        "region": "Plateaux",
+        "prefecture": "Est-Mono",
+        "commune": "Atakpamé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.042445,
+          7.576563
+        ]
+      },
+      "properties": {
+        "id_cooperative": 27,
+        "nom_cooperative": "Coopérative Racines/Tubercules #27",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 95,
+        "annee_fondation": 2024,
+        "filiere_principale": "Céréales",
+        "region": "Plateaux",
+        "prefecture": "Agou",
+        "commune": "Kpalimé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.059029,
+          6.25581
+        ]
+      },
+      "properties": {
+        "id_cooperative": 28,
+        "nom_cooperative": "Coopérative Palmeraie #28",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 115,
+        "annee_fondation": 2024,
+        "filiere_principale": "Palmeraie",
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "commune": "Aflao",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.233737,
+          6.045464
+        ]
+      },
+      "properties": {
+        "id_cooperative": 29,
+        "nom_cooperative": "Coopérative Racines/Tubercules #29",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 101,
+        "annee_fondation": 2006,
+        "filiere_principale": "Racines/Tubercules",
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "commune": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.721801,
+          7.728006
+        ]
+      },
+      "properties": {
+        "id_cooperative": 30,
+        "nom_cooperative": "Coopérative Élevage #30",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 209,
+        "annee_fondation": 1997,
+        "filiere_principale": "Céréales",
+        "region": "Plateaux",
+        "prefecture": "Agou",
+        "commune": "Kamina",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.291902,
+          6.05462
+        ]
+      },
+      "properties": {
+        "id_cooperative": 31,
+        "nom_cooperative": "Coopérative Racines/Tubercules #31",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 485,
+        "annee_fondation": 2022,
+        "filiere_principale": "Racines/Tubercules",
+        "region": "Maritime",
+        "prefecture": "Yoto",
+        "commune": "Tabligbo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.394124,
+          9.390036
+        ]
+      },
+      "properties": {
+        "id_cooperative": 32,
+        "nom_cooperative": "Coopérative Palmeraie #32",
+        "type_cooperative": "Élevage",
+        "nombre_membres": 430,
+        "annee_fondation": 1991,
+        "filiere_principale": "Anacarde",
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "commune": "Bafilo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.293508,
+          6.956125
+        ]
+      },
+      "properties": {
+        "id_cooperative": 33,
+        "nom_cooperative": "Coopérative Fruits/Légumes #33",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 83,
+        "annee_fondation": 2009,
+        "filiere_principale": "Élevage",
+        "region": "Maritime",
+        "prefecture": "Lomé",
+        "commune": "Davidi",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.169649,
+          9.054305
+        ]
+      },
+      "properties": {
+        "id_cooperative": 34,
+        "nom_cooperative": "Coopérative Palmeraie #34",
+        "type_cooperative": "Mixte",
+        "nombre_membres": 290,
+        "annee_fondation": 1995,
+        "filiere_principale": "Fruits/Légumes",
+        "region": "Kara",
+        "prefecture": "Binah",
+        "commune": "Guérin-Kouka",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.611256,
+          7.021751
+        ]
+      },
+      "properties": {
+        "id_cooperative": 35,
+        "nom_cooperative": "Coopérative Café/Cacao #35",
+        "type_cooperative": "Agricole",
+        "nombre_membres": 104,
+        "annee_fondation": 2004,
+        "filiere_principale": null,
+        "region": "Maritime",
+        "prefecture": "Bas-Mono",
+        "commune": "Baguida",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-06-16T11:34:36.516539+00:00",
+    "generator": "AgriMap Togo ETL Pipeline (M1)",
+    "crs": "EPSG:4326",
+    "count": 35
+  }
+}

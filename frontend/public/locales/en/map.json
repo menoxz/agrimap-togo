@@ -1,0 +1,60 @@
+{
+  "legend": {
+    "density": "Farm density",
+    "zaap": "ZAAP coverage",
+    "access": "Service accessibility",
+    "coop": "Cooperative network",
+    "synthesis": "Prioritization",
+    "very_high": "Very high",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "very_low": "Very low",
+    "covered": "Covered",
+    "uncovered": "Uncovered",
+    "accessible": "Accessible",
+    "isolated": "Isolated",
+    "dense": "Dense",
+    "none": "None",
+    "priority": "Priority",
+    "to_monitor": "To monitor",
+    "well_served": "Well served",
+    "colorblind_safe": "Colorblind safe palette"
+  },
+  "region_popup": {
+    "indicators": "Indicators",
+    "view_details": "View detailed sheet",
+    "close": "Close"
+  },
+  "zone_detail": {
+    "title": "Zone details",
+    "composite_score": "Composite score",
+    "rank": "Priority rank",
+    "sub_scores": "Sub-scores",
+    "density": "Farm density",
+    "zaap": "ZAAP access",
+    "accessibility": "Road accessibility",
+    "cooperative": "Cooperative network",
+    "center_map": "Center on zone",
+    "close": "Close",
+    "key_figures": "Key figures",
+    "farms_density": "Farms density",
+    "market_distance": "Market distance",
+    "cooperatives": "Cooperatives",
+    "zone_name": "Zone name",
+    "region": "Region"
+  },
+  "top_zones": {
+    "title": "Top zones to invest in",
+    "subtitle": "Ranked by composite priority score",
+    "rank": "Rank",
+    "zone": "Zone",
+    "region": "Region",
+    "score": "Score",
+    "priority": "Priority",
+    "filter_region": "Filter by region",
+    "all_regions": "All regions",
+    "no_zones": "No zones match your filter",
+    "select_hint": "Click a zone to center the map"
+  }
+}

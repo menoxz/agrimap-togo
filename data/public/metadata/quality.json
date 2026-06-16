@@ -1,0 +1,406 @@
+{
+  "pipeline": {
+    "name": "AgriMap Togo — Pipeline ETL M1",
+    "version": "1.0.0",
+    "generated_at": "2026-06-16T11:34:36.483972+00:00",
+    "mode": "mock",
+    "crs": "EPSG:4326",
+    "licence": "CC-BY-4.0"
+  },
+  "datasets": {
+    "grandes_exploitations": {
+      "label": "Grandes exploitations agricoles",
+      "record_count": 55,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Point": 55
+      },
+      "missing_rate_by_field": {
+        "annee_installation": 0.0,
+        "commune": 0.0,
+        "id_etablissement": 0.0,
+        "licence": 0.0,
+        "nom_exploitation": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "source": 0.0,
+        "superficie_ha": 0.0,
+        "type_culture": 0.0
+      },
+      "field_types": {
+        "annee_installation": "int",
+        "commune": "str",
+        "id_etablissement": "int",
+        "licence": "str",
+        "nom_exploitation": "str",
+        "prefecture": "str",
+        "region": "str",
+        "source": "str",
+        "superficie_ha": "float",
+        "type_culture": "str"
+      },
+      "regional_distribution": {
+        "Plateaux": 19,
+        "Maritime": 16,
+        "Centrale": 12,
+        "Savanes": 5,
+        "Kara": 3
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "petites_exploitations": {
+      "label": "Petites exploitations agricoles",
+      "record_count": 80,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Point": 80
+      },
+      "missing_rate_by_field": {
+        "adhesion_cooperative": 0.0,
+        "commune": 0.0,
+        "id_exploitation": 0.0,
+        "nom_exploitant": 0.0,
+        "nombre_actifs": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "superficie_ha": 0.0,
+        "type_culture": 0.0
+      },
+      "field_types": {
+        "adhesion_cooperative": "bool",
+        "commune": "str",
+        "id_exploitation": "int",
+        "nom_exploitant": "str",
+        "nombre_actifs": "int",
+        "prefecture": "str",
+        "region": "str",
+        "superficie_ha": "float",
+        "type_culture": "str"
+      },
+      "regional_distribution": {
+        "Plateaux": 24,
+        "Maritime": 21,
+        "Centrale": 14,
+        "Savanes": 11,
+        "Kara": 10
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "plantations": {
+      "label": "Plantations agricoles",
+      "record_count": 50,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Polygon": 50
+      },
+      "missing_rate_by_field": {
+        "annee_plantation": 0.0,
+        "id_plantation": 0.0,
+        "irrigation": 0.0,
+        "mode_exploitation": 0.0,
+        "nom_plantation": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "superficie_ha": 0.0,
+        "type_culture": 0.0
+      },
+      "field_types": {
+        "annee_plantation": "int",
+        "id_plantation": "int",
+        "irrigation": "bool",
+        "mode_exploitation": "str",
+        "nom_plantation": "str",
+        "prefecture": "str",
+        "region": "str",
+        "superficie_ha": "float",
+        "type_culture": "str"
+      },
+      "regional_distribution": {
+        "Maritime": 17,
+        "Plateaux": 10,
+        "Kara": 9,
+        "Centrale": 9,
+        "Savanes": 5
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "zaap_formes": {
+      "label": "ZAAP — formes (périmètres)",
+      "record_count": 30,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Polygon": 30
+      },
+      "missing_rate_by_field": {
+        "annee_creation": 0.0,
+        "id_zaap": 0.0,
+        "nom_zaap": 0.0,
+        "nombre_exploitants": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "statut": 0.0,
+        "superficie_ha": 0.0,
+        "type_zaap": 0.0
+      },
+      "field_types": {
+        "annee_creation": "int",
+        "id_zaap": "int",
+        "nom_zaap": "str",
+        "nombre_exploitants": "int",
+        "prefecture": "str",
+        "region": "str",
+        "statut": "str",
+        "superficie_ha": "float",
+        "type_zaap": "str"
+      },
+      "regional_distribution": {
+        "Maritime": 11,
+        "Centrale": 6,
+        "Plateaux": 6,
+        "Kara": 5,
+        "Savanes": 2
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "zaap_champs": {
+      "label": "ZAAP et ZAPB — champs individuels",
+      "record_count": 65,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Polygon": 65
+      },
+      "missing_rate_by_field": {
+        "annee_attribution": 0.0,
+        "id_champ": 0.0,
+        "id_zaap": 0.0,
+        "nom_exploitant": 0.0,
+        "region": 0.0,
+        "superficie_ha": 0.0,
+        "type_culture": 0.0
+      },
+      "field_types": {
+        "annee_attribution": "int",
+        "id_champ": "int",
+        "id_zaap": "int",
+        "nom_exploitant": "str",
+        "region": "str",
+        "superficie_ha": "float",
+        "type_culture": "str"
+      },
+      "regional_distribution": {
+        "Plateaux": 19,
+        "Centrale": 14,
+        "Maritime": 12,
+        "Kara": 12,
+        "Savanes": 8
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "cooperatives": {
+      "label": "Coopératives agricoles",
+      "record_count": 35,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Point": 35
+      },
+      "missing_rate_by_field": {
+        "annee_fondation": 0.0,
+        "commune": 0.0,
+        "filiere_principale": 0.0,
+        "id_cooperative": 0.0,
+        "nom_cooperative": 0.0,
+        "nombre_membres": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "type_cooperative": 0.0
+      },
+      "field_types": {
+        "annee_fondation": "int",
+        "commune": "str",
+        "filiere_principale": "str",
+        "id_cooperative": "int",
+        "nom_cooperative": "str",
+        "nombre_membres": "int",
+        "prefecture": "str",
+        "region": "str",
+        "type_cooperative": "str"
+      },
+      "regional_distribution": {
+        "Maritime": 15,
+        "Plateaux": 9,
+        "Savanes": 5,
+        "Kara": 3,
+        "Centrale": 3
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "marches": {
+      "label": "Marchés",
+      "record_count": 50,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Point": 50
+      },
+      "missing_rate_by_field": {
+        "acces_vehicule": 0.0,
+        "commune": 0.0,
+        "id_marché": 0.0,
+        "jour_marché": 0.0,
+        "nom_marché": 0.0,
+        "nombre_commercants": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "type_marché": 0.0
+      },
+      "field_types": {
+        "acces_vehicule": "bool",
+        "commune": "str",
+        "id_marché": "int",
+        "jour_marché": "str",
+        "nom_marché": "str",
+        "nombre_commercants": "int",
+        "prefecture": "str",
+        "region": "str",
+        "type_marché": "str"
+      },
+      "regional_distribution": {
+        "Centrale": 16,
+        "Maritime": 13,
+        "Plateaux": 12,
+        "Kara": 5,
+        "Savanes": 4
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "pepinieres": {
+      "label": "Pépinières agricoles",
+      "record_count": 40,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Point": 40
+      },
+      "missing_rate_by_field": {
+        "annee_creation": 0.0,
+        "capacite_plants": 0.0,
+        "especes_principales": 0.0,
+        "id_pepiniere": 0.0,
+        "nom_pepiniere": 0.0,
+        "prefecture": 0.0,
+        "region": 0.0,
+        "type_pepiniere": 0.0
+      },
+      "field_types": {
+        "annee_creation": "int",
+        "capacite_plants": "int",
+        "especes_principales": "str",
+        "id_pepiniere": "int",
+        "nom_pepiniere": "str",
+        "prefecture": "str",
+        "region": "str",
+        "type_pepiniere": "str"
+      },
+      "regional_distribution": {
+        "Plateaux": 18,
+        "Maritime": 10,
+        "Centrale": 5,
+        "Savanes": 5,
+        "Kara": 2
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "agriculture_cadrage": {
+      "label": "Agriculture & développement rural",
+      "record_count": 5,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Polygon": 5
+      },
+      "missing_rate_by_field": {
+        "id_region": 0.0,
+        "nombre_exploitations": 0.0,
+        "population_active_agricole": 0.0,
+        "production_rente_t": 0.0,
+        "production_vivriere_t": 0.0,
+        "region": 0.0,
+        "surface_agricole_ha": 0.0,
+        "taux_acces_eau": 0.0,
+        "taux_securite_alimentaire": 0.0
+      },
+      "field_types": {
+        "id_region": "int",
+        "nombre_exploitations": "int",
+        "population_active_agricole": "int",
+        "production_rente_t": "float",
+        "production_vivriere_t": "float",
+        "region": "str",
+        "surface_agricole_ha": "float",
+        "taux_acces_eau": "float",
+        "taux_securite_alimentaire": "float"
+      },
+      "regional_distribution": {
+        "Maritime": 1,
+        "Plateaux": 1,
+        "Centrale": 1,
+        "Kara": 1,
+        "Savanes": 1
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    },
+    "regions": {
+      "label": "Régions du Togo",
+      "record_count": 5,
+      "completeness_score": 100,
+      "geometry_types": {
+        "Polygon": 5
+      },
+      "missing_rate_by_field": {
+        "capitale": 0.0,
+        "dataset_version": 0.0,
+        "id_region": 0.0,
+        "licence": 0.0,
+        "name_en": 0.0,
+        "nom_region": 0.0,
+        "population": 0.0,
+        "region": 0.0,
+        "source": 0.0,
+        "superficie_km2": 0.0
+      },
+      "field_types": {
+        "capitale": "str",
+        "dataset_version": "str",
+        "id_region": "int",
+        "licence": "str",
+        "name_en": "str",
+        "nom_region": "str",
+        "population": "int",
+        "region": "str",
+        "source": "str",
+        "superficie_km2": "float"
+      },
+      "regional_distribution": {
+        "Maritime": 1,
+        "Plateaux": 1,
+        "Centrale": 1,
+        "Kara": 1,
+        "Savanes": 1
+      },
+      "quality_flags": [],
+      "has_geometry": true
+    }
+  },
+  "summary": {
+    "total_datasets": 10,
+    "total_records": 415,
+    "average_completeness": 100.0,
+    "datasets_with_issues": 0
+  }
+}

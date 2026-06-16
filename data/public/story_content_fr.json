@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "title": "Produire ne suffit pas : il faut être relié.",
+    "subtitle": "Au Togo, des milliers d'exploitations agricoles restent déconnectées des marchés, des services et des réseaux coopératifs. Explorez les opportunités d'investissement dans les zones blanches de services agricoles.",
+    "cta": "Commencer l'histoire",
+    "explore": "Explorer librement"
+  },
+  "act1": {
+    "title": "Où produit-on ?",
+    "subtitle": "Les bassins de production agricole",
+    "body": "Le Togo compte des milliers d'exploitations agricoles réparties sur l'ensemble du territoire. Les régions Centrale et Kara concentrent une part significative de la production, tandis que les Plateaux et la Maritime présentent un potentiel important. Cette carte de densité révèle les bassins de production où l'activité agricole est la plus intense.",
+    "key_finding": "Les régions Centrale et Kara concentrent 45% des exploitations agricoles du Togo",
+    "question": "Ces zones de production ont-elles accès aux services essentiels ?"
+  },
+  "act2": {
+    "title": "Est-ce aménagé ?",
+    "subtitle": "La couverture des Zones d'Aménagement Agricole Planifiées (ZAAP)",
+    "body": "Les ZAAP sont conçues pour structurer et soutenir la production agricole avec des infrastructures adaptées. Pourtant, de nombreux bassins de production ne sont pas couverts par une ZAAP dans un rayon de 5 km. Ces zones non couvertes représentent des opportunités d'investissement majeures pour l'extension du réseau.",
+    "key_finding": "Des bassins de production majeurs ne sont pas couverts par une ZAAP",
+    "question": "Comment relier ces zones isolées aux marchés ?"
+  },
+  "act3": {
+    "title": "Est-ce accessible ?",
+    "subtitle": "L'accès aux marchés et aux pépinières",
+    "body": "La proximité des marchés et des pépinières est cruciale pour la commercialisation et l'approvisionnement des exploitations. Les zones de production situées à plus de 10 km d'un marché ou 15 km d'une pépinière sont considérées comme mal desservies, limitant leur développement économique.",
+    "key_finding": "Plusieurs zones de production sont à plus de 10 km d'un marché",
+    "question": "Les producteurs sont-ils organisés pour accéder ensemble aux services ?"
+  },
+  "act4": {
+    "title": "Est-ce organisé ?",
+    "subtitle": "Le maillage coopératif",
+    "body": "Les coopératives agricoles permettent aux petits producteurs de mutualiser leurs ressources, d'accéder aux intrants et de négocier collectivement. Les zones de production sans coopérative dans un rayon de 10 km sont des « zones blanches d'organisation » où le potentiel coopératif reste à développer.",
+    "key_finding": "Des zones blanches d'organisation coopérative subsistent dans les régions à fort potentiel",
+    "question": "Où investir en priorité pour maximiser l'impact ?"
+  },
+  "synthesis": {
+    "title": "Où investir ?",
+    "subtitle": "Synthèse et recommandations prioritaires",
+    "body": "La superposition pondérée des 4 analyses — densité, couverture ZAAP, accessibilité et maillage coopératif — révèle les zones où l'investissement aura le plus grand impact. Les scores composites identifient les régions prioritaires pour chaque type d'intervention.",
+    "recommendations": [
+      {
+        "title": "Étendre le réseau ZAAP dans la région Centrale",
+        "description": "Bassin de production majeur avec une couverture ZAAP insuffisante. Priorité : étendre les ZAAP pour couvrir les zones de forte densité non aménagées.",
+        "priority": "Élevée",
+        "region": "Centrale"
+      },
+      {
+        "title": "Créer des hubs d'accès aux marchés dans la Kara",
+        "description": "Zones à forte densité agricole éloignées des marchés. Solution : marchés ruraux mobiles ou hubs de collecte à créer.",
+        "priority": "Élevée",
+        "region": "Kara"
+      },
+      {
+        "title": "Soutenir le maillage coopératif dans les Plateaux",
+        "description": "Région à fort potentiel agricole avec peu de coopératives. Investir dans l'animation coopérative et les infrastructures partagées.",
+        "priority": "Moyenne",
+        "region": "Plateaux"
+      }
+    ]
+  }
+}

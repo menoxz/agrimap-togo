@@ -1,0 +1,51 @@
+{
+  "acts": {
+    "1": {
+      "title": "Act 1 — Where is production?",
+      "subtitle": "Farm density map by region and prefecture",
+      "text": "In Togo, agriculture is the pivot of the national economy, employing nearly 60% of the active population. But where does production actually happen? This map reveals the density of farms across the country's regions and prefectures, from the southern plains to the northern savannas. The densest areas concentrate strong agricultural pressure — and an urgent need for services.",
+      "indicator1_label": "Farms / km²",
+      "indicator1_value": "4.2",
+      "indicator2_label": "Densest region",
+      "indicator2_value": "Plateaux Region",
+      "callout": "Areas with the highest farm density are also those where the lack of services is most acute. This is where investment will have the greatest impact."
+    },
+    "2": {
+      "title": "Act 2 — Is it developed?",
+      "subtitle": "ZAAP coverage and uncovered production basins",
+      "text": "Planned Agricultural Development Zones (ZAAP) are the Togolese state's main tool for structuring production. Yet many high-potential basins remain outside these developed perimeters. This map compares the existing ZAAP network with actual agricultural production, revealing territories where development has not kept pace with density.",
+      "indicator1_label": "Farms in ZAAP zone",
+      "indicator1_value": "34%",
+      "indicator2_label": "Uncovered basins",
+      "indicator2_value": "6/10",
+      "callout": "Less than a third of farms are covered by ZAAP development. The remaining 2/3 produce without a safety net of land tenure security or infrastructure."
+    },
+    "3": {
+      "title": "Act 3 — Is it accessible?",
+      "subtitle": "Distance to markets and nurseries",
+      "text": "Producing is not enough: you also need to sell your harvest and buy inputs. This map measures the average distance between farms and essential services — markets, nurseries, fertilizer outlets. In the most isolated areas, farmers travel over an hour to reach the nearest market.",
+      "indicator1_label": "Avg distance to market",
+      "indicator1_value": "45 min",
+      "indicator2_label": "Isolated farms",
+      "indicator2_value": "42%",
+      "callout": "Nearly half of all farms are more than 30 minutes from a market. Accessibility is the second major barrier to productivity after lack of development."
+    },
+    "4": {
+      "title": "Act 4 — Is it organized?",
+      "subtitle": "Cooperative network and organizational white zones",
+      "text": "Agricultural cooperatives are a powerful lever for transformation: they pool purchases, facilitate access to credit, and negotiate better prices. Yet their distribution across the territory is highly uneven. This map reveals organizational white zones — where production density is high but the cooperative network is nearly absent.",
+      "indicator1_label": "Cooperatives / 100 km²",
+      "indicator1_value": "0.8",
+      "indicator2_label": "Zones without cooperatives",
+      "indicator2_value": "5 regions",
+      "callout": "The absence of cooperatives in high-production agricultural areas is a strong signal: farmer organization has not kept pace with production development."
+    },
+    "synthesis": {
+      "title": "Where to invest?",
+      "text": "The geographic prioritization map combines the 4 previous dimensions — density, development, accessibility, organization — to identify areas where investment will have the greatest impact.",
+      "recommandation_1": "Prioritize ZAAP development in the Savanes region",
+      "recommandation_2": "Develop market access in the Central region",
+      "recommandation_3": "Create a cooperative network in the Plateaux region"
+    }
+  }
+}

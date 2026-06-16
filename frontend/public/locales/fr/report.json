@@ -1,0 +1,28 @@
+{
+  "quality_table": {
+    "dimension": "Dimension",
+    "completeness": "Complétude",
+    "precision": "Précision",
+    "rows": {
+      "density": "Densité exploitations",
+      "zaap": "Couverture ZAAP",
+      "access": "Accessibilité",
+      "coop": "Réseau coopératif"
+    },
+    "precision_values": {
+      "density": "100 m",
+      "zaap": "100 m",
+      "access": "500 m",
+      "coop": "500 m"
+    }
+  },
+  "content": {
+    "approach": "Ce rapport détaille la démarche de création d'AgriMap Togo, un tableau de bord cartographique des zones blanches de services agricoles au Togo. La méthodologie repose sur l'analyse croisée de 4 dimensions clés : la densité des exploitations, la couverture ZAAP, l'accessibilité aux marchés et pépinières, et le réseau coopératif. Chaque dimension est calculée à partir de données ouvertes officielles, traitées et normalisées pour produire des indicateurs comparables entre régions.",
+    "sources": "Les données utilisées proviennent exclusivement de sources ouvertes togolaises : le portail geodata.gouv.tg pour les données géospatiales (régions, préfectures, ZAAP), opendata.gouv.tg pour les données statistiques agricoles (recensement exploitations, annuaires coopératives), et les données de marché collectées par les services déconcentrés du Ministère de l'Agriculture.",
+    "quality_completeness": "La complétude des données varie selon les dimensions. Les données de recensement agricole couvrent l'ensemble des 5 régions et 39 préfectures du Togo (complétude 100%). Les données ZAAP sont exhaustives pour les périmètres officiels. Les données d'accessibilité et de réseau coopératif présentent une complétude estimée à 85%, certaines localités reculées n'étant pas encore référencées.",
+    "quality_precision": "La précision spatiale est de l'ordre de 100 mètres pour les données géospatiales (régions, ZAAP) et de 500 mètres pour les données de localisation des marchés et coopératives (géocodage approximatif). Les indicateurs statistiques (densité, taux de couverture) sont calculés à l'échelle préfectorale, ce qui peut masquer des disparités intra-régionales.",
+    "limits": "Ce travail présente plusieurs limites. Premièrement, l'actualité des données : les sources datent de 2024-2025, certains aménagements récents peuvent ne pas être reflétés. Deuxièmement, la granularité préfectorale ne permet pas une analyse infra-communale. Troisièmement, les données d'accessibilité sont basées sur des distances euclidiennes et non des temps de parcours réels (routes, saisons). Enfin, l'absence de données sur l'agriculture informelle et de subsistance limite la photographie complète du secteur.",
+    "conclusion": "AgriMap Togo est un outil d'aide à la décision, pas une vérité absolue. Il identifie des tendances et des priorités à l'échelle régionale, mais chaque investissement doit être validé par une étude de terrain. L'approche par zones blanches — centrée sur les opportunités plutôt que les manques — vise à encourager une action ciblée et constructive.",
+    "analyses": "Les 4 analyses croisées (densité, ZAAP, accessibilité, réseau coopératif) sont combinées dans un indice de priorisation synthétique. Chaque analyse est disponible en mode exploration libre et dans la lecture guidée."
+  }
+}

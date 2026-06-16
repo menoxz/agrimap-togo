@@ -1,0 +1,100 @@
+{
+  "analysis": "Couverture ZAAP",
+  "analysis_en": "ZAAP coverage analysis",
+  "method": "Buffer de 5 km autour des périmètres ZAAP (ZAAP formelles). Identification des zones de production (plantations + champs ZAAP) situées hors de ces buffers. Classification des régions selon le taux de couverture en 4 classes avec palette ColorBrewer Greens.",
+  "method_en": "5 km buffer around ZAAP perimeters. Identification of production zones (plantations + ZAAP fields) located outside these buffers. Classification of regions by coverage rate into 4 classes with ColorBrewer Greens palette.",
+  "parameters": {
+    "buffer_radius_km": 5,
+    "crs_analysis": "EPSG:32631",
+    "n_zaap": 30,
+    "n_production_zones": 115
+  },
+  "inputs": [
+    "zaap_formes",
+    "plantations",
+    "zaap_champs",
+    "regions"
+  ],
+  "output_fields": {
+    "coverage_pct": "Taux de couverture ZAAP (%)",
+    "coverage_class": "Classe de couverture (1-4)",
+    "total_zones": "Nombre total de zones de production",
+    "covered_zones": "Zones de production couvertes",
+    "uncovered_zones": "Zones de production non couvertes",
+    "color": "Couleur hexadécimale (palette Greens)"
+  },
+  "palette": {
+    "name": "Greens",
+    "type": "Séquentielle",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "class": 1,
+        "color": "#E5F5E0",
+        "label": "Bien couvert",
+        "label_en": "Well covered"
+      },
+      {
+        "class": 2,
+        "color": "#A1D99B",
+        "label": "Couverture partielle",
+        "label_en": "Partial coverage"
+      },
+      {
+        "class": 3,
+        "color": "#41B27C",
+        "label": "Faible couverture",
+        "label_en": "Low coverage"
+      },
+      {
+        "class": 4,
+        "color": "#005A32",
+        "label": "Non couvert - Prioritaire",
+        "label_en": "Uncovered - Priority"
+      }
+    ]
+  },
+  "statistics": {
+    "total_zaap": 30,
+    "total_production_zones": 115,
+    "region_stats": [
+      {
+        "nom_region": "Maritime",
+        "total_zones": 5,
+        "covered_zones": 2,
+        "uncovered_zones": 3,
+        "coverage_pct": 40.0
+      },
+      {
+        "nom_region": "Plateaux",
+        "total_zones": 22,
+        "covered_zones": 6,
+        "uncovered_zones": 16,
+        "coverage_pct": 27.3
+      },
+      {
+        "nom_region": "Centrale",
+        "total_zones": 16,
+        "covered_zones": 3,
+        "uncovered_zones": 13,
+        "coverage_pct": 18.8
+      },
+      {
+        "nom_region": "Kara",
+        "total_zones": 25,
+        "covered_zones": 0,
+        "uncovered_zones": 25,
+        "coverage_pct": 0.0
+      },
+      {
+        "nom_region": "Savanes",
+        "total_zones": 9,
+        "covered_zones": 2,
+        "uncovered_zones": 7,
+        "coverage_pct": 22.2
+      }
+    ]
+  },
+  "interpretation_note": "Les zones de production non couvertes par des ZAAP représentent des opportunités d'investissement prioritaires pour l'aménagement de nouvelles Zones d'Aménagement Agricole Planifiées.",
+  "interpretation_note_en": "Production zones not covered by ZAAPs represent priority investment opportunities for establishing new Planned Agricultural Development Zones."
+}

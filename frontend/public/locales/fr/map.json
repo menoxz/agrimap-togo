@@ -1,0 +1,60 @@
+{
+  "legend": {
+    "density": "Densité d'exploitations",
+    "zaap": "Couverture ZAAP",
+    "access": "Accessibilité services",
+    "coop": "Réseau coopératif",
+    "synthesis": "Priorisation",
+    "very_high": "Très élevé",
+    "high": "Élevé",
+    "medium": "Moyen",
+    "low": "Faible",
+    "very_low": "Très faible",
+    "covered": "Couvert",
+    "uncovered": "Non couvert",
+    "accessible": "Accessible",
+    "isolated": "Isolé",
+    "dense": "Dense",
+    "none": "Aucune",
+    "priority": "Prioritaire",
+    "to_monitor": "À surveiller",
+    "well_served": "Bien desservi",
+    "colorblind_safe": "Palette colorblind safe"
+  },
+  "region_popup": {
+    "indicators": "Indicateurs",
+    "view_details": "Voir la fiche détaillée",
+    "close": "Fermer"
+  },
+  "zone_detail": {
+    "title": "Détail de la zone",
+    "composite_score": "Score composite",
+    "rank": "Rang de priorité",
+    "sub_scores": "Sous-scores",
+    "density": "Densité agricole",
+    "zaap": "Accès ZAAP",
+    "accessibility": "Accessibilité routière",
+    "cooperative": "Réseau coopératif",
+    "center_map": "Centrer sur la zone",
+    "close": "Fermer",
+    "key_figures": "Chiffres-clés",
+    "farms_density": "Densité exploitations",
+    "market_distance": "Distance marché",
+    "cooperatives": "Coopératives",
+    "zone_name": "Nom de la zone",
+    "region": "Région"
+  },
+  "top_zones": {
+    "title": "Top zones où investir",
+    "subtitle": "Classées selon le score composite de priorité",
+    "rank": "Rang",
+    "zone": "Zone",
+    "region": "Région",
+    "score": "Score",
+    "priority": "Priorité",
+    "filter_region": "Filtrer par région",
+    "all_regions": "Toutes les régions",
+    "no_zones": "Aucune zone ne correspond à votre filtre",
+    "select_hint": "Cliquez sur une zone pour centrer la carte"
+  }
+}

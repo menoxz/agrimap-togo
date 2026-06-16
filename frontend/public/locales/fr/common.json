@@ -1,0 +1,183 @@
+{
+  "site": {
+    "title": "AgriMap Togo",
+    "tagline": "Zones blanches de services agricoles",
+    "description": "La carte qui relie la production agricole togolaise à ses services."
+  },
+  "nav": {
+    "home": "Accueil",
+    "explore": "Explorer",
+    "story": "Lire",
+    "report": "Rapport",
+    "github": "GitHub",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "headline": "Produire ne suffit pas :\nil faut être relié",
+      "subtitle": "La carte qui relie la production agricole togolaise à ses services.",
+      "cta_explore": "Explorer les zones blanches",
+      "cta_story": "Suivre l'histoire",
+      "cta_report": "Lire le rapport",
+      "stat_zones_label": "22 zones prioritaires identifiées",
+      "scroll": "Découvrir"
+    },
+    "stats": {
+      "title": "Les zones blanches en chiffres",
+      "subtitle": "Un diagnostic cartographié sur les 5 régions du Togo",
+      "kpi1_label": "Zones sans services",
+      "kpi1_desc": "sur 5 régions analysées",
+      "kpi2_label": "Types de services",
+      "kpi2_desc": "eau, santé, intrants, marchés, crédit",
+      "kpi3_label": "Non couverts",
+      "kpi3_desc": "des zones agricoles prioritaires",
+      "region_title": "Criticité par région",
+      "region_subtitle": "Score composite basé sur l'accès aux services essentiels",
+      "regions": {
+        "maritime": "Maritime",
+        "savanes": "Savanes",
+        "kara": "Kara",
+        "centrale": "Centrale",
+        "plateaux": "Plateaux"
+      }
+    },
+    "why": {
+      "title": "Pourquoi ce tableau de bord ?",
+      "eyebrow": "Contexte",
+      "problem": {
+        "step": "01 · Problème",
+        "title": "Le problème",
+        "text": "Des milliers d'exploitations agricoles togolaises produisent dans l'isolement, sans accès aux marchés, aux coopératives ou aux services d'aménagement."
+      },
+      "solution": {
+        "step": "02 · Solution",
+        "title": "La solution",
+        "text": "Une cartographie inédite des zones blanches de services agricoles — basée sur les données ouvertes du Togo — pour guider les décisions d'investissement."
+      },
+      "impact": {
+        "step": "03 · Impact",
+        "title": "L'impact",
+        "text": "Des ressources ciblées vers les territoires qui en ont le plus besoin, pour une agriculture togolaise plus connectée et plus résiliente."
+      }
+    },
+    "made_in_togo": "🇹🇬 Made in Togo — Données togolaises, pour le Togo",
+    "photo_banner": {
+      "alt": "Champs agricoles du Togo",
+      "quote": "22 zones prioritaires identifiées pour relier les exploitants aux services essentiels"
+    },
+    "minimap": {
+      "badge": "Exploration interactive",
+      "title": "Naviguez dans les données",
+      "desc": "Sélectionnez une région pour voir les zones critiques.",
+      "legend_critical": "Criticité élevée",
+      "legend_moderate": "Criticité modérée",
+      "legend_low": "Criticité faible",
+      "cta": "Explorer la carte complète",
+      "interactive": "Carte interactive"
+    }
+  },
+  "story": {
+    "title": "Lecture guidée",
+    "subtitle": "Suivez les 4 actes pour comprendre où investir en priorité.",
+    "previous": "Acte précédent",
+    "next": "Acte suivant",
+    "synthesis_title": "Synthèse — Où investir ?",
+    "synthesis_subtitle": "Carte de priorisation géographique des zones d'investissement",
+    "recommandations": "Recommandations",
+    "share_message": "Les zones blanches de services agricoles au Togo — où investir en priorité ?",
+    "act1": { "nav_title": "Où produit-on ?", "title": "Où produit-on au Togo ?" },
+    "act2": { "nav_title": "Qui sert qui ?", "title": "Qui sert les agriculteurs ?" },
+    "act3": { "nav_title": "Zones blanches", "title": "Identifier les zones blanches" },
+    "act4": { "nav_title": "Prioriser", "title": "Prioriser les interventions" }
+  },
+  "explore": {
+    "title": "Exploration libre",
+    "subtitle": "Filtrez les données pour explorer les zones blanches par région et type d'analyse.",
+    "filters": "Filtres",
+    "reset": "Réinitialiser",
+    "filtered_by": "Filtré par",
+    "map_placeholder": "Carte interactive",
+    "no_results": "Aucune zone ne correspond aux filtres sélectionnés.",
+    "popup_view_details": "Voir la fiche détaillée",
+    "hero": {
+      "title": "Cartographie des zones prioritaires",
+      "subtitle": "Identifiez les territoires où l'accès aux services agricoles est le plus critique.",
+      "stat_zones": "zones identifiées",
+      "stat_regions": "régions",
+      "stat_services": "services analysés"
+    }
+  },
+  "report": {
+    "title": "Rapport",
+    "subtitle": "Démarche, sources et qualité des données",
+    "toc": "Sommaire",
+    "download_pdf": "Télécharger PDF",
+    "copy_link": "Copier le lien",
+    "sections": {
+      "approach": "1. Démarche",
+      "sources": "2. Sources de données",
+      "quality": "3. Qualité des données",
+      "completeness": "3.1 Complétude",
+      "precision": "3.2 Précision",
+      "analyses": "4. Analyses",
+      "density": "4.1 Densité des exploitations",
+      "zaap": "4.2 Couverture ZAAP",
+      "access": "4.3 Accessibilité",
+      "coop": "4.4 Réseau coopératif",
+      "limits": "5. Limites",
+      "conclusion": "6. Conclusion"
+    }
+  },
+  "footer": {
+    "company": "NATAAN GROUP",
+    "tagline": "Cartographier les zones blanches pour connecter les agriculteurs togolais.",
+    "nav": {
+      "title": "Navigation"
+    },
+    "data": {
+      "title": "Données",
+      "source1": "geoBoundaries (ODbL)",
+      "source2": "FAOSTAT 2023",
+      "source3": "OpenStreetMap",
+      "methodology": "Méthodologie"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "open_data": "Données ouvertes · Licence ODbL",
+    "rights": "Tous droits réservés",
+    "sources": "Sources : geodata.gouv.tg, opendata.gouv.tg",
+    "licenses": "Licences ouvertes",
+    "challenge": "Data Challenge Togo AI Lab 2026",
+    "made_in": "Made in Togo — Données togolaises, pour le Togo"
+  },
+  "language": {
+    "switch_to_en": "Switch to English",
+    "switch_to_fr": "Basculer en français",
+    "label": "FR / EN"
+  },
+  "badge": {
+    "priority_1": "Prioritaire",
+    "priority_2": "À surveiller",
+    "priority_3": "Couvert",
+    "data_freshness": "Données : juin 2026"
+  },
+  "aria": {
+    "home": "Accueil",
+    "skip_to_content": "Aller au contenu",
+    "open_menu": "Ouvrir le menu",
+    "close_menu": "Fermer le menu"
+  },
+  "stats": {
+    "bento": {
+      "zones_label": "Zones prioritaires",
+      "zones_title": "zones sans services",
+      "zones_sub": "sur 5 régions du Togo",
+      "services_label": "Services",
+      "services_title": "types analysés",
+      "coverage_label": "Non couverts",
+      "coverage_title": "des zones",
+      "regions_label": "Criticité par région"
+    }
+  }
+}
