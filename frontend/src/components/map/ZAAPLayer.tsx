@@ -1,11 +1,11 @@
 import { renderToString } from 'react-dom/server';
 import DataLayer from './DataLayer';
-import RegionPopup from './RegionPopup';
+import PrefecturePopup from './PrefecturePopup';
 import { CB_ZAAP } from '@/utils/colors';
 import type { GeoJsonFeature } from '@/types/map';
 import type L from 'leaflet';
 
-const DATA_URL = '/data/zaap_coverage.geojson';
+const DATA_URL = '/data/analysis/zaap_coverage_prefecture.geojson';
 
 const CLASS_BREAKS = [
   { min: 0, max: 15, color: '#FF8C00', label: 'Non couvert', highlight: true },
@@ -27,6 +27,8 @@ interface ZAAPLayerProps {
   regionFilter?: string;
   /** When true, only show uncovered regions with orange accent */
   onlyUncovered?: boolean;
+  /** Called when a prefecture is clicked */
+  onPrefectureClick?: (nomPrefecture: string, properties: Record<string, any>) => void;
 }
 
 export { CLASS_BREAKS as ZAAP_CLASS_BREAKS };
@@ -40,6 +42,7 @@ export default function ZAAPLayer({
   visible = true,
   regionFilter,
   onlyUncovered = false,
+  onPrefectureClick,
 }: ZAAPLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
     const coverage = (feature.properties.coverage_pct as number) ?? 0;
@@ -56,21 +59,12 @@ export default function ZAAPLayer({
 
   const handleEachFeature = (feature: GeoJsonFeature, layer: L.Layer) => {
     const props = feature.properties;
-    const coverage = (props.coverage_pct as number) ?? 0;
-    const zaapCount = (props.zaap_count as number) ?? 0;
-    const statut = (props.statut as string) ?? 'non_couvert';
-
-    const indicators: Array<{ label: string; value: string | number; unit?: string }> = [
-      { label: 'Couverture ZAAP', value: coverage, unit: '%' },
-      { label: 'Sites ZAAP', value: zaapCount },
-      { label: 'Statut', value: statut },
-    ];
+    const prefectureName = (props.nom_prefecture as string) ?? '';
 
     const popupContent = renderToString(
-      <RegionPopup
+      <PrefecturePopup
         properties={props}
-        indicators={indicators}
-        accentColor={coverage > 40 ? '#1B7837' : '#E65100'}
+        analysisType="zaap"
       />,
     );
 
@@ -78,6 +72,12 @@ export default function ZAAPLayer({
       maxWidth: 320,
       className: 'custom-popup',
     });
+
+    if (onPrefectureClick) {
+      layer.on('click', () => {
+        onPrefectureClick(prefectureName, props);
+      });
+    }
 
     layer.on('mouseover', (e) => {
       e.target.setStyle({ weight: 2.5, fillOpacity: 0.9 });

@@ -1,0 +1,78 @@
+{
+  "analysis": "Densité des exploitations agricoles par préfecture",
+  "analysis_en": "Farm density by prefecture",
+  "level": "prefecture",
+  "method": "Comptage des exploitations (grandes + petites + plantations) par préfecture, normalisé par la surface (préfecture km²). Classification par quantiles en 5 classes avec palette ColorBrewer YlOrBr.",
+  "method_en": "Counting farms (large + small + plantations) by prefecture, normalized by prefecture area (km²). Quantile-based classification into 5 classes with ColorBrewer YlOrBr palette.",
+  "inputs": [
+    "grandes_exploitations",
+    "petites_exploitations",
+    "plantations",
+    "geoBoundaries-TGO-ADM2"
+  ],
+  "output_fields": {
+    "nom_prefecture": "Nom de la préfecture",
+    "nb_exploitations": "Nombre total d'exploitations dans la préfecture",
+    "area_km2": "Superficie de la préfecture en km²",
+    "density": "Densité d'exploitations par km²",
+    "density_class": "Classe de densité (1-5)",
+    "color": "Couleur hexadécimale (palette YlOrBr)",
+    "name_en": "Prefecture name in English"
+  },
+  "palette": {
+    "name": "YlOrBr",
+    "type": "Séquentielle",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "class": 1,
+        "color": "#FFFFB2",
+        "label": "Très faible",
+        "label_en": "Very low",
+        "min": 0.0,
+        "max": 0.0008
+      },
+      {
+        "class": 2,
+        "color": "#FECC5C",
+        "label": "Faible",
+        "label_en": "Low",
+        "min": 0.001,
+        "max": 0.0047
+      },
+      {
+        "class": 3,
+        "color": "#FD8D3C",
+        "label": "Moyenne",
+        "label_en": "Moderate",
+        "min": 0.005,
+        "max": 0.0084
+      },
+      {
+        "class": 4,
+        "color": "#F03B20",
+        "label": "Élevée",
+        "label_en": "High",
+        "min": 0.0088,
+        "max": 0.0215
+      },
+      {
+        "class": 5,
+        "color": "#BD0026",
+        "label": "Très élevée",
+        "label_en": "Very high",
+        "min": 0.0218,
+        "max": 0.453
+      }
+    ]
+  },
+  "statistics": {
+    "total_exploitations": 737,
+    "n_préfectures": 37,
+    "density_min": 0.0,
+    "density_max": 0.453,
+    "density_mean": 0.0304
+  },
+  "interpretation_note": "Les préfectures à faible densité d'exploitations représentent des opportunités d'investissement pour le développement des services agricoles et l'installation de nouvelles exploitations.",
+  "interpretation_note_en": "Prefectures with low farm density represent investment opportunities for developing agricultural services and establishing new farms."
+}

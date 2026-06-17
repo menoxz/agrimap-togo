@@ -1,12 +1,12 @@
 {
   "analysis": "Couverture ZAAP",
   "analysis_en": "ZAAP coverage analysis",
-  "level": "region",
+  "level": "prefecture",
   "inputs": [
     "zaap_formes",
     "plantations",
     "zaap_champs",
-    "regions"
+    "geoBoundaries-TGO-ADM2"
   ],
   "palette": {
     "name": "Greens",

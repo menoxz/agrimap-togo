@@ -1,8 +1,9 @@
 {
   "analysis": "Synthèse pondérée et priorisation",
   "analysis_en": "Weighted synthesis and prioritization",
-  "method": "Superposition pondérée de 4 analyses spatiales : Densité (poids 0.25), Couverture ZAAP (poids 0.3), Accessibilité (poids 0.25), Réseau coopératif (poids 0.2). Chaque analyse est normalisée en score 0-100. Le score composite est la somme pondérée des 4 scores individuels. Classification divergente en 5 classes avec palette ColorBrewer RdYlGn : vert = bien desservi (priorité faible), rouge = prioritaire (investir).",
-  "method_en": "Weighted overlay of 4 spatial analyses: Density (weight 0.25), ZAAP coverage (weight 0.3), Accessibility (weight 0.25), Cooperative network (weight 0.2). Each analysis is normalized to a 0-100 score. The composite score is the weighted sum of the 4 individual scores. Divergent classification into 5 classes with ColorBrewer RdYlGn palette: green = well-served (low priority), red = priority (invest).",
+  "level": "region",
+  "method": "Superposition pondérée de 4 analyses spatiales au niveau région : Densité (poids 0.25), Couverture ZAAP (poids 0.3), Accessibilité (poids 0.25), Réseau coopératif (poids 0.2). Chaque analyse est normalisée en score 0-100. Le score composite est la somme pondérée des 4 scores individuels. Classification divergente en 5 classes avec palette ColorBrewer RdYlGn : vert = bien desservi (priorité faible), rouge = prioritaire (investir).",
+  "method_en": "Weighted overlay of 4 spatial analyses at region level: Density (weight 0.25), ZAAP coverage (weight 0.3), Accessibility (weight 0.25), Cooperative network (weight 0.2). Each analysis is normalized to a 0-100 score. The composite score is the weighted sum of the 4 individual scores. Divergent classification into 5 classes with ColorBrewer RdYlGn palette: green = well-served (low priority), red = priority (invest).",
   "weights": {
     "density": 0.25,
     "zaap": 0.3,
@@ -16,9 +17,10 @@
     "cooperative_network.geojson"
   ],
   "output_fields": {
-    "synthesis_score": "Score composite pondéré (0-100, élevé = bien desservi)",
-    "synthesis_class": "Classe de synthèse (1-5, 5 = prioritaire)",
-    "investment_priority_score": "Score de priorité d'investissement (0-100, élevé = prioritaire)",
+    "nom_region": "Nom de la région",
+    "synthesis_score": "Score composite pondéré (0-100, élevé = bien desservi pour la région)",
+    "synthesis_class": "Classe de synthèse (1-5, 5 = prioritaire pour la région)",
+    "investment_priority_score": "Score de priorité d'investissement (0-100, élevé = prioritaire pour la région)",
     "color": "Couleur hexadécimale (palette RdYlGn)",
     "priority_label": "Label de priorité en français",
     "priority_label_en": "Priority label in English"
@@ -71,7 +73,7 @@
     ]
   },
   "statistics": {
-    "n_regions": 5,
+    "n_régions": 5,
     "score_min": 34.2,
     "score_max": 73.7,
     "score_mean": 48.8,
@@ -103,6 +105,6 @@
       }
     ]
   },
-  "interpretation_note": "Le score composite (0-100) intègre 4 dimensions de l'accès aux services agricoles. Plus le score est faible, plus la région est prioritaire pour les investissements. Les régions en rouge (classe 5) cumulent des déficits sur plusieurs dimensions et constituent des opportunités d'investissement prioritaires pour l'intervention.",
-  "interpretation_note_en": "The composite score (0-100) integrates 4 dimensions of agricultural service access. The lower the score, the more the region is a priority for investment. Regions in red (class 5) cumulate deficits across multiple dimensions and represent priority investment opportunities."
+  "interpretation_note": "Le score composite (0-100) intègre 4 dimensions de l'accès aux services agricoles au niveau région. Plus le score est faible, plus la région est prioritaire pour les investissements. Les régions en rouge (classe 5) cumulent des déficits sur plusieurs dimensions et constituent des opportunités d'investissement prioritaires pour l'intervention.",
+  "interpretation_note_en": "The composite score (0-100) integrates 4 dimensions of agricultural service access at region level. The lower the score, the more the region is a priority for investment. Regions in red (class 5) cumulate deficits across multiple dimensions and represent priority investment opportunities."
 }

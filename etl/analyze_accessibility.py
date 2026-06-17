@@ -56,6 +56,20 @@ REGION_NAMES_EN = {
 }
 
 
+def load_boundaries(level: str = "region") -> gpd.GeoDataFrame:
+    """Charge les frontières administratives selon le niveau."""
+    if level == "prefecture":
+        path = "data/raw/geoBoundaries-TGO-ADM2.geojson"
+        if not Path(path).exists():
+            return gpd.GeoDataFrame()
+        gdf = gpd.read_file(path)
+        if "shapeName" in gdf.columns:
+            gdf = gdf.rename(columns={"shapeName": "nom_prefecture"})
+        return gdf
+    path = "data/processed/regions.geojson"
+    return gpd.read_file(path) if Path(path).exists() else gpd.GeoDataFrame()
+
+
 def load_data():
     """Charge les données nécessaires."""
     marches_path = "data/processed/marches.geojson"
@@ -66,7 +80,6 @@ def load_data():
         "data/processed/petites_exploitations.geojson",
         "data/processed/plantations.geojson",
     ]
-    regions_path = "data/processed/regions.geojson"
 
     marches = gpd.read_file(marches_path) if Path(marches_path).exists() else gpd.GeoDataFrame()
     pepinieres = gpd.read_file(pepinieres_path) if Path(pepinieres_path).exists() else gpd.GeoDataFrame()
@@ -79,22 +92,23 @@ def load_data():
                 expls.append(gdf)
     exploitations = pd.concat(expls, ignore_index=True) if expls else gpd.GeoDataFrame()
 
-    regions = gpd.read_file(regions_path) if Path(regions_path).exists() else gpd.GeoDataFrame()
-
-    return marches, pepinieres, exploitations, regions
+    return marches, pepinieres, exploitations
 
 
 def compute_accessibility(
     marches: gpd.GeoDataFrame,
     pepinieres: gpd.GeoDataFrame,
     exploitations: gpd.GeoDataFrame,
-    regions: gpd.GeoDataFrame,
+    boundaries: gpd.GeoDataFrame,
     logger: PipelineLogger,
+    level: str = "region",
 ) -> tuple[gpd.GeoDataFrame, dict[str, Any]]:
     """
     Analyse l'accessibilité : buffers marchés (10 km) + pépinières (15 km),
     identifie les zones de production mal desservies.
     """
+    name_col = "nom_region" if level == "region" else "nom_prefecture"
+
     # CRS
     if not marches.empty and marches.crs is None:
         marches = marches.set_crs("EPSG:4326")
@@ -102,13 +116,13 @@ def compute_accessibility(
         pepinieres = pepinieres.set_crs("EPSG:4326")
     if not exploitations.empty and exploitations.crs is None:
         exploitations = exploitations.set_crs("EPSG:4326")
-    if not regions.empty and regions.crs is None:
-        regions = regions.set_crs("EPSG:4326")
+    if not boundaries.empty and boundaries.crs is None:
+        boundaries = boundaries.set_crs("EPSG:4326")
 
     # Vérifier disponibilité
     if marches.empty and pepinieres.empty:
         logger.step("Aucun point de service disponible", "!!")
-        result = regions.copy()
+        result = boundaries.copy()
         if not result.empty:
             result["accessibility_class"] = 4
             result["accessibility_score"] = 0.0
@@ -118,7 +132,7 @@ def compute_accessibility(
     marches_utm = marches.to_crs("EPSG:32631") if not marches.empty else gpd.GeoDataFrame()
     pepinieres_utm = pepinieres.to_crs("EPSG:32631") if not pepinieres.empty else gpd.GeoDataFrame()
     exploitations_utm = exploitations.to_crs("EPSG:32631") if not exploitations.empty else gpd.GeoDataFrame()
-    regions_utm = regions.to_crs("EPSG:32631")
+    boundaries_utm = boundaries.to_crs("EPSG:32631")
 
     # ── Buffers combinés ─────────────────────────────────────────────
     buffers = []
@@ -169,16 +183,16 @@ def compute_accessibility(
         unserved = gpd.GeoDataFrame()
         served = gpd.GeoDataFrame()
 
-    # ── Indicateur composite par région ──────────────────────────────
-    region_stats = []
-    for _, region in regions_utm.iterrows():
-        region_name = region.get("nom_region", "Inconnu")
-        region_geom = region.geometry
+    # ── Indicateur composite par unité administrative ─────────────────
+    boundary_stats = []
+    for _, boundary in boundaries_utm.iterrows():
+        boundary_name = boundary.get(name_col, "Inconnu")
+        boundary_geom = boundary.geometry
 
-        exploitations_in_region = exploitations_utm[exploitations_utm.intersects(region_geom)]
-        if exploitations_in_region.empty:
-            region_stats.append({
-                "nom_region": region_name,
+        exploitations_in_boundary = exploitations_utm[exploitations_utm.intersects(boundary_geom)]
+        if exploitations_in_boundary.empty:
+            boundary_stats.append({
+                name_col: boundary_name,
                 "total_exploitations": 0,
                 "served": 0,
                 "unserved": 0,
@@ -187,27 +201,27 @@ def compute_accessibility(
             })
             continue
 
-        served_in_region = served[served.intersects(region_geom)] if not served.empty else gpd.GeoDataFrame()
-        unserved_in_region = unserved[unserved.intersects(region_geom)] if not unserved.empty else gpd.GeoDataFrame()
+        served_in_boundary = served[served.intersects(boundary_geom)] if not served.empty else gpd.GeoDataFrame()
+        unserved_in_boundary = unserved[unserved.intersects(boundary_geom)] if not unserved.empty else gpd.GeoDataFrame()
 
-        total = len(exploitations_in_region)
-        n_served = len(served_in_region)
-        n_unserved = len(unserved_in_region)
+        total = len(exploitations_in_boundary)
+        n_served = len(served_in_boundary)
+        n_unserved = len(unserved_in_boundary)
         unserved_pct = round(n_unserved / total * 100, 1) if total > 0 else 0.0
 
         # Distance moyenne réelle au marché le plus proche (en km, UTM EPSG:32631)
-        if not marches_utm.empty and not exploitations_in_region.empty:
+        if not marches_utm.empty and not exploitations_in_boundary.empty:
             market_geoms = list(marches_utm.geometry)
             distances_m: list[float] = []
-            for expl_geom in exploitations_in_region.geometry:
+            for expl_geom in exploitations_in_boundary.geometry:
                 min_dist = min(expl_geom.distance(m) for m in market_geoms)
                 distances_m.append(min_dist)
             avg_distance_km = round(sum(distances_m) / len(distances_m) / 1000, 2)
         else:
             avg_distance_km = 0.0
 
-        region_stats.append({
-            "nom_region": region_name,
+        boundary_stats.append({
+            name_col: boundary_name,
             "total_exploitations": total,
             "served": n_served,
             "unserved": n_unserved,
@@ -215,14 +229,9 @@ def compute_accessibility(
             "avg_distance_km": avg_distance_km,
         })
 
-    stats_df = pd.DataFrame(region_stats)
+    stats_df = pd.DataFrame(boundary_stats)
 
     # ── Score d'accessibilité (0-100, 100 = parfait) ────────────────
-    # Formule : 100 - (% mal desservi), puis normalisé
-    max_unserved = stats_df["unserved_pct"].max()
-    min_unserved = stats_df["unserved_pct"].min()
-    range_unserved = max_unserved - min_unserved if max_unserved != min_unserved else 1
-
     stats_df["accessibility_score"] = stats_df["unserved_pct"].apply(
         lambda pct: round(100 * (1 - pct / 100), 1)
     )
@@ -243,12 +252,13 @@ def compute_accessibility(
     stats_df["accessibility_class"] = stats_df["accessibility_score"].apply(classify_access)
 
     # ── Construction du résultat ──────────────────────────────────────
-    result = regions.copy()
-    result = result.merge(
-        stats_df[["nom_region", "accessibility_score", "accessibility_class",
+    merge_cols = [name_col, "accessibility_score", "accessibility_class",
                    "total_exploitations", "served", "unserved", "unserved_pct",
-                   "avg_distance_km"]],
-        on="nom_region",
+                   "avg_distance_km"]
+    result = boundaries.copy()
+    result = result.merge(
+        stats_df[merge_cols],
+        on=name_col,
         how="left",
     )
 
@@ -260,7 +270,7 @@ def compute_accessibility(
     result["unserved_pct"] = result["unserved_pct"].fillna(0.0)
     result["avg_distance_km"] = result["avg_distance_km"].fillna(0.0)
 
-    result["name_en"] = result["nom_region"].map(REGION_NAMES_EN)
+    result["name_en"] = result[name_col].map(REGION_NAMES_EN) if level == "region" else result[name_col]
     result["color"] = result["accessibility_class"].apply(
         lambda c: ACCESS_CLASSES[c - 1]["color"] if 1 <= c <= 5 else "#CCCCCC"
     )
@@ -273,16 +283,16 @@ def compute_accessibility(
 
     result["interpretation"] = result.apply(
         lambda r: (
-            f"Opportunité d'investissement : {r['nom_region']} est mal desservi "
+            f"Opportunité d'investissement : {r[name_col]} est mal desservi "
             f"(score {r['accessibility_score']:.0f}/100, {r['unserved_pct']:.0f}% "
             f"des exploitations hors des buffers marchés/pépinières)"
-            if r["accessibility_class"] >= 4
+            if pd.notna(r.get("accessibility_class")) and r["accessibility_class"] >= 4
             else (
-                f"Accessibilité modérée : {r['nom_region']} "
+                f"Accessibilité modérée : {r[name_col]} "
                 f"(score {r['accessibility_score']:.0f}/100)"
-                if r["accessibility_class"] == 3
+                if pd.notna(r.get("accessibility_class")) and r["accessibility_class"] == 3
                 else (
-                    f"Bonne accessibilité : {r['nom_region']} "
+                    f"Bonne accessibilité : {r[name_col]} "
                     f"(score {r['accessibility_score']:.0f}/100)"
                 )
             )
@@ -294,20 +304,25 @@ def compute_accessibility(
     result = result.to_crs("EPSG:4326")
 
     # Métadonnées
+    noun = "préfecture" if level == "prefecture" else "région"
+    noun_pl = "préfectures" if level == "prefecture" else "régions"
+    noun_en = "prefecture" if level == "prefecture" else "region"
+    noun_pl_en = "prefectures" if level == "prefecture" else "regions"
     metadata = {
-        "analysis": "Accessibilité aux marchés et pépinières",
-        "analysis_en": "Accessibility to markets and nurseries",
+        "analysis": f"Accessibilité aux marchés et pépinières par {noun}",
+        "analysis_en": f"Accessibility to markets and nurseries by {noun_en}",
+        "level": level,
         "method": (
             "Création de buffers autour des marchés (10 km) et pépinières (15 km). "
-            "Identification des exploitations situées hors de ces buffers = 'mal desservies'. "
-            "Calcul d'un score d'accessibilité par région (0-100) basé sur le pourcentage "
-            "d'exploitations mal desservies. Classification en 5 classes avec palette "
+            f"Identification des exploitations situées hors de ces buffers = 'mal desservies'. "
+            f"Calcul d'un score d'accessibilité par {noun} (0-100) basé sur le pourcentage "
+            f"d'exploitations mal desservies. Classification en 5 classes avec palette "
             "ColorBrewer BuPu."
         ),
         "method_en": (
             "Creation of buffers around markets (10 km) and nurseries (15 km). "
-            "Identification of farms located outside these buffers = 'underserved'. "
-            "Calculation of an accessibility score per region (0-100) based on the "
+            f"Identification of farms located outside these buffers = 'underserved'. "
+            f"Calculation of an accessibility score per {noun_en} (0-100) based on the "
             "percentage of underserved farms. Classification into 5 classes with "
             "ColorBrewer BuPu palette."
         ),
@@ -320,8 +335,10 @@ def compute_accessibility(
             "n_farms": len(exploitations),
         },
         "inputs": ["marches", "pepinieres", "grandes_exploitations",
-                    "petites_exploitations", "plantations", "regions"],
+                    "petites_exploitations", "plantations",
+                    "regions" if level == "region" else "geoBoundaries-TGO-ADM2"],
         "output_fields": {
+            name_col: f"Nom de la {noun}",
             "accessibility_score": "Score d'accessibilité (0-100, 100 = parfait)",
             "accessibility_class": "Classe d'accessibilité (1-5)",
             "unserved_pct": "Pourcentage d'exploitations mal desservies",
@@ -345,16 +362,16 @@ def compute_accessibility(
             "n_markets": len(marches),
             "n_nurseries": len(pepinieres),
             "n_farms": len(exploitations),
-            "region_stats": region_stats,
+            f"{noun}_stats": boundary_stats,
         },
         "interpretation_note": (
-            "Les régions avec un score d'accessibilité faible (< 40) représentent "
+            f"Les {noun_pl} avec un score d'accessibilité faible (< 40) représentent "
             "des opportunités prioritaires pour l'implantation de nouveaux marchés "
             "et pépinières agricoles, afin de réduire les distances d'accès aux "
             "intrants et aux débouchés commerciaux."
         ),
         "interpretation_note_en": (
-            "Regions with low accessibility scores (< 40) represent priority "
+            f"{noun_pl_en.capitalize()} with low accessibility scores (< 40) represent priority "
             "opportunities for establishing new markets and agricultural nurseries, "
             "reducing travel distances to inputs and market outlets."
         ),
@@ -370,37 +387,40 @@ def simplify_geometries(gdf: gpd.GeoDataFrame, tolerance: float = 0.01) -> gpd.G
     return gdf
 
 
-def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
+def run(level: str = "region", logger: PipelineLogger | None = None) -> tuple[Path, Path]:
     """Exécute l'analyse d'accessibilité."""
     if logger is None:
         logger = PipelineLogger()
 
-    logger.section("ANALYSE 3 : ACCESSIBILITÉ MARCHÉS / PÉPINIÈRES")
+    level_label = "PRÉFECTURES" if level == "prefecture" else "RÉGIONS"
+    logger.section(f"ANALYSE 3 : ACCESSIBILITÉ MARCHÉS / PÉPINIÈRES ({level_label})")
 
     logger.step("Chargement des données...")
-    marches, pepinieres, exploitations, regions = load_data()
+    marches, pepinieres, exploitations = load_data()
+    boundaries = load_boundaries(level)
     logger.step(f"  Marchés : {len(marches)} · Pépinières : {len(pepinieres)} · "
-                f"Exploitations : {len(exploitations)} · Régions : {len(regions)}")
+                f"Exploitations : {len(exploitations)} · {level_label} : {len(boundaries)}")
 
     logger.step("Calcul des buffers et identification zones mal desservies...")
-    result, metadata = compute_accessibility(marches, pepinieres, exploitations, regions, logger)
+    result, metadata = compute_accessibility(marches, pepinieres, exploitations, boundaries, logger, level)
 
     result = simplify_geometries(result, tolerance=0.01)
     logger.step("Géométries simplifiées")
 
+    suffix = f"_{level}" if level == "prefecture" else ""
     ensure_dir("data/public/analysis")
-    geojson_path = Path("data/public/analysis/accessibility.geojson")
+    geojson_path = Path(f"data/public/analysis/accessibility{suffix}.geojson")
     result.to_file(geojson_path, driver="GeoJSON", encoding="utf-8")
     logger.step(f"GeoJSON écrit -> {geojson_path}")
 
     size_mb = geojson_path.stat().st_size / (1024 * 1024)
     logger.step(f"Taille du fichier : {size_mb:.2f} Mo")
 
-    metadata_path = Path("data/public/analysis/metadata/accessibility.json")
+    metadata_path = Path(f"data/public/analysis/metadata/accessibility{suffix}.json")
     write_json(metadata, metadata_path)
     logger.step(f"Métadonnées écrites -> {metadata_path}")
 
-    logger.done("Analyse d'accessibilité terminée")
+    logger.done(f"Analyse d'accessibilité ({level_label}) terminée")
     return geojson_path, metadata_path
 
 

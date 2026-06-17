@@ -1,6 +1,7 @@
 {
-  "analysis": "Accessibilité aux marchés et pépinières",
-  "analysis_en": "Accessibility to markets and nurseries",
+  "analysis": "Accessibilité aux marchés et pépinières par région",
+  "analysis_en": "Accessibility to markets and nurseries by region",
+  "level": "region",
   "method": "Création de buffers autour des marchés (10 km) et pépinières (15 km). Identification des exploitations situées hors de ces buffers = 'mal desservies'. Calcul d'un score d'accessibilité par région (0-100) basé sur le pourcentage d'exploitations mal desservies. Classification en 5 classes avec palette ColorBrewer BuPu.",
   "method_en": "Creation of buffers around markets (10 km) and nurseries (15 km). Identification of farms located outside these buffers = 'underserved'. Calculation of an accessibility score per region (0-100) based on the percentage of underserved farms. Classification into 5 classes with ColorBrewer BuPu palette.",
   "parameters": {
@@ -20,6 +21,7 @@
     "regions"
   ],
   "output_fields": {
+    "nom_region": "Nom de la région",
     "accessibility_score": "Score d'accessibilité (0-100, 100 = parfait)",
     "accessibility_class": "Classe d'accessibilité (1-5)",
     "unserved_pct": "Pourcentage d'exploitations mal desservies",
@@ -66,7 +68,7 @@
     "n_markets": 971,
     "n_nurseries": 0,
     "n_farms": 737,
-    "region_stats": [
+    "région_stats": [
       {
         "nom_region": "Maritime",
         "total_exploitations": 298,

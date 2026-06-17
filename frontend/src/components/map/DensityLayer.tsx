@@ -1,11 +1,11 @@
 import { renderToString } from 'react-dom/server';
 import DataLayer from './DataLayer';
-import RegionPopup from './RegionPopup';
+import PrefecturePopup from './PrefecturePopup';
 import { CB_DENSITY } from '@/utils/colors';
 import type { GeoJsonFeature } from '@/types/map';
 import type L from 'leaflet';
 
-const DATA_URL = '/data/density.geojson';
+const DATA_URL = '/data/analysis/density_prefecture.geojson';
 
 const CLASS_BREAKS = [
   { min: 0, max: 8, color: CB_DENSITY[0], label: 'Très faible' },
@@ -25,6 +25,8 @@ function getColor(density: number): string {
 interface DensityLayerProps {
   visible?: boolean;
   regionFilter?: string;
+  /** Called when a prefecture is clicked */
+  onPrefectureClick?: (nomPrefecture: string, properties: Record<string, any>) => void;
 }
 
 export { CLASS_BREAKS as DENSITY_CLASS_BREAKS };
@@ -34,7 +36,7 @@ export { CLASS_BREAKS as DENSITY_CLASS_BREAKS };
  * Uses ColorBrewer YlOrBr palette (5 classes).
  * Shows popup with region name, density, and exploitation count.
  */
-export default function DensityLayer({ visible = true, regionFilter }: DensityLayerProps) {
+export default function DensityLayer({ visible = true, regionFilter, onPrefectureClick }: DensityLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
     const cls = ((feature.properties.density_class as number) ?? 1) - 1;
     return {
@@ -48,22 +50,12 @@ export default function DensityLayer({ visible = true, regionFilter }: DensityLa
 
   const handleEachFeature = (feature: GeoJsonFeature, layer: L.Layer) => {
     const props = feature.properties;
-    const density = (props.density as number) ?? 0;
-    const exploitations = (props.exploitations as number) ?? 0;
-    const densityLabel = (props.density_label as string) ?? '';
-    const densityClass = (props.density_class as number) ?? 1;
-
-    const indicators: Array<{ label: string; value: string | number; unit?: string }> = [
-      { label: 'Densité', value: density.toFixed(4), unit: 'expl./km²' },
-      { label: 'Classe', value: densityLabel },
-      { label: 'Rang', value: densityClass },
-      { label: 'Exploitations', value: exploitations },
-    ];
+    const prefectureName = (props.nom_prefecture as string) ?? '';
 
     const popupContent = renderToString(
-      <RegionPopup
+      <PrefecturePopup
         properties={props}
-        indicators={indicators}
+        analysisType="density"
         accentColor="#D95F0E"
       />,
     );
@@ -72,6 +64,12 @@ export default function DensityLayer({ visible = true, regionFilter }: DensityLa
       maxWidth: 320,
       className: 'custom-popup',
     });
+
+    if (onPrefectureClick) {
+      layer.on('click', () => {
+        onPrefectureClick(prefectureName, props);
+      });
+    }
 
     layer.on('mouseover', (e) => {
       const target = e.target;

@@ -158,27 +158,28 @@ def main() -> int:
     # ── OSM déjà appelé dans download_all ; WorldPop avant analyses ──
     process_worldpop.run(logger)
 
-    # ── 6-10. Analyses M2 ────────────────────────────────────────────
-    logger.section("ANALYSES SPATIALES (M2)")
-
+    # ── 6-10. Analyses M2 — Niveau région (ADM1) ──────────────────────
+    logger.section("ANALYSES SPATIALES M2 — RÉGIONS (ADM1)")
     logger.step("Mode : analyse sur les donnees nettoyees de data/processed/", "INFO")
 
-    # 6. Densité
-    analyze_density.run(logger)
+    analyze_density.run("region", logger)
+    analyze_zaap.run("region", logger)
+    analyze_accessibility.run("region", logger)
+    analyze_cooperatives.run("region", logger)
+    synthesize.run("region", logger)
 
-    # 7. Couverture ZAAP
-    analyze_zaap.run(logger)
+    # ── 6b-10b. Analyses M2 — Niveau préfecture (ADM2) ────────────────
+    logger.section("ANALYSES SPATIALES M2 — PRÉFECTURES (ADM2)")
+    logger.step("Mode : analyse sur les donnees nettoyees de data/processed/", "INFO")
 
-    # 8. Accessibilité
-    analyze_accessibility.run(logger)
+    for level in ["prefecture"]:
+        analyze_density.run(level, logger)
+        analyze_zaap.run(level, logger)
+        analyze_accessibility.run(level, logger)
+        analyze_cooperatives.run(level, logger)
+        synthesize.run(level, logger)
 
-    # 9. Réseau coopératif
-    analyze_cooperatives.run(logger)
-
-    # 10. Synthèse
-    synthesize.run(logger)
-
-    # 11. Couche préfecture (ADM2)
+    # 11. Couche préfecture (ADM2) — consomme les sorties M2 niveau préfecture
     analyze_prefectures.run(logger)
 
     # ── Synchronisation des données publiques frontend ───────────────

@@ -17,10 +17,9 @@ import {
   MapLegend,
   MapController,
 } from '@/components/map';
-import ZoneDetailPanel from '@/components/map/ZoneDetailPanel';
 import PrefectureDetailPanel, { type PrefectureDetailData } from '@/components/map/PrefectureDetailPanel';
 import TopZonesList from '@/components/map/TopZonesList';
-import type { AnalysisType, GeoJsonPropertyMap, GeoJsonFeature } from '@/types/map';
+import type { AnalysisType, GeoJsonFeature } from '@/types/map';
 
 const DATA_URL = '/data/synthesis.geojson';
 
@@ -73,16 +72,9 @@ function computeCentroid(geometry: GeoJsonFeature['geometry']): [number, number]
   return null;
 }
 
-function findFeatureByProps(features: GeoJsonFeature[], props: GeoJsonPropertyMap): GeoJsonFeature | undefined {
-  const id = props.id ?? props.rang;
-  if (id != null) return features.find((f) => f.properties.id === id || f.properties.rang === id);
-  return undefined;
-}
-
 export default function ExplorePage() {
   const { t, currentLang } = useTranslation();
   const [legendOpen, setLegendOpen] = useState(true);
-  const [selectedZone, setSelectedZone] = useState<GeoJsonPropertyMap | null>(null);
   const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [visibleMarkers, setVisibleMarkers] = useState<Set<string>>(new Set());
@@ -125,33 +117,43 @@ export default function ExplorePage() {
     );
   }, [synthesisData]);
 
-  const handleZoneSelect = useCallback((props: GeoJsonPropertyMap, center?: [number, number]) => {
-    setSelectedZone(props);
-    if (center) setFlyToCoords(center);
-  }, []);
+  /**
+   * Handle click on a prefecture from any analysis layer.
+   * Finds the matching feature geometry, opens the PrefectureDetailPanel,
+   * and flies the map to the prefecture centroid.
+   */
+  const handlePrefectureClick = useCallback((nomPrefecture: string, properties: Record<string, any>) => {
+    if (!nomPrefecture) return;
 
-  const handleCenterZone = useCallback(() => {
-    if (selectedZone && flyToCoords) {
-      setFlyToCoords((prev) => (prev ? [prev[0], prev[1]] as [number, number] : null));
+    // Find feature in prefectureFeatures to get geometry
+    const feature = prefectureFeatures.find(
+      f => f.properties?.nom_prefecture === nomPrefecture,
+    );
+    if (!feature) return;
+
+    // Open the detail panel
+    setSelectedPrefectureData(properties as PrefectureDetailData);
+
+    // Fly-to if geometry available
+    if (feature.geometry) {
+      const center = computeCentroid(feature.geometry);
+      if (center) setFlyToCoords(center);
     }
-  }, [selectedZone, flyToCoords]);
+  }, [prefectureFeatures]);
 
-  const handleSynthesisClick = useCallback(
-    (data: { properties: GeoJsonPropertyMap; center: [number, number] }) => {
-      handleZoneSelect(data.properties, data.center);
-    },
-    [handleZoneSelect],
-  );
-
-  const handleListZoneSelect = useCallback((props: GeoJsonPropertyMap) => {
-    const feature = findFeatureByProps(allZones, props);
-    let center: [number, number] | undefined;
+  /**
+   * Handle click on a zone from TopZonesList — flies to the zone centroid.
+   */
+  const handleListZoneSelect = useCallback((props: Record<string, string | number | boolean | null | undefined>) => {
+    const id = props.id ?? props.rang;
+    const feature = allZones.find(
+      (f) => f.properties.id === id || f.properties.rang === id,
+    );
     if (feature?.geometry) {
-      const c = computeCentroid(feature.geometry);
-      if (c) center = c;
+      const center = computeCentroid(feature.geometry);
+      if (center) setFlyToCoords(center);
     }
-    handleZoneSelect(props, center);
-  }, [allZones, handleZoneSelect]);
+  }, [allZones]);
 
   // Fetch prefecture_synthesis.geojson once on mount
   useEffect(() => {
@@ -161,7 +163,7 @@ export default function ExplorePage() {
       .catch(() => {});
   }, []);
 
-  // Open panel + fly-to when a prefecture is selected
+  // Open panel + fly-to when a prefecture is selected via filter
   useEffect(() => {
     if (!filters.selectedPrefecture) {
       setSelectedPrefectureData(null);
@@ -176,34 +178,35 @@ export default function ExplorePage() {
     if (center) setFlyToCoords(center);
   }, [filters.selectedPrefecture, prefectureFeatures]);
 
-  /** Event delegation — intercepts clicks on data-action="open-zone-detail"
-   *  links emitted by RegionPopup (rendered via renderToString, outside React Router).
-   *  Uses allZones (already loaded) to find the matching feature + centroid.
+  /** Event delegation — intercepts clicks on data-action="open-prefecture-detail"
+   *  links emitted by PrefecturePopup (rendered via renderToString, outside React Router).
+   *  Uses prefectureFeatures to find the matching feature + centroid.
    */
   useEffect(() => {
     const handleDetailClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const link = target.closest('[data-action="open-zone-detail"]') as HTMLElement | null;
+      const link = target.closest('[data-action="open-prefecture-detail"]') as HTMLElement | null;
       if (!link) return;
       e.preventDefault();
 
-      const regionName = link.getAttribute('data-region-name');
-      if (!regionName) return;
+      const prefectureName = link.getAttribute('data-prefecture-name');
+      if (!prefectureName) return;
 
-      const feature = allZones.find(
-        (f) => (f.properties.nom_region as string)?.toLowerCase() === regionName.toLowerCase(),
+      const feature = prefectureFeatures.find(
+        (f) => f.properties?.nom_prefecture === prefectureName,
       );
       if (!feature || !feature.geometry) return;
 
       const center: [number, number] =
         computeCentroid(feature.geometry) ?? [8.6195, 0.8248];
 
-      handleZoneSelect(feature.properties as GeoJsonPropertyMap, center);
+      setSelectedPrefectureData(feature.properties as unknown as PrefectureDetailData);
+      setFlyToCoords(center);
     };
 
     document.addEventListener('click', handleDetailClick);
     return () => document.removeEventListener('click', handleDetailClick);
-  }, [allZones, handleZoneSelect]);
+  }, [prefectureFeatures]);
 
   /* ── Layer label helper ─────────────────────────────────────────────────── */
   const layerLabel =
@@ -380,24 +383,28 @@ export default function ExplorePage() {
                       <DensityLayer
                         visible={activeLayer === 'density'}
                         regionFilter={regionFilterValue || undefined}
+                        onPrefectureClick={handlePrefectureClick}
                       />
                       <ZAAPLayer
                         visible={activeLayer === 'zaap'}
                         regionFilter={regionFilterValue || undefined}
                         onlyUncovered={filters.zaapOnlyUncovered}
+                        onPrefectureClick={handlePrefectureClick}
                       />
                       <AccessibilityLayer
                         visible={activeLayer === 'access'}
                         regionFilter={regionFilterValue || undefined}
+                        onPrefectureClick={handlePrefectureClick}
                       />
                       <CoopLayer
                         visible={activeLayer === 'coop'}
                         regionFilter={regionFilterValue || undefined}
+                        onPrefectureClick={handlePrefectureClick}
                       />
                       <SynthesisLayer
                         visible={activeLayer === 'synthesis'}
                         regionFilter={regionFilterValue || undefined}
-                        onZoneClick={handleSynthesisClick}
+                        onPrefectureClick={handlePrefectureClick}
                       />
                       <FlyToRegion region={regionFilterValue} />
                       <FlyToZone coords={flyToCoords} />
@@ -429,7 +436,6 @@ export default function ExplorePage() {
                     <div className="overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
                       <TopZonesList
                         zones={allZones}
-                        selectedZoneId={selectedZone?.rang as number ?? undefined}
                         onZoneSelect={handleListZoneSelect}
                       />
                     </div>
@@ -450,13 +456,8 @@ export default function ExplorePage() {
           </div>{/* fin section principale */}
         </div>{/* fin layout flex */}
 
-        {/* Zone Detail Panel overlay */}
+        {/* Detail Panel overlay */}
         <div className="px-0">
-          <ZoneDetailPanel
-            zone={selectedZone}
-            onClose={() => setSelectedZone(null)}
-            onCenter={handleCenterZone}
-          />
           <PrefectureDetailPanel
             prefecture={selectedPrefectureData}
             onClose={() => {

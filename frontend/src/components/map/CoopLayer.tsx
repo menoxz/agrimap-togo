@@ -1,11 +1,11 @@
 import { renderToString } from 'react-dom/server';
 import DataLayer from './DataLayer';
-import RegionPopup from './RegionPopup';
+import PrefecturePopup from './PrefecturePopup';
 import { CB_COOP } from '@/utils/colors';
 import type { GeoJsonFeature } from '@/types/map';
 import type L from 'leaflet';
 
-const DATA_URL = '/data/cooperative_network.geojson';
+const DATA_URL = '/data/analysis/cooperative_network_prefecture.geojson';
 
 const CLASS_BREAKS = [
   { min: 0, max: 2, color: '#FFF5E6', label: 'Très faible' },
@@ -24,6 +24,8 @@ function getColor(density: number): string {
 interface CoopLayerProps {
   visible?: boolean;
   regionFilter?: string;
+  /** Called when a prefecture is clicked */
+  onPrefectureClick?: (nomPrefecture: string, properties: Record<string, any>) => void;
 }
 
 export { CLASS_BREAKS as COOP_CLASS_BREAKS };
@@ -36,6 +38,7 @@ export { CLASS_BREAKS as COOP_CLASS_BREAKS };
 export default function CoopLayer({
   visible = true,
   regionFilter,
+  onPrefectureClick,
 }: CoopLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
     const density = (feature.properties.coop_density as number) ?? 0;
@@ -51,25 +54,13 @@ export default function CoopLayer({
 
   const handleEachFeature = (feature: GeoJsonFeature, layer: L.Layer) => {
     const props = feature.properties;
-    const coopCount = (props.coop_count as number) ?? 0;
-    const coopDensity = (props.coop_density as number) ?? 0;
-    const members = (props.members_total as number) ?? 0;
+    const prefectureName = (props.nom_prefecture as string) ?? '';
     const isWhiteZone = props.zone_blanche === true;
 
-    const indicators: Array<{ label: string; value: string | number; unit?: string }> = [
-      { label: 'Coopératives', value: coopCount },
-      { label: 'Densité coop.', value: coopDensity, unit: '/100k' },
-      { label: 'Membres', value: members },
-    ];
-
-    if (isWhiteZone) {
-      indicators.push({ label: 'Zone blanche', value: '⚠️ Oui' });
-    }
-
     const popupContent = renderToString(
-      <RegionPopup
+      <PrefecturePopup
         properties={props}
-        indicators={indicators}
+        analysisType="coop"
         accentColor={isWhiteZone ? '#D7301F' : '#FC8D59'}
       />,
     );
@@ -78,6 +69,12 @@ export default function CoopLayer({
       maxWidth: 320,
       className: 'custom-popup',
     });
+
+    if (onPrefectureClick) {
+      layer.on('click', () => {
+        onPrefectureClick(prefectureName, props);
+      });
+    }
 
     layer.on('mouseover', (e) => {
       e.target.setStyle({ weight: 2.5, fillOpacity: 0.9 });

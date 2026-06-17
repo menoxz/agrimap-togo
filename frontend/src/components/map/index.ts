@@ -11,8 +11,9 @@ export { default as SynthesisLayer } from './SynthesisLayer';
 export { default as FilterPanel } from './FilterPanel';
 export { default as MapLegend } from './MapLegend';
 export { default as RegionPopup } from './RegionPopup';
+export { default as PrefecturePopup } from './PrefecturePopup';
 export { default as MapController } from './MapController';
-export { default as ZoneDetailPanel } from './ZoneDetailPanel';
+
 export { default as TopZonesList } from './TopZonesList';
 export { default as MarkersLayer } from './MarkersLayer';
 export { default as PrefectureLayer } from './PrefectureLayer';

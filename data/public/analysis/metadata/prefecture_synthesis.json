@@ -1,19 +1,27 @@
 {
-  "analysis": "Couche préfecture (ADM2) — Scores agrégés",
-  "analysis_en": "Prefecture layer (ADM2) — Aggregated scores",
-  "version": "1.0.0",
-  "generated_at": "2026-06-17T07:48:23.641399+00:00",
+  "analysis": "Couche préfecture (ADM2) — Scores agrégés + M2",
+  "analysis_en": "Prefecture layer (ADM2) — Aggregated + M2 scores",
+  "version": "2.0.0",
+  "generated_at": "2026-06-17T17:12:27.754445+00:00",
   "crs": "EPSG:4326",
   "method": {
-    "description": "Agrégation des 5 datasets processed (coopératives, marchés, pépinières, ZAAP, exploitations OSM) par préfecture administrative (ADM2). Alignement des noms entre geoBoundaries et les données processed via : overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6).",
+    "description": "Agrégation des 5 datasets processed (coopératives, marchés, pépinières, ZAAP, exploitations OSM) par préfecture administrative (ADM2). Alignement des noms entre geoBoundaries et les données processed via : overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6). Enrichi par les 4 analyses spatiales M2 (densité, accessibilité, réseau coopératif, couverture ZAAP) pour produire un super-score combinant les services de base et l'accès spatial aux marchés/intrants.",
     "service_score_formula": "service_score = ( n_coops/max * 0.30 + n_marches/max * 0.25 + n_pep/max * 0.25 + n_zaap/max * 0.20 ) × 100",
+    "synthesis_score_formula": "synthesis_score = service_score * 0.35 + density_score * 0.20 + accessibility_score * 0.20 + coop_score * 0.15 + zaap_score * 0.10",
     "weights": {
       "cooperatives": 0.3,
       "marches": 0.25,
       "pepinieres": 0.25,
       "zaap": 0.2
     },
-    "classification_method": "Tertile (pd.qcut q=3) : les 37 prefectures sont divisees en 3 groupes d'egale taille selon le service_score. Tier inferieur = Priorite haute, tier median = Priorite moyenne, tier superieur = Bien desservi. Cette methode garantit toujours 3 classes representees quelle que soit la distribution.",
+    "m2_weights": {
+      "service_score": 0.35,
+      "density_score": 0.2,
+      "accessibility_score": 0.2,
+      "coop_score": 0.15,
+      "zaap_score": 0.1
+    },
+    "classification_method": "Tertile (pd.qcut q=3) : les prefectures sont divisees en 3 groupes d'egale taille selon le synthesis_score. Tier inferieur = Priorite haute, tier median = Priorite moyenne, tier superieur = Bien desservi.",
     "name_matching_pipeline": [
       "1. Overrides manuels (6 cas connus)",
       "2. Égalité exacte",
@@ -37,6 +45,13 @@
       "pepinieres.geojson",
       "zaap_formes.geojson",
       "exploitations.geojson"
+    ],
+    "m2_analysis_files": [
+      "density_prefecture.geojson",
+      "accessibility_prefecture.geojson",
+      "cooperative_network_prefecture.geojson",
+      "zaap_coverage_prefecture.geojson",
+      "synthesis_prefecture.geojson"
     ]
   },
   "output_fields": {
@@ -48,8 +63,14 @@
     "n_zaap": "Nombre de ZAAP (périmètres)",
     "n_exploitations": "Nombre total d'exploitations (grandes + petites)",
     "service_score": "Score composite de services (0-100 ; 100 = bien desservi)",
+    "density_score": "Score de densité d'exploitations (0-100)",
+    "accessibility_score": "Score d'accessibilité marchés/pépinières (0-100)",
+    "coop_score": "Score de couverture coopérative (0-100)",
+    "zaap_score": "Score de couverture ZAAP (0-100)",
+    "synthesis_score": "Super-score combiné (service + M2) (0-100)",
     "priority_level": "Niveau : Priorité haute / Priorité moyenne / Bien desservi",
-    "color": "Couleur hexadécimale — palette ColorBrewer RdYlGn 3 classes"
+    "color": "Couleur hexadécimale — palette ColorBrewer RdYlGn 3 classes",
+    "interpretation": "Interprétation constructive en français"
   },
   "palette": {
     "name": "RdYlGn (3 classes)",
@@ -92,9 +113,15 @@
       "mean": 10.1,
       "median": 6.7
     },
+    "synthesis_score": {
+      "min": 5.8,
+      "max": 65.3,
+      "mean": 30.7,
+      "median": 27.6
+    },
     "priority_distribution": {
-      "Priorite haute": 13,
-      "Priorite moyenne": 11,
+      "Priorite haute": 14,
+      "Priorite moyenne": 10,
       "Bien desservi": 13
     }
   },

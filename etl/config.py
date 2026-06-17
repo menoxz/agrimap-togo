@@ -235,7 +235,7 @@ MOCK_SETTINGS = {
     "use_mock": True,               # True = génération mock (hors régions), False = téléchargement réel
 }
 
-# ── Frontières administratives réelles (ADM1) ─────────────────────────
+# ── Frontières administratives réelles (ADM1 + ADM2) ─────────────────
 REAL_BOUNDARIES = {
     "regions": {
         "enabled": True,
@@ -248,7 +248,19 @@ REAL_BOUNDARIES = {
         ),
         "license": "ODbL-1.0",
         "dataset_version": "gbOpen-TGO-ADM1-9469f09",
-    }
+    },
+    "prefectures": {
+        "enabled": True,
+        "path": "data/raw/geoBoundaries-TGO-ADM2.geojson",
+        "provider": "geoBoundaries (gbOpen)",
+        "source_url": "https://www.geoboundaries.org/api/current/gbOpen/TGO/ADM2/",
+        "download_url": (
+            "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/"
+            "9469f09/releaseData/gbOpen/TGO/ADM2/geoBoundaries-TGO-ADM2.geojson"
+        ),
+        "license": "ODbL-1.0",
+        "dataset_version": "gbOpen-TGO-ADM2-9469f09",
+    },
 }
 
 # ── Licence et attribution ───────────────────────────────────────────

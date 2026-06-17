@@ -387,6 +387,191 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
     # ── 5. Classification quantile (tertile) ─────────────────────────
     result_gdf = classify_by_quantile(result_gdf)
 
+    # ── 5b. Enrichissement M2 (scores des 4 analyses spatiales) ──────
+    logger.step("Enrichissement M2 : chargement des scores spatiaux ...")
+    
+    # Poids pour le super-score final
+    NEW_WEIGHTS = {
+        "service_score": 0.35,
+        "density_score": 0.20,
+        "accessibility_score": 0.20,
+        "coop_score": 0.15,
+        "zaap_score": 0.10,
+    }
+    
+    m2_synthesis_path = OUTPUT_DIR / "synthesis_prefecture.geojson"
+    m2_density_path = OUTPUT_DIR / "density_prefecture.geojson"
+    m2_access_path = OUTPUT_DIR / "accessibility_prefecture.geojson"
+    m2_coop_path = OUTPUT_DIR / "cooperative_network_prefecture.geojson"
+    m2_zaap_path = OUTPUT_DIR / "zaap_coverage_prefecture.geojson"
+    
+    m2_loaded = False
+    
+    # Essayer de charger synthesis_prefecture (le plus complet)
+    if m2_synthesis_path.exists():
+        try:
+            syn_gdf = gpd.read_file(str(m2_synthesis_path))
+            if not syn_gdf.empty and "synthesis_score" in syn_gdf.columns:
+                # Colonnes M2 à importer (éviter les collisions avec les colonnes existantes)
+                # On prend les scores normalisés + quelques indicateurs
+                m2_cols = ["nom_prefecture"]
+                for col in ["density_score", "zaap_score", "access_score", "coop_score",
+                            "density", "coverage_pct", "white_zone_pct", "avg_distance_km",
+                            "synthesis_score"]:
+                    if col in syn_gdf.columns:
+                        m2_cols.append(col)
+                syn_import = syn_gdf[m2_cols].copy()
+                # Renommer access_score → accessibility_score
+                if "access_score" in syn_import.columns and "accessibility_score" not in result_gdf.columns:
+                    syn_import = syn_import.rename(columns={"access_score": "accessibility_score"})
+                result_gdf = result_gdf.merge(
+                    syn_import,
+                    on="nom_prefecture",
+                    how="left",
+                    suffixes=("", "_m2"),
+                )
+                # Supprimer les colonnes suffixées _m2
+                m2_suffixed = [c for c in result_gdf.columns if c.endswith("_m2")]
+                if m2_suffixed:
+                    logger.step(f"  Conflits résolus : {m2_suffixed}", "~")
+                    result_gdf = result_gdf.drop(columns=m2_suffixed)
+                logger.step(f"  Synthèse M2 chargée : {len(syn_gdf)} préfectures", "OK")
+                m2_loaded = True
+        except Exception as exc:
+            logger.step(f"  Chargement synthesis_prefecture échoué : {exc}", "!!")
+    
+    # Fallback : chargement individuel des 4 fichiers
+    if not m2_loaded:
+        # Density
+        if m2_density_path.exists():
+            try:
+                d_gdf = gpd.read_file(str(m2_density_path))
+                if not d_gdf.empty and "density" in d_gdf.columns:
+                    density_max = d_gdf["density"].max()
+                    d_gdf["density_score"] = d_gdf["density"].apply(
+                        lambda x: round(x / density_max * 100, 1) if density_max > 0 else 50.0
+                    )
+                    result_gdf = result_gdf.merge(
+                        d_gdf[["nom_prefecture", "density", "density_score"]],
+                        on="nom_prefecture", how="left",
+                    )
+                    logger.step(f"  Density M2 chargée", "OK")
+            except Exception as exc:
+                logger.step(f"  Density chargement échoué : {exc}", "!!")
+        
+        # Accessibility
+        if m2_access_path.exists():
+            try:
+                a_gdf = gpd.read_file(str(m2_access_path))
+                if not a_gdf.empty and "accessibility_score" in a_gdf.columns:
+                    result_gdf = result_gdf.merge(
+                        a_gdf[["nom_prefecture", "accessibility_score", "avg_distance_km"]],
+                        on="nom_prefecture", how="left",
+                    )
+                    logger.step(f"  Accessibilité M2 chargée", "OK")
+            except Exception as exc:
+                logger.step(f"  Accessibilité chargement échoué : {exc}", "!!")
+        
+        # Coopératives
+        if m2_coop_path.exists():
+            try:
+                c_gdf = gpd.read_file(str(m2_coop_path))
+                if not c_gdf.empty and "white_zone_pct" in c_gdf.columns:
+                    c_gdf["coop_score"] = c_gdf["white_zone_pct"].apply(lambda x: max(0, 100 - x))
+                    merge_cols = ["nom_prefecture", "white_zone_pct", "coop_score"]
+                    if "n_cooperatives" in c_gdf.columns:
+                        merge_cols.append("n_cooperatives")
+                    result_gdf = result_gdf.merge(
+                        c_gdf[merge_cols], on="nom_prefecture", how="left",
+                    )
+                    logger.step(f"  Coopératives M2 chargée", "OK")
+            except Exception as exc:
+                logger.step(f"  Coopératives chargement échoué : {exc}", "!!")
+        
+        # ZAAP
+        if m2_zaap_path.exists():
+            try:
+                z_gdf = gpd.read_file(str(m2_zaap_path))
+                if not z_gdf.empty and "coverage_pct" in z_gdf.columns:
+                    coverage_max = z_gdf["coverage_pct"].max()
+                    z_gdf["zaap_score"] = z_gdf["coverage_pct"].apply(
+                        lambda x: round(x / coverage_max * 100, 1) if coverage_max > 0 else 50.0
+                    )
+                    result_gdf = result_gdf.merge(
+                        z_gdf[["nom_prefecture", "coverage_pct", "zaap_score"]],
+                        on="nom_prefecture", how="left",
+                    )
+                    logger.step(f"  ZAAP M2 chargée", "OK")
+            except Exception as exc:
+                logger.step(f"  ZAAP chargement échoué : {exc}", "!!")
+    
+    # Renommer access_score → accessibility_score si nécessaire
+    if "access_score" in result_gdf.columns and "accessibility_score" not in result_gdf.columns:
+        result_gdf = result_gdf.rename(columns={"access_score": "accessibility_score"})
+    
+    # ── Recalcul du super-score avec les 5 dimensions ─────────────────
+    logger.step("Calcul du super-score combiné (service + M2)...")
+    
+    # Remplir les valeurs manquantes pour les scores M2
+    for col in ["density_score", "accessibility_score", "coop_score", "zaap_score"]:
+        if col in result_gdf.columns:
+            result_gdf[col] = result_gdf[col].fillna(50.0)
+    
+    # Calcul du synthesis_score combiné
+    result_gdf["synthesis_score"] = 0.0
+    result_gdf["synthesis_score"] += result_gdf["service_score"] * NEW_WEIGHTS["service_score"]
+    if "density_score" in result_gdf.columns:
+        result_gdf["synthesis_score"] += result_gdf["density_score"] * NEW_WEIGHTS["density_score"]
+    if "accessibility_score" in result_gdf.columns:
+        result_gdf["synthesis_score"] += result_gdf["accessibility_score"] * NEW_WEIGHTS["accessibility_score"]
+    if "coop_score" in result_gdf.columns:
+        result_gdf["synthesis_score"] += result_gdf["coop_score"] * NEW_WEIGHTS["coop_score"]
+    if "zaap_score" in result_gdf.columns:
+        result_gdf["synthesis_score"] += result_gdf["zaap_score"] * NEW_WEIGHTS["zaap_score"]
+    
+    result_gdf["synthesis_score"] = result_gdf["synthesis_score"].round(1)
+    
+    # Reclassification en 3 niveaux (tertile) avec le nouveau score
+    try:
+        labels_int, _bins = pd.qcut(
+            result_gdf["synthesis_score"],
+            q=3,
+            labels=[1, 2, 3],
+            retbins=True,
+            duplicates="drop",
+        )
+    except ValueError:
+        labels_int = pd.Series([2] * len(result_gdf), index=result_gdf.index)
+    
+    priority_map = {1: "Priorité haute", 2: "Priorité moyenne", 3: "Bien desservi"}
+    color_map    = {1: "#D7191C",        2: "#FFFFC0",          3: "#1A9641"}
+    
+    result_gdf["priority_level"] = labels_int.astype(int).map(priority_map)
+    result_gdf["color"]          = labels_int.astype(int).map(color_map)
+    
+    # name_en : fallback sur nom_prefecture
+    result_gdf["name_en"] = result_gdf["nom_prefecture"]
+    
+    # Interprétation enrichie
+    result_gdf["interpretation"] = result_gdf.apply(
+        lambda r: (
+            f"PRIORITÉ HAUTE — {r['nom_prefecture']} : score composite "
+            f"{r['synthesis_score']:.1f}/100. Cumul de déficits services "
+            f"et accès aux marchés/intrants."
+            if r["priority_level"] == "Priorité haute"
+            else (
+                f"PRIORITÉ MOYENNE — {r['nom_prefecture']} : score composite "
+                f"{r['synthesis_score']:.1f}/100. Des améliorations ciblées possibles."
+                if r["priority_level"] == "Priorité moyenne"
+                else (
+                    f"BIEN DESSERVI — {r['nom_prefecture']} : score composite "
+                    f"{r['synthesis_score']:.1f}/100. Maintien des services recommandé."
+                )
+            )
+        ),
+        axis=1,
+    )
+    
     # ── 6. Vérifications ─────────────────────────────────────────────
     logger.step("Vérifications ...")
 
@@ -433,11 +618,17 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
 
     # ── 8. Métadonnées ────────────────────────────────────────────────
     score_s = result_gdf["service_score"]
+    syn_score_s = result_gdf["synthesis_score"] if "synthesis_score" in result_gdf.columns else score_s
+
+    # Détection des colonnes M2 présentes
+    m2_cols_present = [c for c in ["density_score", "accessibility_score", "coop_score", "zaap_score"]
+                       if c in result_gdf.columns]
+    has_m2 = len(m2_cols_present) >= 2
 
     metadata: dict[str, Any] = {
-        "analysis":     "Couche préfecture (ADM2) — Scores agrégés",
-        "analysis_en":  "Prefecture layer (ADM2) — Aggregated scores",
-        "version":      "1.0.0",
+        "analysis":     "Couche préfecture (ADM2) — Scores agrégés + M2",
+        "analysis_en":  "Prefecture layer (ADM2) — Aggregated + M2 scores",
+        "version":      "2.0.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "crs":          "EPSG:4326",
         "method": {
@@ -446,6 +637,11 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
                 "ZAAP, exploitations OSM) par préfecture administrative (ADM2). "
                 "Alignement des noms entre geoBoundaries et les données processed via : "
                 "overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6)."
+            ) + (
+                " Enrichi par les 4 analyses spatiales M2 (densité, accessibilité, "
+                "réseau coopératif, couverture ZAAP) pour produire un super-score "
+                "combinant les services de base et l'accès spatial aux marchés/intrants."
+                if has_m2 else ""
             ),
             "service_score_formula": (
                 "service_score = ( n_coops/max * 0.30 "
@@ -453,12 +649,16 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
                 "+ n_pep/max * 0.25 "
                 "+ n_zaap/max * 0.20 ) × 100"
             ),
+            "synthesis_score_formula": (
+                "synthesis_score = service_score * 0.35 + density_score * 0.20 "
+                "+ accessibility_score * 0.20 + coop_score * 0.15 + zaap_score * 0.10"
+            ) if has_m2 else "Identique à service_score (pas de données M2)",
             "weights": WEIGHTS,
+            "m2_weights": NEW_WEIGHTS if has_m2 else None,
             "classification_method": (
-                "Tertile (pd.qcut q=3) : les 37 prefectures sont divisees en 3 groupes "
-                "d'egale taille selon le service_score. Tier inferieur = Priorite haute, "
-                "tier median = Priorite moyenne, tier superieur = Bien desservi. "
-                "Cette methode garantit toujours 3 classes representees quelle que soit la distribution."
+                "Tertile (pd.qcut q=3) : les prefectures sont divisees en 3 groupes "
+                "d'egale taille selon le synthesis_score. Tier inferieur = Priorite haute, "
+                "tier median = Priorite moyenne, tier superieur = Bien desservi."
             ),
             "name_matching_pipeline": [
                 "1. Overrides manuels (6 cas connus)",
@@ -484,6 +684,13 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
                 "zaap_formes.geojson",
                 "exploitations.geojson",
             ],
+            "m2_analysis_files": [
+                "density_prefecture.geojson",
+                "accessibility_prefecture.geojson",
+                "cooperative_network_prefecture.geojson",
+                "zaap_coverage_prefecture.geojson",
+                "synthesis_prefecture.geojson",
+            ] if has_m2 else [],
         },
         "output_fields": {
             "nom_prefecture": "Nom normalisé de la préfecture (depuis données processed)",
@@ -494,8 +701,14 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
             "n_zaap":         "Nombre de ZAAP (périmètres)",
             "n_exploitations": "Nombre total d'exploitations (grandes + petites)",
             "service_score":  "Score composite de services (0-100 ; 100 = bien desservi)",
+            "density_score":  "Score de densité d'exploitations (0-100)" if has_m2 else None,
+            "accessibility_score": "Score d'accessibilité marchés/pépinières (0-100)" if has_m2 else None,
+            "coop_score":     "Score de couverture coopérative (0-100)" if has_m2 else None,
+            "zaap_score":     "Score de couverture ZAAP (0-100)" if has_m2 else None,
+            "synthesis_score": "Super-score combiné (service + M2) (0-100)" if has_m2 else "Identique à service_score",
             "priority_level": "Niveau : Priorité haute / Priorité moyenne / Bien desservi",
             "color":          "Couleur hexadécimale — palette ColorBrewer RdYlGn 3 classes",
+            "interpretation": "Interprétation constructive en français",
         },
         "palette": {
             "name":           "RdYlGn (3 classes)",
@@ -530,7 +743,7 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
                 "administratif officiel le plus recent ; geoBoundaries consolide "
                 "certaines unites (ex : 'Lome Commune' pour Golfe/Lome)."
             ),
-            "total_cooperatives":  int(result_gdf["n_cooperatives"].sum()),
+            "total_cooperatives":  int(result_gdf["n_cooperatives"].sum()) if "n_cooperatives" in result_gdf.columns else int(result_gdf["n_cooperatives_m2"].sum()) if "n_cooperatives_m2" in result_gdf.columns else 0,
             "total_marches":       int(total_marches),
             "total_marches_in_file": file_total_marches,
             "marches_without_prefecture": file_total_marches - total_marches,
@@ -543,6 +756,12 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
                 "mean":   float(round(score_s.mean(), 1)),
                 "median": float(round(score_s.median(), 1)),
             },
+            "synthesis_score": {
+                "min":    float(syn_score_s.min()),
+                "max":    float(syn_score_s.max()),
+                "mean":   float(round(syn_score_s.mean(), 1)),
+                "median": float(round(syn_score_s.median(), 1)),
+            } if has_m2 else None,
             "priority_distribution": {
                 "Priorite haute":   int((result_gdf["priority_level"] == "Priorité haute").sum()),
                 "Priorite moyenne": int((result_gdf["priority_level"] == "Priorité moyenne").sum()),

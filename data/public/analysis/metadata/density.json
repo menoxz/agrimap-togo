@@ -1,8 +1,9 @@
 {
-  "analysis": "Densité des exploitations agricoles",
-  "analysis_en": "Farm density analysis",
-  "method": "Comptage des exploitations (grandes + petites + plantations) par région, normalisé par la surface régionale (km²). Classification par quantiles en 5 classes avec palette ColorBrewer YlOrBr.",
-  "method_en": "Counting farms (large + small + plantations) by region, normalized by regional area (km²). Quantile-based classification into 5 classes with ColorBrewer YlOrBr palette.",
+  "analysis": "Densité des exploitations agricoles par région",
+  "analysis_en": "Farm density by region",
+  "level": "region",
+  "method": "Comptage des exploitations (grandes + petites + plantations) par région, normalisé par la surface (région km²). Classification par quantiles en 5 classes avec palette ColorBrewer YlOrBr.",
+  "method_en": "Counting farms (large + small + plantations) by region, normalized by region area (km²). Quantile-based classification into 5 classes with ColorBrewer YlOrBr palette.",
   "inputs": [
     "grandes_exploitations",
     "petites_exploitations",
@@ -10,6 +11,7 @@
     "regions"
   ],
   "output_fields": {
+    "nom_region": "Nom de la région",
     "nb_exploitations": "Nombre total d'exploitations dans la région",
     "area_km2": "Superficie de la région en km²",
     "density": "Densité d'exploitations par km²",
@@ -66,7 +68,7 @@
   },
   "statistics": {
     "total_exploitations": 737,
-    "n_regions": 5,
+    "n_régions": 5,
     "density_min": 0.0049,
     "density_max": 0.0489,
     "density_mean": 0.0178

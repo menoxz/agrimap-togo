@@ -1,0 +1,363 @@
+{
+  "analysis": "Réseau coopératif agricole par préfecture",
+  "analysis_en": "Agricultural cooperative network analysis by prefecture",
+  "level": "prefecture",
+  "method": "Comptage des coopératives par préfecture et calcul de la densité (coopératives / 1000 km²). Création de buffers de 10 km autour des coopératives pour identifier les zones de production sans accès coopératif ('zones blanches organisationnelles'). Classification en 4 classes avec palette ColorBrewer OrRd. Règles adaptées pour préfectures (37 entités) : >=2 coopératives et <25% zones blanches → classe 1, >=1 coopérative et <50% zones blanches → classe 2, >=1 coopérative → classe 3, 0 coopérative → classe 4.",
+  "method_en": "Counting cooperatives per prefecture and calculating density (cooperatives / 1000 km²). Creation of 10 km buffers around cooperatives to identify production zones without cooperative access ('organizational white zones'). Classification into 4 classes with ColorBrewer OrRd palette. Adapted rules for prefectures (37 units): >=2 cooperatives and <25% white zones → class 1, >=1 cooperative and <50% white zones → class 2, >=1 cooperative → class 3, 0 cooperatives → class 4.",
+  "parameters": {
+    "cooperative_buffer_km": 10,
+    "crs_analysis": "EPSG:32631",
+    "n_cooperatives": 55,
+    "n_farms": 737
+  },
+  "inputs": [
+    "cooperatives",
+    "grandes_exploitations",
+    "petites_exploitations",
+    "plantations",
+    "geoBoundaries-TGO-ADM2"
+  ],
+  "output_fields": {
+    "nom_prefecture": "Nom de la préfecture",
+    "n_cooperatives": "Nombre de coopératives dans la préfecture",
+    "coop_density_per_1000km2": "Densité de coopératives (pour 1000 km²)",
+    "white_zone_pct": "Pourcentage d'exploitations en zone blanche coopérative",
+    "coop_class": "Classe de maillage (1-4)",
+    "color": "Couleur hexadécimale (palette OrRd)"
+  },
+  "palette": {
+    "name": "OrRd",
+    "type": "Séquentielle",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "class": 1,
+        "color": "#FDD49E",
+        "label": "Bon maillage coopératif",
+        "label_en": "Good cooperative network"
+      },
+      {
+        "class": 2,
+        "color": "#FDAE61",
+        "label": "Maillage partiel",
+        "label_en": "Partial network"
+      },
+      {
+        "class": 3,
+        "color": "#E34A33",
+        "label": "Faible maillage",
+        "label_en": "Weak network"
+      },
+      {
+        "class": 4,
+        "color": "#B10026",
+        "label": "Zone blanche - Prioritaire",
+        "label_en": "Cooperative white zone - Priority"
+      }
+    ]
+  },
+  "statistics": {
+    "total_cooperatives": 55,
+    "total_farms": 737,
+    "préfecture_stats": [
+      {
+        "nom_prefecture": "Tchamba",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 6,
+        "white_zone_exploitations": 6,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Tchaoudjo",
+        "n_cooperatives": 5,
+        "coop_density_per_1000km2": 2.0929,
+        "total_exploitations": 2,
+        "white_zone_exploitations": 2,
+        "white_zone_pct": 85.0
+      },
+      {
+        "nom_prefecture": "Assoli",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 0,
+        "white_zone_exploitations": 0,
+        "white_zone_pct": 0
+      },
+      {
+        "nom_prefecture": "Binah",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 4,
+        "white_zone_exploitations": 4,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Doufelgou",
+        "n_cooperatives": 3,
+        "coop_density_per_1000km2": 2.2686,
+        "total_exploitations": 7,
+        "white_zone_exploitations": 2,
+        "white_zone_pct": 28.6
+      },
+      {
+        "nom_prefecture": "Keran",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 10,
+        "white_zone_exploitations": 10,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Kozah",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 1.8627,
+        "total_exploitations": 29,
+        "white_zone_exploitations": 16,
+        "white_zone_pct": 55.2
+      },
+      {
+        "nom_prefecture": "Golfe",
+        "n_cooperatives": 5,
+        "coop_density_per_1000km2": 32.8884,
+        "total_exploitations": 5,
+        "white_zone_exploitations": 0,
+        "white_zone_pct": 0.0
+      },
+      {
+        "nom_prefecture": "Bas-Mono",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 3,
+        "white_zone_exploitations": 3,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Vo",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 2.6869,
+        "total_exploitations": 16,
+        "white_zone_exploitations": 13,
+        "white_zone_pct": 81.2
+      },
+      {
+        "nom_prefecture": "Yoto",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 11,
+        "white_zone_exploitations": 11,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Amou",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 1.1192,
+        "total_exploitations": 1,
+        "white_zone_exploitations": 0,
+        "white_zone_pct": 0.0
+      },
+      {
+        "nom_prefecture": "Wawa",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 0,
+        "white_zone_exploitations": 0,
+        "white_zone_pct": 0
+      },
+      {
+        "nom_prefecture": "Blitta",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 32,
+        "white_zone_exploitations": 32,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Sotouboua",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 0.6277,
+        "total_exploitations": 28,
+        "white_zone_exploitations": 27,
+        "white_zone_pct": 96.4
+      },
+      {
+        "nom_prefecture": "Bassar",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 0.3057,
+        "total_exploitations": 51,
+        "white_zone_exploitations": 49,
+        "white_zone_pct": 96.1
+      },
+      {
+        "nom_prefecture": "Dankpen",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 14,
+        "white_zone_exploitations": 14,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Ave",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 1.1028,
+        "total_exploitations": 1,
+        "white_zone_exploitations": 1,
+        "white_zone_pct": 85.0
+      },
+      {
+        "nom_prefecture": "Zio",
+        "n_cooperatives": 5,
+        "coop_density_per_1000km2": 2.2078,
+        "total_exploitations": 206,
+        "white_zone_exploitations": 88,
+        "white_zone_pct": 42.7
+      },
+      {
+        "nom_prefecture": "Agou",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 0.992,
+        "total_exploitations": 5,
+        "white_zone_exploitations": 5,
+        "white_zone_pct": 85.0
+      },
+      {
+        "nom_prefecture": "Danyi",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 5,
+        "white_zone_exploitations": 5,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Est-Mono",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 1,
+        "white_zone_exploitations": 1,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Haho",
+        "n_cooperatives": 3,
+        "coop_density_per_1000km2": 1.0765,
+        "total_exploitations": 13,
+        "white_zone_exploitations": 12,
+        "white_zone_pct": 92.3
+      },
+      {
+        "nom_prefecture": "Kpélé",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 1,
+        "white_zone_exploitations": 1,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Moyen-Mono",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 0,
+        "white_zone_exploitations": 0,
+        "white_zone_pct": 0
+      },
+      {
+        "nom_prefecture": "Ogou",
+        "n_cooperatives": 4,
+        "coop_density_per_1000km2": 1.805,
+        "total_exploitations": 22,
+        "white_zone_exploitations": 9,
+        "white_zone_pct": 40.9
+      },
+      {
+        "nom_prefecture": "Kpendjal",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 0.5479,
+        "total_exploitations": 7,
+        "white_zone_exploitations": 5,
+        "white_zone_pct": 71.4
+      },
+      {
+        "nom_prefecture": "Oti",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 20,
+        "white_zone_exploitations": 20,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Tandjouare",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 7,
+        "white_zone_exploitations": 7,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Tone",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 0.8079,
+        "total_exploitations": 27,
+        "white_zone_exploitations": 19,
+        "white_zone_pct": 70.4
+      },
+      {
+        "nom_prefecture": "Cinkassé",
+        "n_cooperatives": 2,
+        "coop_density_per_1000km2": 8.2368,
+        "total_exploitations": 110,
+        "white_zone_exploitations": 110,
+        "white_zone_pct": 85.0
+      },
+      {
+        "nom_prefecture": "Plaine de Mô",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 1,
+        "white_zone_exploitations": 1,
+        "white_zone_pct": 100.0
+      },
+      {
+        "nom_prefecture": "Akébou",
+        "n_cooperatives": 0,
+        "coop_density_per_1000km2": 0.0,
+        "total_exploitations": 0,
+        "white_zone_exploitations": 0,
+        "white_zone_pct": 0
+      },
+      {
+        "nom_prefecture": "Anié",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 0.4605,
+        "total_exploitations": 7,
+        "white_zone_exploitations": 6,
+        "white_zone_pct": 85.7
+      },
+      {
+        "nom_prefecture": "Kloto",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 1.8033,
+        "total_exploitations": 29,
+        "white_zone_exploitations": 2,
+        "white_zone_pct": 6.9
+      },
+      {
+        "nom_prefecture": "Lacs",
+        "n_cooperatives": 1,
+        "coop_density_per_1000km2": 3.0989,
+        "total_exploitations": 31,
+        "white_zone_exploitations": 28,
+        "white_zone_pct": 90.3
+      },
+      {
+        "nom_prefecture": "Lome Commune",
+        "n_cooperatives": 12,
+        "coop_density_per_1000km2": 92.3743,
+        "total_exploitations": 25,
+        "white_zone_exploitations": 1,
+        "white_zone_pct": 4.0
+      }
+    ]
+  },
+  "interpretation_note": "Les zones blanches coopératives (exploitations sans accès à une coopérative dans un rayon de 10 km) représentent des opportunités d'investissement pour la création ou le renforcement d'organisations paysannes et de coopératives agricoles.",
+  "interpretation_note_en": "Cooperative white zones (farms without access to a cooperative within 10 km) represent investment opportunities for creating or strengthening farmer organizations and agricultural cooperatives."
+}
