@@ -47,7 +47,7 @@ export default function SynthesisLayer({
   onZoneClick,
 }: SynthesisLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
-    const score = (feature.properties.score_composite as number) ?? 0;
+    const score = ((feature.properties.synthesis_score as number) ?? 0) / 100;
     return {
       fillColor: getColor(score),
       weight: 1.5,
@@ -59,29 +59,27 @@ export default function SynthesisLayer({
 
   const handleEachFeature = (feature: GeoJsonFeature, layer: L.Layer) => {
     const props = feature.properties;
-    const score = (props.score_composite as number) ?? 0;
-    const rank = (props.rang as number) ?? 0;
-    const priorite = (props.priorite as string) ?? '';
+    const score = (props.synthesis_score as number) ?? 0;
+    const rank = (props.synthesis_class as number) ?? 0;
+    const priorite = (props.priority_level as string) ?? '';
     const densityScore = (props.density_score as number) ?? 0;
-    const zaapScore = (props.zaap_score as number) ?? 0;
-    const accessScore = (props.access_score as number) ?? 0;
-    const coopScore = (props.coop_score as number) ?? 0;
+    const coopCount = (props.coop_count as number) ?? 0;
+    const avgDistance = (props.avg_distance_km as number) ?? 0;
 
     const indicators: Array<{ label: string; value: string | number; unit?: string }> = [
-      { label: 'Score composite', value: (score * 100).toFixed(0), unit: '%' },
+      { label: 'Score composite', value: score.toFixed(1), unit: '/100' },
       { label: 'Rang priorité', value: rank },
       { label: 'Priorité', value: priorite },
-      { label: 'Densité', value: (densityScore * 100).toFixed(0), unit: '%' },
-      { label: 'ZAAP', value: (zaapScore * 100).toFixed(0), unit: '%' },
-      { label: 'Accessibilité', value: (accessScore * 100).toFixed(0), unit: '%' },
-      { label: 'Coopératif', value: (coopScore * 100).toFixed(0), unit: '%' },
+      { label: 'Densité', value: densityScore.toFixed(1), unit: '/100' },
+      { label: 'Coopératives', value: coopCount },
+      { label: 'Distance moy.', value: avgDistance.toFixed(2), unit: 'km' },
     ];
 
     const popupContent = renderToString(
       <RegionPopup
         properties={props}
         indicators={indicators}
-        accentColor={score < 0.4 ? '#D73027' : score < 0.6 ? '#FEE08B' : '#1A9850'}
+        accentColor={score < 40 ? '#D73027' : score < 60 ? '#FEE08B' : '#1A9850'}
       />,
     );
 

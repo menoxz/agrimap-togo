@@ -39,7 +39,7 @@ export default function AccessibilityLayer({
   regionFilter,
 }: AccessibilityLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
-    const score = (feature.properties.score_access as number) ?? 0;
+    const score = ((feature.properties.accessibility_score as number) ?? 0) / 100;
     return {
       fillColor: getColor(score),
       weight: 1.5,
@@ -51,16 +51,15 @@ export default function AccessibilityLayer({
 
   const handleEachFeature = (feature: GeoJsonFeature, layer: L.Layer) => {
     const props = feature.properties;
-    const distance = (props.distance_moyenne_km as number) ?? 0;
-    const time = (props.temps_moyen_min as number) ?? 0;
-    const popDesservie = (props.pop_desservie_pct as number) ?? 0;
-    const score = (props.score_access as number) ?? 0;
+    const distance = (props.avg_distance_km as number) ?? 0;
+    const unservedPct = (props.unserved_pct as number) ?? 0;
+    const popDesservie = 100 - unservedPct;
+    const score = (props.accessibility_score as number) ?? 0;
 
     const indicators: Array<{ label: string; value: string | number; unit?: string }> = [
-      { label: 'Distance moyenne', value: distance, unit: 'km' },
-      { label: 'Temps moyen', value: time, unit: 'min' },
-      { label: 'Population desservie', value: popDesservie, unit: '%' },
-      { label: 'Score accès', value: (score * 100).toFixed(0), unit: '%' },
+      { label: 'Distance moyenne', value: distance.toFixed(2), unit: 'km' },
+      { label: 'Population desservie', value: popDesservie.toFixed(1), unit: '%' },
+      { label: 'Score accès', value: score.toFixed(1), unit: '/100' },
     ];
 
     const popupContent = renderToString(

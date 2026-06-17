@@ -36,9 +36,9 @@ export { CLASS_BREAKS as DENSITY_CLASS_BREAKS };
  */
 export default function DensityLayer({ visible = true, regionFilter }: DensityLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
-    const density = (feature.properties.density as number) ?? 0;
+    const cls = ((feature.properties.density_class as number) ?? 1) - 1;
     return {
-      fillColor: getColor(density),
+      fillColor: CB_DENSITY[Math.min(cls, 4)],
       weight: 1.5,
       opacity: 0.9,
       color: '#666',
@@ -50,9 +50,13 @@ export default function DensityLayer({ visible = true, regionFilter }: DensityLa
     const props = feature.properties;
     const density = (props.density as number) ?? 0;
     const exploitations = (props.exploitations as number) ?? 0;
+    const densityLabel = (props.density_label as string) ?? '';
+    const densityClass = (props.density_class as number) ?? 1;
 
     const indicators: Array<{ label: string; value: string | number; unit?: string }> = [
-      { label: 'Densité', value: density, unit: 'expl./km²' },
+      { label: 'Densité', value: density.toFixed(4), unit: 'expl./km²' },
+      { label: 'Classe', value: densityLabel },
+      { label: 'Rang', value: densityClass },
       { label: 'Exploitations', value: exploitations },
     ];
 
