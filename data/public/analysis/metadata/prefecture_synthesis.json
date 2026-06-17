@@ -2,10 +2,10 @@
   "analysis": "Couche préfecture (ADM2) — Scores agrégés",
   "analysis_en": "Prefecture layer (ADM2) — Aggregated scores",
   "version": "1.0.0",
-  "generated_at": "2026-06-17T02:45:42.834545+00:00",
+  "generated_at": "2026-06-17T07:48:23.641399+00:00",
   "crs": "EPSG:4326",
   "method": {
-    "description": "Agrégation des 6 datasets processed (coopératives, marchés, pépinières, ZAAP, grandes & petites exploitations) par préfecture administrative (ADM2). Alignement des noms entre geoBoundaries et les données processed via : overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6).",
+    "description": "Agrégation des 5 datasets processed (coopératives, marchés, pépinières, ZAAP, exploitations OSM) par préfecture administrative (ADM2). Alignement des noms entre geoBoundaries et les données processed via : overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6).",
     "service_score_formula": "service_score = ( n_coops/max * 0.30 + n_marches/max * 0.25 + n_pep/max * 0.25 + n_zaap/max * 0.20 ) × 100",
     "weights": {
       "cooperatives": 0.3,
@@ -36,8 +36,7 @@
       "marches.geojson",
       "pepinieres.geojson",
       "zaap_formes.geojson",
-      "grandes_exploitations.geojson",
-      "petites_exploitations.geojson"
+      "exploitations.geojson"
     ]
   },
   "output_fields": {
@@ -80,22 +79,22 @@
   "statistics": {
     "n_prefectures": 37,
     "note_on_count": "La source geoBoundaries contient 37 entites ADM2. La cible initiale de 39 prefectures correspond au decoupage administratif officiel le plus recent ; geoBoundaries consolide certaines unites (ex : 'Lome Commune' pour Golfe/Lome).",
-    "total_cooperatives": 34,
-    "total_marches": 49,
-    "total_marches_in_file": 50,
+    "total_cooperatives": 55,
+    "total_marches": 970,
+    "total_marches_in_file": 971,
     "marches_without_prefecture": 1,
-    "total_pepinieres": 36,
-    "total_zaap": 28,
-    "total_exploitations": 133,
+    "total_pepinieres": 0,
+    "total_zaap": 0,
+    "total_exploitations": 737,
     "service_score": {
-      "min": 0.0,
-      "max": 54.2,
-      "mean": 24.6,
-      "median": 22.5
+      "min": 0.2,
+      "max": 49.6,
+      "mean": 10.1,
+      "median": 6.7
     },
     "priority_distribution": {
-      "Priorite haute": 12,
-      "Priorite moyenne": 12,
+      "Priorite haute": 13,
+      "Priorite moyenne": 11,
       "Bien desservi": 13
     }
   },

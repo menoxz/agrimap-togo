@@ -1,0 +1,8612 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-17T03:07:15Z",
+    "timestamp_areas_base": "2026-06-16T17:52:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 1292969599,
+      "lat": 9.5473539,
+      "lon": 1.2111966,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Tchintchinda"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1292970741,
+      "lat": 9.5580402,
+      "lon": 1.2116668,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Place de l'ancien marché de Sarakawa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1292980431,
+      "lat": 9.5441983,
+      "lon": 1.1729941,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "marche de wakada"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1879842665,
+      "lat": 6.1273769,
+      "lon": 1.2334876,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Grand Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2203980181,
+      "lat": 10.1370234,
+      "lon": 1.0796517,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nadoba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2460698293,
+      "lat": 6.2282176,
+      "lon": 1.5934946,
+      "tags": {
+        "amenity": "marketplace",
+        "source": "SURVEY"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2494771839,
+      "lat": 10.9772833,
+      "lon": 0.2247876,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Carrefour"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2730903125,
+      "lat": 6.1596337,
+      "lon": 1.2362292,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Noukafu",
+        "source": "Note by Otis Messio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2999860539,
+      "lat": 6.2361618,
+      "lon": 1.6078959,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche Municipale Ablodessime"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3101142730,
+      "lat": 6.1161997,
+      "lon": 1.2039083,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tomates",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3161426132,
+      "lat": 6.1534682,
+      "lon": 1.2680023,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Akodésséwa",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3161471078,
+      "lat": 6.2544491,
+      "lon": 1.2079169,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Agoè Zongo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3161505910,
+      "lat": 6.1412713,
+      "lon": 1.229964,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Amoutivé",
+        "source": "bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3174714660,
+      "lat": 6.1590973,
+      "lon": 1.2072448,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Gbossimé",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3435848334,
+      "lat": 6.2625893,
+      "lon": 1.2847115,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Avéta"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3458599490,
+      "lat": 6.1283172,
+      "lon": 1.235192,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché des fruits"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3486923922,
+      "lat": 6.1632902,
+      "lon": 1.2166008,
+      "tags": {
+        "amenity": "marketplace",
+        "shop": "coffee"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3591026325,
+      "lat": 8.5591223,
+      "lon": 0.9844517,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de SOTOUBOUA",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3603142010,
+      "lat": 8.5616368,
+      "lon": 0.9755457,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché De Lundi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3804724055,
+      "lat": 8.9754196,
+      "lon": 1.1425369,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Komah",
+        "opening_hours": "Mo,Th",
+        "operator": "Commune Tchaoudjo I"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3832310128,
+      "lat": 6.1600889,
+      "lon": 1.2128802,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Adéwui"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3832434564,
+      "lat": 9.8893917,
+      "lon": 1.348485,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "MARCHE DE SOLLA VILLE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3835146333,
+      "lat": 7.1759423,
+      "lon": 0.6979368,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "marché de Médévunui"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3835177163,
+      "lat": 7.1755438,
+      "lon": 0.6981202,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "marché de Médévunui"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3890979926,
+      "lat": 10.9188312,
+      "lon": 0.207224,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Sosouo",
+        "name:Moba": "Sou Sou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915323781,
+      "lat": 6.4532035,
+      "lon": 0.91483,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Ancien Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915414026,
+      "lat": 6.4584192,
+      "lon": 0.9184635,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Nuwozamedoo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915414027,
+      "lat": 6.45427,
+      "lon": 0.9131523,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915444135,
+      "lat": 6.4552924,
+      "lon": 0.9141996,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915444145,
+      "lat": 6.4591928,
+      "lon": 0.9171291,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915536339,
+      "lat": 6.4492198,
+      "lon": 0.9147267,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3915950398,
+      "lat": 6.4615554,
+      "lon": 0.9141149,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4007144984,
+      "lat": 6.2680613,
+      "lon": 1.150657,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Légbassito"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4008404885,
+      "lat": 6.1837779,
+      "lon": 1.1691348,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Bokovi-simé",
+        "organic": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4088778953,
+      "lat": 6.3326272,
+      "lon": 1.5268267,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Adrigogbonou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4088806697,
+      "lat": 6.3384502,
+      "lon": 1.5242286,
+      "tags": {
+        "amenity": "marketplace",
+        "fixme": "draw buildings (unfinished)",
+        "name": "Grand Marché de Vogan (Gbeke)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4088806725,
+      "lat": 6.332591,
+      "lon": 1.5267654,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4130834099,
+      "lat": 6.1941961,
+      "lon": 1.2026297,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Agbalépédogan"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4139079892,
+      "lat": 6.1410686,
+      "lon": 1.2533592,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Ahligo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4215522294,
+      "lat": 8.9873335,
+      "lon": 1.1419697,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4221442017,
+      "lat": 8.9543463,
+      "lon": 1.1704178,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "MARCHE DE KADAMBARA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4222327100,
+      "lat": 9.0293878,
+      "lon": 1.1035731,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4336706217,
+      "lat": 9.4549161,
+      "lon": 0.8132938,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kabou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4516053286,
+      "lat": 7.2023254,
+      "lon": 0.6942734,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4797954962,
+      "lat": 6.1944603,
+      "lon": 1.1878529,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Totsi",
+        "source": "bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4819836141,
+      "lat": 9.01999,
+      "lon": 1.4102571,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Grand Marché De Tchamba",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4905011415,
+      "lat": 9.7014746,
+      "lon": 0.6049937,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Guérin-kouka",
+        "operator": "Public",
+        "organic": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4929129407,
+      "lat": 8.5762775,
+      "lon": 0.9847042,
+      "tags": {
+        "amenity": "marketplace",
+        "date": "2012",
+        "description": "Appatames en en t$oles et en pailles; Marché locale",
+        "name": "Marché De Dimanche"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4929129408,
+      "lat": 8.5635648,
+      "lon": 0.9833136,
+      "tags": {
+        "amenity": "marketplace",
+        "date": "2010",
+        "description": "Appatames en tôles et en pailles; Marché locale",
+        "name": "Marché De Mercredi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4930532561,
+      "lat": 8.5586513,
+      "lon": 0.9953373,
+      "tags": {
+        "amenity": "marketplace",
+        "date": "2014",
+        "description": "Appatames en tôles et en pailles; Marché locale",
+        "name": "Marché De Jeudi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4930789832,
+      "lat": 8.553031,
+      "lon": 0.9844851,
+      "tags": {
+        "amenity": "marketplace",
+        "date": "1999",
+        "description": "Marché Local; Appatame en paille et toles",
+        "name": "Marché De Mardi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4936200129,
+      "lat": 9.6571739,
+      "lon": 1.3077137,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kétao",
+        "source": "Bing;Survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5304186121,
+      "lat": 6.1540541,
+      "lon": 1.2693286,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Gakpoto"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5343245164,
+      "lat": 6.1460191,
+      "lon": 1.2587446,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Akoélévissimé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5456886514,
+      "lat": 6.1691399,
+      "lon": 1.20772,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit marché de boissons locales"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5677926880,
+      "lat": 6.1681095,
+      "lon": 1.3261026,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5758087835,
+      "lat": 6.915902,
+      "lon": 0.6391122,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Château"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5817323182,
+      "lat": 6.4363192,
+      "lon": 1.211535,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5817716197,
+      "lat": 6.4296192,
+      "lon": 1.2147268,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5981242850,
+      "lat": 11.0359449,
+      "lon": 0.1100574,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Timbou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5993882558,
+      "lat": 10.936985,
+      "lon": 0.2251583,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché danpiomg"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5994325421,
+      "lat": 6.8442106,
+      "lon": 0.5942849,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "marhce de apkadape"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6166454362,
+      "lat": 8.32402,
+      "lon": 0.97657,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit marché de blitta"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6214463934,
+      "lat": 6.2716728,
+      "lon": 1.2893884,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Avétassimé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6279442698,
+      "lat": 7.9535601,
+      "lon": 1.0497173,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Akaba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6332097819,
+      "lat": 6.2967113,
+      "lon": 1.4286089,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Sévagan",
+        "source": "bing;survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6360150243,
+      "lat": 8.1668843,
+      "lon": 1.0422269,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6423678480,
+      "lat": 9.5899273,
+      "lon": 1.1969893,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6423680185,
+      "lat": 9.5874555,
+      "lon": 1.1876944,
+      "tags": {
+        "amenity": "marketplace",
+        "description": "Petit marché traditionel",
+        "name": "Petit marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6510551893,
+      "lat": 9.5640608,
+      "lon": 1.1938396,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de KARA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7070529816,
+      "lat": 8.9874509,
+      "lon": 1.1426982,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Betail"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7148322631,
+      "lat": 7.37628,
+      "lon": 0.8937033,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit marché Kpalongo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7282291607,
+      "lat": 9.6652883,
+      "lon": 1.2589867,
+      "tags": {
+        "amenity": "marketplace",
+        "description": "s'anime le lundi et le jeudi",
+        "name": "Marché de Landa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7383593728,
+      "lat": 6.4473146,
+      "lon": 0.9098375,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Nouveau marché d'Assanhoun",
+        "source": "Survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7384064402,
+      "lat": 6.6599854,
+      "lon": 1.4066657,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7405047392,
+      "lat": 8.2548593,
+      "lon": 1.1187547,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tchaloudè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7613174078,
+      "lat": 9.7390046,
+      "lon": 0.9192091,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Broukou",
+        "operator:type": "public",
+        "organic": "yes",
+        "source": "Maxar Standard",
+        "source:date": "2022"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7733065171,
+      "lat": 7.7651498,
+      "lon": 1.1946189,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché D'Anié"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7809893540,
+      "lat": 6.1257839,
+      "lon": 1.2307395,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Espace de vente de chaussures"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7935150805,
+      "lat": 9.8224723,
+      "lon": 1.2010396,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Siou",
+        "operator:type": "public",
+        "organic": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8130691653,
+      "lat": 10.6693975,
+      "lon": 0.1967238,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kourier de Tandjouaré"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8130722072,
+      "lat": 10.6702068,
+      "lon": 0.2046936,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Grand marché de Tandjouaré"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8130797794,
+      "lat": 10.6087669,
+      "lon": 0.2493138,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Pont-Noir"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8147233171,
+      "lat": 8.7842286,
+      "lon": 0.5647684,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Djarkpanga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8150723922,
+      "lat": 9.9700529,
+      "lon": 0.5773134,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Takpamba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8221707767,
+      "lat": 9.6428937,
+      "lon": 1.1418127,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Maza"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8221714474,
+      "lat": 9.668767,
+      "lon": 1.1716705,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Pya Hodo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8222113370,
+      "lat": 9.870826,
+      "lon": 1.0884809,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Defalé",
+        "opening_hours": "Th"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8222133869,
+      "lat": 10.7026887,
+      "lon": 0.1123258,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8222224568,
+      "lat": 11.1055932,
+      "lon": 0.0152539,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8227924066,
+      "lat": 8.3448149,
+      "lon": 1.0077041,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Blitta Village a"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8316933716,
+      "lat": 8.0068236,
+      "lon": 1.0394874,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Dakrokossou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8317075602,
+      "lat": 8.0816327,
+      "lon": 1.0038248,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tcharè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8350242976,
+      "lat": 9.7178462,
+      "lon": 1.3361223,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kadjanga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8350297586,
+      "lat": 9.6680903,
+      "lon": 1.3543164,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Un marché nocturne"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8350514778,
+      "lat": 9.7098436,
+      "lon": 1.3339001,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8356812474,
+      "lat": 9.6085462,
+      "lon": 1.311112,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de nuit de Poukoulade"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8356843054,
+      "lat": 9.552614,
+      "lon": 1.3280797,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Sirka"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8356843144,
+      "lat": 9.5439859,
+      "lon": 1.3327937,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de boulédé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8356843166,
+      "lat": 9.5099896,
+      "lon": 1.3523859,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de N'djei"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8356843262,
+      "lat": 9.4994609,
+      "lon": 1.3532066,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8362853839,
+      "lat": 9.5959003,
+      "lon": 1.2383079,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Lassa Ahodo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8362853864,
+      "lat": 9.6420422,
+      "lon": 1.2058635,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8362899031,
+      "lat": 9.567722,
+      "lon": 1.2242648,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8362899053,
+      "lat": 9.5795207,
+      "lon": 1.231944,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Lassa Bas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529043,
+      "lat": 9.6665105,
+      "lon": 1.2534123,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529048,
+      "lat": 9.6555398,
+      "lon": 1.2709433,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche de nuit de mercredi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529052,
+      "lat": 9.661441,
+      "lon": 1.2688512,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche de nuit de Panalo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529071,
+      "lat": 9.6587948,
+      "lon": 1.2876266,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche de nuit de Kasse"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529073,
+      "lat": 9.6636429,
+      "lon": 1.2030525,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche de Kaade"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529091,
+      "lat": 9.6529035,
+      "lon": 1.2456232,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche de nuit"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529096,
+      "lat": 9.6418617,
+      "lon": 1.2540346,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Soumdina Bas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365529102,
+      "lat": 9.6328861,
+      "lon": 1.252664,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8365552422,
+      "lat": 9.5421886,
+      "lon": 1.1627537,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8370363805,
+      "lat": 9.2755494,
+      "lon": 1.0952653,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8370482153,
+      "lat": 9.2772316,
+      "lon": 1.2347388,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Communnale"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8370482216,
+      "lat": 9.2893341,
+      "lon": 1.1876982,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché DJIKORODE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8370486618,
+      "lat": 9.2895657,
+      "lon": 1.186325,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8413676322,
+      "lat": 9.2964691,
+      "lon": 1.2392838,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Koumondè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8413676348,
+      "lat": 9.3013656,
+      "lon": 1.2379675,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8413676353,
+      "lat": 9.2997249,
+      "lon": 1.2374023,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Nouveau marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8413676391,
+      "lat": 9.3166203,
+      "lon": 1.2385771,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de fruit"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8413676396,
+      "lat": 9.30351,
+      "lon": 1.2374324,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Koulikouli"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8427564209,
+      "lat": 6.8477475,
+      "lon": 0.5740772,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8427574835,
+      "lat": 6.8628602,
+      "lon": 0.6010509,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Gbalavé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8430049306,
+      "lat": 6.3412627,
+      "lon": 1.1084691,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kovié"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8447329666,
+      "lat": 9.7849755,
+      "lon": 1.1205465,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché inoccupé de Niamtougou",
+        "operator:type": "public",
+        "organic": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8451350951,
+      "lat": 9.7883978,
+      "lon": 1.1061886,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8551714810,
+      "lat": 6.2000617,
+      "lon": 1.1720844,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Amétosimé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8567134386,
+      "lat": 6.3804245,
+      "lon": 1.6058171,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Mamissi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8567159659,
+      "lat": 6.4717569,
+      "lon": 1.5688254,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8567159677,
+      "lat": 6.4157957,
+      "lon": 1.5861337,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8567164737,
+      "lat": 6.3834153,
+      "lon": 1.5747759,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de TSITSOGBE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8570257217,
+      "lat": 6.3758436,
+      "lon": 0.8856869,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8570331532,
+      "lat": 6.4308024,
+      "lon": 0.9310876,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8631441851,
+      "lat": 6.8910471,
+      "lon": 0.8491056,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kati"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8733917082,
+      "lat": 6.6728428,
+      "lon": 1.527445,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Vodoupé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8755697927,
+      "lat": 6.1887937,
+      "lon": 1.1289882,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Logoté"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8759020306,
+      "lat": 6.1776685,
+      "lon": 1.2090085,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8777852218,
+      "lat": 8.0860037,
+      "lon": 1.1375946,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché De Atikpaï",
+        "source": "Bing;Survey;Gps"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8791862009,
+      "lat": 8.3069581,
+      "lon": 0.9264457,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8797746711,
+      "lat": 10.9669024,
+      "lon": 0.3410731,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8797784717,
+      "lat": 10.9911448,
+      "lon": 0.3274494,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tisante mampo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8797841439,
+      "lat": 10.9756038,
+      "lon": 0.2984923,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tantonga carefour"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8798032100,
+      "lat": 10.8931972,
+      "lon": 0.3325054,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nabaou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8798036521,
+      "lat": 10.912362,
+      "lon": 0.3073007,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Grand marché de Korbongou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8798036528,
+      "lat": 10.8950185,
+      "lon": 0.2788344,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8798036593,
+      "lat": 10.8998147,
+      "lon": 0.2634734,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8798152537,
+      "lat": 10.9312767,
+      "lon": 0.2996832,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Gbagnama"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8808692841,
+      "lat": 10.9961837,
+      "lon": 0.3031915,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Tidante Momba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8808719663,
+      "lat": 11.0443735,
+      "lon": 0.2950309,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8808915191,
+      "lat": 11.0004596,
+      "lon": 0.3772259,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "marché Nadjou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8809422673,
+      "lat": 11.1179926,
+      "lon": -0.1040523,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8853935140,
+      "lat": 11.104726,
+      "lon": 0.0305396,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché à Bétail"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8853935183,
+      "lat": 11.1037377,
+      "lon": 0.0156614,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Grand Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8854640113,
+      "lat": 8.3552751,
+      "lon": 1.0192555,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Blitta Carrefour"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8854644938,
+      "lat": 8.3077782,
+      "lon": 1.0835789,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Yoloumde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8855277030,
+      "lat": 6.3372987,
+      "lon": 1.4565267,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8855298743,
+      "lat": 6.8310484,
+      "lon": 0.6435625,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Atchave"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8855298761,
+      "lat": 6.8731505,
+      "lon": 0.653482,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tove"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8855557823,
+      "lat": 6.2336406,
+      "lon": 1.1513422,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Zossimé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8872050246,
+      "lat": 6.4395306,
+      "lon": 1.0932684,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8904644859,
+      "lat": 6.276993,
+      "lon": 1.1679062,
+      "tags": {
+        "amenity": "marketplace",
+        "organic": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8922931517,
+      "lat": 8.2375375,
+      "lon": 0.773659,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de M'poti",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8984095035,
+      "lat": 10.7482454,
+      "lon": 0.0032536,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tampialime"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8984109146,
+      "lat": 11.0051133,
+      "lon": 0.2573567,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8991419377,
+      "lat": 10.5821283,
+      "lon": 0.1262033,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8991442153,
+      "lat": 10.6114419,
+      "lon": 0.1518903,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Noak louanbene"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9025489750,
+      "lat": 6.3302973,
+      "lon": 1.6071193,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Anfouin"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9026874315,
+      "lat": 10.2364622,
+      "lon": 0.6392713,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9050325936,
+      "lat": 10.848687,
+      "lon": 0.2138066,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Dapankpergou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053199525,
+      "lat": 6.4479276,
+      "lon": 0.9809241,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053199529,
+      "lat": 6.4467762,
+      "lon": 0.9800912,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053455704,
+      "lat": 6.8882871,
+      "lon": 0.7273252,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053465025,
+      "lat": 6.8344279,
+      "lon": 0.6788993,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053465058,
+      "lat": 6.8733776,
+      "lon": 0.6690006,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de fruit"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053482649,
+      "lat": 6.8897237,
+      "lon": 0.7705316,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053482652,
+      "lat": 6.8911962,
+      "lon": 0.7710466,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de fruit"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053536616,
+      "lat": 6.7952461,
+      "lon": 0.7052466,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053559727,
+      "lat": 6.7502823,
+      "lon": 0.7599208,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053559738,
+      "lat": 6.7950902,
+      "lon": 0.7948378,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'igname"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9060223590,
+      "lat": 11.007238,
+      "lon": 0.186321,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nadjoundji"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9060361841,
+      "lat": 11.0120318,
+      "lon": 0.1912065,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nadjoundi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9060604163,
+      "lat": 11.0134428,
+      "lon": 0.231925,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kourientre"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9061853224,
+      "lat": 10.9442171,
+      "lon": 0.2679126,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de tomonga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9062096946,
+      "lat": 10.9815076,
+      "lon": 0.261224,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Bougou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9062859183,
+      "lat": 11.061029,
+      "lon": 0.2381046,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Djakpaga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9066263042,
+      "lat": 10.8557528,
+      "lon": 0.1360805,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9067194204,
+      "lat": 10.8185822,
+      "lon": 0.1011529,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tonte"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9070583653,
+      "lat": 10.82819,
+      "lon": 0.0447789,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9074219327,
+      "lat": 10.7987089,
+      "lon": 0.0252434,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Lotogou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9074219522,
+      "lat": 10.8582078,
+      "lon": 0.0402895,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tami"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9077613672,
+      "lat": 10.7833082,
+      "lon": -0.0348304,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Warkambou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9081901749,
+      "lat": 10.9807058,
+      "lon": 0.129899,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Gnabadjoani"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9082105007,
+      "lat": 10.9873753,
+      "lon": 0.0876422,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Namaré"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9083673356,
+      "lat": 10.8930786,
+      "lon": 0.0202397,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9094648871,
+      "lat": 10.6924169,
+      "lon": 0.2378091,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Boulogou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9105490007,
+      "lat": 10.8163789,
+      "lon": 0.1830931,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Dalwak"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9114864338,
+      "lat": 10.6215964,
+      "lon": 0.2982871,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Boulogou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9116894782,
+      "lat": 10.6326367,
+      "lon": 0.3199847,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de kolk II"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9117377474,
+      "lat": 10.7169643,
+      "lon": 0.1521506,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9119644519,
+      "lat": 10.7290482,
+      "lon": 0.1781629,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nassiete"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9120504217,
+      "lat": 10.699229,
+      "lon": 0.0955426,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9127169624,
+      "lat": 10.7518342,
+      "lon": 0.4091369,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nayega"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9129749073,
+      "lat": 10.7435959,
+      "lon": 0.4706028,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Ogaro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9145714310,
+      "lat": 10.2450692,
+      "lon": 0.4029299,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9156357131,
+      "lat": 6.3398066,
+      "lon": 1.0998471,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de kovié"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9165194868,
+      "lat": 10.5654838,
+      "lon": 0.7323027,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9210413322,
+      "lat": 9.9690381,
+      "lon": 0.5738543,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Takpamba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9258068318,
+      "lat": 8.1736514,
+      "lon": 0.9808985,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Pagala",
+        "operator": "Public",
+        "organic": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9275708662,
+      "lat": 10.8127636,
+      "lon": 0.1960321,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Tantilgle"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9306404021,
+      "lat": 10.830226,
+      "lon": 0.1338485,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Nioukpourma"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9340489560,
+      "lat": 6.2457739,
+      "lon": 1.4817482,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Togoville"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9346840691,
+      "lat": 7.1424496,
+      "lon": 1.5934119,
+      "tags": {
+        "amenity": "marketplace",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9357913671,
+      "lat": 6.5343014,
+      "lon": 1.3592878,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de tchékpo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9360246688,
+      "lat": 6.2468007,
+      "lon": 1.5596103,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Djankassé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9360321939,
+      "lat": 6.2471595,
+      "lon": 1.5549408,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kéta-akoda"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9363693003,
+      "lat": 6.366963,
+      "lon": 1.418421,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Hahotoé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9366671394,
+      "lat": 6.2438323,
+      "lon": 1.4837136,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Togoville"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9426488621,
+      "lat": 7.3165832,
+      "lon": 1.1615467,
+      "tags": {
+        "amenity": "marketplace",
+        "source": "CNES/Airbus"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9518890028,
+      "lat": 9.3239314,
+      "lon": 0.5834741,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Bitchabé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9692735701,
+      "lat": 6.200009,
+      "lon": 1.2411082,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kegué"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9873076010,
+      "lat": 9.7617078,
+      "lon": 1.2813413,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9881564668,
+      "lat": 6.2607187,
+      "lon": 1.0362929,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Noépé",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9885292978,
+      "lat": 10.9063313,
+      "lon": 0.092842,
+      "tags": {
+        "amenity": "marketplace",
+        "description": "Crée vers 1983 c'est un marché très important pour toutes sortes de marchandises surtout les céréales, les oignons, le bétail et les volailles",
+        "name": "Marché de Naki-Ouest centre",
+        "opening_hours": "Tu, Fr 06:00-20:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9889692729,
+      "lat": 10.687016,
+      "lon": 0.3450179,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9969272173,
+      "lat": 10.8644708,
+      "lon": 0.199185,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de bétail"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10003732986,
+      "lat": 10.8667579,
+      "lon": 0.1885419,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Tomone"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10237731387,
+      "lat": 8.191855,
+      "lon": 1.343385,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tchékita"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10246938499,
+      "lat": 6.3393317,
+      "lon": 1.0999954,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Kovié"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10562377526,
+      "lat": 6.2581565,
+      "lon": 1.1765684,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10573359571,
+      "lat": 7.0707017,
+      "lon": 1.1517918,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Agbatitoe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10608610508,
+      "lat": 7.6488601,
+      "lon": 1.1812717,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10782291059,
+      "lat": 7.5321155,
+      "lon": 1.1219613,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "marketplace",
+        "electricity": "yes",
+        "name": "BLAKPA (GRAND MARCHÉ)",
+        "opening_hours": "Sa 06:00-18:00",
+        "operator": "Mairie d'atakpame",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10782291060,
+      "lat": 7.5447472,
+      "lon": 1.1501923,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "marketplace",
+        "name": "Agbadou-sada",
+        "opening_hours": "We,Sa 07:00-18:30",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10782291071,
+      "lat": 7.5349379,
+      "lon": 1.1545154,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "marketplace",
+        "name": "Marché Akpatchou",
+        "opening_hours": "Th,Fr 16:00-18:30",
+        "operator": "CDQ",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10783807040,
+      "lat": 6.7274742,
+      "lon": 1.0529986,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Datiho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10783821911,
+      "lat": 6.7261649,
+      "lon": 1.0204732,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche kodje"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10812137261,
+      "lat": 10.554283,
+      "lon": 0.3010699,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Barkoissi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10819490165,
+      "lat": 9.6208486,
+      "lon": 1.1422026,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tchitchao"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10825058897,
+      "lat": 9.5127173,
+      "lon": 1.0499687,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Djamdè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10976934731,
+      "lat": 10.6639182,
+      "lon": 0.0733127,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Malagou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10990413186,
+      "lat": 6.1868223,
+      "lon": 1.1811768,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Gbotossimé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11059399154,
+      "lat": 9.6132311,
+      "lon": 1.2441279,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11069023723,
+      "lat": 9.6174795,
+      "lon": 1.1562923,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Yadè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11083397731,
+      "lat": 8.3374893,
+      "lon": 0.9963387,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Blitta",
+        "organic": "yes",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11084142544,
+      "lat": 8.3512228,
+      "lon": 1.0102379,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11084995063,
+      "lat": 9.7828292,
+      "lon": 0.4655671,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11166039919,
+      "lat": 8.0581248,
+      "lon": 1.0186493,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tcharè-Baou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11166585380,
+      "lat": 8.4322551,
+      "lon": 0.995416,
+      "tags": {
+        "amenity": "marketplace",
+        "note": "to be verified on ground",
+        "source": "bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11183878986,
+      "lat": 7.3901646,
+      "lon": 0.8678036,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Amou-Oblo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11184607923,
+      "lat": 8.6826658,
+      "lon": 0.9398541,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11213292198,
+      "lat": 6.727106,
+      "lon": 1.1719163,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Gamé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11223334923,
+      "lat": 6.1385611,
+      "lon": 1.218232,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de hanoukopé N'tisimé",
+        "source": "Bing;Esri"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11234551199,
+      "lat": 6.6813858,
+      "lon": 1.1682405,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Agbélouvé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11234617438,
+      "lat": 6.5556926,
+      "lon": 1.1844296,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Lilikopé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11234619176,
+      "lat": 6.306199,
+      "lon": 1.2145949,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché des bétails"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11248766494,
+      "lat": 7.0852819,
+      "lon": 1.1090855,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11250836920,
+      "lat": 7.1175382,
+      "lon": 1.0672778,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Akpakpakpé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11323101849,
+      "lat": 9.5896146,
+      "lon": 1.307841,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Sangayinlao"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11330086947,
+      "lat": 10.2552291,
+      "lon": 0.8729653,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Takpapiani"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11359949506,
+      "lat": 6.1289955,
+      "lon": 1.2009945,
+      "tags": {
+        "addr:street": "rue Bassar 95NYK",
+        "amenity": "marketplace",
+        "description": "Établissement publique autonome pour l'exploitation des marchés EPAM",
+        "name": "Marché de nyekonapkoè",
+        "phone": "2210263/2266021"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11359950830,
+      "lat": 6.128889,
+      "lon": 1.200997,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Nyekonakpoè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11371080081,
+      "lat": 6.2555409,
+      "lon": 1.152969,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Légbassito - Kové"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11449745089,
+      "lat": 6.9471886,
+      "lon": 1.1747373,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Supermarché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11549722644,
+      "lat": 6.1922736,
+      "lon": 1.3386463,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Place du marché de Dévégo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11680194933,
+      "lat": 6.5550547,
+      "lon": 1.6648947,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'agomé glozou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11725449212,
+      "lat": 6.7528519,
+      "lon": 1.0737761,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11732319577,
+      "lat": 6.7385543,
+      "lon": 1.3145532,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11732320529,
+      "lat": 6.7099175,
+      "lon": 1.4774414,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11752460665,
+      "lat": 6.7533758,
+      "lon": 1.0729874,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772422276,
+      "lat": 7.7359943,
+      "lon": 0.6760721,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Brounfou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772432179,
+      "lat": 7.6557473,
+      "lon": 0.7871249,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kougnohou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772434292,
+      "lat": 7.8703708,
+      "lon": 0.7415731,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de SEREGBENE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11879231275,
+      "lat": 6.3303057,
+      "lon": 1.3829795,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Akodesséwa Hahotoé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11905597034,
+      "lat": 6.4162782,
+      "lon": 1.5867323,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11905597944,
+      "lat": 6.3318312,
+      "lon": 1.3419595,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11941885739,
+      "lat": 9.6506715,
+      "lon": 0.9525379,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de YAKA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12010342352,
+      "lat": 8.0044013,
+      "lon": 0.6596518,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Assoukoko",
+        "organic": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12046225309,
+      "lat": 10.34725,
+      "lon": 0.7489336,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12050832973,
+      "lat": 9.202406,
+      "lon": 0.596325,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Dimori"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12084962863,
+      "lat": 9.4897865,
+      "lon": 1.296663,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12089509817,
+      "lat": 7.1955361,
+      "lon": 1.047966,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Koussogba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12089516262,
+      "lat": 7.2072912,
+      "lon": 0.9607051,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12089518938,
+      "lat": 8.1087033,
+      "lon": 1.350685,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Moritan"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12089523126,
+      "lat": 6.9088986,
+      "lon": 0.9424927,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12089540878,
+      "lat": 7.9241362,
+      "lon": 0.8555898,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12089547845,
+      "lat": 8.1477889,
+      "lon": 1.5303452,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Badin copé 2"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12091024163,
+      "lat": 6.8589429,
+      "lon": 1.1854573,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kpélé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12101147238,
+      "lat": 8.3648279,
+      "lon": 1.3627511,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Issati"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12114096487,
+      "lat": 7.5760169,
+      "lon": 0.6757802,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Zogbégan"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12121181506,
+      "lat": 8.3293226,
+      "lon": 1.5938799,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché Yanda"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12199752427,
+      "lat": 7.4631214,
+      "lon": 0.7117208,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12199938102,
+      "lat": 7.4418149,
+      "lon": 0.6752986,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12199938402,
+      "lat": 7.5731504,
+      "lon": 0.6055467,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12212051492,
+      "lat": 7.0016951,
+      "lon": 1.4089191,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12399665351,
+      "lat": 7.3875617,
+      "lon": 0.8679065,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Ancien marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12429572562,
+      "lat": 9.1213442,
+      "lon": 1.3240752,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12429667969,
+      "lat": 8.2021672,
+      "lon": 0.8096744,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Nouveau marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12429770361,
+      "lat": 9.1123916,
+      "lon": 1.1443033,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12429780324,
+      "lat": 9.637368,
+      "lon": 0.9572107,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12429780451,
+      "lat": 9.7963218,
+      "lon": 1.2449515,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12429853750,
+      "lat": 9.6282334,
+      "lon": 1.0053865,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12484064994,
+      "lat": 6.4724988,
+      "lon": 1.5570416,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12484102919,
+      "lat": 6.4827264,
+      "lon": 1.4980672,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Dagbati"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12568454745,
+      "lat": 7.9516822,
+      "lon": 1.2858818,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Élavagnon"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12728221267,
+      "lat": 9.7307963,
+      "lon": 1.2432602,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Farendè"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12736276908,
+      "lat": 8.4261185,
+      "lon": 1.1515409,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kaza"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12736307501,
+      "lat": 6.2616479,
+      "lon": 1.036286,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Noèpé"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12741301281,
+      "lat": 9.4489719,
+      "lon": 1.2101054,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Awandjélo",
+        "source": "Bing;Survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12743543911,
+      "lat": 9.479953,
+      "lon": 1.1329865,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Atchangbadè",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12793541563,
+      "lat": 9.4219782,
+      "lon": 0.6233561,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Bangeli"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12804829343,
+      "lat": 10.3566052,
+      "lon": 0.4757139,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Mango",
+        "name:ar": "سوق مانغو",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12847872226,
+      "lat": 6.1410668,
+      "lon": 1.2183934,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché De Hanoukopé (le Togo)",
+        "source": "Bing;Esri"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12858235896,
+      "lat": 6.1792568,
+      "lon": 1.2140867,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Market CHU"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13130889155,
+      "lat": 9.3999387,
+      "lon": 1.1138973,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13395460872,
+      "lat": 9.5382485,
+      "lon": 1.1612295,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit Marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13408715089,
+      "lat": 9.6828693,
+      "lon": 1.2395883,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit Marché de Houloun"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13411719288,
+      "lat": 9.9438168,
+      "lon": 0.9442663,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Ataloté"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13411719418,
+      "lat": 9.9464825,
+      "lon": 1.046716,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13412909397,
+      "lat": 9.4822626,
+      "lon": 0.9398031,
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13526557147,
+      "lat": 10.941729,
+      "lon": 0.6440413,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Koudjouaré"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13606837482,
+      "lat": 9.7508052,
+      "lon": 1.3303542,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Nouveau marché"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13665638884,
+      "lat": 9.7899156,
+      "lon": 1.1023919,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Baga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13820901456,
+      "lat": 6.5869934,
+      "lon": 1.5031248,
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tabligbo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 113793454,
+      "nodes": [
+        1290069974,
+        1290070009,
+        1290053018,
+        1290053408,
+        1290069974
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "building": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 200074784,
+      "nodes": [
+        2100609962,
+        3284611177,
+        3284611178,
+        2100609958,
+        3284611175,
+        3284611168,
+        3284611169,
+        3284611171,
+        3284611174,
+        2100609956,
+        2100609966,
+        2100609970,
+        3284611179,
+        2100609962
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Agoè-Assiyéyé",
+        "source": "bing;"
+      }
+    },
+    {
+      "type": "way",
+      "id": 227994837,
+      "nodes": [
+        2366184905,
+        2366184913,
+        2366184912,
+        2366184881,
+        2366184885,
+        2366184887,
+        2366184905
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Djidjolé",
+        "source": "bing;survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 230197950,
+      "nodes": [
+        2387283143,
+        2387283135,
+        2387283137,
+        2387283141,
+        2387283145,
+        2387283143
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Totsi",
+        "source": "bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 230227835,
+      "nodes": [
+        2387531828,
+        2387686219,
+        2387697832,
+        2387531827,
+        2387686235,
+        2387531829,
+        2387697868,
+        2387531830,
+        2387531831,
+        2387686351,
+        2387531828
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Atikpodji",
+        "source": "bing and survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 232367236,
+      "nodes": [
+        2407201244,
+        2407201242,
+        2407201241,
+        2407201238,
+        2407201240,
+        2407201239,
+        2407201235,
+        2407201233,
+        2407201232,
+        2407201234,
+        2407201237,
+        2407201243,
+        2407201245,
+        2407201244
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Lavié",
+        "note": "marché hebdomadaire: vendredi",
+        "source": "Bing;survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 235049306,
+      "nodes": [
+        2431517872,
+        2431517869,
+        2431517853,
+        2431517854,
+        2431517872
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Maché D'alambica",
+        "source": "bing;survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 235835158,
+      "nodes": [
+        2439100035,
+        2439100040,
+        2439100037,
+        2439100017,
+        2439100012,
+        2439100020,
+        2439100022,
+        2439100025,
+        2439100031,
+        2439100035
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Adidogomé Assiyeye",
+        "opening_hours": "Tu,Sa",
+        "source": "bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 236316879,
+      "nodes": [
+        2443559068,
+        4105409683,
+        4105409682,
+        3055359990,
+        2443559062,
+        3055359986,
+        4105409672,
+        2443559058,
+        4105409670,
+        4105409669,
+        4105409665,
+        2813472745,
+        3055280321,
+        2443559056,
+        4105409659,
+        4105409675,
+        2443559066,
+        3055359988,
+        3055359989,
+        2443559068
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "barrier": "wall",
+        "name": "Marché de Cacaveli"
+      }
+    },
+    {
+      "type": "way",
+      "id": 254856807,
+      "nodes": [
+        10110953266,
+        2249365241,
+        2249365239,
+        2247271685,
+        2247271690,
+        2247271672,
+        4646264979,
+        4646264980,
+        4646264981,
+        4646264983,
+        4646264984,
+        4646264985,
+        4646264987,
+        4646265689,
+        4646265690,
+        2247271704,
+        4646265693,
+        2247271706,
+        2247304706,
+        2249365248,
+        2249365252,
+        2320062834,
+        2249365257,
+        2249365264,
+        2320062884,
+        2320062891,
+        2249365268,
+        2249365284,
+        2249365290,
+        2249365292,
+        2247271732,
+        2249365299,
+        2249365294,
+        2249365297,
+        2249365262,
+        2247271718,
+        2247271715,
+        2247271714,
+        2247271701,
+        2247271697,
+        2247271695,
+        10110953266
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche d'Atakpamé",
+        "name:ar": "سوق آتكابامي",
+        "organic": "no",
+        "source": "survey and bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 260550038,
+      "nodes": [
+        2660527323,
+        2660527313,
+        2660527311,
+        2660527269,
+        2660527267,
+        2660527260,
+        2660527259,
+        2660527254,
+        2660527252,
+        2660527217,
+        2660527203,
+        2660527235,
+        2660527238,
+        2660527256,
+        2660527258,
+        2660527263,
+        2660527265,
+        2660527286,
+        2660527295,
+        2660527317,
+        2660527323
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 286990670,
+      "nodes": [
+        2906555825,
+        2906555824,
+        2906555842,
+        2906555843,
+        2906555825
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "note": "main product is yam",
+        "source": "bing;survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293918068,
+      "nodes": [
+        2974963541,
+        2974963396,
+        2974963386,
+        2974963380,
+        2974963378,
+        2974963379,
+        2974963382,
+        2974963383,
+        2974963385,
+        2974963390,
+        2974963392,
+        2974963401,
+        2974963406,
+        2974963413,
+        2974963416,
+        2974963420,
+        2974963430,
+        2974963541
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Ahépé",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 299683745,
+      "nodes": [
+        3037258271,
+        3037258272,
+        3037258270,
+        3037258269,
+        3037258271
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Kpimé Tomégbé",
+        "opening_hours": "08:30-17:30"
+      }
+    },
+    {
+      "type": "way",
+      "id": 311051305,
+      "nodes": [
+        6116631027,
+        3165898251,
+        3165898252,
+        3165898253,
+        3165898254,
+        3165898255,
+        3165898257,
+        3165898461,
+        3166168436,
+        6116631024,
+        6116631027
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Grand Marché de Kpalimé"
+      }
+    },
+    {
+      "type": "way",
+      "id": 319953216,
+      "nodes": [
+        3264510382,
+        3264510383,
+        3264510384,
+        3264510385,
+        3264510388,
+        3264510390,
+        3264510391,
+        3264510395,
+        3264510398,
+        3264510402,
+        3264510434,
+        3264510433,
+        3264510432,
+        3264510431,
+        3264510430,
+        3264510429,
+        3264510428,
+        3264510427,
+        3264510426,
+        3264510425,
+        3264510424,
+        3264510423,
+        3264510422,
+        3264510421,
+        3264510420,
+        3264510418,
+        3264510403,
+        3264510401,
+        3264510399,
+        3264510396,
+        3264510386,
+        3264510382
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché des Féticheurs",
+        "name:en": "Akodessawa Fetish Market",
+        "source": "survey",
+        "tourism": "attraction",
+        "wikidata": "Q27030937",
+        "wikipedia": "fr:Marché des féticheurs"
+      }
+    },
+    {
+      "type": "way",
+      "id": 333323432,
+      "nodes": [
+        6957209379,
+        6957209383,
+        6954898171,
+        6957209380,
+        6957209382,
+        6954898172,
+        3404443431,
+        6954897986,
+        2103525702,
+        2103525752,
+        6957209379
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Dapaong / AGETUR - TOGO",
+        "operator": "Commune de Dapaong",
+        "source": "AGETUR TOGO"
+      }
+    },
+    {
+      "type": "way",
+      "id": 336597797,
+      "nodes": [
+        3436338001,
+        3436338002,
+        3436338003,
+        3436338004,
+        3436338005,
+        3436338001
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "building": "yes",
+        "name": "Marché Avéta"
+      }
+    },
+    {
+      "type": "way",
+      "id": 351969558,
+      "nodes": [
+        3577695773,
+        3577695777,
+        3577695903,
+        3577695922,
+        3577695944,
+        3577695959,
+        3577695960,
+        3577695965,
+        3577695966,
+        3577695981,
+        3577695970,
+        3577695927,
+        3577695917,
+        3577695916,
+        3577695894,
+        3577695760,
+        3577695765,
+        3577695773
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "note": "must be checked on ground",
+        "source": "bing",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 366746264,
+      "nodes": [
+        3707297526,
+        3707296823,
+        3707296818,
+        3707296817,
+        3707296820,
+        3707297526
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Place de l'ancien marché de Blitta",
+        "organic": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 368492361,
+      "nodes": [
+        3723462617,
+        3733424998,
+        3733425173,
+        3723462616,
+        3723462612,
+        3723462608,
+        3723462609,
+        3723462610,
+        3733425152,
+        3733425153,
+        3733425156,
+        3733425161,
+        3733425166,
+        3733425164,
+        3733425167,
+        3723462617
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "grand marché agou gadzépé",
+        "note": "a lot of smaller buildings"
+      }
+    },
+    {
+      "type": "way",
+      "id": 376524838,
+      "nodes": [
+        3799364096,
+        3799364097,
+        3799364098,
+        3799364099,
+        3799364096
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "building": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 383634902,
+      "nodes": [
+        3869453617,
+        3869453616,
+        3869453607,
+        3869453602,
+        3869453606,
+        3869453617
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche",
+        "opening_hours": "16:00-20:00-sa-su",
+        "operator": "Oronko"
+      }
+    },
+    {
+      "type": "way",
+      "id": 383710120,
+      "nodes": [
+        3870129162,
+        3870129251,
+        3870129309,
+        3870129268,
+        3870129220,
+        3870129162
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Akpango"
+      }
+    },
+    {
+      "type": "way",
+      "id": 404234958,
+      "nodes": [
+        4065062538,
+        4065062539,
+        4065062540,
+        4065062541,
+        4065062542,
+        4065062543,
+        4065062544,
+        4065062545,
+        4065062547,
+        4065062549,
+        4065062550,
+        4065062551,
+        4065062552,
+        4065062553,
+        4065062538
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 404234961,
+      "nodes": [
+        4065062554,
+        4065062555,
+        4065062556,
+        4065062557,
+        4065062558,
+        4065062554
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 409074626,
+      "nodes": [
+        9340127873,
+        9340127874,
+        4109636479,
+        4109635442,
+        9340127873
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Bè"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436388866,
+      "nodes": [
+        4342703627,
+        4352373143,
+        4352373125,
+        4342703622,
+        4342703623,
+        4342703624,
+        4342703625,
+        4342703626,
+        4342703627
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "fixme": "confirm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 440099669,
+      "nodes": [
+        4378037660,
+        4378037677,
+        4378037682,
+        4378037695,
+        4378037702,
+        4378037670,
+        4378037658,
+        4378037657,
+        4378037660
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 452702083,
+      "nodes": [
+        4494512458,
+        4494512459,
+        4494512460,
+        4494512461,
+        4494512458
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche Alibi II"
+      }
+    },
+    {
+      "type": "way",
+      "id": 454267389,
+      "nodes": [
+        4508435275,
+        4508435276,
+        4508435277,
+        4508435278,
+        4508435275
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "building": "yes",
+        "name": "Food vendors"
+      }
+    },
+    {
+      "type": "way",
+      "id": 545093527,
+      "nodes": [
+        5268638860,
+        5268638861,
+        5268638862,
+        5268638863,
+        5268638860
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "building": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 546649784,
+      "nodes": [
+        5282528131,
+        5282528130,
+        11225440807,
+        5282528129,
+        5282528128,
+        11181520636,
+        5282528127,
+        5282528126,
+        11181053324,
+        5282528125,
+        5282528124,
+        11181063790,
+        11181063791,
+        5282528123,
+        5282528122,
+        5282528131
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Adétikopé"
+      }
+    },
+    {
+      "type": "way",
+      "id": 561758480,
+      "nodes": [
+        5416330147,
+        5416330146,
+        5416330136,
+        5416330135,
+        5416330134,
+        5416330137,
+        5416330138,
+        5416330145,
+        5416330144,
+        5416330143,
+        5416330147
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Awatamé",
+        "opening_hours": "Mo-Su 08:00-18:00; Apr 10-15 off; Jun 08:00-14:00; Aug off; Dec 25 off",
+        "organic": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 563889234,
+      "nodes": [
+        5433611953,
+        5433611954,
+        5433611955,
+        5433611956,
+        5433611957,
+        5433611958,
+        5433611953
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "description": "Market is held on Monday afternoon and evenings.",
+        "name": "Kanaimboua Market"
+      }
+    },
+    {
+      "type": "way",
+      "id": 754671262,
+      "nodes": [
+        7050163965,
+        7050163966,
+        7050163967,
+        7050163968,
+        7050163969,
+        7050163970,
+        7050163971,
+        7050163972,
+        7050163973,
+        7050163974,
+        7050163975,
+        7050163976,
+        7050163965
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Avétonou"
+      }
+    },
+    {
+      "type": "way",
+      "id": 759354181,
+      "nodes": [
+        7092963844,
+        7092963843,
+        8410021216,
+        7092963842,
+        7092963841,
+        7092963844
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Nouvelle Place du Marché de Mango"
+      }
+    },
+    {
+      "type": "way",
+      "id": 763961094,
+      "nodes": [
+        7137229375,
+        7137229374,
+        7137229373,
+        4312459447,
+        7366903015,
+        7137229371,
+        7137229372,
+        7137229375
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Assigamé",
+        "showcase": "Only",
+        "source": "Bing;Survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 805954412,
+      "nodes": [
+        7536840765,
+        7536840764,
+        7536840763,
+        7536840762,
+        7536840765
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813104318,
+      "nodes": [
+        7594990716,
+        7594990715,
+        7594990714,
+        7594990713,
+        7594990712,
+        7594990711,
+        7594990710,
+        7594990709,
+        7594990708,
+        7594990707,
+        7594990706,
+        7594990705,
+        7594990704,
+        7594990703,
+        7594990702,
+        7594990701,
+        7594990700,
+        7594990716
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 815726737,
+      "nodes": [
+        7618340047,
+        7618340048,
+        7618340049,
+        7618340050,
+        7618340051,
+        7618340045,
+        7618340052,
+        7618340047
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "landuse": "commercial",
+        "name": "Grand Marché Château",
+        "operator": "Mairie de Kpalimé"
+      }
+    },
+    {
+      "type": "way",
+      "id": 837990324,
+      "nodes": [
+        7821250175,
+        7833085327,
+        7833085326,
+        7833085325,
+        7833085324,
+        7833085323,
+        7821250172,
+        7821250171,
+        7833085322,
+        7833085321,
+        7821250170,
+        7821250169,
+        7821250168,
+        7821250167,
+        7821250166,
+        7821250175
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 845205577,
+      "nodes": [
+        7885406558,
+        7885406557,
+        7885406556,
+        7885406555,
+        7885406554,
+        7885406553,
+        7885406552,
+        7885406551,
+        7885406550,
+        7885406549,
+        7885406548,
+        7885406547,
+        7885406546,
+        7885406545,
+        7885406544,
+        7885406543,
+        7885406542,
+        7885406541,
+        7885406540,
+        7885406539,
+        7885406538,
+        7885406537,
+        7885406536,
+        7885406535,
+        7885406534,
+        7885406533,
+        7885406532,
+        7885406558
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "source": "Maxar Standard (Beta)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 894934026,
+      "nodes": [
+        8318697650,
+        8318697649,
+        8318697648,
+        8318697647,
+        8318697646,
+        8318697645,
+        8318697644,
+        8318697643,
+        8318697650
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Tindjassi"
+      }
+    },
+    {
+      "type": "way",
+      "id": 920940646,
+      "nodes": [
+        8550513124,
+        4754651739,
+        8550513125,
+        8550513126,
+        8550513124
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché d'Atchanvé"
+      }
+    },
+    {
+      "type": "way",
+      "id": 928642004,
+      "nodes": [
+        8613263410,
+        8613263409,
+        8613263408,
+        8613263407,
+        8613263406,
+        8613263405,
+        8613263404,
+        8613263403,
+        8613263402,
+        8613263401,
+        8613263400,
+        8613263399,
+        8613263410
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 972498332,
+      "nodes": [
+        9000778404,
+        9000778403,
+        9000778402,
+        9000778401,
+        9000778400,
+        9000778399,
+        9000778398,
+        9000778397,
+        9000778396,
+        9000778395,
+        9000778394,
+        9000778393,
+        9000778392,
+        9000778404
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "Marché de Kambolé"
+      }
+    },
+    {
+      "type": "way",
+      "id": 972603823,
+      "nodes": [
+        9001698630,
+        9001698629,
+        9001698628,
+        9001698627,
+        9001698626,
+        9507988930,
+        9001698624,
+        10632869584,
+        9507988929,
+        9001698622,
+        9001698630
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "Marché de Tchamba"
+      }
+    },
+    {
+      "type": "way",
+      "id": 992909296,
+      "nodes": [
+        9173213710,
+        9173213709,
+        9173213708,
+        9173213707,
+        9173213706,
+        9173213705,
+        9173213704,
+        9173213703,
+        9173213702,
+        9173213701,
+        9173213700,
+        9173213710
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1014904193,
+      "nodes": [
+        9362358097,
+        9362358098,
+        9362358099,
+        9362358100,
+        9362358097
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015060482,
+      "nodes": [
+        9363845768,
+        9363845769,
+        9363845770,
+        9363845771,
+        9363845772,
+        9363845773,
+        9363845774,
+        9363845775,
+        9363845768
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015260149,
+      "nodes": [
+        9365495608,
+        9365495609,
+        9365495610,
+        9365495611,
+        9365495608
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015343421,
+      "nodes": [
+        9366244378,
+        9366244379,
+        9366244380,
+        9366244381,
+        9366244382,
+        9366244383,
+        9366244384,
+        9366244385,
+        9366244386,
+        9366244378
+      ],
+      "tags": {
+        "addr:city": "Bassar",
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015865144,
+      "nodes": [
+        9370255712,
+        9370255713,
+        9370255714,
+        9370255715,
+        9370255712
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "check_date": "2021-12-27",
+        "landuse": "retail",
+        "name": "Nouveau Marché de Tsévié"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1015947210,
+      "nodes": [
+        9370976508,
+        9370976509,
+        3728459351,
+        9370976511,
+        9370976512,
+        10967608319,
+        9370976513,
+        9370976514,
+        9370976515,
+        9370976508
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1023346208,
+      "nodes": [
+        9437288446,
+        9437288447,
+        9437288448,
+        9437288449,
+        9437288450,
+        9437288451,
+        9437288446
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1031501433,
+      "nodes": [
+        9506626266,
+        9506626267,
+        9506626268,
+        9506626269,
+        9506626270,
+        9506626271,
+        9506626272,
+        9506626273,
+        9506626266
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "landuse": "retail"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1033880941,
+      "nodes": [
+        9524804164,
+        9524804165,
+        9524804166,
+        9524804167,
+        9524804168,
+        9524804169,
+        9524804170,
+        9524804171,
+        9524804172,
+        9524804173,
+        9524804174,
+        9524804164
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1055971022,
+      "nodes": [
+        9702928525,
+        9702928526,
+        9702928527,
+        9702928528,
+        9702928529,
+        9702928525
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1070010240,
+      "nodes": [
+        9820663017,
+        9820663018,
+        9820663019,
+        9820663020,
+        9820663021,
+        9820663022,
+        9820663023,
+        9820663024,
+        9820663025,
+        9820663026,
+        9820663027,
+        9820663017
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1217302783,
+      "nodes": [
+        11279221555,
+        11279221556,
+        11279221557,
+        11279221558,
+        11279221555
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marche de Balanka (immeuble principale)",
+        "opening_hours": "Fr 13:00-18:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1338285351,
+      "nodes": [
+        12378783430,
+        12378783429,
+        12378783428,
+        12378783427,
+        12378783426,
+        12378783425,
+        12378783424,
+        12378783423,
+        12378783422,
+        12378783421,
+        12378783420,
+        12378783419,
+        12378783418,
+        12378783430
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Marché de Pont-Noir"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1470223010,
+      "nodes": [
+        13483575808,
+        13483575807,
+        13483575806,
+        13483575805,
+        13483575804,
+        13483575803,
+        13483575802,
+        13483575801,
+        13483575800,
+        13483575799,
+        13483575798,
+        13483575797,
+        13483575796,
+        13483575795,
+        13483575794,
+        13483575793,
+        13483575792,
+        13483575808
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1470223020,
+      "nodes": [
+        13483575864,
+        13483575863,
+        13483575862,
+        13483575861,
+        13483575860,
+        13483575859,
+        13483575858,
+        13483575857,
+        13483575856,
+        13483575855,
+        13483575854,
+        13483575853,
+        13483575852,
+        13483575851,
+        13483575850,
+        13483575849,
+        13483575848,
+        13483575847,
+        13483575846,
+        13483575845,
+        13483575844,
+        13483575843,
+        13483575842,
+        13483575841,
+        13483575840,
+        13483575839,
+        13483575838,
+        13483575837,
+        13483575836,
+        13483575835,
+        13483575834,
+        13483575833,
+        13483575864
+      ],
+      "tags": {
+        "amenity": "marketplace",
+        "name": "Petit Marché"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1475157028,
+      "nodes": [
+        13533245148,
+        13533245149,
+        13533245150,
+        13533245151,
+        13533245152,
+        13533245148
+      ],
+      "tags": {
+        "amenity": "marketplace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2439100025,
+      "lat": 6.1974836,
+      "lon": 1.1463385
+    },
+    {
+      "type": "node",
+      "id": 2439100031,
+      "lat": 6.1983643,
+      "lon": 1.1464861
+    },
+    {
+      "type": "node",
+      "id": 2439100035,
+      "lat": 6.1987253,
+      "lon": 1.1463073
+    },
+    {
+      "type": "node",
+      "id": 2439100040,
+      "lat": 6.1990012,
+      "lon": 1.1465493
+    },
+    {
+      "type": "node",
+      "id": 2439100012,
+      "lat": 6.1965093,
+      "lon": 1.147429
+    },
+    {
+      "type": "node",
+      "id": 2439100017,
+      "lat": 6.1965367,
+      "lon": 1.1478745
+    },
+    {
+      "type": "node",
+      "id": 2439100020,
+      "lat": 6.1968139,
+      "lon": 1.147126
+    },
+    {
+      "type": "node",
+      "id": 2439100022,
+      "lat": 6.1968765,
+      "lon": 1.1471163
+    },
+    {
+      "type": "node",
+      "id": 2439100037,
+      "lat": 6.1988921,
+      "lon": 1.1477399
+    },
+    {
+      "type": "node",
+      "id": 4312459447,
+      "lat": 6.1266291,
+      "lon": 1.2206981
+    },
+    {
+      "type": "node",
+      "id": 7137229371,
+      "lat": 6.1262147,
+      "lon": 1.2221048
+    },
+    {
+      "type": "node",
+      "id": 7137229372,
+      "lat": 6.1258795,
+      "lon": 1.2221784
+    },
+    {
+      "type": "node",
+      "id": 7137229373,
+      "lat": 6.1244349,
+      "lon": 1.2214632
+    },
+    {
+      "type": "node",
+      "id": 7137229374,
+      "lat": 6.1244043,
+      "lon": 1.2215692
+    },
+    {
+      "type": "node",
+      "id": 7137229375,
+      "lat": 6.124663,
+      "lon": 1.2223792
+    },
+    {
+      "type": "node",
+      "id": 7366903015,
+      "lat": 6.1269932,
+      "lon": 1.221887
+    },
+    {
+      "type": "node",
+      "id": 2387531827,
+      "lat": 6.1281271,
+      "lon": 1.2306541
+    },
+    {
+      "type": "node",
+      "id": 2387531828,
+      "lat": 6.1288447,
+      "lon": 1.2304265
+    },
+    {
+      "type": "node",
+      "id": 2387531829,
+      "lat": 6.1289006,
+      "lon": 1.2315695
+    },
+    {
+      "type": "node",
+      "id": 2387531830,
+      "lat": 6.129471,
+      "lon": 1.231476
+    },
+    {
+      "type": "node",
+      "id": 2387531831,
+      "lat": 6.1297504,
+      "lon": 1.2311419
+    },
+    {
+      "type": "node",
+      "id": 2387686219,
+      "lat": 6.1285076,
+      "lon": 1.2305334
+    },
+    {
+      "type": "node",
+      "id": 2387686235,
+      "lat": 6.1285678,
+      "lon": 1.2311602
+    },
+    {
+      "type": "node",
+      "id": 2387686351,
+      "lat": 6.129335,
+      "lon": 1.2308451
+    },
+    {
+      "type": "node",
+      "id": 2387697832,
+      "lat": 6.128305,
+      "lon": 1.2305976
+    },
+    {
+      "type": "node",
+      "id": 2387697868,
+      "lat": 6.1293397,
+      "lon": 1.2314977
+    },
+    {
+      "type": "node",
+      "id": 4109635442,
+      "lat": 6.1421985,
+      "lon": 1.2440063
+    },
+    {
+      "type": "node",
+      "id": 4109636479,
+      "lat": 6.1425876,
+      "lon": 1.2445646
+    },
+    {
+      "type": "node",
+      "id": 9340127873,
+      "lat": 6.1429928,
+      "lon": 1.2434014
+    },
+    {
+      "type": "node",
+      "id": 9340127874,
+      "lat": 6.14338,
+      "lon": 1.2439315
+    },
+    {
+      "type": "node",
+      "id": 2366184881,
+      "lat": 6.1760563,
+      "lon": 1.2011376
+    },
+    {
+      "type": "node",
+      "id": 2366184885,
+      "lat": 6.1761298,
+      "lon": 1.2006145
+    },
+    {
+      "type": "node",
+      "id": 2366184887,
+      "lat": 6.176186,
+      "lon": 1.200544
+    },
+    {
+      "type": "node",
+      "id": 2366184905,
+      "lat": 6.1767773,
+      "lon": 1.2006849
+    },
+    {
+      "type": "node",
+      "id": 5416330134,
+      "lat": 6.1782516,
+      "lon": 1.1688437
+    },
+    {
+      "type": "node",
+      "id": 5416330135,
+      "lat": 6.1779916,
+      "lon": 1.1688785
+    },
+    {
+      "type": "node",
+      "id": 5416330136,
+      "lat": 6.1779916,
+      "lon": 1.1690623
+    },
+    {
+      "type": "node",
+      "id": 5416330137,
+      "lat": 6.1785076,
+      "lon": 1.1688128
+    },
+    {
+      "type": "node",
+      "id": 5416330138,
+      "lat": 6.1786383,
+      "lon": 1.1688074
+    },
+    {
+      "type": "node",
+      "id": 5416330143,
+      "lat": 6.1786489,
+      "lon": 1.1695008
+    },
+    {
+      "type": "node",
+      "id": 5416330144,
+      "lat": 6.1786676,
+      "lon": 1.1692205
+    },
+    {
+      "type": "node",
+      "id": 5416330145,
+      "lat": 6.1786463,
+      "lon": 1.1689898
+    },
+    {
+      "type": "node",
+      "id": 5416330146,
+      "lat": 6.1783636,
+      "lon": 1.1690716
+    },
+    {
+      "type": "node",
+      "id": 5416330147,
+      "lat": 6.1783436,
+      "lon": 1.1694995
+    },
+    {
+      "type": "node",
+      "id": 2366184912,
+      "lat": 6.1769188,
+      "lon": 1.2012801
+    },
+    {
+      "type": "node",
+      "id": 2366184913,
+      "lat": 6.1769863,
+      "lon": 1.2012
+    },
+    {
+      "type": "node",
+      "id": 2387283135,
+      "lat": 6.1938784,
+      "lon": 1.1884291
+    },
+    {
+      "type": "node",
+      "id": 2387283137,
+      "lat": 6.1940218,
+      "lon": 1.1873881
+    },
+    {
+      "type": "node",
+      "id": 2387283141,
+      "lat": 6.1945124,
+      "lon": 1.1872998
+    },
+    {
+      "type": "node",
+      "id": 2387283143,
+      "lat": 6.1948543,
+      "lon": 1.1882917
+    },
+    {
+      "type": "node",
+      "id": 2387283145,
+      "lat": 6.1951502,
+      "lon": 1.1877848
+    },
+    {
+      "type": "node",
+      "id": 2443559056,
+      "lat": 6.2037131,
+      "lon": 1.1964074
+    },
+    {
+      "type": "node",
+      "id": 2443559058,
+      "lat": 6.2042046,
+      "lon": 1.1957203
+    },
+    {
+      "type": "node",
+      "id": 2443559062,
+      "lat": 6.2054107,
+      "lon": 1.1950896
+    },
+    {
+      "type": "node",
+      "id": 2443559066,
+      "lat": 6.2052425,
+      "lon": 1.1970523
+    },
+    {
+      "type": "node",
+      "id": 2443559068,
+      "lat": 6.2059669,
+      "lon": 1.1967446
+    },
+    {
+      "type": "node",
+      "id": 2813472745,
+      "lat": 6.203905,
+      "lon": 1.1959341
+    },
+    {
+      "type": "node",
+      "id": 3055280321,
+      "lat": 6.2036982,
+      "lon": 1.1963853
+    },
+    {
+      "type": "node",
+      "id": 3055359986,
+      "lat": 6.204519,
+      "lon": 1.1954979
+    },
+    {
+      "type": "node",
+      "id": 3055359988,
+      "lat": 6.2057924,
+      "lon": 1.1968345
+    },
+    {
+      "type": "node",
+      "id": 3055359989,
+      "lat": 6.2058022,
+      "lon": 1.1968169
+    },
+    {
+      "type": "node",
+      "id": 3055359990,
+      "lat": 6.2061517,
+      "lon": 1.1950478
+    },
+    {
+      "type": "node",
+      "id": 4105409659,
+      "lat": 6.2039116,
+      "lon": 1.1964808
+    },
+    {
+      "type": "node",
+      "id": 4105409665,
+      "lat": 6.2039637,
+      "lon": 1.1958935
+    },
+    {
+      "type": "node",
+      "id": 4105409669,
+      "lat": 6.2039962,
+      "lon": 1.1958706
+    },
+    {
+      "type": "node",
+      "id": 4105409670,
+      "lat": 6.2040469,
+      "lon": 1.1958239
+    },
+    {
+      "type": "node",
+      "id": 4105409672,
+      "lat": 6.2042649,
+      "lon": 1.1956784
+    },
+    {
+      "type": "node",
+      "id": 4105409675,
+      "lat": 6.2044991,
+      "lon": 1.1967174
+    },
+    {
+      "type": "node",
+      "id": 4105409682,
+      "lat": 6.205969,
+      "lon": 1.1963102
+    },
+    {
+      "type": "node",
+      "id": 4105409683,
+      "lat": 6.205965,
+      "lon": 1.1963332
+    },
+    {
+      "type": "node",
+      "id": 2100609956,
+      "lat": 6.2300155,
+      "lon": 1.1972209
+    },
+    {
+      "type": "node",
+      "id": 2100609958,
+      "lat": 6.2301509,
+      "lon": 1.1968099
+    },
+    {
+      "type": "node",
+      "id": 2100609962,
+      "lat": 6.230506,
+      "lon": 1.1959103
+    },
+    {
+      "type": "node",
+      "id": 2100609966,
+      "lat": 6.2312973,
+      "lon": 1.1984962
+    },
+    {
+      "type": "node",
+      "id": 2100609970,
+      "lat": 6.2322812,
+      "lon": 1.1975353
+    },
+    {
+      "type": "node",
+      "id": 3284611168,
+      "lat": 6.2299462,
+      "lon": 1.197152
+    },
+    {
+      "type": "node",
+      "id": 3284611169,
+      "lat": 6.2299775,
+      "lon": 1.1971826
+    },
+    {
+      "type": "node",
+      "id": 3284611171,
+      "lat": 6.2299991,
+      "lon": 1.1971363
+    },
+    {
+      "type": "node",
+      "id": 3284611174,
+      "lat": 6.2300706,
+      "lon": 1.1971678
+    },
+    {
+      "type": "node",
+      "id": 3284611175,
+      "lat": 6.2301177,
+      "lon": 1.1968001
+    },
+    {
+      "type": "node",
+      "id": 3284611177,
+      "lat": 6.2303637,
+      "lon": 1.1962303
+    },
+    {
+      "type": "node",
+      "id": 3284611178,
+      "lat": 6.2304058,
+      "lon": 1.196251
+    },
+    {
+      "type": "node",
+      "id": 3284611179,
+      "lat": 6.2308114,
+      "lon": 1.1960627
+    },
+    {
+      "type": "node",
+      "id": 2431517853,
+      "lat": 6.226424,
+      "lon": 1.2147339
+    },
+    {
+      "type": "node",
+      "id": 2431517854,
+      "lat": 6.2264604,
+      "lon": 1.2141947
+    },
+    {
+      "type": "node",
+      "id": 2431517869,
+      "lat": 6.2269794,
+      "lon": 1.2147382
+    },
+    {
+      "type": "node",
+      "id": 2431517872,
+      "lat": 6.2270997,
+      "lon": 1.2142137
+    },
+    {
+      "type": "node",
+      "id": 4754651739,
+      "lat": 6.2257732,
+      "lon": 1.2143625
+    },
+    {
+      "type": "node",
+      "id": 8550513124,
+      "lat": 6.2257898,
+      "lon": 1.2141355
+    },
+    {
+      "type": "node",
+      "id": 8550513125,
+      "lat": 6.2256168,
+      "lon": 1.2143456
+    },
+    {
+      "type": "node",
+      "id": 8550513126,
+      "lat": 6.2256317,
+      "lon": 1.2141272
+    },
+    {
+      "type": "node",
+      "id": 3264510382,
+      "lat": 6.1573274,
+      "lon": 1.266986
+    },
+    {
+      "type": "node",
+      "id": 3264510383,
+      "lat": 6.1573532,
+      "lon": 1.2670846
+    },
+    {
+      "type": "node",
+      "id": 3264510384,
+      "lat": 6.1573664,
+      "lon": 1.2671352
+    },
+    {
+      "type": "node",
+      "id": 3264510385,
+      "lat": 6.1573829,
+      "lon": 1.2671982
+    },
+    {
+      "type": "node",
+      "id": 3264510386,
+      "lat": 6.1573905,
+      "lon": 1.266987
+    },
+    {
+      "type": "node",
+      "id": 3264510388,
+      "lat": 6.1574125,
+      "lon": 1.2673116
+    },
+    {
+      "type": "node",
+      "id": 3264510390,
+      "lat": 6.1574296,
+      "lon": 1.2673769
+    },
+    {
+      "type": "node",
+      "id": 3264510391,
+      "lat": 6.15744,
+      "lon": 1.2674168
+    },
+    {
+      "type": "node",
+      "id": 3264510395,
+      "lat": 6.1575371,
+      "lon": 1.2674663
+    },
+    {
+      "type": "node",
+      "id": 3264510396,
+      "lat": 6.1575557,
+      "lon": 1.2669857
+    },
+    {
+      "type": "node",
+      "id": 3264510398,
+      "lat": 6.1576234,
+      "lon": 1.2675103
+    },
+    {
+      "type": "node",
+      "id": 3264510399,
+      "lat": 6.157624,
+      "lon": 1.2669857
+    },
+    {
+      "type": "node",
+      "id": 3264510401,
+      "lat": 6.1577176,
+      "lon": 1.2669856
+    },
+    {
+      "type": "node",
+      "id": 3264510402,
+      "lat": 6.1577497,
+      "lon": 1.2675746
+    },
+    {
+      "type": "node",
+      "id": 3264510403,
+      "lat": 6.1577592,
+      "lon": 1.2669856
+    },
+    {
+      "type": "node",
+      "id": 3264510418,
+      "lat": 6.1578619,
+      "lon": 1.2669855
+    },
+    {
+      "type": "node",
+      "id": 3264510420,
+      "lat": 6.1578669,
+      "lon": 1.2670629
+    },
+    {
+      "type": "node",
+      "id": 3264510421,
+      "lat": 6.1578727,
+      "lon": 1.2671232
+    },
+    {
+      "type": "node",
+      "id": 3264510422,
+      "lat": 6.1578796,
+      "lon": 1.2671943
+    },
+    {
+      "type": "node",
+      "id": 3264510423,
+      "lat": 6.1578844,
+      "lon": 1.2672445
+    },
+    {
+      "type": "node",
+      "id": 3264510424,
+      "lat": 6.1578858,
+      "lon": 1.2672585
+    },
+    {
+      "type": "node",
+      "id": 3264510425,
+      "lat": 6.1578897,
+      "lon": 1.2672992
+    },
+    {
+      "type": "node",
+      "id": 3264510426,
+      "lat": 6.1578944,
+      "lon": 1.2673469
+    },
+    {
+      "type": "node",
+      "id": 3264510427,
+      "lat": 6.1578988,
+      "lon": 1.2673924
+    },
+    {
+      "type": "node",
+      "id": 3264510428,
+      "lat": 6.1579011,
+      "lon": 1.267417
+    },
+    {
+      "type": "node",
+      "id": 3264510429,
+      "lat": 6.1579051,
+      "lon": 1.2674576
+    },
+    {
+      "type": "node",
+      "id": 3264510430,
+      "lat": 6.1579094,
+      "lon": 1.2675027
+    },
+    {
+      "type": "node",
+      "id": 3264510431,
+      "lat": 6.1579132,
+      "lon": 1.2675416
+    },
+    {
+      "type": "node",
+      "id": 3264510432,
+      "lat": 6.1579159,
+      "lon": 1.2675691
+    },
+    {
+      "type": "node",
+      "id": 3264510433,
+      "lat": 6.1579206,
+      "lon": 1.2676176
+    },
+    {
+      "type": "node",
+      "id": 3264510434,
+      "lat": 6.157923,
+      "lon": 1.2676647
+    },
+    {
+      "type": "node",
+      "id": 3436338001,
+      "lat": 6.2624963,
+      "lon": 1.28478
+    },
+    {
+      "type": "node",
+      "id": 3436338002,
+      "lat": 6.2626931,
+      "lon": 1.2848434
+    },
+    {
+      "type": "node",
+      "id": 3436338003,
+      "lat": 6.2626864,
+      "lon": 1.2847555
+    },
+    {
+      "type": "node",
+      "id": 3436338004,
+      "lat": 6.2626858,
+      "lon": 1.2846481
+    },
+    {
+      "type": "node",
+      "id": 3436338005,
+      "lat": 6.2625427,
+      "lon": 1.2846002
+    },
+    {
+      "type": "node",
+      "id": 7594990700,
+      "lat": 6.2568367,
+      "lon": 1.6805944
+    },
+    {
+      "type": "node",
+      "id": 7594990701,
+      "lat": 6.2571113,
+      "lon": 1.6819113
+    },
+    {
+      "type": "node",
+      "id": 7594990702,
+      "lat": 6.2571726,
+      "lon": 1.6819113
+    },
+    {
+      "type": "node",
+      "id": 7594990703,
+      "lat": 6.2572126,
+      "lon": 1.6820991
+    },
+    {
+      "type": "node",
+      "id": 7594990704,
+      "lat": 6.2572926,
+      "lon": 1.6821125
+    },
+    {
+      "type": "node",
+      "id": 7594990705,
+      "lat": 6.2573273,
+      "lon": 1.6824344
+    },
+    {
+      "type": "node",
+      "id": 7594990706,
+      "lat": 6.2577645,
+      "lon": 1.6824022
+    },
+    {
+      "type": "node",
+      "id": 7594990707,
+      "lat": 6.2577352,
+      "lon": 1.6820696
+    },
+    {
+      "type": "node",
+      "id": 7594990708,
+      "lat": 6.2580045,
+      "lon": 1.6815761
+    },
+    {
+      "type": "node",
+      "id": 7594990709,
+      "lat": 6.2575779,
+      "lon": 1.681281
+    },
+    {
+      "type": "node",
+      "id": 7594990710,
+      "lat": 6.2575912,
+      "lon": 1.681214
+    },
+    {
+      "type": "node",
+      "id": 7594990711,
+      "lat": 6.2576259,
+      "lon": 1.6811496
+    },
+    {
+      "type": "node",
+      "id": 7594990712,
+      "lat": 6.2578792,
+      "lon": 1.6808572
+    },
+    {
+      "type": "node",
+      "id": 7594990713,
+      "lat": 6.2574073,
+      "lon": 1.68053
+    },
+    {
+      "type": "node",
+      "id": 7594990714,
+      "lat": 6.2573433,
+      "lon": 1.6805032
+    },
+    {
+      "type": "node",
+      "id": 7594990715,
+      "lat": 6.2572473,
+      "lon": 1.6804871
+    },
+    {
+      "type": "node",
+      "id": 7594990716,
+      "lat": 6.256882,
+      "lon": 1.6804361
+    },
+    {
+      "type": "node",
+      "id": 7050163976,
+      "lat": 6.7984703,
+      "lon": 0.7966192
+    },
+    {
+      "type": "node",
+      "id": 7050163965,
+      "lat": 6.7996311,
+      "lon": 0.7952797
+    },
+    {
+      "type": "node",
+      "id": 7050163966,
+      "lat": 6.8000546,
+      "lon": 0.7955911
+    },
+    {
+      "type": "node",
+      "id": 7050163967,
+      "lat": 6.7999191,
+      "lon": 0.795766
+    },
+    {
+      "type": "node",
+      "id": 7050163968,
+      "lat": 6.8002452,
+      "lon": 0.7960689
+    },
+    {
+      "type": "node",
+      "id": 7050163969,
+      "lat": 6.8001012,
+      "lon": 0.796359
+    },
+    {
+      "type": "node",
+      "id": 7050163970,
+      "lat": 6.8000716,
+      "lon": 0.7965509
+    },
+    {
+      "type": "node",
+      "id": 7050163971,
+      "lat": 6.800169,
+      "lon": 0.7966661
+    },
+    {
+      "type": "node",
+      "id": 7050163972,
+      "lat": 6.8004104,
+      "lon": 0.7967301
+    },
+    {
+      "type": "node",
+      "id": 7050163973,
+      "lat": 6.8006603,
+      "lon": 0.7968837
+    },
+    {
+      "type": "node",
+      "id": 7050163974,
+      "lat": 6.8007112,
+      "lon": 0.7969306
+    },
+    {
+      "type": "node",
+      "id": 7050163975,
+      "lat": 6.8001309,
+      "lon": 0.7977624
+    },
+    {
+      "type": "node",
+      "id": 3723462609,
+      "lat": 6.8472849,
+      "lon": 0.7142727
+    },
+    {
+      "type": "node",
+      "id": 3723462610,
+      "lat": 6.8475897,
+      "lon": 0.7133921
+    },
+    {
+      "type": "node",
+      "id": 3723462617,
+      "lat": 6.8489295,
+      "lon": 0.7141503
+    },
+    {
+      "type": "node",
+      "id": 3733425152,
+      "lat": 6.848024,
+      "lon": 0.7136317
+    },
+    {
+      "type": "node",
+      "id": 3733425153,
+      "lat": 6.8480582,
+      "lon": 0.7135722
+    },
+    {
+      "type": "node",
+      "id": 3733425156,
+      "lat": 6.8481192,
+      "lon": 0.7135914
+    },
+    {
+      "type": "node",
+      "id": 3733425161,
+      "lat": 6.8481915,
+      "lon": 0.7135128
+    },
+    {
+      "type": "node",
+      "id": 3733425164,
+      "lat": 6.8482182,
+      "lon": 0.7136432
+    },
+    {
+      "type": "node",
+      "id": 3733425166,
+      "lat": 6.8482562,
+      "lon": 0.713553
+    },
+    {
+      "type": "node",
+      "id": 3733425167,
+      "lat": 6.8483324,
+      "lon": 0.7137122
+    },
+    {
+      "type": "node",
+      "id": 3723462608,
+      "lat": 6.8476772,
+      "lon": 0.7147041
+    },
+    {
+      "type": "node",
+      "id": 3723462612,
+      "lat": 6.8479237,
+      "lon": 0.7148319
+    },
+    {
+      "type": "node",
+      "id": 3723462616,
+      "lat": 6.8481549,
+      "lon": 0.7149226
+    },
+    {
+      "type": "node",
+      "id": 3733424998,
+      "lat": 6.8487418,
+      "lon": 0.7143481
+    },
+    {
+      "type": "node",
+      "id": 3733425173,
+      "lat": 6.8485456,
+      "lon": 0.7145561
+    },
+    {
+      "type": "node",
+      "id": 3165898251,
+      "lat": 6.9067957,
+      "lon": 0.6340885
+    },
+    {
+      "type": "node",
+      "id": 3165898252,
+      "lat": 6.9068034,
+      "lon": 0.6341728
+    },
+    {
+      "type": "node",
+      "id": 3165898253,
+      "lat": 6.9067924,
+      "lon": 0.6342328
+    },
+    {
+      "type": "node",
+      "id": 3165898254,
+      "lat": 6.9067666,
+      "lon": 0.6343013
+    },
+    {
+      "type": "node",
+      "id": 3165898255,
+      "lat": 6.9066957,
+      "lon": 0.6343558
+    },
+    {
+      "type": "node",
+      "id": 3165898257,
+      "lat": 6.9055264,
+      "lon": 0.6347113
+    },
+    {
+      "type": "node",
+      "id": 3165898461,
+      "lat": 6.9054852,
+      "lon": 0.634671
+    },
+    {
+      "type": "node",
+      "id": 3166168436,
+      "lat": 6.9055382,
+      "lon": 0.6344704
+    },
+    {
+      "type": "node",
+      "id": 6116631024,
+      "lat": 6.9059226,
+      "lon": 0.633014
+    },
+    {
+      "type": "node",
+      "id": 6116631027,
+      "lat": 6.9066118,
+      "lon": 0.6332217
+    },
+    {
+      "type": "node",
+      "id": 7618340045,
+      "lat": 6.9164829,
+      "lon": 0.6382692
+    },
+    {
+      "type": "node",
+      "id": 7618340047,
+      "lat": 6.9157772,
+      "lon": 0.638643
+    },
+    {
+      "type": "node",
+      "id": 7618340048,
+      "lat": 6.9155644,
+      "lon": 0.6391511
+    },
+    {
+      "type": "node",
+      "id": 7618340052,
+      "lat": 6.9163977,
+      "lon": 0.6388292
+    },
+    {
+      "type": "node",
+      "id": 7618340049,
+      "lat": 6.9174223,
+      "lon": 0.6418932
+    },
+    {
+      "type": "node",
+      "id": 7618340050,
+      "lat": 6.9185976,
+      "lon": 0.6405621
+    },
+    {
+      "type": "node",
+      "id": 7618340051,
+      "lat": 6.9187478,
+      "lon": 0.6386512
+    },
+    {
+      "type": "node",
+      "id": 3037258269,
+      "lat": 6.9689723,
+      "lon": 0.6449707
+    },
+    {
+      "type": "node",
+      "id": 3037258270,
+      "lat": 6.9690518,
+      "lon": 0.6452726
+    },
+    {
+      "type": "node",
+      "id": 3037258271,
+      "lat": 6.9693301,
+      "lon": 0.644909
+    },
+    {
+      "type": "node",
+      "id": 3037258272,
+      "lat": 6.9693913,
+      "lon": 0.6452295
+    },
+    {
+      "type": "node",
+      "id": 2407201232,
+      "lat": 7.0093976,
+      "lon": 0.6767587
+    },
+    {
+      "type": "node",
+      "id": 2407201233,
+      "lat": 7.0095742,
+      "lon": 0.6766938
+    },
+    {
+      "type": "node",
+      "id": 2407201234,
+      "lat": 7.0096674,
+      "lon": 0.6773924
+    },
+    {
+      "type": "node",
+      "id": 2407201235,
+      "lat": 7.0098182,
+      "lon": 0.6764771
+    },
+    {
+      "type": "node",
+      "id": 2407201237,
+      "lat": 7.009953,
+      "lon": 0.6774183
+    },
+    {
+      "type": "node",
+      "id": 2407201238,
+      "lat": 7.0100179,
+      "lon": 0.6767095
+    },
+    {
+      "type": "node",
+      "id": 2407201239,
+      "lat": 7.0100686,
+      "lon": 0.6763911
+    },
+    {
+      "type": "node",
+      "id": 2407201240,
+      "lat": 7.010148,
+      "lon": 0.6766003
+    },
+    {
+      "type": "node",
+      "id": 2407201241,
+      "lat": 7.0102074,
+      "lon": 0.6768861
+    },
+    {
+      "type": "node",
+      "id": 2407201242,
+      "lat": 7.0103892,
+      "lon": 0.6767796
+    },
+    {
+      "type": "node",
+      "id": 2407201243,
+      "lat": 7.0103892,
+      "lon": 0.6772625
+    },
+    {
+      "type": "node",
+      "id": 2407201244,
+      "lat": 7.0105657,
+      "lon": 0.6770756
+    },
+    {
+      "type": "node",
+      "id": 2407201245,
+      "lat": 7.0105969,
+      "lon": 0.6771327
+    },
+    {
+      "type": "node",
+      "id": 4342703622,
+      "lat": 7.1285023,
+      "lon": 0.7363139
+    },
+    {
+      "type": "node",
+      "id": 4342703623,
+      "lat": 7.1284018,
+      "lon": 0.7375225
+    },
+    {
+      "type": "node",
+      "id": 4342703624,
+      "lat": 7.1293605,
+      "lon": 0.7376781
+    },
+    {
+      "type": "node",
+      "id": 4342703625,
+      "lat": 7.1292887,
+      "lon": 0.7372294
+    },
+    {
+      "type": "node",
+      "id": 4342703626,
+      "lat": 7.1293497,
+      "lon": 0.7369761
+    },
+    {
+      "type": "node",
+      "id": 4342703627,
+      "lat": 7.1290957,
+      "lon": 0.7356349
+    },
+    {
+      "type": "node",
+      "id": 4352373125,
+      "lat": 7.1286405,
+      "lon": 0.7356524
+    },
+    {
+      "type": "node",
+      "id": 4352373143,
+      "lat": 7.1290202,
+      "lon": 0.7356378
+    },
+    {
+      "type": "node",
+      "id": 5282528124,
+      "lat": 6.3233549,
+      "lon": 1.2187958
+    },
+    {
+      "type": "node",
+      "id": 5282528125,
+      "lat": 6.3229257,
+      "lon": 1.2185678
+    },
+    {
+      "type": "node",
+      "id": 5282528126,
+      "lat": 6.321934,
+      "lon": 1.2183826
+    },
+    {
+      "type": "node",
+      "id": 5282528127,
+      "lat": 6.3218,
+      "lon": 1.2187905
+    },
+    {
+      "type": "node",
+      "id": 11181053324,
+      "lat": 6.3224965,
+      "lon": 1.2184605
+    },
+    {
+      "type": "node",
+      "id": 11181063790,
+      "lat": 6.3232909,
+      "lon": 1.2189165
+    },
+    {
+      "type": "node",
+      "id": 11181520636,
+      "lat": 6.3217501,
+      "lon": 1.2189379
+    },
+    {
+      "type": "node",
+      "id": 5282528122,
+      "lat": 6.3226511,
+      "lon": 1.2198928
+    },
+    {
+      "type": "node",
+      "id": 5282528123,
+      "lat": 6.323035,
+      "lon": 1.2192706
+    },
+    {
+      "type": "node",
+      "id": 5282528128,
+      "lat": 6.321692,
+      "lon": 1.2190849
+    },
+    {
+      "type": "node",
+      "id": 5282528129,
+      "lat": 6.3215188,
+      "lon": 1.2195723
+    },
+    {
+      "type": "node",
+      "id": 5282528130,
+      "lat": 6.321972,
+      "lon": 1.2198271
+    },
+    {
+      "type": "node",
+      "id": 5282528131,
+      "lat": 6.3225312,
+      "lon": 1.220035
+    },
+    {
+      "type": "node",
+      "id": 11181063791,
+      "lat": 6.323203,
+      "lon": 1.2190694
+    },
+    {
+      "type": "node",
+      "id": 11225440807,
+      "lat": 6.3217254,
+      "lon": 1.2197097
+    },
+    {
+      "type": "node",
+      "id": 9370255714,
+      "lat": 6.4313824,
+      "lon": 1.1983126
+    },
+    {
+      "type": "node",
+      "id": 9370255715,
+      "lat": 6.4320739,
+      "lon": 1.1958185
+    },
+    {
+      "type": "node",
+      "id": 9370255712,
+      "lat": 6.4345959,
+      "lon": 1.1965266
+    },
+    {
+      "type": "node",
+      "id": 9370255713,
+      "lat": 6.4339046,
+      "lon": 1.1990206
+    },
+    {
+      "type": "node",
+      "id": 7885406532,
+      "lat": 6.6811859,
+      "lon": 1.1684695
+    },
+    {
+      "type": "node",
+      "id": 7885406533,
+      "lat": 6.6812285,
+      "lon": 1.168558
+    },
+    {
+      "type": "node",
+      "id": 7885406534,
+      "lat": 6.6812498,
+      "lon": 1.168735
+    },
+    {
+      "type": "node",
+      "id": 7885406535,
+      "lat": 6.6812205,
+      "lon": 1.1689711
+    },
+    {
+      "type": "node",
+      "id": 7885406536,
+      "lat": 6.6811539,
+      "lon": 1.1693761
+    },
+    {
+      "type": "node",
+      "id": 7885406537,
+      "lat": 6.6810687,
+      "lon": 1.1699125
+    },
+    {
+      "type": "node",
+      "id": 7885406538,
+      "lat": 6.6809381,
+      "lon": 1.1698803
+    },
+    {
+      "type": "node",
+      "id": 7885406539,
+      "lat": 6.680757,
+      "lon": 1.1700439
+    },
+    {
+      "type": "node",
+      "id": 7885406540,
+      "lat": 6.6804719,
+      "lon": 1.1699823
+    },
+    {
+      "type": "node",
+      "id": 7885406541,
+      "lat": 6.6801416,
+      "lon": 1.1699259
+    },
+    {
+      "type": "node",
+      "id": 7885406542,
+      "lat": 6.6796248,
+      "lon": 1.1699071
+    },
+    {
+      "type": "node",
+      "id": 7885406543,
+      "lat": 6.6793477,
+      "lon": 1.1697569
+    },
+    {
+      "type": "node",
+      "id": 7885406544,
+      "lat": 6.6790227,
+      "lon": 1.1697489
+    },
+    {
+      "type": "node",
+      "id": 7885406545,
+      "lat": 6.6787377,
+      "lon": 1.1696979
+    },
+    {
+      "type": "node",
+      "id": 7885406546,
+      "lat": 6.6788602,
+      "lon": 1.169242
+    },
+    {
+      "type": "node",
+      "id": 7885406547,
+      "lat": 6.6792012,
+      "lon": 1.169368
+    },
+    {
+      "type": "node",
+      "id": 7885406548,
+      "lat": 6.6792412,
+      "lon": 1.1690864
+    },
+    {
+      "type": "node",
+      "id": 7885406549,
+      "lat": 6.6792625,
+      "lon": 1.1688745
+    },
+    {
+      "type": "node",
+      "id": 7885406550,
+      "lat": 6.6792438,
+      "lon": 1.1685339
+    },
+    {
+      "type": "node",
+      "id": 7885406551,
+      "lat": 6.6793584,
+      "lon": 1.1683542
+    },
+    {
+      "type": "node",
+      "id": 7885406552,
+      "lat": 6.6795182,
+      "lon": 1.1683702
+    },
+    {
+      "type": "node",
+      "id": 7885406553,
+      "lat": 6.6796807,
+      "lon": 1.1684266
+    },
+    {
+      "type": "node",
+      "id": 7885406554,
+      "lat": 6.6799152,
+      "lon": 1.1684829
+    },
+    {
+      "type": "node",
+      "id": 7885406555,
+      "lat": 6.6801309,
+      "lon": 1.1684829
+    },
+    {
+      "type": "node",
+      "id": 7885406556,
+      "lat": 6.6804559,
+      "lon": 1.1685044
+    },
+    {
+      "type": "node",
+      "id": 7885406557,
+      "lat": 6.6808582,
+      "lon": 1.1684909
+    },
+    {
+      "type": "node",
+      "id": 7885406558,
+      "lat": 6.6810953,
+      "lon": 1.1684695
+    },
+    {
+      "type": "node",
+      "id": 2974963396,
+      "lat": 6.6060264,
+      "lon": 1.3958241
+    },
+    {
+      "type": "node",
+      "id": 2974963378,
+      "lat": 6.6055704,
+      "lon": 1.3962276
+    },
+    {
+      "type": "node",
+      "id": 2974963379,
+      "lat": 6.605582,
+      "lon": 1.3964937
+    },
+    {
+      "type": "node",
+      "id": 2974963380,
+      "lat": 6.6055994,
+      "lon": 1.396096
+    },
+    {
+      "type": "node",
+      "id": 2974963382,
+      "lat": 6.6056604,
+      "lon": 1.3966721
+    },
+    {
+      "type": "node",
+      "id": 2974963383,
+      "lat": 6.605672,
+      "lon": 1.3968183
+    },
+    {
+      "type": "node",
+      "id": 2974963385,
+      "lat": 6.6057417,
+      "lon": 1.3969929
+    },
+    {
+      "type": "node",
+      "id": 2974963386,
+      "lat": 6.6057592,
+      "lon": 1.3961311
+    },
+    {
+      "type": "node",
+      "id": 2974963390,
+      "lat": 6.6058419,
+      "lon": 1.3971274
+    },
+    {
+      "type": "node",
+      "id": 2974963392,
+      "lat": 6.6059407,
+      "lon": 1.3972356
+    },
+    {
+      "type": "node",
+      "id": 2974963401,
+      "lat": 6.6062081,
+      "lon": 1.3973843
+    },
+    {
+      "type": "node",
+      "id": 2974963406,
+      "lat": 6.6063108,
+      "lon": 1.397467
+    },
+    {
+      "type": "node",
+      "id": 2974963413,
+      "lat": 6.6063909,
+      "lon": 1.3974897
+    },
+    {
+      "type": "node",
+      "id": 2974963416,
+      "lat": 6.6064484,
+      "lon": 1.3972871
+    },
+    {
+      "type": "node",
+      "id": 2974963420,
+      "lat": 6.6065737,
+      "lon": 1.3971403
+    },
+    {
+      "type": "node",
+      "id": 2974963430,
+      "lat": 6.6067647,
+      "lon": 1.3969604
+    },
+    {
+      "type": "node",
+      "id": 2974963541,
+      "lat": 6.6070343,
+      "lon": 1.396713
+    },
+    {
+      "type": "node",
+      "id": 3728459351,
+      "lat": 6.5873295,
+      "lon": 1.504938
+    },
+    {
+      "type": "node",
+      "id": 9370976508,
+      "lat": 6.5889894,
+      "lon": 1.5042062
+    },
+    {
+      "type": "node",
+      "id": 9370976509,
+      "lat": 6.58863,
+      "lon": 1.5054339
+    },
+    {
+      "type": "node",
+      "id": 9370976511,
+      "lat": 6.5860776,
+      "lon": 1.5039988
+    },
+    {
+      "type": "node",
+      "id": 9370976512,
+      "lat": 6.5867924,
+      "lon": 1.5025881
+    },
+    {
+      "type": "node",
+      "id": 9370976513,
+      "lat": 6.5880433,
+      "lon": 1.5030137
+    },
+    {
+      "type": "node",
+      "id": 9370976514,
+      "lat": 6.5885048,
+      "lon": 1.5031826
+    },
+    {
+      "type": "node",
+      "id": 9370976515,
+      "lat": 6.5883195,
+      "lon": 1.5038827
+    },
+    {
+      "type": "node",
+      "id": 10967608319,
+      "lat": 6.5879709,
+      "lon": 1.5031785
+    },
+    {
+      "type": "node",
+      "id": 5268638860,
+      "lat": 6.7499821,
+      "lon": 0.9055226
+    },
+    {
+      "type": "node",
+      "id": 5268638861,
+      "lat": 6.7504669,
+      "lon": 0.9059857
+    },
+    {
+      "type": "node",
+      "id": 5268638862,
+      "lat": 6.7498481,
+      "lon": 0.9066426
+    },
+    {
+      "type": "node",
+      "id": 5268638863,
+      "lat": 6.7493633,
+      "lon": 0.9061795
+    },
+    {
+      "type": "node",
+      "id": 4065062554,
+      "lat": 6.8610729,
+      "lon": 1.2133715
+    },
+    {
+      "type": "node",
+      "id": 4065062555,
+      "lat": 6.8601538,
+      "lon": 1.2127432
+    },
+    {
+      "type": "node",
+      "id": 4065062556,
+      "lat": 6.8604176,
+      "lon": 1.2135229
+    },
+    {
+      "type": "node",
+      "id": 4065062557,
+      "lat": 6.8606645,
+      "lon": 1.2140624
+    },
+    {
+      "type": "node",
+      "id": 4065062558,
+      "lat": 6.8607081,
+      "lon": 1.214018
+    },
+    {
+      "type": "node",
+      "id": 9362358097,
+      "lat": 6.9406065,
+      "lon": 1.1758823
+    },
+    {
+      "type": "node",
+      "id": 9362358098,
+      "lat": 6.9403915,
+      "lon": 1.17738
+    },
+    {
+      "type": "node",
+      "id": 9362358099,
+      "lat": 6.9383746,
+      "lon": 1.1770782
+    },
+    {
+      "type": "node",
+      "id": 9362358100,
+      "lat": 6.9386139,
+      "lon": 1.175457
+    },
+    {
+      "type": "node",
+      "id": 4065062538,
+      "lat": 6.8361191,
+      "lon": 1.3440567
+    },
+    {
+      "type": "node",
+      "id": 4065062539,
+      "lat": 6.8358528,
+      "lon": 1.3438153
+    },
+    {
+      "type": "node",
+      "id": 4065062540,
+      "lat": 6.8356025,
+      "lon": 1.3437349
+    },
+    {
+      "type": "node",
+      "id": 4065062541,
+      "lat": 6.835432,
+      "lon": 1.3437992
+    },
+    {
+      "type": "node",
+      "id": 4065062542,
+      "lat": 6.8353148,
+      "lon": 1.3437939
+    },
+    {
+      "type": "node",
+      "id": 4065062543,
+      "lat": 6.8352243,
+      "lon": 1.3437831
+    },
+    {
+      "type": "node",
+      "id": 4065062544,
+      "lat": 6.8351763,
+      "lon": 1.3439494
+    },
+    {
+      "type": "node",
+      "id": 4065062545,
+      "lat": 6.8351604,
+      "lon": 1.3440514
+    },
+    {
+      "type": "node",
+      "id": 4065062547,
+      "lat": 6.8350112,
+      "lon": 1.3446093
+    },
+    {
+      "type": "node",
+      "id": 4065062549,
+      "lat": 6.8350485,
+      "lon": 1.3447541
+    },
+    {
+      "type": "node",
+      "id": 4065062550,
+      "lat": 6.8350485,
+      "lon": 1.3449097
+    },
+    {
+      "type": "node",
+      "id": 4065062551,
+      "lat": 6.8352136,
+      "lon": 1.3447434
+    },
+    {
+      "type": "node",
+      "id": 4065062552,
+      "lat": 6.8353601,
+      "lon": 1.3447186
+    },
+    {
+      "type": "node",
+      "id": 4065062553,
+      "lat": 6.8355172,
+      "lon": 1.3446522
+    },
+    {
+      "type": "node",
+      "id": 9820663017,
+      "lat": 6.9643499,
+      "lon": 1.295851
+    },
+    {
+      "type": "node",
+      "id": 9820663018,
+      "lat": 6.9642647,
+      "lon": 1.2960188
+    },
+    {
+      "type": "node",
+      "id": 9820663019,
+      "lat": 6.9640351,
+      "lon": 1.2962593
+    },
+    {
+      "type": "node",
+      "id": 9820663020,
+      "lat": 6.9639394,
+      "lon": 1.2963373
+    },
+    {
+      "type": "node",
+      "id": 9820663021,
+      "lat": 6.9638135,
+      "lon": 1.2962422
+    },
+    {
+      "type": "node",
+      "id": 9820663022,
+      "lat": 6.9636836,
+      "lon": 1.2960981
+    },
+    {
+      "type": "node",
+      "id": 9820663023,
+      "lat": 6.9635498,
+      "lon": 1.2959435
+    },
+    {
+      "type": "node",
+      "id": 9820663024,
+      "lat": 6.9635655,
+      "lon": 1.2958523
+    },
+    {
+      "type": "node",
+      "id": 9820663025,
+      "lat": 6.9638213,
+      "lon": 1.2956343
+    },
+    {
+      "type": "node",
+      "id": 9820663026,
+      "lat": 6.9641125,
+      "lon": 1.2955471
+    },
+    {
+      "type": "node",
+      "id": 9820663027,
+      "lat": 6.9641978,
+      "lon": 1.2955127
+    },
+    {
+      "type": "node",
+      "id": 4508435275,
+      "lat": 7.1721587,
+      "lon": 0.7474866
+    },
+    {
+      "type": "node",
+      "id": 4508435276,
+      "lat": 7.1721121,
+      "lon": 0.747555
+    },
+    {
+      "type": "node",
+      "id": 4508435277,
+      "lat": 7.1720269,
+      "lon": 0.7474826
+    },
+    {
+      "type": "node",
+      "id": 4508435278,
+      "lat": 7.1720722,
+      "lon": 0.7474249
+    },
+    {
+      "type": "node",
+      "id": 4378037682,
+      "lat": 7.2812882,
+      "lon": 0.7077156
+    },
+    {
+      "type": "node",
+      "id": 4378037695,
+      "lat": 7.2814657,
+      "lon": 0.7077216
+    },
+    {
+      "type": "node",
+      "id": 4378037657,
+      "lat": 7.2811571,
+      "lon": 0.708136
+    },
+    {
+      "type": "node",
+      "id": 4378037658,
+      "lat": 7.2811602,
+      "lon": 0.7083125
+    },
+    {
+      "type": "node",
+      "id": 4378037660,
+      "lat": 7.2811797,
+      "lon": 0.7078866
+    },
+    {
+      "type": "node",
+      "id": 4378037670,
+      "lat": 7.2812337,
+      "lon": 0.708398
+    },
+    {
+      "type": "node",
+      "id": 4378037677,
+      "lat": 7.2812729,
+      "lon": 0.7078886
+    },
+    {
+      "type": "node",
+      "id": 4378037702,
+      "lat": 7.2815316,
+      "lon": 0.7084599
+    },
+    {
+      "type": "node",
+      "id": 7821250166,
+      "lat": 7.1781774,
+      "lon": 1.1562493
+    },
+    {
+      "type": "node",
+      "id": 7821250167,
+      "lat": 7.1781668,
+      "lon": 1.1564559
+    },
+    {
+      "type": "node",
+      "id": 7821250168,
+      "lat": 7.1784169,
+      "lon": 1.1566007
+    },
+    {
+      "type": "node",
+      "id": 7821250169,
+      "lat": 7.1789359,
+      "lon": 1.156716
+    },
+    {
+      "type": "node",
+      "id": 7821250170,
+      "lat": 7.1791301,
+      "lon": 1.1565176
+    },
+    {
+      "type": "node",
+      "id": 7821250175,
+      "lat": 7.1787123,
+      "lon": 1.1548627
+    },
+    {
+      "type": "node",
+      "id": 7833085321,
+      "lat": 7.1794495,
+      "lon": 1.1563164
+    },
+    {
+      "type": "node",
+      "id": 7833085327,
+      "lat": 7.1789279,
+      "lon": 1.1549056
+    },
+    {
+      "type": "node",
+      "id": 7821250171,
+      "lat": 7.1798486,
+      "lon": 1.1561072
+    },
+    {
+      "type": "node",
+      "id": 7821250172,
+      "lat": 7.1800269,
+      "lon": 1.1556941
+    },
+    {
+      "type": "node",
+      "id": 7833085322,
+      "lat": 7.1796278,
+      "lon": 1.1561742
+    },
+    {
+      "type": "node",
+      "id": 7833085323,
+      "lat": 7.1800669,
+      "lon": 1.1555117
+    },
+    {
+      "type": "node",
+      "id": 7833085324,
+      "lat": 7.1799711,
+      "lon": 1.1553213
+    },
+    {
+      "type": "node",
+      "id": 7833085325,
+      "lat": 7.1797076,
+      "lon": 1.1552355
+    },
+    {
+      "type": "node",
+      "id": 7833085326,
+      "lat": 7.1796703,
+      "lon": 1.1551684
+    },
+    {
+      "type": "node",
+      "id": 3577695760,
+      "lat": 7.4878658,
+      "lon": 0.9399665
+    },
+    {
+      "type": "node",
+      "id": 3577695765,
+      "lat": 7.4879159,
+      "lon": 0.9397669
+    },
+    {
+      "type": "node",
+      "id": 3577695773,
+      "lat": 7.4879599,
+      "lon": 0.9395369
+    },
+    {
+      "type": "node",
+      "id": 3577695777,
+      "lat": 7.4879847,
+      "lon": 0.9393902
+    },
+    {
+      "type": "node",
+      "id": 3577695894,
+      "lat": 7.4880825,
+      "lon": 0.9399931
+    },
+    {
+      "type": "node",
+      "id": 3577695903,
+      "lat": 7.4881599,
+      "lon": 0.9394141
+    },
+    {
+      "type": "node",
+      "id": 3577695916,
+      "lat": 7.4882398,
+      "lon": 0.940009
+    },
+    {
+      "type": "node",
+      "id": 3577695917,
+      "lat": 7.4882508,
+      "lon": 0.9399839
+    },
+    {
+      "type": "node",
+      "id": 3577695922,
+      "lat": 7.4882939,
+      "lon": 0.9394513
+    },
+    {
+      "type": "node",
+      "id": 3577695927,
+      "lat": 7.488319,
+      "lon": 0.9399862
+    },
+    {
+      "type": "node",
+      "id": 3577695944,
+      "lat": 7.4883644,
+      "lon": 0.9395026
+    },
+    {
+      "type": "node",
+      "id": 3577695959,
+      "lat": 7.4884412,
+      "lon": 0.9395058
+    },
+    {
+      "type": "node",
+      "id": 3577695960,
+      "lat": 7.4884467,
+      "lon": 0.9395801
+    },
+    {
+      "type": "node",
+      "id": 3577695965,
+      "lat": 7.4884804,
+      "lon": 0.9395817
+    },
+    {
+      "type": "node",
+      "id": 3577695966,
+      "lat": 7.4884882,
+      "lon": 0.9397689
+    },
+    {
+      "type": "node",
+      "id": 3577695970,
+      "lat": 7.4885094,
+      "lon": 0.9399886
+    },
+    {
+      "type": "node",
+      "id": 3577695981,
+      "lat": 7.488612,
+      "lon": 0.9399633
+    },
+    {
+      "type": "node",
+      "id": 2247271672,
+      "lat": 7.5315633,
+      "lon": 1.1218653
+    },
+    {
+      "type": "node",
+      "id": 2247271685,
+      "lat": 7.5317119,
+      "lon": 1.121801
+    },
+    {
+      "type": "node",
+      "id": 2247271690,
+      "lat": 7.5317125,
+      "lon": 1.1218563
+    },
+    {
+      "type": "node",
+      "id": 2247271695,
+      "lat": 7.5318171,
+      "lon": 1.121625
+    },
+    {
+      "type": "node",
+      "id": 2247271697,
+      "lat": 7.5318225,
+      "lon": 1.1215968
+    },
+    {
+      "type": "node",
+      "id": 2247271701,
+      "lat": 7.5318449,
+      "lon": 1.121583
+    },
+    {
+      "type": "node",
+      "id": 2247271704,
+      "lat": 7.5318645,
+      "lon": 1.1219382
+    },
+    {
+      "type": "node",
+      "id": 2247271706,
+      "lat": 7.5319513,
+      "lon": 1.1220454
+    },
+    {
+      "type": "node",
+      "id": 2247271714,
+      "lat": 7.5322391,
+      "lon": 1.1215491
+    },
+    {
+      "type": "node",
+      "id": 2247271715,
+      "lat": 7.5322594,
+      "lon": 1.1215602
+    },
+    {
+      "type": "node",
+      "id": 2247271718,
+      "lat": 7.5322702,
+      "lon": 1.1215811
+    },
+    {
+      "type": "node",
+      "id": 2247271732,
+      "lat": 7.5326741,
+      "lon": 1.1218984
+    },
+    {
+      "type": "node",
+      "id": 2247304706,
+      "lat": 7.5320211,
+      "lon": 1.1220837
+    },
+    {
+      "type": "node",
+      "id": 2249365239,
+      "lat": 7.5316901,
+      "lon": 1.1218011
+    },
+    {
+      "type": "node",
+      "id": 2249365241,
+      "lat": 7.5316906,
+      "lon": 1.1217599
+    },
+    {
+      "type": "node",
+      "id": 2249365248,
+      "lat": 7.5320485,
+      "lon": 1.1220972
+    },
+    {
+      "type": "node",
+      "id": 2249365252,
+      "lat": 7.5321087,
+      "lon": 1.1220556
+    },
+    {
+      "type": "node",
+      "id": 2249365257,
+      "lat": 7.5321845,
+      "lon": 1.1220196
+    },
+    {
+      "type": "node",
+      "id": 2249365262,
+      "lat": 7.5322987,
+      "lon": 1.1216164
+    },
+    {
+      "type": "node",
+      "id": 2249365264,
+      "lat": 7.5322759,
+      "lon": 1.1219848
+    },
+    {
+      "type": "node",
+      "id": 2249365268,
+      "lat": 7.5324526,
+      "lon": 1.1219827
+    },
+    {
+      "type": "node",
+      "id": 2249365284,
+      "lat": 7.5324547,
+      "lon": 1.1219264
+    },
+    {
+      "type": "node",
+      "id": 2249365290,
+      "lat": 7.5326046,
+      "lon": 1.1219323
+    },
+    {
+      "type": "node",
+      "id": 2249365292,
+      "lat": 7.5326712,
+      "lon": 1.1219359
+    },
+    {
+      "type": "node",
+      "id": 2249365294,
+      "lat": 7.5326382,
+      "lon": 1.1218115
+    },
+    {
+      "type": "node",
+      "id": 2249365297,
+      "lat": 7.5326163,
+      "lon": 1.1216699
+    },
+    {
+      "type": "node",
+      "id": 2249365299,
+      "lat": 7.5326807,
+      "lon": 1.1218125
+    },
+    {
+      "type": "node",
+      "id": 2320062834,
+      "lat": 7.5321512,
+      "lon": 1.1220354
+    },
+    {
+      "type": "node",
+      "id": 2320062884,
+      "lat": 7.5323756,
+      "lon": 1.1219828
+    },
+    {
+      "type": "node",
+      "id": 2320062891,
+      "lat": 7.5324301,
+      "lon": 1.1219837
+    },
+    {
+      "type": "node",
+      "id": 4646264979,
+      "lat": 7.5315433,
+      "lon": 1.1219146
+    },
+    {
+      "type": "node",
+      "id": 4646264980,
+      "lat": 7.5315477,
+      "lon": 1.1219159
+    },
+    {
+      "type": "node",
+      "id": 4646264981,
+      "lat": 7.5315987,
+      "lon": 1.1219315
+    },
+    {
+      "type": "node",
+      "id": 4646264983,
+      "lat": 7.5316022,
+      "lon": 1.1219459
+    },
+    {
+      "type": "node",
+      "id": 4646264984,
+      "lat": 7.5316653,
+      "lon": 1.1219689
+    },
+    {
+      "type": "node",
+      "id": 4646264985,
+      "lat": 7.5316793,
+      "lon": 1.1219752
+    },
+    {
+      "type": "node",
+      "id": 4646264987,
+      "lat": 7.5317702,
+      "lon": 1.1219959
+    },
+    {
+      "type": "node",
+      "id": 4646265689,
+      "lat": 7.5318016,
+      "lon": 1.1219989
+    },
+    {
+      "type": "node",
+      "id": 4646265690,
+      "lat": 7.5318197,
+      "lon": 1.1220031
+    },
+    {
+      "type": "node",
+      "id": 4646265693,
+      "lat": 7.5319739,
+      "lon": 1.1220024
+    },
+    {
+      "type": "node",
+      "id": 10110953266,
+      "lat": 7.5317795,
+      "lon": 1.1217599
+    },
+    {
+      "type": "node",
+      "id": 2660527317,
+      "lat": 7.5170376,
+      "lon": 1.1467994
+    },
+    {
+      "type": "node",
+      "id": 2660527323,
+      "lat": 7.5170741,
+      "lon": 1.1468104
+    },
+    {
+      "type": "node",
+      "id": 2660527203,
+      "lat": 7.5166825,
+      "lon": 1.147996
+    },
+    {
+      "type": "node",
+      "id": 2660527217,
+      "lat": 7.516719,
+      "lon": 1.1480069
+    },
+    {
+      "type": "node",
+      "id": 2660527235,
+      "lat": 7.5167424,
+      "lon": 1.1477664
+    },
+    {
+      "type": "node",
+      "id": 2660527238,
+      "lat": 7.5167464,
+      "lon": 1.1477529
+    },
+    {
+      "type": "node",
+      "id": 2660527252,
+      "lat": 7.5167789,
+      "lon": 1.1477774
+    },
+    {
+      "type": "node",
+      "id": 2660527254,
+      "lat": 7.5167829,
+      "lon": 1.1477638
+    },
+    {
+      "type": "node",
+      "id": 2660527256,
+      "lat": 7.5168126,
+      "lon": 1.1475282
+    },
+    {
+      "type": "node",
+      "id": 2660527258,
+      "lat": 7.5168176,
+      "lon": 1.1475113
+    },
+    {
+      "type": "node",
+      "id": 2660527259,
+      "lat": 7.5168491,
+      "lon": 1.1475392
+    },
+    {
+      "type": "node",
+      "id": 2660527260,
+      "lat": 7.5168541,
+      "lon": 1.1475222
+    },
+    {
+      "type": "node",
+      "id": 2660527263,
+      "lat": 7.5168832,
+      "lon": 1.1472889
+    },
+    {
+      "type": "node",
+      "id": 2660527265,
+      "lat": 7.5168895,
+      "lon": 1.1472677
+    },
+    {
+      "type": "node",
+      "id": 2660527267,
+      "lat": 7.5169197,
+      "lon": 1.1472998
+    },
+    {
+      "type": "node",
+      "id": 2660527269,
+      "lat": 7.516926,
+      "lon": 1.1472786
+    },
+    {
+      "type": "node",
+      "id": 2660527286,
+      "lat": 7.5169626,
+      "lon": 1.147038
+    },
+    {
+      "type": "node",
+      "id": 2660527295,
+      "lat": 7.5169732,
+      "lon": 1.147002
+    },
+    {
+      "type": "node",
+      "id": 2660527311,
+      "lat": 7.5169991,
+      "lon": 1.1470489
+    },
+    {
+      "type": "node",
+      "id": 2660527313,
+      "lat": 7.5170097,
+      "lon": 1.1470129
+    },
+    {
+      "type": "node",
+      "id": 9363845768,
+      "lat": 7.5107666,
+      "lon": 1.1561026
+    },
+    {
+      "type": "node",
+      "id": 9363845769,
+      "lat": 7.5100487,
+      "lon": 1.1577361
+    },
+    {
+      "type": "node",
+      "id": 9363845770,
+      "lat": 7.5085489,
+      "lon": 1.157205
+    },
+    {
+      "type": "node",
+      "id": 9363845771,
+      "lat": 7.5086951,
+      "lon": 1.1566954
+    },
+    {
+      "type": "node",
+      "id": 9363845772,
+      "lat": 7.5087643,
+      "lon": 1.1564031
+    },
+    {
+      "type": "node",
+      "id": 9363845773,
+      "lat": 7.5088972,
+      "lon": 1.1561026
+    },
+    {
+      "type": "node",
+      "id": 9363845774,
+      "lat": 7.5088839,
+      "lon": 1.1559444
+    },
+    {
+      "type": "node",
+      "id": 9363845775,
+      "lat": 7.5100433,
+      "lon": 1.1559283
+    },
+    {
+      "type": "node",
+      "id": 9702928526,
+      "lat": 7.4087257,
+      "lon": 1.4115236
+    },
+    {
+      "type": "node",
+      "id": 9702928527,
+      "lat": 7.4079942,
+      "lon": 1.4114539
+    },
+    {
+      "type": "node",
+      "id": 9702928528,
+      "lat": 7.4079118,
+      "lon": 1.4112983
+    },
+    {
+      "type": "node",
+      "id": 9702928529,
+      "lat": 7.4079862,
+      "lon": 1.4105366
+    },
+    {
+      "type": "node",
+      "id": 9702928525,
+      "lat": 7.4088587,
+      "lon": 1.4106922
+    },
+    {
+      "type": "node",
+      "id": 9437288446,
+      "lat": 7.4733211,
+      "lon": 1.3276703
+    },
+    {
+      "type": "node",
+      "id": 9437288447,
+      "lat": 7.4730073,
+      "lon": 1.3283515
+    },
+    {
+      "type": "node",
+      "id": 9437288448,
+      "lat": 7.4714914,
+      "lon": 1.3277132
+    },
+    {
+      "type": "node",
+      "id": 9437288449,
+      "lat": 7.4718904,
+      "lon": 1.3268844
+    },
+    {
+      "type": "node",
+      "id": 9437288450,
+      "lat": 7.4725472,
+      "lon": 1.327276
+    },
+    {
+      "type": "node",
+      "id": 9437288451,
+      "lat": 7.4730499,
+      "lon": 1.3274396
+    },
+    {
+      "type": "node",
+      "id": 9173213700,
+      "lat": 7.8521904,
+      "lon": 1.3032156
+    },
+    {
+      "type": "node",
+      "id": 9173213701,
+      "lat": 7.852124,
+      "lon": 1.3033444
+    },
+    {
+      "type": "node",
+      "id": 9173213702,
+      "lat": 7.8519911,
+      "lon": 1.3034677
+    },
+    {
+      "type": "node",
+      "id": 9173213703,
+      "lat": 7.8519327,
+      "lon": 1.3037413
+    },
+    {
+      "type": "node",
+      "id": 9173213704,
+      "lat": 7.8517626,
+      "lon": 1.3039505
+    },
+    {
+      "type": "node",
+      "id": 9173213705,
+      "lat": 7.8515155,
+      "lon": 1.3039666
+    },
+    {
+      "type": "node",
+      "id": 9173213706,
+      "lat": 7.8512179,
+      "lon": 1.3039345
+    },
+    {
+      "type": "node",
+      "id": 9173213707,
+      "lat": 7.8509496,
+      "lon": 1.3036635
+    },
+    {
+      "type": "node",
+      "id": 9173213708,
+      "lat": 7.8508273,
+      "lon": 1.3030601
+    },
+    {
+      "type": "node",
+      "id": 9173213709,
+      "lat": 7.8515182,
+      "lon": 1.3030064
+    },
+    {
+      "type": "node",
+      "id": 9173213710,
+      "lat": 7.8520974,
+      "lon": 1.3030037
+    },
+    {
+      "type": "node",
+      "id": 8318697643,
+      "lat": 8.6417779,
+      "lon": 0.4489669
+    },
+    {
+      "type": "node",
+      "id": 8318697644,
+      "lat": 8.6418574,
+      "lon": 0.448814
+    },
+    {
+      "type": "node",
+      "id": 8318697645,
+      "lat": 8.6420828,
+      "lon": 0.4485753
+    },
+    {
+      "type": "node",
+      "id": 8318697646,
+      "lat": 8.6423692,
+      "lon": 0.4482105
+    },
+    {
+      "type": "node",
+      "id": 8318697647,
+      "lat": 8.6425098,
+      "lon": 0.447945
+    },
+    {
+      "type": "node",
+      "id": 8318697648,
+      "lat": 8.6429234,
+      "lon": 0.4478914
+    },
+    {
+      "type": "node",
+      "id": 8318697649,
+      "lat": 8.6425283,
+      "lon": 0.4487148
+    },
+    {
+      "type": "node",
+      "id": 8318697650,
+      "lat": 8.6422923,
+      "lon": 0.4491815
+    },
+    {
+      "type": "node",
+      "id": 3707296817,
+      "lat": 8.3152889,
+      "lon": 0.9905926
+    },
+    {
+      "type": "node",
+      "id": 3707296818,
+      "lat": 8.3153534,
+      "lon": 0.9906567
+    },
+    {
+      "type": "node",
+      "id": 3707296820,
+      "lat": 8.3161602,
+      "lon": 0.9896964
+    },
+    {
+      "type": "node",
+      "id": 3707296823,
+      "lat": 8.3162047,
+      "lon": 0.9915021
+    },
+    {
+      "type": "node",
+      "id": 3707297526,
+      "lat": 8.317076,
+      "lon": 0.9906059
+    },
+    {
+      "type": "node",
+      "id": 8613263399,
+      "lat": 8.3053444,
+      "lon": 1.0778967
+    },
+    {
+      "type": "node",
+      "id": 8613263400,
+      "lat": 8.305225,
+      "lon": 1.0780093
+    },
+    {
+      "type": "node",
+      "id": 8613263401,
+      "lat": 8.3049835,
+      "lon": 1.0782105
+    },
+    {
+      "type": "node",
+      "id": 8613263402,
+      "lat": 8.3045031,
+      "lon": 1.0783607
+    },
+    {
+      "type": "node",
+      "id": 8613263403,
+      "lat": 8.304511,
+      "lon": 1.0786182
+    },
+    {
+      "type": "node",
+      "id": 8613263404,
+      "lat": 8.3045986,
+      "lon": 1.078822
+    },
+    {
+      "type": "node",
+      "id": 8613263405,
+      "lat": 8.3051586,
+      "lon": 1.0786128
+    },
+    {
+      "type": "node",
+      "id": 8613263406,
+      "lat": 8.3053975,
+      "lon": 1.0785431
+    },
+    {
+      "type": "node",
+      "id": 8613263407,
+      "lat": 8.3057054,
+      "lon": 1.0784411
+    },
+    {
+      "type": "node",
+      "id": 8613263408,
+      "lat": 8.3057213,
+      "lon": 1.0783043
+    },
+    {
+      "type": "node",
+      "id": 8613263409,
+      "lat": 8.3056735,
+      "lon": 1.0781836
+    },
+    {
+      "type": "node",
+      "id": 8613263410,
+      "lat": 8.3056258,
+      "lon": 1.0778564
+    },
+    {
+      "type": "node",
+      "id": 5433611953,
+      "lat": 8.6052829,
+      "lon": 1.0021771
+    },
+    {
+      "type": "node",
+      "id": 5433611954,
+      "lat": 8.6053171,
+      "lon": 1.0017843
+    },
+    {
+      "type": "node",
+      "id": 5433611955,
+      "lat": 8.6056603,
+      "lon": 1.0019403
+    },
+    {
+      "type": "node",
+      "id": 5433611956,
+      "lat": 8.6056152,
+      "lon": 1.002157
+    },
+    {
+      "type": "node",
+      "id": 5433611957,
+      "lat": 8.6054973,
+      "lon": 1.0021237
+    },
+    {
+      "type": "node",
+      "id": 5433611958,
+      "lat": 8.6054699,
+      "lon": 1.0022291
+    },
+    {
+      "type": "node",
+      "id": 3869453602,
+      "lat": 8.4715245,
+      "lon": 1.3202896
+    },
+    {
+      "type": "node",
+      "id": 3869453606,
+      "lat": 8.4715485,
+      "lon": 1.3201299
+    },
+    {
+      "type": "node",
+      "id": 3869453607,
+      "lat": 8.4715767,
+      "lon": 1.3203823
+    },
+    {
+      "type": "node",
+      "id": 3869453616,
+      "lat": 8.4717968,
+      "lon": 1.3204835
+    },
+    {
+      "type": "node",
+      "id": 3869453617,
+      "lat": 8.4718419,
+      "lon": 1.3202625
+    },
+    {
+      "type": "node",
+      "id": 3870129162,
+      "lat": 8.4794208,
+      "lon": 1.3299811
+    },
+    {
+      "type": "node",
+      "id": 3870129220,
+      "lat": 8.4795906,
+      "lon": 1.3301834
+    },
+    {
+      "type": "node",
+      "id": 3870129251,
+      "lat": 8.4796748,
+      "lon": 1.329703
+    },
+    {
+      "type": "node",
+      "id": 3870129268,
+      "lat": 8.4797498,
+      "lon": 1.3301834
+    },
+    {
+      "type": "node",
+      "id": 3870129309,
+      "lat": 8.4799051,
+      "lon": 1.3299798
+    },
+    {
+      "type": "node",
+      "id": 9506626270,
+      "lat": 8.5163042,
+      "lon": 1.4024162
+    },
+    {
+      "type": "node",
+      "id": 9506626271,
+      "lat": 8.5160086,
+      "lon": 1.4022434
+    },
+    {
+      "type": "node",
+      "id": 9506626272,
+      "lat": 8.5161079,
+      "lon": 1.4019539
+    },
+    {
+      "type": "node",
+      "id": 9506626266,
+      "lat": 8.5170616,
+      "lon": 1.4013118
+    },
+    {
+      "type": "node",
+      "id": 9506626267,
+      "lat": 8.5170385,
+      "lon": 1.4018862
+    },
+    {
+      "type": "node",
+      "id": 9506626268,
+      "lat": 8.5170893,
+      "lon": 1.4021454
+    },
+    {
+      "type": "node",
+      "id": 9506626273,
+      "lat": 8.5164959,
+      "lon": 1.4010362
+    },
+    {
+      "type": "node",
+      "id": 9506626269,
+      "lat": 8.5168122,
+      "lon": 1.402526
+    },
+    {
+      "type": "node",
+      "id": 9000778392,
+      "lat": 8.7491799,
+      "lon": 1.593428
+    },
+    {
+      "type": "node",
+      "id": 9000778393,
+      "lat": 8.7486179,
+      "lon": 1.593385
+    },
+    {
+      "type": "node",
+      "id": 9000778394,
+      "lat": 8.7486312,
+      "lon": 1.5931222
+    },
+    {
+      "type": "node",
+      "id": 9000778395,
+      "lat": 8.7486975,
+      "lon": 1.5926877
+    },
+    {
+      "type": "node",
+      "id": 9000778396,
+      "lat": 8.7488048,
+      "lon": 1.5926085
+    },
+    {
+      "type": "node",
+      "id": 9000778397,
+      "lat": 8.748883,
+      "lon": 1.5925924
+    },
+    {
+      "type": "node",
+      "id": 9000778398,
+      "lat": 8.7489765,
+      "lon": 1.5925857
+    },
+    {
+      "type": "node",
+      "id": 9000778399,
+      "lat": 8.7493708,
+      "lon": 1.5926126
+    },
+    {
+      "type": "node",
+      "id": 9000778400,
+      "lat": 8.7496439,
+      "lon": 1.5926233
+    },
+    {
+      "type": "node",
+      "id": 9000778401,
+      "lat": 8.7497711,
+      "lon": 1.5925831
+    },
+    {
+      "type": "node",
+      "id": 9000778402,
+      "lat": 8.7497738,
+      "lon": 1.5928003
+    },
+    {
+      "type": "node",
+      "id": 9000778403,
+      "lat": 8.7497472,
+      "lon": 1.5931892
+    },
+    {
+      "type": "node",
+      "id": 9000778404,
+      "lat": 8.7496684,
+      "lon": 1.5934816
+    },
+    {
+      "type": "node",
+      "id": 2906555824,
+      "lat": 9.2625891,
+      "lon": 0.7793956
+    },
+    {
+      "type": "node",
+      "id": 2906555825,
+      "lat": 9.2626258,
+      "lon": 0.779007
+    },
+    {
+      "type": "node",
+      "id": 2906555842,
+      "lat": 9.2634777,
+      "lon": 0.7794816
+    },
+    {
+      "type": "node",
+      "id": 2906555843,
+      "lat": 9.2635143,
+      "lon": 0.7790931
+    },
+    {
+      "type": "node",
+      "id": 9366244378,
+      "lat": 9.2584437,
+      "lon": 0.7867964
+    },
+    {
+      "type": "node",
+      "id": 9366244379,
+      "lat": 9.2592961,
+      "lon": 0.7883816
+    },
+    {
+      "type": "node",
+      "id": 9366244380,
+      "lat": 9.2590049,
+      "lon": 0.7884487
+    },
+    {
+      "type": "node",
+      "id": 9366244381,
+      "lat": 9.2585072,
+      "lon": 0.788725
+    },
+    {
+      "type": "node",
+      "id": 9366244382,
+      "lat": 9.258044,
+      "lon": 0.7888913
+    },
+    {
+      "type": "node",
+      "id": 9366244383,
+      "lat": 9.2577131,
+      "lon": 0.7888457
+    },
+    {
+      "type": "node",
+      "id": 9366244384,
+      "lat": 9.2574086,
+      "lon": 0.7883468
+    },
+    {
+      "type": "node",
+      "id": 9366244385,
+      "lat": 9.2572736,
+      "lon": 0.7879096
+    },
+    {
+      "type": "node",
+      "id": 9366244386,
+      "lat": 9.2573689,
+      "lon": 0.7873973
+    },
+    {
+      "type": "node",
+      "id": 13533245148,
+      "lat": 9.5220892,
+      "lon": 0.6204117
+    },
+    {
+      "type": "node",
+      "id": 13533245149,
+      "lat": 9.5223907,
+      "lon": 0.6209857
+    },
+    {
+      "type": "node",
+      "id": 13533245150,
+      "lat": 9.5216025,
+      "lon": 0.6211628
+    },
+    {
+      "type": "node",
+      "id": 13533245151,
+      "lat": 9.5214649,
+      "lon": 0.6207873
+    },
+    {
+      "type": "node",
+      "id": 13533245152,
+      "lat": 9.5216712,
+      "lon": 0.620401
+    },
+    {
+      "type": "node",
+      "id": 3799364096,
+      "lat": 8.9861953,
+      "lon": 1.1396159
+    },
+    {
+      "type": "node",
+      "id": 3799364097,
+      "lat": 8.9857369,
+      "lon": 1.1395834
+    },
+    {
+      "type": "node",
+      "id": 3799364098,
+      "lat": 8.9856983,
+      "lon": 1.1400409
+    },
+    {
+      "type": "node",
+      "id": 3799364099,
+      "lat": 8.9861534,
+      "lon": 1.1400686
+    },
+    {
+      "type": "node",
+      "id": 4494512458,
+      "lat": 8.961777,
+      "lon": 1.2970602
+    },
+    {
+      "type": "node",
+      "id": 4494512459,
+      "lat": 8.9618391,
+      "lon": 1.2974278
+    },
+    {
+      "type": "node",
+      "id": 4494512460,
+      "lat": 8.96127,
+      "lon": 1.2975139
+    },
+    {
+      "type": "node",
+      "id": 4494512461,
+      "lat": 8.9612013,
+      "lon": 1.2971099
+    },
+    {
+      "type": "node",
+      "id": 9001698622,
+      "lat": 9.0285112,
+      "lon": 1.4153382
+    },
+    {
+      "type": "node",
+      "id": 9001698624,
+      "lat": 9.028008,
+      "lon": 1.4151367
+    },
+    {
+      "type": "node",
+      "id": 9001698626,
+      "lat": 9.0281938,
+      "lon": 1.4142222
+    },
+    {
+      "type": "node",
+      "id": 9001698627,
+      "lat": 9.0282313,
+      "lon": 1.4142219
+    },
+    {
+      "type": "node",
+      "id": 9001698628,
+      "lat": 9.0288289,
+      "lon": 1.4142525
+    },
+    {
+      "type": "node",
+      "id": 9001698629,
+      "lat": 9.0287982,
+      "lon": 1.4149351
+    },
+    {
+      "type": "node",
+      "id": 9001698630,
+      "lat": 9.0288058,
+      "lon": 1.4152554
+    },
+    {
+      "type": "node",
+      "id": 9507988930,
+      "lat": 9.0280442,
+      "lon": 1.4147271
+    },
+    {
+      "type": "node",
+      "id": 10632869584,
+      "lat": 9.0279954,
+      "lon": 1.4155337
+    },
+    {
+      "type": "node",
+      "id": 9507988929,
+      "lat": 9.0284657,
+      "lon": 1.4155992
+    },
+    {
+      "type": "node",
+      "id": 11279221555,
+      "lat": 8.8684709,
+      "lon": 1.6244231
+    },
+    {
+      "type": "node",
+      "id": 11279221556,
+      "lat": 8.868377,
+      "lon": 1.6235758
+    },
+    {
+      "type": "node",
+      "id": 11279221557,
+      "lat": 8.8694648,
+      "lon": 1.6234521
+    },
+    {
+      "type": "node",
+      "id": 11279221558,
+      "lat": 8.8695532,
+      "lon": 1.6242886
+    },
+    {
+      "type": "node",
+      "id": 7536840762,
+      "lat": 9.0107962,
+      "lon": 1.5882701
+    },
+    {
+      "type": "node",
+      "id": 7536840763,
+      "lat": 9.0110426,
+      "lon": 1.5885383
+    },
+    {
+      "type": "node",
+      "id": 7536840764,
+      "lat": 9.0115751,
+      "lon": 1.5886429
+    },
+    {
+      "type": "node",
+      "id": 7536840765,
+      "lat": 9.0116651,
+      "lon": 1.5879723
+    },
+    {
+      "type": "node",
+      "id": 9365495610,
+      "lat": 9.3601529,
+      "lon": 1.2450587
+    },
+    {
+      "type": "node",
+      "id": 9365495611,
+      "lat": 9.3611903,
+      "lon": 1.2444954
+    },
+    {
+      "type": "node",
+      "id": 9365495609,
+      "lat": 9.3605578,
+      "lon": 1.246035
+    },
+    {
+      "type": "node",
+      "id": 9365495608,
+      "lat": 9.3620319,
+      "lon": 1.246102
+    },
+    {
+      "type": "node",
+      "id": 13483575833,
+      "lat": 9.538533,
+      "lon": 1.1609861
+    },
+    {
+      "type": "node",
+      "id": 13483575834,
+      "lat": 9.5385079,
+      "lon": 1.1609673
+    },
+    {
+      "type": "node",
+      "id": 13483575835,
+      "lat": 9.5384629,
+      "lon": 1.1609633
+    },
+    {
+      "type": "node",
+      "id": 13483575836,
+      "lat": 9.5384232,
+      "lon": 1.1609741
+    },
+    {
+      "type": "node",
+      "id": 13483575837,
+      "lat": 9.5384193,
+      "lon": 1.1610103
+    },
+    {
+      "type": "node",
+      "id": 13483575838,
+      "lat": 9.5384246,
+      "lon": 1.1610478
+    },
+    {
+      "type": "node",
+      "id": 13483575839,
+      "lat": 9.5384325,
+      "lon": 1.1610867
+    },
+    {
+      "type": "node",
+      "id": 13483575840,
+      "lat": 9.5384298,
+      "lon": 1.1611283
+    },
+    {
+      "type": "node",
+      "id": 13483575841,
+      "lat": 9.5384179,
+      "lon": 1.1611471
+    },
+    {
+      "type": "node",
+      "id": 13483575842,
+      "lat": 9.5383796,
+      "lon": 1.1611672
+    },
+    {
+      "type": "node",
+      "id": 13483575843,
+      "lat": 9.5383426,
+      "lon": 1.161194
+    },
+    {
+      "type": "node",
+      "id": 13483575844,
+      "lat": 9.5383254,
+      "lon": 1.1612181
+    },
+    {
+      "type": "node",
+      "id": 13483575845,
+      "lat": 9.5383121,
+      "lon": 1.1612745
+    },
+    {
+      "type": "node",
+      "id": 13483575846,
+      "lat": 9.5382883,
+      "lon": 1.1612999
+    },
+    {
+      "type": "node",
+      "id": 13483575847,
+      "lat": 9.5382539,
+      "lon": 1.1613107
+    },
+    {
+      "type": "node",
+      "id": 13483575848,
+      "lat": 9.5382077,
+      "lon": 1.161304
+    },
+    {
+      "type": "node",
+      "id": 13483575849,
+      "lat": 9.5381667,
+      "lon": 1.1612745
+    },
+    {
+      "type": "node",
+      "id": 13483575850,
+      "lat": 9.5381548,
+      "lon": 1.1612423
+    },
+    {
+      "type": "node",
+      "id": 13483575851,
+      "lat": 9.5381349,
+      "lon": 1.1611953
+    },
+    {
+      "type": "node",
+      "id": 13483575852,
+      "lat": 9.5380635,
+      "lon": 1.1611967
+    },
+    {
+      "type": "node",
+      "id": 13483575853,
+      "lat": 9.5380437,
+      "lon": 1.1611645
+    },
+    {
+      "type": "node",
+      "id": 13483575854,
+      "lat": 9.5380516,
+      "lon": 1.1611162
+    },
+    {
+      "type": "node",
+      "id": 13483575855,
+      "lat": 9.5380609,
+      "lon": 1.1610585
+    },
+    {
+      "type": "node",
+      "id": 13483575856,
+      "lat": 9.5380437,
+      "lon": 1.1609834
+    },
+    {
+      "type": "node",
+      "id": 13483575857,
+      "lat": 9.5379669,
+      "lon": 1.1609754
+    },
+    {
+      "type": "node",
+      "id": 13483575858,
+      "lat": 9.5379656,
+      "lon": 1.1610532
+    },
+    {
+      "type": "node",
+      "id": 13483575859,
+      "lat": 9.5379524,
+      "lon": 1.1612409
+    },
+    {
+      "type": "node",
+      "id": 13483575860,
+      "lat": 9.5379451,
+      "lon": 1.1614522
+    },
+    {
+      "type": "node",
+      "id": 13483575861,
+      "lat": 9.5380529,
+      "lon": 1.1614582
+    },
+    {
+      "type": "node",
+      "id": 13483575862,
+      "lat": 9.5382592,
+      "lon": 1.161477
+    },
+    {
+      "type": "node",
+      "id": 13483575863,
+      "lat": 9.5385317,
+      "lon": 1.1615011
+    },
+    {
+      "type": "node",
+      "id": 13483575864,
+      "lat": 9.5385608,
+      "lon": 1.161029
+    },
+    {
+      "type": "node",
+      "id": 13483575792,
+      "lat": 9.5423208,
+      "lon": 1.1630742
+    },
+    {
+      "type": "node",
+      "id": 13483575793,
+      "lat": 9.5423301,
+      "lon": 1.1631386
+    },
+    {
+      "type": "node",
+      "id": 13483575794,
+      "lat": 9.5423049,
+      "lon": 1.163207
+    },
+    {
+      "type": "node",
+      "id": 13483575795,
+      "lat": 9.5422348,
+      "lon": 1.163211
+    },
+    {
+      "type": "node",
+      "id": 13483575796,
+      "lat": 9.5421581,
+      "lon": 1.1631842
+    },
+    {
+      "type": "node",
+      "id": 13483575797,
+      "lat": 9.5420827,
+      "lon": 1.1631507
+    },
+    {
+      "type": "node",
+      "id": 13483575798,
+      "lat": 9.5420087,
+      "lon": 1.1631064
+    },
+    {
+      "type": "node",
+      "id": 13483575799,
+      "lat": 9.5419769,
+      "lon": 1.1630139
+    },
+    {
+      "type": "node",
+      "id": 13483575800,
+      "lat": 9.5419703,
+      "lon": 1.1628824
+    },
+    {
+      "type": "node",
+      "id": 13483575801,
+      "lat": 9.5419359,
+      "lon": 1.1628301
+    },
+    {
+      "type": "node",
+      "id": 13483575802,
+      "lat": 9.5419637,
+      "lon": 1.1627845
+    },
+    {
+      "type": "node",
+      "id": 13483575803,
+      "lat": 9.5420021,
+      "lon": 1.1627685
+    },
+    {
+      "type": "node",
+      "id": 13483575804,
+      "lat": 9.5420748,
+      "lon": 1.1627591
+    },
+    {
+      "type": "node",
+      "id": 13483575805,
+      "lat": 9.5421581,
+      "lon": 1.1627899
+    },
+    {
+      "type": "node",
+      "id": 13483575806,
+      "lat": 9.5422705,
+      "lon": 1.1627752
+    },
+    {
+      "type": "node",
+      "id": 13483575807,
+      "lat": 9.5422758,
+      "lon": 1.1628248
+    },
+    {
+      "type": "node",
+      "id": 13483575808,
+      "lat": 9.542301,
+      "lon": 1.1629562
+    },
+    {
+      "type": "node",
+      "id": 1290053018,
+      "lat": 9.5335285,
+      "lon": 1.1904749
+    },
+    {
+      "type": "node",
+      "id": 1290053408,
+      "lat": 9.5331013,
+      "lon": 1.1899724
+    },
+    {
+      "type": "node",
+      "id": 1290069974,
+      "lat": 9.5334318,
+      "lon": 1.1897552
+    },
+    {
+      "type": "node",
+      "id": 1290070009,
+      "lat": 9.5338183,
+      "lon": 1.1902953
+    },
+    {
+      "type": "node",
+      "id": 9524804164,
+      "lat": 9.7282104,
+      "lon": 0.8081793
+    },
+    {
+      "type": "node",
+      "id": 9524804165,
+      "lat": 9.7281649,
+      "lon": 0.8087462
+    },
+    {
+      "type": "node",
+      "id": 9524804166,
+      "lat": 9.728177,
+      "lon": 0.8088972
+    },
+    {
+      "type": "node",
+      "id": 9524804167,
+      "lat": 9.7274057,
+      "lon": 0.8091252
+    },
+    {
+      "type": "node",
+      "id": 9524804168,
+      "lat": 9.7272295,
+      "lon": 0.8088171
+    },
+    {
+      "type": "node",
+      "id": 9524804169,
+      "lat": 9.7271141,
+      "lon": 0.8082101
+    },
+    {
+      "type": "node",
+      "id": 9524804170,
+      "lat": 9.7271718,
+      "lon": 0.8080776
+    },
+    {
+      "type": "node",
+      "id": 9524804171,
+      "lat": 9.7275211,
+      "lon": 0.8079236
+    },
+    {
+      "type": "node",
+      "id": 9524804172,
+      "lat": 9.7276304,
+      "lon": 0.8079236
+    },
+    {
+      "type": "node",
+      "id": 9524804173,
+      "lat": 9.7279067,
+      "lon": 0.8079729
+    },
+    {
+      "type": "node",
+      "id": 9524804174,
+      "lat": 9.7280829,
+      "lon": 0.8080684
+    },
+    {
+      "type": "node",
+      "id": 7092963843,
+      "lat": 10.3335557,
+      "lon": 0.4711475
+    },
+    {
+      "type": "node",
+      "id": 7092963844,
+      "lat": 10.3343817,
+      "lon": 0.4711501
+    },
+    {
+      "type": "node",
+      "id": 7092963841,
+      "lat": 10.3343789,
+      "lon": 0.4720593
+    },
+    {
+      "type": "node",
+      "id": 7092963842,
+      "lat": 10.333553,
+      "lon": 0.4720568
+    },
+    {
+      "type": "node",
+      "id": 8410021216,
+      "lat": 10.3335534,
+      "lon": 0.4719097
+    },
+    {
+      "type": "node",
+      "id": 12378783418,
+      "lat": 10.6098578,
+      "lon": 0.2486894
+    },
+    {
+      "type": "node",
+      "id": 12378783426,
+      "lat": 10.6084585,
+      "lon": 0.2486948
+    },
+    {
+      "type": "node",
+      "id": 12378783427,
+      "lat": 10.6086414,
+      "lon": 0.2484297
+    },
+    {
+      "type": "node",
+      "id": 12378783428,
+      "lat": 10.6092063,
+      "lon": 0.2483522
+    },
+    {
+      "type": "node",
+      "id": 12378783429,
+      "lat": 10.6096482,
+      "lon": 0.2483021
+    },
+    {
+      "type": "node",
+      "id": 12378783430,
+      "lat": 10.6097758,
+      "lon": 0.2486392
+    },
+    {
+      "type": "node",
+      "id": 12378783419,
+      "lat": 10.6098123,
+      "lon": 0.2490675
+    },
+    {
+      "type": "node",
+      "id": 12378783420,
+      "lat": 10.6095207,
+      "lon": 0.2496188
+    },
+    {
+      "type": "node",
+      "id": 12378783421,
+      "lat": 10.6091289,
+      "lon": 0.2499377
+    },
+    {
+      "type": "node",
+      "id": 12378783422,
+      "lat": 10.6086049,
+      "lon": 0.2500562
+    },
+    {
+      "type": "node",
+      "id": 12378783423,
+      "lat": 10.6083498,
+      "lon": 0.2498511
+    },
+    {
+      "type": "node",
+      "id": 12378783424,
+      "lat": 10.6081265,
+      "lon": 0.2496006
+    },
+    {
+      "type": "node",
+      "id": 12378783425,
+      "lat": 10.608205,
+      "lon": 0.2493144
+    },
+    {
+      "type": "node",
+      "id": 3404443431,
+      "lat": 10.8620722,
+      "lon": 0.2053116
+    },
+    {
+      "type": "node",
+      "id": 2103525702,
+      "lat": 10.8634142,
+      "lon": 0.2047618
+    },
+    {
+      "type": "node",
+      "id": 2103525752,
+      "lat": 10.8639842,
+      "lon": 0.2051583
+    },
+    {
+      "type": "node",
+      "id": 6954897986,
+      "lat": 10.862771,
+      "lon": 0.2042676
+    },
+    {
+      "type": "node",
+      "id": 6954898171,
+      "lat": 10.8630102,
+      "lon": 0.2055142
+    },
+    {
+      "type": "node",
+      "id": 6954898172,
+      "lat": 10.8627932,
+      "lon": 0.2054624
+    },
+    {
+      "type": "node",
+      "id": 6957209379,
+      "lat": 10.8635811,
+      "lon": 0.2057446
+    },
+    {
+      "type": "node",
+      "id": 6957209380,
+      "lat": 10.8629423,
+      "lon": 0.2054934
+    },
+    {
+      "type": "node",
+      "id": 6957209382,
+      "lat": 10.8628791,
+      "lon": 0.2054785
+    },
+    {
+      "type": "node",
+      "id": 6957209383,
+      "lat": 10.8634583,
+      "lon": 0.2056845
+    }
+  ]
+}

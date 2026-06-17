@@ -164,17 +164,40 @@ def count_by_prefecture(filepath: Path) -> dict[str, int]:
     return counts
 
 
+def count_by_prefecture_sjoin(filepath: Path, adm2_gdf: gpd.GeoDataFrame) -> dict[str, int]:
+    """
+    Compte les features GeoJSON par préfecture ADM2 via spatial join.
+
+    Retourne {shapeName: count} — les clés sont les valeurs ADM2 shapeName.
+    Remplace count_by_prefecture() pour les données OSM qui n'ont pas
+    d'attribut 'prefecture' dans leurs propriétés.
+    """
+    if not filepath.exists():
+        return {}
+    gdf = gpd.read_file(str(filepath))
+    if gdf.empty:
+        return {}
+    if gdf.crs is None:
+        gdf = gdf.set_crs("EPSG:4326")
+    elif gdf.crs.to_epsg() != 4326:
+        gdf = gdf.to_crs("EPSG:4326")
+    adm2 = adm2_gdf[["shapeName", "geometry"]].copy()
+    if adm2.crs is None:
+        adm2 = adm2.set_crs("EPSG:4326")
+    joined = gpd.sjoin(gdf, adm2, how="left", predicate="within")
+    counts = joined.groupby("shapeName").size()
+    return counts.to_dict()
+
+
 def build_region_map(processed_dir: Path) -> dict[str, str]:
     """
     Construit un mapping prefecture → région depuis les datasets processed.
-    Utilise coopératives + marchés + exploitations comme sources.
+    Utilise coopératives + marchés comme sources (les deux ont region + prefecture).
     """
     region_map: dict[str, str] = {}
     sources = [
         "cooperatives.geojson",
         "marches.geojson",
-        "grandes_exploitations.geojson",
-        "petites_exploitations.geojson",
     ]
     for fname in sources:
         fp = processed_dir / fname
@@ -284,12 +307,11 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
     # ── 2. Datasets processed ────────────────────────────────────────
     logger.step("Chargement des datasets processed ...")
 
-    coops_counts   = count_by_prefecture(PROCESSED_DIR / "cooperatives.geojson")
-    marches_counts = count_by_prefecture(PROCESSED_DIR / "marches.geojson")
-    pep_counts     = count_by_prefecture(PROCESSED_DIR / "pepinieres.geojson")
-    zaap_counts    = count_by_prefecture(PROCESSED_DIR / "zaap_formes.geojson")
-    grandes_counts = count_by_prefecture(PROCESSED_DIR / "grandes_exploitations.geojson")
-    petites_counts = count_by_prefecture(PROCESSED_DIR / "petites_exploitations.geojson")
+    coops_counts        = count_by_prefecture_sjoin(PROCESSED_DIR / "cooperatives.geojson", adm2_gdf)
+    marches_counts      = count_by_prefecture_sjoin(PROCESSED_DIR / "marches.geojson", adm2_gdf)
+    pep_counts          = count_by_prefecture_sjoin(PROCESSED_DIR / "pepinieres.geojson", adm2_gdf)
+    zaap_counts         = count_by_prefecture_sjoin(PROCESSED_DIR / "zaap_formes.geojson", adm2_gdf)
+    exploitations_counts = count_by_prefecture_sjoin(PROCESSED_DIR / "exploitations.geojson", adm2_gdf)
 
     logger.step(
         f"  Coopératives : {sum(coops_counts.values())} | "
@@ -299,8 +321,7 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
         "OK",
     )
     logger.step(
-        f"  Grandes exploit. : {sum(grandes_counts.values())} | "
-        f"Petites exploit. : {sum(petites_counts.values())}",
+        f"  Exploitations OSM : {sum(exploitations_counts.values())}",
         "OK",
     )
 
@@ -312,8 +333,7 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
         | set(marches_counts)
         | set(pep_counts)
         | set(zaap_counts)
-        | set(grandes_counts)
-        | set(petites_counts)
+        | set(exploitations_counts)
     )
 
     region_map = build_region_map(PROCESSED_DIR)
@@ -329,22 +349,19 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
     # ── 4. Indicateurs par préfecture ────────────────────────────────
     logger.step("Calcul des indicateurs par préfecture ...")
 
-    max_coops   = max(coops_counts.values(),   default=1) or 1
-    max_marches = max(marches_counts.values(), default=1) or 1
-    max_pep     = max(pep_counts.values(),     default=1) or 1
-    max_zaap    = max(zaap_counts.values(),    default=1) or 1
+    max_coops   = max(coops_counts.values(),        default=1) or 1
+    max_marches = max(marches_counts.values(),      default=1) or 1
+    max_pep     = max(pep_counts.values(),          default=1) or 1
+    max_zaap    = max(zaap_counts.values(),         default=1) or 1
 
     rows: list[dict[str, Any]] = []
     for _, row in adm2_gdf.iterrows():
-        adm2_name = row["shapeName"]
-        proc_name = name_map.get(adm2_name, adm2_name)
-
-        n_coops   = coops_counts.get(proc_name, 0)
-        n_marches = marches_counts.get(proc_name, 0)
-        n_pep     = pep_counts.get(proc_name, 0)
-        n_zaap    = zaap_counts.get(proc_name, 0)
-        n_grandes = grandes_counts.get(proc_name, 0)
-        n_petites = petites_counts.get(proc_name, 0)
+        adm2_name   = row["shapeName"]
+        n_coops     = coops_counts.get(adm2_name, 0)
+        n_marches   = marches_counts.get(adm2_name, 0)
+        n_pep       = pep_counts.get(adm2_name, 0)
+        n_zaap      = zaap_counts.get(adm2_name, 0)
+        n_exploits  = exploitations_counts.get(adm2_name, 0)
 
         score = compute_service_score(
             n_coops, n_marches, n_pep, n_zaap,
@@ -353,15 +370,15 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
 
         rows.append(
             {
-                "geometry":       row.geometry,
-                "nom_prefecture": proc_name,
-                "region":         region_map.get(proc_name, ""),
-                "n_cooperatives": int(n_coops),
-                "n_marches":      int(n_marches),
-                "n_pepinieres":   int(n_pep),
-                "n_zaap":         int(n_zaap),
-                "n_exploitations": int(n_grandes + n_petites),
-                "service_score":  score,
+                "geometry":        row.geometry,
+                "nom_prefecture":  adm2_name,
+                "region":          region_map.get(adm2_name, ""),
+                "n_cooperatives":  int(n_coops),
+                "n_marches":       int(n_marches),
+                "n_pepinieres":    int(n_pep),
+                "n_zaap":          int(n_zaap),
+                "n_exploitations": int(n_exploits),
+                "service_score":   score,
             }
         )
 
@@ -425,8 +442,8 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
         "crs":          "EPSG:4326",
         "method": {
             "description": (
-                "Agrégation des 6 datasets processed (coopératives, marchés, pépinières, "
-                "ZAAP, grandes & petites exploitations) par préfecture administrative (ADM2). "
+                "Agrégation des 5 datasets processed (coopératives, marchés, pépinières, "
+                "ZAAP, exploitations OSM) par préfecture administrative (ADM2). "
                 "Alignement des noms entre geoBoundaries et les données processed via : "
                 "overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6)."
             ),
@@ -465,8 +482,7 @@ def run(logger: PipelineLogger | None = None) -> tuple[Path, Path]:
                 "marches.geojson",
                 "pepinieres.geojson",
                 "zaap_formes.geojson",
-                "grandes_exploitations.geojson",
-                "petites_exploitations.geojson",
+                "exploitations.geojson",
             ],
         },
         "output_fields": {

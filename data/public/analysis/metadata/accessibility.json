@@ -7,9 +7,9 @@
     "market_buffer_km": 10,
     "nursery_buffer_km": 15,
     "crs_analysis": "EPSG:32631",
-    "n_markets": 50,
-    "n_nurseries": 40,
-    "n_farms": 185
+    "n_markets": 971,
+    "n_nurseries": 0,
+    "n_farms": 737
   },
   "inputs": [
     "marches",
@@ -63,49 +63,49 @@
     ]
   },
   "statistics": {
-    "n_markets": 50,
-    "n_nurseries": 40,
-    "n_farms": 185,
+    "n_markets": 971,
+    "n_nurseries": 0,
+    "n_farms": 737,
     "region_stats": [
       {
         "nom_region": "Maritime",
-        "total_exploitations": 50,
-        "served": 42,
-        "unserved": 8,
-        "unserved_pct": 16.0,
-        "avg_distance_km": 7.85
+        "total_exploitations": 298,
+        "served": 279,
+        "unserved": 19,
+        "unserved_pct": 6.4,
+        "avg_distance_km": 4.45
       },
       {
         "nom_region": "Plateaux",
-        "total_exploitations": 62,
-        "served": 38,
-        "unserved": 24,
-        "unserved_pct": 38.7,
-        "avg_distance_km": 16.98
+        "total_exploitations": 84,
+        "served": 63,
+        "unserved": 21,
+        "unserved_pct": 25.0,
+        "avg_distance_km": 5.41
       },
       {
         "nom_region": "Centrale",
-        "total_exploitations": 33,
-        "served": 18,
-        "unserved": 15,
-        "unserved_pct": 45.5,
-        "avg_distance_km": 19.29
+        "total_exploitations": 69,
+        "served": 52,
+        "unserved": 17,
+        "unserved_pct": 24.6,
+        "avg_distance_km": 7.4
       },
       {
         "nom_region": "Kara",
-        "total_exploitations": 28,
-        "served": 7,
-        "unserved": 21,
-        "unserved_pct": 75.0,
-        "avg_distance_km": 32.53
+        "total_exploitations": 115,
+        "served": 98,
+        "unserved": 17,
+        "unserved_pct": 14.8,
+        "avg_distance_km": 5.55
       },
       {
         "nom_region": "Savanes",
-        "total_exploitations": 18,
-        "served": 4,
-        "unserved": 14,
-        "unserved_pct": 77.8,
-        "avg_distance_km": 27.26
+        "total_exploitations": 171,
+        "served": 168,
+        "unserved": 3,
+        "unserved_pct": 1.8,
+        "avg_distance_km": 2.42
       }
     ]
   },

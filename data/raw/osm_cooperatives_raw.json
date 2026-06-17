@@ -1,0 +1,607 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-17T03:07:15Z",
+    "timestamp_areas_base": "2026-06-16T17:52:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 1292969538,
+      "lat": 9.5571126,
+      "lon": 1.2104463,
+      "tags": {
+        "name": "Coopérative artisanale",
+        "shop": "doityourself"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3121440803,
+      "lat": 6.9145877,
+      "lon": 0.6333314,
+      "tags": {
+        "name": "FUCEC TOGO COOPEC KLOTO",
+        "shop": "pawnbroker",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4061726128,
+      "lat": 6.1466822,
+      "lon": 1.2477551,
+      "tags": {
+        "name": "Coopec la destinée",
+        "office": "accountant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4088778976,
+      "lat": 6.3404098,
+      "lon": 1.5239807,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "description": "microfinance",
+        "name": "Coopec-AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4148024135,
+      "lat": 6.175629,
+      "lon": 1.1817208,
+      "tags": {
+        "name": "Coopecfi",
+        "shop": "money_lender",
+        "source": "Bing;Survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4537624308,
+      "lat": 6.1196792,
+      "lon": 1.2073332,
+      "tags": {
+        "brand": "GIZ",
+        "name": "coopération allemande - Projet centres d'innovations vertes au Togo",
+        "office": "ngo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4563541225,
+      "lat": 7.3882778,
+      "lon": 0.8678314,
+      "tags": {
+        "amenity": "bank",
+        "name": "Coopec Enyo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4759561233,
+      "lat": 6.1190331,
+      "lon": 1.2020996,
+      "tags": {
+        "amenity": "bank",
+        "name": "COOPEC AD SIEGE",
+        "name:fr": "COOPEC AD SIEGE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5070153025,
+      "lat": 6.1262857,
+      "lon": 1.2206987,
+      "tags": {
+        "name": "Poste HTA /BT COOP",
+        "name:fr": "Poste HTA /BT COOP",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5818587301,
+      "lat": 6.4208041,
+      "lon": 1.2096757,
+      "tags": {
+        "name": "COOPEC- AD",
+        "office": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5837258453,
+      "lat": 6.4325829,
+      "lon": 1.2222894,
+      "tags": {
+        "name": "Fusec Togo - Coopec Tsevie / Agence Sante",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5871202900,
+      "lat": 6.4336511,
+      "lon": 1.206707,
+      "tags": {
+        "amenity": "bank",
+        "atm": "no",
+        "name": "COOPECFI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6260723889,
+      "lat": 9.015549,
+      "lon": 1.1384454,
+      "tags": {
+        "name": "GIZ Deutsche Zusammenarbeit - Coopération Allemande",
+        "office": "ngo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7073134839,
+      "lat": 9.0000933,
+      "lon": 1.1230834,
+      "tags": {
+        "name": "UPCCOTON COOP-CA Tchaoudjo",
+        "office": "association"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7079289147,
+      "lat": 9.008702,
+      "lon": 1.1354926,
+      "tags": {
+        "name": "Louvain Coopération",
+        "office": "association"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7079415136,
+      "lat": 8.9888295,
+      "lon": 1.1368704,
+      "tags": {
+        "name": "ONG Association pour la coopération Islamique (A.C.I)",
+        "office": "ngo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7079464920,
+      "lat": 8.9883689,
+      "lon": 1.1361281,
+      "tags": {
+        "amenity": "bank",
+        "atm": "no",
+        "name": "Coopec AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7733073326,
+      "lat": 7.7607241,
+      "lon": 1.1934583,
+      "tags": {
+        "amenity": "bank",
+        "name": "Cooper ILEMA Agence Anié"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7921132085,
+      "lat": 6.218053,
+      "lon": 1.1693708,
+      "tags": {
+        "amenity": "bank",
+        "name": "FUCEC-Togo Coopec AVE agence Vakpossito"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8169036196,
+      "lat": 6.9531943,
+      "lon": 1.1716309,
+      "tags": {
+        "amenity": "bank",
+        "name": "Cooper AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8380380215,
+      "lat": 8.669318,
+      "lon": 1.0202707,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "name": "COOPEC ADESEM"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8570314305,
+      "lat": 6.4345349,
+      "lon": 0.9255556,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "name": "COOPEC AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8762276729,
+      "lat": 6.1235502,
+      "lon": 1.2238408,
+      "tags": {
+        "amenity": "bank",
+        "name": "Fucec - Togo Coopeceelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8853935171,
+      "lat": 11.099712,
+      "lon": 0.0178273,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "name": "Coopec AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8853935190,
+      "lat": 11.1017216,
+      "lon": 0.0105102,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "name": "Coopec Sifa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8918429565,
+      "lat": 9.5521162,
+      "lon": 1.1970684,
+      "tags": {
+        "amenity": "bank",
+        "name": "COOPEC - A/D"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8929126192,
+      "lat": 6.1522958,
+      "lon": 1.2175595,
+      "tags": {
+        "amenity": "bank",
+        "name": "Fucec-Togo COOPEC ECHOPE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9025483662,
+      "lat": 6.3301172,
+      "lon": 1.6076534,
+      "tags": {
+        "amenity": "bank",
+        "name": "Fucec Togo coopec Nyameyeko"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053465026,
+      "lat": 6.8367089,
+      "lon": 0.6782951,
+      "tags": {
+        "name": "Coopérative de transformation d'huile de Palme",
+        "office": "ngo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9053706210,
+      "lat": 8.6942446,
+      "lon": 1.0244778,
+      "tags": {
+        "name": "Coopérative de Babade",
+        "office": "association"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9323634899,
+      "lat": 10.8752218,
+      "lon": 0.1990446,
+      "tags": {
+        "description": "Coopération Allemande (GIZ)",
+        "name": "Coopération Allemande",
+        "office": "ngo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9413461865,
+      "lat": 6.3406897,
+      "lon": 1.523752,
+      "tags": {
+        "amenity": "bank",
+        "name": "COOPEC-AD",
+        "phone": "+22897927000"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9460649502,
+      "lat": 9.2647739,
+      "lon": 0.7796274,
+      "tags": {
+        "amenity": "bank",
+        "description": "Agence de Bassar",
+        "name": "COOPEC-AD",
+        "opening_hours": "Mo-Fr 07:30-07:00",
+        "phone": "+22896503371"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9530864893,
+      "lat": 7.3912224,
+      "lon": 0.8694479,
+      "tags": {
+        "description": "COOPEC AD agence Amou-oblo",
+        "name": "COOPEC-AD",
+        "office": "financial",
+        "opening_hours": "Mo-Fr 08:30-17:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10574130555,
+      "lat": 6.259514,
+      "lon": 1.284302,
+      "tags": {
+        "amenity": "money_transfer",
+        "description": "Ria, TMoney, Flooz, Western Union, Juba, Money Trans, MoneyGram, Wari",
+        "name": "Coopec - AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10574135836,
+      "lat": 6.2595597,
+      "lon": 1.2843177,
+      "tags": {
+        "amenity": "bank",
+        "description": "micro finance",
+        "name": "Coopec - AD",
+        "phone": "+22898489368"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10780946249,
+      "lat": 6.1523371,
+      "lon": 1.2206549,
+      "tags": {
+        "addr:municipality": "Golfe 3",
+        "amenity": "bank",
+        "name": "COPEC-ICEC (Cooperative d'initiative Chrétienne d'épargne et de Crédit)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10780946250,
+      "lat": 6.1506617,
+      "lon": 1.2190047,
+      "tags": {
+        "addr:municipality": "Golfe 3",
+        "amenity": "bank",
+        "name": "COOPEC-AD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10780946286,
+      "lat": 7.5305761,
+      "lon": 1.1218085,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "bank",
+        "name": "COOPEC ILEMA",
+        "opening_hours": "Tu,We,Th,Fr 07:30-15:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10780946298,
+      "lat": 7.5135228,
+      "lon": 1.1513657,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "bank",
+        "name": "COOPEC-AD",
+        "opening_hours": "Mo,Tu,We,Th,Fr 07:30-16:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10780946300,
+      "lat": 7.5153517,
+      "lon": 1.1525738,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "bank",
+        "name": "COOPEC ILEMA",
+        "opening_hours": "Mo,Tu,We,Th,Fr 07:30-15:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10780972505,
+      "lat": 7.5134419,
+      "lon": 1.1514118,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "amenity": "bank",
+        "name": "COOPEC-AD",
+        "opening_hours": "Mo,Tu,We,Th,Fr 08:30-17:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10782320252,
+      "lat": 6.1952567,
+      "lon": 1.208686,
+      "tags": {
+        "addr:municipality": "Golfe 3",
+        "addr:place": "Bè-Massouhoin",
+        "amenity": "bus_station",
+        "name": "CTK Cooperative de transport KANTAGUIBA",
+        "opening_hours": "Mo,Tu,We,Th,Fr 07:00-18:00",
+        "phone": "+22890001755",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10800056220,
+      "lat": 6.2178856,
+      "lon": 1.2090274,
+      "tags": {
+        "name": "Fucec - Togo COOPEC AVE",
+        "office": "advertising_agency"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10800064302,
+      "lat": 6.1958318,
+      "lon": 1.1937528,
+      "tags": {
+        "name": "COOPEC AD Agence Agbalépedogan",
+        "office": "financial"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11048439248,
+      "lat": 10.7167741,
+      "lon": 0.3600153,
+      "tags": {
+        "name": "Coopec Lumière naki-est",
+        "office": "financial"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11155553605,
+      "lat": 6.7929671,
+      "lon": 1.1785941,
+      "tags": {
+        "addr:street": "Lomé - Cinkassé",
+        "email": "SCOOPS.ppsfa.info@gmail.com",
+        "name": "SCOOPS PPSFA",
+        "office": "ngo",
+        "phone": "+22899463586"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11301165517,
+      "lat": 6.1308136,
+      "lon": 1.2182518,
+      "tags": {
+        "name": "Coopérative Nationale des Transporteurs Routiers du Togo",
+        "office": "association",
+        "phone": "+22822427450",
+        "short_name": "CNATROT"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11455322712,
+      "lat": 6.9467882,
+      "lon": 1.1706345,
+      "tags": {
+        "amenity": "school",
+        "name": "Epp de la coopérative notse"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12728472297,
+      "lat": 9.76416,
+      "lon": 1.1069967,
+      "tags": {
+        "addr:street": "N1",
+        "name": "Coopec Niamtougou",
+        "office": "financial"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12728518689,
+      "lat": 9.7640794,
+      "lon": 1.1068466,
+      "tags": {
+        "addr:street": "national n.1",
+        "name": "COOPEC Niamtougou",
+        "office": "financial"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12728524636,
+      "lat": 9.7641188,
+      "lon": 1.1069748,
+      "tags": {
+        "addr:street": "Lomé -cinkassé niamtougou",
+        "name": "Coopec Niamtougou",
+        "office": "financial"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12901641901,
+      "lat": 6.1262605,
+      "lon": 1.2207347,
+      "tags": {
+        "name": "coffret EP COOP",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12901763501,
+      "lat": 6.1262884,
+      "lon": 1.2206766,
+      "tags": {
+        "name": "coffret EP COOP",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13645705830,
+      "lat": 6.204146,
+      "lon": 1.1960403,
+      "tags": {
+        "name": "Scoops Foodies",
+        "shop": "spices"
+      }
+    }
+  ]
+}

@@ -39,13 +39,6 @@ import pandas as pd
 
 from etl.utils.io import PipelineLogger, ensure_dir, write_json
 
-# ── Bornes absolues pour la densité d'exploitations au Togo ─────────
-# Fix Bug 1 (Savanes density_score = 0) et Bug 3 (Plateaux density_score = 100)
-# On utilise des bornes réalistes pour l'ensemble du Togo plutôt que
-# le min-max relatif aux 5 régions, ce qui évite les artefacts 0/100.
-DENSITY_SCORE_MIN_ABS: float = 0.0005  # expl/km² — plancher absolu Togo
-DENSITY_SCORE_MAX_ABS: float = 0.003   # expl/km² — plafond absolu Togo
-
 # ── Pondérations ────────────────────────────────────────────────────
 WEIGHTS = {
     "density": 0.25,
@@ -98,21 +91,6 @@ def normalize_score(series: pd.Series, invert: bool = False) -> pd.Series:
     return (series - min_val) / (max_val - min_val) * 100
 
 
-def normalize_density_score(series: pd.Series) -> pd.Series:
-    """
-    Normalise la densité d'exploitations avec des bornes absolues réalistes.
-
-    Fix Bug 1 (Savanes density_score = 0.0) et Bug 3 (Plateaux density_score = 100.0) :
-    la normalisation min-max relative donnait 0 à la région la moins dense et 100 à la
-    plus dense, ce qui est un artefact mathématique sans signification agronomique.
-    Avec des bornes absolues (DENSITY_SCORE_MIN_ABS / DENSITY_SCORE_MAX_ABS), chaque
-    région reçoit un score ancré dans la réalité du Togo, clipé entre 5 et 90 pour
-    éviter les valeurs extrêmes.
-    """
-    normalized = (series - DENSITY_SCORE_MIN_ABS) / (DENSITY_SCORE_MAX_ABS - DENSITY_SCORE_MIN_ABS) * 100
-    return normalized.clip(lower=5.0, upper=90.0)
-
-
 def compute_synthesis(
     logger: PipelineLogger,
 ) -> tuple[gpd.GeoDataFrame, dict[str, Any]]:
@@ -152,7 +130,7 @@ def compute_synthesis(
     if "density_class" in density_gdf.columns:
         density_scores = density_gdf[["nom_region", "density_class", "density"]].copy()
         # Normaliser la densité avec des bornes absolues (fix Bug 1 + Bug 3)
-        density_scores["density_score"] = normalize_density_score(density_scores["density"])
+        density_scores["density_score"] = normalize_score(density_scores["density"])
     else:
         density_scores = pd.DataFrame()
 

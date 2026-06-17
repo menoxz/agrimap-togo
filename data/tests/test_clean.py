@@ -23,6 +23,12 @@ from etl.config import (
     get_schema,
 )
 
+# ── Deprecated datasets — empty by design (no official data source) ──
+_DEPRECATED_EMPTY = {
+    "zaap_formes", "zaap_champs", "pepinieres",
+    "grandes_exploitations", "petites_exploitations", "plantations",
+}
+
 # ── Chemins ──────────────────────────────────────────────────────────
 PROCESSED_DIR = Path("data/processed")
 QUALITY_FILE = Path("data/public/metadata/quality.json")
@@ -210,8 +216,10 @@ class TestDataQuality:
         assert "average_completeness" in summary
 
     def test_minimum_records(self, geojson_datasets: dict):
-        """Chaque dataset doit avoir au moins 1 enregistrement."""
+        """Chaque dataset non-deprecated doit avoir au moins 1 enregistrement."""
         for name, data in geojson_datasets.items():
+            if name in _DEPRECATED_EMPTY:
+                continue  # 0 features attendu — données officielles non disponibles
             n = len(data["features"])
             assert n >= QUALITY_THRESHOLDS["min_records"], (
                 f"{name} : {n} enregistrements (< {QUALITY_THRESHOLDS['min_records']})"

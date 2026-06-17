@@ -18,6 +18,7 @@ export const TOGO_MAX_BOUNDS: [[number, number], [number, number]] = [
 const ALL_MARKER_TYPES: readonly MarkerType[] = [
   'marches',
   'cooperatives',
+  'exploitations',
   'zaap',
   'pepinieres',
 ];

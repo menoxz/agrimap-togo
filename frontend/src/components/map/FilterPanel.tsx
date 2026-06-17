@@ -48,10 +48,11 @@ const LAYER_LABELS: Record<AnalysisType, { fr: string; en: string }> = {
 };
 
 const MARKER_OPTIONS = [
-  { value: 'marches',      emoji: '🛒', labelFr: 'Marchés',      labelEn: 'Markets',      count: 50  },
-  { value: 'cooperatives', emoji: '🤝', labelFr: 'Coopératives', labelEn: 'Cooperatives', count: 35  },
-  { value: 'zaap',         emoji: '🌱', labelFr: 'ZAAP',         labelEn: 'ZAAP',         count: 30  },
-  { value: 'pepinieres',   emoji: '🌿', labelFr: 'Pépinières',   labelEn: 'Nurseries',    count: 40  },
+  { value: 'marches',       emoji: '🛒', labelFr: 'Marchés',        labelEn: 'Markets',       count: 971, disabled: false },
+  { value: 'cooperatives',  emoji: '🤝', labelFr: 'Coopératives',   labelEn: 'Cooperatives',  count: 55,  disabled: false },
+  { value: 'exploitations', emoji: '🌾', labelFr: 'Exploitations',  labelEn: 'Farmland',      count: 737, disabled: false },
+  { value: 'zaap',          emoji: '🌱', labelFr: 'ZAAP',           labelEn: 'ZAAP',          count: 0,   disabled: true  },
+  { value: 'pepinieres',    emoji: '🌿', labelFr: 'Pépinières',     labelEn: 'Nurseries',     count: 0,   disabled: true  },
 ] as const;
 
 // ── Download helpers (no external deps — standard Web API only) ────────────
@@ -239,13 +240,15 @@ export default function FilterPanel({
                 <label
                   key={opt.value}
                   className={`flex items-center gap-2.5 cursor-pointer rounded-md px-2.5 py-1.5 transition-colors ${
+                    opt.disabled ? 'opacity-40 cursor-not-allowed' :
                     isActive ? 'bg-white/20' : 'hover:bg-white/10'
                   }`}
                 >
                   <input
                     type="checkbox"
                     checked={isActive}
-                    onChange={() => onMarkerToggle?.(opt.value)}
+                    disabled={opt.disabled}
+                    onChange={() => !opt.disabled && onMarkerToggle?.(opt.value)}
                     className="w-4 h-4 rounded accent-white"
                   />
                   <span className={`text-sm transition-colors ${isActive ? 'text-white font-semibold' : 'text-white/80'}`}>
@@ -418,13 +421,15 @@ export default function FilterPanel({
                   <label
                     key={opt.value}
                     className={`flex items-center gap-2 cursor-pointer group rounded px-2 py-1.5 transition-colors ${
+                      opt.disabled ? 'opacity-40 cursor-not-allowed' :
                       isActive ? 'bg-primary-light/40' : 'hover:bg-surface-alt'
                     }`}
                   >
                     <input
                       type="checkbox"
                       checked={isActive}
-                      onChange={() => onMarkerToggle?.(opt.value)}
+                      disabled={opt.disabled}
+                      onChange={() => !opt.disabled && onMarkerToggle?.(opt.value)}
                       className="w-4 h-4 text-primary border-border focus:ring-primary"
                     />
                     <span className="text-body-sm text-text-secondary group-hover:text-text transition-colors">

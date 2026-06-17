@@ -60,6 +60,7 @@ REGION_AREA_KM2: dict[str, float] = {r["name"]: r["area_km2"] for r in REGIONS}
 def load_exploitations() -> gpd.GeoDataFrame:
     """Charge et concatène les 3 datasets d'exploitations."""
     paths = [
+        "data/processed/exploitations.geojson",
         "data/processed/grandes_exploitations.geojson",
         "data/processed/petites_exploitations.geojson",
         "data/processed/plantations.geojson",
@@ -68,7 +69,8 @@ def load_exploitations() -> gpd.GeoDataFrame:
     for p in paths:
         if Path(p).exists():
             gdf = gpd.read_file(p)
-            gdfs.append(gdf)
+            if not gdf.empty:
+                gdfs.append(gdf)
     if not gdfs:
         raise FileNotFoundError("Aucun fichier d'exploitations trouvé")
     return pd.concat(gdfs, ignore_index=True)
@@ -95,9 +97,9 @@ def compute_density(
     """
     # S'assurer que les CRS sont alignés
     if exploitations.crs is None:
-        exploitations.set_crs("EPSG:4326", inplace=True)
+        exploitations = exploitations.set_crs("EPSG:4326")
     if regions.crs is None:
-        regions.set_crs("EPSG:4326", inplace=True)
+        regions = regions.set_crs("EPSG:4326")
 
     # Compter les exploitations par région
     # On utilise une jointure spatiale pour associer chaque exploitation à sa région

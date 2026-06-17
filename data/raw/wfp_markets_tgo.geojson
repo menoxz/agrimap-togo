@@ -1,0 +1,113 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.19,
+          9.55
+        ]
+      },
+      "properties": {
+        "market": "Kara",
+        "market_id": "2664",
+        "admin1": "Kara",
+        "admin2": "Kozah",
+        "latitude": "9.55",
+        "longitude": "1.19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.23,
+          6.12
+        ]
+      },
+      "properties": {
+        "market": "LomÃ©",
+        "market_id": "2662",
+        "admin1": "Maritime",
+        "admin2": "Golfe",
+        "latitude": "6.12",
+        "longitude": "1.23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.57,
+          6.47
+        ]
+      },
+      "properties": {
+        "market": "Amegnran",
+        "market_id": "2660",
+        "admin1": "Maritime",
+        "admin2": "Vo",
+        "latitude": "6.47",
+        "longitude": "1.57"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.19,
+          7.76
+        ]
+      },
+      "properties": {
+        "market": "Anie",
+        "market_id": "2663",
+        "admin1": "Plateaux",
+        "admin2": "Ogou",
+        "latitude": "7.76",
+        "longitude": "1.19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.36,
+          10.32
+        ]
+      },
+      "properties": {
+        "market": "CinkassÃ©",
+        "market_id": "2661",
+        "admin1": "Savanes",
+        "admin2": "Oti",
+        "latitude": "10.32",
+        "longitude": "0.36"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.3,
+          10.94
+        ]
+      },
+      "properties": {
+        "market": "Korbongou",
+        "market_id": "2659",
+        "admin1": "Savanes",
+        "admin2": "Tone",
+        "latitude": "10.94",
+        "longitude": "0.3"
+      }
+    }
+  ]
+}

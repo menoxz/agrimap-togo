@@ -1,0 +1,27 @@
+{
+  "Savanes": {
+    "population": 1211758,
+    "area_km2": 8669.48,
+    "density_pop_km2": 139.7728
+  },
+  "Kara": {
+    "population": 952384,
+    "area_km2": 11503.4,
+    "density_pop_km2": 82.7915
+  },
+  "Centrale": {
+    "population": 851880,
+    "area_km2": 13237.82,
+    "density_pop_km2": 64.352
+  },
+  "Plateaux": {
+    "population": 1794800,
+    "area_km2": 17195.13,
+    "density_pop_km2": 104.3784
+  },
+  "Maritime": {
+    "population": 3946767,
+    "area_km2": 6319.44,
+    "density_pop_km2": 624.5437
+  }
+}

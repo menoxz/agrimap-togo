@@ -61,6 +61,7 @@ def load_data():
     marches_path = "data/processed/marches.geojson"
     pepinieres_path = "data/processed/pepinieres.geojson"
     exploitations_paths = [
+        "data/processed/exploitations.geojson",
         "data/processed/grandes_exploitations.geojson",
         "data/processed/petites_exploitations.geojson",
         "data/processed/plantations.geojson",
@@ -73,7 +74,9 @@ def load_data():
     expls = []
     for p in exploitations_paths:
         if Path(p).exists():
-            expls.append(gpd.read_file(p))
+            gdf = gpd.read_file(p)
+            if not gdf.empty:
+                expls.append(gdf)
     exploitations = pd.concat(expls, ignore_index=True) if expls else gpd.GeoDataFrame()
 
     regions = gpd.read_file(regions_path) if Path(regions_path).exists() else gpd.GeoDataFrame()
@@ -93,9 +96,14 @@ def compute_accessibility(
     identifie les zones de production mal desservies.
     """
     # CRS
-    for gdf in [marches, pepinieres, exploitations, regions]:
-        if not gdf.empty and gdf.crs is None:
-            gdf.set_crs("EPSG:4326", inplace=True)
+    if not marches.empty and marches.crs is None:
+        marches = marches.set_crs("EPSG:4326")
+    if not pepinieres.empty and pepinieres.crs is None:
+        pepinieres = pepinieres.set_crs("EPSG:4326")
+    if not exploitations.empty and exploitations.crs is None:
+        exploitations = exploitations.set_crs("EPSG:4326")
+    if not regions.empty and regions.crs is None:
+        regions = regions.set_crs("EPSG:4326")
 
     # Vérifier disponibilité
     if marches.empty and pepinieres.empty:

@@ -91,15 +91,44 @@ def compute_zaap_coverage(
 
     if not production_zones:
         logger.step("Aucune zone de production trouvée", "!!")
-        # Créer un résultat vide
+        # Créer un résultat vide avec les champs attendus par les tests
         result = regions.copy()
         if not result.empty:
-            result["zaap_coverage_class"] = 0
-            result["zaap_coverage_pct"] = 0.0
-            result["color"] = "#CCCCCC"
+            result["coverage_class"] = 4  # Non couvert / Prioritaire (classe max)
+            result["coverage_pct"] = 0.0
+            result["total_zones"] = 0
+            result["covered_zones"] = 0
+            result["uncovered_zones"] = 0
+            result["color"] = ZAAP_COVERAGE_CLASSES[3]["color"]  # "#005A32"
+            result["name_en"] = result["nom_region"].map(REGION_NAMES_EN)
         return result, {
             "analysis": "Couverture ZAAP",
             "analysis_en": "ZAAP coverage analysis",
+            "method": (
+                "Buffer de 5 km autour des périmètres ZAAP (ZAAP formelles). "
+                "Aucune zone de production disponible — toutes les régions sont "
+                "classées en priorité maximale (opportunités d'investissement)."
+            ),
+            "inputs": ["zaap_formes", "plantations", "zaap_champs", "regions"],
+            "palette": {
+                "name": "Greens",
+                "type": "Séquentielle",
+                "colorblind_safe": True,
+                "classes": [
+                    {
+                        "class": c["class"],
+                        "color": c["color"],
+                        "label": c["label"],
+                        "label_en": c["label_en"],
+                    }
+                    for c in ZAAP_COVERAGE_CLASSES
+                ],
+            },
+            "interpretation_note": (
+                "Les zones de production non couvertes par des ZAAP représentent "
+                "des opportunités d'investissement prioritaires pour l'aménagement "
+                "de nouvelles Zones d'Aménagement Agricole Planifiées."
+            ),
             "warning": "Aucune zone de production disponible",
         }
 

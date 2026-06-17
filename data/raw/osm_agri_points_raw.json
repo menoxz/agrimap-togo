@@ -1,0 +1,100 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-17T03:14:14Z",
+    "timestamp_areas_base": "2026-06-16T17:52:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 6019688990,
+      "lat": 6.5458083,
+      "lon": 1.163585,
+      "tags": {
+        "email": "ppma.africa@gmail.com",
+        "name": "Maison des PME/PMI agricoles",
+        "phone": "+22890087227",
+        "shop": "agrarian"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7079629748,
+      "lat": 8.9784803,
+      "lon": 1.1443591,
+      "tags": {
+        "agrarian": "yes",
+        "shop": "agrarian"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10798891411,
+      "lat": 6.2367912,
+      "lon": 1.2130646,
+      "tags": {
+        "name": "Marché de bétails et de volailles (Gbonssimé agoe échangeur)",
+        "shop": "agrarian"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10842132936,
+      "lat": 7.5159057,
+      "lon": 1.1718853,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "addr:place": "Awoyo",
+        "name": "Ets L Vérité P-K-2",
+        "opening_hours": "Mo,Tu,We,Th,Fr,Sa,Su 07:30-17:30",
+        "phone": "+22890856638",
+        "shop": "agrarian",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10842132997,
+      "lat": 7.5114208,
+      "lon": 1.152096,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "addr:place": "Agbonou Kpotamé",
+        "name": "STIEA-SARL",
+        "opening_hours": "Mo,Tu,We,Th,Fr,Sa 08:00-18:00",
+        "phone": "+22893939375",
+        "shop": "agrarian",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10842133063,
+      "lat": 7.538637,
+      "lon": 1.1461302,
+      "tags": {
+        "addr:municipality": "Ogou 1",
+        "addr:place": "Sada",
+        "name": "Saram",
+        "opening_hours": "Mo,Tu,We,Th,Fr,Sa,Su 05:00-21:00",
+        "phone": "+22890069923",
+        "shop": "agrarian",
+        "source": "WNA Hb - Mia Tou Togo project"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11359961214,
+      "lat": 6.1278604,
+      "lon": 1.2088763,
+      "tags": {
+        "addr:street": "22822211347",
+        "description": "société de produits chimiques et agricole",
+        "name": "SPROCA",
+        "shop": "agrarian"
+      }
+    }
+  ]
+}

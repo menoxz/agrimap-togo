@@ -51,6 +51,7 @@ from etl import (
     synthesize,
     analyze_prefectures,  # M3 : couche prefecture ADM2
     download_osm,         # OSM : marchés + coopératives réels
+    process_worldpop,     # WorldPop : population raster → JSON
 )
 
 
@@ -79,6 +80,18 @@ def main() -> int:
     for name, features in cleaned_data.items():
         filepath = DATASET_INFO[name]["path"]
         write_geojson(features, filepath)
+
+    # ── Écriture des couches deprecated (vides) ──────────────────────
+    _EMPTY_FC = '{"type":"FeatureCollection","features":[]}'
+    _DEPRECATED = [
+        "zaap_formes", "zaap_champs", "pepinieres",
+        "grandes_exploitations", "petites_exploitations", "plantations",
+    ]
+    for _name in _DEPRECATED:
+        _path = Path(DATASET_INFO[_name]["path"])
+        _path.parent.mkdir(parents=True, exist_ok=True)
+        _path.write_text(_EMPTY_FC, encoding="utf-8")
+        logger.step(f"  Couche deprecated vide ecrite : {_path.name}", "OK")
 
     # ── 5. Rapport de qualité consolidé ──────────────────────────────
     logger.section("RAPPORT DE QUALITÉ")
@@ -142,8 +155,8 @@ def main() -> int:
     # Écrire le rapport
     write_json(quality_report, "data/public/metadata/quality.json")
 
-    # ── OSM : Mise à jour marchés + coopératives (entre M1 et M2) ───
-    download_osm.download_osm_data(logger)
+    # ── OSM déjà appelé dans download_all ; WorldPop avant analyses ──
+    process_worldpop.run(logger)
 
     # ── 6-10. Analyses M2 ────────────────────────────────────────────
     logger.section("ANALYSES SPATIALES (M2)")
@@ -178,8 +191,13 @@ def main() -> int:
         # Couches de base (data/processed → frontend)
         (ROOT / "data" / "processed" / "marches.geojson", frontend_data_dir / "marches.geojson"),
         (ROOT / "data" / "processed" / "cooperatives.geojson", frontend_data_dir / "cooperatives.geojson"),
+        (ROOT / "data" / "processed" / "exploitations.geojson", frontend_data_dir / "exploitations.geojson"),
         (ROOT / "data" / "processed" / "zaap_formes.geojson", frontend_data_dir / "zaap_formes.geojson"),
+        (ROOT / "data" / "processed" / "zaap_champs.geojson", frontend_data_dir / "zaap_champs.geojson"),
         (ROOT / "data" / "processed" / "pepinieres.geojson", frontend_data_dir / "pepinieres.geojson"),
+        (ROOT / "data" / "processed" / "grandes_exploitations.geojson", frontend_data_dir / "grandes_exploitations.geojson"),
+        (ROOT / "data" / "processed" / "petites_exploitations.geojson", frontend_data_dir / "petites_exploitations.geojson"),
+        (ROOT / "data" / "processed" / "plantations.geojson", frontend_data_dir / "plantations.geojson"),
         # Analyses M2 (data/public/analysis → frontend)
         (ROOT / "data" / "public" / "analysis" / "density.geojson", frontend_data_dir / "density.geojson"),
         (ROOT / "data" / "public" / "analysis" / "zaap_coverage.geojson", frontend_data_dir / "zaap_coverage.geojson"),

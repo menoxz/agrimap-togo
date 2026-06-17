@@ -1,0 +1,154 @@
+[
+  {
+    "source": "OSM/markets",
+    "url": "https://overpass-api.de/api/interpreter",
+    "http_status": 200,
+    "count": 1050,
+    "usable": "YES — 1050 features",
+    "raw_file": "C:\\jeanluc\\data_ai_lab_agri_project\\data\\raw\\osm_markets_raw.json"
+  },
+  {
+    "source": "OSM/cooperatives",
+    "url": "https://overpass-api.de/api/interpreter",
+    "http_status": 200,
+    "count": 55,
+    "usable": "YES — 55 features",
+    "raw_file": "C:\\jeanluc\\data_ai_lab_agri_project\\data\\raw\\osm_cooperatives_raw.json"
+  },
+  {
+    "source": "OSM/farmland",
+    "url": "https://overpass-api.de/api/interpreter",
+    "http_status": 429,
+    "count": "N/A",
+    "usable": "NO — HTTP 429",
+    "raw_file": "—"
+  },
+  {
+    "source": "OSM/agri_points",
+    "url": "https://overpass-api.de/api/interpreter",
+    "http_status": 429,
+    "count": "N/A",
+    "usable": "NO — HTTP 429",
+    "raw_file": "—"
+  },
+  {
+    "source": "HDX/togo+agriculture",
+    "url": "https://data.humdata.org/api/3/action/package_search?q=togo+agriculture&rows=20",
+    "http_status": "ERROR",
+    "count": "N/A",
+    "usable": "NO — 'charmap' codec can't encode character '\\u21b3' in position 6: character maps to <undefined>",
+    "raw_file": "—"
+  },
+  {
+    "source": "HDX/togo+market",
+    "url": "https://data.humdata.org/api/3/action/package_search?q=togo+market&rows=10",
+    "http_status": "ERROR",
+    "count": "N/A",
+    "usable": "NO — 'charmap' codec can't encode character '\\u21b3' in position 6: character maps to <undefined>",
+    "raw_file": "—"
+  },
+  {
+    "source": "HDX/togo+cooperative",
+    "url": "https://data.humdata.org/api/3/action/package_search?q=togo+cooperative&rows=10",
+    "http_status": "ERROR",
+    "count": "N/A",
+    "usable": "NO — 'charmap' codec can't encode character '\\u21b3' in position 6: character maps to <undefined>",
+    "raw_file": "—"
+  },
+  {
+    "source": "WorldPop/worldpop_cic2020.json",
+    "url": "https://hub.worldpop.org/rest/data/pop/cic2020_100m?iso3=TGO",
+    "http_status": 200,
+    "count": 1,
+    "usable": "YES — 1 dataset(s)",
+    "raw_file": "C:\\jeanluc\\data_ai_lab_agri_project\\data\\raw\\worldpop_cic2020.json"
+  },
+  {
+    "source": "WorldPop/worldpop_wpgp.json",
+    "url": "https://hub.worldpop.org/rest/data/pop/wpgp?iso3=TGO",
+    "http_status": 200,
+    "count": 21,
+    "usable": "YES — 21 dataset(s)",
+    "raw_file": "C:\\jeanluc\\data_ai_lab_agri_project\\data\\raw\\worldpop_wpgp.json"
+  },
+  {
+    "source": "WorldCereal/worldcereal_irri.json",
+    "url": "https://ewoc-rdm-api.irri.org/search?model=WorldCerealMapProduct&geo=TGO",
+    "http_status": "ERROR",
+    "count": "N/A",
+    "usable": "NO — HTTPSConnectionPool(host='ewoc-rdm-api.irri.org', port=443): Max retries exceeded with url: /search?model=WorldCerealMapProduct&geo=TGO (Caused by NameResolutionError(\"HTTPSConnection(host='ewoc-rdm-api.irri.org', port=443): Failed to resolve 'ewoc-rdm-api.irri.org' ([Errno 11001] getaddrinfo failed)\"))",
+    "raw_file": "—"
+  },
+  {
+    "source": "WorldCereal/worldcereal_zenodo.json",
+    "url": "https://zenodo.org/api/records?q=worldcereal+togo",
+    "http_status": 200,
+    "count": 3114,
+    "usable": "YES — 3114 record(s)",
+    "raw_file": "C:\\jeanluc\\data_ai_lab_agri_project\\data\\raw\\worldcereal_zenodo.json"
+  },
+  {
+    "source": "FAOSTAT/Togo cropland 2020",
+    "url": "https://fenixservices.fao.org/faostat/api/v1/en/data/CAHD?area=213&element=5510&item=15&year=2020&show_codes=true&show_unit=true&show_flags=true",
+    "http_status": 521,
+    "count": "N/A",
+    "usable": "NO — HTTP 521",
+    "raw_file": "—"
+  },
+  {
+    "source": "FAOSTAT/FAOSTAT countries list",
+    "url": "https://fenixservices.fao.org/faostat/api/v1/en/areas",
+    "http_status": 521,
+    "count": "N/A",
+    "usable": "NO — HTTP 521",
+    "raw_file": "—"
+  },
+  {
+    "source": "FAOSTAT/Togo crop production QCL",
+    "url": "https://fenixservices.fao.org/faostat/api/v1/en/data/QCL?area=213&element=5510&item=27&year=2020,2021,2022&show_codes=true&show_unit=true",
+    "http_status": 521,
+    "count": "N/A",
+    "usable": "NO — HTTP 521",
+    "raw_file": "—"
+  },
+  {
+    "source": "WFP/WFP VAM Markets API (may need key)",
+    "url": "https://api.wfp.org/vam-data-bridges/2.0.0/Markets/GeoJSONList?CountryCode=TGO",
+    "http_status": 401,
+    "count": "N/A",
+    "usable": "NO — 401 Unauthorized (API key required)",
+    "raw_file": "—"
+  },
+  {
+    "source": "WFP/WFP VAM Markets API (may need key)",
+    "url": "https://api.wfp.org/vam-data-bridges/2.0.0/Markets/GeoJSONList?CountryCode=TGO",
+    "http_status": "ERROR",
+    "count": "N/A",
+    "usable": "NO — 'charmap' codec can't encode character '\\u2192' in position 4: character maps to <undefined>",
+    "raw_file": "—"
+  },
+  {
+    "source": "WFP/WFP DataViz markets adm0=74",
+    "url": "https://dataviz.vam.wfp.org/api/getmarkets?adm0Code=74",
+    "http_status": 403,
+    "count": "N/A",
+    "usable": "NO — 403 Forbidden (API key required)",
+    "raw_file": "—"
+  },
+  {
+    "source": "WFP/WFP DataViz markets adm0=74",
+    "url": "https://dataviz.vam.wfp.org/api/getmarkets?adm0Code=74",
+    "http_status": "ERROR",
+    "count": "N/A",
+    "usable": "NO — 'charmap' codec can't encode character '\\u2192' in position 4: character maps to <undefined>",
+    "raw_file": "—"
+  },
+  {
+    "source": "WFP/WFP VAM v1 geojson",
+    "url": "https://api.vam.wfp.org/marks/geojson?ac=TGO",
+    "http_status": 404,
+    "count": "N/A",
+    "usable": "NO — HTTP 404",
+    "raw_file": "—"
+  }
+]

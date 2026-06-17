@@ -6,8 +6,8 @@
   "parameters": {
     "cooperative_buffer_km": 10,
     "crs_analysis": "EPSG:32631",
-    "n_cooperatives": 35,
-    "n_farms": 185
+    "n_cooperatives": 55,
+    "n_farms": 737
   },
   "inputs": [
     "cooperatives",
@@ -55,48 +55,48 @@
     ]
   },
   "statistics": {
-    "total_cooperatives": 35,
-    "total_farms": 185,
+    "total_cooperatives": 55,
+    "total_farms": 737,
     "region_stats": [
       {
         "nom_region": "Maritime",
-        "n_cooperatives": 9,
-        "coop_density_per_1000km2": 1.4754,
-        "total_exploitations": 50,
-        "white_zone_exploitations": 32,
-        "white_zone_pct": 64.0
+        "n_cooperatives": 26,
+        "coop_density_per_1000km2": 4.2623,
+        "total_exploitations": 298,
+        "white_zone_exploitations": 145,
+        "white_zone_pct": 48.7
       },
       {
         "nom_region": "Plateaux",
-        "n_cooperatives": 13,
-        "coop_density_per_1000km2": 0.7658,
-        "total_exploitations": 62,
-        "white_zone_exploitations": 44,
-        "white_zone_pct": 71.0
+        "n_cooperatives": 12,
+        "coop_density_per_1000km2": 0.7069,
+        "total_exploitations": 84,
+        "white_zone_exploitations": 41,
+        "white_zone_pct": 48.8
       },
       {
         "nom_region": "Centrale",
-        "n_cooperatives": 2,
-        "coop_density_per_1000km2": 0.148,
-        "total_exploitations": 33,
-        "white_zone_exploitations": 32,
-        "white_zone_pct": 97.0
+        "n_cooperatives": 7,
+        "coop_density_per_1000km2": 0.5179,
+        "total_exploitations": 69,
+        "white_zone_exploitations": 68,
+        "white_zone_pct": 98.6
       },
       {
         "nom_region": "Kara",
-        "n_cooperatives": 7,
-        "coop_density_per_1000km2": 0.6019,
-        "total_exploitations": 28,
-        "white_zone_exploitations": 23,
-        "white_zone_pct": 82.1
+        "n_cooperatives": 6,
+        "coop_density_per_1000km2": 0.5159,
+        "total_exploitations": 115,
+        "white_zone_exploitations": 95,
+        "white_zone_pct": 82.6
       },
       {
         "nom_region": "Savanes",
         "n_cooperatives": 4,
         "coop_density_per_1000km2": 0.4723,
-        "total_exploitations": 18,
-        "white_zone_exploitations": 16,
-        "white_zone_pct": 88.9
+        "total_exploitations": 171,
+        "white_zone_exploitations": 161,
+        "white_zone_pct": 94.2
       }
     ]
   },

@@ -57,6 +57,7 @@ def load_data():
     """Charge les données coopératives et exploitations."""
     coop_path = "data/processed/cooperatives.geojson"
     exploitations_paths = [
+        "data/processed/exploitations.geojson",
         "data/processed/grandes_exploitations.geojson",
         "data/processed/petites_exploitations.geojson",
         "data/processed/plantations.geojson",
@@ -68,7 +69,9 @@ def load_data():
     expls = []
     for p in exploitations_paths:
         if Path(p).exists():
-            expls.append(gpd.read_file(p))
+            gdf = gpd.read_file(p)
+            if not gdf.empty:
+                expls.append(gdf)
     exploitations = pd.concat(expls, ignore_index=True) if expls else gpd.GeoDataFrame()
 
     regions = gpd.read_file(regions_path) if Path(regions_path).exists() else gpd.GeoDataFrame()
@@ -85,9 +88,12 @@ def compute_cooperative_network(
     """
     Analyse le réseau coopératif : densité par région, zones blanches.
     """
-    for gdf in [cooperatives, exploitations, regions]:
-        if not gdf.empty and gdf.crs is None:
-            gdf.set_crs("EPSG:4326", inplace=True)
+    if not cooperatives.empty and cooperatives.crs is None:
+        cooperatives = cooperatives.set_crs("EPSG:4326")
+    if not exploitations.empty and exploitations.crs is None:
+        exploitations = exploitations.set_crs("EPSG:4326")
+    if not regions.empty and regions.crs is None:
+        regions = regions.set_crs("EPSG:4326")
 
     # Reprojeter en UTM
     coop_utm = cooperatives.to_crs("EPSG:32631") if not cooperatives.empty else gpd.GeoDataFrame()

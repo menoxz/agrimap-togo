@@ -7,7 +7,7 @@ import type { GeoJsonFeature, GeoJsonPropertyMap } from '@/types/map';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-export type MarkerType = 'marches' | 'cooperatives' | 'zaap' | 'pepinieres';
+export type MarkerType = 'marches' | 'cooperatives' | 'exploitations' | 'zaap' | 'pepinieres';
 
 interface MarkersLayerProps {
   type: MarkerType;
@@ -16,10 +16,11 @@ interface MarkersLayerProps {
 // ─── Config ──────────────────────────────────────────────────────────────────
 
 const DATA_URLS: Record<MarkerType, string> = {
-  marches: '/data/marches.geojson',
-  cooperatives: '/data/cooperatives.geojson',
-  zaap: '/data/zaap_formes.geojson',
-  pepinieres: '/data/pepinieres.geojson',
+  marches:       '/data/marches.geojson',
+  cooperatives:  '/data/cooperatives.geojson',
+  exploitations: '/data/exploitations.geojson',
+  zaap:          '/data/zaap_formes.geojson',
+  pepinieres:    '/data/pepinieres.geojson',
 };
 
 interface IconConfig {
@@ -30,10 +31,11 @@ interface IconConfig {
 }
 
 const ICON_CONFIG: Record<MarkerType, IconConfig> = {
-  marches:      { emoji: '🛒', bg: '#FFC107', border: '#F57F17', textDark: true  },
-  cooperatives: { emoji: '🤝', bg: '#4CAF50', border: '#1B5E20', textDark: false },
-  zaap:         { emoji: '🌱', bg: '#2196F3', border: '#0D47A1', textDark: false },
-  pepinieres:   { emoji: '🌿', bg: '#8BC34A', border: '#33691E', textDark: false },
+  marches:       { emoji: '🛒', bg: '#FFC107', border: '#F57F17', textDark: true  },
+  cooperatives:  { emoji: '🤝', bg: '#4CAF50', border: '#1B5E20', textDark: false },
+  exploitations: { emoji: '🌾', bg: '#8B5E3C', border: '#4E3427', textDark: false },
+  zaap:          { emoji: '🌱', bg: '#2196F3', border: '#0D47A1', textDark: false },
+  pepinieres:    { emoji: '🌿', bg: '#8BC34A', border: '#33691E', textDark: false },
 };
 
 // ─── Geometry helpers ─────────────────────────────────────────────────────────
@@ -106,20 +108,32 @@ function MarkerPopup({ type, props }: MarkerPopupProps) {
   let rows: (React.ReactElement | null)[] = [];
 
   if (type === 'marches') {
-    title = String(props['nom_marché'] ?? 'Marché');
+    // Fields from OSM ETL: nom, type, source, region, prefecture
+    title = String(props['nom'] ?? 'Marché');
     rows = [
-      <PopupRow key="type" label="Type"         value={props['type_marché'] as string} />,
-      <PopupRow key="jour" label="Jour"         value={props['jour_marché'] as string} />,
-      <PopupRow key="nb"   label="Commerçants"  value={props['nombre_commercants'] as number} />,
-      <PopupRow key="reg"  label="Région"       value={props['region'] as string} />,
+      <PopupRow key="type"   label="Type"        value={props['type'] as string} />,
+      <PopupRow key="src"    label="Source"      value={props['source'] as string} />,
+      <PopupRow key="pref"   label="Préfecture"  value={props['prefecture'] as string} />,
+      <PopupRow key="reg"    label="Région"      value={props['region'] as string} />,
     ];
   } else if (type === 'cooperatives') {
-    title = String(props['nom_cooperative'] ?? 'Coopérative');
+    // Fields from OSM ETL: nom, type, source, region, prefecture
+    title = String(props['nom'] ?? 'Coopérative');
     rows = [
-      <PopupRow key="type" label="Type"     value={props['type_cooperative'] as string} />,
-      <PopupRow key="mb"   label="Membres"  value={props['nombre_membres'] as number} />,
-      <PopupRow key="fil"  label="Filière"  value={props['filiere_principale'] as string} />,
-      <PopupRow key="reg"  label="Région"   value={props['region'] as string} />,
+      <PopupRow key="type"   label="Type"        value={props['type'] as string} />,
+      <PopupRow key="src"    label="Source"      value={props['source'] as string} />,
+      <PopupRow key="pref"   label="Préfecture"  value={props['prefecture'] as string} />,
+      <PopupRow key="reg"    label="Région"      value={props['region'] as string} />,
+    ];
+  } else if (type === 'exploitations') {
+    // Fields from OSM ETL: type="farmland", area_ha, source, prefecture
+    const area = props['area_ha'] != null ? `${props['area_ha']} ha` : null;
+    title = 'Exploitation agricole';
+    rows = [
+      <PopupRow key="type"  label="Type"         value={props['type'] as string} />,
+      <PopupRow key="area"  label="Superficie"   value={area} />,
+      <PopupRow key="src"   label="Source"       value={props['source'] as string} />,
+      <PopupRow key="pref"  label="Préfecture"   value={props['prefecture'] as string} />,
     ];
   } else if (type === 'zaap') {
     title = String(props['nom_zaap'] ?? 'ZAAP');
@@ -132,6 +146,7 @@ function MarkerPopup({ type, props }: MarkerPopupProps) {
       <PopupRow key="reg"  label="Région"      value={props['region'] as string} />,
     ];
   } else {
+    // pepinieres
     title = String(props['nom_pepiniere'] ?? 'Pépinière');
     const cap = props['capacite_plants'] != null
       ? `${Number(props['capacite_plants']).toLocaleString('fr-FR')} plants`
