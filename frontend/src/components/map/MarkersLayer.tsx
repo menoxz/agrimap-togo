@@ -109,33 +109,44 @@ function MarkerPopup({ type, props }: MarkerPopupProps) {
   let title = '';
   let rows: (React.ReactElement | null)[] = [];
 
+  const coordStr =
+    props['lon'] != null && props['lat'] != null
+      ? `${Number(props['lat']).toFixed(4)}, ${Number(props['lon']).toFixed(4)}`
+      : null;
+
   if (type === 'marches') {
-    // Fields from OSM ETL: nom, type, source, region, prefecture
-    title = String(props['nom'] ?? 'Marché');
+    // Fields: id, nom, type, source, lon, lat, prefecture, region
+    title = String(props['nom'] ?? `Marché #${props['id']}`);
     rows = [
+      <PopupRow key="id"     label="ID"          value={props['id'] as string} />,
       <PopupRow key="type"   label="Type"        value={props['type'] as string} />,
       <PopupRow key="src"    label="Source"      value={props['source'] as string} />,
       <PopupRow key="pref"   label="Préfecture"  value={props['prefecture'] as string} />,
       <PopupRow key="reg"    label="Région"      value={props['region'] as string} />,
+      <PopupRow key="coord"  label="Coordonnées" value={coordStr} />,
     ];
   } else if (type === 'cooperatives') {
-    // Fields from OSM ETL: nom, type, source, region, prefecture
-    title = String(props['nom'] ?? 'Coopérative');
+    // Fields: id, nom, type, source, lon, lat, prefecture, region
+    title = String(props['nom'] ?? `Coopérative #${props['id']}`);
     rows = [
+      <PopupRow key="id"     label="ID"          value={props['id'] as string} />,
       <PopupRow key="type"   label="Type"        value={props['type'] as string} />,
       <PopupRow key="src"    label="Source"      value={props['source'] as string} />,
       <PopupRow key="pref"   label="Préfecture"  value={props['prefecture'] as string} />,
       <PopupRow key="reg"    label="Région"      value={props['region'] as string} />,
+      <PopupRow key="coord"  label="Coordonnées" value={coordStr} />,
     ];
   } else if (type === 'exploitations') {
-    // Fields from OSM ETL: type="farmland", area_ha, source, prefecture
+    // Fields: id, type="farmland", area_ha, source, lon, lat, prefecture (no nom, no region)
     const area = props['area_ha'] != null ? `${props['area_ha']} ha` : null;
-    title = 'Exploitation agricole';
+    title = `Exploitation #${props['id']}`;
     rows = [
-      <PopupRow key="type"  label="Type"         value={props['type'] as string} />,
-      <PopupRow key="area"  label="Superficie"   value={area} />,
-      <PopupRow key="src"   label="Source"       value={props['source'] as string} />,
-      <PopupRow key="pref"  label="Préfecture"   value={props['prefecture'] as string} />,
+      <PopupRow key="id"     label="ID"          value={props['id'] as string} />,
+      <PopupRow key="type"   label="Type"        value={props['type'] as string} />,
+      <PopupRow key="area"   label="Superficie"  value={area} />,
+      <PopupRow key="src"    label="Source"      value={props['source'] as string} />,
+      <PopupRow key="pref"   label="Préfecture"  value={props['prefecture'] as string} />,
+      <PopupRow key="coord"  label="Coordonnées" value={coordStr} />,
     ];
   } else if (type === 'zaap') {
     title = String(props['nom_zaap'] ?? 'ZAAP');

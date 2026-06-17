@@ -131,8 +131,8 @@ export default function ExplorePage() {
     );
     if (!feature) return;
 
-    // Open the detail panel
-    setSelectedPrefectureData(properties as PrefectureDetailData);
+    // Open the detail panel with the RICH feature properties (not the analysis-layer subset)
+    setSelectedPrefectureData(feature.properties as unknown as PrefectureDetailData);
 
     // Fly-to if geometry available
     if (feature.geometry) {
@@ -370,10 +370,10 @@ export default function ExplorePage() {
             {/* ── Carte + Top zones sur la MÊME LIGNE ───────────────────── */}
             <div className="flex flex-col desktop:flex-row gap-4 items-start">
 
-              {/* CARTE — 45 % de la largeur */}
-              <div className="w-full desktop:w-[45%] shrink-0 min-w-0">
+              {/* CARTE — 55 % de la largeur, hauteur remplit l'écran */}
+              <div className="w-full desktop:w-[55%] shrink-0 min-w-0">
                 <Card variant="default" padding="none" className="overflow-hidden">
-                  <div className="h-[440px] tablet:h-[500px] desktop:h-[540px] relative">
+                  <div className="h-[calc(100dvh-180px)] relative">
                     <TogoMap
                       visibleMarkers={visibleMarkers}
                       showPrefectures={effectiveShowPrefectures}

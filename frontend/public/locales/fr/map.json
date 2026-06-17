@@ -76,5 +76,28 @@
     "all_regions": "Toutes les régions",
     "no_zones": "Aucune zone ne correspond à votre filtre",
     "select_hint": "Cliquez sur une zone pour centrer la carte"
+  },
+  "prefecture_detail": {
+    "region": "Région",
+    "priority_label": "Niveau de priorité",
+    "service_score": "Score de service",
+    "synthesis_score": "Score synthèse",
+    "breakdown_title": "Décomposition des scores",
+    "density_score": "Densité",
+    "access_score": "Accessibilité",
+    "coop_score": "Coopératives",
+    "zaap_score": "ZAAP",
+    "inventory_title": "Inventaire terrain",
+    "markets": "Marchés",
+    "cooperatives": "Coopératives",
+    "farms": "Exploitations",
+    "zaap_pep": "ZAAP / Pépinières",
+    "metrics_title": "Indicateurs clés",
+    "density_raw": "Densité brute",
+    "avg_distance": "Distance moy.",
+    "white_zones": "Zones blanches",
+    "zaap_coverage": "Couverture ZAAP",
+    "interpretation_title": "Interprétation",
+    "close": "Fermer"
   }
 }

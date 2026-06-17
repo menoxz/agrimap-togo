@@ -76,5 +76,28 @@
     "all_regions": "All regions",
     "no_zones": "No zones match your filter",
     "select_hint": "Click a zone to center the map"
+  },
+  "prefecture_detail": {
+    "region": "Region",
+    "priority_label": "Priority level",
+    "service_score": "Service score",
+    "synthesis_score": "Synthesis score",
+    "breakdown_title": "Score breakdown",
+    "density_score": "Density",
+    "access_score": "Accessibility",
+    "coop_score": "Cooperatives",
+    "zaap_score": "ZAAP",
+    "inventory_title": "Field inventory",
+    "markets": "Markets",
+    "cooperatives": "Cooperatives",
+    "farms": "Farms",
+    "zaap_pep": "ZAAP / Nurseries",
+    "metrics_title": "Key metrics",
+    "density_raw": "Raw density",
+    "avg_distance": "Avg. distance",
+    "white_zones": "White zones",
+    "zaap_coverage": "ZAAP coverage",
+    "interpretation_title": "Interpretation",
+    "close": "Close"
   }
 }
