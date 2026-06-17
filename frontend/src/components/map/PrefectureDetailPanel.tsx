@@ -137,7 +137,7 @@ export default function PrefectureDetailPanel({
   const displayName =
     currentLang === 'en' && name_en ? name_en : nom_prefecture
 
-  const synthScore = synthesis_score ?? 0
+  const synthScore = Math.round(synthesis_score ?? 0)
 
   const hasBreakdown =
     density_score !== undefined ||
@@ -227,13 +227,13 @@ export default function PrefectureDetailPanel({
                   {t('map:prefecture_detail.density_score')}
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {density_score ?? 0}/100
+                  {Math.round(density_score ?? 0)}/100
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
                     className="h-full rounded-none"
                     style={{
-                      width: `${density_score ?? 0}%`,
+                      width: `${Math.round(density_score ?? 0)}%`,
                       backgroundColor: '#D95F0E',
                     }}
                   />
@@ -247,13 +247,13 @@ export default function PrefectureDetailPanel({
                   {t('map:prefecture_detail.access_score')}
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {accessibility_score ?? 0}/100
+                  {Math.round(accessibility_score ?? 0)}/100
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
                     className="h-full rounded-none"
                     style={{
-                      width: `${accessibility_score ?? 0}%`,
+                      width: `${Math.round(accessibility_score ?? 0)}%`,
                       backgroundColor: '#756BB1',
                     }}
                   />
@@ -267,13 +267,13 @@ export default function PrefectureDetailPanel({
                   {t('map:prefecture_detail.coop_score')}
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {coop_score ?? 0}/100
+                  {Math.round(coop_score ?? 0)}/100
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
                     className="h-full rounded-none"
                     style={{
-                      width: `${coop_score ?? 0}%`,
+                      width: `${Math.round(coop_score ?? 0)}%`,
                       backgroundColor: '#FC8D59',
                     }}
                   />
@@ -287,13 +287,13 @@ export default function PrefectureDetailPanel({
                   {t('map:prefecture_detail.zaap_score')}
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {zaap_score ?? 0}/100
+                  {Math.round(zaap_score ?? 0)}/100
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
                     className="h-full rounded-none"
                     style={{
-                      width: `${zaap_score ?? 0}%`,
+                      width: `${Math.round(zaap_score ?? 0)}%`,
                       backgroundColor: '#1B7837',
                     }}
                   />
