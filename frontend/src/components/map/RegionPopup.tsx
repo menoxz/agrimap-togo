@@ -92,10 +92,12 @@ export default function RegionPopup({
         </div>
       )}
 
-      {/* View details link */}
+      {/* View details link — data-action triggers event delegation in ExplorePage */}
       <div style={{ marginTop: '10px', paddingTop: '8px', borderTop: '1px solid #E2E8F0' }}>
         <a
-          href="/story#synthesis"
+          href="#"
+          data-action="open-zone-detail"
+          data-region-name={regionName}
           style={{
             fontSize: '12px',
             fontWeight: 500,

@@ -149,6 +149,35 @@ export default function ExplorePage() {
     handleZoneSelect(props, center);
   }, [allZones, handleZoneSelect]);
 
+  /** Event delegation — intercepts clicks on data-action="open-zone-detail"
+   *  links emitted by RegionPopup (rendered via renderToString, outside React Router).
+   *  Uses allZones (already loaded) to find the matching feature + centroid.
+   */
+  useEffect(() => {
+    const handleDetailClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('[data-action="open-zone-detail"]') as HTMLElement | null;
+      if (!link) return;
+      e.preventDefault();
+
+      const regionName = link.getAttribute('data-region-name');
+      if (!regionName) return;
+
+      const feature = allZones.find(
+        (f) => (f.properties.nom_region as string)?.toLowerCase() === regionName.toLowerCase(),
+      );
+      if (!feature || !feature.geometry) return;
+
+      const center: [number, number] =
+        computeCentroid(feature.geometry) ?? [8.6195, 0.8248];
+
+      handleZoneSelect(feature.properties as GeoJsonPropertyMap, center);
+    };
+
+    document.addEventListener('click', handleDetailClick);
+    return () => document.removeEventListener('click', handleDetailClick);
+  }, [allZones, handleZoneSelect]);
+
   /* ── Layer label helper ─────────────────────────────────────────────────── */
   const layerLabel =
     activeLayer === 'density' ? t('map:legend.density')
