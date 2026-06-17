@@ -98,13 +98,20 @@ export default function ExplorePage() {
     });
   }, []);
 
-  const { filters, setSelectedRegion, setActiveLayer, setZaapOnlyUncovered, resetFilters, isFiltered } = useMapFilters();
+  const { filters, setSelectedRegion, setSelectedPrefecture, setActiveLayer, setZaapOnlyUncovered, resetFilters, isFiltered } = useMapFilters();
   const activeLayer: AnalysisType = filters.activeLayers[0] || 'density';
   const regionFilterValue = filters.selectedRegion
     ? filters.selectedRegion.charAt(0).toUpperCase() + filters.selectedRegion.slice(1)
     : '';
 
   const [showPrefectures, setShowPrefectures] = useState(false);
+
+  /**
+   * The prefecture layer is automatically activated when a prefecture is
+   * selected so the ADM2 polygon highlight is visible even if the user
+   * hasn't manually toggled the layer on.
+   */
+  const effectiveShowPrefectures = showPrefectures || filters.selectedPrefecture !== '';
 
   const { data: synthesisData } = useDataLoader(DATA_URL);
   const allZones = useMemo(() => {
@@ -256,9 +263,11 @@ export default function ExplorePage() {
               <FilterPanel
                 dark={true}
                 selectedRegion={filters.selectedRegion}
+                selectedPrefecture={filters.selectedPrefecture}
                 activeLayers={filters.activeLayers}
                 zaapOnlyUncovered={filters.zaapOnlyUncovered}
                 onRegionChange={setSelectedRegion}
+                onPrefectureChange={setSelectedPrefecture}
                 onLayerToggle={() => {}}
                 onLayerSet={setActiveLayer}
                 onZaapOnlyUncoveredChange={setZaapOnlyUncovered}
@@ -266,7 +275,7 @@ export default function ExplorePage() {
                 isFiltered={isFiltered}
                 visibleMarkers={visibleMarkers}
                 onMarkerToggle={handleMarkerToggle}
-                showPrefectures={showPrefectures}
+                showPrefectures={effectiveShowPrefectures}
                 onPrefecturesToggle={setShowPrefectures}
               />
             </div>
@@ -306,7 +315,12 @@ export default function ExplorePage() {
               <div className="w-full desktop:w-[45%] shrink-0 min-w-0">
                 <Card variant="default" padding="none" className="overflow-hidden">
                   <div className="h-[440px] tablet:h-[500px] desktop:h-[540px] relative">
-                    <TogoMap visibleMarkers={visibleMarkers} showPrefectures={showPrefectures}>
+                    <TogoMap
+                      visibleMarkers={visibleMarkers}
+                      showPrefectures={effectiveShowPrefectures}
+                      prefectureFilter={filters.selectedPrefecture || undefined}
+                      selectedPrefecture={filters.selectedPrefecture || undefined}
+                    >
                       <DensityLayer
                         visible={activeLayer === 'density'}
                         regionFilter={regionFilterValue || undefined}

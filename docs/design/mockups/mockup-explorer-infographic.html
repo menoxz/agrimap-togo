@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AgriMap Togo — Explorer Infographique v2 (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* ════════════════════════════════════════════════════
+   DESIGN TOKENS
+   ════════════════════════════════════════════════════ */
+:root {
+  --green:     #006A4E;
+  --green-lt:  #E0F0EA;
+  --green-dk:  #004D3A;
+  --yellow:    #FFD100;
+  --yellow-dk: #C7A700;
+  --red:       #D21034;
+  --red-lt:    #FDEAED;
+  --red-dk:    #A00D29;
+  --bg:        #F9F5EF;
+  --surface:   #FFFFFF;
+  --border:    #E5E0D8;
+  --text:      #1A1A1A;
+  --text2:     #5A5550;
+  --muted:     #9A9590;
+  --r:         10px;
+  --r-lg:      16px;
+  --r-pill:    9999px;
+  --shadow:    0 2px 12px rgba(0,106,78,0.11), 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* ════════════════════════════════════════════════════
+   RESET
+   ════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  font-size: 14px; line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ════════════════════════════════════════════════════
+   NAVBAR
+   ════════════════════════════════════════════════════ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  height: 54px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 18px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 15px; color: var(--green);
+  text-decoration: none; letter-spacing: -0.01em;
+}
+.logo-icon {
+  width: 28px; height: 28px;
+  background: var(--green);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; line-height: 1;
+}
+.nav-right { display: flex; align-items: center; gap: 8px; }
+.nav-tag {
+  font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--muted);
+  background: var(--bg); border: 1px solid var(--border);
+  padding: 3px 9px; border-radius: var(--r-pill);
+}
+.btn-mobile {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 12px;
+  border: 1.5px solid var(--border); border-radius: var(--r-pill);
+  background: transparent; cursor: pointer;
+  font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600;
+  color: var(--text2);
+  transition: all 0.15s ease;
+}
+.btn-mobile:hover { border-color: var(--green); color: var(--green); }
+.btn-mobile.on    { background: var(--green); color: #fff; border-color: var(--green); }
+
+/* ════════════════════════════════════════════════════
+   APP SHELL
+   ════════════════════════════════════════════════════ */
+.app-shell {
+  display: flex;
+  height: calc(100vh - 54px);
+  margin-top: 54px;
+  overflow: hidden;
+}
+
+/* ════════════════════════════════════════════════════
+   MAP AREA (70%)
+   ════════════════════════════════════════════════════ */
+.map-area {
+  flex: 0 0 70%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(150deg, #1e7555 0%, #006A4E 50%, #004e3a 100%);
+}
+.map-overlay {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 22% 22%, rgba(255,255,255,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 78% 72%, rgba(0,0,0,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.map-grid-lines {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.map-center-label {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; pointer-events: none; user-select: none;
+}
+.map-center-icon { font-size: 64px; opacity: 0.42; line-height: 1; display: block; }
+.map-center-text {
+  font-size: 16px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.48); margin-top: 12px;
+}
+.map-credit {
+  position: absolute; bottom: 8px; right: 12px;
+  font-size: 10px; color: rgba(255,255,255,0.30); letter-spacing: 0.02em;
+}
+
+/* Navigation pill — floats over map */
+.map-nav {
+  position: absolute; top: 14px; left: 50%;
+  transform: translateX(-50%); z-index: 20;
+  display: flex; gap: 3px;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229,224,216,0.88);
+  border-radius: var(--r-pill);
+  padding: 4px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.17);
+}
+.nav-btn {
+  padding: 7px 16px;
+  border: none; background: transparent; border-radius: var(--r-pill);
+  cursor: pointer;
+  font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600;
+  color: var(--text2);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap; line-height: 1;
+}
+.nav-btn:hover  { background: var(--bg); color: var(--text); }
+.nav-btn.on-g   { background: var(--green); color: #fff; }
+.nav-btn.on-r   { background: var(--red);   color: #fff; }
+.nav-btn:active { transform: scale(0.96); }
+
+/* ════════════════════════════════════════════════════
+   INFO PANEL (30%)
+   ════════════════════════════════════════════════════ */
+.info-panel {
+  flex: 0 0 30%;
+  background: var(--surface);
+  border-left: 1.5px solid var(--border);
+  overflow-y: auto;
+  display: flex; flex-direction: column;
+}
+.info-panel::-webkit-scrollbar { width: 3px; }
+.info-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ── State panes ── */
+.state-pane { display: none; flex-direction: column; flex: 1; }
+.state-pane.is-active {
+  display: flex;
+  animation: fadeUp 0.22s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(7px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════════════════
+   PANE HEADER
+   ════════════════════════════════════════════════════ */
+.pane-header {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+  background: var(--surface);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.pane-header.hd-red {
+  background: var(--red);
+  border-bottom-color: var(--red-dk);
+}
+.pane-name {
+  font-size: 19px; font-weight: 800; color: var(--text);
+  letter-spacing: -0.025em; line-height: 1;
+}
+.hd-red .pane-name { color: #fff; }
+
+/* Inline badge */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 9px; border-radius: var(--r-pill);
+  font-size: 11px; font-weight: 700; line-height: 1;
+}
+.b-red   { background: var(--red-lt);              color: var(--red-dk); }
+.b-white { background: rgba(255,255,255,0.20);      color: #fff; border: 1.5px solid rgba(255,255,255,0.45); }
+
+/* Hint text (national state only) */
+.pane-hint {
+  padding: 9px 16px 0;
+  font-size: 11.5px; color: var(--muted); font-style: italic; line-height: 1.4;
+}
+
+/* ════════════════════════════════════════════════════
+   PANE BODY
+   ════════════════════════════════════════════════════ */
+.pane-body {
+  padding: 14px 13px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  flex: 1;
+}
+/* Kéran: rosé background */
+#pane-keran .pane-body { background: #FEF0F2; }
+
+/* ════════════════════════════════════════════════════
+   GRIDS
+   ════════════════════════════════════════════════════ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr;        gap: 8px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+/* ════════════════════════════════════════════════════
+   KPI CARDS — base
+   ════════════════════════════════════════════════════ */
+.kpi {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 13px 8px 11px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.15s, border-color 0.15s;
+  cursor: default;
+}
+/* Top accent stripe */
+.kpi::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--kpi-accent, var(--border));
+}
+.kpi:hover { box-shadow: var(--shadow); border-color: rgba(0,106,78,0.18); }
+
+/* Accent color variants */
+.kpi.acc-green  { --kpi-accent: var(--green); }
+.kpi.acc-red    { --kpi-accent: var(--red); }
+.kpi.acc-yellow { --kpi-accent: var(--yellow); }
+.kpi.acc-muted  { --kpi-accent: var(--muted); }
+
+/* Card parts */
+.kpi-icon { font-size: 22px; line-height: 1; }
+.kpi-val  {
+  font-size: 30px; font-weight: 800; line-height: 1;
+  letter-spacing: -0.03em; color: var(--text);
+}
+.kpi-lbl  {
+  font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text2); line-height: 1.2;
+  margin-top: 1px;
+}
+
+/* Value color variants */
+.v-green  { color: var(--green); }
+.v-red    { color: var(--red); }
+.v-yellow { color: var(--yellow-dk); }
+
+/* ── Modifier: national-size (bigger, 2-col grid) ── */
+.kpi.nat           { padding: 18px 8px 16px; }
+.kpi.nat .kpi-icon { font-size: 26px; }
+.kpi.nat .kpi-val  { font-size: 40px; }
+.kpi.nat .kpi-lbl  { font-size: 10.5px; }
+
+/* ── Modifier: wide (2-col in Kara, medium numbers) ── */
+.kpi.wide           { padding: 15px 8px 13px; }
+.kpi.wide .kpi-icon { font-size: 24px; }
+.kpi.wide .kpi-val  { font-size: 34px; }
+
+/* ════════════════════════════════════════════════════
+   ZONES BLANCHES BAR
+   ════════════════════════════════════════════════════ */
+.zb-wrap {
+  background: var(--bg);
+  border: 1px solid rgba(210,16,52,0.22);
+  border-radius: var(--r);
+  padding: 12px 14px;
+}
+.zb-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px;
+}
+.zb-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--red);
+}
+.zb-pct {
+  font-size: 20px; font-weight: 800;
+  color: var(--red); letter-spacing: -0.02em; line-height: 1;
+}
+.zb-track {
+  height: 10px;
+  background: rgba(210,16,52,0.09);
+  border-radius: 5px; overflow: hidden;
+}
+.zb-fill {
+  height: 100%; background: var(--red); border-radius: 5px;
+  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ════════════════════════════════════════════════════
+   ALERT ZONE (Kéran — zone blanche)
+   ════════════════════════════════════════════════════ */
+.alert-zone {
+  background: rgba(210,16,52,0.07);
+  border: 2px solid rgba(210,16,52,0.22);
+  border-radius: var(--r-lg);
+  padding: 22px 12px 18px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.alert-icon     { font-size: 54px; line-height: 1; }
+.alert-zeros    { display: flex; gap: 7px; width: 100%; }
+
+.zero-card {
+  flex: 1;
+  background: rgba(210,16,52,0.09);
+  border: 1px solid rgba(210,16,52,0.22);
+  border-radius: var(--r);
+  padding: 12px 6px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.zero-icon { font-size: 18px; line-height: 1; }
+.zero-val  {
+  font-size: 38px; font-weight: 800;
+  color: var(--red); line-height: 1; letter-spacing: -0.03em;
+}
+.zero-lbl  {
+  font-size: 9px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--red-dk);
+}
+
+/* ════════════════════════════════════════════════════
+   DOWNLOAD BUTTON
+   ════════════════════════════════════════════════════ */
+.btn-dl {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 10px 16px;
+  border: 2px solid var(--green); border-radius: var(--r);
+  background: transparent; color: var(--green);
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.01em;
+  transition: background 0.15s, color 0.15s;
+  margin-top: 4px;
+}
+.btn-dl:hover  { background: var(--green-lt); }
+.btn-dl:active { background: var(--green); color: #fff; }
+
+/* ════════════════════════════════════════════════════
+   MOBILE SIMULATION
+   ════════════════════════════════════════════════════ */
+body.mobile-view .app-shell {
+  flex-direction: column;
+  height: auto; overflow: visible;
+  min-height: calc(100vh - 54px);
+}
+body.mobile-view .map-area {
+  flex: none; height: 180px; width: 100%;
+}
+body.mobile-view .info-panel {
+  flex: none; width: 100%;
+  max-height: none; overflow-y: visible;
+  border-left: none; border-top: 1.5px solid var(--border);
+}
+body.mobile-view { overflow-y: auto; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+     ════════════════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <a href="#" class="nav-logo" aria-label="AgriMap Togo — Accueil">
+    <div class="logo-icon" aria-hidden="true">🌱</div>
+    AgriMap Togo
+  </a>
+  <div class="nav-right">
+    <span class="nav-tag">Infographique v2 · Mockup</span>
+    <button
+      class="btn-mobile"
+      id="mobBtn"
+      onclick="toggleMobile()"
+      aria-pressed="false"
+      aria-label="Simuler le mode mobile"
+    >📱 Mobile</button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     APP SHELL
+     ════════════════════════════════════════ -->
+<div class="app-shell">
+
+  <!-- ──────────────────────────
+       MAP AREA (70%)
+       ────────────────────────── -->
+  <div class="map-area" role="img" aria-label="Carte Leaflet simulée — Togo">
+    <div class="map-overlay"    aria-hidden="true"></div>
+    <div class="map-grid-lines" aria-hidden="true"></div>
+
+    <!-- Navigation pill -->
+    <div class="map-nav" role="group" aria-label="Sélection de vue">
+      <button class="nav-btn on-g" id="btn-national"
+              onclick="showState('national')" aria-pressed="true">
+        🌍 National
+      </button>
+      <button class="nav-btn" id="btn-kara"
+              onclick="showState('kara')" aria-pressed="false">
+        📍 Kara
+      </button>
+      <button class="nav-btn" id="btn-keran"
+              onclick="showState('keran')" aria-pressed="false">
+        📌 Kéran
+      </button>
+    </div>
+
+    <!-- Centered map label -->
+    <div class="map-center-label" aria-hidden="true">
+      <span class="map-center-icon">🗺️</span>
+      <div class="map-center-text">Carte Leaflet</div>
+    </div>
+
+    <div class="map-credit" aria-hidden="true">AgriMap Togo · Mockup v2 · 2024</div>
+  </div><!-- /map-area -->
+
+
+  <!-- ──────────────────────────
+       INFO PANEL (30%)
+       ────────────────────────── -->
+  <main class="info-panel" aria-label="Panneau statistiques">
+
+    <!-- ════════════════════════════════
+         ÉTAT 1 — VUE NATIONALE
+         ════════════════════════════════ -->
+    <div id="pane-national" class="state-pane is-active" aria-label="Vue nationale Togo">
+
+      <header class="pane-header">
+        <span aria-hidden="true" style="font-size:22px; line-height:1;">🇹🇬</span>
+        <span class="pane-name">Togo</span>
+      </header>
+
+      <p class="pane-hint">Cliquez une région pour le détail.</p>
+
+      <div class="pane-body">
+        <!-- 4 grandes stat cards — 2×2 -->
+        <div class="grid-2">
+
+          <div class="kpi nat acc-green" aria-label="971 marchés">
+            <span class="kpi-icon">🏪</span>
+            <span class="kpi-val v-green">971</span>
+            <span class="kpi-lbl">Marchés</span>
+          </div>
+
+          <div class="kpi nat acc-green" aria-label="55 coopératives">
+            <span class="kpi-icon">🤝</span>
+            <span class="kpi-val v-green">55</span>
+            <span class="kpi-lbl">Coops</span>
+          </div>
+
+          <div class="kpi nat acc-green" aria-label="737 exploitations">
+            <span class="kpi-icon">🌾</span>
+            <span class="kpi-val v-green">737</span>
+            <span class="kpi-lbl">Exploit.</span>
+          </div>
+
+          <div class="kpi nat acc-red" aria-label="67 pourcent zones blanches">
+            <span class="kpi-icon">⚠️</span>
+            <span class="kpi-val v-red">67%</span>
+            <span class="kpi-lbl">Blanches</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /pane-national -->
+
+
+    <!-- ════════════════════════════════
+         ÉTAT 2 — RÉGION KARA
+         ════════════════════════════════ -->
+    <div id="pane-kara" class="state-pane" aria-label="Région Kara">
+
+      <header class="pane-header">
+        <span class="pane-name">📍 Kara</span>
+        <span class="badge b-red" role="status">● Priorité haute</span>
+      </header>
+
+      <div class="pane-body">
+
+        <!-- Ligne 1 : 3 KPIs compacts -->
+        <div class="grid-3">
+
+          <div class="kpi acc-green" aria-label="157 marchés">
+            <span class="kpi-icon">🏪</span>
+            <span class="kpi-val v-green">157</span>
+            <span class="kpi-lbl">Marchés</span>
+          </div>
+
+          <div class="kpi acc-green" aria-label="6 coopératives">
+            <span class="kpi-icon">🤝</span>
+            <span class="kpi-val v-green">6</span>
+            <span class="kpi-lbl">Coops</span>
+          </div>
+
+          <div class="kpi acc-green" aria-label="108 exploitations">
+            <span class="kpi-icon">🌾</span>
+            <span class="kpi-val v-green">108</span>
+            <span class="kpi-lbl">Exploit.</span>
+          </div>
+
+        </div>
+
+        <!-- Ligne 2 : 2 KPIs larges -->
+        <div class="grid-2">
+
+          <div class="kpi wide acc-muted" aria-label="5.6 km distance moyenne au marché">
+            <span class="kpi-icon">🛣️</span>
+            <span class="kpi-val">5.6<span style="font-size:14px; font-weight:600; letter-spacing:0;"> km</span></span>
+            <span class="kpi-lbl">Dist. moy.</span>
+          </div>
+
+          <div class="kpi wide acc-red" aria-label="82 pourcent zones blanches">
+            <span class="kpi-icon">⚠️</span>
+            <span class="kpi-val v-red">82%</span>
+            <span class="kpi-lbl">Zones blanches</span>
+          </div>
+
+        </div>
+
+        <!-- Barre unique zones blanches -->
+        <div class="zb-wrap"
+             role="meter" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"
+             aria-label="82% des zones sont blanches (sans service agricole)">
+          <div class="zb-header">
+            <span class="zb-label">⚠ Zones blanches</span>
+            <span class="zb-pct">82%</span>
+          </div>
+          <div class="zb-track">
+            <div class="zb-fill" style="width: 82%;"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /pane-kara -->
+
+
+    <!-- ════════════════════════════════
+         ÉTAT 3 — PRÉFECTURE KÉRAN (zone blanche)
+         ════════════════════════════════ -->
+    <div id="pane-keran" class="state-pane" aria-label="Préfecture Kéran — Zone blanche totale">
+
+      <header class="pane-header hd-red">
+        <span class="pane-name">📌 Kéran</span>
+        <span class="badge b-white">🔴 ZONE BLANCHE</span>
+      </header>
+
+      <div class="pane-body">
+
+        <!-- Bloc d'alerte + stats à zéro -->
+        <div class="alert-zone" role="alert" aria-live="polite">
+
+          <span class="alert-icon" aria-hidden="true">⚠️</span>
+
+          <div class="alert-zeros" aria-label="Aucun service répertorié">
+
+            <div class="zero-card">
+              <span class="zero-icon" aria-hidden="true">🏪</span>
+              <span class="zero-val">0</span>
+              <span class="zero-lbl">Marchés</span>
+            </div>
+
+            <div class="zero-card">
+              <span class="zero-icon" aria-hidden="true">🤝</span>
+              <span class="zero-val">0</span>
+              <span class="zero-lbl">Coopérat.</span>
+            </div>
+
+            <div class="zero-card">
+              <span class="zero-icon" aria-hidden="true">🌱</span>
+              <span class="zero-val">0</span>
+              <span class="zero-lbl">ZAAP</span>
+            </div>
+
+          </div>
+        </div><!-- /alert-zone -->
+
+        <!-- Bouton téléchargement -->
+        <button
+          class="btn-dl"
+          onclick="return false;"
+          aria-label="Télécharger données GeoJSON Kéran (non fonctionnel dans le mockup)"
+        >
+          ↓ GeoJSON
+        </button>
+
+      </div>
+
+    </div><!-- /pane-keran -->
+
+  </main><!-- /info-panel -->
+
+</div><!-- /app-shell -->
+
+
+<script>
+/* ════════════════════════════════════════════════════
+   JS vanilla — navigation entre états + toggle mobile
+   ════════════════════════════════════════════════════ */
+
+var STATES   = ['national', 'kara', 'keran'];
+var ACTIVE_CLASS = { national: 'on-g', kara: 'on-g', keran: 'on-r' };
+
+function showState(s) {
+  /* 1 — masquer tous les panneaux */
+  STATES.forEach(function(id) {
+    var pane = document.getElementById('pane-' + id);
+    var btn  = document.getElementById('btn-' + id);
+    if (pane) pane.classList.remove('is-active');
+    if (btn)  {
+      btn.classList.remove('on-g', 'on-r');
+      btn.setAttribute('aria-pressed', 'false');
+    }
+  });
+
+  /* 2 — afficher le panneau cible */
+  var target = document.getElementById('pane-' + s);
+  var btn    = document.getElementById('btn-' + s);
+  if (target) target.classList.add('is-active');
+  if (btn)    {
+    btn.classList.add(ACTIVE_CLASS[s] || 'on-g');
+    btn.setAttribute('aria-pressed', 'true');
+  }
+
+  /* 3 — scroll panel to top */
+  var panel = document.querySelector('.info-panel');
+  if (panel) panel.scrollTop = 0;
+}
+
+/* ── Mobile toggle ── */
+function toggleMobile() {
+  var on  = document.body.classList.toggle('mobile-view');
+  var btn = document.getElementById('mobBtn');
+  btn.classList.toggle('on', on);
+  btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+}
+</script>
+
+</body>
+</html>

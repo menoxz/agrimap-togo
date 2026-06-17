@@ -4,6 +4,7 @@ import type { AnalysisType, MapFilters } from '@/types/map';
 interface UseMapFiltersResult {
   filters: MapFilters;
   setSelectedRegion: (region: string) => void;
+  setSelectedPrefecture: (prefecture: string) => void;
   toggleLayer: (layer: AnalysisType) => void;
   setActiveLayer: (layer: AnalysisType) => void;
   setZaapOnlyUncovered: (value: boolean) => void;
@@ -13,6 +14,7 @@ interface UseMapFiltersResult {
 
 const defaultFilters: MapFilters = {
   selectedRegion: '',
+  selectedPrefecture: '',
   activeLayers: ['density'],
   zaapOnlyUncovered: false,
 };
@@ -20,8 +22,13 @@ const defaultFilters: MapFilters = {
 export function useMapFilters(): UseMapFiltersResult {
   const [filters, setFilters] = useState<MapFilters>(defaultFilters);
 
+  /** Changing region always resets the prefecture selection. */
   const setSelectedRegion = useCallback((region: string) => {
-    setFilters((prev) => ({ ...prev, selectedRegion: region }));
+    setFilters((prev) => ({ ...prev, selectedRegion: region, selectedPrefecture: '' }));
+  }, []);
+
+  const setSelectedPrefecture = useCallback((prefecture: string) => {
+    setFilters((prev) => ({ ...prev, selectedPrefecture: prefecture }));
   }, []);
 
   const toggleLayer = useCallback((layer: AnalysisType) => {
@@ -57,6 +64,7 @@ export function useMapFilters(): UseMapFiltersResult {
   const isFiltered = useMemo(() => {
     return (
       filters.selectedRegion !== '' ||
+      filters.selectedPrefecture !== '' ||
       filters.activeLayers.length !== 1 ||
       filters.activeLayers[0] !== 'density' ||
       filters.zaapOnlyUncovered
@@ -66,6 +74,7 @@ export function useMapFilters(): UseMapFiltersResult {
   return {
     filters,
     setSelectedRegion,
+    setSelectedPrefecture,
     toggleLayer,
     setActiveLayer,
     setZaapOnlyUncovered,

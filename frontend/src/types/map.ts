@@ -34,6 +34,8 @@ export const ANALYSIS_TYPES: readonly AnalysisType[] = [
 
 export interface MapFilters {
   selectedRegion: string;
+  /** ADM2 prefecture filter — '' means no filter */
+  selectedPrefecture: string;
   activeLayers: AnalysisType[];
   zaapOnlyUncovered: boolean;
 }

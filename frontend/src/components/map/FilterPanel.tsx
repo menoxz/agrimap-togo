@@ -10,9 +10,13 @@ import { LAYER_GEOJSON_URLS, LAYER_FILE_SLUGS } from './layers';
 
 interface FilterPanelProps {
   selectedRegion: string;
+  /** Currently selected prefecture name ('' = all) */
+  selectedPrefecture?: string;
   activeLayers: AnalysisType[];
   zaapOnlyUncovered: boolean;
   onRegionChange: (region: string) => void;
+  /** Called when prefecture selection changes */
+  onPrefectureChange?: (prefecture: string) => void;
   onLayerToggle: (layer: AnalysisType) => void;
   onLayerSet: (layer: AnalysisType) => void;
   onZaapOnlyUncoveredChange: (value: boolean) => void;
@@ -38,6 +42,22 @@ const REGIONS = [
   { value: 'kara', label: 'Kara' },
   { value: 'savanes', label: 'Savanes' },
 ];
+
+/**
+ * Prefectures organised by lowercase region key (matches REGIONS.value).
+ * Values are title-case to match `properties.prefecture` in GeoJSON markers
+ * and `properties.nom_prefecture` in prefecture_synthesis.geojson.
+ */
+const PREFECTURES_BY_REGION: Record<string, string[]> = {
+  maritime: ['Ave', 'Bas-Mono', 'Golfe', 'Lacs', 'Lome Commune', 'Vo', 'Yoto', 'Zio'],
+  plateaux: ['Agou', 'Akébou', 'Amou', 'Anié', 'Danyi', 'Est-Mono', 'Haho', 'Kloto', 'Kpélé', 'Moyen-Mono', 'Ogou', 'Wawa'],
+  centrale: ['Blitta', 'Plaine de Mô', 'Sotouboua', 'Tchamba', 'Tchaoudjo'],
+  kara: ['Assoli', 'Bassar', 'Binah', 'Dankpen', 'Doufelgou', 'Keran', 'Kozah'],
+  savanes: ['Cinkassé', 'Kpendjal', 'Oti', 'Tandjouare', 'Tone'],
+};
+
+/** All 37 prefectures sorted alphabetically (shown when no region is selected). */
+const ALL_PREFECTURES = Object.values(PREFECTURES_BY_REGION).flat().sort();
 
 const LAYER_LABELS: Record<AnalysisType, { fr: string; en: string }> = {
   density: { fr: 'Densité exploitations', en: 'Farm density' },
@@ -114,9 +134,11 @@ async function handleDownloadCSV(layer: AnalysisType): Promise<void> {
  */
 export default function FilterPanel({
   selectedRegion,
+  selectedPrefecture = '',
   activeLayers,
   zaapOnlyUncovered,
   onRegionChange,
+  onPrefectureChange,
   onLayerSet,
   onZaapOnlyUncoveredChange,
   onReset,
@@ -135,6 +157,11 @@ export default function FilterPanel({
     label: LAYER_LABELS[type][currentLang === 'en' ? 'en' : 'fr'],
   }));
 
+  /** Cascaded prefecture list: filtered by region when one is selected. */
+  const availablePrefectures = selectedRegion
+    ? (PREFECTURES_BY_REGION[selectedRegion] ?? [])
+    : ALL_PREFECTURES;
+
   /* ── Dark (green sidebar) variant ──────────────────────────────────────── */
   if (dark) {
     return (
@@ -146,7 +173,10 @@ export default function FilterPanel({
           </label>
           <select
             value={selectedRegion}
-            onChange={(e) => onRegionChange(e.target.value)}
+            onChange={(e) => {
+              onRegionChange(e.target.value);
+              onPrefectureChange?.('');
+            }}
             className="w-full text-sm rounded-md border border-white/30 bg-white/15 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white/40"
           >
             {REGIONS.map((r) => (
@@ -157,7 +187,26 @@ export default function FilterPanel({
           </select>
         </div>
 
-        {/* Layer selection */}
+        {/* Prefecture filter (cascade) */}
+        <div>
+          <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
+            📍 {currentLang === 'en' ? 'Prefecture' : 'Préfecture'}
+          </label>
+          <select
+            value={selectedPrefecture}
+            onChange={(e) => onPrefectureChange?.(e.target.value)}
+            className="w-full text-sm rounded-md border border-white/30 bg-white/15 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white/40"
+          >
+            <option value="" className="bg-togo-green-dark text-white">
+              {currentLang === 'en' ? 'All prefectures' : 'Toutes les préfectures'}
+            </option>
+            {availablePrefectures.map((p) => (
+              <option key={p} value={p} className="bg-togo-green-dark text-white">
+                {p}
+              </option>
+            ))}
+          </select>
+        </div>
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
             🗺 {currentLang === 'en' ? 'Analysis type' : "Type d'analyse"}

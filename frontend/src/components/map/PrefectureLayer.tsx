@@ -18,7 +18,15 @@ const PREFECTURE_DATA_URL = '/data/prefecture_synthesis.geojson';
 const PANE_NAME = 'prefectures-pane';
 const PANE_Z_INDEX = 350;
 
+/** Togo Heritage yellow — used for the selected-prefecture highlight. */
+const SELECTED_COLOR = '#FFD100';
+
 // ─── Types ────────────────────────────────────────────────────────────────────
+
+interface PrefectureLayerProps {
+  /** If set, this prefecture is highlighted in Togo Heritage yellow. */
+  selectedPrefecture?: string;
+}
 
 interface PrefectureProperties {
   nom_prefecture: string;
@@ -178,13 +186,52 @@ function PrefecturePopup({ props }: PrefecturePopupProps) {
  * Placed in a custom pane (z-index 350): above the OSM basemap (z=200),
  * below the analysis overlay-pane layers (z=400), and below markers (z=600).
  *
+ * When `selectedPrefecture` is set, the matching feature is highlighted with
+ * a Togo Heritage yellow border (#FFD100) without rebuilding the entire layer.
+ *
  * Must be rendered inside a <MapContainer> (react-leaflet context required).
  */
-export default function PrefectureLayer() {
+export default function PrefectureLayer({ selectedPrefecture }: PrefectureLayerProps) {
   const map = useMap();
   const layerRef = useRef<L.GeoJSON | null>(null);
   const { data } = useDataLoader(PREFECTURE_DATA_URL);
 
+  /**
+   * Keep a ref to the latest selectedPrefecture so that the stable style
+   * function used during layer creation can read the current value without
+   * being listed as a dependency (which would rebuild the layer on every change).
+   */
+  const selectedPrefRef = useRef<string | undefined>(selectedPrefecture);
+
+  // ── Effect 1: re-style on selectedPrefecture change (no layer rebuild) ──
+  useEffect(() => {
+    // Update ref FIRST so the style function reads the correct value
+    selectedPrefRef.current = selectedPrefecture;
+
+    if (!layerRef.current) return;
+
+    layerRef.current.setStyle((feature) => {
+      const props = feature?.properties as PrefectureProperties | undefined;
+      const sel = selectedPrefRef.current;
+      if (sel && props?.nom_prefecture === sel) {
+        return {
+          weight: 3,
+          color: SELECTED_COLOR,
+          fillOpacity: 0.35,
+          dashArray: '',
+          fillColor: props?.color ?? '#aaaaaa',
+        };
+      }
+      return {
+        fillColor: props?.color ?? '#aaaaaa',
+        weight: 1,
+        color: '#666',
+        fillOpacity: 0.6,
+      };
+    });
+  }, [selectedPrefecture]);
+
+  // ── Effect 2: create / destroy layer when data loads ──────────────────
   useEffect(() => {
     // ── 1. Ensure the custom pane exists (created once per map instance) ──
     if (!map.getPane(PANE_NAME)) {
@@ -211,14 +258,26 @@ export default function PrefectureLayer() {
       {
         pane: PANE_NAME,
 
-        // Base style for each prefecture polygon
-        style: (feature) => ({
-          fillColor:
-            (feature?.properties as PrefectureProperties | undefined)?.color ?? '#aaaaaa',
-          weight: 1,
-          color: '#666',
-          fillOpacity: 0.6,
-        }),
+        // Style reads from selectedPrefRef so it's stable across re-renders
+        style: (feature) => {
+          const props = feature?.properties as PrefectureProperties | undefined;
+          const sel = selectedPrefRef.current;
+          if (sel && props?.nom_prefecture === sel) {
+            return {
+              weight: 3,
+              color: SELECTED_COLOR,
+              fillOpacity: 0.35,
+              dashArray: '',
+              fillColor: props?.color ?? '#aaaaaa',
+            };
+          }
+          return {
+            fillColor: props?.color ?? '#aaaaaa',
+            weight: 1,
+            color: '#666',
+            fillOpacity: 0.6,
+          };
+        },
 
         onEachFeature: (feature, layer) => {
           const props = feature.properties as PrefectureProperties;
@@ -235,7 +294,8 @@ export default function PrefectureLayer() {
             (layer as L.Path).setStyle({ weight: 2, color: '#333' });
           });
 
-          // Mouseout: restore default style
+          // Mouseout: restore default/selection style via resetStyle
+          // resetStyle calls the original options.style function which reads selectedPrefRef
           layer.on('mouseout', () => {
             geoJsonLayer.resetStyle(layer as L.Layer);
           });

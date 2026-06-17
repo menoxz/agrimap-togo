@@ -37,6 +37,16 @@ interface TogoMapProps {
    * and well below markers (marker-pane z=600).
    */
   showPrefectures?: boolean;
+  /**
+   * Filter markers to show only this prefecture (title-case, e.g. "Kozah").
+   * Passed to every MarkersLayer. '' or undefined = show all.
+   */
+  prefectureFilter?: string;
+  /**
+   * Currently selected prefecture — highlighted with Togo Heritage yellow.
+   * Passed to PrefectureLayer.
+   */
+  selectedPrefecture?: string;
 }
 
 /**
@@ -55,6 +65,8 @@ export default function TogoMap({
   scrollWheelZoom = true,
   visibleMarkers,
   showPrefectures = false,
+  prefectureFilter,
+  selectedPrefecture,
 }: TogoMapProps) {
   return (
     <MapContainer
@@ -75,14 +87,14 @@ export default function TogoMap({
       />
 
       {/* Prefecture polygon layer — custom pane z=350, below analysis layers */}
-      {showPrefectures && <PrefectureLayer />}
+      {showPrefectures && <PrefectureLayer selectedPrefecture={selectedPrefecture} />}
 
       <ZoomControl position="bottomright" />
 
       {/* Marker overlays — rendered for each visible type */}
       {visibleMarkers &&
         ALL_MARKER_TYPES.filter((t) => visibleMarkers.has(t)).map((t) => (
-          <MarkersLayer key={t} type={t} />
+          <MarkersLayer key={t} type={t} prefectureFilter={prefectureFilter} />
         ))}
 
       {children}

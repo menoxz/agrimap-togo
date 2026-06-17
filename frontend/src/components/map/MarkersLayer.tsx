@@ -11,6 +11,8 @@ export type MarkerType = 'marches' | 'cooperatives' | 'exploitations' | 'zaap' |
 
 interface MarkersLayerProps {
   type: MarkerType;
+  /** Filter markers to only show this prefecture ('' or undefined = show all). */
+  prefectureFilter?: string;
 }
 
 // ─── Config ──────────────────────────────────────────────────────────────────
@@ -230,7 +232,7 @@ function buildDivIconHtml(cfg: IconConfig): string {
  * Uses L.divIcon with emoji for differentiated icons and renderToString for popups.
  * Must be rendered inside a MapContainer (react-leaflet context required).
  */
-export default function MarkersLayer({ type }: MarkersLayerProps) {
+export default function MarkersLayer({ type, prefectureFilter }: MarkersLayerProps) {
   const map = useMap();
   const layerGroupRef = useRef<L.LayerGroup | null>(null);
   const { data } = useDataLoader(DATA_URLS[type]);
@@ -256,6 +258,9 @@ export default function MarkersLayer({ type }: MarkersLayerProps) {
     const group = L.layerGroup();
 
     for (const feature of data.features) {
+      // ── Prefecture filter ──────────────────────────────────────────────
+      if (prefectureFilter && feature.properties.prefecture !== prefectureFilter) continue;
+
       const latlng = getLatLng(feature);
       if (!latlng) continue;
 
@@ -277,7 +282,7 @@ export default function MarkersLayer({ type }: MarkersLayerProps) {
         layerGroupRef.current = null;
       }
     };
-  }, [data, map, type]);
+  }, [data, map, type, prefectureFilter]);
 
   // No DOM output — all rendering is via Leaflet's imperative API
   return null;

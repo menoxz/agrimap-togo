@@ -74,4 +74,41 @@ describe('useMapFilters', () => {
     expect(result.current.filters.zaapOnlyUncovered).toBe(false);
     expect(result.current.isFiltered).toBe(false);
   });
+
+  it('sets selectedPrefecture', () => {
+    const { result } = renderHook(() => useMapFilters());
+    act(() => {
+      result.current.setSelectedPrefecture('Kozah');
+    });
+    expect(result.current.filters.selectedPrefecture).toBe('Kozah');
+    expect(result.current.isFiltered).toBe(true);
+  });
+
+  it('resets selectedPrefecture when setSelectedRegion is called', () => {
+    const { result } = renderHook(() => useMapFilters());
+    act(() => {
+      result.current.setSelectedPrefecture('Kozah');
+    });
+    expect(result.current.filters.selectedPrefecture).toBe('Kozah');
+
+    act(() => {
+      result.current.setSelectedRegion('maritime');
+    });
+    expect(result.current.filters.selectedRegion).toBe('maritime');
+    expect(result.current.filters.selectedPrefecture).toBe('');
+  });
+
+  it('resets selectedPrefecture on resetFilters', () => {
+    const { result } = renderHook(() => useMapFilters());
+    act(() => {
+      result.current.setSelectedPrefecture('Lome Commune');
+    });
+    expect(result.current.filters.selectedPrefecture).toBe('Lome Commune');
+
+    act(() => {
+      result.current.resetFilters();
+    });
+    expect(result.current.filters.selectedPrefecture).toBe('');
+    expect(result.current.isFiltered).toBe(false);
+  });
 });
