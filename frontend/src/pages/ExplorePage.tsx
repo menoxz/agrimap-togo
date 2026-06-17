@@ -18,6 +18,7 @@ import {
   MapController,
 } from '@/components/map';
 import ZoneDetailPanel from '@/components/map/ZoneDetailPanel';
+import PrefectureDetailPanel, { type PrefectureDetailData } from '@/components/map/PrefectureDetailPanel';
 import TopZonesList from '@/components/map/TopZonesList';
 import type { AnalysisType, GeoJsonPropertyMap, GeoJsonFeature } from '@/types/map';
 
@@ -86,6 +87,9 @@ export default function ExplorePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [visibleMarkers, setVisibleMarkers] = useState<Set<string>>(new Set());
 
+  const [prefectureFeatures, setPrefectureFeatures] = useState<GeoJsonFeature[]>([]);
+  const [selectedPrefectureData, setSelectedPrefectureData] = useState<PrefectureDetailData | null>(null);
+
   const handleMarkerToggle = useCallback((type: string) => {
     setVisibleMarkers((prev) => {
       const next = new Set(prev);
@@ -148,6 +152,29 @@ export default function ExplorePage() {
     }
     handleZoneSelect(props, center);
   }, [allZones, handleZoneSelect]);
+
+  // Fetch prefecture_synthesis.geojson once on mount
+  useEffect(() => {
+    fetch('/data/prefecture_synthesis.geojson')
+      .then(r => r.json())
+      .then(d => setPrefectureFeatures((d.features ?? []) as GeoJsonFeature[]))
+      .catch(() => {});
+  }, []);
+
+  // Open panel + fly-to when a prefecture is selected
+  useEffect(() => {
+    if (!filters.selectedPrefecture) {
+      setSelectedPrefectureData(null);
+      return;
+    }
+    const feature = prefectureFeatures.find(
+      f => f.properties?.nom_prefecture === filters.selectedPrefecture,
+    );
+    if (!feature?.properties) return;
+    setSelectedPrefectureData(feature.properties as unknown as PrefectureDetailData);
+    const center = computeCentroid(feature.geometry);
+    if (center) setFlyToCoords(center);
+  }, [filters.selectedPrefecture, prefectureFeatures]);
 
   /** Event delegation — intercepts clicks on data-action="open-zone-detail"
    *  links emitted by RegionPopup (rendered via renderToString, outside React Router).
@@ -429,6 +456,13 @@ export default function ExplorePage() {
             zone={selectedZone}
             onClose={() => setSelectedZone(null)}
             onCenter={handleCenterZone}
+          />
+          <PrefectureDetailPanel
+            prefecture={selectedPrefectureData}
+            onClose={() => {
+              setSelectedPrefectureData(null);
+              setSelectedPrefecture('');
+            }}
           />
         </div>
       </div>

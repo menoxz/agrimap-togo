@@ -21,6 +21,13 @@ const PANE_Z_INDEX = 350;
 /** Togo Heritage yellow — used for the selected-prefecture highlight. */
 const SELECTED_COLOR = '#FFD100';
 
+/**
+ * Highlight pane — sits above analysis overlay layers (z=400) so the yellow
+ * dashed border remains visible even when analysis polygons cover the map.
+ */
+const HIGHLIGHT_PANE_NAME = 'selected-prefecture-pane';
+const HIGHLIGHT_PANE_Z_INDEX = 450;
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface PrefectureLayerProps {
@@ -186,14 +193,17 @@ function PrefecturePopup({ props }: PrefecturePopupProps) {
  * Placed in a custom pane (z-index 350): above the OSM basemap (z=200),
  * below the analysis overlay-pane layers (z=400), and below markers (z=600).
  *
- * When `selectedPrefecture` is set, the matching feature is highlighted with
- * a Togo Heritage yellow border (#FFD100) without rebuilding the entire layer.
+ * When `selectedPrefecture` is set, a dedicated highlight layer (pane z=450,
+ * above all analysis overlays) draws a Togo Heritage yellow dashed border
+ * (#FFD100) on the matching feature — always visible regardless of active
+ * analysis layers.
  *
  * Must be rendered inside a <MapContainer> (react-leaflet context required).
  */
 export default function PrefectureLayer({ selectedPrefecture }: PrefectureLayerProps) {
   const map = useMap();
   const layerRef = useRef<L.GeoJSON | null>(null);
+  const highlightLayerRef = useRef<L.GeoJSON | null>(null);
   const { data } = useDataLoader(PREFECTURE_DATA_URL);
 
   /**
@@ -203,35 +213,58 @@ export default function PrefectureLayer({ selectedPrefecture }: PrefectureLayerP
    */
   const selectedPrefRef = useRef<string | undefined>(selectedPrefecture);
 
-  // ── Effect 1: re-style on selectedPrefecture change (no layer rebuild) ──
+  // ── Effect 1: create the highlight pane once on mount ──────────────────
   useEffect(() => {
-    // Update ref FIRST so the style function reads the correct value
+    if (!map.getPane(HIGHLIGHT_PANE_NAME)) {
+      const pane = map.createPane(HIGHLIGHT_PANE_NAME);
+      pane.style.zIndex = String(HIGHLIGHT_PANE_Z_INDEX);
+    }
+  }, [map]);
+
+  // ── Effect 2: manage highlight layer for the selected prefecture ────────
+  //
+  // Replaces the former useEffect([selectedPrefecture]) that called
+  // layerRef.current?.setStyle() — that mechanism was invisible when analysis
+  // layers (z=400) covered the prefectures-pane (z=350). The highlight layer
+  // sits in selected-prefecture-pane (z=450), always above analysis layers.
+  useEffect(() => {
+    // Keep selectedPrefRef in sync so the main layer's style function
+    // reads the correct value if data reloads (Effect 3 rebuild).
     selectedPrefRef.current = selectedPrefecture;
 
-    if (!layerRef.current) return;
+    // Remove any previous highlight before creating a new one
+    highlightLayerRef.current?.remove();
+    highlightLayerRef.current = null;
 
-    layerRef.current.setStyle((feature) => {
-      const props = feature?.properties as PrefectureProperties | undefined;
-      const sel = selectedPrefRef.current;
-      if (sel && props?.nom_prefecture === sel) {
-        return {
-          weight: 3,
-          color: SELECTED_COLOR,
-          fillOpacity: 0.35,
-          dashArray: '',
-          fillColor: props?.color ?? '#aaaaaa',
-        };
+    if (selectedPrefecture && data?.features?.length) {
+      const feature = data.features.find(
+        (f) => f.properties?.nom_prefecture === selectedPrefecture,
+      );
+      if (feature) {
+        highlightLayerRef.current = L.geoJSON(
+          [feature] as unknown as Parameters<typeof L.geoJSON>[0],
+          {
+            pane: HIGHLIGHT_PANE_NAME,
+            style: {
+              color: SELECTED_COLOR,
+              weight: 4,
+              fillOpacity: 0,
+              dashArray: '6 3',
+              opacity: 1,
+            },
+            interactive: false,
+          },
+        ).addTo(map);
       }
-      return {
-        fillColor: props?.color ?? '#aaaaaa',
-        weight: 1,
-        color: '#666',
-        fillOpacity: 0.6,
-      };
-    });
-  }, [selectedPrefecture]);
+    }
 
-  // ── Effect 2: create / destroy layer when data loads ──────────────────
+    return () => {
+      highlightLayerRef.current?.remove();
+      highlightLayerRef.current = null;
+    };
+  }, [selectedPrefecture, data, map]);
+
+  // ── Effect 3: create / destroy layer when data loads ──────────────
   useEffect(() => {
     // ── 1. Ensure the custom pane exists (created once per map instance) ──
     if (!map.getPane(PANE_NAME)) {
