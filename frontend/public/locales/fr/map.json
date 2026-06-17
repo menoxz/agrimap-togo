@@ -93,11 +93,29 @@
     "farms": "Exploitations",
     "zaap_pep": "ZAAP / Pépinières",
     "metrics_title": "Indicateurs clés",
-    "density_raw": "Densité brute",
-    "avg_distance": "Distance moy.",
-    "white_zones": "Zones blanches",
+    "density_raw": "Densité brute (expl./km²)",
+    "avg_distance": "Distance moy. (service le + proche)",
+    "white_zones": "Zones blanches (% sans ZAAP)",
     "zaap_coverage": "Couverture ZAAP",
     "interpretation_title": "Interprétation",
-    "close": "Fermer"
+    "close": "Fermer",
+    "tooltip": {
+      "synthesis_score": "Score global combinant la densité, l'accessibilité, le réseau coopératif et la couverture ZAAP. Plus le score est élevé, meilleur est le maillage des services agricoles.",
+      "density_score": "Nombre d'exploitations agricoles rapporté à la surface de la préfecture, normalisé sur 100. Un score élevé indique une forte concentration agricole.",
+      "access_score": "Distance moyenne aux services agricoles (marchés, coopératives, ZAAP), normalisée sur 100. Plus le score est élevé, meilleur est l'accès.",
+      "coop_score": "Densité et répartition des coopératives, normalisée sur 100. Un score élevé indique un bon réseau coopératif.",
+      "zaap_score": "Taux de couverture du territoire par les Zones d'Aménagement Agricole Planifiées, normalisé sur 100.",
+      "density_raw": "Nombre total d'exploitations divisé par la surface de la préfecture.",
+      "avg_distance": "Distance moyenne pondérée entre les exploitations et le service agricole le plus proche.",
+      "white_zones": "Pourcentage de la surface non couverte par une ZAAP.",
+      "zaap_coverage": "Pourcentage de la surface couverte par au moins une ZAAP.",
+      "priority_level": "Basé sur le score synthèse : critique (< 40), modéré (40-65), bien desservi (> 65)."
+    },
+    "legend": {
+      "title": "Comprendre les scores",
+      "zaap": "ZAAP = Zone d'Aménagement Agricole Planifiée. Périmètres dédiés à l'agriculture, aménagés par l'État.",
+      "thresholds": "Seuils : < 40 = critique (besoin urgent d'investissement), 40-65 = modéré (amélioration possible), > 65 = bien desservi.",
+      "calculation": "Chaque score est calculé à partir des données terrain collectées (971 marchés, 55 coopératives, 737 exploitations) et normalisé sur 0-100."
+    }
   }
 }

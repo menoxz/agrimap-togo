@@ -93,11 +93,29 @@
     "farms": "Farms",
     "zaap_pep": "ZAAP / Nurseries",
     "metrics_title": "Key metrics",
-    "density_raw": "Raw density",
-    "avg_distance": "Avg. distance",
-    "white_zones": "White zones",
+    "density_raw": "Raw density (farms/km²)",
+    "avg_distance": "Avg. distance (to nearest service)",
+    "white_zones": "White zones (% without ZAAP)",
     "zaap_coverage": "ZAAP coverage",
     "interpretation_title": "Interpretation",
-    "close": "Close"
+    "close": "Close",
+    "tooltip": {
+      "synthesis_score": "Overall score combining density, accessibility, cooperative network and ZAAP coverage. Higher scores indicate better agricultural service coverage.",
+      "density_score": "Number of farms relative to prefecture area, normalized to 100. A high score indicates dense agricultural activity.",
+      "access_score": "Average distance to agricultural services (markets, cooperatives, ZAAPs), normalized to 100. Higher scores mean better access.",
+      "coop_score": "Cooperative density and distribution, normalized to 100. A high score indicates a strong cooperative network.",
+      "zaap_score": "Territory coverage rate by Planned Agricultural Development Zones (ZAAP), normalized to 100.",
+      "density_raw": "Total number of farms divided by the prefecture's surface area.",
+      "avg_distance": "Weighted average distance from farms to the nearest agricultural service.",
+      "white_zones": "Percentage of surface area not covered by a ZAAP.",
+      "zaap_coverage": "Percentage of surface area covered by at least one ZAAP.",
+      "priority_level": "Based on synthesis score: critical (< 40), moderate (40-65), well-served (> 65)."
+    },
+    "legend": {
+      "title": "Understanding scores",
+      "zaap": "ZAAP = Planned Agricultural Development Zone. Dedicated agricultural perimeters developed by the state.",
+      "thresholds": "Thresholds: < 40 = critical (urgent investment needed), 40-65 = moderate (improvement possible), > 65 = well-served.",
+      "calculation": "Each score is calculated from field data (971 markets, 55 cooperatives, 737 farms) and normalized to a 0-100 scale."
+    }
   }
 }

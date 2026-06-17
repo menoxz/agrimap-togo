@@ -13,7 +13,11 @@ import {
   Ruler,
   Target,
   TreePine,
+  Info,
+  HelpCircle,
+  ChevronDown,
 } from 'lucide-react'
+import { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -101,6 +105,27 @@ function getPriorityBadgeClass(level: string): string {
   return 'bg-stone-100 text-stone-600 border-stone-300'
 }
 
+// ─── InfoTooltip ───────────────────────────────────────────────────────────────
+
+function InfoTooltip({ text }: { text: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <span
+      className="relative inline-flex items-center ml-1"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onClick={() => setOpen(!open)}
+    >
+      <Info size={12} className="text-stone-400 cursor-help hover:text-stone-600 transition-colors" />
+      {open && (
+        <span className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-1.5 px-3 py-2 text-xs leading-relaxed text-white bg-stone-800 rounded-none shadow-lg w-60 text-center font-normal not-italic pointer-events-none">
+          {text}
+        </span>
+      )}
+    </span>
+  )
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function PrefectureDetailPanel({
@@ -151,6 +176,8 @@ export default function PrefectureDetailPanel({
     white_zone_pct !== undefined ||
     coverage_pct !== undefined
 
+  const [legendOpen, setLegendOpen] = useState(false)
+
   return (
     <div className="w-full bg-white border border-stone-200 shadow-sm mt-4">
       <div className="p-5 space-y-0">
@@ -169,10 +196,13 @@ export default function PrefectureDetailPanel({
               </p>
             )}
             {priority_level && (
-              <span
-                className={`text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-none border mt-2 inline-block ${getPriorityBadgeClass(priority_level)}`}
-              >
-                {priority_level}
+              <span className="flex items-center gap-1 mt-2">
+                <span
+                  className={`text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-none border inline-block ${getPriorityBadgeClass(priority_level)}`}
+                >
+                  {priority_level}
+                </span>
+                <InfoTooltip text={t('map:prefecture_detail.tooltip.priority_level')} />
               </span>
             )}
           </div>
@@ -190,6 +220,7 @@ export default function PrefectureDetailPanel({
           <div className="border-t border-stone-200 pt-4">
             <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">
               {t('map:prefecture_detail.synthesis_score')}
+              <InfoTooltip text={t('map:prefecture_detail.tooltip.synthesis_score')} />
             </p>
             <p
               className={`text-5xl font-black tabular-nums leading-none mt-1`}
@@ -225,6 +256,7 @@ export default function PrefectureDetailPanel({
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
                   <BarChart3 size={12} />
                   {t('map:prefecture_detail.density_score')}
+                  <InfoTooltip text={t('map:prefecture_detail.tooltip.density_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
                   {Math.round(density_score ?? 0)}/100
@@ -245,6 +277,7 @@ export default function PrefectureDetailPanel({
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
                   <Navigation size={12} />
                   {t('map:prefecture_detail.access_score')}
+                  <InfoTooltip text={t('map:prefecture_detail.tooltip.access_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
                   {Math.round(accessibility_score ?? 0)}/100
@@ -265,6 +298,7 @@ export default function PrefectureDetailPanel({
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
                   <Users size={12} />
                   {t('map:prefecture_detail.coop_score')}
+                  <InfoTooltip text={t('map:prefecture_detail.tooltip.coop_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
                   {Math.round(coop_score ?? 0)}/100
@@ -285,6 +319,7 @@ export default function PrefectureDetailPanel({
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
                   <TreePine size={12} />
                   {t('map:prefecture_detail.zaap_score')}
+                  <InfoTooltip text={t('map:prefecture_detail.tooltip.zaap_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
                   {Math.round(zaap_score ?? 0)}/100
@@ -376,6 +411,7 @@ export default function PrefectureDetailPanel({
                     <Activity size={14} className="text-stone-400" />
                     <span className="text-sm text-stone-600">
                       {t('map:prefecture_detail.density_raw')}
+                      <InfoTooltip text={t('map:prefecture_detail.tooltip.density_raw')} />
                     </span>
                   </div>
                   <span className="text-sm font-semibold text-stone-900 tabular-nums">
@@ -390,6 +426,7 @@ export default function PrefectureDetailPanel({
                     <Ruler size={14} className="text-stone-400" />
                     <span className="text-sm text-stone-600">
                       {t('map:prefecture_detail.avg_distance')}
+                      <InfoTooltip text={t('map:prefecture_detail.tooltip.avg_distance')} />
                     </span>
                   </div>
                   <span className="text-sm font-semibold text-stone-900 tabular-nums">
@@ -404,6 +441,7 @@ export default function PrefectureDetailPanel({
                     <MapPinOff size={14} className="text-stone-400" />
                     <span className="text-sm text-stone-600">
                       {t('map:prefecture_detail.white_zones')}
+                      <InfoTooltip text={t('map:prefecture_detail.tooltip.white_zones')} />
                     </span>
                   </div>
                   <span className="text-sm font-semibold text-stone-900 tabular-nums">
@@ -418,6 +456,7 @@ export default function PrefectureDetailPanel({
                     <Target size={14} className="text-stone-400" />
                     <span className="text-sm text-stone-600">
                       {t('map:prefecture_detail.zaap_coverage')}
+                      <InfoTooltip text={t('map:prefecture_detail.tooltip.zaap_coverage')} />
                     </span>
                   </div>
                   <span className="text-sm font-semibold text-stone-900 tabular-nums">
@@ -441,6 +480,28 @@ export default function PrefectureDetailPanel({
             </div>
           </div>
         )}
+
+        {/* ── Section 7 — LEGEND (collapsible) ──────────────────────────── */}
+        <div className="border-t border-stone-200 pt-4">
+          <button
+            onClick={() => setLegendOpen(!legendOpen)}
+            className="w-full text-left flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 hover:text-stone-700 transition-colors"
+          >
+            <HelpCircle size={12} />
+            {t('map:prefecture_detail.legend.title')}
+            <ChevronDown
+              size={12}
+              className={`ml-auto transition-transform ${legendOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+          {legendOpen && (
+            <div className="mt-3 space-y-2 text-xs text-stone-600 leading-relaxed">
+              <p>{t('map:prefecture_detail.legend.zaap')}</p>
+              <p>{t('map:prefecture_detail.legend.thresholds')}</p>
+              <p className="text-stone-400 italic">{t('map:prefecture_detail.legend.calculation')}</p>
+            </div>
+          )}
+        </div>
 
       </div>
     </div>
