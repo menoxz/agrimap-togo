@@ -146,7 +146,7 @@ export default function PrefectureDetailPanel({
     coverage_pct !== undefined
 
   return (
-    <div className="absolute top-0 right-0 h-full w-96 max-w-full bg-white border-l border-stone-300 shadow-xl z-50 overflow-y-auto">
+    <div className="absolute top-0 right-0 w-96 max-w-full bg-white border-l border-stone-300 shadow-xl z-50">
       <div className="p-5 space-y-0">
 
         {/* ── Section 1 — IDENTITY ─────────────────────────────────────────── */}

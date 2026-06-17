@@ -419,6 +419,15 @@ export default function ExplorePage() {
                         onToggle={() => setLegendOpen(!legendOpen)}
                       />
                     </div>
+
+                    {/* Detail Panel — positionné à partir du top de la carte */}
+                    <PrefectureDetailPanel
+                      prefecture={selectedPrefectureData}
+                      onClose={() => {
+                        setSelectedPrefectureData(null);
+                        setSelectedPrefecture('');
+                      }}
+                    />
                   </div>
                 </Card>
 
@@ -456,16 +465,7 @@ export default function ExplorePage() {
           </div>{/* fin section principale */}
         </div>{/* fin layout flex */}
 
-        {/* Detail Panel overlay */}
-        <div className="px-0">
-          <PrefectureDetailPanel
-            prefecture={selectedPrefectureData}
-            onClose={() => {
-              setSelectedPrefectureData(null);
-              setSelectedPrefecture('');
-            }}
-          />
-        </div>
+
       </div>
     </>
   );
