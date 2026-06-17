@@ -1,6 +1,8 @@
 import { type ReactNode } from 'react';
 import { MapContainer, TileLayer, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import MarkersLayer, { type MarkerType } from './MarkersLayer';
+import PrefectureLayer from './PrefectureLayer';
 
 /**
  * Default center for Togo.
@@ -12,18 +14,37 @@ export const TOGO_MAX_BOUNDS: [[number, number], [number, number]] = [
   [11.5, 2.5],
 ];
 
+/** All supported marker overlay types. */
+const ALL_MARKER_TYPES: readonly MarkerType[] = [
+  'marches',
+  'cooperatives',
+  'zaap',
+  'pepinieres',
+];
+
 interface TogoMapProps {
   center?: [number, number];
   zoom?: number;
   children?: ReactNode;
   className?: string;
   scrollWheelZoom?: boolean;
+  /** Set of marker types to display. Each visible type renders a MarkersLayer. */
+  visibleMarkers?: Set<string>;
+  /**
+   * When true, renders the PrefectureLayer (ADM2 polygon overlay).
+   * The prefecture layer is placed below analysis layers (overlay-pane z=400)
+   * and well below markers (marker-pane z=600).
+   */
+  showPrefectures?: boolean;
 }
 
 /**
  * TogoMap — Core Leaflet map component.
  * Renders a full-height map centered on Togo with OSM basemap.
  * Wraps MapContainer from react-leaflet with sensible defaults.
+ *
+ * Pass `visibleMarkers` to show point/polygon overlays for
+ * marchés, coopératives, ZAAP, or pépinières.
  */
 export default function TogoMap({
   center = TOGO_CENTER,
@@ -31,6 +52,8 @@ export default function TogoMap({
   children,
   className = '',
   scrollWheelZoom = true,
+  visibleMarkers,
+  showPrefectures = false,
 }: TogoMapProps) {
   return (
     <MapContainer
@@ -50,7 +73,16 @@ export default function TogoMap({
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
+      {/* Prefecture polygon layer — custom pane z=350, below analysis layers */}
+      {showPrefectures && <PrefectureLayer />}
+
       <ZoomControl position="bottomright" />
+
+      {/* Marker overlays — rendered for each visible type */}
+      {visibleMarkers &&
+        ALL_MARKER_TYPES.filter((t) => visibleMarkers.has(t)).map((t) => (
+          <MarkersLayer key={t} type={t} />
+        ))}
 
       {children}
     </MapContainer>

@@ -72,33 +72,33 @@
   },
   "statistics": {
     "n_regions": 5,
-    "score_min": 27.2,
-    "score_max": 58.0,
-    "score_mean": 43.3,
-    "score_median": 47.4,
+    "score_min": 26.9,
+    "score_max": 80.7,
+    "score_mean": 45.1,
+    "score_median": 38.6,
     "top_3_priorities": [
       {
         "rank": 1,
-        "region": "Savanes",
-        "region_en": "Savanes",
-        "composite_score": 27.2,
-        "investment_priority_score": 72.8,
+        "region": "Kara",
+        "region_en": "Kara",
+        "composite_score": 26.9,
+        "investment_priority_score": 73.1,
         "priority_level": "Priorité maximale - Investir"
       },
       {
         "rank": 2,
-        "region": "Kara",
-        "region_en": "Kara",
-        "composite_score": 29.0,
-        "investment_priority_score": 71.0,
+        "region": "Savanes",
+        "region_en": "Savanes",
+        "composite_score": 35.8,
+        "investment_priority_score": 64.2,
         "priority_level": "Priorité élevée"
       },
       {
         "rank": 3,
         "region": "Centrale",
         "region_en": "Centrale",
-        "composite_score": 47.4,
-        "investment_priority_score": 52.6,
+        "composite_score": 38.6,
+        "investment_priority_score": 61.4,
         "priority_level": "Priorité moyenne"
       }
     ]

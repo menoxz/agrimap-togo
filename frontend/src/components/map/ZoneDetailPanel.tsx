@@ -1,5 +1,6 @@
 import { X, Navigation, Target } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useRegionStats } from '@/hooks/useRegionStats';
 import Badge from '@/components/ui/Badge';
 import { CB_SYNTHESIS } from '@/utils/colors';
 import type { GeoJsonPropertyMap } from '@/types/map';
@@ -93,24 +94,31 @@ function SubScoreBar({
   label,
   value,
   color,
+  interpretation,
 }: {
   label: string;
   value: number;
   color: string;
+  interpretation?: string;
 }) {
   const pct = Math.round(value * 100);
   return (
-    <div className="flex items-center gap-2">
-      <span className="text-body-sm text-text-secondary w-28 shrink-0">{label}</span>
-      <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-        <div
-          className="h-full rounded-full transition-all duration-500"
-          style={{ width: `${pct}%`, backgroundColor: color }}
-        />
+    <div>
+      <div className="flex items-center gap-2">
+        <span className="text-body-sm text-text-secondary w-28 shrink-0">{label}</span>
+        <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+          <div
+            className="h-full rounded-full transition-all duration-500"
+            style={{ width: `${pct}%`, backgroundColor: color }}
+          />
+        </div>
+        <span className="text-body-sm font-semibold text-text w-8 text-right">
+          {pct}%
+        </span>
       </div>
-      <span className="text-body-sm font-semibold text-text w-8 text-right">
-        {pct}%
-      </span>
+      {interpretation && (
+        <p className="text-[10px] text-muted italic mt-0.5 leading-tight">{interpretation}</p>
+      )}
     </div>
   );
 }
@@ -130,6 +138,10 @@ export default function ZoneDetailPanel({
 }: ZoneDetailPanelProps) {
   const { t } = useTranslation();
 
+  // Resolve region before early-return so hooks are called unconditionally
+  const region = zone ? safeStr(zone.nom_region || zone.region || '') : '';
+  const regionStats = useRegionStats(region);
+
   if (!zone) return null;
 
   // GeoJSON stores scores in 0-100 range; components expect 0-1 range
@@ -141,12 +153,50 @@ export default function ZoneDetailPanel({
   const accessScore = safeNum(zone.access_score) / 100;
   const coopScore = safeNum(zone.coop_score) / 100;
   const zoneName = safeStr(zone.nom_zone || zone.zone || '');
-  const region = safeStr(zone.nom_region || zone.region || '');
   const densityRaw = safeNum(zone.density);
-  const marketDistance = safeNum(zone.distance_moyenne_km);
-  const coopCount = safeNum(zone.coop_count);
+  // Market distance: prefer zone.avg_distance_km (added by ETL v2), else estimate from access_score
+  const marketDistanceDisplay: string = (() => {
+    const avgDist = zone.avg_distance_km;
+    if (typeof avgDist === 'number' && avgDist > 0) return `${avgDist.toFixed(1)} km`;
+    if (zone.access_score !== null && zone.access_score !== undefined) {
+      const estKm = Math.round((100 - accessScore * 100) * 0.22 + 1);
+      return `~${estKm} km`;
+    }
+    return '—';
+  })();
 
   const badgeInfo = getPriorityBadge(score);
+
+  // ── Score interpretation helpers ─────────────────────────────────────────
+  const densityLabel = (() => {
+    const pct = Math.round(densityScore * 100);
+    if (pct < 40) return t('map:zone_detail.interp_density_low', { pct });
+    if (pct < 70) return t('map:zone_detail.interp_density_medium', { pct });
+    return t('map:zone_detail.interp_density_high', { pct });
+  })();
+
+  const zaapLabel = (() => {
+    const pct = Math.round(zaapScore * 100);
+    if (pct >= 100) return t('map:zone_detail.interp_zaap_full');
+    if (pct >= 50) return t('map:zone_detail.interp_zaap_partial', { pct });
+    return t('map:zone_detail.interp_zaap_low', { pct });
+  })();
+
+  const accessLabel = (() => {
+    const pct = Math.round(accessScore * 100);
+    const missing = 100 - pct;
+    if (pct < 40) return t('map:zone_detail.interp_access_critical', { pct: missing });
+    if (pct < 70) return t('map:zone_detail.interp_access_poor', { pct: missing });
+    return t('map:zone_detail.interp_access_good');
+  })();
+
+  const coopLabel = (() => {
+    const pct = Math.round(coopScore * 100);
+    const missing = 100 - pct;
+    if (pct < 30) return t('map:zone_detail.interp_coop_low', { pct: missing });
+    if (pct < 60) return t('map:zone_detail.interp_coop_partial', { pct: missing });
+    return t('map:zone_detail.interp_coop_good');
+  })();
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-[2000] desktop:inset-auto desktop:right-4 desktop:top-24 desktop:w-80 desktop:max-h-[calc(100vh-8rem)]">
@@ -196,25 +246,76 @@ export default function ZoneDetailPanel({
               {t('map:zone_detail.key_figures')}
             </h4>
             <div className="grid grid-cols-3 gap-2">
+              {/* Farms: n_exploitations from regionStats if available, else density×100 /km² */}
               <div className="bg-surface-alt/50 rounded-md p-2 text-center">
                 <p className="text-h4 font-bold text-text">
-                  {densityRaw > 0 ? densityRaw.toFixed(1) : '—'}
+                  {regionStats.loading
+                    ? '…'
+                    : regionStats.n_exploitations > 0
+                      ? regionStats.n_exploitations.toString()
+                      : densityRaw > 0
+                        ? `${(densityRaw * 100).toFixed(1)}`
+                        : '—'}
                 </p>
-                <p className="text-caption text-muted">{t('map:zone_detail.farms_density')}</p>
+                <p className="text-caption text-muted">
+                  {!regionStats.loading && regionStats.n_exploitations > 0
+                    ? t('map:zone_detail.farms_count')
+                    : densityRaw > 0
+                      ? `${t('map:zone_detail.farms_density')} /100km²`
+                      : t('map:zone_detail.farms_density')}
+                </p>
               </div>
+              {/* Market distance: real value or estimated from access_score */}
               <div className="bg-surface-alt/50 rounded-md p-2 text-center">
                 <p className="text-h4 font-bold text-text">
-                  {marketDistance > 0 ? `${marketDistance.toFixed(1)}km` : '—'}
+                  {marketDistanceDisplay}
                 </p>
                 <p className="text-caption text-muted">{t('map:zone_detail.market_distance')}</p>
               </div>
+              {/* Cooperatives: always a number from regionStats (0 is valid, never '—') */}
               <div className="bg-surface-alt/50 rounded-md p-2 text-center">
                 <p className="text-h4 font-bold text-text">
-                  {coopCount > 0 ? coopCount.toFixed(0) : '—'}
+                  {regionStats.loading ? '…' : regionStats.n_cooperatives}
                 </p>
                 <p className="text-caption text-muted">{t('map:zone_detail.cooperatives')}</p>
               </div>
             </div>
+          </div>
+
+          {/* ── Services présents ─────────────────────────────────────────── */}
+          <div>
+            <h4 className="text-caption text-muted uppercase tracking-wide font-semibold mb-2">
+              {t('map:zone_detail.services_title')}
+            </h4>
+            {regionStats.loading ? (
+              <p className="text-caption text-muted italic">
+                {t('map:zone_detail.services_loading')}
+              </p>
+            ) : (
+              <div className="grid grid-cols-2 gap-1.5">
+                {(
+                  [
+                    { key: 'services_marches',      count: regionStats.n_marches },
+                    { key: 'services_cooperatives',  count: regionStats.n_cooperatives },
+                    { key: 'services_zaap',          count: regionStats.n_zaap },
+                    { key: 'services_pepinieres',    count: regionStats.n_pepinieres },
+                    { key: 'services_exploitations', count: regionStats.n_exploitations },
+                  ] as const
+                ).map(({ key, count }) => (
+                  <div
+                    key={key}
+                    className="flex items-center justify-between px-2.5 py-1.5 bg-surface-alt/50 rounded-md"
+                  >
+                    <span className="text-[11px] text-text-secondary">
+                      {t(`map:zone_detail.${key}`)}
+                    </span>
+                    <span className="text-body-sm font-bold text-togo-green ml-2 tabular-nums">
+                      {count}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Sub-scores */}
@@ -222,26 +323,30 @@ export default function ZoneDetailPanel({
             <h4 className="text-caption text-muted uppercase tracking-wide font-semibold mb-2">
               {t('map:zone_detail.sub_scores')}
             </h4>
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <SubScoreBar
                 label={t('map:zone_detail.density')}
                 value={densityScore}
                 color={CB_SYNTHESIS[0]}
+                interpretation={densityLabel}
               />
               <SubScoreBar
                 label={t('map:zone_detail.zaap')}
                 value={zaapScore}
                 color={CB_SYNTHESIS[1]}
+                interpretation={zaapLabel}
               />
               <SubScoreBar
                 label={t('map:zone_detail.accessibility')}
                 value={accessScore}
                 color={CB_SYNTHESIS[3]}
+                interpretation={accessLabel}
               />
               <SubScoreBar
                 label={t('map:zone_detail.cooperative')}
                 value={coopScore}
                 color={CB_SYNTHESIS[4]}
+                interpretation={coopLabel}
               />
             </div>
           </div>

@@ -84,12 +84,27 @@ export default function ExplorePage() {
   const [selectedZone, setSelectedZone] = useState<GeoJsonPropertyMap | null>(null);
   const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [visibleMarkers, setVisibleMarkers] = useState<Set<string>>(new Set());
+
+  const handleMarkerToggle = useCallback((type: string) => {
+    setVisibleMarkers((prev) => {
+      const next = new Set(prev);
+      if (next.has(type)) {
+        next.delete(type);
+      } else {
+        next.add(type);
+      }
+      return next;
+    });
+  }, []);
 
   const { filters, setSelectedRegion, setActiveLayer, setZaapOnlyUncovered, resetFilters, isFiltered } = useMapFilters();
   const activeLayer: AnalysisType = filters.activeLayers[0] || 'density';
   const regionFilterValue = filters.selectedRegion
     ? filters.selectedRegion.charAt(0).toUpperCase() + filters.selectedRegion.slice(1)
     : '';
+
+  const [showPrefectures, setShowPrefectures] = useState(false);
 
   const { data: synthesisData } = useDataLoader(DATA_URL);
   const allZones = useMemo(() => {
@@ -249,6 +264,10 @@ export default function ExplorePage() {
                 onZaapOnlyUncoveredChange={setZaapOnlyUncovered}
                 onReset={resetFilters}
                 isFiltered={isFiltered}
+                visibleMarkers={visibleMarkers}
+                onMarkerToggle={handleMarkerToggle}
+                showPrefectures={showPrefectures}
+                onPrefecturesToggle={setShowPrefectures}
               />
             </div>
 
@@ -287,7 +306,7 @@ export default function ExplorePage() {
               <div className="w-full desktop:w-[45%] shrink-0 min-w-0">
                 <Card variant="default" padding="none" className="overflow-hidden">
                   <div className="h-[440px] tablet:h-[500px] desktop:h-[540px] relative">
-                    <TogoMap>
+                    <TogoMap visibleMarkers={visibleMarkers} showPrefectures={showPrefectures}>
                       <DensityLayer
                         visible={activeLayer === 'density'}
                         regionFilter={regionFilterValue || undefined}

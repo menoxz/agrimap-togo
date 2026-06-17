@@ -69,43 +69,43 @@
     "region_stats": [
       {
         "nom_region": "Maritime",
-        "total_exploitations": 10,
-        "served": 3,
-        "unserved": 7,
-        "unserved_pct": 70.0,
-        "avg_distance_km": 0
+        "total_exploitations": 50,
+        "served": 42,
+        "unserved": 8,
+        "unserved_pct": 16.0,
+        "avg_distance_km": 7.85
       },
       {
         "nom_region": "Plateaux",
-        "total_exploitations": 44,
-        "served": 14,
-        "unserved": 30,
-        "unserved_pct": 68.2,
-        "avg_distance_km": 0
+        "total_exploitations": 62,
+        "served": 38,
+        "unserved": 24,
+        "unserved_pct": 38.7,
+        "avg_distance_km": 16.98
       },
       {
         "nom_region": "Centrale",
-        "total_exploitations": 28,
+        "total_exploitations": 33,
         "served": 18,
-        "unserved": 10,
-        "unserved_pct": 35.7,
-        "avg_distance_km": 0
+        "unserved": 15,
+        "unserved_pct": 45.5,
+        "avg_distance_km": 19.29
       },
       {
         "nom_region": "Kara",
-        "total_exploitations": 25,
-        "served": 11,
-        "unserved": 14,
-        "unserved_pct": 56.0,
-        "avg_distance_km": 0
+        "total_exploitations": 28,
+        "served": 7,
+        "unserved": 21,
+        "unserved_pct": 75.0,
+        "avg_distance_km": 32.53
       },
       {
         "nom_region": "Savanes",
-        "total_exploitations": 9,
-        "served": 3,
-        "unserved": 6,
-        "unserved_pct": 66.7,
-        "avg_distance_km": 0
+        "total_exploitations": 18,
+        "served": 4,
+        "unserved": 14,
+        "unserved_pct": 77.8,
+        "avg_distance_km": 27.26
       }
     ]
   },

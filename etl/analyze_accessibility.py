@@ -175,6 +175,7 @@ def compute_accessibility(
                 "served": 0,
                 "unserved": 0,
                 "unserved_pct": 0.0,
+                "avg_distance_km": 0.0,
             })
             continue
 
@@ -186,11 +187,16 @@ def compute_accessibility(
         n_unserved = len(unserved_in_region)
         unserved_pct = round(n_unserved / total * 100, 1) if total > 0 else 0.0
 
-        # Distance moyenne aux services (approximée par distance au buffer le plus proche)
-        if n_served > 0:
-            avg_dist = 0  # Dans le buffer
+        # Distance moyenne réelle au marché le plus proche (en km, UTM EPSG:32631)
+        if not marches_utm.empty and not exploitations_in_region.empty:
+            market_geoms = list(marches_utm.geometry)
+            distances_m: list[float] = []
+            for expl_geom in exploitations_in_region.geometry:
+                min_dist = min(expl_geom.distance(m) for m in market_geoms)
+                distances_m.append(min_dist)
+            avg_distance_km = round(sum(distances_m) / len(distances_m) / 1000, 2)
         else:
-            avg_dist = 25.0  # km, estimation
+            avg_distance_km = 0.0
 
         region_stats.append({
             "nom_region": region_name,
@@ -198,7 +204,7 @@ def compute_accessibility(
             "served": n_served,
             "unserved": n_unserved,
             "unserved_pct": unserved_pct,
-            "avg_distance_km": avg_dist,
+            "avg_distance_km": avg_distance_km,
         })
 
     stats_df = pd.DataFrame(region_stats)
@@ -232,7 +238,8 @@ def compute_accessibility(
     result = regions.copy()
     result = result.merge(
         stats_df[["nom_region", "accessibility_score", "accessibility_class",
-                   "total_exploitations", "served", "unserved", "unserved_pct"]],
+                   "total_exploitations", "served", "unserved", "unserved_pct",
+                   "avg_distance_km"]],
         on="nom_region",
         how="left",
     )
@@ -243,6 +250,7 @@ def compute_accessibility(
     result["served"] = result["served"].fillna(0).astype(int)
     result["unserved"] = result["unserved"].fillna(0).astype(int)
     result["unserved_pct"] = result["unserved_pct"].fillna(0.0)
+    result["avg_distance_km"] = result["avg_distance_km"].fillna(0.0)
 
     result["name_en"] = result["nom_region"].map(REGION_NAMES_EN)
     result["color"] = result["accessibility_class"].apply(

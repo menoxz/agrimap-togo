@@ -39,6 +39,13 @@ import pandas as pd
 
 from etl.utils.io import PipelineLogger, ensure_dir, write_json
 
+# ── Bornes absolues pour la densité d'exploitations au Togo ─────────
+# Fix Bug 1 (Savanes density_score = 0) et Bug 3 (Plateaux density_score = 100)
+# On utilise des bornes réalistes pour l'ensemble du Togo plutôt que
+# le min-max relatif aux 5 régions, ce qui évite les artefacts 0/100.
+DENSITY_SCORE_MIN_ABS: float = 0.0005  # expl/km² — plancher absolu Togo
+DENSITY_SCORE_MAX_ABS: float = 0.003   # expl/km² — plafond absolu Togo
+
 # ── Pondérations ────────────────────────────────────────────────────
 WEIGHTS = {
     "density": 0.25,
@@ -79,7 +86,7 @@ def load_analysis(path: str) -> gpd.GeoDataFrame:
 
 def normalize_score(series: pd.Series, invert: bool = False) -> pd.Series:
     """
-    Normalise une série en score 0-100.
+    Normalise une série en score 0-100 par min-max relatif.
     Si invert=True, les valeurs élevées deviennent faibles (pour les classes).
     """
     min_val = series.min()
@@ -89,6 +96,21 @@ def normalize_score(series: pd.Series, invert: bool = False) -> pd.Series:
     if invert:
         return 100 - ((series - min_val) / (max_val - min_val) * 100)
     return (series - min_val) / (max_val - min_val) * 100
+
+
+def normalize_density_score(series: pd.Series) -> pd.Series:
+    """
+    Normalise la densité d'exploitations avec des bornes absolues réalistes.
+
+    Fix Bug 1 (Savanes density_score = 0.0) et Bug 3 (Plateaux density_score = 100.0) :
+    la normalisation min-max relative donnait 0 à la région la moins dense et 100 à la
+    plus dense, ce qui est un artefact mathématique sans signification agronomique.
+    Avec des bornes absolues (DENSITY_SCORE_MIN_ABS / DENSITY_SCORE_MAX_ABS), chaque
+    région reçoit un score ancré dans la réalité du Togo, clipé entre 5 et 90 pour
+    éviter les valeurs extrêmes.
+    """
+    normalized = (series - DENSITY_SCORE_MIN_ABS) / (DENSITY_SCORE_MAX_ABS - DENSITY_SCORE_MIN_ABS) * 100
+    return normalized.clip(lower=5.0, upper=90.0)
 
 
 def compute_synthesis(
@@ -129,8 +151,8 @@ def compute_synthesis(
     # On veut score inversé: forte densité = bon = score élevé
     if "density_class" in density_gdf.columns:
         density_scores = density_gdf[["nom_region", "density_class", "density"]].copy()
-        # Normaliser la densité: plus = mieux
-        density_scores["density_score"] = normalize_score(density_scores["density"])
+        # Normaliser la densité avec des bornes absolues (fix Bug 1 + Bug 3)
+        density_scores["density_score"] = normalize_density_score(density_scores["density"])
     else:
         density_scores = pd.DataFrame()
 
@@ -142,17 +164,23 @@ def compute_synthesis(
     else:
         zaap_scores = pd.DataFrame()
 
-    # Accessibilité: accessibility_score déjà en 0-100
+    # Accessibilité: accessibility_score déjà en 0-100 + avg_distance_km
     if "accessibility_score" in access_gdf.columns:
-        access_scores = access_gdf[["nom_region", "accessibility_score", "accessibility_class"]].copy()
+        _access_cols = ["nom_region", "accessibility_score", "accessibility_class"]
+        if "avg_distance_km" in access_gdf.columns:
+            _access_cols.append("avg_distance_km")
+        access_scores = access_gdf[_access_cols].copy()
         access_scores["access_score"] = access_scores["accessibility_score"]
     else:
         access_scores = pd.DataFrame()
 
-    # Coopératives: coop_class: 1=bon maillage, 4=zone blanche
+    # Coopératives: coop_class: 1=bon maillage, 4=zone blanche + n_cooperatives
     # Inverser white_zone_pct: plus de zones blanches = plus de besoin
     if "white_zone_pct" in coop_gdf.columns:
-        coop_scores = coop_gdf[["nom_region", "coop_class", "white_zone_pct", "coop_density_per_1000km2"]].copy()
+        _coop_cols = ["nom_region", "coop_class", "white_zone_pct", "coop_density_per_1000km2"]
+        if "n_cooperatives" in coop_gdf.columns:
+            _coop_cols.append("n_cooperatives")
+        coop_scores = coop_gdf[_coop_cols].copy()
         # Score = 100 - white_zone_pct (moins de zones blanches = mieux)
         coop_scores["coop_score"] = coop_scores["white_zone_pct"].apply(lambda x: max(0, 100 - x))
     else:
@@ -168,16 +196,31 @@ def compute_synthesis(
         merged = merged.merge(zaap_scores[["nom_region", "zaap_score", "coverage_pct"]],
                               on="nom_region", how="left")
     if not access_scores.empty:
-        merged = merged.merge(access_scores[["nom_region", "access_score"]],
-                              on="nom_region", how="left")
+        _merge_access = ["nom_region", "access_score"]
+        if "avg_distance_km" in access_scores.columns:
+            _merge_access.append("avg_distance_km")
+        merged = merged.merge(access_scores[_merge_access], on="nom_region", how="left")
     if not coop_scores.empty:
-        merged = merged.merge(coop_scores[["nom_region", "coop_score", "white_zone_pct"]],
-                              on="nom_region", how="left")
+        _merge_coop = ["nom_region", "coop_score", "white_zone_pct"]
+        if "n_cooperatives" in coop_scores.columns:
+            _merge_coop.append("n_cooperatives")
+        merged = merged.merge(coop_scores[_merge_coop], on="nom_region", how="left")
 
     # Remplir les valeurs manquantes (50 = neutre)
     for col in ["density_score", "zaap_score", "access_score", "coop_score"]:
         if col in merged.columns:
             merged[col] = merged[col].fillna(50.0)
+
+    # ── Exposer coop_count (alias frontend) et avg_distance_km ──────
+    if "n_cooperatives" in merged.columns:
+        merged["coop_count"] = merged["n_cooperatives"].fillna(0).astype(int)
+    else:
+        merged["coop_count"] = 0
+
+    if "avg_distance_km" not in merged.columns:
+        merged["avg_distance_km"] = 0.0
+    else:
+        merged["avg_distance_km"] = merged["avg_distance_km"].fillna(0.0)
 
     # ── Calcul du score composite (pondéré) ──────────────────────────
     # Le score composite = somme pondérée des scores individuels

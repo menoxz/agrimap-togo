@@ -1,0 +1,110 @@
+{
+  "analysis": "Couche préfecture (ADM2) — Scores agrégés",
+  "analysis_en": "Prefecture layer (ADM2) — Aggregated scores",
+  "version": "1.0.0",
+  "generated_at": "2026-06-17T02:45:42.834545+00:00",
+  "crs": "EPSG:4326",
+  "method": {
+    "description": "Agrégation des 6 datasets processed (coopératives, marchés, pépinières, ZAAP, grandes & petites exploitations) par préfecture administrative (ADM2). Alignement des noms entre geoBoundaries et les données processed via : overrides manuels → normalisation Unicode → difflib.get_close_matches(cutoff=0.6).",
+    "service_score_formula": "service_score = ( n_coops/max * 0.30 + n_marches/max * 0.25 + n_pep/max * 0.25 + n_zaap/max * 0.20 ) × 100",
+    "weights": {
+      "cooperatives": 0.3,
+      "marches": 0.25,
+      "pepinieres": 0.25,
+      "zaap": 0.2
+    },
+    "classification_method": "Tertile (pd.qcut q=3) : les 37 prefectures sont divisees en 3 groupes d'egale taille selon le service_score. Tier inferieur = Priorite haute, tier median = Priorite moyenne, tier superieur = Bien desservi. Cette methode garantit toujours 3 classes representees quelle que soit la distribution.",
+    "name_matching_pipeline": [
+      "1. Overrides manuels (6 cas connus)",
+      "2. Égalité exacte",
+      "3. Normalisation Unicode (suppression accents + casse)",
+      "4. difflib.get_close_matches(cutoff=0.6)",
+      "5. Fallback : conserver le nom ADM2"
+    ]
+  },
+  "sources": {
+    "boundaries": {
+      "provider": "geoBoundaries (gbOpen)",
+      "file": "geoBoundaries-TGO-ADM2.geojson",
+      "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/TGO/ADM2/geoBoundaries-TGO-ADM2.geojson",
+      "api": "https://www.geoboundaries.org/api/current/gbOpen/TGO/ADM2/",
+      "license": "ODbL-1.0",
+      "n_features_in_source": 37
+    },
+    "data_files": [
+      "cooperatives.geojson",
+      "marches.geojson",
+      "pepinieres.geojson",
+      "zaap_formes.geojson",
+      "grandes_exploitations.geojson",
+      "petites_exploitations.geojson"
+    ]
+  },
+  "output_fields": {
+    "nom_prefecture": "Nom normalisé de la préfecture (depuis données processed)",
+    "region": "Région administrative parente (Maritime/Plateaux/Centrale/Kara/Savanes)",
+    "n_cooperatives": "Nombre de coopératives agricoles",
+    "n_marches": "Nombre de marchés agricoles et ruraux",
+    "n_pepinieres": "Nombre de pépinières",
+    "n_zaap": "Nombre de ZAAP (périmètres)",
+    "n_exploitations": "Nombre total d'exploitations (grandes + petites)",
+    "service_score": "Score composite de services (0-100 ; 100 = bien desservi)",
+    "priority_level": "Niveau : Priorité haute / Priorité moyenne / Bien desservi",
+    "color": "Couleur hexadécimale — palette ColorBrewer RdYlGn 3 classes"
+  },
+  "palette": {
+    "name": "RdYlGn (3 classes)",
+    "type": "Divergente",
+    "colorblind_safe": true,
+    "classes": [
+      {
+        "color": "#D7191C",
+        "label": "Priorité haute",
+        "score_range": "0–33.3",
+        "meaning": "Préfecture peu desservie — opportunité d'investissement prioritaire"
+      },
+      {
+        "color": "#FFFFC0",
+        "label": "Priorité moyenne",
+        "score_range": "33.3–66.7",
+        "meaning": "Préfecture partiellement desservie — amélioration ciblée recommandée"
+      },
+      {
+        "color": "#1A9641",
+        "label": "Bien desservi",
+        "score_range": "66.7–100",
+        "meaning": "Préfecture bien desservie — maintien des services"
+      }
+    ]
+  },
+  "statistics": {
+    "n_prefectures": 37,
+    "note_on_count": "La source geoBoundaries contient 37 entites ADM2. La cible initiale de 39 prefectures correspond au decoupage administratif officiel le plus recent ; geoBoundaries consolide certaines unites (ex : 'Lome Commune' pour Golfe/Lome).",
+    "total_cooperatives": 34,
+    "total_marches": 49,
+    "total_marches_in_file": 50,
+    "marches_without_prefecture": 1,
+    "total_pepinieres": 36,
+    "total_zaap": 28,
+    "total_exploitations": 133,
+    "service_score": {
+      "min": 0.0,
+      "max": 54.2,
+      "mean": 24.6,
+      "median": 22.5
+    },
+    "priority_distribution": {
+      "Priorite haute": 12,
+      "Priorite moyenne": 12,
+      "Bien desservi": 13
+    }
+  },
+  "name_mapping_applied": {
+    "Keran": "Kéran",
+    "Ave": "Avé",
+    "Tandjouare": "Tandjouaré",
+    "Tone": "Tône",
+    "Plaine de Mô": "Mô",
+    "Lome Commune": "Lomé"
+  }
+}

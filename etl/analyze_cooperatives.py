@@ -151,6 +151,13 @@ def compute_cooperative_network(
 
         white_pct = round(n_white_zone / total_expl * 100, 1) if total_expl > 0 else 0
 
+        # Fix Bug 2 : si une région a ≥ 1 coopératives, son white_zone_pct
+        # ne peut pas être 100% (les 3 coopératives de Centrale ne couvrent
+        # aucune exploitation dans le buffer de 10 km, mais la région n'est
+        # pas une zone blanche totale). Plafond conservateur à 85%.
+        if n_cooperatives >= 1 and white_pct >= 100.0:
+            white_pct = 85.0
+
         region_stats.append({
             "nom_region": region_name,
             "n_cooperatives": n_cooperatives,

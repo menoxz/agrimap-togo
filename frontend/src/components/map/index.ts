@@ -14,3 +14,6 @@ export { default as RegionPopup } from './RegionPopup';
 export { default as MapController } from './MapController';
 export { default as ZoneDetailPanel } from './ZoneDetailPanel';
 export { default as TopZonesList } from './TopZonesList';
+export { default as MarkersLayer } from './MarkersLayer';
+export { default as PrefectureLayer } from './PrefectureLayer';
+export type { MarkerType } from './MarkersLayer';

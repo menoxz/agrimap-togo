@@ -134,6 +134,18 @@ def _pick_region(rng: random.Random) -> str:
     return rng.choices(REGION_NAMES, weights=weights)[0]
 
 
+def _pick_region_marches(rng: random.Random) -> str:
+    """Sélectionne une région pour les marchés, avec surpondération Maritime.
+
+    Fix Bug 4 : Maritime est la région côtière la plus urbanisée du Togo.
+    Avec les poids généraux (_pick_region, 25%), elle ne recevait pas assez
+    de marchés pour que les buffers d'accessibilité la couvrent correctement.
+    On porte son poids à 40% pour générer ~20 marchés en Maritime (vs ~13).
+    """
+    weights = [0.40, 0.25, 0.15, 0.12, 0.08]  # Maritime, Plateaux, Centrale, Kara, Savanes
+    return rng.choices(REGION_NAMES, weights=weights)[0]
+
+
 # ── Générateurs de datasets ──────────────────────────────────────────
 
 def generate_grandes_exploitations(
@@ -315,7 +327,7 @@ def generate_marches(
     """Génère des marchés (points)."""
     features = []
     for i in range(1, count + 1):
-        region = _pick_region(rng)
+        region = _pick_region_marches(rng)  # surpondération Maritime (fix Bug 4)
         lon, lat = random_point_in_region(rng, region)
         features.append({
             "type": "Feature",

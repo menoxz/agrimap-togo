@@ -49,6 +49,8 @@ from etl import (
     analyze_accessibility,
     analyze_cooperatives,
     synthesize,
+    analyze_prefectures,  # M3 : couche prefecture ADM2
+    download_osm,         # OSM : marchés + coopératives réels
 )
 
 
@@ -140,6 +142,9 @@ def main() -> int:
     # Écrire le rapport
     write_json(quality_report, "data/public/metadata/quality.json")
 
+    # ── OSM : Mise à jour marchés + coopératives (entre M1 et M2) ───
+    download_osm.download_osm_data(logger)
+
     # ── 6-10. Analyses M2 ────────────────────────────────────────────
     logger.section("ANALYSES SPATIALES (M2)")
 
@@ -160,6 +165,9 @@ def main() -> int:
     # 10. Synthèse
     synthesize.run(logger)
 
+    # 11. Couche préfecture (ADM2)
+    analyze_prefectures.run(logger)
+
     # ── Synchronisation des données publiques frontend ───────────────
     logger.section("SYNCHRONISATION FRONTEND")
     frontend_data_dir = ROOT / "frontend" / "public" / "data"
@@ -167,11 +175,19 @@ def main() -> int:
 
     sync_pairs = [
         (ROOT / "data" / "processed" / "regions.geojson", frontend_data_dir / "regions.geojson"),
+        # Couches de base (data/processed → frontend)
+        (ROOT / "data" / "processed" / "marches.geojson", frontend_data_dir / "marches.geojson"),
+        (ROOT / "data" / "processed" / "cooperatives.geojson", frontend_data_dir / "cooperatives.geojson"),
+        (ROOT / "data" / "processed" / "zaap_formes.geojson", frontend_data_dir / "zaap_formes.geojson"),
+        (ROOT / "data" / "processed" / "pepinieres.geojson", frontend_data_dir / "pepinieres.geojson"),
+        # Analyses M2 (data/public/analysis → frontend)
         (ROOT / "data" / "public" / "analysis" / "density.geojson", frontend_data_dir / "density.geojson"),
         (ROOT / "data" / "public" / "analysis" / "zaap_coverage.geojson", frontend_data_dir / "zaap_coverage.geojson"),
         (ROOT / "data" / "public" / "analysis" / "accessibility.geojson", frontend_data_dir / "accessibility.geojson"),
         (ROOT / "data" / "public" / "analysis" / "cooperative_network.geojson", frontend_data_dir / "cooperative_network.geojson"),
         (ROOT / "data" / "public" / "analysis" / "synthesis.geojson", frontend_data_dir / "synthesis.geojson"),
+        # M3 : couche préfecture ADM2
+        (ROOT / "data" / "public" / "analysis" / "prefecture_synthesis.geojson", frontend_data_dir / "prefecture_synthesis.geojson"),
     ]
 
     for src, dst in sync_pairs:
@@ -181,10 +197,11 @@ def main() -> int:
         else:
             logger.step(f"Source absente pour synchro : {src.relative_to(ROOT)}", "WARN")
 
-    # ── Bilan M2 ──────────────────────────────────────────────────────
-    logger.section("BILAN M2")
-    logger.step("5 analyses spatiales produites dans data/public/analysis/", "OK")
-    logger.step("5 fichiers de métadonnées dans data/public/analysis/metadata/", "OK")
+    # ── Bilan M2 + M3 ─────────────────────────────────────────────────
+    logger.section("BILAN M2 + M3")
+    logger.step("5 analyses spatiales M2 produites dans data/public/analysis/", "OK")
+    logger.step("1 couche prefecture ADM2 (M3) : prefecture_synthesis.geojson", "OK")
+    logger.step("6 fichiers de metadonnees dans data/public/analysis/metadata/", "OK")
     logger.step("Palettes ColorBrewer : YlOrBr · Greens · BuPu · OrRd · RdYlGn", "OK")
 
     # ── Bilan global ─────────────────────────────────────────────────

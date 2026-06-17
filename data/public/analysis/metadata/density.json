@@ -27,49 +27,33 @@
         "color": "#FFFFB2",
         "label": "Très faible",
         "label_en": "Very low",
-        "min": 0.0009,
-        "max": 0.0009
+        "min": 0,
+        "max": 0
       },
       {
         "class": 2,
         "color": "#FECC5C",
         "label": "Faible",
         "label_en": "Low",
-        "min": 0.0015,
-        "max": 0.0015
+        "min": 0,
+        "max": 0
       },
       {
         "class": 3,
         "color": "#FD8D3C",
         "label": "Moyenne",
         "label_en": "Moderate",
-        "min": 0.002,
-        "max": 0.002
-      },
-      {
-        "class": 4,
-        "color": "#F03B20",
-        "label": "Élevée",
-        "label_en": "High",
-        "min": 0,
-        "max": 0
-      },
-      {
-        "class": 5,
-        "color": "#BD0026",
-        "label": "Très élevée",
-        "label_en": "Very high",
-        "min": 0.0025,
-        "max": 0.0025
+        "min": 0.0021,
+        "max": 0.0074
       }
     ]
   },
   "statistics": {
-    "total_exploitations": 109,
+    "total_exploitations": 173,
     "n_regions": 5,
-    "density_min": 0.0009,
-    "density_max": 0.0025,
-    "density_mean": 0.0018
+    "density_min": 0.0021,
+    "density_max": 0.0074,
+    "density_mean": 0.0034
   },
   "interpretation_note": "Les régions à faible densité d'exploitations représentent des opportunités d'investissement pour le développement des services agricoles et l'installation de nouvelles exploitations.",
   "interpretation_note_en": "Regions with low farm density represent investment opportunities for developing agricultural services and establishing new farms."

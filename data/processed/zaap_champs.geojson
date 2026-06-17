@@ -8,37 +8,129 @@
         "coordinates": [
           [
             [
-              0.015535,
-              6.45108
+              0.914494,
+              9.301647
             ],
             [
-              -0.00612,
-              6.454931
+              0.904742,
+              9.305391
             ],
             [
-              -0.014735,
-              6.435623
+              0.904149,
+              9.296745
             ],
             [
-              0.006358,
-              6.425854
+              0.909152,
+              9.287752
             ],
             [
-              0.024945,
-              6.436216
+              0.918024,
+              9.295203
             ],
             [
-              0.015535,
-              6.45108
+              0.914494,
+              9.301647
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 1,
-        "id_zaap": 3,
-        "nom_exploitant": "Exploitant ANONYME-009",
-        "superficie_ha": 2.86,
+        "id_zaap": 26,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 2.69,
+        "type_culture": "Soja",
+        "annee_attribution": 2018,
+        "region": "Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.600377,
+              10.22243
+            ],
+            [
+              0.604384,
+              10.216537
+            ],
+            [
+              0.61089,
+              10.211856
+            ],
+            [
+              0.612681,
+              10.21885
+            ],
+            [
+              0.609804,
+              10.225059
+            ],
+            [
+              0.600377,
+              10.22243
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 2,
+        "id_zaap": 26,
+        "nom_exploitant": "Exploitant ANONYME-007",
+        "superficie_ha": 1.84,
+        "type_culture": "Mil",
+        "annee_attribution": 2017,
+        "region": "Savanes",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.511946,
+              6.411719
+            ],
+            [
+              1.506561,
+              6.403187
+            ],
+            [
+              1.511728,
+              6.395238
+            ],
+            [
+              1.520699,
+              6.399607
+            ],
+            [
+              1.526111,
+              6.409016
+            ],
+            [
+              1.511946,
+              6.411719
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 3,
+        "id_zaap": 27,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 2.76,
         "type_culture": "Mil",
         "annee_attribution": 2022,
         "region": "Maritime",
@@ -54,132 +146,40 @@
         "coordinates": [
           [
             [
-              1.194442,
-              8.661652
+              1.22972,
+              6.386547
             ],
             [
-              1.190896,
-              8.655553
+              1.22718,
+              6.380916
             ],
             [
-              1.194416,
-              8.647471
+              1.231118,
+              6.377754
             ],
             [
-              1.202118,
-              8.653259
+              1.238327,
+              6.377897
             ],
             [
-              1.201686,
-              8.658685
+              1.238189,
+              6.384867
             ],
             [
-              1.194442,
-              8.661652
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 2,
-        "id_zaap": 24,
-        "nom_exploitant": "Exploitant ANONYME-007",
-        "superficie_ha": 1.82,
-        "type_culture": "Banane plantain",
-        "annee_attribution": 2020,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.770344,
-              9.330415
-            ],
-            [
-              0.766328,
-              9.322599
-            ],
-            [
-              0.769936,
-              9.313634
-            ],
-            [
-              0.777938,
-              9.320081
-            ],
-            [
-              0.782534,
-              9.327877
-            ],
-            [
-              0.770344,
-              9.330415
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 3,
-        "id_zaap": 29,
-        "nom_exploitant": "Exploitant ANONYME-005",
-        "superficie_ha": 1.11,
-        "type_culture": "Piment",
-        "annee_attribution": 2018,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.067098,
-              9.347936
-            ],
-            [
-              0.073527,
-              9.342194
-            ],
-            [
-              0.083162,
-              9.341613
-            ],
-            [
-              0.085365,
-              9.350658
-            ],
-            [
-              0.074748,
-              9.354473
-            ],
-            [
-              0.067098,
-              9.347936
+              1.22972,
+              6.386547
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 4,
-        "id_zaap": 1,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 4.68,
+        "id_zaap": 2,
+        "nom_exploitant": "Exploitant ANONYME-001",
+        "superficie_ha": 0.82,
         "type_culture": "Riz",
-        "annee_attribution": 2021,
-        "region": "Centrale",
+        "annee_attribution": 2016,
+        "region": "Maritime",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -192,38 +192,38 @@
         "coordinates": [
           [
             [
-              0.424943,
-              9.897833
+              1.371215,
+              9.370862
             ],
             [
-              0.424147,
-              9.881386
+              1.381547,
+              9.359902
             ],
             [
-              0.440119,
-              9.881317
+              1.397739,
+              9.359741
             ],
             [
-              0.447281,
-              9.886998
+              1.398816,
+              9.372861
             ],
             [
-              0.443073,
-              9.895785
+              1.385649,
+              9.378791
             ],
             [
-              0.424943,
-              9.897833
+              1.371215,
+              9.370862
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 5,
-        "id_zaap": 2,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 4.75,
-        "type_culture": "Anacarde",
+        "id_zaap": 14,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 3.28,
+        "type_culture": "Mil",
         "annee_attribution": 2023,
         "region": "Kara",
         "licence": "CC-BY-4.0",
@@ -238,40 +238,40 @@
         "coordinates": [
           [
             [
-              1.23265,
-              7.775745
+              1.144234,
+              8.163805
             ],
             [
-              1.214233,
-              7.76996
+              1.123769,
+              8.157952
             ],
             [
-              1.218258,
-              7.757055
+              1.110659,
+              8.143586
             ],
             [
-              1.23068,
-              7.754493
+              1.13236,
+              8.128908
             ],
             [
-              1.237781,
-              7.762495
+              1.156442,
+              8.143548
             ],
             [
-              1.23265,
-              7.775745
+              1.144234,
+              8.163805
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 6,
-        "id_zaap": 30,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 4.87,
-        "type_culture": "Riz",
-        "annee_attribution": 2023,
-        "region": "Plateaux",
+        "id_zaap": 13,
+        "nom_exploitant": "Exploitant ANONYME-010",
+        "superficie_ha": 0.26,
+        "type_culture": "Niébé",
+        "annee_attribution": 2024,
+        "region": "Centrale",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -284,1047 +284,35 @@
         "coordinates": [
           [
             [
-              1.216072,
-              8.178141
+              1.513155,
+              6.305618
             ],
             [
-              1.208173,
-              8.168294
+              1.51667,
+              6.292021
             ],
             [
-              1.217819,
-              8.154909
+              1.530055,
+              6.300608
             ],
             [
-              1.230773,
-              8.165582
+              1.536265,
+              6.312005
             ],
             [
-              1.229086,
-              8.175785
+              1.519206,
+              6.316768
             ],
             [
-              1.216072,
-              8.178141
+              1.513155,
+              6.305618
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 7,
-        "id_zaap": 30,
-        "nom_exploitant": "Exploitant ANONYME-007",
-        "superficie_ha": 0.67,
-        "type_culture": "Sorgho",
-        "annee_attribution": 2019,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.254133,
-              8.022025
-            ],
-            [
-              0.244174,
-              8.030779
-            ],
-            [
-              0.23311,
-              8.021043
-            ],
-            [
-              0.238526,
-              8.00848
-            ],
-            [
-              0.25859,
-              8.007998
-            ],
-            [
-              0.254133,
-              8.022025
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 8,
-        "id_zaap": 9,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 1.92,
-        "type_culture": "Coton",
-        "annee_attribution": 2016,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.974766,
-              9.35459
-            ],
-            [
-              0.969183,
-              9.358164
-            ],
-            [
-              0.965254,
-              9.354769
-            ],
-            [
-              0.964985,
-              9.350481
-            ],
-            [
-              0.970908,
-              9.350211
-            ],
-            [
-              0.974766,
-              9.35459
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": null,
-        "id_zaap": 16,
-        "nom_exploitant": "Exploitant ANONYME-010",
-        "superficie_ha": 0.92,
-        "type_culture": "Mil",
-        "annee_attribution": 2019,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.801336,
-              9.156384
-            ],
-            [
-              0.787527,
-              9.14182
-            ],
-            [
-              0.81038,
-              9.141024
-            ],
-            [
-              0.820468,
-              9.148199
-            ],
-            [
-              0.816815,
-              9.161454
-            ],
-            [
-              0.801336,
-              9.156384
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 10,
-        "id_zaap": 30,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 0.98,
-        "type_culture": "Sorgho",
-        "annee_attribution": 2023,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.801729,
-              9.303649
-            ],
-            [
-              0.780805,
-              9.301482
-            ],
-            [
-              0.767264,
-              9.289477
-            ],
-            [
-              0.784156,
-              9.278758
-            ],
-            [
-              0.796553,
-              9.287859
-            ],
-            [
-              0.801729,
-              9.303649
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 11,
-        "id_zaap": 22,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 0.98,
-        "type_culture": "Piment",
-        "annee_attribution": 2015,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.407009,
-              10.340716
-            ],
-            [
-              0.407085,
-              10.335268
-            ],
-            [
-              0.413212,
-              10.336139
-            ],
-            [
-              0.416148,
-              10.339284
-            ],
-            [
-              0.412697,
-              10.343766
-            ],
-            [
-              0.407009,
-              10.340716
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 12,
-        "id_zaap": 10,
-        "nom_exploitant": "Exploitant ANONYME-010",
-        "superficie_ha": 1.29,
-        "type_culture": "Palmier à huile",
-        "annee_attribution": 2024,
-        "region": "Savanes",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.749876,
-              10.898501
-            ],
-            [
-              0.739292,
-              10.880879
-            ],
-            [
-              0.741016,
-              10.859907
-            ],
-            [
-              0.762121,
-              10.871888
-            ],
-            [
-              0.771957,
-              10.886289
-            ],
-            [
-              0.749876,
-              10.898501
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 13,
-        "id_zaap": 21,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 4.76,
-        "type_culture": "Maïs",
-        "annee_attribution": 2021,
-        "region": "Savanes",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.136324,
-              9.697362
-            ],
-            [
-              0.120404,
-              9.69624
-            ],
-            [
-              0.102666,
-              9.686631
-            ],
-            [
-              0.121148,
-              9.674157
-            ],
-            [
-              0.134111,
-              9.684581
-            ],
-            [
-              0.136324,
-              9.697362
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 14,
-        "id_zaap": 30,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 4.5,
-        "type_culture": "Piment",
-        "annee_attribution": 2021,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.371525,
-              8.129125
-            ],
-            [
-              1.364562,
-              8.137991
-            ],
-            [
-              1.357763,
-              8.129155
-            ],
-            [
-              1.357691,
-              8.120204
-            ],
-            [
-              1.370163,
-              8.120793
-            ],
-            [
-              1.371525,
-              8.129125
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 15,
-        "id_zaap": 5,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 1.53,
-        "type_culture": "Niébé",
-        "annee_attribution": 2021,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.457164,
-              8.410206
-            ],
-            [
-              0.44684,
-              8.423581
-            ],
-            [
-              0.429474,
-              8.413187
-            ],
-            [
-              0.437731,
-              8.400877
-            ],
-            [
-              0.451398,
-              8.399931
-            ],
-            [
-              0.457164,
-              8.410206
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 16,
-        "id_zaap": 15,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 2.09,
-        "type_culture": "Gombo",
-        "annee_attribution": 2020,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.244617,
-              10.319744
-            ],
-            [
-              0.238555,
-              10.325453
-            ],
-            [
-              0.229227,
-              10.320048
-            ],
-            [
-              0.234103,
-              10.311667
-            ],
-            [
-              0.242407,
-              10.314847
-            ],
-            [
-              0.244617,
-              10.319744
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 17,
-        "id_zaap": 27,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 0.83,
-        "type_culture": "Cacao",
-        "annee_attribution": 2020,
-        "region": "Savanes",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.484817,
-              8.479406
-            ],
-            [
-              0.476452,
-              8.481892
-            ],
-            [
-              0.472174,
-              8.476554
-            ],
-            [
-              0.475843,
-              8.471759
-            ],
-            [
-              0.481083,
-              8.474139
-            ],
-            [
-              0.484817,
-              8.479406
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 18,
-        "id_zaap": 4,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 0.7,
-        "type_culture": "Sorgho",
-        "annee_attribution": 2018,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.536357,
-              6.769653
-            ],
-            [
-              0.53061,
-              6.754789
-            ],
-            [
-              0.540727,
-              6.739261
-            ],
-            [
-              0.553944,
-              6.752338
-            ],
-            [
-              0.552607,
-              6.762646
-            ],
-            [
-              0.536357,
-              6.769653
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 19,
         "id_zaap": 29,
-        "nom_exploitant": "Exploitant ANONYME-008",
-        "superficie_ha": 4.07,
-        "type_culture": "Manioc",
-        "annee_attribution": 2020,
-        "region": "Maritime",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -0.09402,
-              7.126617
-            ],
-            [
-              -0.115239,
-              7.116595
-            ],
-            [
-              -0.111617,
-              7.099682
-            ],
-            [
-              -0.091408,
-              7.095791
-            ],
-            [
-              -0.081918,
-              7.110364
-            ],
-            [
-              -0.09402,
-              7.126617
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 20,
-        "id_zaap": 30,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 1.45,
-        "type_culture": "Tomate",
-        "annee_attribution": 2017,
-        "region": "Maritime",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.295628,
-              6.365568
-            ],
-            [
-              0.283871,
-              6.358256
-            ],
-            [
-              0.282315,
-              6.348308
-            ],
-            [
-              0.295065,
-              6.34651
-            ],
-            [
-              0.302415,
-              6.354453
-            ],
-            [
-              0.295628,
-              6.365568
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 21,
-        "id_zaap": 29,
-        "nom_exploitant": "Exploitant ANONYME-009",
-        "superficie_ha": 1.32,
-        "type_culture": "Gombo",
-        "annee_attribution": 2015,
-        "region": "Maritime",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.296094,
-              10.671202
-            ],
-            [
-              0.27935,
-              10.658173
-            ],
-            [
-              0.285485,
-              10.643917
-            ],
-            [
-              0.301844,
-              10.645095
-            ],
-            [
-              0.308825,
-              10.65643
-            ],
-            [
-              0.296094,
-              10.671202
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 22,
-        "id_zaap": 8,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 4.49,
-        "type_culture": "Coton",
-        "annee_attribution": 2015,
-        "region": "Savanes",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.43546,
-              9.76388
-            ],
-            [
-              0.425014,
-              9.766237
-            ],
-            [
-              0.419395,
-              9.758399
-            ],
-            [
-              0.426319,
-              9.749486
-            ],
-            [
-              0.4418,
-              9.753212
-            ],
-            [
-              0.43546,
-              9.76388
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 23,
-        "id_zaap": 24,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 3.84,
-        "type_culture": "Cacao",
-        "annee_attribution": 2024,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.414657,
-              10.095687
-            ],
-            [
-              0.412693,
-              10.08084
-            ],
-            [
-              0.435069,
-              10.075824
-            ],
-            [
-              0.445211,
-              10.093214
-            ],
-            [
-              0.429632,
-              10.108785
-            ],
-            [
-              0.414657,
-              10.095687
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 24,
-        "id_zaap": 1,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 4.74,
-        "type_culture": "Soja",
-        "annee_attribution": 2017,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.383371,
-              9.327741
-            ],
-            [
-              1.375886,
-              9.324503
-            ],
-            [
-              1.380015,
-              9.319098
-            ],
-            [
-              1.386701,
-              9.31839
-            ],
-            [
-              1.38902,
-              9.323826
-            ],
-            [
-              1.383371,
-              9.327741
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 25,
-        "id_zaap": 17,
-        "nom_exploitant": "Exploitant ANONYME-008",
-        "superficie_ha": 0.1,
-        "type_culture": "Café",
-        "annee_attribution": 2017,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.289286,
-              8.56361
-            ],
-            [
-              1.285009,
-              8.569867
-            ],
-            [
-              1.278937,
-              8.564658
-            ],
-            [
-              1.280261,
-              8.559718
-            ],
-            [
-              1.287638,
-              8.557302
-            ],
-            [
-              1.289286,
-              8.56361
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 26,
-        "id_zaap": 12,
-        "nom_exploitant": "Exploitant ANONYME-002",
-        "superficie_ha": 1.93,
-        "type_culture": "Anacarde",
-        "annee_attribution": 2024,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.061305,
-              6.190514
-            ],
-            [
-              0.066937,
-              6.179731
-            ],
-            [
-              0.080412,
-              6.182948
-            ],
-            [
-              0.079192,
-              6.191543
-            ],
-            [
-              0.070907,
-              6.199362
-            ],
-            [
-              0.061305,
-              6.190514
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 27,
-        "id_zaap": 23,
-        "nom_exploitant": "Exploitant ANONYME-010",
-        "superficie_ha": 3.96,
-        "type_culture": "Cacao",
-        "annee_attribution": 2024,
-        "region": "Maritime",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.88624,
-              9.385593
-            ],
-            [
-              0.877797,
-              9.392499
-            ],
-            [
-              0.869524,
-              9.383504
-            ],
-            [
-              0.87567,
-              9.372732
-            ],
-            [
-              0.890742,
-              9.376191
-            ],
-            [
-              0.88624,
-              9.385593
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 28,
-        "id_zaap": 19,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 0.99,
-        "type_culture": "Niébé",
-        "annee_attribution": 2024,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.665951,
-              6.174888
-            ],
-            [
-              1.656604,
-              6.162181
-            ],
-            [
-              1.674782,
-              6.160932
-            ],
-            [
-              1.690756,
-              6.166361
-            ],
-            [
-              1.677601,
-              6.175172
-            ],
-            [
-              1.665951,
-              6.174888
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 29,
-        "id_zaap": 23,
         "nom_exploitant": "Exploitant ANONYME-006",
         "superficie_ha": 2.29,
         "type_culture": "Coton",
@@ -1342,39 +330,39 @@
         "coordinates": [
           [
             [
-              0.318784,
-              6.12966
+              1.676761,
+              6.516404
             ],
             [
-              0.315494,
-              6.135079
+              1.671294,
+              6.513871
             ],
             [
-              0.306602,
-              6.133512
+              1.669431,
+              6.50925
             ],
             [
-              0.306969,
-              6.125922
+              1.676343,
+              6.505745
             ],
             [
-              0.315188,
-              6.125095
+              1.68117,
+              6.51141
             ],
             [
-              0.318784,
-              6.12966
+              1.676761,
+              6.516404
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 30,
-        "id_zaap": 13,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 2.78,
-        "type_culture": "Igname",
-        "annee_attribution": 2022,
+        "id_champ": 8,
+        "id_zaap": 22,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 0.9,
+        "type_culture": "Manioc",
+        "annee_attribution": 2015,
         "region": "Maritime",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -1388,177 +376,85 @@
         "coordinates": [
           [
             [
-              0.912475,
-              9.306654
+              0.704831,
+              7.242252
             ],
             [
-              0.902242,
-              9.296345
+              0.699787,
+              7.232039
             ],
             [
-              0.903961,
-              9.288475
+              0.712252,
+              7.230944
             ],
             [
-              0.914952,
-              9.285392
+              0.721867,
+              7.234411
             ],
             [
-              0.919119,
-              9.294458
+              0.716964,
+              7.243569
             ],
             [
-              0.912475,
-              9.306654
+              0.704831,
+              7.242252
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 31,
-        "id_zaap": 11,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 4.45,
-        "type_culture": "Mil",
-        "annee_attribution": 2016,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.1426,
-              8.082909
-            ],
-            [
-              0.137436,
-              8.068859
-            ],
-            [
-              0.142265,
-              8.049979
-            ],
-            [
-              0.160237,
-              8.063278
-            ],
-            [
-              0.167942,
-              8.081311
-            ],
-            [
-              0.1426,
-              8.082909
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 32,
-        "id_zaap": 6,
-        "nom_exploitant": null,
-        "superficie_ha": 0.6,
-        "type_culture": "Café",
-        "annee_attribution": 2018,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.475526,
-              7.980037
-            ],
-            [
-              1.472072,
-              7.970862
-            ],
-            [
-              1.479415,
-              7.962564
-            ],
-            [
-              1.493452,
-              7.96753
-            ],
-            [
-              1.489946,
-              7.979946
-            ],
-            [
-              1.475526,
-              7.980037
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 33,
-        "id_zaap": 2,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 0.12,
-        "type_culture": "Manioc",
-        "annee_attribution": 2019,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.589102,
-              9.133814
-            ],
-            [
-              0.569845,
-              9.141085
-            ],
-            [
-              0.562325,
-              9.125837
-            ],
-            [
-              0.573525,
-              9.118457
-            ],
-            [
-              0.590899,
-              9.118034
-            ],
-            [
-              0.589102,
-              9.133814
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 34,
+        "id_champ": null,
         "id_zaap": 16,
-        "nom_exploitant": "Exploitant ANONYME-008",
-        "superficie_ha": 4.48,
-        "type_culture": "Coton",
-        "annee_attribution": 2016,
+        "nom_exploitant": "Exploitant ANONYME-001",
+        "superficie_ha": 2.21,
+        "type_culture": "Mil",
+        "annee_attribution": 2024,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.450949,
+              9.813432
+            ],
+            [
+              0.451003,
+              9.806304
+            ],
+            [
+              0.456964,
+              9.803247
+            ],
+            [
+              0.462183,
+              9.806965
+            ],
+            [
+              0.45904,
+              9.811284
+            ],
+            [
+              0.450949,
+              9.813432
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 10,
+        "id_zaap": 19,
+        "nom_exploitant": "Exploitant ANONYME-009",
+        "superficie_ha": 4.22,
+        "type_culture": "Riz",
+        "annee_attribution": 2015,
         "region": "Kara",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -1572,85 +468,39 @@
         "coordinates": [
           [
             [
-              0.525155,
-              8.57521
+              0.850496,
+              7.769115
             ],
             [
-              0.516664,
-              8.580099
+              0.846098,
+              7.762515
             ],
             [
-              0.510671,
-              8.572464
+              0.850588,
+              7.75612
             ],
             [
-              0.51464,
-              8.561875
+              0.860881,
+              7.75805
             ],
             [
-              0.528337,
-              8.566517
+              0.859324,
+              7.766094
             ],
             [
-              0.525155,
-              8.57521
+              0.850496,
+              7.769115
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 35,
-        "id_zaap": 5,
+        "id_champ": 11,
+        "id_zaap": 28,
         "nom_exploitant": "Exploitant ANONYME-002",
-        "superficie_ha": 0.52,
-        "type_culture": "Palmier à huile",
-        "annee_attribution": 2023,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.369799,
-              7.122256
-            ],
-            [
-              0.346418,
-              7.1209
-            ],
-            [
-              0.348381,
-              7.101434
-            ],
-            [
-              0.36998,
-              7.092785
-            ],
-            [
-              0.381304,
-              7.109211
-            ],
-            [
-              0.369799,
-              7.122256
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 36,
-        "id_zaap": 8,
-        "nom_exploitant": "Exploitant ANONYME-008",
-        "superficie_ha": 1.56,
+        "superficie_ha": 1.61,
         "type_culture": "Anacarde",
-        "annee_attribution": 2015,
+        "annee_attribution": 2022,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -1664,38 +514,38 @@
         "coordinates": [
           [
             [
-              1.275967,
-              8.229144
+              0.638056,
+              7.554552
             ],
             [
-              1.258452,
-              8.218427
+              0.618221,
+              7.556293
             ],
             [
-              1.277334,
-              8.208973
+              0.607489,
+              7.546527
             ],
             [
-              1.302414,
-              8.208571
+              0.617463,
+              7.536938
             ],
             [
-              1.300353,
-              8.232579
+              0.633053,
+              7.538729
             ],
             [
-              1.275967,
-              8.229144
+              0.638056,
+              7.554552
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 37,
-        "id_zaap": 26,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 0.72,
-        "type_culture": "Banane plantain",
+        "id_champ": 12,
+        "id_zaap": 8,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 2.86,
+        "type_culture": "Riz",
         "annee_attribution": 2016,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
@@ -1710,39 +560,85 @@
         "coordinates": [
           [
             [
-              0.988933,
-              10.756374
+              1.342613,
+              6.565674
             ],
             [
-              0.985636,
-              10.744448
+              1.34689,
+              6.555571
             ],
             [
-              1.003274,
-              10.741464
+              1.358267,
+              6.553233
             ],
             [
-              1.004489,
-              10.753316
+              1.366826,
+              6.562128
             ],
             [
-              0.999154,
-              10.760891
+              1.355636,
+              6.56861
             ],
             [
-              0.988933,
-              10.756374
+              1.342613,
+              6.565674
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 38,
-        "id_zaap": 13,
-        "nom_exploitant": "Exploitant ANONYME-009",
-        "superficie_ha": 1.7,
-        "type_culture": "Coton",
-        "annee_attribution": 2023,
+        "id_champ": 13,
+        "id_zaap": 29,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 2.43,
+        "type_culture": "Manioc",
+        "annee_attribution": 2021,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.416024,
+              11.022944
+            ],
+            [
+              0.416636,
+              11.006405
+            ],
+            [
+              0.433954,
+              11.006201
+            ],
+            [
+              0.449506,
+              11.014542
+            ],
+            [
+              0.434128,
+              11.023352
+            ],
+            [
+              0.416024,
+              11.022944
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 14,
+        "id_zaap": 6,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 4.06,
+        "type_culture": "Riz",
+        "annee_attribution": 2015,
         "region": "Savanes",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -1756,316 +652,40 @@
         "coordinates": [
           [
             [
-              1.257281,
-              8.13502
+              0.968075,
+              7.287538
             ],
             [
-              1.242115,
-              8.124754
+              0.947126,
+              7.288034
             ],
             [
-              1.2516,
-              8.112673
+              0.935869,
+              7.268463
             ],
             [
-              1.270951,
-              8.109641
+              0.961619,
+              7.256984
             ],
             [
-              1.278725,
-              8.128068
+              0.980813,
+              7.272406
             ],
             [
-              1.257281,
-              8.13502
+              0.968075,
+              7.287538
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 39,
-        "id_zaap": 4,
-        "nom_exploitant": "Exploitant ANONYME-002",
-        "superficie_ha": 2.86,
-        "type_culture": "Igname",
-        "annee_attribution": 2019,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.044475,
-              9.356993
-            ],
-            [
-              1.035926,
-              9.340938
-            ],
-            [
-              1.051571,
-              9.332743
-            ],
-            [
-              1.068544,
-              9.337461
-            ],
-            [
-              1.067347,
-              9.354817
-            ],
-            [
-              1.044475,
-              9.356993
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 40,
-        "id_zaap": 22,
-        "nom_exploitant": "Exploitant ANONYME-007",
-        "superficie_ha": null,
-        "type_culture": "Niébé",
-        "annee_attribution": 2018,
-        "region": "Kara",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.344472,
-              6.45739
-            ],
-            [
-              0.330173,
-              6.45297
-            ],
-            [
-              0.323141,
-              6.44174
-            ],
-            [
-              0.339021,
-              6.434534
-            ],
-            [
-              0.350826,
-              6.444769
-            ],
-            [
-              0.344472,
-              6.45739
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 41,
-        "id_zaap": 28,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 0.76,
-        "type_culture": "Tomate",
-        "annee_attribution": 2020,
-        "region": "Maritime",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.044045,
-              7.34527
-            ],
-            [
-              1.028287,
-              7.34837
-            ],
-            [
-              1.019309,
-              7.337895
-            ],
-            [
-              1.028888,
-              7.327087
-            ],
-            [
-              1.044618,
-              7.331966
-            ],
-            [
-              1.044045,
-              7.34527
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 42,
+        "id_champ": 15,
         "id_zaap": 17,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 0.42,
-        "type_culture": "Piment",
-        "annee_attribution": 2021,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.577166,
-              6.044985
-            ],
-            [
-              1.552183,
-              6.052025
-            ],
-            [
-              1.54446,
-              6.034996
-            ],
-            [
-              1.552996,
-              6.021789
-            ],
-            [
-              1.577527,
-              6.023242
-            ],
-            [
-              1.577166,
-              6.044985
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 43,
-        "id_zaap": 23,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 1.44,
-        "type_culture": "Tomate",
-        "annee_attribution": 2023,
-        "region": "Maritime",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.090514,
-              7.449907
-            ],
-            [
-              1.065648,
-              7.442552
-            ],
-            [
-              1.078507,
-              7.423853
-            ],
-            [
-              1.100845,
-              7.422474
-            ],
-            [
-              1.105739,
-              7.439123
-            ],
-            [
-              1.090514,
-              7.449907
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 44,
-        "id_zaap": 27,
-        "nom_exploitant": "Exploitant ANONYME-005",
-        "superficie_ha": 3.77,
-        "type_culture": "Manioc",
-        "annee_attribution": 2019,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.511133,
-              6.938023
-            ],
-            [
-              1.506068,
-              6.939152
-            ],
-            [
-              1.50325,
-              6.935638
-            ],
-            [
-              1.50593,
-              6.930828
-            ],
-            [
-              1.512489,
-              6.933238
-            ],
-            [
-              1.511133,
-              6.938023
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 45,
-        "id_zaap": 28,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 2.42,
+        "nom_exploitant": "Exploitant ANONYME-007",
+        "superficie_ha": 0.65,
         "type_culture": "Riz",
         "annee_attribution": 2017,
-        "region": "Maritime",
+        "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2078,39 +698,39 @@
         "coordinates": [
           [
             [
-              0.357388,
-              9.212242
+              1.368446,
+              9.11874
             ],
             [
-              0.349911,
-              9.211279
+              1.377984,
+              9.106602
             ],
             [
-              0.348794,
-              9.206375
+              1.393366,
+              9.103049
             ],
             [
-              0.353426,
-              9.203932
+              1.39916,
+              9.116372
             ],
             [
-              0.357656,
-              9.206573
+              1.385924,
+              9.12421
             ],
             [
-              0.357388,
-              9.212242
+              1.368446,
+              9.11874
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 46,
-        "id_zaap": 9,
-        "nom_exploitant": "Exploitant ANONYME-004",
-        "superficie_ha": 2.39,
-        "type_culture": "Piment",
-        "annee_attribution": 2024,
+        "id_champ": 16,
+        "id_zaap": 6,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 2.07,
+        "type_culture": "Anacarde",
+        "annee_attribution": 2015,
         "region": "Centrale",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2124,85 +744,39 @@
         "coordinates": [
           [
             [
-              0.813243,
-              8.194462
+              1.064918,
+              7.051561
             ],
             [
-              0.813149,
-              8.188196
+              1.041786,
+              7.05168
             ],
             [
-              0.821513,
-              8.187122
+              1.04552,
+              7.033536
             ],
             [
-              0.823853,
-              8.192834
+              1.063972,
+              7.021843
             ],
             [
-              0.819217,
-              8.195772
+              1.082052,
+              7.038285
             ],
             [
-              0.813243,
-              8.194462
+              1.064918,
+              7.051561
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 47,
-        "id_zaap": 3,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 4.94,
-        "type_culture": "Niébé",
-        "annee_attribution": 2019,
-        "region": "Plateaux",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.444723,
-              7.544719
-            ],
-            [
-              1.424568,
-              7.554162
-            ],
-            [
-              1.408544,
-              7.540267
-            ],
-            [
-              1.418961,
-              7.523957
-            ],
-            [
-              1.43976,
-              7.52825
-            ],
-            [
-              1.444723,
-              7.544719
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 48,
+        "id_champ": 17,
         "id_zaap": 22,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 3.44,
-        "type_culture": "Maïs",
-        "annee_attribution": 2022,
+        "nom_exploitant": "Exploitant ANONYME-002",
+        "superficie_ha": 4.87,
+        "type_culture": "Cacao",
+        "annee_attribution": 2017,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2216,40 +790,40 @@
         "coordinates": [
           [
             [
-              0.37073,
-              10.466849
+              1.387197,
+              7.146476
             ],
             [
-              0.36232,
-              10.473298
+              1.388757,
+              7.132516
             ],
             [
-              0.354611,
-              10.468575
+              1.400121,
+              7.12366
             ],
             [
-              0.352661,
-              10.460269
+              1.419693,
+              7.132117
             ],
             [
-              0.363275,
-              10.460889
+              1.406391,
+              7.146208
             ],
             [
-              0.37073,
-              10.466849
+              1.387197,
+              7.146476
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 49,
-        "id_zaap": 18,
-        "nom_exploitant": "Exploitant ANONYME-008",
-        "superficie_ha": 4.54,
-        "type_culture": "Palmier à huile",
+        "id_champ": 18,
+        "id_zaap": 16,
+        "nom_exploitant": "Exploitant ANONYME-009",
+        "superficie_ha": 4.35,
+        "type_culture": "Sorgho",
         "annee_attribution": 2023,
-        "region": "Savanes",
+        "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2262,35 +836,357 @@
         "coordinates": [
           [
             [
-              1.056633,
-              8.00955
+              1.079468,
+              9.412059
             ],
             [
-              1.047033,
-              8.010756
+              1.07885,
+              9.406241
             ],
             [
-              1.043657,
-              8.002776
+              1.085282,
+              9.405529
             ],
             [
-              1.052029,
-              7.998522
+              1.091941,
+              9.408573
             ],
             [
-              1.061671,
-              8.002215
+              1.085844,
+              9.412342
             ],
             [
-              1.056633,
-              8.00955
+              1.079468,
+              9.412059
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 50,
-        "id_zaap": 22,
+        "id_champ": 19,
+        "id_zaap": 2,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 0.26,
+        "type_culture": "Sorgho",
+        "annee_attribution": 2020,
+        "region": "Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.431056,
+              8.613438
+            ],
+            [
+              1.428031,
+              8.608292
+            ],
+            [
+              1.432035,
+              8.602387
+            ],
+            [
+              1.442199,
+              8.604923
+            ],
+            [
+              1.438678,
+              8.612442
+            ],
+            [
+              1.431056,
+              8.613438
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 20,
+        "id_zaap": 28,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 2.98,
+        "type_culture": "Palmier à huile",
+        "annee_attribution": 2020,
+        "region": "Centrale",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.537443,
+              6.680779
+            ],
+            [
+              1.519589,
+              6.679314
+            ],
+            [
+              1.508186,
+              6.666206
+            ],
+            [
+              1.525791,
+              6.65013
+            ],
+            [
+              1.549128,
+              6.66363
+            ],
+            [
+              1.537443,
+              6.680779
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 21,
+        "id_zaap": 21,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 3.42,
+        "type_culture": "Coton",
+        "annee_attribution": 2021,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.619474,
+              7.809695
+            ],
+            [
+              1.606196,
+              7.803673
+            ],
+            [
+              1.603916,
+              7.786053
+            ],
+            [
+              1.625723,
+              7.790017
+            ],
+            [
+              1.637443,
+              7.803186
+            ],
+            [
+              1.619474,
+              7.809695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 22,
+        "id_zaap": 10,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 2.18,
+        "type_culture": "Anacarde",
+        "annee_attribution": 2020,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.858479,
+              7.509385
+            ],
+            [
+              0.856824,
+              7.502548
+            ],
+            [
+              0.859071,
+              7.493848
+            ],
+            [
+              0.871483,
+              7.498062
+            ],
+            [
+              0.869852,
+              7.508282
+            ],
+            [
+              0.858479,
+              7.509385
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 23,
+        "id_zaap": 18,
+        "nom_exploitant": "Exploitant ANONYME-010",
+        "superficie_ha": 3.08,
+        "type_culture": "Arachide",
+        "annee_attribution": 2016,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.839913,
+              7.15068
+            ],
+            [
+              0.82541,
+              7.153068
+            ],
+            [
+              0.821692,
+              7.141617
+            ],
+            [
+              0.832079,
+              7.137756
+            ],
+            [
+              0.842057,
+              7.140699
+            ],
+            [
+              0.839913,
+              7.15068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 24,
+        "id_zaap": 8,
+        "nom_exploitant": "Exploitant ANONYME-001",
+        "superficie_ha": 4.05,
+        "type_culture": "Anacarde",
+        "annee_attribution": 2020,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.711125,
+              8.495701
+            ],
+            [
+              0.693189,
+              8.497346
+            ],
+            [
+              0.693819,
+              8.480772
+            ],
+            [
+              0.710965,
+              8.479083
+            ],
+            [
+              0.726382,
+              8.487684
+            ],
+            [
+              0.711125,
+              8.495701
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 25,
+        "id_zaap": 8,
+        "nom_exploitant": "Exploitant ANONYME-009",
+        "superficie_ha": 3.23,
+        "type_culture": "Oignon",
+        "annee_attribution": 2020,
+        "region": "Centrale",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.484614,
+              8.161608
+            ],
+            [
+              1.471383,
+              8.166054
+            ],
+            [
+              1.460272,
+              8.157116
+            ],
+            [
+              1.466473,
+              8.140021
+            ],
+            [
+              1.491052,
+              8.145574
+            ],
+            [
+              1.484614,
+              8.161608
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 26,
+        "id_zaap": 6,
         "nom_exploitant": "Exploitant ANONYME-006",
         "superficie_ha": 3.31,
         "type_culture": "Cacao",
@@ -2308,40 +1204,1144 @@
         "coordinates": [
           [
             [
-              0.64852,
-              7.078421
+              1.118081,
+              6.596649
             ],
             [
-              0.627721,
-              7.07344
+              1.106085,
+              6.590535
             ],
             [
-              0.63018,
-              7.059057
+              1.103128,
+              6.574876
             ],
             [
-              0.643539,
-              7.055152
+              1.12612,
+              6.573283
             ],
             [
-              0.66088,
-              7.062789
+              1.136076,
+              6.589831
             ],
             [
-              0.64852,
-              7.078421
+              1.118081,
+              6.596649
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 27,
+        "id_zaap": 16,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 2.55,
+        "type_culture": "Anacarde",
+        "annee_attribution": 2023,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.744276,
+              7.304169
+            ],
+            [
+              0.740354,
+              7.298585
+            ],
+            [
+              0.743965,
+              7.294517
+            ],
+            [
+              0.751044,
+              7.294542
+            ],
+            [
+              0.752067,
+              7.301039
+            ],
+            [
+              0.744276,
+              7.304169
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 28,
+        "id_zaap": 16,
+        "nom_exploitant": "Exploitant ANONYME-006",
+        "superficie_ha": 3.19,
+        "type_culture": "Mil",
+        "annee_attribution": 2020,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.731159,
+              8.967929
+            ],
+            [
+              0.724782,
+              8.969376
+            ],
+            [
+              0.719747,
+              8.96593
+            ],
+            [
+              0.724493,
+              8.962955
+            ],
+            [
+              0.729993,
+              8.962503
+            ],
+            [
+              0.731159,
+              8.967929
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 29,
+        "id_zaap": 21,
+        "nom_exploitant": "Exploitant ANONYME-007",
+        "superficie_ha": 2.08,
+        "type_culture": "Oignon",
+        "annee_attribution": 2021,
+        "region": "Centrale",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.963443,
+              6.828587
+            ],
+            [
+              0.950443,
+              6.830892
+            ],
+            [
+              0.948189,
+              6.819658
+            ],
+            [
+              0.958826,
+              6.815908
+            ],
+            [
+              0.96647,
+              6.820884
+            ],
+            [
+              0.963443,
+              6.828587
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 30,
+        "id_zaap": 10,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 3.67,
+        "type_culture": "Piment",
+        "annee_attribution": 2020,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.093387,
+              7.932356
+            ],
+            [
+              1.071894,
+              7.939302
+            ],
+            [
+              1.066407,
+              7.925151
+            ],
+            [
+              1.070853,
+              7.915627
+            ],
+            [
+              1.091468,
+              7.912883
+            ],
+            [
+              1.093387,
+              7.932356
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 31,
+        "id_zaap": 7,
+        "nom_exploitant": "Exploitant ANONYME-001",
+        "superficie_ha": 2.99,
+        "type_culture": "Mil",
+        "annee_attribution": 2016,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.829439,
+              7.53124
+            ],
+            [
+              0.811761,
+              7.541897
+            ],
+            [
+              0.794348,
+              7.534805
+            ],
+            [
+              0.802625,
+              7.523616
+            ],
+            [
+              0.81673,
+              7.51659
+            ],
+            [
+              0.829439,
+              7.53124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 32,
+        "id_zaap": 14,
+        "nom_exploitant": null,
+        "superficie_ha": 1.96,
+        "type_culture": "Gombo",
+        "annee_attribution": 2019,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.313847,
+              7.709627
+            ],
+            [
+              1.304157,
+              7.709603
+            ],
+            [
+              1.303371,
+              7.702792
+            ],
+            [
+              1.309055,
+              7.697949
+            ],
+            [
+              1.313958,
+              7.703014
+            ],
+            [
+              1.313847,
+              7.709627
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 33,
+        "id_zaap": 27,
+        "nom_exploitant": "Exploitant ANONYME-002",
+        "superficie_ha": 2.61,
+        "type_culture": "Igname",
+        "annee_attribution": 2019,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.004628,
+              6.539751
+            ],
+            [
+              0.996717,
+              6.540308
+            ],
+            [
+              0.994285,
+              6.536102
+            ],
+            [
+              0.99645,
+              6.531109
+            ],
+            [
+              1.002552,
+              6.533762
+            ],
+            [
+              1.004628,
+              6.539751
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 34,
+        "id_zaap": 30,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 1.72,
+        "type_culture": "Maïs",
+        "annee_attribution": 2015,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.45993,
+              8.841587
+            ],
+            [
+              1.445887,
+              8.851913
+            ],
+            [
+              1.427124,
+              8.839861
+            ],
+            [
+              1.442993,
+              8.828052
+            ],
+            [
+              1.459332,
+              8.828579
+            ],
+            [
+              1.45993,
+              8.841587
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 35,
+        "id_zaap": 8,
+        "nom_exploitant": "Exploitant ANONYME-008",
+        "superficie_ha": 4.94,
+        "type_culture": "Arachide",
+        "annee_attribution": 2019,
+        "region": "Centrale",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.721752,
+              6.624151
+            ],
+            [
+              0.713707,
+              6.622696
+            ],
+            [
+              0.709394,
+              6.617309
+            ],
+            [
+              0.71669,
+              6.615534
+            ],
+            [
+              0.7242,
+              6.616932
+            ],
+            [
+              0.721752,
+              6.624151
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 36,
+        "id_zaap": 2,
+        "nom_exploitant": "Exploitant ANONYME-001",
+        "superficie_ha": 4.27,
+        "type_culture": "Mil",
+        "annee_attribution": 2020,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.716725,
+              7.283592
+            ],
+            [
+              0.721708,
+              7.275067
+            ],
+            [
+              0.736983,
+              7.274651
+            ],
+            [
+              0.738629,
+              7.288299
+            ],
+            [
+              0.723596,
+              7.292856
+            ],
+            [
+              0.716725,
+              7.283592
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 37,
+        "id_zaap": 26,
+        "nom_exploitant": "Exploitant ANONYME-003",
+        "superficie_ha": 0.65,
+        "type_culture": "Sorgho",
+        "annee_attribution": 2017,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.241294,
+              6.589169
+            ],
+            [
+              1.21742,
+              6.582104
+            ],
+            [
+              1.222468,
+              6.562144
+            ],
+            [
+              1.247497,
+              6.55573
+            ],
+            [
+              1.261537,
+              6.575539
+            ],
+            [
+              1.241294,
+              6.589169
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 38,
+        "id_zaap": 24,
+        "nom_exploitant": "Exploitant ANONYME-003",
+        "superficie_ha": 2.47,
+        "type_culture": "Oignon",
+        "annee_attribution": 2016,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.855156,
+              9.876683
+            ],
+            [
+              0.846344,
+              9.866357
+            ],
+            [
+              0.86213,
+              9.859135
+            ],
+            [
+              0.872456,
+              9.868925
+            ],
+            [
+              0.868029,
+              9.880253
+            ],
+            [
+              0.855156,
+              9.876683
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 39,
+        "id_zaap": 20,
+        "nom_exploitant": "Exploitant ANONYME-002",
+        "superficie_ha": 2.22,
+        "type_culture": "Cacao",
+        "annee_attribution": 2022,
+        "region": "Kara",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.501923,
+              8.146242
+            ],
+            [
+              1.488241,
+              8.153012
+            ],
+            [
+              1.468043,
+              8.149825
+            ],
+            [
+              1.480993,
+              8.137541
+            ],
+            [
+              1.493447,
+              8.135397
+            ],
+            [
+              1.501923,
+              8.146242
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 40,
+        "id_zaap": 21,
+        "nom_exploitant": "Exploitant ANONYME-007",
+        "superficie_ha": null,
+        "type_culture": "Cacao",
+        "annee_attribution": 2016,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.098961,
+              7.750649
+            ],
+            [
+              1.083803,
+              7.760874
+            ],
+            [
+              1.074211,
+              7.749097
+            ],
+            [
+              1.077299,
+              7.739183
+            ],
+            [
+              1.094912,
+              7.734776
+            ],
+            [
+              1.098961,
+              7.750649
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 41,
+        "id_zaap": 20,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 4.46,
+        "type_culture": "Gombo",
+        "annee_attribution": 2018,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.432023,
+              9.091158
+            ],
+            [
+              1.416263,
+              9.088855
+            ],
+            [
+              1.412062,
+              9.076744
+            ],
+            [
+              1.425839,
+              9.072826
+            ],
+            [
+              1.435915,
+              9.079289
+            ],
+            [
+              1.432023,
+              9.091158
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 42,
+        "id_zaap": 4,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 0.11,
+        "type_culture": "Palmier à huile",
+        "annee_attribution": 2019,
+        "region": "Centrale",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.368464,
+              7.302791
+            ],
+            [
+              1.359422,
+              7.30342
+            ],
+            [
+              1.349465,
+              7.296343
+            ],
+            [
+              1.361692,
+              7.291701
+            ],
+            [
+              1.374852,
+              7.293465
+            ],
+            [
+              1.368464,
+              7.302791
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 43,
+        "id_zaap": 7,
+        "nom_exploitant": "Exploitant ANONYME-006",
+        "superficie_ha": 0.63,
+        "type_culture": "Banane plantain",
+        "annee_attribution": 2015,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.53284,
+              10.869072
+            ],
+            [
+              0.508399,
+              10.862111
+            ],
+            [
+              0.521,
+              10.84639
+            ],
+            [
+              0.537765,
+              10.840936
+            ],
+            [
+              0.547538,
+              10.855706
+            ],
+            [
+              0.53284,
+              10.869072
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 44,
+        "id_zaap": 2,
+        "nom_exploitant": "Exploitant ANONYME-009",
+        "superficie_ha": 4.68,
+        "type_culture": "Soja",
+        "annee_attribution": 2022,
+        "region": "Savanes",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.072562,
+              10.912355
+            ],
+            [
+              0.054525,
+              10.92205
+            ],
+            [
+              0.041046,
+              10.910964
+            ],
+            [
+              0.042101,
+              10.893308
+            ],
+            [
+              0.064054,
+              10.89751
+            ],
+            [
+              0.072562,
+              10.912355
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 45,
+        "id_zaap": 20,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 1.44,
+        "type_culture": "Niébé",
+        "annee_attribution": 2019,
+        "region": "Savanes",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.98353,
+              7.835641
+            ],
+            [
+              0.980402,
+              7.829378
+            ],
+            [
+              0.98903,
+              7.825169
+            ],
+            [
+              0.995743,
+              7.831245
+            ],
+            [
+              0.99199,
+              7.839014
+            ],
+            [
+              0.98353,
+              7.835641
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 46,
+        "id_zaap": 21,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 1.08,
+        "type_culture": "Arachide",
+        "annee_attribution": 2020,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.579413,
+              10.779862
+            ],
+            [
+              0.578253,
+              10.772969
+            ],
+            [
+              0.586571,
+              10.768419
+            ],
+            [
+              0.592878,
+              10.775051
+            ],
+            [
+              0.588149,
+              10.781626
+            ],
+            [
+              0.579413,
+              10.779862
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 47,
+        "id_zaap": 29,
+        "nom_exploitant": "Exploitant ANONYME-009",
+        "superficie_ha": 1.5,
+        "type_culture": "Banane plantain",
+        "annee_attribution": 2015,
+        "region": "Savanes",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.688622,
+              7.780676
+            ],
+            [
+              0.682188,
+              7.780625
+            ],
+            [
+              0.678937,
+              7.777643
+            ],
+            [
+              0.682066,
+              7.774366
+            ],
+            [
+              0.68893,
+              7.774425
+            ],
+            [
+              0.688622,
+              7.780676
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 48,
+        "id_zaap": 23,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 1.1,
+        "type_culture": "Gombo",
+        "annee_attribution": 2015,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.217272,
+              7.794538
+            ],
+            [
+              1.205965,
+              7.788584
+            ],
+            [
+              1.214531,
+              7.779528
+            ],
+            [
+              1.227764,
+              7.780854
+            ],
+            [
+              1.231789,
+              7.793008
+            ],
+            [
+              1.217272,
+              7.794538
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 49,
+        "id_zaap": 23,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 3.5,
+        "type_culture": "Sorgho",
+        "annee_attribution": 2021,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.626399,
+              7.130167
+            ],
+            [
+              1.612998,
+              7.122703
+            ],
+            [
+              1.618818,
+              7.10567
+            ],
+            [
+              1.645193,
+              7.107528
+            ],
+            [
+              1.650594,
+              7.130073
+            ],
+            [
+              1.626399,
+              7.130167
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 50,
+        "id_zaap": 27,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 4.57,
+        "type_culture": "Palmier à huile",
+        "annee_attribution": 2024,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.407417,
+              8.324348
+            ],
+            [
+              1.39191,
+              8.328251
+            ],
+            [
+              1.391061,
+              8.315235
+            ],
+            [
+              1.400946,
+              8.309386
+            ],
+            [
+              1.414565,
+              8.313983
+            ],
+            [
+              1.407417,
+              8.324348
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 51,
-        "id_zaap": 19,
-        "nom_exploitant": "Exploitant ANONYME-010",
-        "superficie_ha": 0.45,
-        "type_culture": "Café",
-        "annee_attribution": 2023,
-        "region": "Maritime",
+        "id_zaap": 13,
+        "nom_exploitant": "Exploitant ANONYME-001",
+        "superficie_ha": 2.2,
+        "type_culture": "Gombo",
+        "annee_attribution": 2019,
+        "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2354,39 +2354,39 @@
         "coordinates": [
           [
             [
-              0.849606,
-              6.49919
+              0.983676,
+              6.38645
             ],
             [
-              0.845699,
-              6.482976
+              0.98041,
+              6.377461
             ],
             [
-              0.866476,
-              6.486588
+              0.990132,
+              6.370708
             ],
             [
-              0.880294,
-              6.499462
+              0.998236,
+              6.378175
             ],
             [
-              0.861505,
-              6.511655
+              1.000197,
+              6.392394
             ],
             [
-              0.849606,
-              6.49919
+              0.983676,
+              6.38645
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 52,
-        "id_zaap": 15,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 1.65,
-        "type_culture": "Mil",
-        "annee_attribution": 2016,
+        "id_zaap": 20,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 2.5,
+        "type_culture": "Soja",
+        "annee_attribution": 2023,
         "region": "Maritime",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2400,39 +2400,39 @@
         "coordinates": [
           [
             [
-              0.294762,
-              8.142238
+              0.888893,
+              6.955391
             ],
             [
-              0.288076,
-              8.155466
+              0.87532,
+              6.963598
             ],
             [
-              0.274227,
-              8.146994
+              0.86409,
+              6.951233
             ],
             [
-              0.268894,
-              8.13369
+              0.873546,
+              6.937702
             ],
             [
-              0.287553,
-              8.131237
+              0.888488,
+              6.944927
             ],
             [
-              0.294762,
-              8.142238
+              0.888893,
+              6.955391
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 53,
-        "id_zaap": 25,
-        "nom_exploitant": "Exploitant ANONYME-002",
-        "superficie_ha": 0.73,
-        "type_culture": "Banane plantain",
-        "annee_attribution": 2021,
+        "id_zaap": 8,
+        "nom_exploitant": "Exploitant ANONYME-004",
+        "superficie_ha": 3.35,
+        "type_culture": "Niébé",
+        "annee_attribution": 2020,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2446,39 +2446,39 @@
         "coordinates": [
           [
             [
-              0.627485,
-              7.076115
+              1.217087,
+              7.436928
             ],
             [
-              0.609647,
-              7.076971
+              1.200122,
+              7.420849
             ],
             [
-              0.596597,
-              7.067931
+              1.215897,
+              7.409099
             ],
             [
-              0.605638,
-              7.049145
+              1.233873,
+              7.409556
             ],
             [
-              0.625149,
-              7.060996
+              1.234855,
+              7.424684
             ],
             [
-              0.627485,
-              7.076115
+              1.217087,
+              7.436928
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 54,
-        "id_zaap": 22,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 3.17,
+        "id_zaap": 21,
+        "nom_exploitant": "Exploitant ANONYME-010",
+        "superficie_ha": 4.6,
         "type_culture": "Cacao",
-        "annee_attribution": 2018,
+        "annee_attribution": 2015,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2492,38 +2492,38 @@
         "coordinates": [
           [
             [
-              0.178452,
-              8.581062
+              0.878675,
+              8.665798
             ],
             [
-              0.167712,
-              8.57569
+              0.863744,
+              8.665989
             ],
             [
-              0.177582,
-              8.56892
+              0.861915,
+              8.655881
             ],
             [
-              0.187169,
-              8.571153
+              0.869793,
+              8.64796
             ],
             [
-              0.190471,
-              8.580697
+              0.879208,
+              8.654997
             ],
             [
-              0.178452,
-              8.581062
+              0.878675,
+              8.665798
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 55,
-        "id_zaap": 20,
-        "nom_exploitant": "Exploitant ANONYME-009",
-        "superficie_ha": 1.76,
-        "type_culture": "Riz",
+        "id_zaap": 2,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 4.5,
+        "type_culture": "Café",
         "annee_attribution": 2020,
         "region": "Centrale",
         "licence": "CC-BY-4.0",
@@ -2538,40 +2538,40 @@
         "coordinates": [
           [
             [
-              0.710347,
-              10.201421
+              1.401315,
+              8.145447
             ],
             [
-              0.720794,
-              10.192865
+              1.381358,
+              8.143549
             ],
             [
-              0.730954,
-              10.191728
+              1.381194,
+              8.123664
             ],
             [
-              0.741314,
-              10.20238
+              1.408316,
+              8.115597
             ],
             [
-              0.724921,
-              10.205457
+              1.421606,
+              8.136664
             ],
             [
-              0.710347,
-              10.201421
+              1.401315,
+              8.145447
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 56,
-        "id_zaap": 1,
-        "nom_exploitant": "Exploitant ANONYME-010",
-        "superficie_ha": 2.57,
-        "type_culture": "Igname",
-        "annee_attribution": 2020,
-        "region": "Savanes",
+        "id_zaap": 21,
+        "nom_exploitant": "Exploitant ANONYME-002",
+        "superficie_ha": 3.76,
+        "type_culture": "Riz",
+        "annee_attribution": 2015,
+        "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2584,39 +2584,85 @@
         "coordinates": [
           [
             [
-              0.51131,
-              8.970249
+              1.419873,
+              7.57769
             ],
             [
-              0.509683,
-              8.953042
+              1.413668,
+              7.572127
             ],
             [
-              0.527661,
-              8.952076
+              1.418216,
+              7.564909
             ],
             [
-              0.536811,
-              8.959646
+              1.430068,
+              7.565897
             ],
             [
-              0.533699,
-              8.976236
+              1.429744,
+              7.575567
             ],
             [
-              0.51131,
-              8.970249
+              1.419873,
+              7.57769
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 57,
-        "id_zaap": 2,
-        "nom_exploitant": "Exploitant ANONYME-002",
-        "superficie_ha": 2.14,
-        "type_culture": "Anacarde",
-        "annee_attribution": 2016,
+        "id_zaap": 1,
+        "nom_exploitant": "Exploitant ANONYME-007",
+        "superficie_ha": 3.4,
+        "type_culture": "Gombo",
+        "annee_attribution": 2015,
+        "region": "Plateaux",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.341209,
+              8.726959
+            ],
+            [
+              1.328543,
+              8.716113
+            ],
+            [
+              1.346779,
+              8.713069
+            ],
+            [
+              1.36346,
+              8.716589
+            ],
+            [
+              1.353782,
+              8.728677
+            ],
+            [
+              1.341209,
+              8.726959
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 58,
+        "id_zaap": 3,
+        "nom_exploitant": "Exploitant ANONYME-005",
+        "superficie_ha": 3.85,
+        "type_culture": "Tomate",
+        "annee_attribution": 2021,
         "region": "Centrale",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2630,38 +2676,38 @@
         "coordinates": [
           [
             [
-              0.240948,
-              8.258823
+              1.069724,
+              7.530933
             ],
             [
-              0.231382,
-              8.250305
+              1.055239,
+              7.54108
             ],
             [
-              0.24203,
-              8.240655
+              1.042195,
+              7.528864
             ],
             [
-              0.253518,
-              8.247327
+              1.047314,
+              7.512198
             ],
             [
-              0.254851,
-              8.258305
+              1.064556,
+              7.520123
             ],
             [
-              0.240948,
-              8.258823
+              1.069724,
+              7.530933
             ]
           ]
         ]
       },
       "properties": {
-        "id_champ": 58,
-        "id_zaap": 5,
-        "nom_exploitant": "Exploitant ANONYME-007",
-        "superficie_ha": 4.17,
-        "type_culture": "Igname",
+        "id_champ": 59,
+        "id_zaap": 22,
+        "nom_exploitant": "Exploitant ANONYME-006",
+        "superficie_ha": 4.79,
+        "type_culture": "Maïs",
         "annee_attribution": 2023,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
@@ -2676,86 +2722,40 @@
         "coordinates": [
           [
             [
-              0.16379,
-              8.161799
+              0.279926,
+              9.64458
             ],
             [
-              0.157946,
-              8.163574
+              0.273716,
+              9.641285
             ],
             [
-              0.152727,
-              8.159419
+              0.273029,
+              9.636486
             ],
             [
-              0.158005,
-              8.155482
+              0.279987,
+              9.632489
             ],
             [
-              0.165963,
-              8.155675
+              0.285918,
+              9.638866
             ],
             [
-              0.16379,
-              8.161799
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 59,
-        "id_zaap": 10,
-        "nom_exploitant": "Exploitant ANONYME-003",
-        "superficie_ha": 0.29,
-        "type_culture": "Oignon",
-        "annee_attribution": 2018,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.336385,
-              8.02098
-            ],
-            [
-              0.328754,
-              8.029465
-            ],
-            [
-              0.316886,
-              8.022446
-            ],
-            [
-              0.318092,
-              8.008656
-            ],
-            [
-              0.336666,
-              8.009217
-            ],
-            [
-              0.336385,
-              8.02098
+              0.279926,
+              9.64458
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 60,
-        "id_zaap": 3,
-        "nom_exploitant": "Exploitant ANONYME-002",
-        "superficie_ha": 4.53,
-        "type_culture": "Cacao",
-        "annee_attribution": 2022,
-        "region": "Centrale",
+        "id_zaap": 7,
+        "nom_exploitant": "Exploitant ANONYME-007",
+        "superficie_ha": 4.54,
+        "type_culture": "Piment",
+        "annee_attribution": 2017,
+        "region": "Kara",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2768,40 +2768,40 @@
         "coordinates": [
           [
             [
-              0.415791,
-              10.122259
+              1.628953,
+              6.27426
             ],
             [
-              0.408878,
-              10.125886
+              1.617582,
+              6.278059
             ],
             [
-              0.399024,
-              10.120515
+              1.609646,
+              6.270312
             ],
             [
-              0.407627,
-              10.113841
+              1.616202,
+              6.261478
             ],
             [
-              0.419247,
-              10.113924
+              1.629244,
+              6.263929
             ],
             [
-              0.415791,
-              10.122259
+              1.628953,
+              6.27426
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 61,
-        "id_zaap": 4,
-        "nom_exploitant": "Exploitant ANONYME-001",
-        "superficie_ha": 0.15,
-        "type_culture": "Riz",
-        "annee_attribution": 2017,
-        "region": "Savanes",
+        "id_zaap": 15,
+        "nom_exploitant": "Exploitant ANONYME-009",
+        "superficie_ha": 0.46,
+        "type_culture": "Manioc",
+        "annee_attribution": 2019,
+        "region": "Maritime",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2814,39 +2814,131 @@
         "coordinates": [
           [
             [
-              1.517085,
-              7.492798
+              1.25871,
+              6.385983
             ],
             [
-              1.513429,
-              7.477728
+              1.241324,
+              6.388989
             ],
             [
-              1.529463,
-              7.47283
+              1.225318,
+              6.383495
             ],
             [
-              1.544718,
-              7.480127
+              1.231505,
+              6.365992
             ],
             [
-              1.537045,
-              7.495268
+              1.251196,
+              6.3722
             ],
             [
-              1.517085,
-              7.492798
+              1.25871,
+              6.385983
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 62,
-        "id_zaap": 27,
-        "nom_exploitant": "Exploitant ANONYME-007",
-        "superficie_ha": 3.48,
+        "id_zaap": 15,
+        "nom_exploitant": "Exploitant ANONYME-006",
+        "superficie_ha": 3.12,
         "type_culture": null,
-        "annee_attribution": 2021,
+        "annee_attribution": 2024,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.60077,
+              6.893479
+            ],
+            [
+              1.58731,
+              6.9018
+            ],
+            [
+              1.57514,
+              6.890079
+            ],
+            [
+              1.584833,
+              6.877826
+            ],
+            [
+              1.599147,
+              6.88294
+            ],
+            [
+              1.60077,
+              6.893479
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 63,
+        "id_zaap": 12,
+        "nom_exploitant": "Exploitant ANONYME-003",
+        "superficie_ha": 3.43,
+        "type_culture": "Niébé",
+        "annee_attribution": 2022,
+        "region": "Maritime",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.875201,
+              7.564572
+            ],
+            [
+              0.862492,
+              7.570122
+            ],
+            [
+              0.852287,
+              7.560657
+            ],
+            [
+              0.862797,
+              7.554376
+            ],
+            [
+              0.873764,
+              7.5543
+            ],
+            [
+              0.875201,
+              7.564572
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_champ": 64,
+        "id_zaap": 9,
+        "nom_exploitant": "Exploitant ANONYME-002",
+        "superficie_ha": 3.66,
+        "type_culture": "Maïs",
+        "annee_attribution": 2023,
         "region": "Plateaux",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2860,131 +2952,39 @@
         "coordinates": [
           [
             [
-              0.180845,
-              9.047619
+              1.127365,
+              8.981961
             ],
             [
-              0.159877,
-              9.054039
+              1.114054,
+              8.987026
             ],
             [
-              0.143998,
-              9.049691
+              1.096286,
+              8.975873
             ],
             [
-              0.145775,
-              9.033693
+              1.114075,
+              8.962939
             ],
             [
-              0.168343,
-              9.029461
+              1.134936,
+              8.968028
             ],
             [
-              0.180845,
-              9.047619
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 63,
-        "id_zaap": 22,
-        "nom_exploitant": "Exploitant ANONYME-008",
-        "superficie_ha": 0.99,
-        "type_culture": "Anacarde",
-        "annee_attribution": 2020,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.215247,
-              9.09564
-            ],
-            [
-              1.221118,
-              9.079638
-            ],
-            [
-              1.245247,
-              9.075427
-            ],
-            [
-              1.248312,
-              9.094804
-            ],
-            [
-              1.232232,
-              9.100253
-            ],
-            [
-              1.215247,
-              9.09564
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_champ": 64,
-        "id_zaap": 21,
-        "nom_exploitant": "Exploitant ANONYME-006",
-        "superficie_ha": 0.16,
-        "type_culture": "Piment",
-        "annee_attribution": 2024,
-        "region": "Centrale",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.337489,
-              9.317396
-            ],
-            [
-              1.329209,
-              9.311556
-            ],
-            [
-              1.333808,
-              9.304381
-            ],
-            [
-              1.344339,
-              9.303613
-            ],
-            [
-              1.345735,
-              9.312124
-            ],
-            [
-              1.337489,
-              9.317396
+              1.127365,
+              8.981961
             ]
           ]
         ]
       },
       "properties": {
         "id_champ": 65,
-        "id_zaap": 22,
-        "nom_exploitant": "Exploitant ANONYME-007",
-        "superficie_ha": 0.83,
-        "type_culture": "Gombo",
-        "annee_attribution": 2024,
+        "id_zaap": 5,
+        "nom_exploitant": "Exploitant ANONYME-006",
+        "superficie_ha": 2.02,
+        "type_culture": "Soja",
+        "annee_attribution": 2019,
         "region": "Centrale",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
@@ -2993,7 +2993,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-06-16T11:34:36.512015+00:00",
+    "generated_at": "2026-06-17T02:45:39.732174+00:00",
     "generator": "AgriMap Togo ETL Pipeline (M1)",
     "crs": "EPSG:4326",
     "count": 65

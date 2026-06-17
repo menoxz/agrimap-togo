@@ -60,38 +60,38 @@
     "region_stats": [
       {
         "nom_region": "Maritime",
-        "total_zones": 5,
-        "covered_zones": 2,
-        "uncovered_zones": 3,
-        "coverage_pct": 40.0
+        "total_zones": 27,
+        "covered_zones": 11,
+        "uncovered_zones": 16,
+        "coverage_pct": 40.7
       },
       {
         "nom_region": "Plateaux",
-        "total_zones": 22,
-        "covered_zones": 6,
-        "uncovered_zones": 16,
-        "coverage_pct": 27.3
+        "total_zones": 49,
+        "covered_zones": 3,
+        "uncovered_zones": 46,
+        "coverage_pct": 6.1
       },
       {
         "nom_region": "Centrale",
-        "total_zones": 16,
+        "total_zones": 19,
         "covered_zones": 3,
-        "uncovered_zones": 13,
-        "coverage_pct": 18.8
+        "uncovered_zones": 16,
+        "coverage_pct": 15.8
       },
       {
         "nom_region": "Kara",
-        "total_zones": 25,
-        "covered_zones": 0,
-        "uncovered_zones": 25,
-        "coverage_pct": 0.0
+        "total_zones": 16,
+        "covered_zones": 1,
+        "uncovered_zones": 15,
+        "coverage_pct": 6.2
       },
       {
         "nom_region": "Savanes",
-        "total_zones": 9,
+        "total_zones": 10,
         "covered_zones": 2,
-        "uncovered_zones": 7,
-        "coverage_pct": 22.2
+        "uncovered_zones": 8,
+        "coverage_pct": 20.0
       }
     ]
   },

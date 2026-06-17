@@ -2,7 +2,7 @@
   "pipeline": {
     "name": "AgriMap Togo — Pipeline ETL M1",
     "version": "1.0.0",
-    "generated_at": "2026-06-16T11:34:36.483972+00:00",
+    "generated_at": "2026-06-17T02:45:39.702185+00:00",
     "mode": "mock",
     "crs": "EPSG:4326",
     "licence": "CC-BY-4.0"
@@ -40,11 +40,11 @@
         "type_culture": "str"
       },
       "regional_distribution": {
-        "Plateaux": 19,
-        "Maritime": 16,
-        "Centrale": 12,
-        "Savanes": 5,
-        "Kara": 3
+        "Plateaux": 16,
+        "Maritime": 15,
+        "Centrale": 10,
+        "Kara": 7,
+        "Savanes": 7
       },
       "quality_flags": [],
       "has_geometry": true
@@ -79,11 +79,11 @@
         "type_culture": "str"
       },
       "regional_distribution": {
-        "Plateaux": 24,
-        "Maritime": 21,
+        "Plateaux": 27,
+        "Maritime": 22,
         "Centrale": 14,
-        "Savanes": 11,
-        "Kara": 10
+        "Kara": 11,
+        "Savanes": 6
       },
       "quality_flags": [],
       "has_geometry": true
@@ -118,10 +118,10 @@
         "type_culture": "str"
       },
       "regional_distribution": {
-        "Maritime": 17,
-        "Plateaux": 10,
-        "Kara": 9,
-        "Centrale": 9,
+        "Plateaux": 16,
+        "Maritime": 12,
+        "Kara": 10,
+        "Centrale": 7,
         "Savanes": 5
       },
       "quality_flags": [],
@@ -158,10 +158,10 @@
       },
       "regional_distribution": {
         "Maritime": 11,
-        "Centrale": 6,
-        "Plateaux": 6,
-        "Kara": 5,
-        "Savanes": 2
+        "Plateaux": 7,
+        "Centrale": 5,
+        "Kara": 4,
+        "Savanes": 3
       },
       "quality_flags": [],
       "has_geometry": true
@@ -192,11 +192,11 @@
         "type_culture": "str"
       },
       "regional_distribution": {
-        "Plateaux": 19,
-        "Centrale": 14,
-        "Maritime": 12,
-        "Kara": 12,
-        "Savanes": 8
+        "Plateaux": 30,
+        "Maritime": 14,
+        "Centrale": 10,
+        "Kara": 6,
+        "Savanes": 5
       },
       "quality_flags": [],
       "has_geometry": true
@@ -231,11 +231,11 @@
         "type_cooperative": "str"
       },
       "regional_distribution": {
-        "Maritime": 15,
-        "Plateaux": 9,
-        "Savanes": 5,
-        "Kara": 3,
-        "Centrale": 3
+        "Plateaux": 13,
+        "Maritime": 9,
+        "Kara": 7,
+        "Savanes": 4,
+        "Centrale": 2
       },
       "quality_flags": [],
       "has_geometry": true
@@ -270,11 +270,11 @@
         "type_marché": "str"
       },
       "regional_distribution": {
-        "Centrale": 16,
-        "Maritime": 13,
+        "Maritime": 22,
         "Plateaux": 12,
-        "Kara": 5,
-        "Savanes": 4
+        "Centrale": 8,
+        "Savanes": 4,
+        "Kara": 4
       },
       "quality_flags": [],
       "has_geometry": true
@@ -307,11 +307,11 @@
         "type_pepiniere": "str"
       },
       "regional_distribution": {
-        "Plateaux": 18,
-        "Maritime": 10,
-        "Centrale": 5,
-        "Savanes": 5,
-        "Kara": 2
+        "Plateaux": 14,
+        "Savanes": 8,
+        "Centrale": 7,
+        "Maritime": 6,
+        "Kara": 5
       },
       "quality_flags": [],
       "has_geometry": true

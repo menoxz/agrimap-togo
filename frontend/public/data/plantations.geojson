@@ -8,50 +8,50 @@
         "coordinates": [
           [
             [
-              1.378736,
-              6.856091
+              0.347602,
+              9.181749
             ],
             [
-              1.36307,
-              6.842981
+              0.328707,
+              9.168067
             ],
             [
-              1.368833,
-              6.819308
+              0.313159,
+              9.149975
             ],
             [
-              1.402707,
-              6.808981
+              0.335537,
+              9.136783
             ],
             [
-              1.423896,
-              6.831821
+              0.362565,
+              9.130143
             ],
             [
-              1.426503,
-              6.857568
+              0.384984,
+              9.148845
             ],
             [
-              1.399861,
-              6.874558
+              0.371043,
+              9.170851
             ],
             [
-              1.378736,
-              6.856091
+              0.347602,
+              9.181749
             ]
           ]
         ]
       },
       "properties": {
         "id_plantation": 1,
-        "nom_plantation": "Ferme Familiale #1",
-        "type_culture": "Coton",
-        "superficie_ha": 22.94,
-        "annee_plantation": 2020,
-        "mode_exploitation": "Industriel",
+        "nom_plantation": "Domaine Rural #1",
+        "type_culture": "Hévéa",
+        "superficie_ha": 60.65,
+        "annee_plantation": 2008,
+        "mode_exploitation": "Familial",
         "irrigation": false,
-        "region": "Maritime",
-        "prefecture": "Bas-Mono",
+        "region": "Kara",
+        "prefecture": "Kozah",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -64,1054 +64,46 @@
         "coordinates": [
           [
             [
-              1.660303,
-              7.416246
+              0.693282,
+              9.938084
             ],
             [
-              1.629811,
-              7.425472
+              0.677269,
+              9.933989
             ],
             [
-              1.590571,
-              7.413464
+              0.662821,
+              9.92304
             ],
             [
-              1.59419,
-              7.378163
+              0.664374,
+              9.900167
             ],
             [
-              1.626869,
-              7.357229
+              0.694163,
+              9.897076
             ],
             [
-              1.655001,
-              7.377196
+              0.721026,
+              9.908527
             ],
             [
-              1.669069,
-              7.394251
+              0.724018,
+              9.935003
             ],
             [
-              1.660303,
-              7.416246
+              0.693282,
+              9.938084
             ]
           ]
         ]
       },
       "properties": {
         "id_plantation": 2,
-        "nom_plantation": "Domaine Agroforestier #2",
+        "nom_plantation": "Domaine Agricole #2",
         "type_culture": "Anacarde",
-        "superficie_ha": 70.56,
-        "annee_plantation": 2012,
-        "mode_exploitation": "Familial",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Anié",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.133672,
-              9.23527
-            ],
-            [
-              1.131511,
-              9.222049
-            ],
-            [
-              1.146665,
-              9.207586
-            ],
-            [
-              1.161491,
-              9.2222
-            ],
-            [
-              1.169877,
-              9.234109
-            ],
-            [
-              1.158561,
-              9.245043
-            ],
-            [
-              1.143813,
-              9.241776
-            ],
-            [
-              1.133672,
-              9.23527
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 3,
-        "nom_plantation": "Ferme Moderne #3",
-        "type_culture": "Anacarde",
-        "superficie_ha": 42.65,
+        "superficie_ha": 68.34,
         "annee_plantation": 2002,
-        "mode_exploitation": "Industriel",
-        "irrigation": false,
-        "region": "Kara",
-        "prefecture": "Doufelgou",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.107492,
-              6.233656
-            ],
-            [
-              1.088872,
-              6.246006
-            ],
-            [
-              1.067259,
-              6.252587
-            ],
-            [
-              1.050836,
-              6.237869
-            ],
-            [
-              1.058208,
-              6.221057
-            ],
-            [
-              1.074471,
-              6.210753
-            ],
-            [
-              1.098764,
-              6.213644
-            ],
-            [
-              1.107492,
-              6.233656
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 4,
-        "nom_plantation": "Ferme Moderne #4",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 21.17,
-        "annee_plantation": 1999,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Maritime",
-        "prefecture": "Vo",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.17107,
-              6.767521
-            ],
-            [
-              1.148702,
-              6.7724
-            ],
-            [
-              1.145191,
-              6.753685
-            ],
-            [
-              1.161515,
-              6.74631
-            ],
-            [
-              1.175959,
-              6.738298
-            ],
-            [
-              1.185511,
-              6.750445
-            ],
-            [
-              1.182642,
-              6.76191
-            ],
-            [
-              1.17107,
-              6.767521
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 5,
-        "nom_plantation": "Domaine Rural #5",
-        "type_culture": "Café",
-        "superficie_ha": 51.11,
-        "annee_plantation": 2002,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Maritime",
-        "prefecture": "Golfe",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.583893,
-              7.557922
-            ],
-            [
-              1.588395,
-              7.543244
-            ],
-            [
-              1.589346,
-              7.523401
-            ],
-            [
-              1.609461,
-              7.534927
-            ],
-            [
-              1.624121,
-              7.542053
-            ],
-            [
-              1.619659,
-              7.556698
-            ],
-            [
-              1.602753,
-              7.568917
-            ],
-            [
-              1.583893,
-              7.557922
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 6,
-        "nom_plantation": "Ferme Pilote #6",
-        "type_culture": "Hévéa",
-        "superficie_ha": 10.07,
-        "annee_plantation": 2002,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": null,
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.92142,
-              9.983175
-            ],
-            [
-              0.890593,
-              9.99185
-            ],
-            [
-              0.859617,
-              9.98817
-            ],
-            [
-              0.8499,
-              9.963115
-            ],
-            [
-              0.86404,
-              9.93805
-            ],
-            [
-              0.893556,
-              9.949642
-            ],
-            [
-              0.924927,
-              9.954995
-            ],
-            [
-              0.92142,
-              9.983175
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 7,
-        "nom_plantation": "Ferme Intégrée #7",
-        "type_culture": "Café",
-        "superficie_ha": 27.01,
-        "annee_plantation": null,
-        "mode_exploitation": "Familial",
-        "irrigation": false,
-        "region": "Kara",
-        "prefecture": "Doufelgou",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.166258,
-              10.840922
-            ],
-            [
-              0.148367,
-              10.857008
-            ],
-            [
-              0.119411,
-              10.849333
-            ],
-            [
-              0.122023,
-              10.826846
-            ],
-            [
-              0.136162,
-              10.81623
-            ],
-            [
-              0.155039,
-              10.811202
-            ],
-            [
-              0.180851,
-              10.821192
-            ],
-            [
-              0.166258,
-              10.840922
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 8,
-        "nom_plantation": "Ferme de Rente #8",
-        "type_culture": "Anacarde",
-        "superficie_ha": 72.1,
-        "annee_plantation": 2007,
-        "mode_exploitation": "Industriel",
-        "irrigation": false,
-        "region": "Savanes",
-        "prefecture": "Tandjouaré",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.743111,
-              8.537326
-            ],
-            [
-              0.731218,
-              8.526132
-            ],
-            [
-              0.740067,
-              8.51172
-            ],
-            [
-              0.760968,
-              8.504099
-            ],
-            [
-              0.783425,
-              8.515416
-            ],
-            [
-              0.777983,
-              8.535695
-            ],
-            [
-              0.759179,
-              8.54425
-            ],
-            [
-              0.743111,
-              8.537326
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 9,
-        "nom_plantation": "Domaine Agroforestier #9",
-        "type_culture": "Hévéa",
-        "superficie_ha": 76.09,
-        "annee_plantation": 1997,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Centrale",
-        "prefecture": "Sotouboua",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.665798,
-              6.617912
-            ],
-            [
-              0.670816,
-              6.593279
-            ],
-            [
-              0.694202,
-              6.585462
-            ],
-            [
-              0.716115,
-              6.586797
-            ],
-            [
-              0.737731,
-              6.602992
-            ],
-            [
-              0.719417,
-              6.622169
-            ],
-            [
-              0.691063,
-              6.639784
-            ],
-            [
-              0.665798,
-              6.617912
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 10,
-        "nom_plantation": "Ferme Moderne #10",
-        "type_culture": "Coton",
-        "superficie_ha": 16.51,
-        "annee_plantation": 2009,
-        "mode_exploitation": "Industriel",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Haho",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.899906,
-              8.820985
-            ],
-            [
-              0.88238,
-              8.836648
-            ],
-            [
-              0.862225,
-              8.821997
-            ],
-            [
-              0.861844,
-              8.803202
-            ],
-            [
-              0.876277,
-              8.787601
-            ],
-            [
-              0.898233,
-              8.794471
-            ],
-            [
-              0.908772,
-              8.807899
-            ],
-            [
-              0.899906,
-              8.820985
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 11,
-        "nom_plantation": "Ferme Intégrée #11",
-        "type_culture": "Cacao",
-        "superficie_ha": 79.73,
-        "annee_plantation": 2004,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Centrale",
-        "prefecture": "Blitta",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.573075,
-              6.89675
-            ],
-            [
-              1.579833,
-              6.883077
-            ],
-            [
-              1.597385,
-              6.880996
-            ],
-            [
-              1.607419,
-              6.890272
-            ],
-            [
-              1.608109,
-              6.900934
-            ],
-            [
-              1.597437,
-              6.906352
-            ],
-            [
-              1.581248,
-              6.909919
-            ],
-            [
-              1.573075,
-              6.89675
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 12,
-        "nom_plantation": "Ferme de Rente #12",
-        "type_culture": "Banane plantain",
-        "superficie_ha": null,
-        "annee_plantation": 2006,
-        "mode_exploitation": "Coopératif",
-        "irrigation": true,
-        "region": "Maritime",
-        "prefecture": "Bas-Mono",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.819219,
-              9.367115
-            ],
-            [
-              0.797642,
-              9.361246
-            ],
-            [
-              0.810557,
-              9.346096
-            ],
-            [
-              0.81779,
-              9.329892
-            ],
-            [
-              0.832345,
-              9.342715
-            ],
-            [
-              0.843019,
-              9.351276
-            ],
-            [
-              0.83906,
-              9.366622
-            ],
-            [
-              0.819219,
-              9.367115
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 13,
-        "nom_plantation": "Ferme Intégrée #13",
-        "type_culture": "Coton",
-        "superficie_ha": 35.81,
-        "annee_plantation": 2008,
-        "mode_exploitation": "Coopératif",
-        "irrigation": true,
-        "region": "Kara",
-        "prefecture": "Doufelgou",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.219328,
-              8.394714
-            ],
-            [
-              1.223719,
-              8.373614
-            ],
-            [
-              1.246031,
-              8.369638
-            ],
-            [
-              1.273394,
-              8.363778
-            ],
-            [
-              1.273911,
-              8.386395
-            ],
-            [
-              1.269045,
-              8.408
-            ],
-            [
-              1.244297,
-              8.398063
-            ],
-            [
-              1.219328,
-              8.394714
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 14,
-        "nom_plantation": "Domaine Agricole #14",
-        "type_culture": "Coton",
-        "superficie_ha": 16.48,
-        "annee_plantation": 2000,
-        "mode_exploitation": "Familial",
-        "irrigation": false,
-        "region": "Centrale",
-        "prefecture": "Anié",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.305158,
-              6.348223
-            ],
-            [
-              1.298561,
-              6.380959
-            ],
-            [
-              1.262344,
-              6.365067
-            ],
-            [
-              1.235065,
-              6.349276
-            ],
-            [
-              1.244372,
-              6.320803
-            ],
-            [
-              1.277373,
-              6.3216
-            ],
-            [
-              1.31104,
-              6.321638
-            ],
-            [
-              1.305158,
-              6.348223
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 15,
-        "nom_plantation": "Ferme Agropastorale #15",
-        "type_culture": "Coton",
-        "superficie_ha": 16.56,
-        "annee_plantation": 2016,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Maritime",
-        "prefecture": "Zio",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.90357,
-              9.760029
-            ],
-            [
-              0.891878,
-              9.741251
-            ],
-            [
-              0.909641,
-              9.725206
-            ],
-            [
-              0.935943,
-              9.721795
-            ],
-            [
-              0.946993,
-              9.7401
-            ],
-            [
-              0.956219,
-              9.763825
-            ],
-            [
-              0.925452,
-              9.768426
-            ],
-            [
-              0.90357,
-              9.760029
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 16,
-        "nom_plantation": "Domaine Agroforestier #16",
-        "type_culture": "Anacarde",
-        "superficie_ha": 27.31,
-        "annee_plantation": 1997,
-        "mode_exploitation": "Coopératif",
-        "irrigation": true,
-        "region": "Kara",
-        "prefecture": "Kéran",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.47493,
-              7.133783
-            ],
-            [
-              1.482277,
-              7.118255
-            ],
-            [
-              1.504205,
-              7.1078
-            ],
-            [
-              1.522039,
-              7.12301
-            ],
-            [
-              1.514941,
-              7.138909
-            ],
-            [
-              1.503702,
-              7.149395
-            ],
-            [
-              1.487206,
-              7.145039
-            ],
-            [
-              1.47493,
-              7.133783
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 17,
-        "nom_plantation": "Ferme Intégrée #17",
-        "type_culture": "Cacao",
-        "superficie_ha": 15.57,
-        "annee_plantation": 1996,
-        "mode_exploitation": "Industriel",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Kpélé",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.499698,
-              8.048298
-            ],
-            [
-              1.52202,
-              8.02575
-            ],
-            [
-              1.545146,
-              8.017965
-            ],
-            [
-              1.587895,
-              8.014039
-            ],
-            [
-              1.581618,
-              8.04795
-            ],
-            [
-              1.566026,
-              8.077679
-            ],
-            [
-              1.5272,
-              8.068573
-            ],
-            [
-              1.499698,
-              8.048298
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 18,
-        "nom_plantation": "Domaine Agricole #18",
-        "type_culture": "Anacarde",
-        "superficie_ha": 42.91,
-        "annee_plantation": 2002,
-        "mode_exploitation": "Familial",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Ogou",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.201286,
-              6.556644
-            ],
-            [
-              1.191545,
-              6.535494
-            ],
-            [
-              1.216038,
-              6.522047
-            ],
-            [
-              1.244069,
-              6.525847
-            ],
-            [
-              1.248647,
-              6.546477
-            ],
-            [
-              1.24054,
-              6.562446
-            ],
-            [
-              1.218675,
-              6.569788
-            ],
-            [
-              1.201286,
-              6.556644
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 19,
-        "nom_plantation": "Ferme Familiale #19",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 46.49,
-        "annee_plantation": 1997,
-        "mode_exploitation": "Industriel",
-        "irrigation": false,
-        "region": "Maritime",
-        "prefecture": "Yoto",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.991382,
-              9.042325
-            ],
-            [
-              0.980505,
-              9.067448
-            ],
-            [
-              0.949038,
-              9.057859
-            ],
-            [
-              0.938155,
-              9.038906
-            ],
-            [
-              0.949191,
-              9.023787
-            ],
-            [
-              0.967783,
-              9.009363
-            ],
-            [
-              0.988507,
-              9.02314
-            ],
-            [
-              0.991382,
-              9.042325
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 20,
-        "nom_plantation": "Ferme Moderne #20",
-        "type_culture": "Café",
-        "superficie_ha": 7.92,
-        "annee_plantation": 2017,
         "mode_exploitation": "Industriel",
         "irrigation": false,
         "region": "Kara",
@@ -1128,160 +120,48 @@
         "coordinates": [
           [
             [
-              1.096926,
-              7.16548
+              1.272926,
+              6.278321
             ],
             [
-              1.064694,
-              7.159471
+              1.25177,
+              6.259303
             ],
             [
-              1.07452,
-              7.133225
+              1.274569,
+              6.239016
             ],
             [
-              1.102217,
-              7.128806
+              1.303134,
+              6.245681
             ],
             [
-              1.123456,
-              7.13442
+              1.335155,
+              6.257172
             ],
             [
-              1.142333,
-              7.152941
+              1.317342,
+              6.281616
             ],
             [
-              1.120551,
-              7.170165
+              1.292651,
+              6.306069
             ],
             [
-              1.096926,
-              7.16548
+              1.272926,
+              6.278321
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 21,
-        "nom_plantation": "Ferme de Rente #21",
-        "type_culture": "Coton",
-        "superficie_ha": 27.48,
-        "annee_plantation": 2021,
+        "id_plantation": 3,
+        "nom_plantation": "Domaine Agroforestier #3",
+        "type_culture": "Hévéa",
+        "superficie_ha": 16.08,
+        "annee_plantation": 1998,
         "mode_exploitation": "Familial",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Agou",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.345168,
-              6.352209
-            ],
-            [
-              1.335057,
-              6.331442
-            ],
-            [
-              1.346578,
-              6.317078
-            ],
-            [
-              1.36226,
-              6.314457
-            ],
-            [
-              1.381774,
-              6.315638
-            ],
-            [
-              1.386614,
-              6.332896
-            ],
-            [
-              1.373497,
-              6.349437
-            ],
-            [
-              1.345168,
-              6.352209
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 22,
-        "nom_plantation": "Domaine Rural #22",
-        "type_culture": "Cacao",
-        "superficie_ha": 66.62,
-        "annee_plantation": 2002,
-        "mode_exploitation": "Familial",
-        "irrigation": false,
-        "region": "Maritime",
-        "prefecture": null,
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.188776,
-              6.459342
-            ],
-            [
-              1.168804,
-              6.469547
-            ],
-            [
-              1.148522,
-              6.46008
-            ],
-            [
-              1.135209,
-              6.441807
-            ],
-            [
-              1.153635,
-              6.42507
-            ],
-            [
-              1.180132,
-              6.424702
-            ],
-            [
-              1.193426,
-              6.441509
-            ],
-            [
-              1.188776,
-              6.459342
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 23,
-        "nom_plantation": "Exploitation Maraîchère #23",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 79.86,
-        "annee_plantation": 2010,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
+        "irrigation": true,
         "region": "Maritime",
         "prefecture": "Lacs",
         "licence": "CC-BY-4.0",
@@ -1296,216 +176,48 @@
         "coordinates": [
           [
             [
-              1.109927,
-              7.798431
+              0.892126,
+              8.283442
             ],
             [
-              1.108388,
-              7.774901
+              0.877476,
+              8.259729
             ],
             [
-              1.135216,
-              7.769899
+              0.89841,
+              8.236713
             ],
             [
-              1.15774,
-              7.77093
+              0.930665,
+              8.241772
             ],
             [
-              1.178261,
-              7.788976
+              0.96167,
+              8.256183
             ],
             [
-              1.153519,
-              7.802916
+              0.946549,
+              8.282637
             ],
             [
-              1.13354,
-              7.806337
+              0.919236,
+              8.295843
             ],
             [
-              1.109927,
-              7.798431
+              0.892126,
+              8.283442
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 24,
-        "nom_plantation": "Coopérative Agricole #24",
-        "type_culture": "Hévéa",
-        "superficie_ha": 26.68,
-        "annee_plantation": 2001,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Danyi",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.600286,
-              7.891378
-            ],
-            [
-              1.574421,
-              7.89544
-            ],
-            [
-              1.546769,
-              7.885145
-            ],
-            [
-              1.557433,
-              7.862721
-            ],
-            [
-              1.575797,
-              7.852213
-            ],
-            [
-              1.603511,
-              7.850071
-            ],
-            [
-              1.602098,
-              7.872175
-            ],
-            [
-              1.600286,
-              7.891378
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 25,
-        "nom_plantation": "Ferme Moderne #25",
+        "id_plantation": 4,
+        "nom_plantation": "Ferme Agropastorale #4",
         "type_culture": "Palmier à huile",
-        "superficie_ha": 76.65,
-        "annee_plantation": 1997,
+        "superficie_ha": 69.82,
+        "annee_plantation": 2015,
         "mode_exploitation": "Industriel",
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Agou",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.717435,
-              7.54101
-            ],
-            [
-              0.733154,
-              7.526077
-            ],
-            [
-              0.748369,
-              7.512219
-            ],
-            [
-              0.770763,
-              7.521658
-            ],
-            [
-              0.76877,
-              7.539841
-            ],
-            [
-              0.760865,
-              7.558028
-            ],
-            [
-              0.735614,
-              7.555586
-            ],
-            [
-              0.717435,
-              7.54101
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 26,
-        "nom_plantation": "Domaine Agroforestier #26",
-        "type_culture": "Cacao",
-        "superficie_ha": 8.94,
-        "annee_plantation": 2008,
-        "mode_exploitation": null,
-        "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": null,
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.560274,
-              8.819903
-            ],
-            [
-              0.559197,
-              8.806357
-            ],
-            [
-              0.573765,
-              8.797038
-            ],
-            [
-              0.587491,
-              8.805626
-            ],
-            [
-              0.592326,
-              8.815507
-            ],
-            [
-              0.583828,
-              8.82249
-            ],
-            [
-              0.570514,
-              8.831735
-            ],
-            [
-              0.560274,
-              8.819903
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 27,
-        "nom_plantation": "Domaine Agroforestier #27",
-        "type_culture": "Coton",
-        "superficie_ha": 22.42,
-        "annee_plantation": 2018,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
+        "irrigation": true,
         "region": "Centrale",
         "prefecture": "Tchaoudjo",
         "licence": "CC-BY-4.0",
@@ -1520,159 +232,47 @@
         "coordinates": [
           [
             [
-              0.284273,
-              10.510167
+              1.283232,
+              8.079069
             ],
             [
-              0.290392,
-              10.492602
+              1.26162,
+              8.086232
             ],
             [
-              0.310926,
-              10.4858
+              1.255289,
+              8.068256
             ],
             [
-              0.319673,
-              10.500284
+              1.252308,
+              8.051097
             ],
             [
-              0.330086,
-              10.510005
+              1.27371,
+              8.044126
             ],
             [
-              0.315751,
-              10.515659
+              1.300627,
+              8.047075
             ],
             [
-              0.298026,
-              10.525088
+              1.315751,
+              8.071586
             ],
             [
-              0.284273,
-              10.510167
+              1.283232,
+              8.079069
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 28,
-        "nom_plantation": "Coopérative Agricole #28",
-        "type_culture": "Anacarde",
-        "superficie_ha": 79.18,
-        "annee_plantation": 2012,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
-        "region": "Savanes",
-        "prefecture": "Cinkassé",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.515542,
-              9.133295
-            ],
-            [
-              0.509736,
-              9.112332
-            ],
-            [
-              0.519555,
-              9.092697
-            ],
-            [
-              0.543554,
-              9.098777
-            ],
-            [
-              0.569693,
-              9.103765
-            ],
-            [
-              0.568364,
-              9.12787
-            ],
-            [
-              0.54299,
-              9.140539
-            ],
-            [
-              0.515542,
-              9.133295
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 29,
-        "nom_plantation": "Exploitation Maraîchère #29",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 11.51,
-        "annee_plantation": 2016,
-        "mode_exploitation": "Familial",
-        "irrigation": true,
-        "region": "Kara",
-        "prefecture": "Binah",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.047212,
-              7.065145
-            ],
-            [
-              1.011932,
-              7.067379
-            ],
-            [
-              0.996754,
-              7.044585
-            ],
-            [
-              0.997955,
-              7.021886
-            ],
-            [
-              1.02372,
-              7.012836
-            ],
-            [
-              1.057913,
-              7.012989
-            ],
-            [
-              1.063314,
-              7.041089
-            ],
-            [
-              1.047212,
-              7.065145
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 30,
-        "nom_plantation": "Exploitation Agricole #30",
-        "type_culture": "Anacarde",
-        "superficie_ha": 56.46,
-        "annee_plantation": null,
-        "mode_exploitation": "Coopératif",
+        "id_plantation": 5,
+        "nom_plantation": "Domaine Agricole #5",
+        "type_culture": "Coton",
+        "superficie_ha": 49.56,
+        "annee_plantation": 2007,
+        "mode_exploitation": "Industriel",
         "irrigation": false,
         "region": "Plateaux",
         "prefecture": "Akébou",
@@ -1688,50 +288,50 @@
         "coordinates": [
           [
             [
-              1.053989,
-              6.623825
+              0.985462,
+              9.864822
             ],
             [
-              1.032882,
-              6.632115
+              0.965527,
+              9.861669
             ],
             [
-              0.997365,
-              6.632426
+              0.955689,
+              9.851889
             ],
             [
-              0.993364,
-              6.602403
+              0.956609,
+              9.839758
             ],
             [
-              1.018447,
-              6.584544
+              0.967913,
+              9.819864
             ],
             [
-              1.05093,
-              6.582024
+              0.988017,
+              9.834407
             ],
             [
-              1.069511,
-              6.604058
+              1.002327,
+              9.85015
             ],
             [
-              1.053989,
-              6.623825
+              0.985462,
+              9.864822
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 31,
-        "nom_plantation": "Exploitation Maraîchère #31",
-        "type_culture": "Hévéa",
-        "superficie_ha": 54.81,
-        "annee_plantation": 2001,
-        "mode_exploitation": "Familial",
+        "id_plantation": 6,
+        "nom_plantation": "Exploitation Maraîchère #6",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 17.94,
+        "annee_plantation": 2002,
+        "mode_exploitation": "Coopératif",
         "irrigation": false,
-        "region": "Maritime",
-        "prefecture": "Golfe",
+        "region": "Kara",
+        "prefecture": null,
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -1744,46 +344,46 @@
         "coordinates": [
           [
             [
-              1.54297,
-              6.934295
+              0.595013,
+              8.679968
             ],
             [
-              1.51463,
-              6.933232
+              0.564346,
+              8.675954
             ],
             [
-              1.519985,
-              6.91073
+              0.562985,
+              8.654288
             ],
             [
-              1.534773,
-              6.893502
+              0.558211,
+              8.633711
             ],
             [
-              1.563034,
-              6.895518
+              0.584729,
+              8.631385
             ],
             [
-              1.573127,
-              6.915458
+              0.604116,
+              8.640866
             ],
             [
-              1.57157,
-              6.939005
+              0.612283,
+              8.660238
             ],
             [
-              1.54297,
-              6.934295
+              0.595013,
+              8.679968
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 32,
-        "nom_plantation": "Ferme Intégrée #32",
-        "type_culture": "Hévéa",
-        "superficie_ha": 9.17,
-        "annee_plantation": 1999,
+        "id_plantation": 7,
+        "nom_plantation": "Domaine Rural #7",
+        "type_culture": "Palmier à huile",
+        "superficie_ha": 23.9,
+        "annee_plantation": null,
         "mode_exploitation": "Coopératif",
         "irrigation": false,
         "region": "Plateaux",
@@ -1800,47 +400,271 @@
         "coordinates": [
           [
             [
-              1.123356,
-              6.789841
+              0.71386,
+              9.206706
             ],
             [
-              1.126233,
-              6.77233
+              0.688119,
+              9.203557
             ],
             [
-              1.130417,
-              6.758045
+              0.678619,
+              9.188033
             ],
             [
-              1.148543,
-              6.760551
+              0.679302,
+              9.171698
             ],
             [
-              1.177862,
-              6.763506
+              0.698562,
+              9.158655
             ],
             [
-              1.173603,
-              6.78858
+              0.714463,
+              9.173709
             ],
             [
-              1.145224,
-              6.787478
+              0.719894,
+              9.187223
             ],
             [
-              1.123356,
-              6.789841
+              0.71386,
+              9.206706
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 33,
-        "nom_plantation": "Ferme Intégrée #33",
-        "type_culture": "Café",
-        "superficie_ha": 26.53,
-        "annee_plantation": 2000,
-        "mode_exploitation": "Familial",
+        "id_plantation": 8,
+        "nom_plantation": "Ferme Pilote #8",
+        "type_culture": "Hévéa",
+        "superficie_ha": 14.58,
+        "annee_plantation": 2017,
+        "mode_exploitation": "Coopératif",
+        "irrigation": false,
+        "region": "Kara",
+        "prefecture": "Assoli",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.8414,
+              6.050408
+            ],
+            [
+              0.808855,
+              6.043097
+            ],
+            [
+              0.781145,
+              6.033196
+            ],
+            [
+              0.796224,
+              6.012337
+            ],
+            [
+              0.810259,
+              5.986713
+            ],
+            [
+              0.832582,
+              6.008367
+            ],
+            [
+              0.843479,
+              6.023422
+            ],
+            [
+              0.8414,
+              6.050408
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 9,
+        "nom_plantation": "Domaine Agricole #9",
+        "type_culture": "Coton",
+        "superficie_ha": 62.82,
+        "annee_plantation": 2021,
+        "mode_exploitation": "Coopératif",
+        "irrigation": false,
+        "region": "Maritime",
+        "prefecture": "Lomé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.889565,
+              8.906114
+            ],
+            [
+              0.873232,
+              8.929349
+            ],
+            [
+              0.838815,
+              8.920519
+            ],
+            [
+              0.816476,
+              8.894473
+            ],
+            [
+              0.839392,
+              8.867941
+            ],
+            [
+              0.871273,
+              8.877752
+            ],
+            [
+              0.89538,
+              8.885305
+            ],
+            [
+              0.889565,
+              8.906114
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 10,
+        "nom_plantation": "Ferme de Rente #10",
+        "type_culture": "Cacao",
+        "superficie_ha": 77.72,
+        "annee_plantation": 2014,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.716065,
+              6.94501
+            ],
+            [
+              1.711353,
+              6.93048
+            ],
+            [
+              1.729482,
+              6.923568
+            ],
+            [
+              1.745807,
+              6.930342
+            ],
+            [
+              1.756419,
+              6.944235
+            ],
+            [
+              1.744071,
+              6.958987
+            ],
+            [
+              1.723559,
+              6.956919
+            ],
+            [
+              1.716065,
+              6.94501
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 11,
+        "nom_plantation": "Domaine Rural #11",
+        "type_culture": "Cacao",
+        "superficie_ha": 66.27,
+        "annee_plantation": 2020,
+        "mode_exploitation": "Coopératif",
+        "irrigation": true,
+        "region": "Maritime",
+        "prefecture": "Yoto",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.525561,
+              7.138387
+            ],
+            [
+              0.523521,
+              7.121289
+            ],
+            [
+              0.531061,
+              7.109962
+            ],
+            [
+              0.546628,
+              7.105777
+            ],
+            [
+              0.565674,
+              7.111986
+            ],
+            [
+              0.56713,
+              7.13045
+            ],
+            [
+              0.550329,
+              7.147746
+            ],
+            [
+              0.525561,
+              7.138387
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 12,
+        "nom_plantation": "Domaine Agricole #12",
+        "type_culture": "Cacao",
+        "superficie_ha": null,
+        "annee_plantation": 2023,
+        "mode_exploitation": "Industriel",
         "irrigation": false,
         "region": "Maritime",
         "prefecture": "Vo",
@@ -1856,46 +680,438 @@
         "coordinates": [
           [
             [
-              1.658935,
-              8.168465
+              0.278124,
+              7.206105
             ],
             [
-              1.621582,
-              8.172929
+              0.253645,
+              7.219373
             ],
             [
-              1.583901,
-              8.186177
+              0.237027,
+              7.198131
             ],
             [
-              1.58096,
-              8.15372
+              0.248543,
+              7.176987
             ],
             [
-              1.598095,
-              8.13692
+              0.273452,
+              7.166295
             ],
             [
-              1.624947,
-              8.112394
+              0.287508,
+              7.18437
             ],
             [
-              1.65697,
-              8.135419
+              0.293518,
+              7.198486
             ],
             [
-              1.658935,
-              8.168465
+              0.278124,
+              7.206105
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 34,
-        "nom_plantation": "Ferme Moderne #34",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 39.73,
-        "annee_plantation": 2018,
+        "id_plantation": 13,
+        "nom_plantation": "Ferme Intégrée #13",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 67.33,
+        "annee_plantation": 2019,
+        "mode_exploitation": "Coopératif",
+        "irrigation": false,
+        "region": "Maritime",
+        "prefecture": "Lomé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.120693,
+              10.181936
+            ],
+            [
+              0.126203,
+              10.171851
+            ],
+            [
+              0.137912,
+              10.164319
+            ],
+            [
+              0.147052,
+              10.173609
+            ],
+            [
+              0.147648,
+              10.181652
+            ],
+            [
+              0.142122,
+              10.188394
+            ],
+            [
+              0.129197,
+              10.191591
+            ],
+            [
+              0.120693,
+              10.181936
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 14,
+        "nom_plantation": "Ferme Agropastorale #14",
+        "type_culture": "Anacarde",
+        "superficie_ha": 9.71,
+        "annee_plantation": 2021,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Savanes",
+        "prefecture": "Tône",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.031879,
+              8.43701
+            ],
+            [
+              1.025194,
+              8.456396
+            ],
+            [
+              1.000955,
+              8.454069
+            ],
+            [
+              0.975863,
+              8.448359
+            ],
+            [
+              0.979062,
+              8.426414
+            ],
+            [
+              1.000279,
+              8.416529
+            ],
+            [
+              1.031075,
+              8.411968
+            ],
+            [
+              1.031879,
+              8.43701
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 15,
+        "nom_plantation": "Exploitation Maraîchère #15",
+        "type_culture": "Coton",
+        "superficie_ha": 63.98,
+        "annee_plantation": 2011,
+        "mode_exploitation": "Coopératif",
+        "irrigation": true,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.553609,
+              6.90841
+            ],
+            [
+              0.53812,
+              6.910881
+            ],
+            [
+              0.519529,
+              6.901727
+            ],
+            [
+              0.53343,
+              6.888377
+            ],
+            [
+              0.546601,
+              6.875749
+            ],
+            [
+              0.569852,
+              6.881944
+            ],
+            [
+              0.563605,
+              6.899882
+            ],
+            [
+              0.553609,
+              6.90841
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 16,
+        "nom_plantation": "Ferme Pilote #16",
+        "type_culture": "Coton",
+        "superficie_ha": 30.39,
+        "annee_plantation": 2015,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.077571,
+              10.184572
+            ],
+            [
+              0.083531,
+              10.161748
+            ],
+            [
+              0.087797,
+              10.148928
+            ],
+            [
+              0.108082,
+              10.135929
+            ],
+            [
+              0.132381,
+              10.149716
+            ],
+            [
+              0.12116,
+              10.169893
+            ],
+            [
+              0.105471,
+              10.17968
+            ],
+            [
+              0.077571,
+              10.184572
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 17,
+        "nom_plantation": "Domaine Rural #17",
+        "type_culture": "Hévéa",
+        "superficie_ha": 45.73,
+        "annee_plantation": 2003,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
+        "region": "Savanes",
+        "prefecture": "Cinkassé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.106103,
+              8.207745
+            ],
+            [
+              0.070097,
+              8.207609
+            ],
+            [
+              0.046783,
+              8.192932
+            ],
+            [
+              0.044572,
+              8.169233
+            ],
+            [
+              0.063481,
+              8.141774
+            ],
+            [
+              0.095349,
+              8.159789
+            ],
+            [
+              0.10386,
+              8.179456
+            ],
+            [
+              0.106103,
+              8.207745
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 18,
+        "nom_plantation": "Ferme de Rente #18",
+        "type_culture": "Anacarde",
+        "superficie_ha": 32.55,
+        "annee_plantation": 2020,
+        "mode_exploitation": "Coopératif",
+        "irrigation": true,
+        "region": "Plateaux",
+        "prefecture": "Haho",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.841364,
+              9.24503
+            ],
+            [
+              0.833712,
+              9.238073
+            ],
+            [
+              0.825554,
+              9.228009
+            ],
+            [
+              0.839114,
+              9.222568
+            ],
+            [
+              0.853679,
+              9.221316
+            ],
+            [
+              0.859352,
+              9.232471
+            ],
+            [
+              0.856829,
+              9.244905
+            ],
+            [
+              0.841364,
+              9.24503
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 19,
+        "nom_plantation": "Ferme Pilote #19",
+        "type_culture": "Anacarde",
+        "superficie_ha": 8.18,
+        "annee_plantation": 2022,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.501917,
+              7.160633
+            ],
+            [
+              1.46905,
+              7.14444
+            ],
+            [
+              1.480864,
+              7.113021
+            ],
+            [
+              1.515744,
+              7.092033
+            ],
+            [
+              1.538406,
+              7.120708
+            ],
+            [
+              1.558626,
+              7.142148
+            ],
+            [
+              1.538372,
+              7.169666
+            ],
+            [
+              1.501917,
+              7.160633
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 20,
+        "nom_plantation": "Ferme Moderne #20",
+        "type_culture": "Cacao",
+        "superficie_ha": 10.04,
+        "annee_plantation": 2019,
         "mode_exploitation": "Coopératif",
         "irrigation": false,
         "region": "Plateaux",
@@ -1912,162 +1128,50 @@
         "coordinates": [
           [
             [
-              0.620675,
-              9.239336
+              0.074737,
+              10.551008
             ],
             [
-              0.634018,
-              9.227882
+              0.06384,
+              10.54728
             ],
             [
-              0.645929,
-              9.214289
+              0.057738,
+              10.541524
             ],
             [
-              0.661027,
-              9.22589
+              0.05813,
+              10.532484
             ],
             [
-              0.67008,
-              9.240557
+              0.069366,
+              10.529148
             ],
             [
-              0.656513,
-              9.255647
+              0.079297,
+              10.533777
             ],
             [
-              0.639242,
-              9.244653
+              0.089645,
+              10.544487
             ],
             [
-              0.620675,
-              9.239336
+              0.074737,
+              10.551008
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 35,
-        "nom_plantation": "Ferme Familiale #35",
-        "type_culture": "Café",
-        "superficie_ha": 12.57,
-        "annee_plantation": 1996,
+        "id_plantation": 21,
+        "nom_plantation": "Ferme Moderne #21",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 18.95,
+        "annee_plantation": 2011,
         "mode_exploitation": "Industriel",
         "irrigation": false,
-        "region": "Kara",
-        "prefecture": "Bassar",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.277322,
-              9.47746
-            ],
-            [
-              0.258485,
-              9.468037
-            ],
-            [
-              0.266358,
-              9.453168
-            ],
-            [
-              0.271114,
-              9.434947
-            ],
-            [
-              0.289512,
-              9.446114
-            ],
-            [
-              0.308502,
-              9.455049
-            ],
-            [
-              0.296128,
-              9.47012
-            ],
-            [
-              0.277322,
-              9.47746
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 36,
-        "nom_plantation": "Ferme Agropastorale #36",
-        "type_culture": "Coton",
-        "superficie_ha": 62.94,
-        "annee_plantation": 2021,
-        "mode_exploitation": "Industriel",
-        "irrigation": true,
-        "region": "Kara",
-        "prefecture": "Binah",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              0.47908,
-              10.639115
-            ],
-            [
-              0.461082,
-              10.625163
-            ],
-            [
-              0.476338,
-              10.607611
-            ],
-            [
-              0.498165,
-              10.613148
-            ],
-            [
-              0.515817,
-              10.619509
-            ],
-            [
-              0.520252,
-              10.639148
-            ],
-            [
-              0.497061,
-              10.646885
-            ],
-            [
-              0.47908,
-              10.639115
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 37,
-        "nom_plantation": "Exploitation Maraîchère #37",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 57.22,
-        "annee_plantation": 2008,
-        "mode_exploitation": "Familial",
-        "irrigation": true,
         "region": "Savanes",
-        "prefecture": "Cinkassé",
+        "prefecture": "Tône",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2080,106 +1184,50 @@
         "coordinates": [
           [
             [
-              1.232741,
-              9.290747
+              0.731924,
+              8.811385
             ],
             [
-              1.217277,
-              9.270111
+              0.709294,
+              8.810115
             ],
             [
-              1.234983,
-              9.252184
+              0.700512,
+              8.798673
             ],
             [
-              1.260459,
-              9.240611
+              0.689185,
+              8.783893
             ],
             [
-              1.278038,
-              9.259341
+              0.709426,
+              8.777328
             ],
             [
-              1.270284,
-              9.275807
+              0.731714,
+              8.775708
             ],
             [
-              1.258192,
-              9.28605
+              0.7346,
+              8.79345
             ],
             [
-              1.232741,
-              9.290747
+              0.731924,
+              8.811385
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": null,
-        "nom_plantation": null,
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 53.5,
-        "annee_plantation": 2024,
+        "id_plantation": 22,
+        "nom_plantation": "Domaine Agricole #22",
+        "type_culture": "Hévéa",
+        "superficie_ha": 56.14,
+        "annee_plantation": 2022,
         "mode_exploitation": "Industriel",
         "irrigation": false,
-        "region": "Kara",
-        "prefecture": "Kozah",
-        "licence": "CC-BY-4.0",
-        "source": "geodata.gouv.tg / opendata.gouv.tg",
-        "dataset_version": "1.0"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              1.207876,
-              7.793659
-            ],
-            [
-              1.186185,
-              7.817735
-            ],
-            [
-              1.162891,
-              7.794695
-            ],
-            [
-              1.140445,
-              7.771079
-            ],
-            [
-              1.174874,
-              7.759939
-            ],
-            [
-              1.198458,
-              7.76055
-            ],
-            [
-              1.22824,
-              7.772534
-            ],
-            [
-              1.207876,
-              7.793659
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "id_plantation": 39,
-        "nom_plantation": "Ferme de Rente #39",
-        "type_culture": "Hévéa",
-        "superficie_ha": 40.92,
-        "annee_plantation": 2002,
-        "mode_exploitation": "Coopératif",
-        "irrigation": false,
         "region": "Plateaux",
-        "prefecture": "Wawa",
+        "prefecture": null,
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2192,50 +1240,50 @@
         "coordinates": [
           [
             [
-              0.886461,
-              7.085166
+              1.559007,
+              7.045747
             ],
             [
-              0.871335,
-              7.076476
+              1.550964,
+              7.021831
             ],
             [
-              0.865479,
-              7.064728
+              1.560463,
+              6.999716
             ],
             [
-              0.869537,
-              7.04785
+              1.588843,
+              6.999168
             ],
             [
-              0.890837,
-              7.051108
+              1.600529,
+              7.014613
             ],
             [
-              0.908632,
-              7.059722
+              1.602308,
+              7.029052
             ],
             [
-              0.904823,
-              7.077111
+              1.587335,
+              7.037442
             ],
             [
-              0.886461,
-              7.085166
+              1.559007,
+              7.045747
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 40,
-        "nom_plantation": "Ferme Pilote #40",
-        "type_culture": "Cacao",
-        "superficie_ha": 32.8,
-        "annee_plantation": 2008,
-        "mode_exploitation": "Familial",
+        "id_plantation": 23,
+        "nom_plantation": "Ferme Intégrée #23",
+        "type_culture": "Café",
+        "superficie_ha": 32.07,
+        "annee_plantation": 2013,
+        "mode_exploitation": "Industriel",
         "irrigation": false,
-        "region": "Plateaux",
-        "prefecture": "Wawa",
+        "region": "Maritime",
+        "prefecture": "Lacs",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2248,50 +1296,50 @@
         "coordinates": [
           [
             [
-              1.07773,
-              8.726636
+              0.421895,
+              9.510217
             ],
             [
-              1.074282,
-              8.718528
+              0.41216,
+              9.499153
             ],
             [
-              1.078581,
-              8.711034
+              0.419788,
+              9.485734
             ],
             [
-              1.089845,
-              8.706064
+              0.435681,
+              9.490605
             ],
             [
-              1.097091,
-              8.714596
+              0.45445,
+              9.491434
             ],
             [
-              1.100256,
-              8.724467
+              0.450102,
+              9.506223
             ],
             [
-              1.090218,
-              8.735038
+              0.43644,
+              9.512279
             ],
             [
-              1.07773,
-              8.726636
+              0.421895,
+              9.510217
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 41,
-        "nom_plantation": "Ferme Pilote #41",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 62.25,
-        "annee_plantation": 2010,
+        "id_plantation": 24,
+        "nom_plantation": "Domaine Agroforestier #24",
+        "type_culture": "Coton",
+        "superficie_ha": 30.84,
+        "annee_plantation": 2023,
         "mode_exploitation": "Coopératif",
         "irrigation": false,
         "region": "Centrale",
-        "prefecture": "Blitta",
+        "prefecture": "Tchamba",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2304,50 +1352,274 @@
         "coordinates": [
           [
             [
-              1.096285,
-              6.897277
+              0.587481,
+              10.136149
             ],
             [
-              1.101105,
-              6.865606
+              0.589096,
+              10.124253
             ],
             [
-              1.135728,
-              6.857676
+              0.59944,
+              10.118529
             ],
             [
-              1.169521,
-              6.860414
+              0.617151,
+              10.112371
             ],
             [
-              1.16176,
-              6.886412
+              0.617613,
+              10.127755
             ],
             [
-              1.162524,
-              6.912751
+              0.620382,
+              10.143107
             ],
             [
-              1.133091,
-              6.900769
+              0.600791,
+              10.143324
             ],
             [
-              1.096285,
-              6.897277
+              0.587481,
+              10.136149
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 42,
-        "nom_plantation": "Ferme Moderne #42",
-        "type_culture": "Anacarde",
-        "superficie_ha": 15.31,
-        "annee_plantation": null,
+        "id_plantation": 25,
+        "nom_plantation": "Coopérative Agricole #25",
+        "type_culture": "Hévéa",
+        "superficie_ha": 10.91,
+        "annee_plantation": 2001,
+        "mode_exploitation": "Coopératif",
+        "irrigation": false,
+        "region": "Kara",
+        "prefecture": "Doufelgou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.893313,
+              6.615436
+            ],
+            [
+              0.869289,
+              6.616015
+            ],
+            [
+              0.84954,
+              6.617919
+            ],
+            [
+              0.840489,
+              6.601369
+            ],
+            [
+              0.853297,
+              6.586846
+            ],
+            [
+              0.875602,
+              6.581148
+            ],
+            [
+              0.889089,
+              6.596265
+            ],
+            [
+              0.893313,
+              6.615436
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 26,
+        "nom_plantation": "Ferme Moderne #26",
+        "type_culture": "Café",
+        "superficie_ha": 8.41,
+        "annee_plantation": 2015,
+        "mode_exploitation": null,
+        "irrigation": true,
+        "region": "Maritime",
+        "prefecture": null,
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.758567,
+              9.663028
+            ],
+            [
+              0.733381,
+              9.654952
+            ],
+            [
+              0.746444,
+              9.635733
+            ],
+            [
+              0.765231,
+              9.622192
+            ],
+            [
+              0.788675,
+              9.632015
+            ],
+            [
+              0.78776,
+              9.650417
+            ],
+            [
+              0.774783,
+              9.659208
+            ],
+            [
+              0.758567,
+              9.663028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 27,
+        "nom_plantation": "Ferme Moderne #27",
+        "type_culture": "Cacao",
+        "superficie_ha": 37.97,
+        "annee_plantation": 2010,
+        "mode_exploitation": "Industriel",
+        "irrigation": true,
+        "region": "Kara",
+        "prefecture": "Assoli",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.45431,
+              7.209382
+            ],
+            [
+              0.420958,
+              7.218
+            ],
+            [
+              0.402914,
+              7.193272
+            ],
+            [
+              0.418503,
+              7.173733
+            ],
+            [
+              0.437561,
+              7.162453
+            ],
+            [
+              0.457971,
+              7.172326
+            ],
+            [
+              0.473083,
+              7.190854
+            ],
+            [
+              0.45431,
+              7.209382
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 28,
+        "nom_plantation": "Exploitation Agricole #28",
+        "type_culture": "Café",
+        "superficie_ha": 8.8,
+        "annee_plantation": 2007,
+        "mode_exploitation": "Coopératif",
+        "irrigation": false,
+        "region": "Maritime",
+        "prefecture": "Lacs",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.91234,
+              9.267348
+            ],
+            [
+              0.871765,
+              9.276201
+            ],
+            [
+              0.832216,
+              9.276707
+            ],
+            [
+              0.827142,
+              9.245199
+            ],
+            [
+              0.850352,
+              9.230023
+            ],
+            [
+              0.874917,
+              9.219792
+            ],
+            [
+              0.899506,
+              9.235329
+            ],
+            [
+              0.91234,
+              9.267348
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 29,
+        "nom_plantation": "Ferme Familiale #29",
+        "type_culture": "Cacao",
+        "superficie_ha": 48.75,
+        "annee_plantation": 1996,
         "mode_exploitation": "Familial",
         "irrigation": true,
-        "region": "Plateaux",
-        "prefecture": "Kloto",
+        "region": "Kara",
+        "prefecture": "Assoli",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2360,46 +1632,214 @@
         "coordinates": [
           [
             [
-              1.10319,
-              6.633741
+              0.53843,
+              9.708644
             ],
             [
-              1.091339,
-              6.616053
+              0.527271,
+              9.684415
             ],
             [
-              1.098245,
-              6.597907
+              0.555329,
+              9.669011
             ],
             [
-              1.119562,
-              6.599459
+              0.58744,
+              9.673364
             ],
             [
-              1.142095,
-              6.59984
+              0.592684,
+              9.696997
             ],
             [
-              1.134405,
-              6.616783
+              0.583397,
+              9.715291
             ],
             [
-              1.128637,
-              6.63388
+              0.558349,
+              9.723701
             ],
             [
-              1.10319,
-              6.633741
+              0.53843,
+              9.708644
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 43,
-        "nom_plantation": "Coopérative Agricole #43",
+        "id_plantation": 30,
+        "nom_plantation": "Ferme Familiale #30",
+        "type_culture": "Palmier à huile",
+        "superficie_ha": 46.49,
+        "annee_plantation": null,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Kara",
+        "prefecture": "Dankpen",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.019378,
+              8.107472
+            ],
+            [
+              1.005696,
+              8.124571
+            ],
+            [
+              0.968075,
+              8.131914
+            ],
+            [
+              0.959943,
+              8.101207
+            ],
+            [
+              0.97627,
+              8.080714
+            ],
+            [
+              1.001746,
+              8.079813
+            ],
+            [
+              1.031142,
+              8.08527
+            ],
+            [
+              1.019378,
+              8.107472
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 31,
+        "nom_plantation": "Domaine Rural #31",
         "type_culture": "Coton",
-        "superficie_ha": 78.31,
-        "annee_plantation": 1995,
+        "superficie_ha": 8.02,
+        "annee_plantation": 1996,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
+        "region": "Plateaux",
+        "prefecture": "Est-Mono",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.413376,
+              7.254345
+            ],
+            [
+              1.41572,
+              7.242973
+            ],
+            [
+              1.429191,
+              7.235232
+            ],
+            [
+              1.447792,
+              7.239839
+            ],
+            [
+              1.448594,
+              7.255327
+            ],
+            [
+              1.437033,
+              7.265237
+            ],
+            [
+              1.420675,
+              7.265148
+            ],
+            [
+              1.413376,
+              7.254345
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 32,
+        "nom_plantation": "Ferme Intégrée #32",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 47.22,
+        "annee_plantation": 2010,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
+        "region": "Plateaux",
+        "prefecture": "Agou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.389548,
+              7.087294
+            ],
+            [
+              0.391269,
+              7.068099
+            ],
+            [
+              0.411712,
+              7.062263
+            ],
+            [
+              0.434203,
+              7.061336
+            ],
+            [
+              0.450328,
+              7.079837
+            ],
+            [
+              0.431185,
+              7.096028
+            ],
+            [
+              0.410028,
+              7.093838
+            ],
+            [
+              0.389548,
+              7.087294
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 33,
+        "nom_plantation": "Ferme Moderne #33",
+        "type_culture": "Coton",
+        "superficie_ha": 41.03,
+        "annee_plantation": 2011,
         "mode_exploitation": "Coopératif",
         "irrigation": false,
         "region": "Maritime",
@@ -2416,50 +1856,50 @@
         "coordinates": [
           [
             [
-              0.886103,
-              9.989043
+              -0.118325,
+              7.143179
             ],
             [
-              0.85736,
-              9.995169
+              -0.128083,
+              7.158481
             ],
             [
-              0.832461,
-              9.981965
+              -0.149312,
+              7.153401
             ],
             [
-              0.826274,
-              9.956309
+              -0.173559,
+              7.140897
             ],
             [
-              0.848353,
-              9.928041
+              -0.157693,
+              7.120888
             ],
             [
-              0.879995,
-              9.949168
+              -0.13215,
+              7.106825
             ],
             [
-              0.906213,
-              9.966416
+              -0.100432,
+              7.119885
             ],
             [
-              0.886103,
-              9.989043
+              -0.118325,
+              7.143179
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 44,
-        "nom_plantation": "Domaine Agricole #44",
+        "id_plantation": 34,
+        "nom_plantation": "Ferme de Rente #34",
         "type_culture": "Banane plantain",
-        "superficie_ha": 79.38,
-        "annee_plantation": 2015,
-        "mode_exploitation": "Familial",
+        "superficie_ha": 9.67,
+        "annee_plantation": 1999,
+        "mode_exploitation": "Coopératif",
         "irrigation": true,
-        "region": "Kara",
-        "prefecture": "Kéran",
+        "region": "Maritime",
+        "prefecture": "Zio",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2472,47 +1912,327 @@
         "coordinates": [
           [
             [
-              1.27571,
-              7.844556
+              0.318004,
+              11.169984
             ],
             [
-              1.25459,
-              7.859493
+              0.295027,
+              11.164066
             ],
             [
-              1.231699,
-              7.853977
+              0.283901,
+              11.145624
             ],
             [
-              1.20602,
-              7.843089
+              0.295518,
+              11.124608
             ],
             [
-              1.214362,
-              7.818188
+              0.324275,
+              11.124606
             ],
             [
-              1.243782,
-              7.809202
+              0.345971,
+              11.138803
             ],
             [
-              1.271388,
-              7.82039
+              0.333198,
+              11.157118
             ],
             [
-              1.27571,
-              7.844556
+              0.318004,
+              11.169984
             ]
           ]
         ]
       },
       "properties": {
-        "id_plantation": 45,
-        "nom_plantation": "Ferme Familiale #45",
+        "id_plantation": 35,
+        "nom_plantation": "Ferme Intégrée #35",
         "type_culture": "Cacao",
-        "superficie_ha": 72.6,
-        "annee_plantation": 2017,
+        "superficie_ha": 76.8,
+        "annee_plantation": 2003,
         "mode_exploitation": "Coopératif",
+        "irrigation": true,
+        "region": "Savanes",
+        "prefecture": "Oti",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.830457,
+              9.66301
+            ],
+            [
+              0.795724,
+              9.659331
+            ],
+            [
+              0.790377,
+              9.63078
+            ],
+            [
+              0.815013,
+              9.616818
+            ],
+            [
+              0.841271,
+              9.610098
+            ],
+            [
+              0.860649,
+              9.628039
+            ],
+            [
+              0.863499,
+              9.655381
+            ],
+            [
+              0.830457,
+              9.66301
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 36,
+        "nom_plantation": "Domaine Rural #36",
+        "type_culture": "Hévéa",
+        "superficie_ha": 30.89,
+        "annee_plantation": 2019,
+        "mode_exploitation": "Familial",
+        "irrigation": true,
+        "region": "Kara",
+        "prefecture": "Doufelgou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.907232,
+              10.794633
+            ],
+            [
+              0.895097,
+              10.785389
+            ],
+            [
+              0.908935,
+              10.777822
+            ],
+            [
+              0.922155,
+              10.773673
+            ],
+            [
+              0.929468,
+              10.783413
+            ],
+            [
+              0.926343,
+              10.792066
+            ],
+            [
+              0.918846,
+              10.803246
+            ],
+            [
+              0.907232,
+              10.794633
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 37,
+        "nom_plantation": "Ferme Familiale #37",
+        "type_culture": "Cacao",
+        "superficie_ha": 8.81,
+        "annee_plantation": 2023,
+        "mode_exploitation": "Coopératif",
+        "irrigation": true,
+        "region": "Savanes",
+        "prefecture": "Cinkassé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.223212,
+              6.128729
+            ],
+            [
+              1.208777,
+              6.116933
+            ],
+            [
+              1.218529,
+              6.096708
+            ],
+            [
+              1.243886,
+              6.103391
+            ],
+            [
+              1.267615,
+              6.113331
+            ],
+            [
+              1.261455,
+              6.136128
+            ],
+            [
+              1.235884,
+              6.140532
+            ],
+            [
+              1.223212,
+              6.128729
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": null,
+        "nom_plantation": null,
+        "type_culture": "Hévéa",
+        "superficie_ha": 77.29,
+        "annee_plantation": 2005,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Maritime",
+        "prefecture": "Golfe",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.061791,
+              9.278102
+            ],
+            [
+              1.044421,
+              9.288708
+            ],
+            [
+              1.025309,
+              9.295419
+            ],
+            [
+              1.00766,
+              9.2828
+            ],
+            [
+              1.023114,
+              9.269885
+            ],
+            [
+              1.031336,
+              9.2545
+            ],
+            [
+              1.052352,
+              9.261092
+            ],
+            [
+              1.061791,
+              9.278102
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 39,
+        "nom_plantation": "Exploitation Agricole #39",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 77.16,
+        "annee_plantation": 2024,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Centrale",
+        "prefecture": "Tchaoudjo",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.490312,
+              7.629576
+            ],
+            [
+              1.464539,
+              7.62095
+            ],
+            [
+              1.446224,
+              7.600524
+            ],
+            [
+              1.473655,
+              7.588958
+            ],
+            [
+              1.494599,
+              7.580056
+            ],
+            [
+              1.508487,
+              7.595998
+            ],
+            [
+              1.517886,
+              7.618236
+            ],
+            [
+              1.490312,
+              7.629576
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 40,
+        "nom_plantation": "Ferme Pilote #40",
+        "type_culture": "Cacao",
+        "superficie_ha": 59.83,
+        "annee_plantation": 2015,
+        "mode_exploitation": "Industriel",
         "irrigation": false,
         "region": "Plateaux",
         "prefecture": "Ogou",
@@ -2528,50 +2248,330 @@
         "coordinates": [
           [
             [
-              0.165468,
-              10.582577
+              0.83295,
+              9.154646
             ],
             [
-              0.136371,
-              10.57156
+              0.800463,
+              9.172303
             ],
             [
-              0.162072,
-              10.555397
+              0.764178,
+              9.160976
             ],
             [
-              0.178023,
-              10.546138
+              0.759885,
+              9.133042
             ],
             [
-              0.195469,
-              10.55503
+              0.782322,
+              9.120255
             ],
             [
-              0.215707,
-              10.574468
+              0.807572,
+              9.106015
             ],
             [
-              0.192592,
-              10.59551
+              0.819352,
+              9.128864
             ],
             [
-              0.165468,
-              10.582577
+              0.83295,
+              9.154646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 41,
+        "nom_plantation": "Exploitation Agricole #41",
+        "type_culture": "Anacarde",
+        "superficie_ha": 29.27,
+        "annee_plantation": 2002,
+        "mode_exploitation": "Familial",
+        "irrigation": true,
+        "region": "Centrale",
+        "prefecture": "Tchamba",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.523419,
+              8.062095
+            ],
+            [
+              0.510028,
+              8.055044
+            ],
+            [
+              0.512025,
+              8.042437
+            ],
+            [
+              0.522039,
+              8.029235
+            ],
+            [
+              0.540615,
+              8.035295
+            ],
+            [
+              0.543174,
+              8.048486
+            ],
+            [
+              0.542837,
+              8.06406
+            ],
+            [
+              0.523419,
+              8.062095
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 42,
+        "nom_plantation": "Ferme de Rente #42",
+        "type_culture": "Hévéa",
+        "superficie_ha": 28.32,
+        "annee_plantation": null,
+        "mode_exploitation": "Coopératif",
+        "irrigation": false,
+        "region": "Plateaux",
+        "prefecture": "Amou",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.535801,
+              7.883336
+            ],
+            [
+              1.51912,
+              7.871463
+            ],
+            [
+              1.508022,
+              7.859147
+            ],
+            [
+              1.516584,
+              7.842583
+            ],
+            [
+              1.539264,
+              7.841858
+            ],
+            [
+              1.55557,
+              7.853435
+            ],
+            [
+              1.554072,
+              7.87122
+            ],
+            [
+              1.535801,
+              7.883336
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 43,
+        "nom_plantation": "Ferme Familiale #43",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 61.61,
+        "annee_plantation": 2022,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
+        "region": "Plateaux",
+        "prefecture": "Anié",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.787297,
+              8.106106
+            ],
+            [
+              0.7743,
+              8.099811
+            ],
+            [
+              0.778476,
+              8.089069
+            ],
+            [
+              0.785528,
+              8.081459
+            ],
+            [
+              0.799542,
+              8.08125
+            ],
+            [
+              0.801551,
+              8.091936
+            ],
+            [
+              0.798648,
+              8.100236
+            ],
+            [
+              0.787297,
+              8.106106
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 44,
+        "nom_plantation": "Ferme Agropastorale #44",
+        "type_culture": "Anacarde",
+        "superficie_ha": 11.82,
+        "annee_plantation": 2011,
+        "mode_exploitation": "Industriel",
+        "irrigation": false,
+        "region": "Centrale",
+        "prefecture": "Blitta",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.916722,
+              6.685278
+            ],
+            [
+              0.912282,
+              6.672188
+            ],
+            [
+              0.913137,
+              6.65923
+            ],
+            [
+              0.929257,
+              6.658377
+            ],
+            [
+              0.944272,
+              6.661949
+            ],
+            [
+              0.943697,
+              6.674743
+            ],
+            [
+              0.936103,
+              6.688438
+            ],
+            [
+              0.916722,
+              6.685278
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id_plantation": 45,
+        "nom_plantation": "Ferme de Rente #45",
+        "type_culture": "Café",
+        "superficie_ha": 45.59,
+        "annee_plantation": 1996,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
+        "region": "Maritime",
+        "prefecture": "Avé",
+        "licence": "CC-BY-4.0",
+        "source": "geodata.gouv.tg / opendata.gouv.tg",
+        "dataset_version": "1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.309844,
+              6.920526
+            ],
+            [
+              1.321999,
+              6.905058
+            ],
+            [
+              1.343419,
+              6.891203
+            ],
+            [
+              1.35781,
+              6.90996
+            ],
+            [
+              1.368284,
+              6.928708
+            ],
+            [
+              1.347582,
+              6.944601
+            ],
+            [
+              1.325024,
+              6.933937
+            ],
+            [
+              1.309844,
+              6.920526
             ]
           ]
         ]
       },
       "properties": {
         "id_plantation": 46,
-        "nom_plantation": "Domaine Agricole #46",
-        "type_culture": "Palmier à huile",
-        "superficie_ha": 17.18,
-        "annee_plantation": 2002,
+        "nom_plantation": "Domaine Agroforestier #46",
+        "type_culture": "Banane plantain",
+        "superficie_ha": 70.59,
+        "annee_plantation": 1999,
         "mode_exploitation": "Coopératif",
         "irrigation": false,
-        "region": "Savanes",
-        "prefecture": "Tandjouaré",
+        "region": "Maritime",
+        "prefecture": "Golfe",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2584,50 +2584,50 @@
         "coordinates": [
           [
             [
-              0.841864,
-              8.951639
+              0.870797,
+              6.882258
             ],
             [
-              0.84948,
-              8.931988
+              0.857221,
+              6.887486
             ],
             [
-              0.8535,
-              8.91081
+              0.838656,
+              6.884926
             ],
             [
-              0.879021,
-              8.917688
+              0.82632,
+              6.867002
             ],
             [
-              0.886752,
-              8.932358
+              0.845615,
+              6.851946
             ],
             [
-              0.885142,
-              8.946957
+              0.871025,
+              6.852688
             ],
             [
-              0.867555,
-              8.950645
+              0.892772,
+              6.867799
             ],
             [
-              0.841864,
-              8.951639
+              0.870797,
+              6.882258
             ]
           ]
         ]
       },
       "properties": {
         "id_plantation": 47,
-        "nom_plantation": "Ferme Agropastorale #47",
-        "type_culture": "Hévéa",
-        "superficie_ha": 51.04,
-        "annee_plantation": 2014,
-        "mode_exploitation": "Industriel",
+        "nom_plantation": "Ferme Familiale #47",
+        "type_culture": "Anacarde",
+        "superficie_ha": 30.96,
+        "annee_plantation": 2003,
+        "mode_exploitation": "Familial",
         "irrigation": false,
-        "region": "Centrale",
-        "prefecture": "Sotouboua",
+        "region": "Maritime",
+        "prefecture": "Golfe",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2640,48 +2640,48 @@
         "coordinates": [
           [
             [
-              1.175032,
-              6.673128
+              1.006379,
+              7.130309
             ],
             [
-              1.158524,
-              6.666113
+              1.012274,
+              7.114886
             ],
             [
-              1.161927,
-              6.648495
+              1.02565,
+              7.096597
             ],
             [
-              1.183521,
-              6.642495
+              1.050912,
+              7.106224
             ],
             [
-              1.193942,
-              6.656178
+              1.065507,
+              7.126355
             ],
             [
-              1.197268,
-              6.666403
+              1.052012,
+              7.150971
             ],
             [
-              1.191864,
-              6.681776
+              1.02185,
+              7.142496
             ],
             [
-              1.175032,
-              6.673128
+              1.006379,
+              7.130309
             ]
           ]
         ]
       },
       "properties": {
         "id_plantation": 48,
-        "nom_plantation": "Domaine Agroforestier #48",
-        "type_culture": "Cacao",
-        "superficie_ha": 60.47,
-        "annee_plantation": 2005,
-        "mode_exploitation": "Industriel",
-        "irrigation": true,
+        "nom_plantation": "Ferme Moderne #48",
+        "type_culture": "Anacarde",
+        "superficie_ha": 37.92,
+        "annee_plantation": 2012,
+        "mode_exploitation": "Familial",
+        "irrigation": false,
         "region": "Maritime",
         "prefecture": "Lomé",
         "licence": "CC-BY-4.0",
@@ -2696,50 +2696,50 @@
         "coordinates": [
           [
             [
-              0.509986,
-              10.531856
+              0.258303,
+              7.132558
             ],
             [
-              0.502669,
-              10.54787
+              0.224301,
+              7.116002
             ],
             [
-              0.478674,
-              10.546588
+              0.223613,
+              7.081798
             ],
             [
-              0.461544,
-              10.530561
+              0.261776,
+              7.075065
             ],
             [
-              0.469229,
-              10.508539
+              0.30123,
+              7.067643
             ],
             [
-              0.49495,
-              10.514702
+              0.323633,
+              7.100327
             ],
             [
-              0.51379,
-              10.516832
+              0.293115,
+              7.125311
             ],
             [
-              0.509986,
-              10.531856
+              0.258303,
+              7.132558
             ]
           ]
         ]
       },
       "properties": {
         "id_plantation": 49,
-        "nom_plantation": "Domaine Agricole #49",
-        "type_culture": "Banane plantain",
-        "superficie_ha": 72.59,
-        "annee_plantation": 2023,
-        "mode_exploitation": "Familial",
+        "nom_plantation": "Domaine Rural #49",
+        "type_culture": "Palmier à huile",
+        "superficie_ha": 25.64,
+        "annee_plantation": 2012,
+        "mode_exploitation": "Coopératif",
         "irrigation": false,
-        "region": "Savanes",
-        "prefecture": "Cinkassé",
+        "region": "Maritime",
+        "prefecture": "Lacs",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2752,36 +2752,36 @@
         "coordinates": [
           [
             [
-              0.732583,
-              8.284092
+              0.665159,
+              9.462698
             ],
             [
-              0.72329,
-              8.291436
+              0.670026,
+              9.441904
             ],
             [
-              0.70973,
-              8.28912
+              0.694766,
+              9.440885
             ],
             [
-              0.696338,
-              8.278912
+              0.713197,
+              9.447106
             ],
             [
-              0.709393,
-              8.268316
+              0.711696,
+              9.46231
             ],
             [
-              0.725973,
-              8.258804
+              0.703049,
+              9.47543
             ],
             [
-              0.740414,
-              8.271395
+              0.679332,
+              9.480255
             ],
             [
-              0.732583,
-              8.284092
+              0.665159,
+              9.462698
             ]
           ]
         ]
@@ -2789,13 +2789,13 @@
       "properties": {
         "id_plantation": 50,
         "nom_plantation": "Ferme Intégrée #50",
-        "type_culture": "Coton",
-        "superficie_ha": 51.25,
-        "annee_plantation": 2009,
-        "mode_exploitation": "Familial",
+        "type_culture": "Cacao",
+        "superficie_ha": 68.7,
+        "annee_plantation": 2004,
+        "mode_exploitation": "Coopératif",
         "irrigation": true,
         "region": "Centrale",
-        "prefecture": "Tchaoudjo",
+        "prefecture": "Blitta",
         "licence": "CC-BY-4.0",
         "source": "geodata.gouv.tg / opendata.gouv.tg",
         "dataset_version": "1.0"
@@ -2803,7 +2803,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-06-17T02:45:39.724859+00:00",
+    "generated_at": "2026-06-16T11:34:36.504692+00:00",
     "generator": "AgriMap Togo ETL Pipeline (M1)",
     "crs": "EPSG:4326",
     "count": 50

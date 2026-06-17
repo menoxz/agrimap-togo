@@ -99,6 +99,11 @@
     "map_placeholder": "Carte interactive",
     "no_results": "Aucune zone ne correspond aux filtres sélectionnés.",
     "popup_view_details": "Voir la fiche détaillée",
+    "download_geojson": "↓ GeoJSON",
+    "download_csv": "↓ CSV",
+    "download_title": "Télécharger les données",
+    "show_prefectures": "Afficher les préfectures",
+    "prefecture_layer": "Couche préfecture",
     "hero": {
       "title": "Cartographie des zones prioritaires",
       "subtitle": "Identifiez les territoires où l'accès aux services agricoles est le plus critique.",

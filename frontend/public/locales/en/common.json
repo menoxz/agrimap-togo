@@ -99,6 +99,11 @@
     "map_placeholder": "Interactive map",
     "no_results": "No zones match the selected filters.",
     "popup_view_details": "View detailed sheet",
+    "download_geojson": "↓ GeoJSON",
+    "download_csv": "↓ CSV",
+    "download_title": "Download data",
+    "show_prefectures": "Show prefectures",
+    "prefecture_layer": "Prefecture layer",
     "hero": {
       "title": "Priority Zone Mapping",
       "subtitle": "Identify territories where access to agricultural services is most critical.",

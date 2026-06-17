@@ -9,39 +9,125 @@ avec fallback vers des implémentations pure-Python si les
 bibliothèques ne sont pas disponibles.
 """
 
+import json
 import math
 import random
+from pathlib import Path
 from typing import Any
 
-from shapely.geometry import Point, Polygon, mapping
-from shapely.ops import transform
+from shapely.geometry import Point, Polygon, mapping, shape
+from shapely.ops import transform, unary_union
 
 from etl.config import TOGO_BOUNDS
+
+
+# ── Limites du Togo pour le sampling ────────────────────────────────
+_LON_MIN: float = TOGO_BOUNDS["lon_min"]   # -0.2
+_LON_MAX: float = TOGO_BOUNDS["lon_max"]   #  1.8
+_LAT_MIN: float = TOGO_BOUNDS["lat_min"]   #  6.0
+_LAT_MAX: float = TOGO_BOUNDS["lat_max"]   # 11.2
+
+# ── Mapping des noms de régions (geoBoundaries → noms internes) ──────
+_REGION_NAME_MAP: dict[str, str] = {
+    "Maritime Region": "Maritime",
+    "Plateaux Region": "Plateaux",
+    "Centrale Region": "Centrale",
+    "Kara Region":     "Kara",
+    "Savanes Region":  "Savanes",
+}
+
+# ── Chemin vers les limites ADM1 réelles ────────────────────────────
+# Chemin absolu depuis ce fichier (etl/utils/geo.py → root/data/raw/...)
+_BOUNDARIES_PATH = (
+    Path(__file__).resolve().parent.parent.parent
+    / "data" / "raw" / "geoBoundaries-TGO-ADM1.geojson"
+)
+
+# ── Cache module-level (lazy loading) ───────────────────────────────
+_togo_union: Any = None
+_region_polygons: dict[str, Any] = {}
+_region_centroids: dict[str, tuple[float, float]] = {}
+
+
+def _load_boundaries() -> None:
+    """
+    Charge les polygones réels du Togo depuis geoBoundaries-TGO-ADM1.geojson
+    (lazy loading — une seule fois par processus).
+
+    Remplit les globals :
+      _togo_union        — union de toutes les 5 régions
+      _region_polygons   — dict {nom_region: shapely.Polygon}
+      _region_centroids  — dict {nom_region: (lon, lat)} (clipé dans TOGO_BOUNDS)
+    """
+    global _togo_union, _region_polygons, _region_centroids
+
+    if _togo_union is not None:
+        return  # Déjà chargé
+
+    if not _BOUNDARIES_PATH.exists():
+        # Fallback : rectangle englobant tout le Togo
+        _togo_union = Polygon([
+            (_LON_MIN, _LAT_MIN), (_LON_MAX, _LAT_MIN),
+            (_LON_MAX, _LAT_MAX), (_LON_MIN, _LAT_MAX),
+            (_LON_MIN, _LAT_MIN),
+        ])
+        return
+
+    with open(_BOUNDARIES_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    geometries = []
+    for feature in data["features"]:
+        raw_name = feature["properties"].get("shapeName", "")
+        region_name = _REGION_NAME_MAP.get(raw_name, raw_name)
+        geom = shape(feature["geometry"])
+        _region_polygons[region_name] = geom
+
+        # Centroïde clipé dans TOGO_BOUNDS pour le fallback
+        c = geom.centroid
+        clon = max(_LON_MIN, min(_LON_MAX, c.x))
+        clat = max(_LAT_MIN, min(_LAT_MAX, c.y))
+        _region_centroids[region_name] = (round(clon, 6), round(clat, 6))
+
+        geometries.append(geom)
+
+    _togo_union = unary_union(geometries)
 
 
 # ── Générateur de coordonnées ────────────────────────────────────────
 
 def random_point_in_togo(rng: random.Random) -> tuple[float, float]:
     """
-    Génère un point (lon, lat) aléatoire dans les limites du Togo.
+    Génère un point (lon, lat) aléatoire strictement dans le polygone
+    réel du Togo (geoBoundaries ADM1), clipé dans TOGO_BOUNDS.
 
-    Distribution non-uniforme : les régions du sud (plus peuplées)
-    ont une probabilité légèrement plus élevée.
+    Méthode : rejection sampling (max 100 tentatives), fallback centroïde.
     """
-    # Pondération simple : sud plus dense
-    region_weight = rng.random()
-    if region_weight < 0.35:  # Sud (Maritime + sud Plateaux)
-        lat = rng.uniform(6.0, 7.5)
-    elif region_weight < 0.65:  # Centre (Plateaux + Centrale)
-        lat = rng.uniform(7.5, 9.2)
-    else:  # Nord (Kara + Savanes)
-        lat = rng.uniform(9.2, 11.2)
+    _load_boundaries()
 
-    # Longitude adaptée à la latitude (le Togo est plus étroit au nord)
-    lon_range = 1.6 if lat < 8.5 else 1.4
-    lon = rng.uniform(max(-0.2, 1.8 - lon_range), 1.8)
+    # Limites de l'union, clipées dans TOGO_BOUNDS
+    bounds = _togo_union.bounds  # (minx, miny, maxx, maxy)
+    lon_min = max(_LON_MIN, bounds[0])
+    lat_min = max(_LAT_MIN, bounds[1])
+    lon_max = min(_LON_MAX, bounds[2])
+    lat_max = min(_LAT_MAX, bounds[3])
 
-    return (round(lon, 6), round(lat, 6))
+    for _ in range(100):
+        lon = rng.uniform(lon_min, lon_max)
+        lat = rng.uniform(lat_min, lat_max)
+        pt = Point(lon, lat)
+        if (
+            pt.within(_togo_union)
+            and _LON_MIN <= lon <= _LON_MAX
+            and _LAT_MIN <= lat <= _LAT_MAX
+        ):
+            return (round(lon, 6), round(lat, 6))
+
+    # Fallback : centroïde du Togo clipé dans TOGO_BOUNDS
+    c = _togo_union.centroid
+    clon = max(_LON_MIN, min(_LON_MAX, c.x))
+    clat = max(_LAT_MIN, min(_LAT_MAX, c.y))
+    return (round(clon, 6), round(clat, 6))
 
 
 def random_point_in_region(
@@ -49,18 +135,60 @@ def random_point_in_region(
     region_name: str,
 ) -> tuple[float, float]:
     """
-    Génère un point aléatoire dans une région spécifique du Togo.
+    Génère un point aléatoire strictement dans le polygone réel
+    de la région (geoBoundaries ADM1), clipé dans TOGO_BOUNDS.
 
-    Limites approximatives des régions (lon_min, lat_min, lon_max, lat_max).
+    Méthode : rejection sampling (max 100 tentatives), fallback centroïde.
+    """
+    _load_boundaries()
+
+    if region_name not in _region_polygons:
+        # Fallback si la région n'est pas connue : bbox approximative
+        return _random_point_in_region_bbox(rng, region_name)
+
+    region_poly = _region_polygons[region_name]
+
+    # Limites clipées dans TOGO_BOUNDS
+    bounds = region_poly.bounds
+    lon_min = max(_LON_MIN, bounds[0])
+    lat_min = max(_LAT_MIN, bounds[1])
+    lon_max = min(_LON_MAX, bounds[2])
+    lat_max = min(_LAT_MAX, bounds[3])
+
+    for _ in range(100):
+        lon = rng.uniform(lon_min, lon_max)
+        lat = rng.uniform(lat_min, lat_max)
+        pt = Point(lon, lat)
+        if (
+            pt.within(region_poly)
+            and _LON_MIN <= lon <= _LON_MAX
+            and _LAT_MIN <= lat <= _LAT_MAX
+        ):
+            return (round(lon, 6), round(lat, 6))
+
+    # Fallback : centroïde de la région (déjà clipé)
+    return _region_centroids.get(
+        region_name,
+        (round((lon_min + lon_max) / 2, 6), round((lat_min + lat_max) / 2, 6)),
+    )
+
+
+def _random_point_in_region_bbox(
+    rng: random.Random,
+    region_name: str,
+) -> tuple[float, float]:
+    """
+    Fallback bbox : génère un point dans la bbox approximative d'une région.
+    Utilisé uniquement si la région n'est pas trouvée dans le GeoJSON ADM1.
     """
     region_bounds: dict[str, tuple[float, float, float, float]] = {
         "Maritime": (-0.2, 6.0, 1.8, 7.2),
         "Plateaux": (0.0, 7.0, 1.6, 8.8),
         "Centrale": (0.0, 8.0, 1.4, 9.5),
-        "Kara": (0.0, 9.0, 1.2, 10.3),
-        "Savanes": (-0.1, 10.0, 1.0, 11.2),
+        "Kara":     (0.0, 9.0, 1.2, 10.3),
+        "Savanes":  (-0.1, 10.0, 1.0, 11.2),
     }
-    bounds = region_bounds.get(region_name, (-0.2, 6.0, 1.8, 11.2))
+    bounds = region_bounds.get(region_name, (_LON_MIN, _LAT_MIN, _LON_MAX, _LAT_MAX))
     lon = rng.uniform(bounds[0], bounds[2])
     lat = rng.uniform(bounds[1], bounds[3])
     return (round(lon, 6), round(lat, 6))
