@@ -69,6 +69,24 @@ function getLatLng(feature: GeoJsonFeature): [number, number] | null {
   return null;
 }
 
+// ─── Helpers ───────────────────────────────────────────────────────────────────
+
+/**
+ * Format a numeric value intelligently:
+ * - 0 → "0"
+ * - 0.5 → "0.5" (not "0.50")
+ * - 1 → "1" (not "1.00")
+ * - 1.23 → "1.23"
+ * Strips trailing zeros while keeping up to `decimals` precision.
+ */
+function fmtNum(value: number | string | boolean | null | undefined, decimals = 2): string {
+  if (value == null) return '—'
+  const n = Number(value)
+  if (isNaN(n)) return String(value)
+  if (n === 0) return '0'
+  return parseFloat(n.toFixed(decimals)).toString()
+}
+
 // ─── Popup components — NO hooks (renderToString only) ───────────────────────
 
 interface PopupRowProps {
@@ -138,7 +156,7 @@ function MarkerPopup({ type, props }: MarkerPopupProps) {
     ];
   } else if (type === 'exploitations') {
     // Fields: id, type="farmland", area_ha, source, lon, lat, prefecture (no nom, no region)
-    const area = props['area_ha'] != null ? `${props['area_ha']} ha` : null;
+    const area = props['area_ha'] != null ? `${fmtNum(props['area_ha'])} ha` : null;
     title = `Exploitation #${props['id']}`;
     rows = [
       <PopupRow key="id"     label="ID"          value={props['id'] as string} />,
@@ -150,7 +168,7 @@ function MarkerPopup({ type, props }: MarkerPopupProps) {
     ];
   } else if (type === 'zaap') {
     title = String(props['nom_zaap'] ?? 'ZAAP');
-    const sup = props['superficie_ha'] != null ? `${props['superficie_ha']} ha` : null;
+    const sup = props['superficie_ha'] != null ? `${fmtNum(props['superficie_ha'])} ha` : null;
     rows = [
       <PopupRow key="type" label="Type"        value={props['type_zaap'] as string} />,
       <PopupRow key="stat" label="Statut"      value={props['statut'] as string} />,

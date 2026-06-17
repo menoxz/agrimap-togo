@@ -365,7 +365,7 @@ export default function PrefectureDetailPanel({
                     </span>
                   </div>
                   <span className="text-sm font-semibold text-stone-900 tabular-nums">
-                    {density.toFixed(2)}
+                    {density === 0 ? '0' : parseFloat(density.toFixed(2)).toString()}
                   </span>
                 </div>
               )}
