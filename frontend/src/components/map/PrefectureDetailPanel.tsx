@@ -81,6 +81,12 @@ function getSynthesisBarColor(score: number): string {
   return '#1A9641'
 }
 
+function getSynthesisStrokeColor(score: number): string {
+  if (score < 40) return '#DC2626'   /* red-600 */
+  if (score <= 65) return '#D97706'  /* amber-600 */
+  return '#15803D'                    /* green-700 */
+}
+
 function getPriorityBadgeClass(level: string): string {
   const l = level.toLowerCase()
   if (l.includes('critique') || l.includes('critical')) {
@@ -146,7 +152,7 @@ export default function PrefectureDetailPanel({
     coverage_pct !== undefined
 
   return (
-    <div className="absolute top-0 right-0 w-96 max-w-full bg-white border-l border-stone-300 shadow-xl z-50">
+    <div className="w-full bg-white border border-stone-200 shadow-sm mt-4">
       <div className="p-5 space-y-0">
 
         {/* ── Section 1 — IDENTITY ─────────────────────────────────────────── */}
@@ -186,7 +192,11 @@ export default function PrefectureDetailPanel({
               {t('map:prefecture_detail.synthesis_score')}
             </p>
             <p
-              className={`text-5xl font-black tabular-nums leading-none mt-1 ${getSynthesisColor(synthScore)}`}
+              className={`text-5xl font-black tabular-nums leading-none mt-1`}
+              style={{
+                WebkitTextStroke: `1.5px ${getSynthesisStrokeColor(synthScore)}`,
+                color: 'transparent',
+              }}
             >
               {synthScore}/100
             </p>
@@ -307,7 +317,8 @@ export default function PrefectureDetailPanel({
                 <Store size={12} />
                 {t('map:prefecture_detail.markets')}
               </div>
-              <p className="text-3xl font-black tabular-nums text-stone-900">
+              <p className="text-3xl font-black tabular-nums"
+                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
                 {n_marches ?? 0}
               </p>
             </div>
@@ -318,7 +329,8 @@ export default function PrefectureDetailPanel({
                 <Handshake size={12} />
                 {t('map:prefecture_detail.cooperatives')}
               </div>
-              <p className="text-3xl font-black tabular-nums text-stone-900">
+              <p className="text-3xl font-black tabular-nums"
+                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
                 {n_cooperatives ?? 0}
               </p>
             </div>
@@ -329,7 +341,8 @@ export default function PrefectureDetailPanel({
                 <Sprout size={12} />
                 {t('map:prefecture_detail.farms')}
               </div>
-              <p className="text-3xl font-black tabular-nums text-stone-900">
+              <p className="text-3xl font-black tabular-nums"
+                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
                 {n_exploitations ?? 0}
               </p>
             </div>
@@ -340,7 +353,8 @@ export default function PrefectureDetailPanel({
                 <Building2 size={12} />
                 {t('map:prefecture_detail.zaap_pep')}
               </div>
-              <p className="text-3xl font-black tabular-nums text-stone-900">
+              <p className="text-3xl font-black tabular-nums"
+                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
                 {(n_zaap ?? 0) + (n_pepinieres ?? 0)}
               </p>
             </div>

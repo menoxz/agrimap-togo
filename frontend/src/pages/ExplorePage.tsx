@@ -420,14 +420,6 @@ export default function ExplorePage() {
                       />
                     </div>
 
-                    {/* Detail Panel — positionné à partir du top de la carte */}
-                    <PrefectureDetailPanel
-                      prefecture={selectedPrefectureData}
-                      onClose={() => {
-                        setSelectedPrefectureData(null);
-                        setSelectedPrefecture('');
-                      }}
-                    />
                   </div>
                 </Card>
 
@@ -459,13 +451,22 @@ export default function ExplorePage() {
                     </div>
                   )}
                 </Card>
+
+                {/* Detail Panel — en flux normal dans la colonne de droite */}
+                {selectedPrefectureData && (
+                  <PrefectureDetailPanel
+                    prefecture={selectedPrefectureData}
+                    onClose={() => {
+                      setSelectedPrefectureData(null);
+                      setSelectedPrefecture('');
+                    }}
+                  />
+                )}
               </div>
 
             </div>{/* fin flex carte+zones */}
           </div>{/* fin section principale */}
         </div>{/* fin layout flex */}
-
-
       </div>
     </>
   );
