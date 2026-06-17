@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import Skeleton from '@/components/ui/Skeleton';
 
@@ -50,6 +50,8 @@ export default function App() {
                 </Suspense>
               }
             />
+            {/* Toute URL inconnue (/explorer, /typo, …) → redirect silencieux vers home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </Suspense>
