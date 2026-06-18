@@ -107,6 +107,8 @@ export default function StoryPage() {
       body: t('story:story.act1.body'),
       keyFinding: t('story:story.act1.key_finding'),
       question: t('story:story.act1.question'),
+      keyStat: 45,
+      keyStatSuffix: '%',
       layerIndex: 0,
     },
     {
@@ -125,6 +127,8 @@ export default function StoryPage() {
       body: t('story:story.act3.body'),
       keyFinding: t('story:story.act3.key_finding'),
       question: t('story:story.act3.question'),
+      keyStat: 10,
+      keyStatSuffix: ' km',
       layerIndex: 2,
     },
     {
@@ -138,6 +142,12 @@ export default function StoryPage() {
     },
   ];
 
+  /** Cibles cartographiques pour le scroll-sync (cinéma cartographique + surligneur) */
+  const MAP_TARGETS: Record<number, { target: [number, number]; zoom: number; region: string } | null> = {
+    1: { target: [8.5, 1.0], zoom: 7.5, region: 'centrale' },
+    3: { target: [9.5, 1.2], zoom: 8, region: 'kara' },
+  };
+
   return (
     <>
       <StoryProgressNav activeAct={activeAct} actTitles={actTitles} />
@@ -150,42 +160,49 @@ export default function StoryPage() {
         <StoryHero />
 
         {/* Sections 2-5: Acts 1-4 — fonds pastel clairs flag colors */}
-        {actSections.map((act, i) => (
-          <section
-            key={act.actNumber}
-            id={`act-${act.actNumber}`}
-            className="scroll-mt-[96px] py-0"
-            style={{
-              backgroundColor: ACT_STYLES[i].bg,
-              borderTop: `1px solid ${ACT_STYLES[i].border}`,
-            }}
-          >
-            <div>
-              <ActHeader
-                actNumber={act.actNumber}
-                title={actHeaderTitles[i]}
-                accentIndex={i}
-                light={true}
-              />
-              <LazyActContainer actId={act.actNumber}>
-                <ActContainer
+        {actSections.map((act, i) => {
+          const mapConfig = MAP_TARGETS[act.actNumber] ?? null;
+          return (
+            <section
+              key={act.actNumber}
+              id={`act-${act.actNumber}`}
+              className="scroll-mt-[96px] py-0"
+              style={{
+                backgroundColor: ACT_STYLES[i].bg,
+                borderTop: `1px solid ${ACT_STYLES[i].border}`,
+              }}
+            >
+              <div>
+                <ActHeader
                   actNumber={act.actNumber}
-                  title={act.title}
-                  subtitle={act.subtitle}
-                  body={act.body}
-                  keyFinding={act.keyFinding}
-                  question={act.question}
-                  layerComponent={getLayerComponent(act.layerIndex)}
+                  title={actHeaderTitles[i]}
+                  accentIndex={i}
                   light={true}
                 />
-              </LazyActContainer>
+                <LazyActContainer actId={act.actNumber}>
+                    <ActContainer
+                      actNumber={act.actNumber}
+                      title={act.title}
+                      subtitle={act.subtitle}
+                      body={act.body}
+                      keyFinding={act.keyFinding}
+                      question={act.question}
+                      keyStat={act.keyStat}
+                      keyStatSuffix={act.keyStatSuffix}
+                      layerComponent={getLayerComponent(act.layerIndex)}
+                      light={true}
+                      mapTarget={mapConfig?.target ?? null}
+                      highlightedRegion={mapConfig?.region ?? null}
+                    />
+                </LazyActContainer>
 
-              {i < actSections.length - 1 && (
-                <ActDivider nextAct={act.actNumber + 1} darkText={ACT_DIVIDER_DARK[i]} />
-              )}
-            </div>
-          </section>
-        ))}
+                {i < actSections.length - 1 && (
+                  <ActDivider nextAct={act.actNumber + 1} darkText={ACT_DIVIDER_DARK[i]} />
+                )}
+              </div>
+            </section>
+          );
+        })}
 
         {/* Section 6: Synthesis — lazy-loaded on demand */}
         <Suspense

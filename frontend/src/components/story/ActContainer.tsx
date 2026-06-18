@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode, isValidElement, cloneElement } from 'react';
 import { Lightbulb, HelpCircle } from 'lucide-react';
 import Badge from '@/components/ui/Badge';
 import TogoMap from '@/components/map/TogoMap';
 import MapController from '@/components/map/MapController';
+import { MapFlyTo } from '@/components/map/MapFlyTo';
+import { useAnimatedCounter } from '@/hooks/useAnimatedCounter';
 
 interface ActContainerProps {
   actNumber: number;
@@ -15,6 +17,14 @@ interface ActContainerProps {
   onVisible?: () => void;
   /** light=true : thème clair (fond pastel flag colors), dark=false par défaut */
   light?: boolean;
+  /** Nombre à animer dans l'encadré key finding (optionnel) */
+  keyStat?: number;
+  /** Suffixe affiché après le nombre animé (ex: '%', ' km') */
+  keyStatSuffix?: string;
+  /** Centre cible pour map flyTo (coordonnées [lat, lng]) */
+  mapTarget?: [number, number] | null;
+  /** Région à surligner dans la couche (ex: 'centrale', 'kara') */
+  highlightedRegion?: string | null;
 }
 
 /**
@@ -32,6 +42,10 @@ export default function ActContainer({
   layerComponent,
   onVisible,
   light = false,
+  keyStat,
+  keyStatSuffix = '',
+  mapTarget,
+  highlightedRegion,
 }: ActContainerProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -84,6 +98,28 @@ export default function ActContainer({
     : actNumber === 3 ? 'Observation'
     : 'Point clé';
 
+  // Référence pour observer la visibilité de l'encadré key finding
+  const findingRef = useRef<HTMLDivElement>(null);
+  const [findingVisible, setFindingVisible] = useState(false);
+
+  useEffect(() => {
+    const el = findingRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setFindingVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const animatedStat = useAnimatedCounter(keyStat ?? 0, 1500, findingVisible);
+
   return (
     <div
       id={`act-content-${actNumber}`}
@@ -117,12 +153,17 @@ export default function ActContainer({
             <p className={`leading-relaxed text-[15px] ${tk.body}`}>{body}</p>
 
             {/* Encadré key finding */}
-            <div className={`rounded-lg border p-4 flex gap-3 ${tk.findingBox}`}>
+            <div ref={findingRef} className={`rounded-lg border p-4 flex gap-3 ${tk.findingBox}`}>
               <Lightbulb size={20} className={`shrink-0 mt-0.5 ${tk.findingIco}`} />
-              <div>
+              <div className="flex-1">
                 <p className={`text-xs font-bold uppercase tracking-wider mb-1 ${tk.findingLbl}`}>
                   {keyLabel}
                 </p>
+                {keyStat != null && (
+                  <div className="text-3xl font-black mb-1 text-amber-600">
+                    {animatedStat}{keyStatSuffix && <span className="text-lg font-normal">{keyStatSuffix}</span>}
+                  </div>
+                )}
                 <p className={`text-sm italic leading-relaxed ${tk.findingTxt}`}>{keyFinding}</p>
               </div>
             </div>
@@ -145,8 +186,12 @@ export default function ActContainer({
               <div className={`rounded-xl overflow-hidden border ${tk.mapBorder}`}>
                 <div className="h-[350px] tablet:h-[400px] desktop:h-[500px] relative">
                   <TogoMap scrollWheelZoom={true}>
-                    {layerComponent}
+                    {highlightedRegion && isValidElement(layerComponent)
+                      ? cloneElement(layerComponent, { highlightedRegion } as any)
+                      : layerComponent
+                    }
                     <MapController />
+                    {mapTarget && <MapFlyTo target={mapTarget} zoom={8} duration={1.5} />}
                   </TogoMap>
                 </div>
               </div>

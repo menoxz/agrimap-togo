@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { GeoJSON, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { useDataLoader } from '@/hooks/useDataLoader';
@@ -14,12 +14,14 @@ const CLUSTER_THRESHOLD = 500;
 
 type GeoJsonStyle = L.PathOptions;
 
-interface DataLayerProps {
+export interface DataLayerProps {
   url: string;
   layerId: string;
   visible?: boolean;
   /** Region filter: only show features matching this region name */
   regionFilter?: string;
+  /** Région à surligner (nom région). Si null ou undefined, pas de highlight. */
+  highlightedRegion?: string | null;
   /** Style function for features */
   style?: (feature: GeoJsonFeature) => GeoJsonStyle;
   /** Called when feature is clicked */
@@ -42,6 +44,7 @@ export default function DataLayer({
   layerId,
   visible = true,
   regionFilter,
+  highlightedRegion,
   style: styleFn,
   onEachFeature: onEachFeatureFn,
   filter: filterFn,
@@ -52,10 +55,10 @@ export default function DataLayer({
   const map = useMap();
   const geoJsonKey = useRef(0);
 
-  // Force re-render when visibility changes
+  // Force re-render when visibility or highlighted region changes
   useEffect(() => {
     geoJsonKey.current += 1;
-  }, [visible, regionFilter, url]);
+  }, [visible, regionFilter, highlightedRegion, url]);
 
   if (!visible) return null;
 
@@ -124,11 +127,30 @@ export default function DataLayer({
     ? (_feature: GeoJsonFeature, latlng: L.LatLngExpression) => L.marker(latlng)
     : undefined;
 
+  // Effective style: applies highlight when highlightedRegion matches, dims others
+  const effectiveStyle = useCallback(
+    (feature: GeoJsonFeature) => {
+      const base = styleFn
+        ? styleFn(feature)
+        : { weight: 1, opacity: 0.8, color: '#1B5E20', fillOpacity: 0.3 };
+      if (!highlightedRegion) return base;
+
+      const region = feature.properties?.region as string | undefined;
+      const nomRegion = feature.properties?.nom_region as string | undefined;
+      const fr = (region || nomRegion || '').toLowerCase();
+      const isHL = fr === highlightedRegion.toLowerCase();
+
+      if (isHL) return { ...base, fillOpacity: 0.9, weight: 3, color: '#D21034' };
+      return { ...base, fillOpacity: 0.1, weight: 0.5, color: '#ccc' };
+    },
+    [styleFn, highlightedRegion],
+  );
+
   return (
     <GeoJSON
-      key={`${layerId}-${geoJsonKey.current}`}
+      key={`${layerId}-${geoJsonKey.current}-${highlightedRegion ?? 'none'}`}
       data={filteredData}
-      style={(feature) => (styleFn ? styleFn(feature as GeoJsonFeature) : defaultStyle)}
+      style={(feature) => effectiveStyle(feature as GeoJsonFeature)}
       onEachFeature={(feature, layer) => {
         if (onEachFeatureFn) {
           onEachFeatureFn(feature as GeoJsonFeature, layer);
