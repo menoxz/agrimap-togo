@@ -19,6 +19,8 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import Badge from '@/components/ui/Badge'
+import { CB_DENSITY, CB_ACCESS, CB_COOP, CB_ZAAP } from '@/utils/colors'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -73,38 +75,6 @@ interface PrefectureDetailPanelProps {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function getSynthesisColor(score: number): string {
-  if (score < 40) return 'text-red-600'
-  if (score <= 65) return 'text-amber-600'
-  return 'text-green-700'
-}
-
-function getSynthesisBarColor(score: number): string {
-  if (score < 40) return '#D7191C'
-  if (score <= 65) return '#F4A928'
-  return '#1A9641'
-}
-
-function getSynthesisStrokeColor(score: number): string {
-  if (score < 40) return '#DC2626'   /* red-600 */
-  if (score <= 65) return '#D97706'  /* amber-600 */
-  return '#15803D'                    /* green-700 */
-}
-
-function getPriorityBadgeClass(level: string): string {
-  const l = level.toLowerCase()
-  if (l.includes('haute') || l.includes('high') || l.includes('critique') || l.includes('critical')) {
-    return 'bg-red-100 text-red-800 border-red-300'
-  }
-  if (l.includes('moyen') || l.includes('medium') || l.includes('modér') || l.includes('moderate')) {
-    return 'bg-amber-100 text-amber-800 border-amber-300'
-  }
-  if (l.includes('bien') || l.includes('well')) {
-    return 'bg-green-100 text-green-800 border-green-300'
-  }
-  return 'bg-stone-100 text-stone-600 border-stone-300'
-}
-
 // ─── InfoTooltip ───────────────────────────────────────────────────────────────
 
 function InfoTooltip({ text }: { text: string }) {
@@ -118,7 +88,7 @@ function InfoTooltip({ text }: { text: string }) {
     >
       <Info size={12} className="text-stone-400 cursor-help hover:text-stone-600 transition-colors" />
       {open && (
-        <span className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-1.5 px-3 py-2 text-xs leading-relaxed text-white bg-stone-800 rounded-none shadow-lg w-60 text-center font-normal not-italic pointer-events-none">
+        <span className="absolute z-50 left-1/2 -translate-x-1/2 top-full mt-1.5 px-3 py-2 text-xs leading-relaxed text-white bg-stone-800 rounded-md shadow-lg w-60 text-center font-normal not-italic pointer-events-none">
           {text}
         </span>
       )}
@@ -190,7 +160,7 @@ export default function PrefectureDetailPanel({
   }
 
   return (
-    <div className="w-full bg-white border border-stone-200 shadow-sm mt-4">
+    <div className="w-full bg-white border border-stone-200 shadow-sm mt-4 mobile:p-3">
       <div className="p-5 space-y-0">
 
         {/* ── Section 1 — IDENTITY ─────────────────────────────────────────── */}
@@ -208,19 +178,26 @@ export default function PrefectureDetailPanel({
             )}
             {priority_level && (
               <span className="flex items-center gap-1 mt-2">
-                <span
-                  className={`text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-none border inline-block ${getPriorityBadgeClass(priority_level)}`}
+                <Badge
+                  variant={
+                    ((l) => {
+                      if (l.includes('haute') || l.includes('high') || l.includes('critique') || l.includes('critical')) return 'error'
+                      if (l.includes('moyen') || l.includes('medium') || l.includes('modér') || l.includes('moderate')) return 'warning'
+                      if (l.includes('bien') || l.includes('well')) return 'success'
+                      return 'info'
+                    })((priority_level ?? '').toLowerCase())}
                 >
                   {translatePriorityLevel(priority_level)}
-                </span>
+                </Badge>
                 <InfoTooltip text={t('map:prefecture_detail.tooltip.priority_level')} />
               </span>
             )}
           </div>
           <button
             onClick={onClose}
-            className="text-stone-400 hover:text-stone-700 transition-colors flex-shrink-0"
+            className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full hover:bg-stone-100 text-stone-400 transition-colors"
             aria-label={t('map:prefecture_detail.close')}
+            title={t('map:prefecture_detail.close')}
           >
             <X size={20} />
           </button>
@@ -229,25 +206,23 @@ export default function PrefectureDetailPanel({
         {/* ── Section 2 — VERDICT ──────────────────────────────────────────── */}
         {synthesis_score !== undefined && (
           <div className="border-t border-stone-200 pt-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">
+            <p className="text-xs font-semibold uppercase tracking-widest text-stone-500 mb-3">
               {t('map:prefecture_detail.synthesis_score')}
               <InfoTooltip text={t('map:prefecture_detail.tooltip.synthesis_score')} />
             </p>
             <p
-              className={`text-5xl font-black tabular-nums leading-none mt-1`}
-              style={{
-                WebkitTextStroke: `1.5px ${getSynthesisStrokeColor(synthScore)}`,
-                color: 'transparent',
-              }}
+              className={`text-5xl font-black tabular-nums leading-none mt-1 ${
+                synthScore < 40 ? 'text-red-600' : synthScore <= 65 ? 'text-amber-600' : 'text-green-700'
+              }`}
             >
               {synthScore}/100
             </p>
-            <div className="h-2 mt-3 rounded-none bg-stone-100">
+            <div className="h-2 mt-3 bg-stone-100 rounded-full overflow-hidden">
               <div
-                className="h-full rounded-none"
+                className="h-full rounded-full transition-all duration-500"
                 style={{
                   width: `${synthScore}%`,
-                  backgroundColor: getSynthesisBarColor(synthScore),
+                  backgroundColor: synthScore < 40 ? '#DC2626' : synthScore <= 65 ? '#D97706' : '#15803D',
                 }}
               />
             </div>
@@ -265,7 +240,7 @@ export default function PrefectureDetailPanel({
               {/* Densité */}
               <div className="border border-stone-100 p-3">
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
-                  <BarChart3 size={12} />
+                  <BarChart3 size={14} />
                   {t('map:prefecture_detail.density_score')}
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.density_score')} />
                 </div>
@@ -274,21 +249,25 @@ export default function PrefectureDetailPanel({
                     ? `${Math.round(density_score)}/100`
                     : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
-                <div className="h-1 mt-2 bg-stone-100 rounded-none">
-                  <div
-                    className="h-full rounded-none"
-                    style={{
-                      width: `${Math.round(density_score ?? 0)}%`,
-                      backgroundColor: '#D95F0E',
-                    }}
-                  />
-                </div>
+                {density_score !== undefined ? (
+                  <div className="h-1 mt-2 bg-stone-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${Math.round(density_score)}%`,
+                        backgroundColor: CB_DENSITY[3],
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-1 mt-2 bg-stone-200 rounded-full animate-pulse" />
+                )}
               </div>
 
               {/* Accessibilité */}
               <div className="border border-stone-100 p-3">
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
-                  <Navigation size={12} />
+                  <Navigation size={14} />
                   {t('map:prefecture_detail.access_score')}
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.access_score')} />
                 </div>
@@ -297,21 +276,25 @@ export default function PrefectureDetailPanel({
                     ? `${Math.round(accessibility_score)}/100`
                     : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
-                <div className="h-1 mt-2 bg-stone-100 rounded-none">
-                  <div
-                    className="h-full rounded-none"
-                    style={{
-                      width: `${Math.round(accessibility_score ?? 0)}%`,
-                      backgroundColor: '#756BB1',
-                    }}
-                  />
-                </div>
+                {accessibility_score !== undefined ? (
+                  <div className="h-1 mt-2 bg-stone-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${Math.round(accessibility_score)}%`,
+                        backgroundColor: CB_ACCESS[3],
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-1 mt-2 bg-stone-200 rounded-full animate-pulse" />
+                )}
               </div>
 
               {/* Coopératives */}
               <div className="border border-stone-100 p-3">
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
-                  <Users size={12} />
+                  <Users size={14} />
                   {t('map:prefecture_detail.coop_score')}
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.coop_score')} />
                 </div>
@@ -320,21 +303,25 @@ export default function PrefectureDetailPanel({
                     ? `${Math.round(coop_score)}/100`
                     : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
-                <div className="h-1 mt-2 bg-stone-100 rounded-none">
-                  <div
-                    className="h-full rounded-none"
-                    style={{
-                      width: `${Math.round(coop_score ?? 0)}%`,
-                      backgroundColor: '#FC8D59',
-                    }}
-                  />
-                </div>
+                {coop_score !== undefined ? (
+                  <div className="h-1 mt-2 bg-stone-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${Math.round(coop_score)}%`,
+                        backgroundColor: CB_COOP[2],
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-1 mt-2 bg-stone-200 rounded-full animate-pulse" />
+                )}
               </div>
 
               {/* ZAAP */}
               <div className="border border-stone-100 p-3">
                 <div className="flex items-center gap-1 text-xs text-stone-500 mb-1">
-                  <TreePine size={12} />
+                  <TreePine size={14} />
                   {t('map:prefecture_detail.zaap_score')}
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.zaap_score')} />
                 </div>
@@ -343,15 +330,19 @@ export default function PrefectureDetailPanel({
                     ? `${Math.round(zaap_score)}/100`
                     : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
-                <div className="h-1 mt-2 bg-stone-100 rounded-none">
-                  <div
-                    className="h-full rounded-none"
-                    style={{
-                      width: `${Math.round(zaap_score ?? 0)}%`,
-                      backgroundColor: '#1B7837',
-                    }}
-                  />
-                </div>
+                {zaap_score !== undefined ? (
+                  <div className="h-1 mt-2 bg-stone-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${Math.round(zaap_score)}%`,
+                        backgroundColor: CB_ZAAP[3],
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-1 mt-2 bg-stone-200 rounded-full animate-pulse" />
+                )}
               </div>
 
             </div>
@@ -366,49 +357,45 @@ export default function PrefectureDetailPanel({
           <div className="grid grid-cols-2 gap-3">
 
             {/* Marchés */}
-            <div className="border-l-4 border-stone-200 pl-3 py-2">
+            <div className="border-l-4 border-stone-200 pl-3 py-2 border-b border-stone-100 last:border-0">
               <div className="flex items-center gap-1 text-xs text-stone-500 uppercase tracking-wide mb-1">
-                <Store size={12} />
+                <Store size={14} />
                 {t('map:prefecture_detail.markets')}
               </div>
-              <p className="text-3xl font-black tabular-nums"
-                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
+              <p className="text-3xl font-black tabular-nums text-stone-900">
                 {n_marches ?? 0}
               </p>
             </div>
 
             {/* Coopératives */}
-            <div className="border-l-4 border-stone-200 pl-3 py-2">
+            <div className="border-l-4 border-stone-200 pl-3 py-2 border-b border-stone-100 last:border-0">
               <div className="flex items-center gap-1 text-xs text-stone-500 uppercase tracking-wide mb-1">
-                <Handshake size={12} />
+                <Handshake size={14} />
                 {t('map:prefecture_detail.cooperatives')}
               </div>
-              <p className="text-3xl font-black tabular-nums"
-                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
+              <p className="text-3xl font-black tabular-nums text-stone-900">
                 {n_cooperatives ?? 0}
               </p>
             </div>
 
             {/* Exploitations */}
-            <div className="border-l-4 border-stone-200 pl-3 py-2">
+            <div className="border-l-4 border-stone-200 pl-3 py-2 border-b border-stone-100 last:border-0">
               <div className="flex items-center gap-1 text-xs text-stone-500 uppercase tracking-wide mb-1">
-                <Sprout size={12} />
+                <Sprout size={14} />
                 {t('map:prefecture_detail.farms')}
               </div>
-              <p className="text-3xl font-black tabular-nums"
-                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
+              <p className="text-3xl font-black tabular-nums text-stone-900">
                 {n_exploitations ?? 0}
               </p>
             </div>
 
             {/* ZAAP / Pépinières */}
-            <div className="border-l-4 border-stone-200 pl-3 py-2">
+            <div className="border-l-4 border-stone-200 pl-3 py-2 border-b border-stone-100 last:border-0">
               <div className="flex items-center gap-1 text-xs text-stone-500 uppercase tracking-wide mb-1">
-                <Building2 size={12} />
+                <Building2 size={14} />
                 {t('map:prefecture_detail.zaap_pep')}
               </div>
-              <p className="text-3xl font-black tabular-nums"
-                 style={{ WebkitTextStroke: '1.2px #292524', color: 'transparent' }}>
+              <p className="text-3xl font-black tabular-nums text-stone-900">
                 {(n_zaap ?? 0) + (n_pepinieres ?? 0)}
               </p>
             </div>
@@ -434,7 +421,7 @@ export default function PrefectureDetailPanel({
                     </span>
                   </div>
                   <span className="text-sm font-semibold text-stone-900 tabular-nums">
-                    {density === 0 ? '0' : parseFloat(density.toFixed(2)).toString()}
+                    {density === 0 ? '0.000' : density.toFixed(3)}
                   </span>
                 </div>
               )}
@@ -491,7 +478,7 @@ export default function PrefectureDetailPanel({
         {/* ── Section 6 — ACTION (interprétation) ──────────────────────────── */}
         {interpretation && interpretation.trim().length > 0 && (
           <div className="border-t border-stone-200 pt-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-stone-500 mb-2">
+            <p className="text-xs font-semibold uppercase tracking-widest text-stone-500 mb-3">
               {t('map:prefecture_detail.interpretation_title')}
             </p>
             <div className="bg-stone-50 border-l-4 border-stone-400 p-3 mt-2 text-sm text-stone-700 italic leading-relaxed">
@@ -506,10 +493,10 @@ export default function PrefectureDetailPanel({
             onClick={() => setLegendOpen(!legendOpen)}
             className="w-full text-left flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 hover:text-stone-700 transition-colors"
           >
-            <HelpCircle size={12} />
+            <HelpCircle size={14} />
             {t('map:prefecture_detail.legend.title')}
             <ChevronDown
-              size={12}
+              size={14}
               className={`ml-auto transition-transform ${legendOpen ? 'rotate-180' : ''}`}
             />
           </button>
