@@ -60,6 +60,26 @@ export default function DataLayer({
     geoJsonKey.current += 1;
   }, [visible, regionFilter, highlightedRegion, url]);
 
+  // Effective style: applies highlight when highlightedRegion matches, dims others
+  // NOTE: must be declared here — before any early return — to satisfy Rules of Hooks.
+  const effectiveStyle = useCallback(
+    (feature: GeoJsonFeature) => {
+      const base = styleFn
+        ? styleFn(feature)
+        : { weight: 1, opacity: 0.8, color: '#1B5E20', fillOpacity: 0.3 };
+      if (!highlightedRegion) return base;
+
+      const region = feature.properties?.region as string | undefined;
+      const nomRegion = feature.properties?.nom_region as string | undefined;
+      const fr = (region || nomRegion || '').toLowerCase();
+      const isHL = fr === highlightedRegion.toLowerCase();
+
+      if (isHL) return { ...base, fillOpacity: 0.9, weight: 3, color: '#D21034' };
+      return { ...base, fillOpacity: 0.1, weight: 0.5, color: '#ccc' };
+    },
+    [styleFn, highlightedRegion],
+  );
+
   if (!visible) return null;
 
   // Loading state
@@ -126,25 +146,6 @@ export default function DataLayer({
   const pointToLayer = shouldCluster
     ? (_feature: GeoJsonFeature, latlng: L.LatLngExpression) => L.marker(latlng)
     : undefined;
-
-  // Effective style: applies highlight when highlightedRegion matches, dims others
-  const effectiveStyle = useCallback(
-    (feature: GeoJsonFeature) => {
-      const base = styleFn
-        ? styleFn(feature)
-        : { weight: 1, opacity: 0.8, color: '#1B5E20', fillOpacity: 0.3 };
-      if (!highlightedRegion) return base;
-
-      const region = feature.properties?.region as string | undefined;
-      const nomRegion = feature.properties?.nom_region as string | undefined;
-      const fr = (region || nomRegion || '').toLowerCase();
-      const isHL = fr === highlightedRegion.toLowerCase();
-
-      if (isHL) return { ...base, fillOpacity: 0.9, weight: 3, color: '#D21034' };
-      return { ...base, fillOpacity: 0.1, weight: 0.5, color: '#ccc' };
-    },
-    [styleFn, highlightedRegion],
-  );
 
   return (
     <GeoJSON
