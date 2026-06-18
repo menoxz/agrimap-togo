@@ -1,4 +1,4 @@
-import { SlidersHorizontal, RotateCcw, Download } from 'lucide-react';
+import { SlidersHorizontal, RotateCcw, Download, Globe, MapPin, Map, ShoppingCart, Handshake, Wheat, Sprout, Leaf } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
@@ -68,11 +68,11 @@ const LAYER_LABELS: Record<AnalysisType, { fr: string; en: string }> = {
 // TODO: migrate to t() i18n keys
 
 const MARKER_OPTIONS = [
-  { value: 'marches',       emoji: '🛒', labelFr: 'Marchés',        labelEn: 'Markets',       count: 971, disabled: false },
-  { value: 'cooperatives',  emoji: '🤝', labelFr: 'Coopératives',   labelEn: 'Cooperatives',  count: 55,  disabled: false },
-  { value: 'exploitations', emoji: '🌾', labelFr: 'Exploitations',  labelEn: 'Farmland',      count: 737, disabled: false },
-  { value: 'zaap',          emoji: '🌱', labelFr: 'ZAAP',           labelEn: 'ZAAP',          count: 0,   disabled: true  },
-  { value: 'pepinieres',    emoji: '🌿', labelFr: 'Pépinières',     labelEn: 'Nurseries',     count: 0,   disabled: true  },
+  { value: 'marches',       icon: ShoppingCart, labelFr: 'Marchés',        labelEn: 'Markets',       count: 971, disabled: false },
+  { value: 'cooperatives',  icon: Handshake,    labelFr: 'Coopératives',   labelEn: 'Cooperatives',  count: 55,  disabled: false },
+  { value: 'exploitations', icon: Wheat,        labelFr: 'Exploitations',  labelEn: 'Farmland',      count: 737, disabled: false },
+  { value: 'zaap',          icon: Sprout,       labelFr: 'ZAAP',           labelEn: 'ZAAP',          count: 0,   disabled: true  },
+  { value: 'pepinieres',    icon: Leaf,         labelFr: 'Pépinières',     labelEn: 'Nurseries',     count: 0,   disabled: true  },
 ] as const;
 
 // ── Download helpers (no external deps — standard Web API only) ────────────
@@ -168,7 +168,7 @@ export default function FilterPanel({
         {/* Region filter */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            <span aria-hidden="true">🌍</span> {currentLang === 'en' ? 'Region' : 'Région'}
+            <Globe className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {currentLang === 'en' ? 'Region' : 'Région'}
           </label>
           <select
             value={selectedRegion}
@@ -189,7 +189,7 @@ export default function FilterPanel({
         {/* Prefecture filter (cascade) */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            <span aria-hidden="true">📍</span> {currentLang === 'en' ? 'Prefecture' : 'Préfecture'}
+            <MapPin className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {currentLang === 'en' ? 'Prefecture' : 'Préfecture'}
           </label>
           <select
             value={selectedPrefecture}
@@ -208,7 +208,7 @@ export default function FilterPanel({
         </div>
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            <span aria-hidden="true">🗺</span> {currentLang === 'en' ? 'Analysis type' : "Type d'analyse"}
+            <Map className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {currentLang === 'en' ? 'Analysis type' : "Type d'analyse"}
           </label>
           <div className="space-y-1.5">
             {layerOptions.map((opt) => {
@@ -257,7 +257,7 @@ export default function FilterPanel({
         {/* Prefecture layer toggle */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            <span aria-hidden="true">🗺</span> {t('explore.prefecture_layer')}
+            <Map className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {t('explore.prefecture_layer')}
           </label>
           <label
             className={`flex items-center gap-2.5 cursor-pointer rounded-md px-2.5 py-1.5 transition-colors ${
@@ -279,7 +279,7 @@ export default function FilterPanel({
         {/* ── SERVICES section ── */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            <span aria-hidden="true">📍</span> Services
+            <MapPin className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> Services
           </label>
           <div className="space-y-1.5">
             {MARKER_OPTIONS.map((opt) => {
@@ -300,7 +300,7 @@ export default function FilterPanel({
                     className="w-4 h-4 rounded accent-white"
                   />
                   <span className={`text-sm transition-colors ${isActive ? 'text-white font-semibold' : 'text-white/80'}`}>
-                    <span aria-hidden="true">{opt.emoji}</span>&nbsp;
+                    <opt.icon className="w-3.5 h-3.5 inline-block" aria-hidden="true" />&nbsp;
                     {currentLang === 'en' ? opt.labelEn : opt.labelFr}
                     <span className="ml-1 text-white/50 text-xs font-normal">({opt.count})</span>
                   </span>
@@ -366,7 +366,7 @@ export default function FilterPanel({
           {/* Region filter */}
           <div>
             <label className="text-xs uppercase tracking-wider text-text-secondary mb-2 block">
-              <span aria-hidden="true">🌍</span> {t('explore.region_label')}
+              <Globe className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {t('explore.region_label')}
             </label>
             <Select
               options={REGIONS.map((r) => ({ value: r.value, label: currentLang === 'en' ? r.labelEn : r.labelFr }))}
@@ -377,7 +377,7 @@ export default function FilterPanel({
             {selectedRegion && (
               <div className="space-y-1.5 mt-3">
                 <label className="text-xs font-medium text-text-secondary">
-                  <span aria-hidden="true">📍</span> {t('map:prefecture_label')}
+                  <MapPin className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {t('map:prefecture_label')}
                 </label>
                 <select
                   value={selectedPrefecture}
@@ -396,7 +396,7 @@ export default function FilterPanel({
           {/* Layer selection */}
           <div>
             <label className="text-label text-text-secondary mb-2 block">
-              <span aria-hidden="true">🗺</span> {t('explore.analysis_type_label')}
+              <Map className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {t('explore.analysis_type_label')}
             </label>
             <div className="space-y-1.5">
               {layerOptions.map((opt) => {
@@ -445,7 +445,7 @@ export default function FilterPanel({
           {/* Prefecture layer toggle */}
           <div>
             <label className="text-label text-text-secondary mb-2 block">
-              <span aria-hidden="true">🗺</span> {t('explore.prefecture_layer')}
+              <Map className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> {t('explore.prefecture_layer')}
             </label>
             <label
               className={`flex items-center gap-2 cursor-pointer group rounded px-2 py-1.5 transition-colors ${
@@ -467,7 +467,7 @@ export default function FilterPanel({
           {/* ── SERVICES section ── */}
           <div>
             <label className="text-label text-text-secondary mb-2 block">
-              <span aria-hidden="true">📍</span> Services
+              <MapPin className="w-4 h-4 inline-block text-inherit" aria-hidden="true" /> Services
             </label>
             <div className="space-y-1.5">
               {MARKER_OPTIONS.map((opt) => {
@@ -488,7 +488,7 @@ export default function FilterPanel({
                       className="w-4 h-4 text-primary border-border focus:ring-primary"
                     />
                     <span className="text-body-sm text-text-secondary group-hover:text-text transition-colors">
-                      <span aria-hidden="true">{opt.emoji}</span>&nbsp;
+                      <opt.icon className="w-3.5 h-3.5 inline-block" aria-hidden="true" />&nbsp;
                       {currentLang === 'en' ? opt.labelEn : opt.labelFr}
                       <span className="ml-1 text-text-secondary/60 text-xs">({opt.count})</span>
                     </span>
