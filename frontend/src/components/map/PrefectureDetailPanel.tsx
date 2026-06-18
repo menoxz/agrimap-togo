@@ -93,10 +93,10 @@ function getSynthesisStrokeColor(score: number): string {
 
 function getPriorityBadgeClass(level: string): string {
   const l = level.toLowerCase()
-  if (l.includes('critique') || l.includes('critical')) {
+  if (l.includes('haute') || l.includes('high') || l.includes('critique') || l.includes('critical')) {
     return 'bg-red-100 text-red-800 border-red-300'
   }
-  if (l.includes('modér') || l.includes('moderate')) {
+  if (l.includes('moyen') || l.includes('medium') || l.includes('modér') || l.includes('moderate')) {
     return 'bg-amber-100 text-amber-800 border-amber-300'
   }
   if (l.includes('bien') || l.includes('well')) {
@@ -178,6 +178,17 @@ export default function PrefectureDetailPanel({
 
   const [legendOpen, setLegendOpen] = useState(false)
 
+  // Translate raw GeoJSON priority_level string via i18n
+  const translatePriorityLevel = (raw: string | undefined): string => {
+    if (!raw) return ''
+    const key = raw
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, '_')
+      .toLowerCase()
+    return t(`map:prefecture_detail.priority.${key}`) || raw
+  }
+
   return (
     <div className="w-full bg-white border border-stone-200 shadow-sm mt-4">
       <div className="p-5 space-y-0">
@@ -200,7 +211,7 @@ export default function PrefectureDetailPanel({
                 <span
                   className={`text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-none border inline-block ${getPriorityBadgeClass(priority_level)}`}
                 >
-                  {priority_level}
+                  {translatePriorityLevel(priority_level)}
                 </span>
                 <InfoTooltip text={t('map:prefecture_detail.tooltip.priority_level')} />
               </span>
@@ -259,7 +270,9 @@ export default function PrefectureDetailPanel({
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.density_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {Math.round(density_score ?? 0)}/100
+                  {density_score !== undefined
+                    ? `${Math.round(density_score)}/100`
+                    : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
@@ -280,7 +293,9 @@ export default function PrefectureDetailPanel({
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.access_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {Math.round(accessibility_score ?? 0)}/100
+                  {accessibility_score !== undefined
+                    ? `${Math.round(accessibility_score)}/100`
+                    : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
@@ -301,7 +316,9 @@ export default function PrefectureDetailPanel({
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.coop_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {Math.round(coop_score ?? 0)}/100
+                  {coop_score !== undefined
+                    ? `${Math.round(coop_score)}/100`
+                    : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div
@@ -322,7 +339,9 @@ export default function PrefectureDetailPanel({
                   <InfoTooltip text={t('map:prefecture_detail.tooltip.zaap_score')} />
                 </div>
                 <p className="text-lg font-bold text-stone-900">
-                  {Math.round(zaap_score ?? 0)}/100
+                  {zaap_score !== undefined
+                    ? `${Math.round(zaap_score)}/100`
+                    : <span className="inline-block bg-stone-200 animate-pulse rounded-sm w-16 h-5 align-middle" />}
                 </p>
                 <div className="h-1 mt-2 bg-stone-100 rounded-none">
                   <div

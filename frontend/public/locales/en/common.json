@@ -33,6 +33,7 @@
       "kpi3_desc": "of priority agricultural zones",
       "region_title": "Criticality by region",
       "region_subtitle": "Composite score based on access to essential services",
+      "loading": "Loading regional data…",
       "regions": {
         "maritime": "Maritime",
         "savanes": "Savanes",
@@ -129,8 +130,9 @@
       "zaap": "4.2 ZAAP coverage",
       "access": "4.3 Accessibility",
       "coop": "4.4 Cooperative network",
-      "limits": "5. Limitations",
-      "conclusion": "6. Conclusion"
+      "comparative": "5. Comparative Analysis",
+      "limits": "6. Limitations",
+      "conclusion": "7. Conclusion"
     }
   },
   "footer": {
@@ -183,6 +185,15 @@
       "coverage_label": "Uncovered",
       "coverage_title": "of zones",
       "regions_label": "Criticality by region"
+    },
+    "regions": {
+      "subtitle": "% of prefectures with majority service gaps"
+    },
+    "kpi1": {
+      "tooltip": "Prefectures where more than 50% of the population lacks agricultural service access"
+    },
+    "kpi3": {
+      "desc": "national average without service access"
     }
   }
 }

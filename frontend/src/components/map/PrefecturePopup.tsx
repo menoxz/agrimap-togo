@@ -202,12 +202,12 @@ function buildIndicators(
 
     case 'zaap': {
       const coverage = props.coverage_pct;
-      const zaapCount = props.zaap_count;
+      const zaapCount = (props.total_zones as number) ?? (props.n_zaap as number) ?? 0;
 
       if (coverage !== undefined) {
         indicators.push({ label: 'Couverture ZAAP', value: coverage as number, unit: '%' });
       }
-      if (zaapCount !== undefined) {
+      if (zaapCount > 0) {
         indicators.push({ label: 'Sites ZAAP', value: zaapCount as number });
       }
       break;

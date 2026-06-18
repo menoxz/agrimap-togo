@@ -41,8 +41,8 @@ export default function CoopLayer({
   onPrefectureClick,
 }: CoopLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
-    const density = (feature.properties.coop_density as number) ?? 0;
-    const isWhiteZone = feature.properties.zone_blanche === true;
+    const density = (feature.properties.coop_density_per_1000km2 as number) ?? 0;
+    const isWhiteZone = (feature.properties.white_zone_pct as number) > 50;
     return {
       fillColor: isWhiteZone ? '#FFE0B2' : getColor(density),
       weight: 1.5,
@@ -55,7 +55,7 @@ export default function CoopLayer({
   const handleEachFeature = (feature: GeoJsonFeature, layer: L.Layer) => {
     const props = feature.properties;
     const prefectureName = (props.nom_prefecture as string) ?? '';
-    const isWhiteZone = props.zone_blanche === true;
+    const isWhiteZone = (props.white_zone_pct as number) > 50;
 
     const popupContent = renderToString(
       <PrefecturePopup

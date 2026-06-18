@@ -99,6 +99,11 @@
     "zaap_coverage": "ZAAP coverage",
     "interpretation_title": "Interpretation",
     "close": "Close",
+    "priority": {
+      "priorite_haute": "High priority",
+      "priorite_moyenne": "Medium priority",
+      "bien_desservi": "Well served"
+    },
     "tooltip": {
       "synthesis_score": "Overall score combining density, accessibility, cooperative network and ZAAP coverage. Higher scores indicate better agricultural service coverage.",
       "density_score": "Number of farms relative to prefecture area, normalized to 100. A high score indicates dense agricultural activity.",

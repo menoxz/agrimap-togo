@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { Sprout, ArrowRight, Map as MapIcon, BookOpen, FileText, AlertTriangle, Compass, TrendingUp } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useDataLoader } from '@/hooks/useDataLoader';
+import { useMemo } from 'react';
+import type { GeoJsonFeatureCollection } from '@/types/map';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { TogoMap } from '@/components/map';
@@ -9,9 +12,65 @@ import DataLayer from '@/components/map/DataLayer';
 import { TogoAccentBorder } from '@/components/ui/TogoAccentBorder';
 import { TogoPatternDivider } from '@/components/ui/TogoPatternDivider';
 
+const DATA_URL = '/data/analysis/prefecture_synthesis.geojson';
+
+// nombre de types de services dans le modèle de données
+// (n_marches, n_cooperatives, n_exploitations, n_zaap, n_pepinieres)
+const SERVICE_TYPES = 5;
+
+function computeStats(data: GeoJsonFeatureCollection | null) {
+  if (!data || !data.features) return null;
+  const features = data.features.map(f => f.properties as Record<string, unknown>);
+
+  const total = features.length;
+
+  // White zone stats
+  const whiteMajority = features.filter(f => Number(f.white_zone_pct ?? 0) > 50).length;
+  const nationalAvg = features.reduce((a, f) => a + Number(f.white_zone_pct ?? 0), 0) / total;
+
+  // Regional averages
+  const regionMap: Record<string, { sum: number; count: number }> = {};
+  features.forEach(f => {
+    const r = String(f.region ?? '');
+    const wp = Number(f.white_zone_pct ?? 0);
+    if (!regionMap[r]) regionMap[r] = { sum: 0, count: 0 };
+    regionMap[r].sum += wp;
+    regionMap[r].count += 1;
+  });
+
+  const regionKeys: Record<string, string> = {
+    Maritime: 'home.stats.regions.maritime',
+    Savanes: 'home.stats.regions.savanes',
+    Kara: 'home.stats.regions.kara',
+    Centrale: 'home.stats.regions.centrale',
+    Plateaux: 'home.stats.regions.plateaux',
+  };
+  const regionOrder = ['Maritime', 'Savanes', 'Kara', 'Centrale', 'Plateaux'];
+
+  const regions = regionOrder
+    .filter(r => regionMap[r])
+    .map(r => ({
+      name: r,
+      pct: Math.round(regionMap[r].sum / regionMap[r].count),
+      color: regionMap[r].sum / regionMap[r].count > 75 ? '#D21034'
+        : regionMap[r].sum / regionMap[r].count > 60 ? '#FFD100'
+        : '#006A4E',
+    }));
+
+  return {
+    kpi1: whiteMajority,
+    kpi2: SERVICE_TYPES,
+    kpi3: Math.round(nationalAvg),
+    total,
+    regions,
+  };
+}
+
 export default function HomePage() {
   const { t } = useTranslation();
   const { ref: whyRef } = useScrollReveal();
+  const { data: synthData, loading } = useDataLoader(DATA_URL);
+  const stats = useMemo(() => computeStats(synthData), [synthData]);
 
   return (
     <div>
@@ -110,14 +169,17 @@ export default function HomePage() {
 
         {/* Ligne KPI — 3 métriques côte à côte */}
          <div className="flex flex-row justify-between gap-8 mb-16">
-          {[
-            { value: '22', label: t('home.stats.kpi1_label'), desc: t('home.stats.kpi1_desc'), color: '#006A4E' },
-            { value: '5',  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), color: '#FFD100' },
-            { value: '37%',label: t('home.stats.kpi3_label'), desc: t('home.stats.kpi3_desc'), color: '#D21034' },
-          ].map((kpi) => (
-            <div key={kpi.value} className="flex flex-col items-center py-5">
+          {(
+            [
+              { value: stats ? `${stats.kpi1}` : '—', label: t('home.stats.kpi1_label'), desc: `sur ${stats ? stats.total : '—'} préfectures analysées`, color: '#006A4E', tooltip: t('stats.kpi1.tooltip') },
+              { value: stats ? `${stats.kpi2}` : '—',  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), color: '#FFD100', tooltip: '' },
+              { value: stats ? `${stats.kpi3}%` : '—', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), color: '#D21034', tooltip: '' },
+            ] as { value: string; label: string; desc: string; color: string; tooltip: string }[]
+          ).map((kpi) => (
+            <div key={kpi.label} className="flex flex-col items-center py-5">
               {/* Valeur outline */}
               <span className="text-7xl font-black leading-none"
+                    title={kpi.tooltip || undefined}
                     style={{ color: 'transparent', WebkitTextStroke: `2px ${kpi.color}` }}>
                 {kpi.value}
               </span>
@@ -135,17 +197,31 @@ export default function HomePage() {
         <div>
           <div className="mb-6">
             <h3 className="text-xl font-bold text-text">{t('home.stats.region_title')}</h3>
-            <p className="text-sm text-togo-green italic mt-1">{t('home.stats.region_subtitle')}</p>
+            <p className="text-sm text-togo-green italic mt-1">{t('stats.regions.subtitle')}</p>
           </div>
 
+          {loading && (
+            <div className="text-center text-sm text-secondary italic py-4">
+              {t('home.stats.loading')}
+            </div>
+          )}
           <div className="flex flex-row justify-between flex-wrap">
-            {[
-              { name: t('home.stats.regions.maritime'),  pct: 85, color: '#D21034' },
-              { name: t('home.stats.regions.savanes'),   pct: 78, color: '#D21034' },
-              { name: t('home.stats.regions.kara'),      pct: 72, color: '#FFD100' },
-              { name: t('home.stats.regions.centrale'),  pct: 61, color: '#FFD100' },
-              { name: t('home.stats.regions.plateaux'),  pct: 54, color: '#006A4E' },
-            ].map((r) => {
+
+            {(function () {
+              // Build region display data: use real stats or fallback placeholders
+              const regionItems = stats?.regions?.length
+                ? stats.regions.map((r) => ({
+                    ...r,
+                    displayName: t(`home.stats.regions.${r.name.toLowerCase()}` as any),
+                  }))
+                : [
+                    { name: 'Maritime', pct: 0, color: '#D21034', displayName: t('home.stats.regions.maritime') },
+                    { name: 'Savanes',  pct: 0, color: '#D21034', displayName: t('home.stats.regions.savanes') },
+                    { name: 'Kara',     pct: 0, color: '#FFD100', displayName: t('home.stats.regions.kara') },
+                    { name: 'Centrale', pct: 0, color: '#FFD100', displayName: t('home.stats.regions.centrale') },
+                    { name: 'Plateaux', pct: 0, color: '#006A4E', displayName: t('home.stats.regions.plateaux') },
+                  ];
+              return regionItems.map((r) => {
               const R = 36, C = 2 * Math.PI * R;
               const filled = (r.pct / 100) * C;
               return (
@@ -170,11 +246,12 @@ export default function HomePage() {
                   </svg>
                   {/* Nom de région */}
                   <span className="text-xs font-semibold text-center text-text uppercase tracking-wide">
-                    {r.name}
+                    {r.displayName}
                   </span>
                 </div>
               );
-            })}
+            });
+          })()}
           </div>
         </div>
 

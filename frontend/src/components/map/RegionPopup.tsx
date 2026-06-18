@@ -131,32 +131,31 @@ function buildIndicators(
   if (props.density !== undefined) {
     indicators.push({ label: 'Densité', value: props.density as number, unit: 'expl./km²' });
   }
-  if (props.exploitations !== undefined) {
-    indicators.push({ label: 'Exploitations', value: props.exploitations as number });
+  const exploitationsVal = props.n_exploitations ?? props.total_exploitations ?? props.nb_exploitations;
+  if (exploitationsVal !== undefined && exploitationsVal !== null) {
+    indicators.push({ label: 'Exploitations', value: Number(exploitationsVal) });
   }
   if (props.coverage_pct !== undefined) {
     indicators.push({ label: 'Couverture ZAAP', value: props.coverage_pct as number, unit: '%' });
   }
-  if (props.zaap_count !== undefined) {
-    indicators.push({ label: 'Sites ZAAP', value: props.zaap_count as number });
+  const zaapSitesVal = props.n_zaap ?? props.total_zones;
+  if (zaapSitesVal !== undefined && zaapSitesVal !== null) {
+    indicators.push({ label: 'Sites ZAAP', value: Number(zaapSitesVal) });
   }
-  if (props.distance_moyenne_km !== undefined) {
-    indicators.push({ label: 'Distance moyenne', value: props.distance_moyenne_km as number, unit: 'km' });
+  if (props.avg_distance_km !== undefined) {
+    indicators.push({ label: 'Distance moyenne', value: props.avg_distance_km as number, unit: 'km' });
   }
-  if (props.temps_moyen_min !== undefined) {
-    indicators.push({ label: 'Temps moyen', value: props.temps_moyen_min as number, unit: 'min' });
+  if (props.n_cooperatives !== undefined) {
+    indicators.push({ label: 'Coopératives', value: props.n_cooperatives as number });
   }
-  if (props.coop_count !== undefined) {
-    indicators.push({ label: 'Coopératives', value: props.coop_count as number });
+  if (props.coop_density_per_1000km2 !== undefined) {
+    indicators.push({ label: 'Densité coop.', value: props.coop_density_per_1000km2 as number, unit: '/1000 km²' });
   }
-  if (props.coop_density !== undefined) {
-    indicators.push({ label: 'Densité coop.', value: props.coop_density as number, unit: '/100k' });
+  if (props.synthesis_score !== undefined) {
+    indicators.push({ label: 'Score composite', value: (props.synthesis_score as number).toFixed(1), unit: '/100' });
   }
-  if (props.score_composite !== undefined) {
-    indicators.push({ label: 'Score composite', value: (props.score_composite as number).toFixed(2) });
-  }
-  if (props.priorite !== undefined) {
-    indicators.push({ label: 'Priorité', value: props.priorite as string });
+  if (props.priority_level !== undefined) {
+    indicators.push({ label: 'Priorité', value: props.priority_level as string });
   }
 
   return indicators;

@@ -33,6 +33,7 @@
       "kpi3_desc": "des zones agricoles prioritaires",
       "region_title": "Criticité par région",
       "region_subtitle": "Score composite basé sur l'accès aux services essentiels",
+      "loading": "Chargement des données régionales…",
       "regions": {
         "maritime": "Maritime",
         "savanes": "Savanes",
@@ -129,8 +130,9 @@
       "zaap": "4.2 Couverture ZAAP",
       "access": "4.3 Accessibilité",
       "coop": "4.4 Réseau coopératif",
-      "limits": "5. Limites",
-      "conclusion": "6. Conclusion"
+      "comparative": "5. Analyse comparative",
+      "limits": "6. Limites",
+      "conclusion": "7. Conclusion"
     }
   },
   "footer": {
@@ -183,6 +185,15 @@
       "coverage_label": "Non couverts",
       "coverage_title": "des zones",
       "regions_label": "Criticité par région"
+    },
+    "regions": {
+      "subtitle": "% de préfectures sans services majoritaires"
+    },
+    "kpi1": {
+      "tooltip": "Préfectures où plus de 50 % de la population est sans accès aux services agricoles"
+    },
+    "kpi3": {
+      "desc": "moyenne nationale sans accès aux services"
     }
   }
 }

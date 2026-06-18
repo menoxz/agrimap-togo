@@ -108,6 +108,7 @@ describe('ReportPage', () => {
       'completeness',
       'precision',
       'analyses',
+      'comparative',
       'limits',
       'conclusion',
     ];
@@ -133,6 +134,7 @@ describe('ReportPage', () => {
       'completeness',
       'precision',
       'analyses',
+      'comparative',
       'limits',
       'conclusion',
     ]);

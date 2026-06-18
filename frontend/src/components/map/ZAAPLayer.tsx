@@ -46,7 +46,7 @@ export default function ZAAPLayer({
 }: ZAAPLayerProps) {
   const handleStyle = (feature: GeoJsonFeature) => {
     const coverage = (feature.properties.coverage_pct as number) ?? 0;
-    const nonCovered = feature.properties.non_covered === true;
+    const nonCovered = (feature.properties.coverage_pct as number) === 0;
     const color = getColor(coverage, nonCovered);
     return {
       fillColor: color,
@@ -89,7 +89,7 @@ export default function ZAAPLayer({
   };
 
   const filterFn = onlyUncovered
-    ? (f: GeoJsonFeature) => f.properties.non_covered === true
+    ? (f: GeoJsonFeature) => (f.properties.coverage_pct as number) === 0
     : undefined;
 
   return (

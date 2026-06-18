@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   FileText,
   Download,
@@ -13,9 +13,13 @@ import {
   List,
 } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useDataLoader } from '@/hooks/useDataLoader';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
+import RadarChart from '@/components/report/RadarChart';
+import RankingTable from '@/components/report/RankingTable';
+import type { GeoJsonFeatureCollection } from '@/types/map';
 
 interface TocItem {
   id: string;
@@ -47,6 +51,7 @@ export default function ReportPage() {
       label: t('report.sections.analyses'),
       icon: Target,
     },
+    { id: 'comparative', label: t('report.sections.comparative'), icon: BarChart3 },
     { id: 'limits', label: t('report.sections.limits'), icon: AlertTriangle },
     { id: 'conclusion', label: t('report.sections.conclusion'), icon: CheckCircle },
   ];
@@ -94,6 +99,69 @@ export default function ReportPage() {
 
     return () => observer.disconnect();
   }, []);
+
+  // ── Comparative analysis data ──
+  const DATA_URL = '/data/analysis/prefecture_synthesis.geojson';
+  const { data: synthesisData, loading: synthLoading } = useDataLoader(DATA_URL);
+
+  const prefectures = useMemo(() => {
+    if (!synthesisData) return [];
+    return synthesisData.features
+      .filter((f) => f.properties?.nom_prefecture)
+      .map((f) => ({
+        nom_prefecture: String(f.properties.nom_prefecture),
+        region: String(f.properties.region ?? ''),
+        density_score: Number(f.properties.density_score ?? 0),
+        accessibility_score: Number(f.properties.accessibility_score ?? 0),
+        coop_score: Number(f.properties.coop_score ?? 0),
+        zaap_score: Number(f.properties.zaap_score ?? 50),
+        synthesis_score: Number(f.properties.synthesis_score ?? 0),
+        priority_level: String(f.properties.priority_level ?? ''),
+      }));
+  }, [synthesisData]);
+
+  // Compute regional averages
+  const regionAveragesMap = useMemo(() => {
+    const map = new Map<string, { density: number[]; access: number[]; coop: number[]; zaap: number[] }>();
+    for (const p of prefectures) {
+      if (!map.has(p.region)) map.set(p.region, { density: [], access: [], coop: [], zaap: [] });
+      const entry = map.get(p.region)!;
+      entry.density.push(p.density_score);
+      entry.access.push(p.accessibility_score);
+      entry.coop.push(p.coop_score);
+      entry.zaap.push(p.zaap_score);
+    }
+    const avgMap = new Map<string, { density_score: number; accessibility_score: number; coop_score: number; zaap_score: number }>();
+    for (const [region, vals] of map.entries()) {
+      const avg = (arr: number[]) => (arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0);
+      avgMap.set(region, {
+        density_score: Math.round(avg(vals.density)),
+        accessibility_score: Math.round(avg(vals.access)),
+        coop_score: Math.round(avg(vals.coop)),
+        zaap_score: Math.round(avg(vals.zaap)),
+      });
+    }
+    return avgMap;
+  }, [prefectures]);
+
+  const [selectedPrefecture, setSelectedPrefecture] = useState<string | null>(null);
+
+  const currentPref = useMemo(() => {
+    if (!selectedPrefecture) return prefectures.length > 0 ? prefectures[0] : null;
+    return prefectures.find((p) => p.nom_prefecture === selectedPrefecture) ?? prefectures[0] ?? null;
+  }, [prefectures, selectedPrefecture]);
+
+  const regionAvg = useMemo(() => {
+    if (!currentPref) return { density_score: 0, accessibility_score: 0, coop_score: 0, zaap_score: 0 };
+    return regionAveragesMap.get(currentPref.region) ?? { density_score: 0, accessibility_score: 0, coop_score: 0, zaap_score: 0 };
+  }, [currentPref, regionAveragesMap]);
+
+  // Set initial selection when data loads
+  useEffect(() => {
+    if (prefectures.length > 0 && !selectedPrefecture) {
+      setSelectedPrefecture(prefectures[0].nom_prefecture);
+    }
+  }, [prefectures, selectedPrefecture]);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -309,6 +377,96 @@ export default function ReportPage() {
             <p className="text-body text-text-secondary leading-relaxed">
               {t('report:content.analyses')}
             </p>
+          </section>
+
+          <section id="comparative">
+            <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
+              <BarChart3 size={22} className="text-accent" />
+              {t('report.sections.comparative')}
+            </h2>
+            <p className="text-body text-text-secondary leading-relaxed mb-6">
+              {t('report:content.comparative_intro')}
+            </p>
+
+            {synthLoading ? (
+              <div className="flex items-center justify-center py-12 text-text-secondary">
+                <div className="animate-spin w-6 h-6 border-2 border-primary border-t-transparent rounded-full mr-3" />
+                <span>{t('report:table.no_data')}</span>
+              </div>
+            ) : (
+              <>
+                {/* Radar + Selector row */}
+                <div className="flex flex-col tablet:flex-row gap-6 mb-8 p-4 rounded-md bg-surface-alt/50 border border-border">
+                  {/* Radar */}
+                  <div className="flex-shrink-0 flex flex-col items-center">
+                    {currentPref && (
+                      <RadarChart prefecture={currentPref} regionAverages={regionAvg} />
+                    )}
+                  </div>
+
+                  {/* Info panel */}
+                  <div className="flex-1 min-w-0">
+                    {/* Prefecture selector */}
+                    <label className="text-label text-text-secondary mb-1.5 block">
+                      {t('report:radar.select')}
+                    </label>
+                    <select
+                      value={selectedPrefecture ?? ''}
+                      onChange={(e) => setSelectedPrefecture(e.target.value)}
+                      className="w-full max-w-xs mb-4 px-3 py-2 rounded-md border border-border text-body-sm bg-white
+                        focus:outline-2 focus:outline-primary focus:outline-offset-1"
+                    >
+                      {prefectures.map((p) => (
+                        <option key={p.nom_prefecture} value={p.nom_prefecture}>
+                          {p.nom_prefecture} — {p.region}
+                        </option>
+                      ))}
+                    </select>
+
+                    {currentPref && (
+                      <div className="grid grid-cols-2 gap-3">
+                        {([
+                          { label: t('report:table.synthesis'), value: currentPref.synthesis_score, color: '#D7191C' },
+                          { label: t('report:table.density'), value: currentPref.density_score, color: '#D95F0E' },
+                          { label: t('report:table.access'), value: currentPref.accessibility_score, color: '#756BB1' },
+                          { label: t('report:table.coop'), value: currentPref.coop_score, color: '#FC8D59' },
+                          { label: t('report:table.zaap'), value: currentPref.zaap_score, color: '#1B7837' },
+                        ] as const).map(({ label, value, color }) => (
+                          <div
+                            key={label}
+                            className="flex flex-col p-2.5 rounded-sm border border-border bg-white"
+                          >
+                            <span className="text-body-xs text-text-secondary">{label}</span>
+                            <span
+                              className="text-h3 font-bold mt-0.5"
+                              style={{ color }}
+                            >
+                              {Math.round(value)}
+                              <span className="text-body-xs text-text-secondary font-normal ml-0.5">/100</span>
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Note */}
+                <p className="text-body-xs text-text-secondary italic mb-6">
+                  {t('report:content.comparative_note')}
+                </p>
+
+                {/* Ranking table */}
+                <h3 className="text-h4 font-semibold text-text mb-3">
+                  {t('report:table.title')}
+                </h3>
+                <RankingTable
+                  prefectures={prefectures}
+                  selectedPrefecture={selectedPrefecture}
+                  onSelectPrefecture={setSelectedPrefecture}
+                />
+              </>
+            )}
           </section>
 
           <section id="limits">

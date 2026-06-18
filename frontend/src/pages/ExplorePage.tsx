@@ -113,7 +113,7 @@ export default function ExplorePage() {
   const allZones = useMemo(() => {
     if (!synthesisData?.features) return [];
     return [...synthesisData.features].sort(
-      (a, b) => ((a.properties.rang as number) ?? 999) - ((b.properties.rang as number) ?? 999),
+      (a, b) => ((a.properties.synthesis_class as number) ?? 999) - ((b.properties.synthesis_class as number) ?? 999),
     );
   }, [synthesisData]);
 
@@ -145,9 +145,9 @@ export default function ExplorePage() {
    * Handle click on a zone from TopZonesList — flies to the zone centroid.
    */
   const handleListZoneSelect = useCallback((props: Record<string, string | number | boolean | null | undefined>) => {
-    const id = props.id ?? props.rang;
+    const id = props.nom_prefecture ?? props.synthesis_class;
     const feature = allZones.find(
-      (f) => f.properties.id === id || f.properties.rang === id,
+      (f) => f.properties.nom_prefecture === id || f.properties.synthesis_class === id,
     );
     if (feature?.geometry) {
       const center = computeCentroid(feature.geometry);

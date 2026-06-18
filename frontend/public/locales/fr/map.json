@@ -99,6 +99,11 @@
     "zaap_coverage": "Couverture ZAAP",
     "interpretation_title": "Interprétation",
     "close": "Fermer",
+    "priority": {
+      "priorite_haute": "Priorité haute",
+      "priorite_moyenne": "Priorité moyenne",
+      "bien_desservi": "Bien desservi"
+    },
     "tooltip": {
       "synthesis_score": "Score global combinant la densité, l'accessibilité, le réseau coopératif et la couverture ZAAP. Plus le score est élevé, meilleur est le maillage des services agricoles.",
       "density_score": "Nombre d'exploitations agricoles rapporté à la surface de la préfecture, normalisé sur 100. Un score élevé indique une forte concentration agricole.",
