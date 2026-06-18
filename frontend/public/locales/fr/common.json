@@ -190,7 +190,8 @@
       "subtitle": "% de préfectures sans services majoritaires"
     },
     "kpi1": {
-      "tooltip": "Préfectures où plus de 50 % de la population est sans accès aux services agricoles"
+      "tooltip": "Préfectures où plus de 50 % de la population est sans accès aux services agricoles",
+      "sub": "sur {{total}} préfectures analysées"
     },
     "kpi3": {
       "desc": "moyenne nationale sans accès aux services"

@@ -78,22 +78,9 @@ export default function HomePage() {
       <section
         className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/hero-agriculture.jpg)',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          background: 'linear-gradient(160deg, #003D24 0%, #006A4E 35%, #0D2B3E 70%, #0A1628 100%)',
         }}
       >
-
-        {/* PROB-1: Overlay directionnel sombre — lisibilité texte blanc WCAG AA */}
-        <div
-          className="absolute inset-0 z-[1]"
-          aria-hidden="true"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 60%, rgba(0,0,0,0.65) 100%)',
-          }}
-        />
 
         {/* Contenu centré */}
         <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto gap-6">
@@ -128,7 +115,7 @@ export default function HomePage() {
             {/* CTA Secondaire — Glassmorphism sur fond sombre */}
             <Link
               to="/story"
-              className="inline-flex items-center justify-center gap-3 font-semibold rounded-md text-body-lg px-6 py-3 tablet:px-8 tablet:py-4 desktop:px-8 desktop:py-4 bg-white/15 backdrop-blur-sm border border-white/30 text-white hover:bg-white/25 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cta-hover-scale"
+              className="inline-flex items-center justify-center gap-3 font-semibold rounded-md text-body-lg px-6 py-3 tablet:px-8 tablet:py-4 desktop:px-8 desktop:py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cta-hover-scale"
             >
               <BookOpen size={24} className="shrink-0" />
               <span>{t('home.hero.cta_story')}</span>
@@ -147,12 +134,19 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-          <span className="text-white/50 text-[10px] uppercase tracking-widest">
+          <span className="text-white/50 text-[10px] uppercase tracking-widest drop-shadow-lg">
             {t('home.hero.scroll')}
           </span>
           <div className="w-px h-8 bg-gradient-to-b from-white/50 to-transparent" />
         </div>
       </section>
+
+      {/* Séparateur tricolore Togo Heritage */}
+      <div className="flex w-full" aria-hidden="true">
+        <div className="h-2 flex-1 bg-[#D21034]" />
+        <div className="h-2 flex-1 bg-[#FFD100]" />
+        <div className="h-2 flex-1 bg-[#006A4E]" />
+      </div>
 
       {/* Stats Section — KPI + Cercles SVG */}
       <section aria-labelledby="stats-title" className="container-page py-16 text-center">
@@ -170,17 +164,16 @@ export default function HomePage() {
         {/* Ligne KPI — 3 métriques côte à côte */}
          <div className="flex flex-row justify-between gap-8 mb-16">
           {(
-            [
-              { value: stats ? `${stats.kpi1}` : '—', label: t('home.stats.kpi1_label'), desc: `sur ${stats ? stats.total : '—'} préfectures analysées`, color: '#006A4E', tooltip: t('stats.kpi1.tooltip') },
-              { value: stats ? `${stats.kpi2}` : '—',  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), color: '#FFD100', tooltip: '' },
-              { value: stats ? `${stats.kpi3}%` : '—', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), color: '#D21034', tooltip: '' },
-            ] as { value: string; label: string; desc: string; color: string; tooltip: string }[]
+          [
+            { value: stats ? `${stats.kpi1}` : '—', label: t('home.stats.kpi1_label'), desc: t('stats.kpi1.sub', { total: stats?.total ?? '—' }), colorClass: 'text-red-600', tooltip: t('stats.kpi1.tooltip') },
+            { value: stats ? `${stats.kpi2}` : '—',  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), colorClass: 'text-green-700', tooltip: '' },
+            { value: stats ? `${stats.kpi3}%` : '—', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), colorClass: 'text-red-600', tooltip: '' },
+          ] as { value: string; label: string; desc: string; colorClass: string; tooltip: string }[]
           ).map((kpi) => (
             <div key={kpi.label} className="flex flex-col items-center py-5">
               {/* Valeur outline */}
-              <span className="text-7xl font-black leading-none"
-                    title={kpi.tooltip || undefined}
-                    style={{ color: 'transparent', WebkitTextStroke: `2px ${kpi.color}` }}>
+              <span className={`text-7xl font-black leading-none ${kpi.colorClass}`}
+                    title={kpi.tooltip || undefined}>
                 {kpi.value}
               </span>
               {/* Titre */}
@@ -188,7 +181,7 @@ export default function HomePage() {
                 {kpi.label}
               </span>
               {/* Description */}
-              <span className="text-sm text-secondary mt-1">{kpi.desc}</span>
+              <span className="text-sm text-stone-500 mt-1">{kpi.desc}</span>
             </div>
           ))}
         </div>
@@ -227,7 +220,7 @@ export default function HomePage() {
               return (
                 <div key={r.name} className="flex flex-col items-center gap-3">
                   {/* Cercle SVG */}
-                  <svg width="96" height="96" viewBox="0 0 96 96">
+                  <svg width="96" height="96" viewBox="0 0 96 96" style={{ background: 'transparent' }}>
                     {/* Piste grise */}
                     <circle cx="48" cy="48" r={R} fill="none"
                             stroke="#E5E7EB" strokeWidth="8" />
@@ -257,7 +250,7 @@ export default function HomePage() {
 
       </section>
 
-      <TogoPatternDivider color="green" />
+      <div aria-hidden="true" className="h-8 w-full" />
 
       {/* Mini Map Section — Split Horizontal */}
       <section className="overflow-hidden py-12 tablet:py-0 desktop:py-0">
@@ -273,14 +266,13 @@ export default function HomePage() {
               <div className="flex flex-col gap-3">
                 {(
                   [
-                    { c: '#D21034', l: t('home.minimap.legend_critical') },
-                    { c: '#FFD100', l: t('home.minimap.legend_moderate') },
-                    { c: '#006A4E', l: t('home.minimap.legend_low') },
-                  ] as { c: string; l: string }[]
-                ).map(({ c, l }) => (
+                    { bg: 'bg-red-500',   l: t('home.minimap.legend_critical') },
+                    { bg: 'bg-amber-400', l: t('home.minimap.legend_moderate') },
+                    { bg: 'bg-green-500', l: t('home.minimap.legend_low') },
+                  ] as { bg: string; l: string }[]
+                ).map(({ bg, l }) => (
                   <div key={l} className="flex items-center gap-3">
-                    <span className="inline-block w-5 h-5 rounded-full shrink-0"
-                          style={{ border: `2.5px solid ${c}`, backgroundColor: 'transparent' }} />
+                    <span className={`inline-block w-3 h-3 rounded-full shrink-0 ${bg}`} />
                     <span className="text-sm font-medium text-text">{l}</span>
                   </div>
                 ))}
@@ -383,14 +375,12 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* Cards stagger — décalage mt-0 / mt-10 / mt-20 */}
+          {/* Cards — même hauteur top, pas de stagger */}
           <div className="grid grid-cols-1 tablet:grid-cols-3 desktop:grid-cols-3 gap-6 tablet:items-start desktop:items-start">
 
             {/* Card 01 — Problème */}
             <div className="scroll-reveal-scale" style={{ transitionDelay: '0ms' }}>
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col overflow-hidden h-full hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                {/* Ligne accent rouge */}
-                <div className="h-[3px] w-full bg-togo-red" aria-hidden="true" />
+              <div className="bg-white rounded-2xl border border-gray-100 border-t-4 border-t-red-500 shadow-sm flex flex-col overflow-hidden h-full hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <div className="p-7 flex flex-col gap-4 flex-1">
                   {/* Pastille icône */}
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-togo-red/10">
@@ -412,10 +402,8 @@ export default function HomePage() {
             </div>
 
             {/* Card 02 — Solution */}
-            <div className="tablet:mt-10 desktop:mt-10 scroll-reveal-scale" style={{ transitionDelay: '130ms' }}>
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col overflow-hidden h-full hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                {/* Ligne accent vert */}
-                <div className="h-[3px] w-full bg-togo-green" aria-hidden="true" />
+            <div className="scroll-reveal-scale" style={{ transitionDelay: '130ms' }}>
+              <div className="bg-white rounded-2xl border border-gray-100 border-t-4 border-t-green-700 shadow-sm flex flex-col overflow-hidden h-full hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <div className="p-7 flex flex-col gap-4 flex-1">
                   {/* Pastille icône */}
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-togo-green/10">
@@ -437,10 +425,8 @@ export default function HomePage() {
             </div>
 
             {/* Card 03 — Impact */}
-            <div className="tablet:mt-20 desktop:mt-20 scroll-reveal-scale" style={{ transitionDelay: '260ms' }}>
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col overflow-hidden h-full hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                {/* Ligne accent ambre */}
-                <div className="h-[3px] w-full bg-amber-700" aria-hidden="true" />
+            <div className="scroll-reveal-scale" style={{ transitionDelay: '260ms' }}>
+              <div className="bg-white rounded-2xl border border-gray-100 border-t-4 border-t-amber-500 shadow-sm flex flex-col overflow-hidden h-full hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <div className="p-7 flex flex-col gap-4 flex-1">
                   {/* Pastille icône */}
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-amber-700/10">
@@ -467,7 +453,7 @@ export default function HomePage() {
 
       {/* Freshness badge */}
       <div className="container-page pb-8 flex justify-center">
-        <Badge variant="info" size="md">
+        <Badge variant="default" size="md" className="!bg-stone-100 !text-stone-600 border !border-stone-200">
           {t('badge.data_freshness')}
         </Badge>
       </div>

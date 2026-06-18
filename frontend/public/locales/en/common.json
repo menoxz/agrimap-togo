@@ -190,7 +190,8 @@
       "subtitle": "% of prefectures with majority service gaps"
     },
     "kpi1": {
-      "tooltip": "Prefectures where more than 50% of the population lacks agricultural service access"
+      "tooltip": "Prefectures where more than 50% of the population lacks agricultural service access",
+      "sub": "out of {{total}} analyzed prefectures"
     },
     "kpi3": {
       "desc": "national average without service access"
