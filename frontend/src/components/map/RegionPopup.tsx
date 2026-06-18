@@ -8,6 +8,7 @@ interface RegionPopupProps {
     label: string;
     value: string | number;
     unit?: string;
+    decimals?: number;
   }>;
   /** Color for the accent bar */
   accentColor?: string;
@@ -82,7 +83,7 @@ export default function RegionPopup({
                 <span style={{ color: '#475569' }}>{ind.label}</span>
                 <span style={{ fontWeight: 600, color: '#1E293B' }}>
                   {typeof ind.value === 'number'
-                    ? formatNumber(ind.value)
+                    ? formatNumber(ind.value, ind.decimals ?? 1)
                     : String(ind.value)}
                   {ind.unit ? ` ${ind.unit}` : ''}
                 </span>
@@ -125,11 +126,11 @@ function buildIndicators(
   props: Record<string, string | number | boolean | null | undefined>,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _t: (key: string) => string,
-): Array<{ label: string; value: string | number; unit?: string }> {
-  const indicators: Array<{ label: string; value: string | number; unit?: string }> = [];
+): Array<{ label: string; value: string | number; unit?: string; decimals?: number }> {
+  const indicators: Array<{ label: string; value: string | number; unit?: string; decimals?: number }> = [];
 
   if (props.density !== undefined) {
-    indicators.push({ label: 'Densité', value: props.density as number, unit: 'expl./km²' });
+    indicators.push({ label: 'Densité', value: props.density as number, unit: 'expl./km²', decimals: 3 });
   }
   const exploitationsVal = props.n_exploitations ?? props.total_exploitations ?? props.nb_exploitations;
   if (exploitationsVal !== undefined && exploitationsVal !== null) {
@@ -149,7 +150,7 @@ function buildIndicators(
     indicators.push({ label: 'Coopératives', value: props.n_cooperatives as number });
   }
   if (props.coop_density_per_1000km2 !== undefined) {
-    indicators.push({ label: 'Densité coop.', value: props.coop_density_per_1000km2 as number, unit: '/1000 km²' });
+    indicators.push({ label: 'Densité coop.', value: props.coop_density_per_1000km2 as number, unit: '/1000 km²', decimals: 3 });
   }
   if (props.synthesis_score !== undefined) {
     indicators.push({ label: 'Score composite', value: (props.synthesis_score as number).toFixed(1), unit: '/100' });

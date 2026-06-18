@@ -93,7 +93,7 @@ export default function PrefecturePopup({
                 <span style={{ color: '#475569' }}>{ind.label}</span>
                 <span style={{ fontWeight: 600, color: '#1E293B' }}>
                   {typeof ind.value === 'number'
-                    ? formatNumber(ind.value)
+                    ? formatNumber(ind.value, ind.decimals ?? 1)
                     : String(ind.value)}
                   {ind.unit ? ` ${ind.unit}` : ''}
                 </span>
@@ -153,8 +153,8 @@ function getAccentColor(analysisType: string): string {
 function buildIndicators(
   props: Record<string, string | number | boolean | null | undefined>,
   analysisType: string,
-): Array<{ label: string; value: string | number; unit?: string }> {
-  const indicators: Array<{ label: string; value: string | number; unit?: string }> = [];
+): Array<{ label: string; value: string | number; unit?: string; decimals?: number }> {
+  const indicators: Array<{ label: string; value: string | number; unit?: string; decimals?: number }> = [];
 
   switch (analysisType) {
     case 'density': {
@@ -166,7 +166,7 @@ function buildIndicators(
         indicators.push({ label: 'Exploitations', value: nExploitations as number });
       }
       if (density !== undefined) {
-        indicators.push({ label: 'Densité', value: density as number, unit: 'fermes/km²' });
+        indicators.push({ label: 'Densité', value: density as number, unit: 'fermes/km²', decimals: 3 });
       }
       if (densityLabel !== undefined) {
         indicators.push({ label: 'Classe', value: densityLabel as string });
@@ -192,7 +192,7 @@ function buildIndicators(
       const whiteZone = props.white_zone_pct;
 
       if (density !== undefined) {
-        indicators.push({ label: 'Densité coop.', value: density as number, unit: '/1000 km²' });
+        indicators.push({ label: 'Densité coop.', value: density as number, unit: '/1000 km²', decimals: 3 });
       }
       if (whiteZone !== undefined) {
         indicators.push({ label: 'Zone blanche', value: (whiteZone as number).toFixed(1), unit: '%' });
