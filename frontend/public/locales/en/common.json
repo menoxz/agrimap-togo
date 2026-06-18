@@ -19,7 +19,7 @@
       "cta_explore": "Explore white zones",
       "cta_story": "Follow the story",
       "cta_report": "Read the report",
-      "stat_zones_label": "22 priority zones identified",
+      "stat_zones_label": "26 priority zones identified",
       "scroll": "Discover"
     },
     "stats": {
@@ -64,7 +64,7 @@
     "made_in_togo": "🇹🇬 Made in Togo — Togolese data, for Togo",
     "photo_banner": {
       "alt": "Agricultural fields of Togo",
-      "quote": "22 priority zones identified to connect farmers to essential services"
+      "quote": "26 priority zones identified to connect farmers to essential services"
     },
     "minimap": {
       "badge": "Interactive exploration",
