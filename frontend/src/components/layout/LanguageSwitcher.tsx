@@ -39,7 +39,7 @@ export default function LanguageSwitcher({
       {/* Mobile: compact toggle */}
       <button
         onClick={toggleLang}
-        className="flex tablet:hidden items-center gap-1.5 px-3 py-1.5 rounded-full border border-border text-body-sm font-medium hover:bg-primary-light transition-colors focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2"
+        className="flex tablet:hidden desktop:hidden items-center gap-1.5 px-3 py-1.5 rounded-full border border-border text-body-sm font-medium hover:bg-primary-light transition-colors focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2"
         aria-label={
           isFr ? 'Switch to English' : 'Basculer en français'
         }

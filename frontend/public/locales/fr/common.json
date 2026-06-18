@@ -105,12 +105,16 @@
     "download_title": "Télécharger les données",
     "show_prefectures": "Afficher les préfectures",
     "prefecture_layer": "Couche préfecture",
+    "active_layer_label": "Couche active",
+    "synthesis_hint": "Sélectionnez la couche Synthèse pour voir les zones prioritaires",
     "hero": {
       "title": "Cartographie des zones prioritaires",
       "subtitle": "Identifiez les territoires où l'accès aux services agricoles est le plus critique.",
       "stat_zones": "zones identifiées",
+      "stat_zones_value": "26",
       "stat_regions": "régions",
-      "stat_services": "services analysés"
+      "stat_services": "services analysés",
+      "stat_services_value": "5"
     }
   },
   "report": {

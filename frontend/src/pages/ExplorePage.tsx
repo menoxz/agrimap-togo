@@ -38,7 +38,7 @@ function FlyToRegion({ region }: { region: string }) {
       const bounds = REGION_BOUNDS[region];
       if (bounds) map.flyToBounds(bounds, { padding: [40, 40], duration: 1.2 });
     } else {
-      map.flyTo([8.5, 1.0], 7, { animate: true, duration: 1.2 });
+      map.flyTo([8.5, 1.0], 8, { animate: true, duration: 1.2 });
     }
   }, [region, map]);
   return null;
@@ -222,45 +222,41 @@ export default function ExplorePage() {
       <section
         className="relative overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/hero-agriculture.jpg)',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          background: 'linear-gradient(160deg, #003D24 0%, #006A4E 40%, #0D2B3E 70%, #0A1628 100%)',
           minHeight: '320px',
         }}
       >
-        <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
         <div className="relative z-10 px-6 py-14 flex flex-col items-center text-center gap-6">
           <div>
             <h1 className="text-5xl font-black tracking-tight text-white leading-tight">
               {t('explore.hero.title')}
             </h1>
-            <p className="text-white/70 italic text-sm font-medium mt-3">
+            <p className="text-white/85 italic text-sm font-medium mt-3">
               {t('explore.hero.subtitle')}
             </p>
           </div>
-          <div className="flex flex-row items-center gap-12">
+          <div className="flex flex-row items-center gap-8">
             <div className="flex flex-col items-center">
               <span className="text-5xl font-black leading-none"
-                    style={{ color: 'transparent', WebkitTextStroke: '2px #FFD100' }}>22</span>
+                    style={{ color: '#FFD100' }}>{t('explore.hero.stat_zones_value')}</span>
               <span className="text-white/65 text-xs mt-1 uppercase tracking-widest">{t('explore.hero.stat_zones')}</span>
             </div>
-            <div className="w-px h-10 bg-white/20" />
+            <div className="w-px h-10 bg-white/40" />
             <div className="flex flex-col items-center">
               <span className="text-5xl font-black leading-none"
-                    style={{ color: 'transparent', WebkitTextStroke: '2px #FFFFFF' }}>5</span>
+                    style={{ color: '#FFFFFF' }}>5</span>
               <span className="text-white/65 text-xs mt-1 uppercase tracking-widest">{t('explore.hero.stat_regions')}</span>
             </div>
-            <div className="w-px h-10 bg-white/20" />
+            <div className="w-px h-10 bg-white/40" />
             <div className="flex flex-col items-center">
               <span className="text-5xl font-black leading-none"
-                    style={{ color: 'transparent', WebkitTextStroke: '2px #FFD100' }}>4</span>
+                    style={{ color: '#FFD100' }}>5</span>
               <span className="text-white/65 text-xs mt-1 uppercase tracking-widest">{t('explore.hero.stat_services')}</span>
             </div>
           </div>
         </div>
         <div
-          className="relative z-10 h-1 w-full"
+          className="relative z-10 h-2 w-full"
           style={{ background: 'linear-gradient(90deg, #006A4E 33%, #FFD100 33% 66%, #D21034 66%)' }}
         />
       </section>
@@ -291,14 +287,11 @@ export default function ExplorePage() {
               'desktop:block',
             ].join(' ')}
             style={{
-              backgroundImage: 'url(/images/hero-agriculture.jpg)',
-              backgroundAttachment: 'fixed',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center center',
+              background: 'linear-gradient(180deg, #003D24 0%, #0A1628 100%)',
             }}
           >
-            {/* Overlay identique au hero + flou backdrop */}
-            <div className="absolute inset-0 bg-black/65 backdrop-blur-md" aria-hidden="true" />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
             {/* Contenu au-dessus de l'overlay */}
             <div className="relative z-10 flex flex-col h-full">
             {/* Header sidebar */}
@@ -318,7 +311,7 @@ export default function ExplorePage() {
             </div>
 
             {/* Contenu filtres */}
-            <div className="p-5">
+            <div className="p-5 overflow-y-auto">
               <FilterPanel
                 dark={true}
                 selectedRegion={filters.selectedRegion}
@@ -343,7 +336,7 @@ export default function ExplorePage() {
             <div className="px-5 pb-5 mt-auto">
               <div className="pt-4 border-t border-white/15">
                 <p className="text-white/50 text-xs uppercase tracking-widest mb-1">
-                  {currentLang === 'en' ? 'Active layer' : 'Couche active'}
+                  {t('explore.active_layer_label')}
                 </p>
                 <div className="flex items-center gap-2">
                   <Layers size={13} className="text-togo-yellow shrink-0" />
@@ -359,7 +352,7 @@ export default function ExplorePage() {
 
             {/* Titre + description */}
             <div className="mb-5">
-              <h2 className="text-4xl font-black tracking-tight text-text leading-tight">
+              <h2 className="text-2xl font-bold tracking-tight text-text leading-tight">
                 {t('explore.title')}
               </h2>
               <p className="text-togo-green italic text-sm font-medium mt-1.5">
@@ -371,10 +364,11 @@ export default function ExplorePage() {
             <div className="flex flex-col desktop:flex-row gap-4 items-start">
 
               {/* CARTE — 55 % de la largeur, hauteur remplit l'écran */}
-              <div className="w-full desktop:w-[55%] shrink-0 min-w-0">
+              <div className="w-full desktop:w-[60%] shrink-0 min-w-0">
                 <Card variant="default" padding="none" className="overflow-hidden">
                   <div className="h-[calc(100dvh-180px)] relative">
                     <TogoMap
+                      zoom={8}
                       visibleMarkers={visibleMarkers}
                       showPrefectures={effectiveShowPrefectures}
                       prefectureFilter={filters.selectedPrefecture || undefined}
@@ -425,7 +419,7 @@ export default function ExplorePage() {
 
                 {/* Badge fraîcheur */}
                 <div className="mt-2 flex items-center justify-end">
-                  <Badge variant="info" size="sm">{t('badge.data_freshness')}</Badge>
+                  <Badge variant="default" size="sm">{t('badge.data_freshness')}</Badge>
                 </div>
               </div>
 
@@ -441,12 +435,10 @@ export default function ExplorePage() {
                       />
                     </div>
                   ) : (
-                    <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
-                      <ListOrdered size={32} className="text-togo-green/20" />
-                      <p className="text-xs text-text-secondary italic leading-relaxed max-w-[180px]">
-                        {currentLang === 'en'
-                          ? 'Select the Synthesis layer to see priority investment zones'
-                          : 'Sélectionnez la couche Synthèse pour voir les zones prioritaires'}
+                    <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
+                      <ListOrdered size={40} className="text-togo-green/50" />
+                      <p className="text-sm text-text-secondary leading-relaxed max-w-[200px]">
+                        {t('explore.synthesis_hint')}
                       </p>
                     </div>
                   )}

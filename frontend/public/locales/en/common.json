@@ -105,12 +105,16 @@
     "download_title": "Download data",
     "show_prefectures": "Show prefectures",
     "prefecture_layer": "Prefecture layer",
+    "active_layer_label": "Active layer",
+    "synthesis_hint": "Select the Synthesis layer to see priority investment zones",
     "hero": {
       "title": "Priority Zone Mapping",
       "subtitle": "Identify territories where access to agricultural services is most critical.",
       "stat_zones": "zones identified",
+      "stat_zones_value": "26",
       "stat_regions": "regions",
-      "stat_services": "services analyzed"
+      "stat_services": "services analyzed",
+      "stat_services_value": "5"
     }
   },
   "report": {
