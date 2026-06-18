@@ -107,6 +107,9 @@
     "prefecture_layer": "Couche préfecture",
     "active_layer_label": "Couche active",
     "synthesis_hint": "Sélectionnez la couche Synthèse pour voir les zones prioritaires",
+    "region_label": "Région",
+    "region_placeholder": "Sélectionner une région",
+    "analysis_type_label": "Type d'analyse",
     "hero": {
       "title": "Cartographie des zones prioritaires",
       "subtitle": "Identifiez les territoires où l'accès aux services agricoles est le plus critique.",

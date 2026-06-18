@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { SlidersHorizontal, RotateCcw, ChevronDown, ChevronUp, Download } from 'lucide-react';
+import { SlidersHorizontal, RotateCcw, Download } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
@@ -34,13 +33,13 @@ interface FilterPanelProps {
   onPrefecturesToggle?: (value: boolean) => void;
 }
 
-const REGIONS = [
-  { value: '', label: 'Toutes les régions' },
-  { value: 'maritime', label: 'Maritime' },
-  { value: 'plateaux', label: 'Plateaux' },
-  { value: 'centrale', label: 'Centrale' },
-  { value: 'kara', label: 'Kara' },
-  { value: 'savanes', label: 'Savanes' },
+const REGIONS: { value: string; labelFr: string; labelEn: string }[] = [
+  { value: '', labelFr: 'Toutes les régions', labelEn: 'All regions' },
+  { value: 'maritime', labelFr: 'Maritime', labelEn: 'Maritime' },
+  { value: 'plateaux', labelFr: 'Plateaux', labelEn: 'Plateaux' },
+  { value: 'centrale', labelFr: 'Centrale', labelEn: 'Centrale' },
+  { value: 'kara', labelFr: 'Kara', labelEn: 'Kara' },
+  { value: 'savanes', labelFr: 'Savanes', labelEn: 'Savanes' },
 ];
 
 /**
@@ -66,6 +65,7 @@ const LAYER_LABELS: Record<AnalysisType, { fr: string; en: string }> = {
   coop: { fr: 'Réseau coopératif', en: 'Cooperative network' },
   synthesis: { fr: 'Synthèse priorisation', en: 'Prioritization' },
 };
+// TODO: migrate to t() i18n keys
 
 const MARKER_OPTIONS = [
   { value: 'marches',       emoji: '🛒', labelFr: 'Marchés',        labelEn: 'Markets',       count: 971, disabled: false },
@@ -150,7 +150,6 @@ export default function FilterPanel({
   onPrefecturesToggle,
 }: FilterPanelProps) {
   const { t, currentLang } = useTranslation();
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   const layerOptions = ANALYSIS_TYPES.map((type) => ({
     value: type,
@@ -169,7 +168,7 @@ export default function FilterPanel({
         {/* Region filter */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            🌍 {currentLang === 'en' ? 'Region' : 'Région'}
+            <span aria-hidden="true">🌍</span> {currentLang === 'en' ? 'Region' : 'Région'}
           </label>
           <select
             value={selectedRegion}
@@ -181,7 +180,7 @@ export default function FilterPanel({
           >
             {REGIONS.map((r) => (
               <option key={r.value} value={r.value} className="bg-togo-green-dark text-white">
-                {r.label}
+                {currentLang === 'en' ? r.labelEn : r.labelFr}
               </option>
             ))}
           </select>
@@ -190,7 +189,7 @@ export default function FilterPanel({
         {/* Prefecture filter (cascade) */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            📍 {currentLang === 'en' ? 'Prefecture' : 'Préfecture'}
+            <span aria-hidden="true">📍</span> {currentLang === 'en' ? 'Prefecture' : 'Préfecture'}
           </label>
           <select
             value={selectedPrefecture}
@@ -209,9 +208,9 @@ export default function FilterPanel({
         </div>
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            🗺 {currentLang === 'en' ? 'Analysis type' : "Type d'analyse"}
+            <span aria-hidden="true">🗺</span> {currentLang === 'en' ? 'Analysis type' : "Type d'analyse"}
           </label>
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             {layerOptions.map((opt) => {
               const isActive = activeLayers.includes(opt.value as AnalysisType);
               return (
@@ -258,7 +257,7 @@ export default function FilterPanel({
         {/* Prefecture layer toggle */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            🗺 {currentLang === 'en' ? t('explore.prefecture_layer') : t('explore.prefecture_layer')}
+            <span aria-hidden="true">🗺</span> {t('explore.prefecture_layer')}
           </label>
           <label
             className={`flex items-center gap-2.5 cursor-pointer rounded-md px-2.5 py-1.5 transition-colors ${
@@ -280,9 +279,9 @@ export default function FilterPanel({
         {/* ── SERVICES section ── */}
         <div>
           <label className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-2 block">
-            📍 {currentLang === 'en' ? 'Services' : 'Services'}
+            <span aria-hidden="true">📍</span> Services
           </label>
-          <div className="space-y-1">
+          <div className="space-y-1.5">
             {MARKER_OPTIONS.map((opt) => {
               const isActive = visibleMarkers.has(opt.value);
               return (
@@ -301,7 +300,7 @@ export default function FilterPanel({
                     className="w-4 h-4 rounded accent-white"
                   />
                   <span className={`text-sm transition-colors ${isActive ? 'text-white font-semibold' : 'text-white/80'}`}>
-                    {opt.emoji}&nbsp;
+                    <span aria-hidden="true">{opt.emoji}</span>&nbsp;
                     {currentLang === 'en' ? opt.labelEn : opt.labelFr}
                     <span className="ml-1 text-white/50 text-xs font-normal">({opt.count})</span>
                   </span>
@@ -330,7 +329,6 @@ export default function FilterPanel({
             <button
               onClick={() => handleDownloadGeoJSON(activeLayers[0] ?? 'density')}
               className="flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-md border border-white/30 bg-white/10 text-white text-xs font-semibold hover:bg-white/20 active:scale-95 transition-all"
-              title={t('explore.download_geojson')}
             >
               <Download size={11} />
               {t('explore.download_geojson')}
@@ -338,7 +336,6 @@ export default function FilterPanel({
             <button
               onClick={() => { void handleDownloadCSV(activeLayers[0] ?? 'density'); }}
               className="flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-md border border-togo-yellow/60 bg-togo-yellow/10 text-togo-yellow text-xs font-semibold hover:bg-togo-yellow/20 active:scale-95 transition-all"
-              title={t('explore.download_csv')}
             >
               <Download size={11} />
               {t('explore.download_csv')}
@@ -354,45 +351,54 @@ export default function FilterPanel({
     <>
       {/* Mobile/Tablet toggle button */}
       <button
-        onClick={() => setMobileOpen(!mobileOpen)}
         className="flex desktop:hidden items-center gap-2 px-3 py-2 rounded-md border border-border text-body-sm font-medium text-text-secondary hover:bg-surface-alt transition-colors focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 self-start"
-        aria-expanded={mobileOpen}
-        aria-label={t('explore.filters')}
       >
         <SlidersHorizontal size={18} />
         <span>{t('explore.filters')}</span>
-        {mobileOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
       </button>
 
       {/* Panel content */}
       <aside
-        className={[
-          'desktop:w-72 shrink-0',
-          mobileOpen ? 'block' : 'hidden',
-          'desktop:block',
-        ].join(' ')}
+        className="desktop:w-72 shrink-0 hidden desktop:block"
         aria-label={t('explore.filters')}
       >
         <Card variant="default" padding="md" className="space-y-5">
           {/* Region filter */}
           <div>
-            <label className="text-label text-text-secondary mb-2 block">
-              🌍 {t('explore.filters')}
+            <label className="text-xs uppercase tracking-wider text-text-secondary mb-2 block">
+              <span aria-hidden="true">🌍</span> {t('explore.region_label')}
             </label>
             <Select
-              options={REGIONS}
+              options={REGIONS.map((r) => ({ value: r.value, label: currentLang === 'en' ? r.labelEn : r.labelFr }))}
               value={selectedRegion}
               onChange={onRegionChange}
-              placeholder="Sélectionner une région"
+              placeholder={t('explore.region_placeholder')}
             />
+            {selectedRegion && (
+              <div className="space-y-1.5 mt-3">
+                <label className="text-xs font-medium text-text-secondary">
+                  <span aria-hidden="true">📍</span> {t('map:prefecture_label')}
+                </label>
+                <select
+                  value={selectedPrefecture}
+                  onChange={(e) => onPrefectureChange?.(e.target.value)}
+                  className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text-primary truncate"
+                >
+                  <option value="">{currentLang === 'en' ? 'All prefectures' : 'Toutes les préfectures'}</option>
+                  {selectedRegion && PREFECTURES_BY_REGION[selectedRegion]?.map((p) => (
+                    <option key={p} value={p}>{p}</option>
+                  ))}
+                </select>
+              </div>
+            )}
           </div>
 
           {/* Layer selection */}
           <div>
             <label className="text-label text-text-secondary mb-2 block">
-              🗺 Type d'analyse
+              <span aria-hidden="true">🗺</span> {t('explore.analysis_type_label')}
             </label>
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               {layerOptions.map((opt) => {
                 const isActive = activeLayers.includes(opt.value as AnalysisType);
                 return (
@@ -430,7 +436,7 @@ export default function FilterPanel({
                   className="w-4 h-4 rounded border-border text-accent focus:ring-accent"
                 />
                 <span className="text-body-sm text-text-secondary">
-                  {currentLang === 'en' ? 'Show only uncovered zones' : 'Zones non couvertes uniquement'}
+                  {currentLang === 'en' ? 'Only uncovered zones' : 'Zones non couvertes uniquement'}
                 </span>
               </label>
             </div>
@@ -439,7 +445,7 @@ export default function FilterPanel({
           {/* Prefecture layer toggle */}
           <div>
             <label className="text-label text-text-secondary mb-2 block">
-              🗺 {t('explore.prefecture_layer')}
+              <span aria-hidden="true">🗺</span> {t('explore.prefecture_layer')}
             </label>
             <label
               className={`flex items-center gap-2 cursor-pointer group rounded px-2 py-1.5 transition-colors ${
@@ -461,9 +467,9 @@ export default function FilterPanel({
           {/* ── SERVICES section ── */}
           <div>
             <label className="text-label text-text-secondary mb-2 block">
-              📍 {currentLang === 'en' ? 'Services' : 'Services'}
+              <span aria-hidden="true">📍</span> Services
             </label>
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               {MARKER_OPTIONS.map((opt) => {
                 const isActive = visibleMarkers.has(opt.value);
                 return (
@@ -482,13 +488,22 @@ export default function FilterPanel({
                       className="w-4 h-4 text-primary border-border focus:ring-primary"
                     />
                     <span className="text-body-sm text-text-secondary group-hover:text-text transition-colors">
-                      {opt.emoji}&nbsp;
+                      <span aria-hidden="true">{opt.emoji}</span>&nbsp;
                       {currentLang === 'en' ? opt.labelEn : opt.labelFr}
                       <span className="ml-1 text-text-secondary/60 text-xs">({opt.count})</span>
                     </span>
                   </label>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Download buttons */}
+          <div className="pt-3 border-t border-border">
+            <p className="text-xs font-medium text-text-secondary mb-2">{t('explore.download_title')}</p>
+            <div className="flex gap-2">
+              <button onClick={() => handleDownloadGeoJSON(activeLayers[0] ?? 'density')} className="flex-1 rounded-lg bg-surface-alt hover:bg-border px-3 py-2 text-xs font-medium text-text-primary transition-colors truncate">{t('explore.download_geojson')}</button>
+              <button onClick={() => handleDownloadCSV(activeLayers[0] ?? 'density')} className="flex-1 rounded-lg bg-surface-alt hover:bg-border px-3 py-2 text-xs font-medium text-text-primary transition-colors truncate">{t('explore.download_csv')}</button>
             </div>
           </div>
 

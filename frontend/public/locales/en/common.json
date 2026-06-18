@@ -107,6 +107,9 @@
     "prefecture_layer": "Prefecture layer",
     "active_layer_label": "Active layer",
     "synthesis_hint": "Select the Synthesis layer to see priority investment zones",
+    "region_label": "Region",
+    "region_placeholder": "Select a region",
+    "analysis_type_label": "Analysis type",
     "hero": {
       "title": "Priority Zone Mapping",
       "subtitle": "Identify territories where access to agricultural services is most critical.",

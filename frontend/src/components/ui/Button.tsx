@@ -43,7 +43,7 @@ const variantStyles: Record<ButtonVariant, Record<ButtonColor, string>> = {
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'h-8 px-3 text-label text-body-sm gap-1',
+  sm: 'h-8 px-3 text-label gap-1',
   md: 'h-11 px-5 text-body gap-2',
   lg: 'h-14 px-7 text-body-lg gap-3',
 };
