@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Sprout, ArrowRight, Map as MapIcon, BookOpen, FileText, AlertTriangle, Compass, TrendingUp } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useAnimatedCounter } from '@/hooks/useAnimatedCounter';
 import { useDataLoader } from '@/hooks/useDataLoader';
 import { useMemo } from 'react';
 import type { GeoJsonFeatureCollection } from '@/types/map';
@@ -72,6 +73,14 @@ export default function HomePage() {
   const { data: synthData, loading } = useDataLoader(DATA_URL);
   const stats = useMemo(() => computeStats(synthData), [synthData]);
 
+  // Ref pour la section stats — déclenche les compteurs animés
+  const { ref: statsRef, isVisible: statsVisible } = useScrollReveal({ threshold: 0.1 });
+
+  // KPI counters — démarrent à 0 et montent vers la valeur réelle quand visible
+  const animKpi1 = useAnimatedCounter(stats?.kpi1 ?? 0, 1400, statsVisible && !!stats);
+  const animKpi2 = useAnimatedCounter(SERVICE_TYPES, 900, statsVisible);
+  const animKpi3 = useAnimatedCounter(stats?.kpi3 ?? 0, 1400, statsVisible && !!stats);
+
   return (
     <div>
       {/* Hero Section */}
@@ -81,24 +90,45 @@ export default function HomePage() {
           background: 'linear-gradient(160deg, #003D24 0%, #006A4E 35%, #0D2B3E 70%, #0A1628 100%)',
         }}
       >
+        <div className="hero-motion-bg" aria-hidden="true" />
+        <div className="absolute inset-0 opacity-25 mix-blend-screen" aria-hidden="true">
+          <div className="absolute left-[10%] top-[22%] h-32 w-32 rounded-full border border-togo-yellow/60 animate-hero-orbit" style={{ animationDelay: '120ms' }} />
+          <div className="absolute right-[14%] top-[30%] h-24 w-24 rounded-full border border-togo-red/60 animate-hero-orbit" style={{ animationDelay: '260ms' }} />
+          <div className="absolute bottom-[18%] left-[48%] h-40 w-40 rounded-full border border-white/35 animate-hero-orbit" style={{ animationDelay: '380ms' }} />
+        </div>
 
         {/* Contenu centré */}
         <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto gap-6">
-          <div className="text-togo-yellow mb-2" aria-hidden="true">
+          <div
+            className="hero-sprout-badge text-togo-yellow mb-2 animate-hero-orbit"
+            style={{ animationDelay: '60ms' }}
+            aria-hidden="true"
+          >
             <Sprout size={64} strokeWidth={1.5} />
           </div>
 
-          <h1 className="text-hero mobile:text-h1 font-extrabold text-white text-balance leading-tight">
+          <h1
+            className="text-hero mobile:text-h1 font-extrabold text-white text-balance leading-tight animate-hero-word drop-shadow-2xl"
+            style={{ animationDelay: '160ms' }}
+          >
             {t('home.hero.headline')}
           </h1>
 
-          <TogoAccentBorder width="short" className="mx-auto mt-3" />
+          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+            <TogoAccentBorder width="short" className="mx-auto mt-3" />
+          </div>
 
-          <p className="text-body-lg text-white/80 max-w-xl text-balance">
+          <p
+            className="text-body-lg text-white/80 max-w-xl text-balance animate-hero-word"
+            style={{ animationDelay: '360ms' }}
+          >
             {t('home.hero.subtitle')}
           </p>
 
-          <div className="flex flex-row flex-wrap gap-4 mt-8">
+          <div
+            className="flex flex-row flex-wrap gap-4 mt-8 animate-cta-pop"
+            style={{ animationDelay: '490ms' }}
+          >
             {/* CTA Primaire — Vert Togo, renforcé padding + shadow */}
             <Link to="/explore">
               <Button
@@ -106,7 +136,7 @@ export default function HomePage() {
                 size="lg"
                 color="primary"
                 icon={MapIcon}
-                className="!px-8 !py-4 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                className="!px-8 !py-4 shadow-2xl hover:shadow-[0_24px_60px_rgba(255,209,0,0.28)] hover:-translate-y-2 hover:scale-105 transition-all duration-300"
               >
                 {t('home.hero.cta_explore')}
               </Button>
@@ -115,7 +145,7 @@ export default function HomePage() {
             {/* CTA Secondaire — Glassmorphism sur fond sombre */}
             <Link
               to="/story"
-              className="inline-flex items-center justify-center gap-3 font-semibold rounded-md text-body-lg px-6 py-3 tablet:px-8 tablet:py-4 desktop:px-8 desktop:py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cta-hover-scale"
+              className="inline-flex items-center justify-center gap-3 font-semibold rounded-md text-body-lg px-6 py-3 tablet:px-8 tablet:py-4 desktop:px-8 desktop:py-4 bg-white/10 border-2 border-white text-white shadow-2xl hover:bg-white/20 hover:shadow-[0_24px_60px_rgba(255,255,255,0.18)] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 cta-hover-scale"
             >
               <BookOpen size={24} className="shrink-0" />
               <span>{t('home.hero.cta_story')}</span>
@@ -124,7 +154,8 @@ export default function HomePage() {
 
           <Link
             to="/report"
-            className="inline-flex items-center gap-1.5 text-body-sm font-medium text-white/70 hover:text-white transition-colors mt-2 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 rounded px-2 py-1 cta-hover-scale"
+            className="inline-flex items-center gap-1.5 text-body-sm font-medium text-white/70 hover:text-white transition-colors mt-2 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 rounded px-2 py-1 cta-hover-scale animate-fade-in"
+            style={{ animationDelay: '620ms' }}
           >
             <FileText size={16} />
             {t('home.hero.cta_report')}
@@ -133,11 +164,14 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none animate-bounce"
+          style={{ animationDelay: '800ms' }}
+        >
           <span className="text-white/50 text-[10px] uppercase tracking-widest drop-shadow-lg">
             {t('home.hero.scroll')}
           </span>
-          <div className="w-px h-8 bg-gradient-to-b from-white/50 to-transparent" />
+          <div className="w-px h-10 bg-gradient-to-b from-white/80 to-transparent animate-scroll-line" />
         </div>
       </section>
 
@@ -149,7 +183,7 @@ export default function HomePage() {
       </div>
 
       {/* Stats Section — KPI + Cercles SVG */}
-      <section aria-labelledby="stats-title" className="container-page py-16 text-center">
+      <section ref={statsRef} aria-labelledby="stats-title" className="container-page py-16 text-center">
 
         {/* En-tête de section */}
         <div className="mb-10">
@@ -162,17 +196,25 @@ export default function HomePage() {
         </div>
 
         {/* Ligne KPI — 3 métriques côte à côte */}
-         <div className="flex flex-row justify-between gap-8 mb-16">
+         <div className="grid grid-cols-1 tablet:grid-cols-3 desktop:grid-cols-3 gap-8 mb-16 [perspective:1000px]">
           {(
           [
-            { value: stats ? `${stats.kpi1}` : '—', label: t('home.stats.kpi1_label'), desc: t('stats.kpi1.sub', { total: stats?.total ?? '—' }), colorClass: 'text-red-600', tooltip: t('stats.kpi1.tooltip') },
-            { value: stats ? `${stats.kpi2}` : '—',  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), colorClass: 'text-green-700', tooltip: '' },
-            { value: stats ? `${stats.kpi3}%` : '—', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), colorClass: 'text-red-600', tooltip: '' },
+            { value: stats ? `${animKpi1}` : '—', label: t('home.stats.kpi1_label'), desc: t('stats.kpi1.sub', { total: stats?.total ?? '—' }), colorClass: 'text-red-600', tooltip: t('stats.kpi1.tooltip') },
+            { value: `${animKpi2}`,  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), colorClass: 'text-green-700', tooltip: '' },
+            { value: stats ? `${animKpi3}%` : '—', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), colorClass: 'text-red-600', tooltip: '' },
           ] as { value: string; label: string; desc: string; colorClass: string; tooltip: string }[]
-          ).map((kpi) => (
-            <div key={kpi.label} className="flex flex-col items-center py-5">
+          ).map((kpi, index) => (
+            <div
+              key={kpi.label}
+              className="kpi-motion-card flex flex-col items-center py-5 transition-all duration-300"
+              style={{
+                animation: statsVisible
+                  ? `stat-pop 0.85s cubic-bezier(0.16, 1, 0.3, 1) ${index * 160}ms both`
+                  : 'none',
+              }}
+            >
               {/* Valeur outline */}
-              <span className={`text-7xl font-black leading-none ${kpi.colorClass}`}
+              <span className={`text-7xl font-black leading-none tabular-nums drop-shadow-sm ${kpi.colorClass}`}
                     title={kpi.tooltip || undefined}>
                 {kpi.value}
               </span>
@@ -198,7 +240,7 @@ export default function HomePage() {
               {t('home.stats.loading')}
             </div>
           )}
-          <div className="flex flex-row justify-between flex-wrap">
+          <div className="flex flex-row justify-between flex-wrap gap-y-8">
 
             {(function () {
               // Build region display data: use real stats or fallback placeholders
@@ -214,22 +256,37 @@ export default function HomePage() {
                     { name: 'Centrale', pct: 0, color: '#FFD100', displayName: t('home.stats.regions.centrale') },
                     { name: 'Plateaux', pct: 0, color: '#006A4E', displayName: t('home.stats.regions.plateaux') },
                   ];
-              return regionItems.map((r) => {
+              return regionItems.map((r, index) => {
               const R = 36, C = 2 * Math.PI * R;
               const filled = (r.pct / 100) * C;
               return (
                 <div key={r.name} className="flex flex-col items-center gap-3">
-                  {/* Cercle SVG */}
-                  <svg width="96" height="96" viewBox="0 0 96 96" style={{ background: 'transparent' }}>
+                  {/* Cercle SVG — scale-in avec stagger */}
+                  <svg
+                    width="96" height="96" viewBox="0 0 96 96"
+                    className="drop-shadow-lg"
+                    style={{
+                      background: 'transparent',
+                      animation: statsVisible
+                        ? `ring-pop 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${180 + index * 120}ms both`
+                        : 'none',
+                    }}
+                  >
                     {/* Piste grise */}
                     <circle cx="48" cy="48" r={R} fill="none"
                             stroke="#E5E7EB" strokeWidth="8" />
                     {/* Arc coloré */}
-                    <circle cx="48" cy="48" r={R} fill="none"
-                            stroke={r.color} strokeWidth="8"
-                            strokeLinecap="round"
-                            strokeDasharray={`${filled} ${C}`}
-                            transform="rotate(-90 48 48)" />
+                     <circle cx="48" cy="48" r={R} fill="none"
+                             stroke={r.color} strokeWidth="8"
+                             strokeLinecap="round"
+                             strokeDasharray={`${filled} ${C}`}
+                             strokeDashoffset={statsVisible ? 0 : C}
+                             style={{
+                               animation: statsVisible
+                                 ? `draw-ring 1.2s cubic-bezier(0.16, 1, 0.3, 1) ${360 + index * 130}ms both`
+                                 : 'none',
+                             }}
+                             transform="rotate(-90 48 48)" />
                     {/* Valeur centrale */}
                     <text x="48" y="53" textAnchor="middle"
                           fontSize="16" fontWeight="800" fill="#374151"
@@ -292,7 +349,7 @@ export default function HomePage() {
             </div>
 
             {/* Droite carte — composant TogoMap existant */}
-            <div className="tablet:w-3/5 desktop:w-3/5 h-72 tablet:h-auto desktop:h-auto rounded-2xl overflow-hidden relative scroll-reveal-right">
+            <div className="tablet:w-3/5 desktop:w-3/5 h-72 tablet:h-auto desktop:h-auto rounded-2xl overflow-hidden relative scroll-reveal-right map-motion-frame animate-map-reveal">
               <TogoMap zoom={7} scrollWheelZoom={false}>
                 <DataLayer
                   url="/data/regions.geojson"

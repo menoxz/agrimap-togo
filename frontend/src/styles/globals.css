@@ -34,14 +34,268 @@
     );
   }
 
+  .hero-motion-bg {
+    position: absolute;
+    inset: -18%;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(255, 209, 0, 0.26) 0 9%, transparent 22%),
+      radial-gradient(circle at 82% 28%, rgba(210, 16, 52, 0.24) 0 8%, transparent 21%),
+      radial-gradient(circle at 52% 76%, rgba(0, 106, 78, 0.32) 0 14%, transparent 30%);
+    filter: blur(14px);
+    animation: hero-glow 5s ease-in-out infinite;
+  }
+
   .card-base {
     @apply bg-surface rounded-md border border-border shadow-sm;
+  }
+
+  /* ── Page transition — fade-up sur changement de route ── */
+  .page-enter {
+    animation: page-sweep 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* ── Navbar : shadow + bg opaque au scroll ── */
+  .nav-elevated {
+    box-shadow: 0 10px 36px rgba(30, 41, 59, 0.18);
+    background-color: rgba(255, 255, 255, 0.99) !important;
+  }
+
+  .hero-sprout-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 9999px;
+    background: rgba(255, 209, 0, 0.12);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 24px 80px rgba(255, 209, 0, 0.28);
+  }
+
+  .hero-sprout-badge::before,
+  .hero-sprout-badge::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: inherit;
+    border: 1px solid rgba(255, 209, 0, 0.42);
+    animation: ring-pop 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-sprout-badge::after {
+    inset: -24px;
+    border-color: rgba(255, 255, 255, 0.22);
+    animation-delay: 180ms;
+  }
+
+  .kpi-motion-card {
+    position: relative;
+    isolation: isolate;
+    border-radius: 24px;
+    padding: 28px 20px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 10px 30px rgba(30, 41, 59, 0.08);
+    transform-style: preserve-3d;
+  }
+
+  .kpi-motion-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(210, 16, 52, 0.18), rgba(255, 209, 0, 0.2), rgba(0, 106, 78, 0.16));
+    opacity: 0;
+    transition: opacity 0.28s ease;
+  }
+
+  .kpi-motion-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 22px 52px rgba(30, 41, 59, 0.16);
+  }
+
+  .kpi-motion-card:hover::before {
+    opacity: 1;
+  }
+
+  .map-motion-frame {
+    box-shadow: 0 28px 70px rgba(30, 41, 59, 0.18);
+  }
+
+  /* ── Mobile menu — expand/collapse avec transition max-height ── */
+  .mobile-menu-animated {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity    0.22s ease;
+  }
+  .mobile-menu-animated.open {
+    max-height: 440px;
+    opacity: 1;
+  }
+
+  /* ── Skeleton shimmer (remplace animate-pulse) ── */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      #f3f4f6 25%,
+      #e4e5e7 50%,
+      #f3f4f6 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s linear infinite;
+  }
+
+  /* ──────────────────────────────────────────────
+     Story / Lire — scroll-driven reveals
+     Toutes les classes préfixées act- ou story-hero-
+     pour éviter toute collision.
+     ────────────────────────────────────────────── */
+
+  /* Ligne d'accent gauche dans ActHeader — grandit vers le bas */
+  .act-header-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    transform-origin: top;
+    transform: scaleY(0);
+    background: rgba(255, 255, 255, 0.55);
+    transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.04s;
+  }
+  .act-header-visible .act-header-line {
+    transform: scaleY(1);
+  }
+
+  /* Ghost number — scale-up + fade-in */
+  .act-ghost-num {
+    opacity: 0;
+    transform: scale(0.80) translateX(12px);
+    transition:
+      opacity   1.1s ease 0.08s,
+      transform 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+  }
+  .act-header-visible .act-ghost-num {
+    opacity: 0.15;
+    transform: scale(1) translateX(0);
+  }
+
+  /* Label "Acte N" eyebrow */
+  .act-label-reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity   0.55s ease 0.14s,
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.14s;
+  }
+  .act-header-visible .act-label-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Titre principal */
+  .act-title-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity   0.75s ease 0.24s,
+      transform 0.90s cubic-bezier(0.16, 1, 0.3, 1) 0.24s;
+  }
+  .act-header-visible .act-title-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Éléments staggerés dans la colonne texte d'ActContainer */
+  .act-stagger-item {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity   0.65s ease,
+      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .act-stagger-item.act-item-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Carte — slide depuis la droite */
+  .act-map-reveal {
+    opacity: 0;
+    transform: translateX(36px);
+    transition:
+      opacity   0.80s ease 0.22s,
+      transform 1.00s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+  }
+  .act-map-reveal.act-map-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Divider reveal */
+  .act-divider-reveal {
+    opacity: 0;
+    transform: scaleX(0.6);
+    transition:
+      opacity   0.55s ease,
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+  }
+  .act-divider-reveal.act-item-visible {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* ── Explicit animation utilities — avoid dev-server Tailwind config cache ── */
+  .animate-hero-word {
+    animation: hero-word 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-hero-orbit {
+    animation: hero-orbit 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-hero-glow {
+    animation: hero-glow 5s ease-in-out infinite;
+  }
+
+  .animate-cta-pop {
+    animation: cta-pop 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-stat-pop {
+    animation: stat-pop 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-ring-pop {
+    animation: ring-pop 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-draw-ring {
+    animation: draw-ring 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-map-reveal {
+    animation: map-reveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-page-sweep {
+    animation: page-sweep 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.6s linear infinite;
   }
 
   /* ── Scroll reveal animation ── */
@@ -118,21 +372,21 @@
 
   /* ── Card hover lift ── */
   .card-hover-lift {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease;
   }
 
   .card-hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px rgba(30, 41, 59, 0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 22px 44px rgba(30, 41, 59, 0.16);
   }
 
   /* ── CTA hover scale ── */
   .cta-hover-scale {
-    transition: transform 0.2s ease;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, background-color 0.28s ease;
   }
 
   .cta-hover-scale:hover {
-    transform: scale(1.03);
+    transform: translateY(-6px) scale(1.08);
   }
 
   /* === Glassmorphism === */
@@ -197,21 +451,69 @@
     box-shadow: none;
   }
 
+  /* ── Nouvelles animations — désactivées si motion réduit ── */
+  .page-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .hero-motion-bg,
+  .hero-sprout-badge::before,
+  .hero-sprout-badge::after {
+    animation: none;
+  }
+
+  .hero-motion-bg {
+    opacity: 0.3;
+    transform: none;
+  }
+
+  .kpi-motion-card,
+  .kpi-motion-card:hover,
+  .map-motion-frame {
+    transform: none;
+    transition: none;
+  }
+
+  .mobile-menu-animated {
+    transition: none;
+  }
+
+  .skeleton-shimmer {
+    animation: none;
+    background: #f3f4f6;
+  }
+
   .glass-card,
   .glass-card-dark {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  /* Story — désactivation des reveals au scroll */
+  .act-ghost-num,
+  .act-label-reveal,
+  .act-title-reveal,
+  .act-header-line {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .act-header-visible .act-ghost-num { opacity: 0.15; }
+
+  .act-stagger-item,
+  .act-divider-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .act-map-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

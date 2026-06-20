@@ -18,19 +18,19 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const variantStyles: Record<ButtonVariant, Record<ButtonColor, string>> = {
   filled: {
     primary:
-      'bg-primary text-white border-none hover:bg-primary-hover active:brightness-95',
+      'bg-primary text-white border-none hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm active:brightness-95',
     secondary:
-      'bg-secondary text-white border-none hover:bg-blue-700 active:brightness-95',
+      'bg-secondary text-white border-none hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm active:brightness-95',
     accent:
-      'bg-accent text-white border-none hover:bg-orange-700 active:brightness-95',
+      'bg-accent text-white border-none hover:bg-orange-700 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:shadow-sm active:brightness-95',
   },
   outline: {
     primary:
-      'bg-transparent text-primary border-2 border-primary hover:bg-primary-light active:bg-primary/10',
+      'bg-transparent text-primary border-2 border-primary hover:bg-primary-light hover:-translate-y-0.5 active:translate-y-0 active:bg-primary/10',
     secondary:
-      'bg-transparent text-secondary border-2 border-secondary hover:bg-secondary-light active:bg-secondary/10',
+      'bg-transparent text-secondary border-2 border-secondary hover:bg-secondary-light hover:-translate-y-0.5 active:translate-y-0 active:bg-secondary/10',
     accent:
-      'bg-transparent text-accent border-2 border-accent hover:bg-accent-light active:bg-accent/10',
+      'bg-transparent text-accent border-2 border-accent hover:bg-accent-light hover:-translate-y-0.5 active:translate-y-0 active:bg-accent/10',
   },
   ghost: {
     primary:
@@ -73,7 +73,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const base = [
       'inline-flex items-center justify-center font-semibold rounded-md',
-      'transition-all duration-150 ease-in-out',
+      'transition-all duration-200 ease-out',
       'focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2',
       'disabled:cursor-not-allowed disabled:pointer-events-none',
       variantStyles[variant][color],

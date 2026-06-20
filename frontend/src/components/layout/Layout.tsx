@@ -1,8 +1,10 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 export default function Layout() {
+  const { pathname } = useLocation();
+
   return (
     <div className="flex min-h-screen flex-col">
       <a
@@ -13,7 +15,10 @@ export default function Layout() {
       </a>
       <Navbar />
       <main id="main-content" className="flex-1 pt-16">
-        <Outlet />
+        {/* key force un remount → re-déclenche l'animation .page-enter à chaque navigation */}
+        <div key={pathname} className="page-enter">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>
