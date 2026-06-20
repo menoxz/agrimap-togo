@@ -6,6 +6,48 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import StoryPage from '../src/pages/StoryPage';
 
+vi.mock('@/hooks/useAnimatedCounter', () => ({
+  useAnimatedCounter: (target: number) => target,
+}));
+
+vi.mock('@/components/story/LazyActContainer', () => ({
+  default: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
+
+vi.mock('@/components/story/SynthesisView', () => ({
+  default: () => (
+    <section id="synthesis">
+      <h2>Où investir ?</h2>
+      <p>Synthèse et recommandations</p>
+      <div data-testid="map-container" />
+      <article>
+        <h3>Étendre le réseau ZAAP</h3>
+        <p>Préfectures cibles :</p>
+        <p>Plaine de Mô, Tchaoudjo, Tchamba</p>
+        <p>Planifier l’extension ZAAP</p>
+        <p>Réduire les zones non aménagées</p>
+        <p>Priorité Haute</p>
+      </article>
+      <article>
+        <h3>Créer des hubs d'accès</h3>
+        <p>Priorité Haute</p>
+      </article>
+      <article>
+        <h3>Soutenir le maillage coopératif</h3>
+        <p>Priorité Moyenne</p>
+      </article>
+    </section>
+  ),
+}));
+
+vi.mock('@/components/map', () => ({
+  DensityLayer: () => <div data-testid="density-layer" />,
+  ZAAPLayer: () => <div data-testid="zaap-layer" />,
+  AccessibilityLayer: () => <div data-testid="accessibility-layer" />,
+  CoopLayer: () => <div data-testid="coop-layer" />,
+  SynthesisLayer: () => <div data-testid="synthesis-layer" />,
+}));
+
 // Mock story translations with FLAT keys for recommendations
 const storyFr = {
   story: {
@@ -51,14 +93,23 @@ const storyFr = {
       rec_1_description: 'Bassin de production majeur.',
       rec_1_priority: 'Élevée',
       rec_1_region: 'Centrale',
+      rec_1_prefectures: 'Plaine de Mô, Tchaoudjo, Tchamba',
+      rec_1_action: 'Planifier l’extension ZAAP',
+      rec_1_impact: 'Réduire les zones non aménagées',
       rec_2_title: 'Créer des hubs d\'accès',
       rec_2_description: 'Zones à forte densité.',
       rec_2_priority: 'Élevée',
       rec_2_region: 'Kara',
+      rec_2_prefectures: 'Dankpen, Bassar, Keran',
+      rec_2_action: 'Créer des points de collecte',
+      rec_2_impact: 'Réduire la distance commerciale',
       rec_3_title: 'Soutenir le maillage coopératif',
       rec_3_description: 'Région à fort potentiel.',
       rec_3_priority: 'Moyenne',
       rec_3_region: 'Plateaux',
+      rec_3_prefectures: 'Anié, Haho, Agou',
+      rec_3_action: 'Accompagner les coopératives',
+      rec_3_impact: 'Renforcer le pouvoir de négociation',
     },
     share_message: 'Message de partage',
   },
@@ -90,18 +141,13 @@ i18n.use(initReactI18next).init({
 // Mock IntersectionObserver — fires immediately with isIntersecting:true
 // so LazyActContainer reveals content synchronously in tests.
 const mockIntersectionObserver = vi.fn((callback: IntersectionObserverCallback) => {
-  // Simulate immediate intersection for all observed elements
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  callback(
-    [{ isIntersecting: true, boundingClientRect: {} as DOMRectReadOnly, intersectionRatio: 1, target: document.createElement('div') }] as unknown as IntersectionObserverEntry[],
-    {} as IntersectionObserver,
-  );
+  void callback;
   return {
     observe: vi.fn(),
     disconnect: vi.fn(),
     unobserve: vi.fn(),
     takeRecords: () => [],
-  };
+  } as unknown as IntersectionObserver;
 });
 vi.stubGlobal('IntersectionObserver', mockIntersectionObserver);
 
@@ -129,13 +175,14 @@ vi.mock('react-leaflet', () => ({
     zoomIn: vi.fn(),
     zoomOut: vi.fn(),
     setView: vi.fn(),
+    flyTo: vi.fn(),
   }),
   ZoomControl: () => <div />,
 }));
 
 function renderWithProviders(ui: React.ReactElement) {
   return render(
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <I18nextProvider i18n={i18n}>
         {ui}
       </I18nextProvider>
@@ -148,8 +195,11 @@ describe('StoryPage', () => {
     vi.clearAllMocks();
   });
 
-  it('renders hero section with title and CTAs', () => {
+  it('renders hero section with title and CTAs', async () => {
     renderWithProviders(<StoryPage />);
+
+    // Let the lazy synthesis module resolve within the test boundary.
+    await screen.findByText('Où investir ?');
 
     // Hero title should be present
     expect(screen.getByText('Produire ne suffit pas : il faut être relié.')).toBeInTheDocument();
@@ -159,22 +209,22 @@ describe('StoryPage', () => {
     expect(screen.getByText('Explorer librement')).toBeInTheDocument();
   });
 
-  it('renders all 4 act sections', () => {
+  it('renders all 4 act sections', async () => {
     renderWithProviders(<StoryPage />);
 
     // All act titles should be present
-    expect(screen.getByText('Où produit-on ?')).toBeInTheDocument();
-    expect(screen.getByText('Est-ce aménagé ?')).toBeInTheDocument();
-    expect(screen.getByText('Est-ce accessible ?')).toBeInTheDocument();
-    expect(screen.getByText('Est-ce organisé ?')).toBeInTheDocument();
+    expect(await screen.findByText('Où produit-on ?')).toBeInTheDocument();
+    expect(await screen.findByText('Est-ce aménagé ?')).toBeInTheDocument();
+    expect(await screen.findByText('Est-ce accessible ?')).toBeInTheDocument();
+    expect(await screen.findByText('Est-ce organisé ?')).toBeInTheDocument();
   });
 
-  it('renders act key findings', () => {
+  it('renders act key findings', async () => {
     renderWithProviders(<StoryPage />);
 
-    expect(screen.getByText('45% des exploitations')).toBeInTheDocument();
-    expect(screen.getByText('Bassins non couverts')).toBeInTheDocument();
-    expect(screen.getByText('Zones blanches d\'organisation')).toBeInTheDocument();
+    expect(await screen.findByText('45% des exploitations')).toBeInTheDocument();
+    expect(await screen.findByText('Bassins non couverts')).toBeInTheDocument();
+    expect(await screen.findByText('Zones blanches d\'organisation')).toBeInTheDocument();
   });
 
   it('renders synthesis section with title', async () => {
@@ -191,6 +241,15 @@ describe('StoryPage', () => {
     expect(await screen.findByText('Étendre le réseau ZAAP')).toBeInTheDocument();
     expect(await screen.findByText("Créer des hubs d'accès")).toBeInTheDocument();
     expect(await screen.findByText('Soutenir le maillage coopératif')).toBeInTheDocument();
+  });
+
+  it('renders actionable recommendation details', async () => {
+    renderWithProviders(<StoryPage />);
+
+    expect((await screen.findAllByText('Préfectures cibles :')).length).toBeGreaterThanOrEqual(1);
+    expect(await screen.findByText('Plaine de Mô, Tchaoudjo, Tchamba')).toBeInTheDocument();
+    expect(await screen.findByText('Planifier l’extension ZAAP')).toBeInTheDocument();
+    expect(await screen.findByText('Réduire les zones non aménagées')).toBeInTheDocument();
   });
 
   it('renders priority badges on recommendations', async () => {

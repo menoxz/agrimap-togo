@@ -42,14 +42,23 @@
       "rec_1_description": "Bassin de production majeur avec une couverture ZAAP insuffisante. Priorité : étendre les ZAAP pour couvrir les zones de forte densité non aménagées.",
       "rec_1_priority": "Élevée",
       "rec_1_region": "Centrale",
+      "rec_1_prefectures": "Plaine de Mô, Tchaoudjo, Tchamba",
+      "rec_1_action": "Planifier l’extension ZAAP et valider les sites par mission terrain.",
+      "rec_1_impact": "Réduire les zones de production non aménagées.",
       "rec_2_title": "Créer des hubs d'accès aux marchés dans la Kara",
       "rec_2_description": "Zones à forte densité agricole éloignées des marchés. Solution : marchés ruraux mobiles ou hubs de collecte à créer.",
       "rec_2_priority": "Élevée",
       "rec_2_region": "Kara",
+      "rec_2_prefectures": "Dankpen, Bassar, Keran",
+      "rec_2_action": "Créer des points de collecte et expérimenter des marchés mobiles.",
+      "rec_2_impact": "Réduire la distance commerciale pour les producteurs.",
       "rec_3_title": "Soutenir le maillage coopératif dans les Plateaux",
       "rec_3_description": "Région à fort potentiel agricole avec peu de coopératives. Investir dans l'animation coopérative et les infrastructures partagées.",
       "rec_3_priority": "Moyenne",
-      "rec_3_region": "Plateaux"
+      "rec_3_region": "Plateaux",
+      "rec_3_prefectures": "Anié, Haho, Agou",
+      "rec_3_action": "Accompagner la création de coopératives et mutualiser les équipements.",
+      "rec_3_impact": "Renforcer le pouvoir de négociation et l’accès aux intrants."
     },
     "share_message": "Découvrez les zones blanches de services agricoles au Togo — Où investir en priorité ?"
   }

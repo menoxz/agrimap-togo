@@ -24,10 +24,10 @@ export function StoryProgressNav({ activeAct, actTitles }: StoryProgressNavProps
   return (
     <nav className="fixed top-[64px] left-0 right-0 z-40
                     bg-black/90 backdrop-blur-md border-b border-white/10 shadow-lg">
-      {/* Barre de progression verte */}
-      <div className="h-[2px] bg-white/10 w-full">
+      {/* Barre de progression tricolore Togo */}
+      <div className="h-[3px] bg-white/10 w-full">
         <div
-          className="h-full bg-togo-green transition-all duration-300"
+          className="h-full bg-gradient-to-r from-togo-green via-togo-yellow to-togo-red transition-[width] duration-300 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -42,8 +42,10 @@ export function StoryProgressNav({ activeAct, actTitles }: StoryProgressNavProps
                 ${activeAct === i ? 'text-togo-yellow' : 'text-white/40 hover:text-white/70'}`}
             >
               <span
-                className={`w-2 h-2 rounded-full transition-all duration-200
-                  ${activeAct === i ? 'bg-togo-yellow scale-125' : 'bg-white/20'}`}
+                className={`shrink-0 rounded-full transition-all duration-300
+                  ${activeAct === i
+                    ? 'w-3 h-3 bg-togo-yellow shadow-[0_0_8px_rgba(255,209,0,0.7)]'
+                    : 'w-2 h-2 bg-white/20 hover:bg-white/50'}`}
               />
               <span className="hidden tablet:block">{title}</span>
             </button>

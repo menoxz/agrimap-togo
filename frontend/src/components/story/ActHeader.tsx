@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 interface ActHeaderProps {
   actNumber: number;
   title: string;
@@ -36,35 +38,62 @@ export function ActHeader({ actNumber, title, subtitle, accentIndex, light = fal
   const ACCENTS = light ? ACCENTS_LIGHT : ACCENTS_DARK;
   const a = ACCENTS[accentIndex] ?? ACCENTS[0];
 
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
-      className="relative py-10 overflow-hidden"
+      ref={headerRef}
+      className={`relative py-10 overflow-hidden ${isVisible ? 'act-header-visible' : ''}`}
       style={{ background: a.bg }}
     >
+      {/* Ligne d'accent latérale gauche */}
+      <div className="act-header-line" aria-hidden="true" />
+
       {/* Chiffre fantôme */}
       <span
-        className="absolute right-6 top-1/2 -translate-y-1/2
+        className="act-ghost-num absolute right-6 top-1/2 -translate-y-1/2
                    text-[6rem] font-black leading-none select-none pointer-events-none"
         style={{ color: a.ghost }}
+        aria-hidden="true"
       >
         {String(actNumber).padStart(2, '0')}
       </span>
 
       <div className="relative z-10 px-6 tablet:px-10">
         <span
-          className="text-[11px] font-bold uppercase tracking-[0.25em]"
+          className="act-label-reveal block text-[11px] font-bold uppercase tracking-[0.25em]"
           style={{ color: a.label }}
         >
           Acte {actNumber}
         </span>
         <h2
-          className="text-4xl tablet:text-5xl font-black tracking-tight mt-2 leading-tight"
+          className="act-title-reveal text-4xl tablet:text-5xl font-black tracking-tight mt-2 leading-tight"
           style={{ color: a.title }}
         >
           {title}
         </h2>
         {subtitle && (
-          <p className="mt-2 text-sm opacity-60" style={{ color: a.title }}>
+          <p className="act-title-reveal mt-2 text-sm opacity-60" style={{ color: a.title, transitionDelay: '0.36s' }}>
             {subtitle}
           </p>
         )}

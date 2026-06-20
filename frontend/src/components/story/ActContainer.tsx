@@ -126,20 +126,17 @@ export default function ActContainer({
       ref={sectionRef}
       className="min-h-screen py-8 tablet:py-10 desktop:py-12 scroll-mt-20"
     >
-      <div
-        className={[
-          'container-page',
-          'transition-all duration-700 ease-out',
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
-        ].join(' ')}
-      >
+      <div className="container-page">
         <div className="flex flex-col desktop:flex-row gap-6 desktop:gap-8">
 
-          {/* Colonne texte — 60 % */}
+          {/* Colonne texte — 60 % — éléments staggerés */}
           <div className="w-full desktop:w-3/5 space-y-5">
 
-            {/* Header acte */}
-            <div className="flex items-start gap-3">
+            {/* 1 — Header acte */}
+            <div
+              className={`act-stagger-item flex items-start gap-3${isVisible ? ' act-item-visible' : ''}`}
+              style={{ transitionDelay: '0ms' }}
+            >
               <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${tk.circle}`}>
                 {actNumber}
               </div>
@@ -149,11 +146,20 @@ export default function ActContainer({
               </div>
             </div>
 
-            {/* Corps narratif */}
-            <p className={`leading-relaxed text-[15px] ${tk.body}`}>{body}</p>
+            {/* 2 — Corps narratif */}
+            <p
+              className={`act-stagger-item leading-relaxed text-[15px] ${tk.body}${isVisible ? ' act-item-visible' : ''}`}
+              style={{ transitionDelay: '110ms' }}
+            >
+              {body}
+            </p>
 
-            {/* Encadré key finding */}
-            <div ref={findingRef} className={`rounded-lg border p-4 flex gap-3 ${tk.findingBox}`}>
+            {/* 3 — Encadré key finding */}
+            <div
+              ref={findingRef}
+              className={`act-stagger-item rounded-lg border p-4 flex gap-3 ${tk.findingBox}${isVisible ? ' act-item-visible' : ''}`}
+              style={{ transitionDelay: '230ms' }}
+            >
               <Lightbulb size={20} className={`shrink-0 mt-0.5 ${tk.findingIco}`} />
               <div className="flex-1">
                 <p className={`text-xs font-bold uppercase tracking-wider mb-1 ${tk.findingLbl}`}>
@@ -168,22 +174,32 @@ export default function ActContainer({
               </div>
             </div>
 
-            {/* Question guide */}
-            <div className="flex gap-3 items-start">
+            {/* 4 — Question guide */}
+            <div
+              className={`act-stagger-item flex gap-3 items-start${isVisible ? ' act-item-visible' : ''}`}
+              style={{ transitionDelay: '360ms' }}
+            >
               <HelpCircle size={18} className={`shrink-0 mt-0.5 ${tk.qIco}`} />
               <p className={`text-sm font-medium leading-relaxed ${tk.qTxt}`}>{question}</p>
             </div>
 
-            {/* Badge acte */}
-            <Badge variant="primary" size="md">
-              {`Acte ${actNumber} / 4`}
-            </Badge>
+            {/* 5 — Badge acte */}
+            <div
+              className={`act-stagger-item${isVisible ? ' act-item-visible' : ''}`}
+              style={{ transitionDelay: '480ms' }}
+            >
+              <Badge variant="primary" size="md">
+                {`Acte ${actNumber} / 4`}
+              </Badge>
+            </div>
           </div>
 
-          {/* Colonne carte — 40 % */}
+          {/* Colonne carte — 40 % — slide depuis la droite */}
           <div className="w-full desktop:w-2/5">
             <div className="desktop:sticky desktop:top-24">
-              <div className={`rounded-xl overflow-hidden border ${tk.mapBorder}`}>
+              <div
+                className={`act-map-reveal rounded-xl overflow-hidden border ${tk.mapBorder}${isVisible ? ' act-map-visible' : ''}`}
+              >
                 <div className="h-[350px] tablet:h-[400px] desktop:h-[500px] relative">
                   <TogoMap scrollWheelZoom={true}>
                     {highlightedRegion && isValidElement(layerComponent)

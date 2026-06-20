@@ -42,14 +42,23 @@
       "rec_1_description": "Major production basin with insufficient ZAAP coverage. Priority: extend ZAAPs to cover undeveloped high-density areas.",
       "rec_1_priority": "High",
       "rec_1_region": "Centrale",
+      "rec_1_prefectures": "Plaine de Mô, Tchaoudjo, Tchamba",
+      "rec_1_action": "Plan ZAAP extension and validate sites through field missions.",
+      "rec_1_impact": "Reduce undeveloped high-production areas.",
       "rec_2_title": "Create market access hubs in Kara region",
       "rec_2_description": "High-density agricultural areas far from markets. Solution: mobile rural markets or collection hubs to be created.",
       "rec_2_priority": "High",
       "rec_2_region": "Kara",
+      "rec_2_prefectures": "Dankpen, Bassar, Keran",
+      "rec_2_action": "Create collection points and pilot mobile rural markets.",
+      "rec_2_impact": "Reduce commercial distance for producers.",
       "rec_3_title": "Support cooperative networks in Plateaux region",
       "rec_3_description": "High agricultural potential region with few cooperatives. Invest in cooperative organization and shared infrastructure.",
       "rec_3_priority": "Medium",
-      "rec_3_region": "Plateaux"
+      "rec_3_region": "Plateaux",
+      "rec_3_prefectures": "Anié, Haho, Agou",
+      "rec_3_action": "Support cooperative creation and shared equipment.",
+      "rec_3_impact": "Strengthen bargaining power and access to inputs."
     },
     "share_message": "Discover agricultural service white zones in Togo — Where to invest first?"
   }
