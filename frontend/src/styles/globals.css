@@ -561,4 +561,62 @@
 .act-light-bg .bg-surface .text-accent,
 .act-light-bg .bg-accent-light .text-accent     { color: rgb(230, 81, 0) !important; }
 
+/* ──────────────────────────────────────────────
+   Report — scroll-driven section reveals
+   ────────────────────────────────────────────── */
+
+/* Progress bar fixe sous la navbar (h-16 = 64px) */
+.report-progress-bar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 40;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #006A4E calc(1 * var(--scroll-pct, 0%) / 3),
+    #FFD100 calc(1 * var(--scroll-pct, 0%) / 3) calc(2 * var(--scroll-pct, 0%) / 3),
+    #D21034 calc(2 * var(--scroll-pct, 0%) / 3) var(--scroll-pct, 0%),
+    transparent var(--scroll-pct, 0%)
+  );
+  transition: background 0.1s linear;
+}
+
+/* Section card : état initial (caché, décalé vers le bas) */
+.report-section-card {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity   0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+/* Accent bar gauche colorée via --section-accent */
+.report-section-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--section-accent, #006A4E);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+/* État visible — déclenché par IntersectionObserver */
+.report-section-card.report-visible {
+  opacity: 1;
+  transform: none;
+}
+.report-section-card.report-visible::before {
+  transform: scaleY(1);
+}
+
 

@@ -28,7 +28,7 @@
       "kpi1_label": "Zones without services",
       "kpi1_desc": "across 5 analyzed regions",
       "kpi2_label": "Service types",
-      "kpi2_desc": "water, health, inputs, markets, credit",
+      "kpi2_desc": "markets, cooperatives, farms, ZAAP, nurseries",
       "kpi3_label": "Not covered",
       "kpi3_desc": "of priority agricultural zones",
       "region_title": "Criticality by region",
@@ -109,8 +109,9 @@
     "synthesis_hint": "Select the Synthesis layer to see priority investment zones",
     "region_label": "Region",
     "region_placeholder": "Select a region",
-    "analysis_type_label": "Analysis type",
-    "hero": {
+      "analysis_type_label": "Analysis type",
+      "unavailable_marker_note": "ZAAP and nurseries: data is not shown as point markers; it is included in aggregate analyses when available.",
+      "hero": {
       "title": "Priority Zone Mapping",
       "subtitle": "Identify territories where access to agricultural services is most critical.",
       "stat_zones": "zones identified",
@@ -123,8 +124,9 @@
   "report": {
     "title": "Report",
     "subtitle": "Methodology, sources and data quality",
+    "hero_badge": "METHODOLOGICAL REPORT",
     "toc": "Table of contents",
-    "download_pdf": "Download PDF",
+    "download_pdf": "Print / export PDF",
     "copy_link": "Copy link",
     "sections": {
       "approach": "1. Methodology",

@@ -28,11 +28,26 @@ interface TocItem {
   children?: TocItem[];
 }
 
+/** Couleurs d'accent par section — utilisées pour la barre gauche */
+const SECTION_ACCENTS: Record<string, string> = {
+  approach:     '#006A4E',
+  sources:      '#1565C0',
+  quality:      '#C7A700',
+  completeness: '#E65100',
+  precision:    '#E65100',
+  analyses:     '#D21034',
+  comparative:  '#7B1FA2',
+  limits:       '#9A3412',
+  conclusion:   '#166534',
+};
+
 export default function ReportPage() {
   const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState('');
   const [copied, setCopied] = useState(false);
   const [tocOpen, setTocOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [revealed, setRevealed] = useState<Set<string>>(new Set());
 
   const tocItems: TocItem[] = [
     { id: 'approach', label: t('report.sections.approach'), icon: BookOpen },
@@ -98,6 +113,47 @@ export default function ReportPage() {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  // ── Scroll progress bar ──
+  useEffect(() => {
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(Math.min((window.scrollY / Math.max(max, 1)) * 100, 100));
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // ── Section reveal au scroll (IntersectionObserver) ──
+  useEffect(() => {
+    const sectionIds: string[] = [];
+    const flatten = (items: TocItem[]): void => {
+      for (const item of items) {
+        sectionIds.push(item.id);
+        if (item.children) flatten(item.children);
+      }
+    };
+    flatten(tocItems);
+
+    const obs: IntersectionObserver[] = [];
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      const o = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setRevealed((prev) => new Set([...prev, id]));
+            o.disconnect();
+          }
+        },
+        { threshold: 0.12 },
+      );
+      o.observe(el);
+      obs.push(o);
+    }
+    return () => obs.forEach((o) => o.disconnect());
   }, []);
 
   // ── Comparative analysis data ──
@@ -210,35 +266,56 @@ export default function ReportPage() {
   };
 
   return (
-    <div className="container-page py-6 tablet:py-8">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-h2 font-bold text-text">{t('report.title')}</h1>
-          <p className="text-body text-text-secondary mt-1">
-            {t('report.subtitle')}
-          </p>
+    <div className="min-h-screen">
+      {/* Progress bar fixe tricolore sous la navbar */}
+      <div
+        className="report-progress-bar"
+        style={{ '--scroll-pct': `${scrollProgress}%` } as React.CSSProperties}
+        aria-hidden="true"
+      />
+
+      <div className="container-page py-6 tablet:py-8">
+        {/* Header — Hero incarné */}
+        <div className="mb-10">
+          <Badge variant="primary" size="sm" className="mb-4">
+            {t('report.hero_badge')}
+          </Badge>
+
+          <div className="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <h1 className="text-h2 font-bold text-text">{t('report.title')}</h1>
+              <p className="text-body text-text-secondary mt-1">
+                {t('report.subtitle')}
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <Button
+                variant="outline"
+                size="md"
+                color="primary"
+                icon={copied ? CheckCircle : Link}
+                onClick={copyLink}
+              >
+                {copied ? 'Copié !' : t('report.copy_link')}
+              </Button>
+              <Button
+                variant="filled"
+                size="md"
+                color="primary"
+                icon={Download}
+              >
+                {t('report.download_pdf')}
+              </Button>
+            </div>
+          </div>
+
+          {/* Barre décorative tricolore */}
+          <div
+            className="h-1 rounded-full w-24"
+            style={{ background: 'linear-gradient(90deg, #006A4E 33%, #FFD100 33% 66%, #D21034 66%)' }}
+            aria-hidden="true"
+          />
         </div>
-        <div className="flex items-center gap-3">
-          <Button
-            variant="outline"
-            size="md"
-            color="primary"
-            icon={copied ? CheckCircle : Link}
-            onClick={copyLink}
-          >
-            {copied ? 'Copié !' : t('report.copy_link')}
-          </Button>
-          <Button
-            variant="filled"
-            size="md"
-            color="primary"
-            icon={Download}
-          >
-            {t('report.download_pdf')}
-          </Button>
-        </div>
-      </div>
 
       {/* Mobile TOC toggle */}
       <button
@@ -282,7 +359,11 @@ export default function ReportPage() {
 
         {/* Content */}
         <div className="flex-1 max-w-3xl space-y-10">
-          <section id="approach">
+          <section
+            id="approach"
+            className={`report-section-card${revealed.has('approach') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.approach } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <BookOpen size={22} className="text-primary" />
               {t('report.sections.approach')}
@@ -292,7 +373,11 @@ export default function ReportPage() {
             </p>
           </section>
 
-          <section id="sources">
+          <section
+            id="sources"
+            className={`report-section-card${revealed.has('sources') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.sources } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <Database size={22} className="text-secondary" />
               {t('report.sections.sources')}
@@ -302,7 +387,11 @@ export default function ReportPage() {
             </p>
           </section>
 
-          <section id="quality">
+          <section
+            id="quality"
+            className={`report-section-card${revealed.has('quality') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.quality } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <BarChart3 size={22} className="text-info" />
               {t('report.sections.quality')}
@@ -369,7 +458,11 @@ export default function ReportPage() {
             </div>
           </section>
 
-          <section id="analyses">
+          <section
+            id="analyses"
+            className={`report-section-card${revealed.has('analyses') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.analyses } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <Target size={22} className="text-accent" />
               {t('report.sections.analyses')}
@@ -379,7 +472,11 @@ export default function ReportPage() {
             </p>
           </section>
 
-          <section id="comparative">
+          <section
+            id="comparative"
+            className={`report-section-card${revealed.has('comparative') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.comparative } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <BarChart3 size={22} className="text-accent" />
               {t('report.sections.comparative')}
@@ -469,7 +566,11 @@ export default function ReportPage() {
             )}
           </section>
 
-          <section id="limits">
+          <section
+            id="limits"
+            className={`report-section-card${revealed.has('limits') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.limits } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <AlertTriangle size={22} className="text-warning" />
               {t('report.sections.limits')}
@@ -479,7 +580,11 @@ export default function ReportPage() {
             </p>
           </section>
 
-          <section id="conclusion">
+          <section
+            id="conclusion"
+            className={`report-section-card${revealed.has('conclusion') ? ' report-visible' : ''}`}
+            style={{ '--section-accent': SECTION_ACCENTS.conclusion } as React.CSSProperties}
+          >
             <h2 className="text-h3 font-bold text-text mb-4 flex items-center gap-2">
               <CheckCircle size={22} className="text-success" />
               {t('report.sections.conclusion')}
@@ -497,6 +602,7 @@ export default function ReportPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

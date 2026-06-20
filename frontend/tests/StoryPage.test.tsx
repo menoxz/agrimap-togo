@@ -201,8 +201,8 @@ describe('StoryPage', () => {
     // Let the lazy synthesis module resolve within the test boundary.
     await screen.findByText('Où investir ?');
 
-    // Hero title should be present
-    expect(screen.getByText('Produire ne suffit pas : il faut être relié.')).toBeInTheDocument();
+    // Hero title should be present (split into word spans for stagger animation)
+    expect(screen.getByRole('heading', { name: /produire.*relié/i })).toBeInTheDocument();
 
     // CTAs should be present
     expect(screen.getByText("Commencer l'histoire")).toBeInTheDocument();

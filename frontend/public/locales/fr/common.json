@@ -28,7 +28,7 @@
       "kpi1_label": "Zones sans services",
       "kpi1_desc": "sur 5 régions analysées",
       "kpi2_label": "Types de services",
-      "kpi2_desc": "eau, santé, intrants, marchés, crédit",
+      "kpi2_desc": "marchés, coopératives, exploitations, ZAAP, pépinières",
       "kpi3_label": "Non couverts",
       "kpi3_desc": "des zones agricoles prioritaires",
       "region_title": "Criticité par région",
@@ -109,8 +109,9 @@
     "synthesis_hint": "Sélectionnez la couche Synthèse pour voir les zones prioritaires",
     "region_label": "Région",
     "region_placeholder": "Sélectionner une région",
-    "analysis_type_label": "Type d'analyse",
-    "hero": {
+      "analysis_type_label": "Type d'analyse",
+      "unavailable_marker_note": "ZAAP et pépinières : données non affichées comme marqueurs ponctuels ; intégrées aux analyses agrégées quand disponibles.",
+      "hero": {
       "title": "Cartographie des zones prioritaires",
       "subtitle": "Identifiez les territoires où l'accès aux services agricoles est le plus critique.",
       "stat_zones": "zones identifiées",
@@ -123,8 +124,9 @@
   "report": {
     "title": "Rapport",
     "subtitle": "Démarche, sources et qualité des données",
+    "hero_badge": "RAPPORT MÉTHODOLOGIQUE",
     "toc": "Sommaire",
-    "download_pdf": "Télécharger PDF",
+    "download_pdf": "Imprimer / exporter PDF",
     "copy_link": "Copier le lien",
     "sections": {
       "approach": "1. Démarche",
