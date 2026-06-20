@@ -19,29 +19,13 @@
   "content": {
     "approach": "This report details the methodology behind AgriMap Togo, a mapping dashboard of agricultural service white zones in Togo. The approach is based on a cross-analysis of 4 key dimensions: farm density, ZAAP coverage, market and nursery accessibility, and the cooperative network. Each dimension is calculated from official open data, processed and normalized to produce comparable indicators across regions.",
     "sources": "Data comes exclusively from Togolese open sources: geodata.gouv.tg for geospatial data (regions, prefectures, ZAAP), opendata.gouv.tg for agricultural statistical data (farm census, cooperative directories), and market data collected by decentralized services of the Ministry of Agriculture.",
-    "quality_completeness": "Data completeness varies by dimension. The analysis scope covers the 5 regions and the 37 prefectures available in AgriMap's consolidated dataset (100% completeness within this scope). ZAAP data is exhaustive for official perimeters. Accessibility and cooperative network data have an estimated completeness of 85%, as some remote localities are not yet referenced.",
+    "quality_completeness": "Data completeness varies by dimension. Agricultural census data covers all 5 regions and 39 prefectures of Togo (100% completeness). ZAAP data is exhaustive for official perimeters. Accessibility and cooperative network data have an estimated completeness of 85%, as some remote localities are not yet referenced.",
     "quality_precision": "Spatial precision is approximately 100 meters for geospatial data (regions, ZAAP) and 500 meters for market and cooperative location data (approximate geocoding). Statistical indicators (density, coverage rates) are calculated at the prefecture level, which may mask intra-regional disparities.",
     "limits": "This work has several limitations. First, data timeliness: sources date from 2024-2025, some recent developments may not be reflected. Second, prefecture-level granularity does not allow sub-municipal analysis. Third, accessibility data is based on Euclidean distances rather than actual travel times (roads, seasons). Finally, the lack of data on informal and subsistence agriculture limits the complete picture of the sector.",
     "conclusion": "AgriMap Togo is a decision-support tool, not an absolute truth. It identifies trends and priorities at the regional level, but each investment must be validated by field study. The white zone approach — focused on opportunities rather than gaps — aims to encourage targeted and constructive action.",
     "analyses": "The 4 cross-analyses (density, ZAAP, accessibility, cooperative network) are combined into a synthetic prioritization index. Each analysis is available in free exploration mode and in the guided narrative.",
     "comparative_intro": "This section ranks all 37 prefectures of Togo by the synthetic prioritization index. Use the selector to view each prefecture's profile across the 4 dimensions. The table is sortable by column to identify best and worst performers.",
-    "comparative_note": "Scores are normalized on 0-100. 0 = maximum priority (urgent need), 100 = well-served. The radar chart compares the selected prefecture's profile to its region's average.",
-    "score_explainer": "The lower the score, the higher the priority need.",
-    "top_priorities_title": "Prefectures to address first",
-    "top_priorities_text": "The most urgent prefectures are Plaine de Mô, Ave, Anié, Tchaoudjo and Dankpen: they combine high need with weak service coverage.",
-    "weighting_title": "How the final score is calculated",
-    "weighting_intro": "The final score combines four dimensions with equal weights to remain readable and comparable for the jury and decision-makers."
-  },
-  "weighting_table": {
-    "criterion": "Criterion",
-    "weight": "Weight",
-    "why": "Why",
-    "rows": {
-      "density": { "criterion": "Agricultural density", "weight": "25%", "why": "Measures production intensity and high-stakes basins." },
-      "access": { "criterion": "Market accessibility", "weight": "25%", "why": "Measures access to commercial outlets and nearby services." },
-      "coop": { "criterion": "Cooperative network", "weight": "25%", "why": "Measures producers’ collective organization capacity." },
-      "zaap": { "criterion": "ZAAP coverage", "weight": "25%", "why": "Measures access to planned agricultural development areas." }
-    }
+    "comparative_note": "Scores are normalized on 0-100. 0 = maximum priority (urgent need), 100 = well-served. The radar chart compares the selected prefecture's profile to its region's average."
   },
   "radar": {
     "title": "Radar profile — {prefecture}",
@@ -58,7 +42,7 @@
     "rank": "Rank",
     "prefecture": "Prefecture",
     "region": "Region",
-    "synthesis": "Priority need level",
+    "synthesis": "Synth. score",
     "density": "Density",
     "access": "Accessibility",
     "coop": "Cooperatives",

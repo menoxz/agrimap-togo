@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, type CSSProperties } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   FileText,
   Download,
@@ -33,7 +33,6 @@ export default function ReportPage() {
   const [activeSection, setActiveSection] = useState('');
   const [copied, setCopied] = useState(false);
   const [tocOpen, setTocOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   const tocItems: TocItem[] = [
     { id: 'approach', label: t('report.sections.approach'), icon: BookOpen },
@@ -57,25 +56,6 @@ export default function ReportPage() {
     { id: 'conclusion', label: t('report.sections.conclusion'), icon: CheckCircle },
   ];
 
-  const narrativeItems = [
-    { id: 'approach', label: t('report.sections.approach'), eyebrow: t('report:narrative.steps.approach'), icon: BookOpen, color: '#006A4E' },
-    { id: 'sources', label: t('report.sections.sources'), eyebrow: t('report:narrative.steps.sources'), icon: Database, color: '#1565C0' },
-    { id: 'quality', label: t('report.sections.quality'), eyebrow: t('report:narrative.steps.quality'), icon: BarChart3, color: '#FFD100' },
-    { id: 'analyses', label: t('report.sections.analyses'), eyebrow: t('report:narrative.steps.analyses'), icon: Target, color: '#E65100' },
-    { id: 'comparative', label: t('report.sections.comparative'), eyebrow: t('report:narrative.steps.comparative'), icon: BarChart3, color: '#D21034' },
-    { id: 'limits', label: t('report.sections.limits'), eyebrow: t('report:narrative.steps.limits'), icon: AlertTriangle, color: '#9A3412' },
-    { id: 'conclusion', label: t('report.sections.conclusion'), eyebrow: t('report:narrative.steps.conclusion'), icon: CheckCircle, color: '#166534' },
-  ];
-
-  const sectionParentMap: Record<string, string> = {
-    completeness: 'quality',
-    precision: 'quality',
-  };
-
-  const activeNarrativeId = sectionParentMap[activeSection] ?? activeSection;
-  const activeNarrativeIndex = Math.max(0, narrativeItems.findIndex((item) => item.id === activeNarrativeId));
-  const accentStyle = (color: string): CSSProperties => ({ '--story-accent': color } as CSSProperties);
-
   useEffect(() => {
     const flattenIds = (items: TocItem[]): string[] => {
       return items.flatMap((item) => [item.id, ...(item.children ? flattenIds(item.children) : [])]);
@@ -85,12 +65,6 @@ export default function ReportPage() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('report-visible');
-          }
-        });
-
         const intersecting = entries.filter((entry) => entry.isIntersecting);
         if (intersecting.length === 0) {
           return;
@@ -126,22 +100,6 @@ export default function ReportPage() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const updateProgress = () => {
-      const doc = document.documentElement;
-      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
-      setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / max) * 100)));
-    };
-
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress);
-    return () => {
-      window.removeEventListener('scroll', updateProgress);
-      window.removeEventListener('resize', updateProgress);
-    };
-  }, []);
-
   // ── Comparative analysis data ──
   const DATA_URL = '/data/analysis/prefecture_synthesis.geojson';
   const { data: synthesisData, loading: synthLoading } = useDataLoader(DATA_URL);
@@ -159,8 +117,7 @@ export default function ReportPage() {
         zaap_score: Number(f.properties.zaap_score ?? 50),
         synthesis_score: Number(f.properties.synthesis_score ?? 0),
         priority_level: String(f.properties.priority_level ?? ''),
-      }))
-      .sort((a, b) => a.synthesis_score - b.synthesis_score);
+      }));
   }, [synthesisData]);
 
   // Compute regional averages
@@ -227,10 +184,6 @@ export default function ReportPage() {
     }
   };
 
-  const exportPdf = () => {
-    window.print();
-  };
-
   const renderTocItem = (item: TocItem, depth = 0) => {
     const isActive = activeSection === item.id;
     const Icon = item.icon;
@@ -257,66 +210,35 @@ export default function ReportPage() {
   };
 
   return (
-    <>
-      <div className="fixed left-0 right-0 top-16 z-40 h-1 bg-transparent no-print" aria-hidden="true">
-        <div
-          className="h-full bg-gradient-to-r from-togo-green via-togo-yellow to-togo-red transition-[width] duration-150 ease-out"
-          style={{ width: `${scrollProgress}%` }}
-        />
+    <div className="container-page py-6 tablet:py-8">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h1 className="text-h2 font-bold text-text">{t('report.title')}</h1>
+          <p className="text-body text-text-secondary mt-1">
+            {t('report.subtitle')}
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <Button
+            variant="outline"
+            size="md"
+            color="primary"
+            icon={copied ? CheckCircle : Link}
+            onClick={copyLink}
+          >
+            {copied ? 'Copié !' : t('report.copy_link')}
+          </Button>
+          <Button
+            variant="filled"
+            size="md"
+            color="primary"
+            icon={Download}
+          >
+            {t('report.download_pdf')}
+          </Button>
+        </div>
       </div>
-
-      <div className="container-page py-6 tablet:py-8">
-        {/* Header */}
-        <header className="report-hero relative overflow-hidden rounded-[2rem] border border-white/50 bg-gradient-to-br from-[#003D24] via-[#006A4E] to-[#0A1628] p-6 tablet:p-8 desktop:p-10 text-white shadow-[0_30px_90px_rgba(30,41,59,0.22)] mb-8">
-          <div className="absolute inset-0 opacity-50" aria-hidden="true">
-            <div className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-togo-yellow/20 blur-3xl animate-hero-glow" />
-            <div className="absolute right-8 bottom-4 h-40 w-40 rounded-full bg-togo-red/20 blur-3xl animate-hero-glow" style={{ animationDelay: '900ms' }} />
-          </div>
-
-          <div className="relative z-10 grid gap-8 desktop:grid-cols-[1fr_320px] desktop:items-end">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-white/80 animate-fade-in">
-                <BookOpen size={14} />
-                {t('report:narrative.eyebrow')}
-              </span>
-              <h1 className="mt-5 text-[2.5rem] tablet:text-[3.6rem] font-black leading-[1.02] tracking-[-0.05em] text-balance animate-hero-word">
-                {t('report.title')}
-              </h1>
-              <p className="mt-4 max-w-2xl text-body-lg text-white/78 leading-relaxed animate-fade-up" style={{ animationDelay: '180ms' }}>
-                {t('report.subtitle')}
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm animate-cta-pop" style={{ animationDelay: '260ms' }}>
-              <p className="text-xs uppercase tracking-[0.22em] text-white/60">{t('report:narrative.reading_label')}</p>
-              <p className="mt-2 text-3xl font-black tabular-nums">{Math.round(scrollProgress)}%</p>
-              <p className="mt-1 text-sm text-white/70">{t('report:narrative.reading_hint')}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  color="primary"
-                  icon={copied ? CheckCircle : Link}
-                  onClick={copyLink}
-                  className="!border-white/40 !bg-white/10 !text-white hover:!bg-white/20"
-                >
-                  {copied ? 'Copié !' : t('report.copy_link')}
-                </Button>
-                <Button
-                  variant="filled"
-                  size="sm"
-                  color="primary"
-                  icon={Download}
-                  type="button"
-                  onClick={exportPdf}
-                  className="!bg-white !text-primary hover:!bg-white/90"
-                >
-                  {t('report.download_pdf')}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </header>
 
       {/* Mobile TOC toggle */}
       <button
@@ -462,56 +384,9 @@ export default function ReportPage() {
               <BarChart3 size={22} className="text-accent" />
               {t('report.sections.comparative')}
             </h2>
-            <p className="text-body text-text-secondary leading-relaxed mb-4">
+            <p className="text-body text-text-secondary leading-relaxed mb-6">
               {t('report:content.comparative_intro')}
             </p>
-
-            <div className="mb-6 rounded-md border border-warning/30 bg-warning/10 p-4">
-              <p className="text-body-sm font-semibold text-text">
-                {t('report:content.score_explainer')}
-              </p>
-              <p className="text-body-xs text-text-secondary mt-1">
-                {t('report:content.comparative_note')}
-              </p>
-            </div>
-
-            <div className="mb-6 rounded-md border border-border bg-white p-4">
-              <h3 className="text-h4 font-semibold text-text mb-2">
-                {t('report:content.weighting_title')}
-              </h3>
-              <p className="text-body-sm text-text-secondary mb-4">
-                {t('report:content.weighting_intro')}
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-body-sm border-collapse">
-                  <thead>
-                    <tr className="bg-primary-light text-primary">
-                      <th className="text-left px-4 py-2 font-semibold">{t('report:weighting_table.criterion')}</th>
-                      <th className="text-left px-4 py-2 font-semibold">{t('report:weighting_table.weight')}</th>
-                      <th className="text-left px-4 py-2 font-semibold">{t('report:weighting_table.why')}</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
-                    {(['density', 'access', 'coop', 'zaap'] as const).map((key) => (
-                      <tr key={key} className="hover:bg-surface-alt">
-                        <td className="px-4 py-2">{t(`report:weighting_table.rows.${key}.criterion`)}</td>
-                        <td className="px-4 py-2 font-semibold text-primary">{t(`report:weighting_table.rows.${key}.weight`)}</td>
-                        <td className="px-4 py-2 text-text-secondary">{t(`report:weighting_table.rows.${key}.why`)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div className="mb-6 rounded-md border-l-4 border-primary bg-primary-light/30 p-4">
-              <h3 className="text-body font-semibold text-text mb-1">
-                {t('report:content.top_priorities_title')}
-              </h3>
-              <p className="text-body-sm text-text-secondary">
-                {t('report:content.top_priorities_text')}
-              </p>
-            </div>
 
             {synthLoading ? (
               <div className="flex items-center justify-center py-12 text-text-secondary">
@@ -576,6 +451,11 @@ export default function ReportPage() {
                   </div>
                 </div>
 
+                {/* Note */}
+                <p className="text-body-xs text-text-secondary italic mb-6">
+                  {t('report:content.comparative_note')}
+                </p>
+
                 {/* Ranking table */}
                 <h3 className="text-h4 font-semibold text-text mb-3">
                   {t('report:table.title')}
@@ -618,6 +498,5 @@ export default function ReportPage() {
         </div>
       </div>
     </div>
-    </>
   );
 }
