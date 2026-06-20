@@ -451,32 +451,6 @@
     box-shadow: none;
   }
 
-  /* ── Nouvelles animations — désactivées si motion réduit ── */
-  .page-enter {
-    animation: none;
-    opacity: 1;
-    transform: none;
-    filter: none;
-  }
-
-  .hero-motion-bg,
-  .hero-sprout-badge::before,
-  .hero-sprout-badge::after {
-    animation: none;
-  }
-
-  .hero-motion-bg {
-    opacity: 0.3;
-    transform: none;
-  }
-
-  .kpi-motion-card,
-  .kpi-motion-card:hover,
-  .map-motion-frame {
-    transform: none;
-    transition: none;
-  }
-
   .mobile-menu-animated {
     transition: none;
   }
@@ -490,30 +464,6 @@
   .glass-card-dark {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-  }
-
-  /* Story — désactivation des reveals au scroll */
-  .act-ghost-num,
-  .act-label-reveal,
-  .act-title-reveal,
-  .act-header-line {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .act-header-visible .act-ghost-num { opacity: 0.15; }
-
-  .act-stagger-item,
-  .act-divider-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .act-map-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
 
