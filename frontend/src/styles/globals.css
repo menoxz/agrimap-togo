@@ -423,34 +423,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal,
-  .scroll-reveal-left,
-  .scroll-reveal-right,
-  .scroll-reveal-scale {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .card-hover-lift:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .cta-hover-scale:hover {
-    transform: none;
-  }
-
-  .animate-map-fade {
-    animation: none;
-    opacity: 1;
-  }
-
-  .bento-card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
   .mobile-menu-animated {
     transition: none;
   }
