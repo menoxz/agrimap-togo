@@ -1,10 +1,19 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
 import { createInstance } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import ReportPage from '../src/pages/ReportPage';
+
+vi.mock('@/hooks/useDataLoader', () => ({
+  useDataLoader: () => ({
+    data: { type: 'FeatureCollection', features: [] },
+    loading: false,
+    error: null,
+    refetch: vi.fn(),
+  }),
+}));
 
 const reportFr = {
   report: {
@@ -24,8 +33,9 @@ const reportFr = {
       zaap: '4.2 Couverture ZAAP',
       access: '4.3 Accessibilité',
       coop: '4.4 Réseau coopératif',
-      limits: '5. Limites',
-      conclusion: '6. Conclusion',
+      comparative: '5. Analyse comparative',
+      limits: '6. Limites',
+      conclusion: '7. Conclusion',
     },
   },
   content: {
@@ -33,8 +43,39 @@ const reportFr = {
     sources: 'Contenu sources',
     quality_completeness: 'Contenu complétude',
     quality_precision: 'Contenu précision',
+    analyses: 'Contenu analyses',
+    comparative_intro: 'Contenu comparatif',
+    comparative_note: 'Les scores sont normalisés sur 0-100. 0 = priorité maximale, 100 = bien desservi.',
+    score_explainer: 'Plus le score est bas, plus la zone est prioritaire.',
+    top_priorities_title: 'Préfectures à traiter en premier',
+    top_priorities_text: 'Les préfectures les plus urgentes sont Plaine de Mô, Ave, Anié, Tchaoudjo et Dankpen.',
+    weighting_title: 'Comment le score final est calculé',
+    weighting_intro: 'Le score final combine quatre dimensions avec des pondérations visibles.',
     limits: 'Contenu limites',
     conclusion: 'Contenu conclusion',
+  },
+  weighting_table: {
+    criterion: 'Critère',
+    weight: 'Poids',
+    why: 'Pourquoi',
+    rows: {
+      density: { criterion: 'Densité agricole', weight: '25%', why: 'Mesure l’intensité de production.' },
+      access: { criterion: 'Accessibilité marchés', weight: '25%', why: 'Mesure l’accès aux débouchés.' },
+      coop: { criterion: 'Réseau coopératif', weight: '25%', why: 'Mesure le soutien collectif.' },
+      zaap: { criterion: 'Couverture ZAAP', weight: '25%', why: 'Mesure l’aménagement agricole.' },
+    },
+  },
+  table: {
+    title: 'Classement des 37 préfectures',
+    synthesis: 'Niveau de besoin prioritaire',
+    density: 'Densité',
+    access: 'Accessibilité',
+    coop: 'Coopératives',
+    zaap: 'ZAAP',
+    no_data: 'Chargement des données...',
+  },
+  radar: {
+    select: 'Sélectionner une préfecture',
   },
   badge: {
     data_freshness: 'Données : juin 2026',
@@ -83,7 +124,7 @@ Object.defineProperty(navigator, 'clipboard', {
 
 function renderWithProviders() {
   return render(
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <I18nextProvider i18n={i18n}>
         <ReportPage />
       </I18nextProvider>
@@ -150,6 +191,16 @@ describe('ReportPage', () => {
     expect(window.location.hash).toBe('#completeness');
   });
 
+  it('explains score direction and visible weighting before the ranking', () => {
+    renderWithProviders();
+
+    expect(screen.getByText('Plus le score est bas, plus la zone est prioritaire.')).toBeInTheDocument();
+    expect(screen.getByText('Comment le score final est calculé')).toBeInTheDocument();
+    expect(screen.getByText('Densité agricole')).toBeInTheDocument();
+    expect(screen.getAllByText('25%')).toHaveLength(4);
+    expect(screen.getByText('Préfectures à traiter en premier')).toBeInTheDocument();
+  });
+
   it('keeps 3.2 Précision active when multiple sections intersect', () => {
     const { container } = renderWithProviders();
 
@@ -165,21 +216,23 @@ describe('ReportPage', () => {
     const precisionSection = document.getElementById('precision') as HTMLElement;
     const limitsSection = document.getElementById('limits') as HTMLElement;
 
-    observerCallback?.(
-      [
-        {
-          isIntersecting: true,
-          target: precisionSection,
-          boundingClientRect: { top: 10 },
-        } as unknown as IntersectionObserverEntry,
-        {
-          isIntersecting: true,
-          target: limitsSection,
-          boundingClientRect: { top: 180 },
-        } as unknown as IntersectionObserverEntry,
-      ],
-      {} as IntersectionObserver,
-    );
+    act(() => {
+      observerCallback?.(
+        [
+          {
+            isIntersecting: true,
+            target: precisionSection,
+            boundingClientRect: { top: 10 },
+          } as unknown as IntersectionObserverEntry,
+          {
+            isIntersecting: true,
+            target: limitsSection,
+            boundingClientRect: { top: 180 },
+          } as unknown as IntersectionObserverEntry,
+        ],
+        {} as IntersectionObserver,
+      );
+    });
 
     expect(precisionButton?.className).toContain('bg-primary-light');
     expect(limitsButton?.className).not.toContain('bg-primary-light');
