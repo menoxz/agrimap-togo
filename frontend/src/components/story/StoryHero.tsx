@@ -80,6 +80,18 @@ export default function StoryHero() {
         ].join(' ')}
         style={{ transform: `translateY(-${contentOffset}px)` }}
       >
+        {/* Eyebrow badge — apparaît avant le titre */}
+        <div
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-white/8 backdrop-blur-sm mb-6 animate-cta-pop"
+          style={{ animationDelay: '40ms' }}
+        >
+          <span className="w-2 h-2 rounded-full bg-togo-green shrink-0" aria-hidden="true" />
+          <span className="text-white/65 text-[11px] font-semibold uppercase tracking-[0.22em]">
+            Togo · Analyse Nationale · 2024
+          </span>
+          <span className="w-2 h-2 rounded-full bg-togo-red shrink-0" aria-hidden="true" />
+        </div>
+
         {/* H1 : stagger mot par mot */}
         <h1 className="text-5xl tablet:text-6xl font-black tracking-tight text-white leading-tight mb-4 drop-shadow-lg">
           {words.map((word, i) => (

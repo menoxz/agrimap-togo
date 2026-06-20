@@ -80,14 +80,32 @@ export function ActHeader({ actNumber, title, subtitle, accentIndex, light = fal
       </span>
 
       <div className="relative z-10 px-6 tablet:px-10">
-        <span
-          className="act-label-reveal block text-[11px] font-bold uppercase tracking-[0.25em]"
-          style={{ color: a.label }}
-        >
-          Acte {actNumber}
-        </span>
+        {/* Ligne supérieure : label + progression */}
+        <div className="flex items-center justify-between mb-2">
+          <span
+            className="act-label-reveal text-[11px] font-bold uppercase tracking-[0.25em]"
+            style={{ color: a.label }}
+          >
+            Acte {actNumber}
+          </span>
+          {/* Dots de progression X/4 */}
+          <div className="act-label-reveal flex items-center gap-1.5" aria-label={`Acte ${actNumber} sur 4`} style={{ transitionDelay: '0.1s' }}>
+            {[1, 2, 3, 4].map((n) => (
+              <span
+                key={n}
+                className="block rounded-full transition-all duration-300"
+                style={{
+                  width:  n === actNumber ? '20px' : '6px',
+                  height: '6px',
+                  background: n <= actNumber ? a.title : 'rgba(255,255,255,0.25)',
+                  opacity: n <= actNumber ? 1 : 0.45,
+                }}
+              />
+            ))}
+          </div>
+        </div>
         <h2
-          className="act-title-reveal text-4xl tablet:text-5xl font-black tracking-tight mt-2 leading-tight"
+          className="act-title-reveal text-4xl tablet:text-5xl font-black tracking-tight mt-0 leading-tight"
           style={{ color: a.title }}
         >
           {title}
