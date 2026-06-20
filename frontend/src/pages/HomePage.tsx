@@ -87,9 +87,14 @@ export default function HomePage() {
       <section
         className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 overflow-hidden"
         style={{
-          background: 'linear-gradient(160deg, #003D24 0%, #006A4E 35%, #0D2B3E 70%, #0A1628 100%)',
+          backgroundImage: 'url(/images/hero-agriculture.jpg)',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
         }}
       >
+        {/* Overlay sombre pour lisibilité */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/75" aria-hidden="true" />
         <div className="hero-motion-bg" aria-hidden="true" />
         <div className="absolute inset-0 opacity-25 mix-blend-screen" aria-hidden="true">
           <div className="absolute left-[10%] top-[22%] h-32 w-32 rounded-full border border-togo-yellow/60 animate-hero-orbit" style={{ animationDelay: '120ms' }} />
@@ -163,9 +168,9 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator (sans bounce pour ne pas interférer avec les CTAs) */}
         <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none animate-bounce"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
           style={{ animationDelay: '800ms' }}
         >
           <span className="text-white/50 text-[10px] uppercase tracking-widest drop-shadow-lg">
