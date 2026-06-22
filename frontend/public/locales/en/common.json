@@ -7,9 +7,9 @@
   "nav": {
     "home": "Home",
     "explore": "Explore",
+    "dashboard": "Dashboard",
     "story": "Story",
     "report": "Report",
-    "github": "GitHub",
     "menu": "Menu"
   },
   "home": {
@@ -53,7 +53,7 @@
       "solution": {
         "step": "02 · Solution",
         "title": "The solution",
-        "text": "An unprecedented mapping of agricultural service white zones — based on Togo's open data — to guide investment decisions."
+        "text": "An unprecedented mapping of agricultural service white zones, based on Togo's open data, to guide investment decisions."
       },
       "impact": {
         "step": "03 · Impact",
@@ -61,7 +61,7 @@
         "text": "Targeted resources to the territories that need them most, for a more connected and resilient Togolese agriculture."
       }
     },
-    "made_in_togo": "🇹🇬 Made in Togo — Togolese data, for Togo",
+    "made_in_togo": "🇹🇬 Made in Togo · Togolese data, for Togo",
     "photo_banner": {
       "alt": "Agricultural fields of Togo",
       "quote": "26 priority zones identified to connect farmers to essential services"
@@ -82,10 +82,10 @@
     "subtitle": "Follow the 4 acts to understand where to invest first.",
     "previous": "Previous act",
     "next": "Next act",
-    "synthesis_title": "Synthesis — Where to invest?",
+    "synthesis_title": "Synthesis: where to invest?",
     "synthesis_subtitle": "Geographic prioritization map of investment areas",
     "recommandations": "Recommendations",
-    "share_message": "Agricultural service white zones in Togo — where to invest first?",
+    "share_message": "Agricultural service white zones in Togo: where to invest first?",
     "act1": { "nav_title": "Where?", "title": "Where is production happening?" },
     "act2": { "nav_title": "Who serves?", "title": "Who serves the farmers?" },
     "act3": { "nav_title": "White zones", "title": "Identifying white zones" },
@@ -110,7 +110,7 @@
     "region_label": "Region",
     "region_placeholder": "Select a region",
       "analysis_type_label": "Analysis type",
-      "unavailable_marker_note": "ZAAP and nurseries: data is not shown as point markers; it is included in aggregate analyses when available.",
+      "unavailable_marker_note": "ZAAP and nursery data sourced from Togo's open data portal (opendata.gouv.tg).",
       "hero": {
       "title": "Priority Zone Mapping",
       "subtitle": "Identify territories where access to agricultural services is most critical.",
@@ -165,7 +165,7 @@
     "sources": "Sources: geodata.gouv.tg, opendata.gouv.tg",
     "licenses": "Open licenses",
     "challenge": "Data Challenge Togo AI Lab 2026",
-    "made_in": "Made in Togo — Togolese data, for Togo"
+    "made_in": "Made in Togo · Togolese data, for Togo"
   },
   "language": {
     "switch_to_en": "Switch to English",

@@ -515,7 +515,7 @@ export default function ReportPage() {
                     >
                       {prefectures.map((p) => (
                         <option key={p.nom_prefecture} value={p.nom_prefecture}>
-                          {p.nom_prefecture} — {p.region}
+                          {p.nom_prefecture} · {p.region}
                         </option>
                       ))}
                     </select>

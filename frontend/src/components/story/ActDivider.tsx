@@ -50,7 +50,7 @@ export function ActDivider({ nextAct, darkText = false }: ActDividerProps) {
       <div
         className={`px-3 py-1 backdrop-blur-sm text-[11px] tracking-[0.15em] uppercase font-bold shrink-0 ${badgeClass}`}
       >
-        — Acte {nextAct}
+        Acte {nextAct}
       </div>
       <div className={`flex-1 h-px ${lineClass}`} />
     </div>

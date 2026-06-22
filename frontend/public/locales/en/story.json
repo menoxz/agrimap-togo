@@ -37,7 +37,7 @@
     "synthesis": {
       "title": "Where to invest?",
       "subtitle": "Synthesis and priority recommendations",
-      "body": "The weighted overlay of 4 analyses — density, ZAAP coverage, accessibility, and cooperative network — reveals where investment will have the greatest impact. Composite scores identify priority regions for each type of intervention.",
+      "body": "The weighted overlay of 4 analyses (density, ZAAP coverage, accessibility, and cooperative network) reveals where investment will have the greatest impact. Composite scores identify priority regions for each type of intervention.",
       "rec_1_title": "Expand the ZAAP network in Centrale region",
       "rec_1_description": "Major production basin with insufficient ZAAP coverage. Priority: extend ZAAPs to cover undeveloped high-density areas.",
       "rec_1_priority": "High",
@@ -60,6 +60,6 @@
       "rec_3_action": "Support cooperative creation and shared equipment.",
       "rec_3_impact": "Strengthen bargaining power and access to inputs."
     },
-    "share_message": "Discover agricultural service white zones in Togo — Where to invest first?"
+    "share_message": "Discover agricultural service white zones in Togo: where to invest first?"
   }
 }

@@ -7,6 +7,7 @@ const HomePage = lazy(() => import('@/pages/HomePage'));
 const StoryPage = lazy(() => import('@/pages/StoryPage'));
 const ExplorePage = lazy(() => import('@/pages/ExplorePage'));
 const ReportPage = lazy(() => import('@/pages/ReportPage'));
+const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 
 function PageLoader() {
   return (
@@ -21,7 +22,7 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route element={<Layout />}>
@@ -47,6 +48,14 @@ export default function App() {
               element={
                 <Suspense fallback={<PageLoader />}>
                   <ReportPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <DashboardPage />
                 </Suspense>
               }
             />

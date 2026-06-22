@@ -1,9 +1,9 @@
 {
   "acts": {
     "1": {
-      "title": "Acte 1 — Où produit-on ?",
+      "title": "Acte 1 : où produit-on ?",
       "subtitle": "Carte de densité des exploitations par région et préfecture",
-      "text": "Au Togo, l'agriculture est le pivot de l'économie nationale, employant près de 60% de la population active. Mais où produit-on réellement ? Cette carte révèle la densité des exploitations agricoles à travers les régions et préfectures du pays, des plaines du Sud aux savanes du Nord. Les zones les plus denses concentrent une pression agricole forte — et un besoin urgent de services.",
+      "text": "Au Togo, l'agriculture est le pivot de l'économie nationale, employant près de 60% de la population active. Mais où produit-on réellement ? Cette carte révèle la densité des exploitations agricoles à travers les régions et préfectures du pays, des plaines du Sud aux savanes du Nord. Les zones les plus denses concentrent une pression agricole forte et un besoin urgent de services.",
       "indicator1_label": "Exploitations / km²",
       "indicator1_value": "4,2",
       "indicator2_label": "Région la plus dense",
@@ -11,7 +11,7 @@
       "callout": "Les zones à très forte densité d'exploitations sont aussi celles où le manque de services est le plus criant. C'est là que l'investissement aura le plus d'impact."
     },
     "2": {
-      "title": "Acte 2 — Est-ce aménagé ?",
+      "title": "Acte 2 : est-ce aménagé ?",
       "subtitle": "Couverture ZAAP et bassins de production non couverts",
       "text": "Les Zones d'Aménagement Agricole Planifié (ZAAP) sont l'outil principal de l'État togolais pour structurer la production. Pourtant, de nombreux bassins à fort potentiel restent en dehors de ces périmètres aménagés. Cette carte confronte le réseau ZAAP existant à la réalité de la production agricole, révélant les territoires où l'aménagement n'a pas suivi la densité.",
       "indicator1_label": "Exploitations en zone ZAAP",
@@ -21,9 +21,9 @@
       "callout": "Moins d'un tiers des exploitations sont couvertes par un aménagement ZAAP. Les 2/3 restants produisent sans filet de sécurité foncière ni d'infrastructure."
     },
     "3": {
-      "title": "Acte 3 — Est-ce accessible ?",
+      "title": "Acte 3 : est-ce accessible ?",
       "subtitle": "Éloignement aux marchés et aux pépinières",
-      "text": "Produire ne suffit pas : encore faut-il pouvoir vendre sa récolte et s'approvisionner en intrants. Cette carte mesure la distance moyenne entre les exploitations et les services essentiels — marchés, pépinières, points de vente d'engrais. Dans les zones les plus isolées, les producteurs parcourent plus d'une heure pour atteindre le marché le plus proche.",
+      "text": "Produire ne suffit pas : encore faut-il pouvoir vendre sa récolte et s'approvisionner en intrants. Cette carte mesure la distance moyenne entre les exploitations et les services essentiels : marchés, pépinières, points de vente d'engrais. Dans les zones les plus isolées, les producteurs parcourent plus d'une heure pour atteindre le marché le plus proche.",
       "indicator1_label": "Distance moyenne au marché",
       "indicator1_value": "45 min",
       "indicator2_label": "Exploitations isolées",
@@ -31,9 +31,9 @@
       "callout": "Près de la moitié des exploitations sont à plus de 30 minutes d'un marché. L'accessibilité est le deuxième frein majeur à la productivité après le manque d'aménagement."
     },
     "4": {
-      "title": "Acte 4 — Est-ce organisé ?",
+      "title": "Acte 4 : est-ce organisé ?",
       "subtitle": "Maillage des coopératives et zones blanches d'organisation",
-      "text": "Les coopératives agricoles sont un levier puissant de transformation : elles mutualisent les achats, facilitent l'accès au crédit et négocient de meilleurs prix. Pourtant, leur répartition sur le territoire est très inégale. Cette carte révèle les zones blanches d'organisation — où la densité de production est forte mais le réseau coopératif quasi absent.",
+      "text": "Les coopératives agricoles sont un levier puissant de transformation : elles mutualisent les achats, facilitent l'accès au crédit et négocient de meilleurs prix. Pourtant, leur répartition sur le territoire est très inégale. Cette carte révèle les zones blanches d'organisation, là où la densité de production est forte mais le réseau coopératif quasi absent.",
       "indicator1_label": "Coopératives / 100 km²",
       "indicator1_value": "0,8",
       "indicator2_label": "Zones sans coopératives",
@@ -42,7 +42,7 @@
     },
     "synthesis": {
       "title": "Où investir ?",
-      "text": "La carte de priorisation géographique combine les 4 dimensions précédentes — densité, aménagement, accessibilité, organisation — pour identifier les zones où l'investissement aura le plus d'impact.",
+      "text": "La carte de priorisation géographique combine les 4 dimensions précédentes (densité, aménagement, accessibilité, organisation) pour identifier les zones où l'investissement aura le plus d'impact.",
       "recommandation_1": "Prioriser l'implantation d'une ZAAP dans la région des Savanes",
       "recommandation_2": "Développer l'accès aux marchés dans la région Centrale",
       "recommandation_3": "Créer un réseau coopératif dans la région des Plateaux"

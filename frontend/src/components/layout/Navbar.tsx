@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X, Github, Sprout } from 'lucide-react';
+import { Menu, X, Sprout } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -12,6 +12,7 @@ interface NavLinkItem {
 const navLinks: NavLinkItem[] = [
   { to: '/', labelKey: 'nav.home' },
   { to: '/explore', labelKey: 'nav.explore' },
+  { to: '/dashboard', labelKey: 'nav.dashboard' },
   { to: '/story', labelKey: 'nav.story' },
   { to: '/report', labelKey: 'nav.report' },
 ];
@@ -93,18 +94,6 @@ export default function Navbar() {
             </NavLink>
           ))}
           <LanguageSwitcher variant="navbar" />
-          <a
-            href="https://github.com/menoxz/agrimap-togo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group text-text-secondary hover:text-primary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2 rounded p-1"
-            aria-label={t('nav.github')}
-          >
-            <Github
-              size={20}
-              className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
-            />
-          </a>
         </div>
 
         {/* ── Mobile hamburger ── */}
@@ -147,17 +136,6 @@ export default function Navbar() {
               {t(link.labelKey)}
             </NavLink>
           ))}
-          <a
-            href="https://github.com/menoxz/agrimap-togo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-body-sm font-medium text-text-secondary hover:text-primary transition-colors px-2 py-1"
-            onClick={() => setMenuOpen(false)}
-            tabIndex={menuOpen ? 0 : -1}
-          >
-            <Github size={18} />
-            {t('nav.github')}
-          </a>
         </div>
       </div>
     </header>

@@ -13,6 +13,8 @@ interface MarkersLayerProps {
   type: MarkerType;
   /** Filter markers to only show this prefecture ('' or undefined = show all). */
   prefectureFilter?: string;
+  /** Filter markers to only show this region (e.g. 'Maritime'). */
+  regionFilter?: string;
 }
 
 // ─── Config ──────────────────────────────────────────────────────────────────
@@ -80,7 +82,7 @@ function getLatLng(feature: GeoJsonFeature): [number, number] | null {
  * Strips trailing zeros while keeping up to `decimals` precision.
  */
 function fmtNum(value: number | string | boolean | null | undefined, decimals = 2): string {
-  if (value == null) return '—'
+  if (value == null) return 'Non renseigné'
   const n = Number(value)
   if (isNaN(n)) return String(value)
   if (n === 0) return '0'
@@ -167,26 +169,24 @@ function MarkerPopup({ type, props }: MarkerPopupProps) {
       <PopupRow key="coord"  label="Coordonnées" value={coordStr} />,
     ];
   } else if (type === 'zaap') {
+    // Champs reels : nom_zaap, region, prefecture, commune, canton
     title = String(props['nom_zaap'] ?? 'ZAAP');
-    const sup = props['superficie_ha'] != null ? `${fmtNum(props['superficie_ha'])} ha` : null;
     rows = [
-      <PopupRow key="type" label="Type"        value={props['type_zaap'] as string} />,
-      <PopupRow key="stat" label="Statut"      value={props['statut'] as string} />,
-      <PopupRow key="sup"  label="Superficie"  value={sup} />,
-      <PopupRow key="exp"  label="Exploitants" value={props['nombre_exploitants'] as number} />,
-      <PopupRow key="reg"  label="Région"      value={props['region'] as string} />,
+      <PopupRow key="pref" label="Préfecture" value={props['prefecture'] as string} />,
+      <PopupRow key="com"  label="Commune"    value={props['commune'] as string} />,
+      <PopupRow key="cant" label="Canton"     value={props['canton'] as string} />,
+      <PopupRow key="reg"  label="Région"     value={props['region'] as string} />,
     ];
   } else {
-    // pepinieres
+    // pepinieres — Champs reels : nom_pepiniere, adresse, jours_ouverture, annee_creation, type_terrain
     title = String(props['nom_pepiniere'] ?? 'Pépinière');
-    const cap = props['capacite_plants'] != null
-      ? `${Number(props['capacite_plants']).toLocaleString('fr-FR')} plants`
-      : null;
     rows = [
-      <PopupRow key="type" label="Type"     value={props['type_pepiniere'] as string} />,
-      <PopupRow key="cap"  label="Capacité" value={cap} />,
-      <PopupRow key="esp"  label="Espèces"  value={props['especes_principales'] as string} />,
-      <PopupRow key="reg"  label="Région"   value={props['region'] as string} />,
+      <PopupRow key="addr" label="Adresse"         value={props['adresse'] as string} />,
+      <PopupRow key="jrs"  label="Jours ouverture"  value={props['jours_ouverture'] as string} />,
+      <PopupRow key="crea" label="Année création"   value={props['annee_creation'] as string} />,
+      <PopupRow key="terr" label="Terrain"          value={props['type_terrain'] as string} />,
+      <PopupRow key="pref" label="Préfecture"       value={props['prefecture'] as string} />,
+      <PopupRow key="reg"  label="Région"           value={props['region'] as string} />,
     ];
   }
 
@@ -261,7 +261,7 @@ function buildDivIconHtml(cfg: IconConfig): string {
  * Uses L.divIcon with emoji for differentiated icons and renderToString for popups.
  * Must be rendered inside a MapContainer (react-leaflet context required).
  */
-export default function MarkersLayer({ type, prefectureFilter }: MarkersLayerProps) {
+export default function MarkersLayer({ type, prefectureFilter, regionFilter }: MarkersLayerProps) {
   const map = useMap();
   const layerGroupRef = useRef<L.LayerGroup | null>(null);
   const { data } = useDataLoader(DATA_URLS[type]);
@@ -287,6 +287,8 @@ export default function MarkersLayer({ type, prefectureFilter }: MarkersLayerPro
     const group = L.layerGroup();
 
     for (const feature of data.features) {
+      // ── Region filter ───────────────────────────────────────────────────
+      if (regionFilter && feature.properties.region !== regionFilter) continue;
       // ── Prefecture filter ──────────────────────────────────────────────
       if (prefectureFilter && feature.properties.prefecture !== prefectureFilter) continue;
 
@@ -311,7 +313,7 @@ export default function MarkersLayer({ type, prefectureFilter }: MarkersLayerPro
         layerGroupRef.current = null;
       }
     };
-  }, [data, map, type, prefectureFilter]);
+  }, [data, map, type, prefectureFilter, regionFilter]);
 
   // No DOM output — all rendering is via Leaflet's imperative API
   return null;

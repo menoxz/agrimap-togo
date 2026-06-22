@@ -87,7 +87,7 @@ export default function HomePage() {
       <section
         className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/hero-agriculture.jpg)',
+          backgroundImage: 'url(/images/hero-farmers-tilling.jpg)',
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
@@ -204,9 +204,9 @@ export default function HomePage() {
          <div className="grid grid-cols-1 tablet:grid-cols-3 desktop:grid-cols-3 gap-8 mb-16 [perspective:1000px]">
           {(
           [
-            { value: stats ? `${animKpi1}` : '—', label: t('home.stats.kpi1_label'), desc: t('stats.kpi1.sub', { total: stats?.total ?? '—' }), colorClass: 'text-red-600', tooltip: t('stats.kpi1.tooltip') },
+            { value: stats ? `${animKpi1}` : '…', label: t('home.stats.kpi1_label'), desc: t('stats.kpi1.sub', { total: stats?.total ?? '…' }), colorClass: 'text-red-600', tooltip: t('stats.kpi1.tooltip') },
             { value: `${animKpi2}`,  label: t('home.stats.kpi2_label'), desc: t('home.stats.kpi2_desc'), colorClass: 'text-green-700', tooltip: '' },
-            { value: stats ? `${animKpi3}%` : '—', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), colorClass: 'text-red-600', tooltip: '' },
+            { value: stats ? `${animKpi3}%` : '…', label: t('home.stats.kpi3_label'), desc: t('stats.kpi3.desc'), colorClass: 'text-red-600', tooltip: '' },
           ] as { value: string; label: string; desc: string; colorClass: string; tooltip: string }[]
           ).map((kpi, index) => (
             <div
@@ -380,7 +380,7 @@ export default function HomePage() {
                       layer.on('click', () => {
                         layer
                           .bindPopup(
-                            `<b>${name}</b><br/>Capitale: ${feature.properties.capitale || '—'}<br/>Population: ${feature.properties.population ? Number(feature.properties.population).toLocaleString() : '—'}`,
+                            `<b>${name}</b><br/>Capitale: ${feature.properties.capitale || 'Non renseignée'}<br/>Population: ${feature.properties.population ? Number(feature.properties.population).toLocaleString() : 'Non renseignée'}`,
                           )
                           .openPopup();
                       });
@@ -404,7 +404,7 @@ export default function HomePage() {
       {/* Bannière photographique agricole — entre Mini-Map et Why */}
       <div className="relative h-48 tablet:h-56 overflow-hidden"
            style={{
-             backgroundImage: 'url(/images/banner-farming.jpg)',
+          backgroundImage: 'url(/images/hero-home-farming.jpg)',
              backgroundAttachment: 'fixed',
              backgroundSize: 'cover',
              backgroundPosition: 'center center',

@@ -37,7 +37,7 @@
     "synthesis": {
       "title": "Où investir ?",
       "subtitle": "Synthèse et recommandations prioritaires",
-      "body": "La superposition pondérée des 4 analyses — densité, couverture ZAAP, accessibilité et maillage coopératif — révèle les zones où l'investissement aura le plus grand impact. Les scores composites identifient les régions prioritaires pour chaque type d'intervention.",
+      "body": "La superposition pondérée des 4 analyses (densité, couverture ZAAP, accessibilité et maillage coopératif) révèle les zones où l'investissement aura le plus grand impact. Les scores composites identifient les régions prioritaires pour chaque type d'intervention.",
       "rec_1_title": "Étendre le réseau ZAAP dans la région Centrale",
       "rec_1_description": "Bassin de production majeur avec une couverture ZAAP insuffisante. Priorité : étendre les ZAAP pour couvrir les zones de forte densité non aménagées.",
       "rec_1_priority": "Élevée",
@@ -60,6 +60,6 @@
       "rec_3_action": "Accompagner la création de coopératives et mutualiser les équipements.",
       "rec_3_impact": "Renforcer le pouvoir de négociation et l’accès aux intrants."
     },
-    "share_message": "Découvrez les zones blanches de services agricoles au Togo — Où investir en priorité ?"
+    "share_message": "Découvrez les zones blanches de services agricoles au Togo : où investir en priorité ?"
   }
 }

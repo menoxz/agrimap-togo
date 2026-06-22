@@ -22,13 +22,13 @@
     "quality_completeness": "La complétude des données varie selon les dimensions. Les données de recensement agricole couvrent l'ensemble des 5 régions et 39 préfectures du Togo (complétude 100%). Les données ZAAP sont exhaustives pour les périmètres officiels. Les données d'accessibilité et de réseau coopératif présentent une complétude estimée à 85%, certaines localités reculées n'étant pas encore référencées.",
     "quality_precision": "La précision spatiale est de l'ordre de 100 mètres pour les données géospatiales (régions, ZAAP) et de 500 mètres pour les données de localisation des marchés et coopératives (géocodage approximatif). Les indicateurs statistiques (densité, taux de couverture) sont calculés à l'échelle préfectorale, ce qui peut masquer des disparités intra-régionales.",
     "limits": "Ce travail présente plusieurs limites. Premièrement, l'actualité des données : les sources datent de 2024-2025, certains aménagements récents peuvent ne pas être reflétés. Deuxièmement, la granularité préfectorale ne permet pas une analyse infra-communale. Troisièmement, les données d'accessibilité sont basées sur des distances euclidiennes et non des temps de parcours réels (routes, saisons). Enfin, l'absence de données sur l'agriculture informelle et de subsistance limite la photographie complète du secteur.",
-    "conclusion": "AgriMap Togo est un outil d'aide à la décision, pas une vérité absolue. Il identifie des tendances et des priorités à l'échelle régionale, mais chaque investissement doit être validé par une étude de terrain. L'approche par zones blanches — centrée sur les opportunités plutôt que les manques — vise à encourager une action ciblée et constructive.",
+    "conclusion": "AgriMap Togo est un outil d'aide à la décision, pas une vérité absolue. Il identifie des tendances et des priorités à l'échelle régionale, mais chaque investissement doit être validé par une étude de terrain. L'approche par zones blanches, centrée sur les opportunités plutôt que les manques, vise à encourager une action ciblée et constructive.",
     "analyses": "Les 4 analyses croisées (densité, ZAAP, accessibilité, réseau coopératif) sont combinées dans un indice de priorisation synthétique. Chaque analyse est disponible en mode exploration libre et dans la lecture guidée.",
     "comparative_intro": "Cette section classe les 37 préfectures du Togo selon l'indice synthétique de priorisation. Utilisez le sélecteur pour visualiser le profil de chaque préfecture sur les 4 dimensions. Le tableau est triable par colonne pour identifier les meilleures et moins bonnes performances.",
     "comparative_note": "Les scores sont normalisés sur 0-100. 0 = priorité maximale (besoin urgent), 100 = bien desservi. Le radar compare le profil de la préfecture sélectionnée à la moyenne de sa région."
   },
   "radar": {
-    "title": "Profil radar — {prefecture}",
+    "title": "Profil radar : {prefecture}",
     "density": "Densité",
     "access": "Accessibilité",
     "coop": "Coopératives",

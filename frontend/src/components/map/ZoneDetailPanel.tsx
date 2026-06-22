@@ -162,7 +162,7 @@ export default function ZoneDetailPanel({
       const estKm = Math.round((100 - accessScore * 100) * 0.22 + 1);
       return `~${estKm} km`;
     }
-    return '—';
+    return 'Non renseigné';
   })();
 
   const badgeInfo = getPriorityBadge(score);
@@ -255,7 +255,7 @@ export default function ZoneDetailPanel({
                       ? regionStats.n_exploitations.toString()
                       : densityRaw > 0
                         ? `${(densityRaw * 100).toFixed(1)}`
-                        : '—'}
+                        : '…'}
                 </p>
                 <p className="text-caption text-muted">
                   {!regionStats.loading && regionStats.n_exploitations > 0
@@ -364,7 +364,7 @@ export default function ZoneDetailPanel({
           <div className="flex items-center justify-between pt-1">
             <div className="flex items-center gap-1.5">
               <Target size={14} className="text-muted" />
-              <span className="text-caption text-muted">{priorite || '—'}</span>
+              <span className="text-caption text-muted">{priorite || 'Non renseigné'}</span>
             </div>
             <Badge variant={badgeInfo.variant} size="sm">
               {badgeInfo.label}

@@ -7,9 +7,9 @@
   "nav": {
     "home": "Accueil",
     "explore": "Explorer",
+    "dashboard": "Dashboard",
     "story": "Lire",
     "report": "Rapport",
-    "github": "GitHub",
     "menu": "Menu"
   },
   "home": {
@@ -53,7 +53,7 @@
       "solution": {
         "step": "02 · Solution",
         "title": "La solution",
-        "text": "Une cartographie inédite des zones blanches de services agricoles — basée sur les données ouvertes du Togo — pour guider les décisions d'investissement."
+        "text": "Une cartographie inédite des zones blanches de services agricoles, basée sur les données ouvertes du Togo, pour guider les décisions d'investissement."
       },
       "impact": {
         "step": "03 · Impact",
@@ -61,7 +61,7 @@
         "text": "Des ressources ciblées vers les territoires qui en ont le plus besoin, pour une agriculture togolaise plus connectée et plus résiliente."
       }
     },
-    "made_in_togo": "🇹🇬 Made in Togo — Données togolaises, pour le Togo",
+    "made_in_togo": "🇹🇬 Made in Togo · Données togolaises, pour le Togo",
     "photo_banner": {
       "alt": "Champs agricoles du Togo",
       "quote": "26 zones prioritaires identifiées pour relier les exploitants aux services essentiels"
@@ -82,10 +82,10 @@
     "subtitle": "Suivez les 4 actes pour comprendre où investir en priorité.",
     "previous": "Acte précédent",
     "next": "Acte suivant",
-    "synthesis_title": "Synthèse — Où investir ?",
+    "synthesis_title": "Synthèse : où investir ?",
     "synthesis_subtitle": "Carte de priorisation géographique des zones d'investissement",
     "recommandations": "Recommandations",
-    "share_message": "Les zones blanches de services agricoles au Togo — où investir en priorité ?",
+    "share_message": "Les zones blanches de services agricoles au Togo : où investir en priorité ?",
     "act1": { "nav_title": "Où produit-on ?", "title": "Où produit-on au Togo ?" },
     "act2": { "nav_title": "Qui sert qui ?", "title": "Qui sert les agriculteurs ?" },
     "act3": { "nav_title": "Zones blanches", "title": "Identifier les zones blanches" },
@@ -110,7 +110,7 @@
     "region_label": "Région",
     "region_placeholder": "Sélectionner une région",
       "analysis_type_label": "Type d'analyse",
-      "unavailable_marker_note": "ZAAP et pépinières : données non affichées comme marqueurs ponctuels ; intégrées aux analyses agrégées quand disponibles.",
+      "unavailable_marker_note": "Les données ZAAP et pépinières proviennent du portail open data du Togo (opendata.gouv.tg).",
       "hero": {
       "title": "Cartographie des zones prioritaires",
       "subtitle": "Identifiez les territoires où l'accès aux services agricoles est le plus critique.",
@@ -165,7 +165,7 @@
     "sources": "Sources : geodata.gouv.tg, opendata.gouv.tg",
     "licenses": "Licences ouvertes",
     "challenge": "Data Challenge Togo AI Lab 2026",
-    "made_in": "Made in Togo — Données togolaises, pour le Togo"
+    "made_in": "Made in Togo · Données togolaises, pour le Togo"
   },
   "language": {
     "switch_to_en": "Switch to English",
