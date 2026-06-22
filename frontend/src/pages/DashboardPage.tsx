@@ -617,7 +617,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <Card padding="lg" className="relative overflow-hidden rounded-[1.5rem] border-white/25 bg-black/35 text-white shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-md animate-map-reveal">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/25 bg-[#092E25]/88 p-6 text-white shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-md animate-map-reveal">
             <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-togo-green via-togo-yellow to-togo-red" />
             <div className="relative grid gap-5">
               <p className="text-caption font-bold uppercase tracking-[0.22em] text-white/65">{copy.signal}</p>
@@ -632,14 +632,14 @@ export default function DashboardPage() {
                   <h2 className="text-h2 font-black text-white">{highlighted?.name ?? 'Non renseigné'}</h2>
                   <p className="mt-2 text-white/72">{highlighted?.region ?? 'Non renseigné'} · {copy.highlightedHint}</p>
                   <div className="mt-5 grid grid-cols-3 gap-2 text-center text-caption">
-                    <span className="rounded-lg bg-white/12 px-2 py-2 text-white ring-1 ring-white/15"><strong className="block text-body-sm text-togo-yellow">{fmt(highlighted?.whiteZone ?? 0)}%</strong>{copy.whiteZonesShort}</span>
-                    <span className="rounded-lg bg-white/12 px-2 py-2 text-white ring-1 ring-white/15"><strong className="block text-body-sm text-togo-yellow">{fmt(highlighted?.service ?? 0)}</strong>{copy.servicesLabel}</span>
-                    <span className="rounded-lg bg-white/12 px-2 py-2 text-white ring-1 ring-white/15"><strong className="block text-body-sm text-togo-yellow">{fmt(highlighted?.distance ?? 0, 1)}km</strong>{copy.distance}</span>
+                    <span className="rounded-lg bg-white/12 px-2 py-2 !text-white ring-1 ring-white/15"><strong className="block text-body-sm text-togo-yellow">{fmt(highlighted?.whiteZone ?? 0)}%</strong>{copy.whiteZonesShort}</span>
+                    <span className="rounded-lg bg-white/12 px-2 py-2 !text-white ring-1 ring-white/15"><strong className="block text-body-sm text-togo-yellow">{fmt(highlighted?.service ?? 0)}</strong>{copy.servicesLabel}</span>
+                    <span className="rounded-lg bg-white/12 px-2 py-2 !text-white ring-1 ring-white/15"><strong className="block text-body-sm text-togo-yellow">{fmt(highlighted?.distance ?? 0, 1)}km</strong>{copy.distance}</span>
                   </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-togo-green via-togo-yellow to-togo-red" aria-hidden="true" />
       </section>
