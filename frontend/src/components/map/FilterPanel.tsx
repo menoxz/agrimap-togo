@@ -67,12 +67,14 @@ const LAYER_LABELS: Record<AnalysisType, { fr: string; en: string }> = {
 };
 // TODO: migrate to t() i18n keys
 
+// Les compteurs ci-dessous sont synchronises avec la sortie du pipeline ETL.
+// Les donnees ZAAP et pepinieres proviennent d'opendata.gouv.tg (141 ZAAP, 720 pepinieres).
 const MARKER_OPTIONS = [
   { value: 'marches',       icon: ShoppingCart, labelFr: 'Marchés',        labelEn: 'Markets',       count: 971, disabled: false },
   { value: 'cooperatives',  icon: Handshake,    labelFr: 'Coopératives',   labelEn: 'Cooperatives',  count: 55,  disabled: false },
   { value: 'exploitations', icon: Wheat,        labelFr: 'Exploitations',  labelEn: 'Farmland',      count: 737, disabled: false },
-  { value: 'zaap',          icon: Sprout,       labelFr: 'ZAAP',           labelEn: 'ZAAP',          count: 0,   disabled: true  },
-  { value: 'pepinieres',    icon: Leaf,         labelFr: 'Pépinières',     labelEn: 'Nurseries',     count: 0,   disabled: true  },
+  { value: 'zaap',          icon: Sprout,       labelFr: 'ZAAP',           labelEn: 'ZAAP',          count: 141, disabled: false },
+  { value: 'pepinieres',    icon: Leaf,         labelFr: 'Pépinières',     labelEn: 'Nurseries',     count: 720, disabled: false },
 ] as const;
 
 // ── Download helpers (no external deps — standard Web API only) ────────────
@@ -306,8 +308,8 @@ export default function FilterPanel({
                   </span>
                 </label>
               );
-            })}
-          </div>
+             })}
+           </div>
         </div>
 
         {/* Reset */}
@@ -494,8 +496,8 @@ export default function FilterPanel({
                     </span>
                   </label>
                 );
-              })}
-            </div>
+               })}
+             </div>
           </div>
 
           {/* Download buttons */}
